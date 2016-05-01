@@ -1,0 +1,49 @@
+# Bootstrap a new locale
+
+## Langchecker
+The first thing you need to do is to add the new locale code to the `$mozilla` array in [app/config/locales.php](https://github.com/mozilla-l10n/langchecker/blob/master/app/config/locales.inc.php). Note that all lists of locales are in alphabetical order.
+
+If this new locale is going to localize only Fennec, you need to add it also to the `$fennec_locales` array. In this way desktop specific pages won’t be exposed for this language.
+
+Example: let’s say we need to add the `ab-CD` locale. This is how the `$mozilla` array begins:
+```PHP
+$mozilla = [
+    'ach', 'af', 'an', 'ar', 'as', 'ast', 'az', 'be', 'bg',
+    'bm', 'bn-BD', 'bn-IN', 'br', 'brx', 'bs', 'ca', 'cak',
+```
+
+And how it becomes after adding the new locale:
+```PHP
+$mozilla = [
+    'ab-CD', 'ach', 'af', 'an', 'ar', 'as', 'ast', 'az', 'be', 'bg',
+    'bm', 'bn-BD', 'bn-IN', 'br', 'brx', 'bs', 'ca', 'cak',
+```
+
+At this point you need to add the files to both `www.mozilla.org` and `about:healthreport` (FHR) by using the `lang_update` script. From your local langchecker root folder run:
+```
+./app/scripts/lang_update all 0 ab-CD
+./app/scripts/lang_update all 4 ab-CD
+```
+The first line will add **all** missing files to mozilla.org (ID: 0) for the **ab-CD** locale (you could also run it with the **all** parameter, but it might introduce changes not relevant for this task), the second to FHR (ID: 4).
+
+Move to each l10n repository, check the status and commit (don’t forget to add the new folder). Let’s say `www.mozilla.org` is the folder where your clone is stored:
+```
+$ cd www.mozilla.org
+
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	ab-CD/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+$ git add ab-CD
+$ git commit -m "Bootstrap locale ab-CD on mozilla.org"
+$ git push
+```
+
+## Webdashboard
+You need to add the same locale code to [app/data/locales.php](https://github.com/mozilla-l10n/webdashboard/blob/master/app/data/locales.php). Try to keep the two arrays as similar as possible, but remember that the variable name is different (`$mozilla` in Langchecker, `$locales` in Webdashboard).
