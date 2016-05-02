@@ -22,9 +22,7 @@ These are detailed instructions for the most common tasks:
 * [Add a new file to an existing project](add_new_file.md).
 * [Bootstrap a new locale](bootstrap_new_locale.md).
 
-And some documentation specific for managing mozilla.org
-* [Importing strings from Pootle](import_locamotion.md).
-* [Updating mozilla.org production](updating_mozillaorg_production.md).
+For documentation specific to mozilla.org, see [this page](../mozilla.org/README.md).
 
 ## Contribution Guidelines
 Always work on forks of the main repository and open pull requests if you’re going to update code. Automated tests are run with Travis on each pull request to check for syntax or functional errors.
