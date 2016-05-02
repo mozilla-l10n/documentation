@@ -1,4 +1,4 @@
-# General Information
+# Working with Webdashboard
 ## Structure
 [Webdashboard] is the main dashboard used by localizers. It contains information about files with missing strings, deadlines, and more.
 
@@ -18,9 +18,13 @@ For detailed information check the specific pages for each project:
 
 These are detailed instructions for the most common tasks:
 * [Add locales to an existing file](add_locales.md).
+* [Update an existing file](update_existing_file.md).
 * [Add a new file to an existing project](add_new_file.md).
 * [Bootstrap a new locale](bootstrap_new_locale.md).
-* [Update an existing file](update_existing_file.md).
+
+And some documentation specific for managing mozilla.org
+* [Importing strings from Pootle](import_locamotion.md).
+* [Updating mozilla.org production](updating_mozillaorg_production.md).
 
 ## Contribution Guidelines
 Always work on forks of the main repository and open pull requests if you’re going to update code. Automated tests are run with Travis on each pull request to check for syntax or functional errors.
