@@ -10,6 +10,12 @@ l10n-drivers are in charge of manually moving files from trunk to prod after doi
 meld path/to/trunk_repository path/to/production_repository
 ```
 
+If you’re using the virtual machine available to l10n-driver (VM-l10n), there are a few shortcuts:
+* `trunkst` will move into the trunk folder, and check the status (`git status`).
+* `prodst` will do the same for production, but will also fetch updates from trunk in case you want to cherry-pick changesets (see next section).
+* `mozmeld` will open meld with trunk on the left, and production on the right. Use alt+up/down to move to the next change, use alt+right to move from trunk to production. **Don’t** move the README file, since they're different between the two repositories.
+* `gitup` will update all Git repositories.
+
 ## Cherry-picking changes
 Sometimes moving files manually between the two repositories in not viable, for example when updating a file in all locales. In this case it’s possible to cherry-pick a commit from trunk into production.
 
