@@ -3,20 +3,20 @@
 Example task: add `zh-TW` to the list of supported locales for `firefox/os/index.lang`.
 
 ## Updating Langchecker sources
-First we need to search for the file that we want to update in [app/config/sources.inc.php](https://github.com/mozilla-l10n/langchecker/blob/master/app/config/sources.inc.php). The file will appear in several portions of the configuration file:
+First you need to search for the file that you want to update in [app/config/sources.inc.php](https://github.com/mozilla-l10n/langchecker/blob/master/app/config/sources.inc.php). The file will appear in several portions of the configuration file:
 * The array with the list of supported .lang files: in this case the array is `$mozillaorg_lang` since the website is `www.mozilla.org`. No need to update this list, since the file is already part of this website.
 * The list of flags (optional).
 * Deadlines (optional).
-* The list of supported locale in `$langfiles_subsets['www.mozilla.org']`. That’s the part we need to update.
+* The list of supported locale in `$langfiles_subsets['www.mozilla.org']`. That’s the part you need to update.
 
-Always remember to **work on a fork** of the main repository, and **create a branch** in your local clone. Assuming the langchecker installation is in `~/mozilla/git/langchecker`, and that the branch name we want to create is `TESTBRANCH`, the commands to use would be:
+Always remember to **work on a fork** of the main repository, and **create a branch** in your local clone. Assuming the langchecker installation is in `~/mozilla/git/langchecker`, and that the branch name you want to create is `TESTBRANCH`, the commands to use would be:
 ```
 $ cd ~/mozilla/git/langchecker
 $ git branch TESTBRANCH
 $ git checkout TESTBRANCH
 ```
 
-At this point we’re ready to update the configuration file.
+At this point you’re ready to update the configuration file.
 
 ```PHP
 'firefox/os/index.lang'                  =>
