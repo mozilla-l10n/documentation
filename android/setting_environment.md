@@ -1,9 +1,11 @@
-# Setting up the environment
+# Set up the environment
 **IMPORTANT:** This needs to be done only the first time. After that you will only need to keep Mercurial up to date.
 
+## Mercurial
 Most of the work needs to be done in [Mercurial](https://www.mercurial-scm.org/downloads), so you need to install if first.
 
 To check if Mercurial is available and up to date, run in the terminal `hg --version`, the output should look like this:
+Note that the `$` is not part of the command, it just indicates the terminal prompt.
 ```
 $ hg --version
 Mercurial Distributed SCM (version 3.8.2)
@@ -14,7 +16,7 @@ This is free software; see the source for copying conditions. There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 ```
 
-Unless you're familiar with `vi`, you also want to setup `nano` as the default editor in the system.
+Unless you’re familiar with `vi`, you also want to setup `nano` as the default editor in the system.
 ```
 $ export EDITOR=/usr/bin/nano
 ```
@@ -51,4 +53,7 @@ $ cd ~/mozilla/mercurial
 $ hg clone http://hg.mozilla.org/releases/mozilla-aurora/
 ```
 
-This operation will take several minutes depending on your Internet connection's speed. At the end, you will have a `~/mozilla/mercurial/mozilla-aurora` folder.
+This operation will take several minutes depending on your Internet connection’s speed. At the end, you will have a `~/mozilla/mercurial/mozilla-aurora` folder.
+
+## Text editor
+The suggestion is to use [Atom](https://atom.io/) with the optional [Sort Lines package](https://atom.io/packages/sort-lines) installed. To open the file in Atom, run this command from the terminal.
