@@ -49,7 +49,9 @@ unified = 8
 You need to create a local clone of the mozilla-aurora repository. In this case, the clone will be stored in `~/mozilla/mercurial`.
 ```
 $ mkdir -p ~/mozilla/mercurial
+
 $ cd ~/mozilla/mercurial
+
 $ hg clone http://hg.mozilla.org/releases/mozilla-aurora/
 ```
 
