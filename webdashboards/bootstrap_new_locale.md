@@ -49,6 +49,3 @@ $ git commit -m "Bootstrap locale ab-CD on mozilla.org"
 
 $ git push
 ```
-
-## Webdashboard
-You need to add the same locale code to [app/data/locales.php](https://github.com/mozilla-l10n/webdashboard/blob/master/app/data/locales.php). Try to keep the two arrays as similar as possible, but remember that the variable name is different (`$mozilla` in Langchecker, `$locales` in Webdashboard).
