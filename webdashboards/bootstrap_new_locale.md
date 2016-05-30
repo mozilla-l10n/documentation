@@ -19,6 +19,9 @@ $mozilla = [
     'bm', 'bn-BD', 'bn-IN', 'br', 'brx', 'bs', 'ca', 'cak',
 ```
 
+If this locale works on Pootle, you also need to add the locale code to the array `$locamotion_locales`, still in the same file ([app/config/locales.php](https://github.com/mozilla-l10n/langchecker/blob/master/app/config/locales.inc.php)).
+
+## Add files to l10n repositories (mozilla.org, FHR)
 At this point you need to add the files to both `www.mozilla.org` and `about:healthreport` (FHR) by using the `lang_update` script. From your local langchecker root folder run:
 ```
 ./app/scripts/lang_update all 0 ab-CD
@@ -41,7 +44,9 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 
 $ git add ab-CD
+
 $ git commit -m "Bootstrap locale ab-CD on mozilla.org"
+
 $ git push
 ```
 
