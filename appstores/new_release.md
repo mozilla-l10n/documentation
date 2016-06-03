@@ -67,7 +67,7 @@ $ atom app/config/sources.inc.php
 ```
 
 You need to add the new file to `$appstores_lang`. In this case changing from:
-```
+```PHP
 $appstores_lang = [
     ...
     'whatsnew/whatsnew_android_46.lang',
@@ -75,7 +75,7 @@ $appstores_lang = [
 ```
 
 To:
-```
+```PHP
 $appstores_lang = [
     ...
     'whatsnew/whatsnew_android_46.lang',
@@ -85,7 +85,7 @@ $appstores_lang = [
 ```
 
 Then update `$lang_flags['appstores']` marking the the old beta file as obsolete. From:
-```
+```PHP
 $lang_flags['appstores'] = [
     ...
     'whatsnew/whatsnew_android_44.lang'      => [ 'obsolete' => ['all'] ],
@@ -96,7 +96,7 @@ $lang_flags['appstores'] = [
 ```
 
 To:
-```
+```PHP
 $lang_flags['appstores'] = [
     ...
     'whatsnew/whatsnew_android_44.lang'      => [ 'obsolete' => ['all'] ],
@@ -108,7 +108,7 @@ $lang_flags['appstores'] = [
 ```
 
 Add a deadline for the new file, removing the old one. From:
-```
+```PHP
 $deadline = [
     ...
     'whatsnew/whatsnew_android_46.lang'      => '2016-04-26', // appstores project
@@ -117,7 +117,7 @@ $deadline = [
 ```
 
 To:
-```
+```PHP
 $deadline = [
     ...
     'whatsnew/whatsnew_android_47.lang'      => '2016-06-07', // appstores project
@@ -126,7 +126,7 @@ $deadline = [
 ```
 
 Finally add the supported locales for these new files. From:
-```
+```PHP
 'appstores' => [
     ...
     'whatsnew/whatsnew_android_45.lang'      => array_merge($google_play_target, ['ar']),
@@ -136,7 +136,7 @@ Finally add the supported locales for these new files. From:
 ```
 
 To:
-```
+```PHP
 'appstores' => [
     ...
     'whatsnew/whatsnew_android_45.lang'      => array_merge($google_play_target, ['ar']),
@@ -158,7 +158,7 @@ $ git push origin beta48
 At this point you’re ready to copy the new files to all locales, but you also want to import the existing strings from `whatsnew/whatsnew_android_47_beta.lang`.
 
 Edit [https://github.com/mozilla-l10n/langchecker/blob/master/app/scripts/lang_update#L105](app/scripts/lang_update), add `whatsnew/whatsnew_android_47_beta.lang` to the variable `$import_files`, and set `$import_website` to `12` (that’s the identifier for the AppStores project).
-```
+```PHP
 $import_files = ['whatsnew/whatsnew_android_47_beta.lang'];
 $import_website = 12;
 ```
@@ -187,7 +187,7 @@ $ atom app/classes/Stores/Project.php
 ```
 
 The variable to update is `$template`. From:
-```
+```PHP
 public $templates = [
     'google' => [
         // channel => path to template file
@@ -209,7 +209,7 @@ public $templates = [
 ```
 
 To:
-```
+```PHP
 public $templates = [
     'google' => [
         // channel => path to template file
