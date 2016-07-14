@@ -10,7 +10,7 @@ If you’re using the virtual machine available to l10n-drivers (VM-l10n), Bedro
 Move into the main folder, activate the Virtual environment, and run the server.
 ```
 $ cd mozilla/git/bedrock/
-$ activate source venv/bin/activate
+$ source venv/bin/activate
 (venv) $ ./manage.py runserver localhost:8080
 ```
 
