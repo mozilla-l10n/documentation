@@ -31,6 +31,11 @@ $ activate source venv/bin/activate
 (venv) $ ./manage.py l10n_extract bedrock/mozorg/templates/mozorg/contribute/signup.html
 ```
 
+If the last command returns any error, try reinstalling the requirements with
+```
+$ pip install -r requirements/dev.txt
+```
+
 At this point a .lang file will be created inside `/locale/templates` with all the strings extracted. The name of the file depends on several factors: for example the template could include another template that specify a specific .lang file so, instead of having `locale/templates/mozorg/contribute/signup.lang`, we have `locale/templates/mozorg/contribute/index.lang`.
 
 The suggestion is to always remove the `templates` folder before doing an extraction, to make sure you start from a clean situation.
