@@ -7,16 +7,14 @@ You can install Bedrock by following the instructions available in [this page](h
 
 If you’re using the virtual machine available to l10n-drivers (VM-l10n), Bedrock is already installed in `~/mozilla/git/bedrock`.
 
-Move into the main folder, activate the Virtual environment, and run the server.
+Move into the main folder, activate the Virtual environment, and run the server with [gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md).
 ```
 $ cd mozilla/git/bedrock/
 $ source venv/bin/activate
-(venv) $ ./manage.py runserver localhost:8080
+(venv) $ gulp
 ```
 
-If you’re running Bedrock in a virtual machine, and you want the server to be accessible from the host machine, run `./manage.py runserver 0.0.0.0:8080` instead.
-
-At this point Bedrock will be available at http://localhost:8080
+At this point Bedrock will be available at http://localhost:8000
 
 If you’re not using the VM-l10n, you want to update both the code repository and the locale repository before running the server. In the VM-l10n the locale folder is a symbolic link to the mozilla.org trunk l10n repository.
 
