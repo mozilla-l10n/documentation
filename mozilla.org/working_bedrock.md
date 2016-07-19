@@ -9,7 +9,7 @@ If you’re using the virtual machine available to l10n-drivers (VM-l10n), Bedro
 
 Move into the main folder, activate the Virtual environment, and run the server with [gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md).
 ```
-$ cd mozilla/git/bedrock/
+$ cd ~/mozilla/git/bedrock/
 $ source venv/bin/activate
 (venv) $ gulp
 ```
@@ -24,8 +24,8 @@ Don't forget to exit the virtual environment by running `deactivate` when you’
 
 The first part is to identify the template (or templates) you need to extract strings from. For example, assuming that you want to extract strings from `bedrock/mozorg/templates/mozorg/contribute/signup.html`, you would run from Bedrock's main folder:
 ```
-$ cd mozilla/git/bedrock/
-$ activate source venv/bin/activate
+$ cd ~/mozilla/git/bedrock/
+$ source venv/bin/activate
 (venv) $ ./manage.py l10n_extract bedrock/mozorg/templates/mozorg/contribute/signup.html
 ```
 
@@ -118,10 +118,11 @@ Let’s assume you want to test a pull request locally, for example to extract s
 You can download this patch and apply it locally.
 
 ```
-$ cd mozilla/git/bedrock/
-$ activate source venv/bin/activate
+$ cd ~/mozilla/git/bedrock/
+$ source venv/bin/activate
 (venv) $ wget https://github.com/mozilla/bedrock/pull/4101.patch
-(venv) $ ./manage.py runserver localhost:8080
+(venv) $ git apply 4101.patch
+(venv) $ gulp
 ```
 
 Remember that Bedrock on the VM-l10n uses a link to the actual trunk repository, so make sure to delete any test you make. The `templates` folder will be automatically ignored.
