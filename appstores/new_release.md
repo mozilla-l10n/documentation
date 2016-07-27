@@ -163,6 +163,8 @@ $import_files = ['whatsnew/whatsnew_android_47_beta.lang'];
 $import_website = 12;
 ```
 
+**Important**: make sure to not commit this last change to langchecker. You can either ignore it and it will be removed the next time you run `gitup`, or reset the repository with `git reset --hard`.
+
 Now you can run the update, propagating updates to all locales:
 ```
 $ lang_update all 12 all
