@@ -157,11 +157,12 @@ $ git push origin beta48
 
 At this point you’re ready to copy the new files to all locales, but you also want to import the existing strings from `whatsnew/whatsnew_android_47_beta.lang`.
 
-Edit [app/scripts/lang_update](https://github.com/mozilla-l10n/langchecker/blob/master/app/scripts/lang_update#L105), add `whatsnew/whatsnew_android_47_beta.lang` to the variable `$import_files`, and set `$import_website` to `12` (that’s the identifier for the AppStores project).
+Edit your local copy of [app/scripts/lang_update](https://github.com/mozilla-l10n/langchecker/blob/master/app/scripts/lang_update#L105), add `whatsnew/whatsnew_android_47_beta.lang` to the variable `$import_files`, and set `$import_website` to `12` (that’s the identifier for the AppStores project).
 ```PHP
 $import_files = ['whatsnew/whatsnew_android_47_beta.lang'];
 $import_website = 12;
 ```
+This will make the next run of `lang_update` importing existing strings from `whatsnew/whatsnew_android_47_beta.lang`.
 
 **Important**: make sure to not commit this last change to langchecker. You can either ignore it and it will be removed the next time you run `gitup`, or reset the repository with `git reset --hard`.
 
