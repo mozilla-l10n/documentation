@@ -9,10 +9,8 @@ Each project is internally called website, and it’s identified by a numeric in
 | ID | Codename | Description |
 | --- | --- | --- |
 | 0 | www.mozilla.org | Used to track all files for www.mozilla.org |
-| 1 | start.mozilla.org | Used to track the old Start Page. Currently inactive. |
 | 4 | about:healthreport | Used for about:healthreport. Rarely updated. |
 | 6 | engagement | Used for Engagement material, typically snippets. |
-| 7 | add-ons | Used to localize add-ons. Currently inactive. |
 | 12 | appstores | Used to localize material for AppStore (iOS) and Google Play (Android). |
 
 Let’s consider a simple website like about:healthreport. This is how its definition looks like in the main `$sites` variable.
