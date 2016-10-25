@@ -26,7 +26,7 @@ At this point you need to enable the **Mercurial Queues Extension** by editing t
 
 This is the main configuration file for Mercurial: if it doesn’t exist, create it; if you don’t have an `[extensions]` section create one and add a line `mq =` to enable the *Mercurial Queues Extension*. Other useful extensions are `color` (colorize output, for example diffs) and `purge` (to remove untracked files from the repository). This is how a basic configuration file would look like:
 
-```
+```INI
 [ui]
 username = YOUR NAME <YOUR EMAIL>
 ignore.other = ~/.hgignore
@@ -58,4 +58,4 @@ $ hg clone http://hg.mozilla.org/releases/mozilla-aurora/
 This operation will take several minutes depending on your Internet connection’s speed. At the end, you will have a `~/mozilla/mercurial/mozilla-aurora` folder.
 
 ## Text editor
-The suggestion is to use [Atom](https://atom.io/) with the optional [Sort Lines package](https://atom.io/packages/sort-lines) installed. To open the file in Atom, run this command from the terminal.
+The suggestion is to use [Atom](https://atom.io/) with the optional [Sort Lines package](https://atom.io/packages/sort-lines) installed.
