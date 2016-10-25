@@ -43,6 +43,7 @@ $ git cherry-pick 31c3920
  1 file changed, 1 insertion(+)
 $ git push
 ```
+If you’re using the virtual machine available to l10n-driver (VM-l10n), you can replace the first two commands with `prodst`.
 
 ## Guidelines
 There are some principles to keep in mind when updating the production repository:
