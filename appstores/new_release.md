@@ -16,6 +16,7 @@ Notes on the following instructions:
 If you’re using the l10n-drivers virtual machine:
 * You should be able to run `lang_update` and other commands directly without the full path. If you’re not, you should use the full path to `langchecker/app/scripts` for your system.
 * There are clones of **langchecker** and **stores_l10n** in `~/mozilla/git/`, and a clone of the l10n repository in `~/mozilla/repositories/appstores`.
+* Always run "gitup" before doing anything
 
 If you’re not using the l10n-drivers VM, you should adapt paths to your system.
 
@@ -247,5 +248,3 @@ Now you’re ready to open pull requests for each of the three involved reposito
 * Langchecker: https://github.com/mozilla-l10n/langchecker/pull/501
 * stores_l10n: https://github.com/mozilla-l10n/stores_l10n/pull/63
 * appstores: https://github.com/mozilla-l10n/appstores/pull/70
-
-If you're using the l10n-drivers VM, both **langchecker** and **stores_l10n** are forks, so you'll find them in your user account, e.g. `https://github.com/flodolo/langchecker/`. **appstores**, on the other hand, is a direct clone of the mozilla-l10n repository.
