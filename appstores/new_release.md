@@ -57,7 +57,7 @@ $ atom en-US/whatsnew/whatsnew_android_47.lang
 ```
 
 ## Track the files in dashboards updating Langchecker
-You then need to start tracking these files in Langchecker. The process is described in detail in [../webdashboards/add_new_file.md](this document).
+You then need to start tracking these files in Langchecker. The process is described in detail in [this document](../webdashboards/add_new_file.md).
 
 Again, you need to create a branch in the langchecker repository.
 ```
