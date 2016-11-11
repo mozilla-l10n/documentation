@@ -247,3 +247,5 @@ Now you’re ready to open pull requests for each of the three involved reposito
 * Langchecker: https://github.com/mozilla-l10n/langchecker/pull/501
 * stores_l10n: https://github.com/mozilla-l10n/stores_l10n/pull/63
 * appstores: https://github.com/mozilla-l10n/appstores/pull/70
+
+If you're using the l10n-drivers VM, both **langchecker** and **stores_l10n** are forks, so you'll find them in your user account, e.g. `https://github.com/flodolo/langchecker/`. **appstores**, on the other hand, is a direct clone of the mozilla-l10n repository.
