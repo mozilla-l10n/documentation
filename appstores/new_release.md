@@ -16,6 +16,7 @@ Notes on the following instructions:
 If you’re using the l10n-drivers virtual machine:
 * You should be able to run `lang_update` and other commands directly without the full path. If you’re not, you should use the full path to `langchecker/app/scripts` for your system.
 * There are clones of **langchecker** and **stores_l10n** in `~/mozilla/git/`, and a clone of the l10n repository in `~/mozilla/repositories/appstores`.
+* Remember to run `gitup` before you do anything. If you run the command in the middle of the work, remember to go back to the branch (it will checkout `master` for all repositories).
 
 If you’re not using the l10n-drivers VM, you should adapt paths to your system.
 
@@ -55,6 +56,8 @@ Now create `en-US/whatsnew/whatsnew_android_47.lang`, copying the existing beta 
 $ cp en-US/whatsnew/whatsnew_android_47_beta.lang en-US/whatsnew/whatsnew_android_47.lang
 $ atom en-US/whatsnew/whatsnew_android_47.lang
 ```
+
+These files will be committed later to the repository (we need to import existing strings first).
 
 ## Track the files in dashboards updating Langchecker
 You then need to start tracking these files in Langchecker. The process is described in detail in [this document](../webdashboards/add_new_file.md).
@@ -156,6 +159,7 @@ $ git commit -m "Track AppStores files for 47 and 48 beta"
 $ git push origin beta48
 ```
 
+## Commit .lang files to the appstores repository
 At this point you’re ready to copy the new files to all locales, but you also want to import the existing strings from `whatsnew/whatsnew_android_47_beta.lang`.
 
 Edit your local copy of [app/scripts/lang_update](https://github.com/mozilla-l10n/langchecker/blob/master/app/scripts/lang_update#L105), add `whatsnew/whatsnew_android_47_beta.lang` to the variable `$import_files`, and set `$import_website` to `12` (that’s the identifier for the AppStores project).
@@ -175,6 +179,7 @@ $ lang_update all 12 all
 Check your local installation of langchecker for errors by visiting http://localhost/langchecker/?action=errors
 If there are no errors, check the status of this repository with `git status`, and the content of the new files for at least one locale, to confirm that strings were imported correctly.
 ```
+$ cd ~/mozilla/repositories/appstores/
 $ git add .
 $ git commit -a -m "Add new Google Play files for Firefox 47 and 48 Beta"
 $ git push origin beta48
@@ -247,5 +252,3 @@ Now you’re ready to open pull requests for each of the three involved reposito
 * Langchecker: https://github.com/mozilla-l10n/langchecker/pull/501
 * stores_l10n: https://github.com/mozilla-l10n/stores_l10n/pull/63
 * appstores: https://github.com/mozilla-l10n/appstores/pull/70
-
-If you're using the l10n-drivers VM, both **langchecker** and **stores_l10n** are forks, so you'll find them in your user account, e.g. `https://github.com/flodolo/langchecker/`. **appstores**, on the other hand, is a direct clone of the mozilla-l10n repository.
