@@ -16,6 +16,7 @@ Notes on the following instructions:
 If you’re using the l10n-drivers virtual machine:
 * You should be able to run `lang_update` and other commands directly without the full path. If you’re not, you should use the full path to `langchecker/app/scripts` for your system.
 * There are clones of **langchecker** and **stores_l10n** in `~/mozilla/git/`, and a clone of the l10n repository in `~/mozilla/repositories/appstores`.
+* Remember to run "gitup" before you do anything
 
 If you’re not using the l10n-drivers VM, you should adapt paths to your system.
 
@@ -55,6 +56,7 @@ Now create `en-US/whatsnew/whatsnew_android_47.lang`, copying the existing beta 
 $ cp en-US/whatsnew/whatsnew_android_47_beta.lang en-US/whatsnew/whatsnew_android_47.lang
 $ atom en-US/whatsnew/whatsnew_android_47.lang
 ```
+Note: you will commit these files later.
 
 ## Track the files in dashboards updating Langchecker
 You then need to start tracking these files in Langchecker. The process is described in detail in [this document](../webdashboards/add_new_file.md).
@@ -180,6 +182,16 @@ $ git commit -a -m "Add new Google Play files for Firefox 47 and 48 Beta"
 $ git push origin beta48
 ```
 Note that you need to explicitly add the files with `git add`, since most of them are not tracked yet.
+
+## Commit .lang files to the repository
+Now you it's time to commit your .lang files (that you worked on in the first section of this doc). 
+
+```
+$ cd ~/mozilla/repositories/appstores/
+$ git add .
+$ git commit -a -m "Add What's New .lang files for Firefox 47 and 48 Beta"
+$ git push origin beta48
+```
 
 ## Add strings to templates in stores_l10n
 Now you need to use the new files and strings in stores_l10n. Again, you’re going to work on a branch.
