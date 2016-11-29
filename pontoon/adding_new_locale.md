@@ -43,3 +43,5 @@ For Amharic you will need to set the field as `1,5`, separating the available fo
 Irish (ga-IE), for example, has all of them except for 0, so it will be `1,2,3,4,5`.
 
 At this point click **SAVE** in the bottom right corner to save the new locale, and check if the locale's page is available, in this case at https://pontoon.mozilla.org/am/
+
+You should also add the Pontoon Intro project to this locale, through the [standard admin interface](https://pontoon.mozilla.org/admin/projects/pontoon-intro/).
