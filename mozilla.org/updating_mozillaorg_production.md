@@ -22,7 +22,7 @@ Sometimes moving files manually between the two repositories in not viable, for 
 The first step, to do **only the first time**, is to set up the trunk repository as a *remote* from the prod repository.
 ```
 $ cd bedrock-l10n
-$ git add remote trunk https://github.com/mozilla-l10n/www.mozilla.org
+$ git remote add trunk https://github.com/mozilla-l10n/www.mozilla.org
 ```
 
 When you commit a change to the trunk repository you will get a SHA for the changes
