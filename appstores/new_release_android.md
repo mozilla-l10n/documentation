@@ -1,4 +1,4 @@
-# Manage a New Release
+# Firefox for Android - Manage a New Release
 When creating a new release, normally the *What’s new* section needs to be moved from Beta to Release, and there are new strings to expose for the Beta channel.
 
 In this example:
@@ -23,7 +23,7 @@ If you’re not using the l10n-drivers VM, you should adapt paths to your system
 ## Create the new .lang files for Beta and Release
 For all changes you need to create branches and then open pull requests.
 
-In this case you’re creating a branch **beta48** in the `appstores` repositories, and editing in Atom the reference en-US file.
+In this case you’re creating a branch **beta48** in the `appstores` repository, and editing in Atom the reference en-US file.
 
 ```
 $ cd ~/mozilla/repositories/appstores/
@@ -32,7 +32,7 @@ $ git checkout beta48
 $ atom en-US/whatsnew/whatsnew_android_48_beta.lang
 ```
 
-This is the content of the new file (strings are communicated by releng).
+This is the content of the new file (strings are communicated by mobile marketing).
 ```
 ## NOTE: Those strings are displayed on Google Play in the What’s new section for Firefox 48 beta release.
 ## NOTE: See https://l10n.mozilla-community.org/stores_l10n/locale/fr/google/beta/
@@ -57,7 +57,7 @@ $ cp en-US/whatsnew/whatsnew_android_47_beta.lang en-US/whatsnew/whatsnew_androi
 $ atom en-US/whatsnew/whatsnew_android_47.lang
 ```
 
-These files will be committed later to the repository (we need to import existing strings first).
+These files will be committed later to the repository, since they’re still not tracked in Langchecker and you will also need to import existing strings.
 
 ## Track the files in dashboards updating Langchecker
 You then need to start tracking these files in Langchecker. The process is described in detail in [this document](../webdashboards/add_new_file.md).
@@ -177,6 +177,7 @@ $ lang_update all 12 all
 ```
 
 Check your local installation of langchecker for errors by visiting http://localhost/langchecker/?action=errors
+
 If there are no errors, check the status of this repository with `git status`, and the content of the new files for at least one locale, to confirm that strings were imported correctly.
 ```
 $ cd ~/mozilla/repositories/appstores/
