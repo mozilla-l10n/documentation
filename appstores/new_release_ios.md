@@ -166,14 +166,10 @@ The variable to update is `$template`. From:
 ```PHP
 public $templates = [
    ...
-   'apple' => [
-       // channel => path to template file
+   'fx_ios' => [
        'release' => [
-           'template' => 'apple/release/listing_sept_2015.php',
-           'langfile' => [
-               'apple_description_release.lang',
-               'apple_screenshots_v3.lang',
-          ],
+           'template' => 'fx_ios/release/listing_sept_2015.php',
+           'langfile' => 'apple_description_release.lang',
            'whatsnew' => 'whatsnew/whatsnew_ios_5_0.lang',
        ],
    ],
@@ -184,20 +180,16 @@ To:
 ```PHP
 public $templates = [
    ...
-   'apple' => [
-       // channel => path to template file
+   'fx_ios' => [
        'release' => [
-           'template' => 'apple/release/listing_sept_2015.php',
-           'langfile' => [
-               'apple_description_release.lang',
-               'apple_screenshots_v3.lang',
-          ],
+           'template' => 'fx_ios/release/listing_sept_2015.php',
+           'langfile' => 'apple_description_release.lang',
            'whatsnew' => 'whatsnew/whatsnew_ios_6_0.lang',
        ],
    ],
 ```
 
-Then you need to update `app/templates/apple/release/listing_sept_2015.php`.
+Then you need to update `app/templates/fx_ios/release/listing_sept_2015.php`.
 Search for the `$whatsnew` variable, and replace the old strings between straight quotes, removing or adding new lines as necessary.
 
 ```

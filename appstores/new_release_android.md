@@ -199,21 +199,16 @@ $ atom app/classes/Stores/Project.php
 The variable to update is `$template`. From:
 ```PHP
 public $templates = [
-    'google' => [
-        // channel => path to template file
+    'fx_android' => [
         'release' => [
-            'template' => 'google/release/listing_apr_2016.php',
+            'template' => 'fx_android/release/listing_apr_2016.php',
             'langfile' => 'android_release.lang',
             'whatsnew' => 'whatsnew/whatsnew_android_46.lang',
             ],
         'beta' => [
-            'template' => 'google/beta/listing_may_2015.php',
+            'template' => 'fx_android/beta/listing_may_2015.php',
             'langfile' => 'description_beta_page.lang',
             'whatsnew' => 'whatsnew/whatsnew_android_47_beta.lang',
-            ],
-        'next' => [
-            'template' => 'google/next/listing_apr_2016.php',
-            'langfile' => 'android_release.lang',
             ],
     ],
 ```
@@ -221,26 +216,21 @@ public $templates = [
 To:
 ```PHP
 public $templates = [
-    'google' => [
-        // channel => path to template file
+    'fx_android' => [
         'release' => [
-            'template' => 'google/release/listing_apr_2016.php',
+            'template' => 'fx_android/release/listing_apr_2016.php',
             'langfile' => 'android_release.lang',
             'whatsnew' => 'whatsnew/whatsnew_android_47.lang',
             ],
         'beta' => [
-            'template' => 'google/beta/listing_may_2015.php',
+            'template' => 'fx_android/beta/listing_may_2015.php',
             'langfile' => 'description_beta_page.lang',
             'whatsnew' => 'whatsnew/whatsnew_android_48_beta.lang',
-            ],
-        'next' => [
-            'template' => 'google/next/listing_apr_2016.php',
-            'langfile' => 'android_release.lang',
             ],
     ],
 ```
 
-Then you need to update `app/templates/google/release/listing_apr_2016.php` with the strings for Release, and `app/templates/google/beta/listing_may_2015.php` with the strings for Beta.
+Then you need to update `app/templates/fx_android/release/listing_apr_2016.php` with the strings for Release, and `app/templates/fx_android/beta/listing_may_2015.php` with the strings for Beta.
 
 At this point open the local installation of stores_l10n available at http://localhost/stores_l10n/ and check both Release and Beta channel. If everything looks good, you can commit and push.
 
