@@ -2,7 +2,7 @@
 When creating a new release, normally there’s a new *What’s new* section for the upcoming version.
 
 Assuming the new version is 6.0, the actions to perform are:
-* Create a new file `whatsnew/whatsnew_ios_6_0.lang`.
+* Create a new file `fx_ios/whatsnew/ios_6_0.lang`.
 * Track the file in both Langchecker and Stores apps.
 
 Notes on the following instructions:
@@ -24,7 +24,7 @@ In this case you’re creating a branch **ios6_0** in the `appstores` repository
 $ cd ~/mozilla/repositories/appstores/
 $ git branch ios6_0
 $ git checkout ios6_0
-$ atom en-US/whatsnew/whatsnew_ios_6_0.lang
+$ atom en-US/fx_ios/whatsnew/ios_6_0.lang
 ```
 
 This is the content of the new file (strings are communicated by releng).
@@ -59,8 +59,8 @@ You need to add the new file to `$appstores_lang`. In this case changing from:
 ```PHP
 $appstores_lang = [
     ...
-    'whatsnew/whatsnew_ios_4_0.lang',
-    'whatsnew/whatsnew_ios_5_0.lang',
+    'fx_ios/whatsnew/ios_4_0.lang',
+    'fx_ios/whatsnew/ios_5_0.lang',
 ];
 ```
 
@@ -68,9 +68,9 @@ To:
 ```PHP
 $appstores_lang = [
     ...
-    'whatsnew/whatsnew_ios_4_0.lang',
-    'whatsnew/whatsnew_ios_5_0.lang',
-    'whatsnew/whatsnew_ios_6_0.lang',
+    'fx_ios/whatsnew/ios_4_0.lang',
+    'fx_ios/whatsnew/ios_5_0.lang',
+    'fx_ios/whatsnew/ios_6_0.lang',
 ];
 ```
 
@@ -78,8 +78,8 @@ Then update `$lang_flags['appstores']` marking the the old file as obsolete. Fro
 ```PHP
 $lang_flags['appstores'] = [
     ...
-    'whatsnew/whatsnew_ios_2_1.lang'         => [ 'obsolete' => ['all'] ],
-    'whatsnew/whatsnew_ios_4_0.lang'         => [ 'obsolete' => ['all'] ],
+    'fx_ios/whatsnew/ios_2_1.lang'         => [ 'obsolete' => ['all'] ],
+    'fx_ios/whatsnew/ios_4_0.lang'         => [ 'obsolete' => ['all'] ],
 ];
 ```
 
@@ -87,9 +87,9 @@ To:
 ```PHP
 $lang_flags['appstores'] = [
     ...
-    'whatsnew/whatsnew_ios_2_1.lang'         => [ 'obsolete' => ['all'] ],
-    'whatsnew/whatsnew_ios_4_0.lang'         => [ 'obsolete' => ['all'] ],
-    'whatsnew/whatsnew_ios_5_0.lang'         => [ 'obsolete' => ['all'] ],
+    'fx_ios/whatsnew/ios_2_1.lang'         => [ 'obsolete' => ['all'] ],
+    'fx_ios/whatsnew/ios_4_0.lang'         => [ 'obsolete' => ['all'] ],
+    'fx_ios/whatsnew/ios_5_0.lang'         => [ 'obsolete' => ['all'] ],
 ];
 ```
 
@@ -97,7 +97,7 @@ Add a deadline for the new file, removing the old one. From:
 ```PHP
 $deadline = [
     ...
-    'whatsnew/whatsnew_ios_5_0.lang'        => '2016-07-27', // appstores project
+    'fx_ios/whatsnew/ios_5_0.lang'        => '2016-07-27', // appstores project
 ];
 ```
 
@@ -105,7 +105,7 @@ To:
 ```PHP
 $deadline = [
     ...
-    'whatsnew/whatsnew_ios_6_0.lang'        => '2016-12-20', // appstores project
+    'fx_ios/whatsnew/ios_6_0.lang'        => '2016-12-20', // appstores project
 ];
 ```
 
@@ -113,8 +113,8 @@ Finally add the supported locales for this new file. From:
 ```PHP
 'appstores' => [
     ...
-    'whatsnew/whatsnew_ios_4_0.lang'         => $apple_store_target,
-    'whatsnew/whatsnew_ios_5_0.lang'         => $apple_store_target,
+    'fx_ios/whatsnew/ios_4_0.lang'         => $apple_store_target,
+    'fx_ios/whatsnew/ios_5_0.lang'         => $apple_store_target,
 ],
 ```
 
@@ -122,9 +122,9 @@ To:
 ```PHP
 'appstores' => [
     ...
-    'whatsnew/whatsnew_ios_4_0.lang'         => $apple_store_target,
-    'whatsnew/whatsnew_ios_5_0.lang'         => $apple_store_target,
-    'whatsnew/whatsnew_ios_6_0.lang'         => $apple_store_target,
+    'fx_ios/whatsnew/ios_4_0.lang'         => $apple_store_target,
+    'fx_ios/whatsnew/ios_5_0.lang'         => $apple_store_target,
+    'fx_ios/whatsnew/ios_6_0.lang'         => $apple_store_target,
 ],
 ```
 
@@ -169,8 +169,8 @@ public $templates = [
    'fx_ios' => [
        'release' => [
            'template' => 'fx_ios/release/listing_sept_2015.php',
-           'langfile' => 'apple_description_release.lang',
-           'whatsnew' => 'whatsnew/whatsnew_ios_5_0.lang',
+           'langfile' => 'fx_ios/description_release.lang',
+           'whatsnew' => 'fx_ios/whatsnew/ios_5_0.lang',
        ],
    ],
 ```
@@ -183,8 +183,8 @@ public $templates = [
    'fx_ios' => [
        'release' => [
            'template' => 'fx_ios/release/listing_sept_2015.php',
-           'langfile' => 'apple_description_release.lang',
-           'whatsnew' => 'whatsnew/whatsnew_ios_6_0.lang',
+           'langfile' => 'fx_ios/description_release.lang',
+           'whatsnew' => 'fx_ios/whatsnew/ios_6_0.lang',
        ],
    ],
 ```

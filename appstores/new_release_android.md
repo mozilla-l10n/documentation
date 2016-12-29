@@ -2,12 +2,12 @@
 When creating a new release, normally the *What’s new* section needs to be moved from Beta to Release, and there are new strings to expose for the Beta channel.
 
 In this example:
-* *What’s new* strings for the current Release is stored in `whatsnew/whatsnew_android_46.lang`.
-* *What’s new* strings for the current Beta is stored in `whatsnew/whatsnew_android_47_beta.lang`.
+* *What’s new* strings for the current Release is stored in `fx_android/whatsnew/android_46.lang`.
+* *What’s new* strings for the current Beta is stored in `fx_android/whatsnew/android_47_beta.lang`.
 
 The actions to perform are:
-* Create a new file `whatsnew/whatsnew_android_48_beta.lang` for the Beta channel.
-* Copy strings from `whatsnew/whatsnew_android_47_beta.lang` to `whatsnew/whatsnew_android_47.lang`.
+* Create a new file `fx_android/whatsnew/android_48_beta.lang` for the Beta channel.
+* Copy strings from `fx_android/whatsnew/android_47_beta.lang` to `fx_android/whatsnew/android_47.lang`.
 * Track the files in both Langchecker and Stores apps.
 
 Notes on the following instructions:
@@ -29,7 +29,7 @@ In this case you’re creating a branch **beta48** in the `appstores` repository
 $ cd ~/mozilla/repositories/appstores/
 $ git branch beta48
 $ git checkout beta48
-$ atom en-US/whatsnew/whatsnew_android_48_beta.lang
+$ atom en-US/fx_android/whatsnew/android_48_beta.lang
 ```
 
 This is the content of the new file (strings are communicated by mobile marketing).
@@ -50,11 +50,11 @@ Suggest “Add to home screen” for frequently used websites
 Migrate reading list to bookmarks
 ```
 
-Now create `en-US/whatsnew/whatsnew_android_47.lang`, copying the existing beta file and adapting the initial notes.
+Now create `en-US/fx_android/whatsnew/android_47.lang`, copying the existing beta file and adapting the initial notes.
 
 ```
-$ cp en-US/whatsnew/whatsnew_android_47_beta.lang en-US/whatsnew/whatsnew_android_47.lang
-$ atom en-US/whatsnew/whatsnew_android_47.lang
+$ cp en-US/fx_android/whatsnew/android_47_beta.lang en-US/fx_android/whatsnew/android_47.lang
+$ atom en-US/fx_android/whatsnew/android_47.lang
 ```
 
 These files will be committed later to the repository, since they’re still not tracked in Langchecker and you will also need to import existing strings.
@@ -74,49 +74,47 @@ You need to add the new file to `$appstores_lang`. In this case changing from:
 ```PHP
 $appstores_lang = [
     ...
-    'whatsnew/whatsnew_android_46.lang',
-    'whatsnew/whatsnew_android_47_beta.lang',
+    'fx_android/whatsnew/android_46.lang',
+    'fx_android/whatsnew/android_47_beta.lang',
 ```
 
 To:
 ```PHP
 $appstores_lang = [
     ...
-    'whatsnew/whatsnew_android_46.lang',
-    'whatsnew/whatsnew_android_47_beta.lang',
-    'whatsnew/whatsnew_android_47.lang',
-    'whatsnew/whatsnew_android_48_beta.lang',
+    'fx_android/whatsnew/android_46.lang',
+    'fx_android/whatsnew/android_47_beta.lang',
+    'fx_android/whatsnew/android_47.lang',
+    'fx_android/whatsnew/android_48_beta.lang',
 ```
 
 Then update `$lang_flags['appstores']` marking the the old beta file as obsolete. From:
 ```PHP
 $lang_flags['appstores'] = [
     ...
-    'whatsnew/whatsnew_android_44.lang'      => [ 'obsolete' => ['all'] ],
-    'whatsnew/whatsnew_android_45.lang'      => [ 'obsolete' => ['all'] ],
-    'whatsnew/whatsnew_android_46_beta.lang' => [ 'obsolete' => ['all'] ],
-    'whatsnew/whatsnew_ios_2_1.lang'         => [ 'obsolete' => ['all'] ],
-];
+    'fx_android/whatsnew/android_44.lang'      => [ 'obsolete' => ['all'] ],
+    'fx_android/whatsnew/android_45.lang'      => [ 'obsolete' => ['all'] ],
+    'fx_android/whatsnew/android_46_beta.lang' => [ 'obsolete' => ['all'] ],
+    ...
 ```
 
 To:
 ```PHP
 $lang_flags['appstores'] = [
     ...
-    'whatsnew/whatsnew_android_44.lang'      => [ 'obsolete' => ['all'] ],
-    'whatsnew/whatsnew_android_45.lang'      => [ 'obsolete' => ['all'] ],
-    'whatsnew/whatsnew_android_46_beta.lang' => [ 'obsolete' => ['all'] ],
-    'whatsnew/whatsnew_android_47_beta.lang' => [ 'obsolete' => ['all'] ],
-    'whatsnew/whatsnew_ios_2_1.lang'         => [ 'obsolete' => ['all'] ],
-];
+    'fx_android/whatsnew/android_44.lang'      => [ 'obsolete' => ['all'] ],
+    'fx_android/whatsnew/android_45.lang'      => [ 'obsolete' => ['all'] ],
+    'fx_android/whatsnew/android_46_beta.lang' => [ 'obsolete' => ['all'] ],
+    'fx_android/whatsnew/android_47_beta.lang' => [ 'obsolete' => ['all'] ],
+    ...
 ```
 
 Add a deadline for the new file, removing the old one. From:
 ```PHP
 $deadline = [
     ...
-    'whatsnew/whatsnew_android_46.lang'      => '2016-04-26', // appstores project
-    'whatsnew/whatsnew_ios_4_0.lang'         => '2016-05-10', // appstores project
+    'fx_android/whatsnew/android_46.lang'      => '2016-04-26', // appstores project
+    ...
 ];
 ```
 
@@ -124,8 +122,8 @@ To:
 ```PHP
 $deadline = [
     ...
-    'whatsnew/whatsnew_android_47.lang'      => '2016-06-07', // appstores project
-    'whatsnew/whatsnew_ios_4_0.lang'         => '2016-05-10', // appstores project
+    'fx_android/whatsnew/android_47.lang'      => '2016-06-07', // appstores project
+    ...
 ];
 ```
 
@@ -133,22 +131,22 @@ Finally add the supported locales for these new files. From:
 ```PHP
 'appstores' => [
     ...
-    'whatsnew/whatsnew_android_45.lang'      => array_merge($google_play_target, ['ar']),
-    'whatsnew/whatsnew_android_46.lang'      => array_merge($google_play_target, ['ar']),
-    'whatsnew/whatsnew_android_46_beta.lang' => $google_play_target,
-    'whatsnew/whatsnew_android_47_beta.lang' => $google_play_target,
+    'fx_android/whatsnew/android_45.lang'      => array_merge($google_play_target, ['ar']),
+    'fx_android/whatsnew/android_46.lang'      => array_merge($google_play_target, ['ar']),
+    'fx_android/whatsnew/android_46_beta.lang' => $google_play_target,
+    'fx_android/whatsnew/android_47_beta.lang' => $google_play_target,
 ```
 
 To:
 ```PHP
 'appstores' => [
     ...
-    'whatsnew/whatsnew_android_45.lang'      => array_merge($google_play_target, ['ar']),
-    'whatsnew/whatsnew_android_46.lang'      => array_merge($google_play_target, ['ar']),
-    'whatsnew/whatsnew_android_47.lang'      => array_merge($google_play_target, ['ar']),
-    'whatsnew/whatsnew_android_46_beta.lang' => $google_play_target,
-    'whatsnew/whatsnew_android_47_beta.lang' => $google_play_target,
-    'whatsnew/whatsnew_android_48_beta.lang' => $google_play_target,
+    'fx_android/whatsnew/android_45.lang'      => array_merge($google_play_target, ['ar']),
+    'fx_android/whatsnew/android_46.lang'      => array_merge($google_play_target, ['ar']),
+    'fx_android/whatsnew/android_47.lang'      => array_merge($google_play_target, ['ar']),
+    'fx_android/whatsnew/android_46_beta.lang' => $google_play_target,
+    'fx_android/whatsnew/android_47_beta.lang' => $google_play_target,
+    'fx_android/whatsnew/android_48_beta.lang' => $google_play_target,
 ```
 
 Now you can commit your changes to Langchecker. Always check with `git status` to confirm that you’re only including changes to `sources.inc.php`.
@@ -160,14 +158,14 @@ $ git push origin beta48
 ```
 
 ## Commit .lang files to the appstores repository
-At this point you’re ready to copy the new files to all locales, but you also want to import the existing strings from `whatsnew/whatsnew_android_47_beta.lang`.
+At this point you’re ready to copy the new files to all locales, but you also want to import the existing strings from `fx_android/whatsnew/android_47_beta.lang`.
 
-Edit your local copy of [app/scripts/lang_update](https://github.com/mozilla-l10n/langchecker/blob/master/app/scripts/lang_update#L105), add `whatsnew/whatsnew_android_47_beta.lang` to the variable `$import_files`, and set `$import_website` to `12` (that’s the identifier for the AppStores project).
+Edit your local copy of [app/scripts/lang_update](https://github.com/mozilla-l10n/langchecker/blob/master/app/scripts/lang_update#L105), add `fx_android/whatsnew/android_47_beta.lang` to the variable `$import_files`, and set `$import_website` to `12` (that’s the identifier for the AppStores project).
 ```PHP
-$import_files = ['whatsnew/whatsnew_android_47_beta.lang'];
+$import_files = ['fx_android/whatsnew/android_47_beta.lang'];
 $import_website = 12;
 ```
-This will make the next run of `lang_update` importing existing strings from `whatsnew/whatsnew_android_47_beta.lang`.
+This will make the next run of `lang_update` importing existing strings from `fx_android/whatsnew/android_47_beta.lang`.
 
 **Important**: make sure to not commit this last change to langchecker. You can either ignore it and it will be removed the next time you run `gitup`, or reset the repository with `git reset --hard`.
 
@@ -202,13 +200,13 @@ public $templates = [
     'fx_android' => [
         'release' => [
             'template' => 'fx_android/release/listing_apr_2016.php',
-            'langfile' => 'android_release.lang',
-            'whatsnew' => 'whatsnew/whatsnew_android_46.lang',
+            'langfile' => 'fx_android/description_release.lang',
+            'whatsnew' => 'fx_android/whatsnew/android_46.lang',
             ],
         'beta' => [
             'template' => 'fx_android/beta/listing_may_2015.php',
-            'langfile' => 'description_beta_page.lang',
-            'whatsnew' => 'whatsnew/whatsnew_android_47_beta.lang',
+            'langfile' => 'fx_android/description_beta.lang',
+            'whatsnew' => 'fx_android/whatsnew/android_47_beta.lang',
             ],
     ],
 ```
@@ -219,13 +217,13 @@ public $templates = [
     'fx_android' => [
         'release' => [
             'template' => 'fx_android/release/listing_apr_2016.php',
-            'langfile' => 'android_release.lang',
-            'whatsnew' => 'whatsnew/whatsnew_android_47.lang',
+            'langfile' => 'fx_android/description_release.lang',
+            'whatsnew' => 'fx_android/whatsnew/android_47.lang',
             ],
         'beta' => [
             'template' => 'fx_android/beta/listing_may_2015.php',
-            'langfile' => 'description_beta_page.lang',
-            'whatsnew' => 'whatsnew/whatsnew_android_48_beta.lang',
+            'langfile' => 'fx_android/description_beta.lang',
+            'whatsnew' => 'fx_android/whatsnew/android_48_beta.lang',
             ],
     ],
 ```
