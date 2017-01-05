@@ -3,8 +3,8 @@
 [Webdashboard] is the main dashboard used by localizers. It contains information about files with missing strings, deadlines, and more.
 
 Webdashboard in itself doesn’t generate any data, it just displays information provided by two back-end tools in JSON format:
-* [Langchecker] is used to analyze all projects using .lang files as data sources. It also stores all configuration information: which projects we support, which files are in each project, which locales are supported for each project or file, metadata like critical status or deadlines.
-* [Webstatus] is used to analyze external projects, currently supporting the following formats: .po (Gettext), .properties and .xliff
+* [Langchecker](langchecker.md) is used to analyze all projects using .lang files as data sources. It also stores all configuration information: which projects we support, which files are in each project, which locales are supported for each project or file, metadata like critical status or deadlines.
+* [Webstatus] is used to analyze external projects, currently supporting the following formats: `.po` (Gettext), `.properties`, `.xliff`, and `.ftl` (l20n). It also provides an [API](https://github.com/mozilla-l10n/webstatus/#available-urls) to get list of locales (supported, complete), in JSON and TXT format, for a specific product.
 
 ## Installation
 See the Useful Links at the end of the document for links to the relevant GitHub code repositories. Follow the instructions provided in each README for system requirements and instructions.
@@ -46,6 +46,5 @@ Always work on forks of the main repository and open pull requests if you’re g
 * Production instance: https://l10n.mozilla-community.org/webstatus/
 * Code: https://github.com/flodolo/webstatus
 
-[Langchecker]: https://l10n.mozilla-community.org/langchecker/
 [Webdashboard]: https://l10n.mozilla-community.org/webdashboard/
 [Webstatus]: https://l10n.mozilla-community.org/webstatus/
