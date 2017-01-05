@@ -24,7 +24,7 @@ A couple of details to note in this `hg clone` command:
 
 At this point there’s a clone stored in `~/mozilla/mercurial/l10n/gn/mozilla-aurora` (remember that you already moved to `~/mozilla/mercurial/l10n/gn` before running `hg clone`).
 
-If you already had a clone on your computer, always make sure to update it before doing anything:
+If you already have a clone on your computer, always make sure to update it before doing anything:
 ```
 $ cd ~/mozilla/mercurial/l10n/gn/mozilla-aurora
 $ hg pull -r default -u
