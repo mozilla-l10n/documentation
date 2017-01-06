@@ -13,13 +13,13 @@ At the top of the page there’s an **annotate** link that will display the chan
 
 At this point I only need to search in the page for the string, hover the link on the leftmost column, and select the [changeset link](https://hg.mozilla.org/releases/mozilla-aurora/rev/89a168219747) in the popup. The commit message will have a link to the [bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1292639), and I can then check dependencies and comments.
 
-![Changeset info](img/to_changeset.png)
+![Changeset info](../img/to_changeset.png)
 
 ## Looking at older revisions
 This method doesn’t always work: sometimes a changeset only moves strings around, so you would need to repeat the process for an older revision of the file.
 
 At the top of the changeset, there’s a list of the modified files. Near each file there’s a **revisions** link.
 
-![Changeset info](img/revisions.png)
+![Changeset info](../img/revisions.png)
 
 At this point you can pick an older revision of the file by opening the **diff** link for the changeset you’re interested in, and repeat the process by selecting **annotate** near the file you’re analyzing.
