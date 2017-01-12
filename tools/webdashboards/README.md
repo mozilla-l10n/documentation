@@ -22,7 +22,7 @@ Stores_l10n is a web application used to manage translations for Google Play Sto
 
 This diagram describes the relation between each of the components, including relation with external entities.
 
-<a href="../img/webdashboards/webdashboards.png"><img src="../img/webdashboards/webdashboards.png" alt="Webdashboards diagram" style="width: 600px; margin: 0 auto; display: block;"/></a>
+<a href="../misc/img/webdashboards/webdashboards.png"><img src="../misc/img/webdashboards/webdashboards.png" alt="Webdashboards diagram" style="width: 600px; margin: 0 auto; display: block;"/></a>
 
 ## Installation
 See the *[Useful Links](#useful-links)* at the end of the document for links to the relevant GitHub code repositories. Follow the instructions provided in each README for system requirements and instructions.

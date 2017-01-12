@@ -9,7 +9,7 @@ You need to file a bug in Firefox for Android::General requesting the new locale
 You also want to file a bug to use as tracker ([example for gn](https://bugzilla.mozilla.org/show_bug.cgi?id=1271970)), adding an alias like `fm-l10n-gn` for `gn` and blocking `fm-l10n-tracker`.
 
 ## Creating a patch for all-locales
-First of all make sure that your environment is [correctly set up](setting_environment.md), and update your local mozilla-aurora clone:
+First of all make sure that your environment is [correctly set up](/config/setting_mercurial/environment.md), and update your local mozilla-aurora clone:
 ```
 $ cd ~/mozilla/mercurial
 $ hg pull -r default -u
