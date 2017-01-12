@@ -1,4 +1,4 @@
-# Set up the environment
+# Set up the environment for Mercurial
 
 **IMPORTANT:** This configuration has to be done only once on the computer. After that you will simply need to keep Mercurial up to date (a new version is released every month).
 

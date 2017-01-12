@@ -80,7 +80,7 @@ Unlike Wikipedia, never copy the file from en-US, since Yahoo is the default and
 region.properties is stored in `/mobile/chrome/region.properties` and it contains information about protocol handlers. You can use [this region.properties model](mobile_region.properties) as a base, making sure to remove non existing searchplugins from `search.order`.
 
 ## Creating a patch for review
-Assuming you followed the instructions to [setup the environment](setting_environment.md), you’re ready to create the patch.
+Assuming you followed the instructions to [setup the environment](/config/setting_mercurial_environment.md), you’re ready to create the patch.
 
 Move into the repository folder and check its status:
 ```

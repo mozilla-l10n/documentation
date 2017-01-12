@@ -60,7 +60,7 @@ $ atom en-US/fx_android/whatsnew/android_47.lang
 These files will be committed later to the repository, since they’re still not tracked in Langchecker and you will also need to import existing strings.
 
 ## Track the files in dashboards updating Langchecker
-You then need to start tracking these files in Langchecker. The process is described in detail in [this document](../webdashboards/add_new_file.md).
+You then need to start tracking these files in Langchecker. The process is described in detail in [this document](/tools/webdashboards/add_new_file.md).
 
 Again, you need to create a branch in the langchecker repository.
 ```
