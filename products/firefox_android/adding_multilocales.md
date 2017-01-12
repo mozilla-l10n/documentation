@@ -16,7 +16,7 @@ Release Note Request (optional, but appreciated)
 ```
 
 ## Creating a patch for maemo-locales
-First of all make sure that your environment is [correctly set up](/config/setting_mercurial/environment.md), and update your local mozilla-aurora clone:
+First of all make sure that your environment is [correctly set up](/config/setting_mercurial_environment.md), and update your local mozilla-aurora clone:
 ```
 $ cd ~/mozilla/mercurial/mozilla-aurora
 $ hg pull -r default -u

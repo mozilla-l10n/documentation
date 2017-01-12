@@ -8,7 +8,7 @@ This task can be split into smaller tasks:
 ## Add the new strings to the reference file
 Edit the reference file and add new strings as needed.
 
-If you’re adding a string behind a tag, always remember to bind the new string to the tag and to add the tag itself to the beginning of the file. [Working with Bedrock](../mozilla_org/working_bedrock.md) has more details about it.
+If you’re adding a string behind a tag, always remember to bind the new string to the tag and to add the tag itself to the beginning of the file. [Working with Bedrock](/products/mozilla_org/working_bedrock.md) has more details about it.
 
 Always check the diff after completing, to make sure you’re not introducing unwanted changes. If you’re using the l10n-drivers virtual machine, you can use `trunkst` to move to the mozilla.org trunk folder and check the status (`git status`) and diff (`git diff`).
 

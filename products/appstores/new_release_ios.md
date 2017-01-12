@@ -45,7 +45,7 @@ App optimization improvements
 This file will be committed later to the repository, since it’s still not tracked in langchecker.
 
 ## Track the new file in dashboards updating Langchecker
-You then need to start tracking this file in Langchecker. The process is described in detail in [this document](../webdashboards/add_new_file.md).
+You then need to start tracking this file in Langchecker. The process is described in detail in [this document](/tools/webdashboards/add_new_file.md).
 
 Again, you need to create a branch in the langchecker repository.
 ```

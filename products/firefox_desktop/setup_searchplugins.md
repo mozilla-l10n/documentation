@@ -31,7 +31,7 @@ $ hg pull -r default -u
 ```
 
 ## Setting up files for mozilla-unified
-First of all make sure that your environment is [correctly set up](/config/setting_mercurial/environment.md), and update your local mozilla-unified clone to be in sync with central:
+First of all make sure that your environment is [correctly set up](/config/setting_mercurial_environment.md), and update your local mozilla-unified clone to be in sync with central:
 ```
 $ cd ~/mozilla/mercurial/mozilla-central
 $ hg pull -u
@@ -248,7 +248,7 @@ https://www.mercurial-scm.org/wiki/Bookmarks
 region.properties is stored in `/browser/chrome/browser-region` and it contains information about protocol handlers. You can use [this region.properties model](desktop_region.properties) as a base, making sure to remove non existing searchplugins from `search.order`.
 
 ## Creating a patch for review (locale repository)
-Assuming you followed the instructions to [setup the environment](/config/setting_mercurial/environment.md), you’re ready to create the patch.
+Assuming you followed the instructions to [setup the environment](/config/setting_mercurial_environment.md), you’re ready to create the patch.
 
 Move into the repository folder and check its status:
 ```
