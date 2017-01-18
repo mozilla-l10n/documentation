@@ -44,19 +44,15 @@ $ git push origin TESTBRANCH
 ```
 
 ## Adding the file to the repository
-At this point you need to run `lang_update` to actually add the file to the repository. Again, assuming that langchecker is installed in `~/mozilla/git/langchecker`, you would run
+At this point you need to run `lang_update` to actually add the file to the repository.
 ```
-~/mozilla/git/langchecker/app/scripts/lang_update all 0 zh-TW
+lang_update all 0 zh-TW
 ```
 This line updates **all** files, for website 0 (mozilla.org), for **zh-TW**.
 
 Move in the l10n repository, make sure to add the file and commit.
-
-If you’re using the l10n-drivers virtual machine, you should be able to run `lang_update` directly without the full path, and use `trunkst` to move to the mozilla.org trunk folder.
-
 ```
-$ cd www.mozilla.org
-$ git status
+$ trunkst
 On branch master
 Your branch is up-to-date with 'origin/master'.
 Untracked files:
