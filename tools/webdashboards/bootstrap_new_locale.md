@@ -6,7 +6,7 @@ The first thing you need to do is to add the new locale code to the `$mozilla` a
 If this new locale is going to localize only Fennec, you need to add it also to the `$fennec_locales` array. In this way desktop specific pages won’t be exposed for this language. If it’s only localizing mozilla.org, add it to the `$mozorg_locales` array.
 
 
-Example: let’s say we need to add the `ab-CD` locale. This is how the `$mozilla` array begins:
+Example: let’s say you need to add the `ab-CD` locale. This is how the `$mozilla` array begins:
 ```PHP
 $mozilla = [
     'ach', 'af', 'an', 'ar', 'as', 'ast', 'az', 'be', 'bg',
@@ -25,18 +25,16 @@ If this locale works on Pootle, you also need to add the locale code to the arra
 ## Add files to l10n repositories (mozilla.org, FHR)
 At this point you need to add the files to both `www.mozilla.org` and `about:healthreport` (FHR) by using the `lang_update` script. If the new locale is only working on mozilla.org, FHR (website with ID 4) won’t be needed.
 
-From your local langchecker root folder run:
+Run the following commands:
 ```
-./app/scripts/lang_update all 0 ab-CD
-./app/scripts/lang_update all 4 ab-CD
+lang_update all 0 ab-CD
+lang_update all 4 ab-CD
 ```
 The first line will add **all** missing files to mozilla.org (ID: 0) for the **ab-CD** locale (you could also run it with the **all** parameter, but it might introduce changes not relevant for this task), the second to FHR (ID: 4).
 
-Move to each l10n repository, check the status and commit (don’t forget to add the new folder). Let’s say `www.mozilla.org` is the folder where your clone is stored:
+Move to each l10n repository, check the status and commit (don’t forget to add the new folder). `trunkst` is available as a shortcut for mozilla.org, for `fhr-l10n` you will need to manually move to `~/mozilla/repositories/fhr-l10n` and check `git status`.
 ```
-$ cd www.mozilla.org
-
-$ git status
+$ trunkst
 On branch master
 Your branch is up-to-date with 'origin/master'.
 Untracked files:

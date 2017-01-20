@@ -10,15 +10,9 @@ The actions to perform are:
 * Copy strings from `fx_android/whatsnew/android_47_beta.lang` to `fx_android/whatsnew/android_47.lang`.
 * Track the files in both Langchecker and Stores apps.
 
-Notes on the following instructions:
-* `$` is not part of the command, it just indicates the terminal prompt.
+This document assumes that you have set up the system as explained in [this document](/config/setup_l10ndrivers_vm.md), so aliases like `lang_update` are available, repositories are already cloned in `~/mozilla/repositories`, Atom is available and includes the syntax highlighter for LANG files.
 
-If you’re using the l10n-drivers virtual machine:
-* You should be able to run `lang_update` and other commands directly without the full path. If you’re not, you should use the full path to `langchecker/app/scripts` for your system.
-* There are clones of **langchecker** and **stores_l10n** in `~/mozilla/git/`, and a clone of the l10n repository in `~/mozilla/repositories/appstores`.
-* Remember to run `gitup` before you do anything. If you run the command in the middle of the work, remember to go back to the branch (it will checkout `master` for all repositories).
-
-If you’re not using the l10n-drivers VM, you should adapt paths to your system.
+**IMPORTANT:** Remember to run `gitup` before you do anything. If you run the command in the middle of the work, don’t forget to go back to the branch (it will checkout `master` for all repositories).
 
 ## Create the new .lang files for Beta and Release
 For all changes you need to create branches and then open pull requests.
@@ -34,8 +28,8 @@ $ atom en-US/fx_android/whatsnew/android_48_beta.lang
 
 This is the content of the new file (strings are communicated by mobile marketing).
 ```
-## NOTE: Those strings are displayed on Google Play in the What’s new section for Firefox 48 beta release.
-## NOTE: See https://l10n.mozilla-community.org/stores_l10n/locale/fr/google/beta/
+## NOTE: These strings are displayed on Google Play in the What’s new section for Firefox 48 beta
+## NOTE: See https://l10n.mozilla-community.org/stores_l10n/locale/fx_android/beta/
 
 
 ;Content Notifications for infrequent websites
@@ -131,22 +125,22 @@ Finally add the supported locales for these new files. From:
 ```PHP
 'appstores' => [
     ...
-    'fx_android/whatsnew/android_45.lang'      => array_merge($google_play_target, ['ar']),
-    'fx_android/whatsnew/android_46.lang'      => array_merge($google_play_target, ['ar']),
-    'fx_android/whatsnew/android_46_beta.lang' => $google_play_target,
-    'fx_android/whatsnew/android_47_beta.lang' => $google_play_target,
+    'fx_android/whatsnew/android_45.lang'      => array_merge($fx_android_store, ['ar']),
+    'fx_android/whatsnew/android_46.lang'      => array_merge($fx_android_store, ['ar']),
+    'fx_android/whatsnew/android_46_beta.lang' => $fx_android_store,
+    'fx_android/whatsnew/android_47_beta.lang' => $fx_android_store,
 ```
 
 To:
 ```PHP
 'appstores' => [
     ...
-    'fx_android/whatsnew/android_45.lang'      => array_merge($google_play_target, ['ar']),
-    'fx_android/whatsnew/android_46.lang'      => array_merge($google_play_target, ['ar']),
-    'fx_android/whatsnew/android_47.lang'      => array_merge($google_play_target, ['ar']),
-    'fx_android/whatsnew/android_46_beta.lang' => $google_play_target,
-    'fx_android/whatsnew/android_47_beta.lang' => $google_play_target,
-    'fx_android/whatsnew/android_48_beta.lang' => $google_play_target,
+    'fx_android/whatsnew/android_45.lang'      => array_merge($fx_android_store, ['ar']),
+    'fx_android/whatsnew/android_46.lang'      => array_merge($fx_android_store, ['ar']),
+    'fx_android/whatsnew/android_47.lang'      => array_merge($fx_android_store, ['ar']),
+    'fx_android/whatsnew/android_46_beta.lang' => $fx_android_store,
+    'fx_android/whatsnew/android_47_beta.lang' => $fx_android_store,
+    'fx_android/whatsnew/android_48_beta.lang' => $fx_android_store,
 ```
 
 Now you can commit your changes to Langchecker. Always check with `git status` to confirm that you’re only including changes to `sources.inc.php`.
