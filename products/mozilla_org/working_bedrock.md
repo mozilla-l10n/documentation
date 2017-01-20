@@ -5,18 +5,23 @@ This document covers a few tasks and tips regarding Bedrock.
 ## Running Bedrock
 You can install Bedrock by following the instructions available in [this page](http://bedrock.readthedocs.io/en/latest/install.html).
 
-If you’re using the virtual machine available to l10n-drivers (VM-l10n), Bedrock is already installed in `~/mozilla/git/bedrock`.
+If you’re using the virtual machine described in [this document](/config/setup_l10ndrivers_vm.md), Bedrock is already installed in `~/mozilla/git/bedrock`.
 
-Move into the main folder, activate the Virtual environment, and run the server with [gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md).
+Move into the main folder, activate the Virtual environment, and run the server
 ```
 $ cd ~/mozilla/git/bedrock/
 $ source venv/bin/activate
-(venv) $ gulp
+$ ./manage.py runserver
+```
+
+In a different terminal window run
+```
+$ gulp
 ```
 
 At this point Bedrock will be available at http://localhost:8000
 
-If you’re not using the VM-l10n, you want to update both the code repository and the locale repository before running the server. In the VM-l10n the locale folder is a symbolic link to the mozilla.org trunk l10n repository.
+In the virtual machine the locale folder is a symbolic link to the mozilla.org trunk l10n repository.
 
 Don't forget to exit the virtual environment by running `deactivate` when you’re finished.
 
@@ -31,16 +36,16 @@ $ source venv/bin/activate
 
 If the last command returns any error, try reinstalling the requirements with
 ```
-$ pip install -r requirements/dev.txt
+$ pip install -r requirements/test.txt
 ```
 
-At this point a .lang file will be created inside `/locale/templates` with all the strings extracted. The name of the file depends on several factors: for example the template could include another template that specify a specific .lang file so, instead of having `locale/templates/mozorg/contribute/signup.lang`, we have `locale/templates/mozorg/contribute/index.lang`.
+At this point a .lang file will be created inside `/locale/templates` with all the strings extracted. The name of the file depends on several factors: for example the template could include another template that specify a specific .lang file so, instead of having `locale/templates/mozorg/contribute/signup.lang`, you have `locale/templates/mozorg/contribute/index.lang`.
 
 The suggestion is to always remove the `templates` folder before doing an extraction, to make sure you start from a clean situation.
 
 Note that you can also use wildcards in the command, e.g. `./manage.py l10n_extract bedrock/mozorg/templates/mozorg/contribute/*.html`, but you should try to extract strings only from the template you need.
 
-One final note: we only use this generated .lang file as a reference, we need to add comments and reorder strings before exposing them for localization.
+One final note: you only use this generated .lang file as a reference, you still need to add comments and reorder strings before exposing them for localization.
 
 ## Notes about templates and l10n
 
