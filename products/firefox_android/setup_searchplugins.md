@@ -5,6 +5,8 @@ The first thing to remember is that you will be working on Aurora for a new loca
 
 l10n repositories for Android live in https://hg.mozilla.org/releases/l10n/mozilla-aurora/. In this case let’s assume that l10n clones will be stored in `~/mozilla/mercurial/l10n`, with a subfolder for each locale and each branch. So, if the locale is `gn`, the repository will be stored in `$/mozilla/mercurial/l10n/gn/mozilla-aurora`.
 
+Note that the `$` is not part of the command, it just indicates the terminal prompt.
+
 ```
 $ mkdir -p ~/mozilla/mercurial/l10n/gn
 $ cd ~/mozilla/mercurial/l10n/gn

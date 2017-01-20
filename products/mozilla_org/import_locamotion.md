@@ -8,16 +8,17 @@ There are two ways to import strings:
 
 The second option is a lot faster and should be preferred.
 
-To import strings from a local clone simply run
+To import strings from a local clone simply run from Langchecker’s root folder.
 ```bash
-import_locamotion
+./app/scripts/import_locamotion
 ```
 
 For the full command syntax check [Langchecker’s wiki page].
 
 Then move into the l10n repository for mozilla.org and check the diff before committing. Also don’t forget to check for [errors].
 ```bash
-$ trunkst
+$ cd www.mozilla.org
+
 $ git status
 On branch master
 Your branch is up-to-date with 'origin/master'.

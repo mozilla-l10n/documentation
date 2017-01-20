@@ -13,7 +13,8 @@ $ lang_update mozorg/internet-health.lang 0 all
 
 At this point you need to work on langchecker, editing your local copy of [app/scripts/lang_update](https://github.com/mozilla-l10n/langchecker/blob/master/app/scripts/lang_update#L105).
 ```
-$ atom ~/mozilla/git/app/scripts/lang_update
+$ cd ~/mozilla/git/langchecker
+$ atom app/scripts/lang_update
 ```
 
 Search for the variable `$import_files` and add the file from which you want to import strings (`main.lang` in this case). Make also sure that `$import_website` is set to `0` (identifier for `mozilla.org`).
