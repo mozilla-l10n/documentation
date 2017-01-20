@@ -125,22 +125,22 @@ Finally add the supported locales for these new files. From:
 ```PHP
 'appstores' => [
     ...
-    'fx_android/whatsnew/android_45.lang'      => array_merge($google_play_target, ['ar']),
-    'fx_android/whatsnew/android_46.lang'      => array_merge($google_play_target, ['ar']),
-    'fx_android/whatsnew/android_46_beta.lang' => $google_play_target,
-    'fx_android/whatsnew/android_47_beta.lang' => $google_play_target,
+    'fx_android/whatsnew/android_45.lang'      => array_merge($fx_android_store, ['ar']),
+    'fx_android/whatsnew/android_46.lang'      => array_merge($fx_android_store, ['ar']),
+    'fx_android/whatsnew/android_46_beta.lang' => $fx_android_store,
+    'fx_android/whatsnew/android_47_beta.lang' => $fx_android_store,
 ```
 
 To:
 ```PHP
 'appstores' => [
     ...
-    'fx_android/whatsnew/android_45.lang'      => array_merge($google_play_target, ['ar']),
-    'fx_android/whatsnew/android_46.lang'      => array_merge($google_play_target, ['ar']),
-    'fx_android/whatsnew/android_47.lang'      => array_merge($google_play_target, ['ar']),
-    'fx_android/whatsnew/android_46_beta.lang' => $google_play_target,
-    'fx_android/whatsnew/android_47_beta.lang' => $google_play_target,
-    'fx_android/whatsnew/android_48_beta.lang' => $google_play_target,
+    'fx_android/whatsnew/android_45.lang'      => array_merge($fx_android_store, ['ar']),
+    'fx_android/whatsnew/android_46.lang'      => array_merge($fx_android_store, ['ar']),
+    'fx_android/whatsnew/android_47.lang'      => array_merge($fx_android_store, ['ar']),
+    'fx_android/whatsnew/android_46_beta.lang' => $fx_android_store,
+    'fx_android/whatsnew/android_47_beta.lang' => $fx_android_store,
+    'fx_android/whatsnew/android_48_beta.lang' => $fx_android_store,
 ```
 
 Now you can commit your changes to Langchecker. Always check with `git status` to confirm that you’re only including changes to `sources.inc.php`.

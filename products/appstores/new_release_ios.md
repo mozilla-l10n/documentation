@@ -108,8 +108,8 @@ Finally add the supported locales for this new file. From:
 ```PHP
 'appstores' => [
     ...
-    'fx_ios/whatsnew/ios_4_0.lang'         => $apple_store_target,
-    'fx_ios/whatsnew/ios_5_0.lang'         => $apple_store_target,
+    'fx_ios/whatsnew/ios_4_0.lang'         => $fx_ios_store,
+    'fx_ios/whatsnew/ios_5_0.lang'         => $fx_ios_store,
 ],
 ```
 
@@ -117,9 +117,9 @@ To:
 ```PHP
 'appstores' => [
     ...
-    'fx_ios/whatsnew/ios_4_0.lang'         => $apple_store_target,
-    'fx_ios/whatsnew/ios_5_0.lang'         => $apple_store_target,
-    'fx_ios/whatsnew/ios_6_0.lang'         => $apple_store_target,
+    'fx_ios/whatsnew/ios_4_0.lang'         => $fx_ios_store,
+    'fx_ios/whatsnew/ios_5_0.lang'         => $fx_ios_store,
+    'fx_ios/whatsnew/ios_6_0.lang'         => $fx_ios_store,
 ],
 ```
 
