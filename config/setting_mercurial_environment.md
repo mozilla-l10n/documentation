@@ -3,7 +3,7 @@
 **IMPORTANT:** This configuration has to be done only once on the computer. After that you will simply need to keep Mercurial up to date (a new version is released every month).
 
 ## Mercurial
-Most of the work needs to be done in [Mercurial](https://www.mercurial-scm.org/downloads), so you need to install if first. An alternative way to install it on Mac is via [homebrew](http://brew.sh/) with `brew install hg` (`brew upgrade hg` to update it later).
+Most of the work needs to be done in [Mercurial](https://www.mercurial-scm.org/downloads), so you need to install if first. An alternative way to install it is via [homebrew](http://brew.sh/) with `brew install hg` (`brew upgrade hg` to update it later).
 
 To check if Mercurial is available and up to date, run in the terminal `hg --version`, the output should look like this:
 ```
@@ -15,6 +15,7 @@ Copyright (C) 2005-2016 Matt Mackall and others
 This is free software; see the source for copying conditions. There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 ```
+Note that the `$` is not part of the command, it just indicates the terminal prompt across the entire documentation.
 
 Unless you’re familiar with `vi`, you also want to setup `nano` as the default editor in the system.
 ```
@@ -62,7 +63,7 @@ wip = log --graph --rev=wip --template=wip
 wip = '{label("log.branch", branches)} {label("changeset.{phase}", rev)}{label("changeset.{phase}", ":")}{label("changeset.{phase}", short(node))} {label("grep.user", author|user)}{label("log.tag", if(tags," {tags}"))}{label("log.tag", if(fxheads," {fxheads}"))} {label("log.bookmark", if(bookmarks," {bookmarks}"))}\n{label(ifcontains(rev, revset("."), "desc.here"),desc|firstline)}'
 ```
 
-Add your Bugzilla ID (email address) and an API key (use https://bugzilla.mozilla.org/userprefs.cgi?tab=apikey to generate one):
+Add your bugzilla ID (email address) and an API key (use https://bugzilla.mozilla.org/userprefs.cgi?tab=apikey to generate one):
 ```INI
 [bugzilla]
 username = YOUR EMAIL

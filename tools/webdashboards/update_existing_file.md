@@ -20,18 +20,20 @@ If the file has a deadline set, you normally need to update it (e.g. plus 2 week
 Deadlines are stored in a flat array called `$deadlines` inside [app/config/sources.inc.php](https://github.com/mozilla-l10n/langchecker/blob/master/app/config/sources.inc.php), simply update the date associated to this file respecting the format `YEAR-MM-DD`.
 
 ## Update the file for all locales
-At this point you need to run `lang_update` to propagate the update to all locales. Assuming that the file is called `mozorg/contribute/signup.lang`, run:
+At this point you need to run `lang_update` to propagate the update to all locales. Imagining that the file is called `mozorg/contribute/signup.lang`, from Langchecker’s root folder run:
 
 ```
-lang_update mozorg/contribute/signup.lang 0 all
+./app/scripts/lang_update mozorg/contribute/signup.lang 0 all
 ```
-This line updates `mozorg/contribute/signup.lang`, for website `0` (mozilla.org), for **all** locales.
+This line updates `mozorg/contribute/signup.lang`, for website `0` (mozilla.org), for **all** locales. If you’re using the l10n-drivers virtual machine, you should be able to run `lang_update` directly without the full path as `lang_update mozorg/contribute/signup.lang 0 all`.
 
 Move in the l10n repository (remember the `trunkst` shortcut) and spot check at least a couple of locales. For example, to check `fr`, run `git diff fr`. **IMPORTANT**: never run just `git diff`, otherwise you’ll get the diff for over a hundred locales.
 
 After checking that everything looks correct, commit (notice the `-a`parameter to commit all changed files already tracked).
 ```
-$ trunkst
+$ cd www.mozilla.org
+
+$ git status
 On branch master
 Your branch is up-to-date with 'origin/master'.
 Untracked files:
