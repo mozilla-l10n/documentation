@@ -21,7 +21,6 @@ First of all make sure that your environment is [correctly set up](/config/setti
 $ cd ~/mozilla/mercurial/mozilla-aurora
 $ hg pull -r default -u
 ```
-Note that the `$` is not part of the command, it just indicates the terminal prompt.
 
 The file to modify is in `mobile/android/locales/maemo-locales`, open it with your text editor of choice.
 

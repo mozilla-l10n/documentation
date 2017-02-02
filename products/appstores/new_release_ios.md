@@ -5,15 +5,9 @@ Assuming the new version is 6.0, the actions to perform are:
 * Create a new file `fx_ios/whatsnew/ios_6_0.lang`.
 * Track the file in both Langchecker and Stores apps.
 
-Notes on the following instructions:
-* `$` is not part of the command, it just indicates the terminal prompt.
+This document assumes that you have set up the system as explained in [this document](/config/setup_l10ndrivers_vm.md), so aliases like `lang_update` are available, repositories are already cloned in `~/mozilla/repositories`, Atom is available and includes the syntax highlighter for LANG files.
 
-If you’re using the l10n-drivers virtual machine:
-* You should be able to run `lang_update` and other commands directly without the full path. If you’re not, you should use the full path to `langchecker/app/scripts` for your system.
-* There are clones of **langchecker** and **stores_l10n** in `~/mozilla/git/`, and a clone of the l10n repository in `~/mozilla/repositories/appstores`.
-* Remember to run `gitup` before you do anything. If you run the command in the middle of the work, remember to go back to the branch you previously created (it will checkout `master` for all repositories).
-
-If you’re not using the l10n-drivers VM, you should adapt paths to your system.
+**IMPORTANT:** Remember to run `gitup` before you do anything. If you run the command in the middle of the work, don’t forget to go back to the branch (it will checkout `master` for all repositories).
 
 ## Create the .lang file for the new release
 For all changes you need to create branches and then open pull requests.
@@ -29,7 +23,8 @@ $ atom en-US/fx_ios/whatsnew/ios_6_0.lang
 
 This is the content of the new file (strings are communicated by releng).
 ```
-## NOTE: Those strings are displayed on the App Store in the what’s new section for Firefox for iOS 6.0 release. See https://l10n.mozilla-community.org//stores_l10n/locale/fr/apple/release/
+## NOTE: These strings are displayed on App Store in the What’s new section for Firefox for iOS 6.0
+## NOTE: See https://l10n.mozilla-community.org/stores_l10n/locale/fx_ios/release/
 
 ;Automatically open web links in Firefox from mail apps such as Outlook, Airmail, Mail.Ru, myMail and Spark. Also, make one of these mail services your default mail app when sending emails from Firefox.
 Automatically open web links in Firefox from mail apps such as Outlook, Airmail, Mail.Ru, myMail and Spark. Also, make one of these mail services your default mail app when sending emails from Firefox.
@@ -113,8 +108,8 @@ Finally add the supported locales for this new file. From:
 ```PHP
 'appstores' => [
     ...
-    'fx_ios/whatsnew/ios_4_0.lang'         => $apple_store_target,
-    'fx_ios/whatsnew/ios_5_0.lang'         => $apple_store_target,
+    'fx_ios/whatsnew/ios_4_0.lang'         => $fx_ios_store,
+    'fx_ios/whatsnew/ios_5_0.lang'         => $fx_ios_store,
 ],
 ```
 
@@ -122,9 +117,9 @@ To:
 ```PHP
 'appstores' => [
     ...
-    'fx_ios/whatsnew/ios_4_0.lang'         => $apple_store_target,
-    'fx_ios/whatsnew/ios_5_0.lang'         => $apple_store_target,
-    'fx_ios/whatsnew/ios_6_0.lang'         => $apple_store_target,
+    'fx_ios/whatsnew/ios_4_0.lang'         => $fx_ios_store,
+    'fx_ios/whatsnew/ios_5_0.lang'         => $fx_ios_store,
+    'fx_ios/whatsnew/ios_6_0.lang'         => $fx_ios_store,
 ],
 ```
 

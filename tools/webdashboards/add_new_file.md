@@ -7,7 +7,7 @@ This task can be split into smaller tasks:
 * Specify the list of locales supported by this file (mandatory in most occasions).
 * Add the files to all locales in the l10n repository.
 
-To analyze all steps, let’s consider a practical example: we need to add a file called `mozorg/contribute/signup.lang` to the project `www.mozilla.org`. The file is `critical` only for French and German, `opt-in` for other locales, and deadline is 30 May 2016. Most of the time a file will be critical for all locales, or won’t have any flags.
+To analyze all steps, let’s consider a practical example: you need to add a file called `mozorg/contribute/signup.lang` to the project `www.mozilla.org`. The file is `critical` only for French and German, `opt-in` for other locales, and deadline is May 30th, 2016. Most of the time a file will be critical for all locales, or won’t have any flags.
 
 ## Add the file to the list of supported files
 The file you need to update is [app/config/sources.inc.php](https://github.com/mozilla-l10n/langchecker/blob/master/app/config/sources.inc.php). There is a global array `$sites` that defines all parameters of each project. For `www.mozilla.org` it looks like this:
@@ -67,7 +67,7 @@ $lang_flags['www.mozilla.org'] = [
     ...
 ```
 
-We need to set this file as `critical` only for French and German, `opt-in` for other locales. Again, files are usually in alphabetical order:
+You need to set this file as `critical` only for French and German, `opt-in` for other locales. Again, files are usually in alphabetical order:
 ```PHP
 $lang_flags['www.mozilla.org'] = [
     'download.lang'                           => [ 'critical' => ['all'] ],
@@ -83,14 +83,14 @@ $lang_flags['www.mozilla.org'] = [
     ...
 ```
 
-What we need to add is this definition:
+What you need to add is this definition:
 ```PHP
 'mozorg/contribute/signup.lang'          => [
     'critical' => ['de', 'fr'],
     'opt-in'   => ['all'],
 ],
 ```
-We create a new array element using the filename as key, its value is another array. To each flag (key) is associated an array of locales. `all` is a special locale to represent all supported locales for this file.
+You create a new array element using the filename as key, its value is another array. To each flag (key) is associated an array of locales. `all` is a special locale to represent all supported locales for this file.
 
 ## Set the deadline for this file
 If a file is critical, you also want to set a deadline for it: in the last week before deadline the date will be displayed in orange on the Webdashboard, after deadline it will be displayed in red.
@@ -148,18 +148,16 @@ $langfiles_subsets = [
 ```
 
 ## Add the files to all locales in the l10n repository
-At this point you need to run `lang_update` to actually add the file to all locales. From Langchecker’s root folder run:
+At this point you need to run `lang_update` to actually add the file to all locales.
 
 ```
-./app/scripts/lang_update mozorg/contribute/signup.lang 0 all
+lang_update mozorg/contribute/signup.lang 0 all
 ```
 This line updates `mozorg/contribute/signup.lang`, for website 0 (mozilla.org), for **all** locales.
 
 Move in the l10n repository, make sure to add the file and commit.
 ```
-$ cd www.mozilla.org
-
-$ git status
+$ trunkst
 On branch master
 Your branch is up-to-date with 'origin/master'.
 Untracked files:
