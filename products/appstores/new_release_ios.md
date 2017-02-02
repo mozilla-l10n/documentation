@@ -23,7 +23,7 @@ $ atom en-US/fx_ios/whatsnew/ios_6_0.lang
 
 This is the content of the new file (strings are communicated by releng).
 ```
-## NOTE: These strings are displayed on Google Play in the What’s new section for Firefox for iOS 6.0
+## NOTE: These strings are displayed on App Store in the What’s new section for Firefox for iOS 6.0
 ## NOTE: See https://l10n.mozilla-community.org/stores_l10n/locale/fx_ios/release/
 
 ;Automatically open web links in Firefox from mail apps such as Outlook, Airmail, Mail.Ru, myMail and Spark. Also, make one of these mail services your default mail app when sending emails from Firefox.

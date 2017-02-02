@@ -7,7 +7,7 @@ This task can be split into smaller tasks:
 * Specify the list of locales supported by this file (mandatory in most occasions).
 * Add the files to all locales in the l10n repository.
 
-To analyze all steps, let’s consider a practical example: you need to add a file called `mozorg/contribute/signup.lang` to the project `www.mozilla.org`. The file is `critical` only for French and German, `opt-in` for other locales, and deadline is 30 May 2016. Most of the time a file will be critical for all locales, or won’t have any flags.
+To analyze all steps, let’s consider a practical example: you need to add a file called `mozorg/contribute/signup.lang` to the project `www.mozilla.org`. The file is `critical` only for French and German, `opt-in` for other locales, and deadline is May 30th, 2016. Most of the time a file will be critical for all locales, or won’t have any flags.
 
 ## Add the file to the list of supported files
 The file you need to update is [app/config/sources.inc.php](https://github.com/mozilla-l10n/langchecker/blob/master/app/config/sources.inc.php). There is a global array `$sites` that defines all parameters of each project. For `www.mozilla.org` it looks like this:
