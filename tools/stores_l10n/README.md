@@ -69,7 +69,7 @@ OUT;
 ```
 
 Similarly to a Django template, each string is wrapped in a translation function `$_('')` (defined in [app/inc/utilities.php](https://github.com/mozilla-l10n/stores_l10n/blob/master/app/inc/utilities.php#L5)).
-Strings are grouped into a variable, like `$screenshots` in this case: this allows, for example, to determine the overall length of all strings included in a section, to see if it exceeds the [limits imposed by stores](https://github.com/mozilla-l10n/stores_l10n/blob/master/app/inc/constants.php#L15-L22).
+Strings are grouped into a variable, like `$screenshots` in this case: this allows, for example, to determine the overall length of all strings included in a section, to see if it exceeds the [limits imposed by stores](https://github.com/mozilla-l10n/stores_l10n/blob/master/app/inc/constants.php#L15-L22). It’s important to note that, since these limits are per-section and not per-string, the standard webdashboard won’t display any warnings. Also, if a string exceeds the maximum length, it won’t be exposed via API and the locale will be marked as incomplete.
 
 These variables are then used in views, for example the variable/function `$description`:
 ```PHP
