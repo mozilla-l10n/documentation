@@ -6,6 +6,7 @@ Topics covered:
 * Manage [App Store and Google Play](/products/appstores) content updates.
 * Manage [mozilla.org](/products/mozilla_org) localization.
 * Technical documentation and common tasks for our [webdashboards](/tools/webdashboards).
+* Technical documentation for the [Stores webapp](/tools/stores_l10n).
 * Perform common tasks on [Pontoon](/tools/pontoon) like adding new locale, and creating a new project.
 
 ## How to read these documents
