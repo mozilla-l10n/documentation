@@ -28,3 +28,5 @@ Click **SAVE PROJECT** at the bottom of the page, then click **SYNC** to run a t
 At this point you need to repeat the same steps on the **production server**.
 
 Access Pontoon's [admin console](https://pontoon.mozilla.org/admin/), add the same information you used on the staging server and make sure to select all supported locales for this project.
+
+The new project will appear in the [public list of Projects](https://pontoon.mozilla.org/projects/) only after the next sync cycle.
