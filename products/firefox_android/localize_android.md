@@ -1,6 +1,8 @@
 # Firefox for Android - How to localize
 
-The release cycle for Firefox for Android is the same as Firefox for Desktop, which is 6 weeks. Merge day is the date that you have to finish all your localization work by, in order to get it up on builds.
+Please make sure to go through the [Firefox for Android ReadMe](products/firefox_android/README.md) to get a clear overview of what this project covers.
+
+The release cycle for Firefox for Android is the same as Firefox for Desktop, which is generally 6 weeks - but can sometimes be 8 weeks. "Merge day" is when localizations move to the next train - and the last day available to include localization updates to the next Beta version if you work on tools like Pootle.
 
 You can see the [detailed schedule for each release here](https://wiki.mozilla.org/RapidRelease/Calendar).
 
@@ -24,10 +26,10 @@ These builds are available here: https://ftp.mozilla.org/pub/mobile/nightly/late
 This means that you will be able to download a build on your Android device to test your locale. Please note that at this point, your locale still isn't shipping on official Firefox for Android builds. That will come later.
 
 ## Considerations for brand new locales that have no Desktop version yet
-If you have not already launched Firefox Desktop in your language, then you are probably missing some important pieces, such as a search engine.
+If you have not already launched Firefox Desktop in your language, then you are probably missing some important pieces, such as search engines.
 
-Bugs will need to be filed, which can be done by following filing out the form here: https://l10n.mozilla.org/bugs/new-locale
+Bugs will need to be filed by l10n-drivers, and done by following filing out the form here: https://l10n.mozilla.org/bugs/new-locale
 
-Please read the [Firefox Desktop section](/products/firefox_desktop/setup_searchplugins.md) for more details on how to add search plugins.
+Please read the [Firefox Desktop section](/products/firefox_android/setup_searchplugins.md/) for more details on how to add search plugins.
 
-Once you have finished localization work on Android and your locale is up on single-locale builds, you may now move to [the testing phase](/products/firefox_android/testing_android/).
+Once you have finished localization work on Android and your locale is up on single-locale builds, you may now move to [the testing phase](/products/firefox_android/testing_android.md/).
