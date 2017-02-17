@@ -1,22 +1,28 @@
 # Firefox for Android - How to localize
 
-Please make sure to go through the [Firefox for Android README](/products/firefox_android/README.md) first to get a clear overview of what this project covers.
-
-The release cycle for Firefox for Android is the same as Firefox for Desktop, which is generally 6 weeks - but can sometimes be 8 weeks. "Merge day" is when localizations move to the next train - and the last day available to include localization updates to the next Beta version if you work on tools like Pootle.
+The release cycle for Firefox for Android is the same as Firefox for Desktop, which is generally 6 weeks - but can sometimes be 8 weeks. 
 
 You can see the [detailed schedule for each release here](https://wiki.mozilla.org/RapidRelease/Calendar).
+
+"Merge day" is when localizations move to the next train - and the last day available to include localization updates to the next Beta version if you work on tools like Pootle.
 
 Note: please make sure that you've already localized mozilla.org before you start working on Firefox for Android or any other projects.
 
 ## The importance of regularly checking your dashboard
 
-Please keep in mind during your entire localization process to regularly check [your locale's dashboard](https://l10n.mozilla.org/shipping/dashboard): this is extremely important since if you break something, and your locale is shipping on multi-locale builds (so, the builds that actually ship on the Play Store), you will need to fix it as soon as possible since it breaks the build for everyone!
+### Checking for errors
 
-Checking your dashboard regularly should be something you should start doing from the very beginning when you start localizing a project, so that it becomes a habit. This helps reduce the chance of breaking the builds in the future, once your locale is actually shipping, and generally helps catch errors earlier on. It also gives you an overview of your locale's health and status.
+Please keep in mind during your entire localization process to regularly check [your locale's team page](https://l10n.mozilla.org/teams/). You can just choose your locale from the list there, and bookmark it to easily access it in the future. 
 
-When you are in your dashboard, and you notice that there is a red tick in your locale's "Action" column, this means there is a critical error that you need to fix. Clicking on your locale's "Status" column will give you an indication on what needs to be fixed, and where to find the error.
+Once you are on your team page, under the section "Application & Sign-offs", take a look at the "Translation Status" column. If you have any **errors**, they will show up in red there. The number of missing strings will also appear in that same column. You can click on either of these links to see what's going on behind these notifications.
 
-If there is an orange tick on your locale's "Action" column, it can mean a number of things - such as that there are simply some missing strings. Once again, clicking on the "Status" Column will let you know what is going on and what may need fixing.
+If you notice any errors, they need to be fixed very quickly. This is extremely important because if you break something while your locale is shipping on multi-locale builds (so, the builds that actually ship on the Play Store), you will need to fix it as soon as possible since it breaks the build for everyone!
+
+### Checking for warnings
+
+You should also be checking your teams [Firefox for Android dashboards](https://l10n.mozilla.org/shipping/dashboard?tree=fennec_aurora&tree=fennec_beta) for any possible **warnings**. They would appear under the "Warnings" column. If you see you have a warning, then click on the column "Status" column on that same line. It will explain where the warning is so you can go in and fix it.
+
+Checking your team page and dashboard regularly should be something you do from the very beginning when you start localizing a project, so that it becomes a habit. This helps reduce the chance of breaking the builds in the future, once your locale is actually shipping, and generally helps catch errors earlier on. It also gives you an overview of your locale's health and status, and overall ensures you're shipping a good quality localization.
 
 ## Localize the Firefox for Android folder
 - [Pontoon](https://pontoon.mozilla.org/firefox-for-android-aurora/): Choose your locale code from there
@@ -42,4 +48,4 @@ Bugs will need to be filed by l10n-drivers, and done by following filing out the
 
 Please read this [Firefox for Android "setup_searchplugins" section](/products/firefox_desktop/setup_searchplugins.md) for more details on how to add search plugins.
 
-Once you have finished localization work on Android and your locale is up on single-locale builds, you may now move to [the testing phase](/products/firefox_android/testing_android.md/).
+Once you have finished localization work on Android and your locale is up on single-locale builds, you may now move to [the testing phase](/products/firefox_android/testing_android.md).
