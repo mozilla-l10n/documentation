@@ -20,7 +20,7 @@ If you notice any errors, they need to be fixed very quickly. This is extremely 
 
 ### Checking for warnings
 
-You should also be checking your teams [Firefox for Android dashboards](https://l10n.mozilla.org/shipping/dashboard?tree=fennec_aurora&tree=fennec_beta) for any possible **warnings**. They would appear under the "Warnings" column. If you see you have a warning, then click on the column "Status" column on that same line. It will explain where the warning is so you can go in and fix it.
+You should also be checking your locale's [Firefox for Android dashboards](https://l10n.mozilla.org/shipping/dashboard?tree=fennec_aurora&tree=fennec_beta) for any possible **warnings**. They would appear under the "Warnings" column. If you see you have a warning, then click on the "Status" column on that same line. It will explain where the warning is so you can go in and fix it.
 
 Checking your team page and dashboard regularly should be something you do from the very beginning when you start localizing a project, so that it becomes a habit. This helps reduce the chance of breaking the builds in the future, once your locale is actually shipping, and generally helps catch errors earlier on. It also gives you an overview of your locale's health and status, and overall ensures you're shipping a good quality localization.
 
