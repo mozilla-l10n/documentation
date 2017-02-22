@@ -39,10 +39,9 @@ You can make linguistic changes directly in [Pontoon](https://pontoon.mozilla.or
 ### Functionality Testing
 * Click the download link, you should be able to download the product in your language, if it is localized, such as Firefox
 * Font support and readability
-* Footer: links point to pages in the same language if those pages, sites or documents are localized. If they are not, they should be redirected to en-US pages.
-* Language list: Is your language listed as one of the options? Check www.mozilla.org/en-US to confirm.
+* Footer: verify that the translation of the link is coherent and the link is functional.
+* Language list: Is your language listed as one of the options? Check https://www-dev.allizom.org/en-US/ to confirm.
 * Deliberately type a wrong broken link, verify whether [404 page](https://www-dev.allizom.org/404/) is in the same language
-* Sorting order of languages in dropdown list
 * In RTL (right to left languages), both target language and English flows in the correct directions.  The mirroring effect is correct as defined by Mozilla UX team. Indentation and alignment are correct
 
 
