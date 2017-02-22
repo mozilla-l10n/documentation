@@ -63,4 +63,11 @@ The annual fundraise campaign is localized in many languages, but not all langua
 
 Code push to the production server is made almost daily.  When a brand new page is being localized, the page won't go live until it is fully localized for the very first time. Once a page is on the production server, an ongoing maintenance is required, as updates take place on a irregular basis. New strings added to existing pages are visible in the production server only when localized, unless they're in a shared file.  If localized content is not kept up, either the page is completely out of date over time with old designs and message, or the site contains mixture of English and target language, we may have to disable it if the latter is the case. Check the team [web dashboard](https://l10n.mozilla-community.org/webdashboard/) for updates.  
 
+### Sync Frequencies and Updates
+* Pontoon syncs every 20 minutes to the repository
+* Pootle is imported manually (at least daily); an automated solution and faster sync will be implemented soon.
+* Web Dashboard and the Dev server update every 15 minutes
+
+If you work on Pontoon, it is safe to say that it will take less than an hour to see your changes reflected on the dashboard and the dev server.
+
 When a project has a firm deadline to meet, we will communicate it through the [dev-l10n-web mailing list](https://lists.mozilla.org/listinfo/dev-l10n-web). Be sure to sign up so you receive important community wide information on web related projects.  
