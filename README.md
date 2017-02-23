@@ -8,6 +8,7 @@ Topics covered:
 * Technical documentation and common tasks for our [webdashboards](/tools/webdashboards).
 * Technical documentation for the [Stores webapp](/tools/stores_l10n).
 * Perform common tasks on [Pontoon](/tools/pontoon) like adding new locale, and creating a new project.
+* Other [miscellaneous documents](/misc) related to localization tasks.
 
 ## How to read these documents
 You will need a Unix-like environment (Linux, Mac OS X) to run most of the tools. Across the entire documentation, commands to run in a terminal are described like this:
