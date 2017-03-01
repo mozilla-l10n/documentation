@@ -1,14 +1,14 @@
 # Testing Mozilla.org
 
-Mozilla.org is highly visible because the site houses the basic info of all Mozilla produced products, conveys Mozilla’s mission, vision, and values it stands for. Additionally, it promotes initiatives and campaigns in time of these events. As a result, new pages are created. New content is added to existing pages. New layout is introduced. The localized versions reach 60% of the Mozilla users globally. It is very important that, not only the main pages are localized, they are thoroughly tested before they are launched on production.  
+Mozilla.org is highly visible because the site houses the basic info of all Mozilla products, conveys Mozilla’s mission, vision, and values it stands for. Additionally, it promotes initiatives and campaigns in time of these events. The localized versions reach 60% of the Mozilla users globally. It is very important that, not only the main pages are localized, they are thoroughly tested before they are launched on production.  
 
 ## Key Links
-* Production: https://www.mozilla.org/{locale code}/
-* Staging: https://www-dev.allizom.org/{locale code}/
+* Production: https://www.mozilla.org/{locale_code}/
+* Staging: https://www-dev.allizom.org/{locale_code}/
 * Repository:  https://github.com/mozilla-l10n/www.mozilla.org/
 * Pontoon: https://pontoon.mozilla.org/projects/mozillaorg/
 * Locamotion: https://mozilla.locamotion.org/projects/mozilla_lang/
-* Web dashboard: https://l10n.mozilla-community.org/webdashboard/?locale={locale code}. Visit this page on a regular basis to check localization progress, pending work, deadline, and errors that were introduced during translation
+* Web dashboard: https://l10n.mozilla-community.org/webdashboard/?locale={locale_code}. Visit this page on a regular basis to check localization progress, pending work, deadline, and errors that were introduced during translation
 
 We highly advise you to ask other community members to conduct peer review not only on Pontoon or Locamotion, but on staging. While not all the languages are required for certain projects, each community can opt in the projects at a later time.
 
@@ -22,11 +22,11 @@ We highly advise you to ask other community members to conduct peer review not o
 
 ### Linguistic Testing
 * Translation quality in context
-* Grammatically correct in context
-* Check for truncation: button text remains inside the button
+* Grammar correctness in context
+* Truncation: button text should remain inside the button
 * Header line break wraps at proper place
 * Text not overlapping graphic
-* Terminology is consistent with product, and between web pages
+* Terminology consistent with product, and among web pages
 * Brand names remain in English
 * Product names comply to Mozilla guideline and adhere to what the community has agreed to
 * No corrupted characters
@@ -34,7 +34,7 @@ We highly advise you to ask other community members to conduct peer review not o
 * Nav bar terms consistent with the page titles they are linked to (except when Nav bar term is shortened due to space limitation)
 * Footer links don’t overlap with one another
 
-You can make linguistic changes directly in [Pontoon](https://pontoon.mozilla.org/projects/mozillaorg/), [Locamotion](https://mozilla.locamotion.org/projects/mozilla_lang/) or [GitHub](https://github.com/mozilla-l10n/www.mozilla.org/).  
+You can make linguistic changes directly in [Pontoon](https://pontoon.mozilla.org/projects/mozillaorg/), [Locamotion](https://mozilla.locamotion.org/projects/mozilla_lang/), or [GitHub](https://github.com/mozilla-l10n/www.mozilla.org/).  
 
 ### Functionality Testing
 * Click the download link, you should be able to download the product in your language, if it is localized, such as Firefox
