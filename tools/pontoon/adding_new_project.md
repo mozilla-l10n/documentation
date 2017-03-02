@@ -14,9 +14,12 @@ Access Pontoon's [admin console](https://mozilla-pontoon-staging.herokuapp.com/a
 * Name: name of the repository (it will be displayed in Pontoon's project selector).
 * Slug: used in URLs, will be generated automatically based on the repository's name.
 * Locales: select at least one locale.
+* Deadline: if available, enter project deadline in the YYYY-MM-DD format.
+* Priority: select priority level from one of the 5 levels: Lowest, Low, Normal, High, Highest.
 * Repositories: select the type of repository and URL. Make sure to use SSH to allow write access. For example, if the repository is `https://github.com/meandavejustice/min-vid`, the URL should be `git@github.com:meandavejustice/min-vid.git`. You can use the *Clone or download* button in the repository page on GitHub, making sure that *Clone with SSH* is selected. 
 * Leave the `Branch` field empty, unless developers asked to commit translations in a branch instead of *master*.
 * Download prefix: a URL prefix for downloading localized files. For GitHub repositories, select any localized file on GitHub, click `Raw` and replace locale code and the following bits in the URL with `{locale_code}`. For example, if the link is `https://raw.githubusercontent.com/bwinton/TabCenter-l10n/master/locales/en-US/addon.properties`, the field should be set to `https://github.com/bwinton/TabCenter-l10n/blob/master/locales/{locale_code}`.
+* Public Repository Website: displayed on dashboards. E.g. `https://github.com/meandavejustice/min-vid`. Pontoon will try to prefill it after you enter Repository URL.
 * Project info: provide some information about the project to help localizers with context or testing instructions. HTML is supported, so you can add external links. For example:
 ```
 Localization for the <a href="https://testpilot.firefox.com/experiments/min-vid">Min Vid add-on</a>.
