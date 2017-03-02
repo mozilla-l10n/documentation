@@ -75,7 +75,7 @@ Some locales might have a more complex definition, with searchplugins changing b
 }
 ```
 
-To make sure you're not creating a broken JSON, you can test the final content with an online validator like [jsonlint](http://jsonlint.com/).
+To make sure you’re not creating a broken JSON, you can test the final content with an online validator like [jsonlint](http://jsonlint.com/).
 
 ### XML files
 Searchplugins are stored in [mozilla-central](https://hg.mozilla.org/mozilla-central/file/default/browser/locales/searchplugins) in `/browser/locales/searchplugins`.
@@ -114,7 +114,7 @@ Unlike Wikipedia, never copy the file from en-US, since Yahoo is the default and
 ## Creating a patch for review (mozilla-unified repository)
 If you plan to create a patch instead of using mozreview, you can refer to the instructions available in the second part of the document, simply working inside your local clone of mozilla-unified as repository.
 
-After you've created all the files you need, check the status of the repository
+After you’ve created all the files you need, check the status of the repository
 ```
 $ hg status
 M browser/locales/search/list.json
@@ -136,7 +136,7 @@ Let’s create a bookmark for this pending work, for example `bug1304757`.
 $ hg bookmark bug1304757
 ```
 
-Commit the changes with a commit message that includes the reviewer's nickname after `r?`, for example if flod is the reviewer:
+Commit the changes with a commit message that includes the reviewer’s nickname after `r?`, for example if flod is the reviewer:
 ```
 $ hg commit -m "Bug 1304757 - [ur] Search engine setup for Firefox for Urdu, r?flod"
 ```
@@ -241,7 +241,7 @@ More information about this workflow are available in these pages:
 http://mozilla-version-control-tools.readthedocs.io/en/latest/hgmozilla/firefoxworkflow.html
 https://www.mercurial-scm.org/wiki/Bookmarks
 
-## Setting up files for locale's repository
+## Setting up files for locale’s repository
 ### region.properties
 region.properties is stored in `/browser/chrome/browser-region` and it contains information about protocol handlers. You can use [this region.properties model](desktop_region.properties) as a base, making sure to remove non existing searchplugins from `search.order`.
 
@@ -255,7 +255,7 @@ $ cd ~/mozilla/mercurial/l10n/ur/mozilla-aurora
 $ hg status
 ? browser/chrome/browser-region/region.properties
 ```
-The `?` indicates that these file are not tracked by Mercurial, so we need to add them. If you’re in the root of the repository, you can add the entire `mobile` folder instead of the single files:
+The `?` indicates that these file are not tracked by Mercurial, so they need to be added. If you’re in the root of the repository, you can add the entire `mobile` folder instead of the single files:
 
 ```
 $ hg add browser

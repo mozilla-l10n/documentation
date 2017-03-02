@@ -17,7 +17,7 @@ Also double check the [Errors View](https://l10n.mozilla-community.org/langcheck
 ## Update the deadline
 If the file has a deadline set, you normally need to update it (e.g. plus 2 weeks from the the update).
 
-Deadlines are stored in a flat array called `$deadlines` inside [app/config/sources.inc.php](https://github.com/mozilla-l10n/langchecker/blob/master/app/config/sources.inc.php), simply update the date associated to this file respecting the format `YEAR-MM-DD`.
+Search for the filename in [app/config/sources.inc.php](https://github.com/mozilla-l10n/langchecker/blob/master/app/config/sources.inc.php) and simply update the date associated to this file respecting the format `YEAR-MM-DD`.
 
 ## Update the file for all locales
 At this point you need to run `lang_update` to propagate the update to all locales. Assuming that the file is called `mozorg/contribute/signup.lang`, run:

@@ -2,7 +2,7 @@
 
 Sometimes it’s useful to import strings from existing files. A typical example is when an existing page is replaced by a new template, with some strings in common.
 
-First of all, always make sure that your repositories are up to date. If you're using the l10n-drivers VM, simply run `gitup`.
+First of all, always make sure that your repositories are up to date. If you’re using the l10n-drivers VM, simply run `gitup`.
 
 Let’s consider a simple example: the string `Internet Health` is currently available in `main.lang`. A new page is created (`mozorg/internet-health.lang`), and it includes that string in the template. Since `main.lang` is a shared file it would be possible to avoid adding the string to the new template, but in this case you want to make sure that localizers can use an alternative translation.
 
@@ -33,7 +33,7 @@ Note that `$import_files` is an array, which means you could have more source fi
 ```PHP
 $import_files = ['main.lang', 'mozorg/home/index.lang'];
 ```
-The order is relevant: files are checked in the order they're available in the array, the first matching translation is kept.
+The order is relevant: files are checked in the order they’re available in the array, the first matching translation is kept.
 
 **Important**: make sure to not commit this change to langchecker. You can either ignore it and it will be removed the next time you run `gitup`, or reset the repository with `git reset --hard`.
 ```
