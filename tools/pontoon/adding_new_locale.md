@@ -42,6 +42,17 @@ For Amharic you will need to set the field as `1,5`, separating the available fo
 
 Irish (ga-IE), for example, has all of them except for 0, so it will be `1,2,3,4,5`.
 
+### Script
+A script locale is written in. Find it in [CLDR Languages and Scripts](http://www.unicode.org/cldr/charts/latest/supplemental/languages_and_scripts.html).
+
+### Direction
+Writing direction of the script. Set to "right-to-left" if "rtl" value for the locale script is set to "YES" in [CLDR scriptMetadata.json](https://github.com/unicode-cldr/cldr-core/blob/master/scriptMetadata.json).
+
+### Population
+Number of native speakers. Find locale code in [CLDR territoryInfo.json](https://github.com/unicode-cldr/cldr-core/blob/master/supplemental/territoryInfo.json) and multiply its "_populationPercent" with the territory "_population". Repeat if multiple occurrences of locale code exist and sum products.
+
+---
+
 At this point click **SAVE** in the bottom right corner to save the new locale, and check if the locale's page is available, in this case at https://pontoon.mozilla.org/am/
 
 You should also add the Pontoon Intro project to this locale, through the [standard admin interface](https://pontoon.mozilla.org/admin/projects/pontoon-intro/).
