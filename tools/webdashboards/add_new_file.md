@@ -34,10 +34,8 @@ Search for the definition of `$mozillaorg_lang` in `app/config/sources.inc.php` 
 ```PHP
 $mozillaorg_lang = [
     'download_button.lang' => [
-        'deadline'            => '2016-04-29',
-        'priorities'          => [
-            1 => ['all'],
-        ],
+        'deadline'          => '2016-04-29',
+        'priority '         => 1,
         'supported_locales' => $mozillaorg,
     ],
 ```
@@ -50,9 +48,7 @@ For the list of locales you should check the definition for existing similar fil
     'flags' => [
         'opt-in' => ['all'],
     ],
-    'priorities'          => [
-        2 => ['all'],
-    ],
+    'priority'          => 2,
     'supported_locales' => $getinvolved_locales,
 ],
 'mozorg/contribute/signup.lang' => [
@@ -61,21 +57,17 @@ For the list of locales you should check the definition for existing similar fil
 ```
 
 ### Priority
-Priorities are defined for each file as an array associated to the key `priorities`.
+Priority is optional and can defined for each file. If the priority is the same for all locales, you can assign the integer value (from 1 to 3) to a `priority` key.
+
 ```PHP
 'mozorg/contribute/index.lang' => [
-    'priorities'          => [
-        2 => ['all'],
-    ],
+    'priority'          => 2,
     'supported_locales' => $getinvolved_locales,
 ],
 ```
 
-If you don’t specify a priority, the file will fall back to the default priority specified for the project (in `$sites`). In this case the request is to set the file with priority 1, while the default for mozilla.org is 3.
+It’s also possible to define a more complex set of priorities using an associative array, where to each priority (a numeric key) is associated an array of locales. `all` is a special locale to represent all supported locales for this file. For example:
 
-To each priority (a numeric key) is associated an array of locales. `all` is a special locale to represent all supported locales for this file.
-
-In the example above priority 2 is assigned to all locales. You could have more complex conditions, like:
 ```PHP
 'priorities'          => [
     1 => ['de', 'fr'],
@@ -83,15 +75,18 @@ In the example above priority 2 is assigned to all locales. You could have more 
 ],
 ```
 
+If you don’t specify a priority, the file will fall back to the default priority specified for the project (in `$sites`). In this case the request is to set the file with priority 1 for French and German, while the default for mozilla.org is 3.
+
 In this case, the request is to assign priority 1 only to French and German
 ```PHP
 'mozorg/contribute/signup.lang' => [
-    'priorities'          => [
+    'priority'          => [
         1 => ['de', 'fr'],
     ],
     'supported_locales' => $getinvolved_locales,
 ],
 ```
+
 ### Flags
 Flag are defined for each file as an array associated to the key `flags`:
 ```PHP
@@ -111,7 +106,7 @@ In this case, the request is to flag the file as opt-in for all locales.
     'flags'    => [
         'opt-in' => ['all'],
     ],
-    'priorities'          => [
+    'priority'          => [
         1 => ['de', 'fr'],
     ],
     'supported_locales' => $getinvolved_locales,
@@ -121,18 +116,36 @@ In this case, the request is to flag the file as opt-in for all locales.
 ### Deadline
 If a file is critical, you also want to set a deadline for it: in the last week before deadline the date will be displayed in orange on the Webdashboard, after deadline it will be displayed in red.
 
-Flags are defined as part of the file. In this case, deadline needs to be set to May 30th, 2016 (2016-05-30 in ISO format):
+If the deadline is the same for all locales, you can assign the date (as a string in ISO format dd-mm-yyyy) to a `deadline` key. In this case, deadline needs to be set to May 30th, 2016 (2016-05-30):
+
 ```PHP
 'mozorg/contribute/signup.lang' => [
     'deadline' => '2016-05-30',
     'flags'    => [
         'opt-in' => ['all'],
     ],
-    'priorities'          => [
+    'priority'          => [
         1 => ['de', 'fr'],
     ],
     'supported_locales' => $getinvolved_locales,
 ],
+```
+
+It’s also possible to define different deadlines for locales using an associative array, where to each deadline (date in ISO format dd-mm-yyyy) is associated an array of locales. `all` is a special locale to represent all supported locales for this file. For example, a deadline for German and French, and a later date for other languages:
+
+```PHP
+'deadline' => [
+    '2016-05-30' => ['de', 'fr'],
+    '2016-06-15' => ['all'],
+];
+```
+
+Or a deadline only for French:
+
+```PHP
+'deadline' => [
+    '2016-05-30' => ['fr'],
+];
 ```
 
 ## Add the files to all locales in the l10n repository
