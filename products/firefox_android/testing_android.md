@@ -18,16 +18,16 @@ Then, choose the .apk link out of the 3 possible options listed. Download should
 
 It is strongly suggested to start using these builds on a daily basis, so that you can get into as many screens as possible and check that everything looks fine.
 
-It is important that the people testing the localization be not only the one(s) who have localized. Ask other people from your community to help test so we have fresh eyes looking at your work.
+It is important that the people testing the localization be not only the one(s) who have localized. Ask other people from your community to help test in order to have fresh eyes looking at your work.
 
 ## Testing on multi-locale builds (shipping in Play Store)
 
-Once the Fennec Project Manager (currently **delphine** at **mozilla** dot **com**) sees that you’ve done at least one cycle on a single-locale build, that nothing breaks when we do sign-offs, that you’ve continued keeping your work up to date, and that you have been TESTING it - we will consider adding your language to the multi-locale builds. This means that - congratulations! - your locale will now officially be shipping on Firefox for Android.
+Once the Fennec Project Manager (currently **delphine** at **mozilla** dot **com**) sees that you’ve done at least one cycle on a single-locale build, that nothing breaks during sign-offs, that you’ve continued keeping your work up to date, and that you have been TESTING it - l10n-drivers will consider adding your language to the multi-locale builds. This means that - congratulations! - your locale will now officially be shipping on Firefox for Android.
 
-Once we add your locale to the multi-locale builds, it will "ride the trains" like for Firefox Desktop. It will first ship on Aurora in the Play Store, then 6 weeks later it will ship on Beta, and 6 weeks after that, it will arrive on Release.
+Once your locale is added to the multi-locale builds, it will "ride the trains" like for Firefox Desktop. It will first ship on Aurora in the Play Store, then 6 weeks later it will ship on Beta, and 6 weeks after that, it will arrive on Release.
 
-Once you start shipping in the Play Store, it makes sense to stop testing on single-locale builds. We suggest you now start testing and using the Aurora Play Store version, since this is the branch that you localize and work on. It’s good to have other members in the community use the beta and release version too though, in case anything breaks with updates.
+Once you start shipping in the Play Store, it makes sense to stop testing on single-locale builds. It’s strongly suggested you now start testing and using the Aurora Play Store version, since this is the branch that you localize and work on. It’s good to have other members in the community use the beta and release version too though, in case anything breaks with updates.
 
 When testing the multi-locale build, keep in mind and look out for the same issues and aspects called out for the single-locale builds in the section above.
 
-We send out regular reminders about merge days, android updates, schedule and important info on [dev.l10n mailing list](https://lists.mozilla.org/listinfo/dev-l10n). Please make sure you’re following this list closely so that you get regular updates about which part of the cycle you’re at, when you need to finish your work, and anything relevant to what you are doing.
+l10n-drivers send out regular reminders about merge days, android updates, schedule and important info on [dev.l10n mailing list](https://lists.mozilla.org/listinfo/dev-l10n). Please make sure you’re following this list closely so that you get regular updates about which part of the cycle you’re at, when you need to finish your work, and anything relevant to what you are doing.

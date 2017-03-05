@@ -9,9 +9,9 @@ There are four interdependent elements in the current webdashboard system.
 Webdashboard in itself doesn’t generate any data, it just displays information provided by Langchecker and Webstatus in JSON format.
 
 ### Langchecker
-[Langchecker](langchecker.md) is used to analyze all projects using .lang files as data sources. It also stores all configuration information needed to manage these repositories: which projects we support, which files are in each project, which locales are supported for each project or file, metadata like critical status or deadlines.
+[Langchecker](langchecker.md) is used to analyze all projects using .lang files as data sources. It also stores all configuration information needed to manage these repositories: which projects are supported, which files are in each project, which locales are supported for each project or file, metadata like critical status or deadlines.
 
-Langchecker's scripts are used to propagate changes to all .lang files, or add news ones, in l10n repositories. It also provides an API to retrieve translations, and information about coverage, i.e how many locales translated a specific string or a page, and what percentage of the l10n population that represents.
+Langchecker’s scripts are used to propagate changes to all .lang files, or add news ones, in l10n repositories. It also provides an API to retrieve translations, and information about coverage, i.e how many locales translated a specific string or a page, and what percentage of the l10n population that represents.
 
 ### Webstatus
 [Webstatus] is used to analyze external projects, currently supporting the following formats: `.po` (Gettext), `.properties`, `.xliff`, and `.ftl` (l20n). It also provides an [API](https://github.com/mozilla-l10n/webstatus/#available-urls) to get list of locales (supported, complete), in JSON or TXT format, for a specific product.

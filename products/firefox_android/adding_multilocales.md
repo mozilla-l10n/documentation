@@ -1,7 +1,7 @@
 # Adding a new locale to the multi-locales build
 Android has two different types of builds: a multi-locale build that ships in Google Play Store, and a single-locale build (containing only one locale) that is mostly used for testing.
 
-The list of locales included in the multi-locales build is stored inside a file named **maemo-locales** within Mozilla’s code repositories. Since we want to create Aurora builds, the file will be in mozilla-aurora: https://hg.mozilla.org/releases/mozilla-aurora/file/default/mobile/android/locales/maemo-locales
+The list of locales included in the multi-locales build is stored inside a file named **maemo-locales** within Mozilla’s code repositories. Since the goal is to create Aurora builds, the file will be in mozilla-aurora: https://hg.mozilla.org/releases/mozilla-aurora/file/default/mobile/android/locales/maemo-locales
 
 ## File a bug to add the new locale
 You need to file a bug in Firefox for Android::General requesting the new locale (see for example [this bug for Serbian](https://bugzilla.mozilla.org/show_bug.cgi?id=1262464)). You can use this [bug template] to make things faster:

@@ -13,7 +13,7 @@ meld path/to/trunk_repository path/to/production_repository
 If you’re using the virtual machine described in [this document](/config/setup_l10ndrivers_vm.md), there are a few shortcuts:
 * `trunkst` will move into the trunk folder, and check the status (`git status`).
 * `prodst` will do the same for production, but will also fetch updates from trunk in case you want to cherry-pick changesets (see next section).
-* `mozmeld` will open meld with trunk on the left, and production on the right. Use alt+up/down to move to the next change, use alt+right to move from trunk to production. **Don’t** move the README file, since they're different between the two repositories.
+* `mozmeld` will open meld with trunk on the left, and production on the right. Use alt+up/down to move to the next change, use alt+right to move from trunk to production. **Don’t** move the README file, since they’re different between the two repositories.
 * `gitup` will update all Git repositories, discard pending changing, and checkout master branch.
 
 ## Cherry-picking changes

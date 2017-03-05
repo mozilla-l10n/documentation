@@ -50,79 +50,40 @@ $ git checkout ios6_0
 $ atom app/config/sources.inc.php
 ```
 
-You need to add the new file to `$appstores_lang`. In this case changing from:
+At this point you’re ready to add the new file to `$appstores_lang`. The easiest way is to start by identifying the file used for the previous cycle. For example, if you’re adding Firefox for iOS 6.0, identify the file used for 5.0:
 ```PHP
 $appstores_lang = [
     ...
-    'fx_ios/whatsnew/ios_4_0.lang',
-    'fx_ios/whatsnew/ios_5_0.lang',
-];
+    'fx_ios/whatsnew/ios_5_0.lang' => [
+        'deadline'          => '2016-07-27',
+        'supported_locales' => $fx_ios_store,
+    ],
 ```
 
-To:
+What you’ll need to do is:
+* Add the new file for 6.0 (`fx_ios/whatsnew/ios_6_0.lang`) by copying the one used in the previous cycle and updating the version number.
+* Mark the previous file as obsolete by adding to its definition:
+```
+'flags' => [
+    'obsolete' => ['all'],
+],
+```
+* Remove the deadline from the previous file and add it to the new one.
+
 ```PHP
 $appstores_lang = [
     ...
-    'fx_ios/whatsnew/ios_4_0.lang',
-    'fx_ios/whatsnew/ios_5_0.lang',
-    'fx_ios/whatsnew/ios_6_0.lang',
-];
+    'fx_ios/whatsnew/ios_5_0.lang' => [
+        'flags' => [
+            'obsolete' => ['all'],
+        ],
+        'supported_locales' => $fx_ios_store,
+    ],
+    'fx_ios/whatsnew/ios_6_0.lang' => [
+        'deadline'          => '2017-12-20',
+        'supported_locales' => $fx_ios_store,
+    ],
 ```
-
-Then update `$lang_flags['appstores']` marking the the old file as obsolete. From:
-```PHP
-$lang_flags['appstores'] = [
-    ...
-    'fx_ios/whatsnew/ios_2_1.lang'         => [ 'obsolete' => ['all'] ],
-    'fx_ios/whatsnew/ios_4_0.lang'         => [ 'obsolete' => ['all'] ],
-];
-```
-
-To:
-```PHP
-$lang_flags['appstores'] = [
-    ...
-    'fx_ios/whatsnew/ios_2_1.lang'         => [ 'obsolete' => ['all'] ],
-    'fx_ios/whatsnew/ios_4_0.lang'         => [ 'obsolete' => ['all'] ],
-    'fx_ios/whatsnew/ios_5_0.lang'         => [ 'obsolete' => ['all'] ],
-];
-```
-
-Add a deadline for the new file, removing the old one. From:
-```PHP
-$deadline = [
-    ...
-    'fx_ios/whatsnew/ios_5_0.lang'        => '2016-07-27', // appstores project
-];
-```
-
-To:
-```PHP
-$deadline = [
-    ...
-    'fx_ios/whatsnew/ios_6_0.lang'        => '2016-12-20', // appstores project
-];
-```
-
-Finally add the supported locales for this new file. From:
-```PHP
-'appstores' => [
-    ...
-    'fx_ios/whatsnew/ios_4_0.lang'         => $fx_ios_store,
-    'fx_ios/whatsnew/ios_5_0.lang'         => $fx_ios_store,
-],
-```
-
-To:
-```PHP
-'appstores' => [
-    ...
-    'fx_ios/whatsnew/ios_4_0.lang'         => $fx_ios_store,
-    'fx_ios/whatsnew/ios_5_0.lang'         => $fx_ios_store,
-    'fx_ios/whatsnew/ios_6_0.lang'         => $fx_ios_store,
-],
-```
-
 Now you can commit your changes to Langchecker. Always check with `git status` to confirm that you’re only including changes to `sources.inc.php`.
 ```
 $ cd ~/mozilla/git/langchecker/
@@ -209,4 +170,4 @@ Now you’re ready to open pull requests for each of the three involved reposito
 * stores_l10n: https://github.com/mozilla-l10n/stores_l10n/pull/65
 * appstores: https://github.com/mozilla-l10n/appstores/pull/72
 
-If you're using the l10n-drivers VM, both **langchecker** and **stores_l10n** are forks, so you'll find them in your user account, e.g. `https://github.com/flodolo/langchecker/`. **appstores**, on the other hand, is a direct clone of the mozilla-l10n repository.
+If you’re using the l10n-drivers VM, both **langchecker** and **stores_l10n** are forks, so you’ll find them in your user account, e.g. `https://github.com/flodolo/langchecker/`. **appstores**, on the other hand, is a direct clone of the mozilla-l10n repository.

@@ -10,7 +10,7 @@ Mozilla.org is highly visible because the site houses the basic info of all Mozi
 * Locamotion: https://mozilla.locamotion.org/projects/mozilla_lang/
 * Web dashboard: https://l10n.mozilla-community.org/webdashboard/?locale={locale_code}. Visit this page on a regular basis to check localization progress, pending work, deadline, and errors that were introduced during translation
 
-We highly advise you to ask other community members to conduct peer review not only on Pontoon or Locamotion, but on staging. While not all the languages are required for certain projects, each community can opt in the projects at a later time.
+It’s highly advised you to ask other community members to conduct peer review not only on Pontoon or Locamotion, but on staging. While not all the languages are required for certain projects, each community can opt in the projects at a later time.
 
 ## What to Test
 
@@ -53,7 +53,7 @@ You can make linguistic changes directly in [Pontoon](https://pontoon.mozilla.or
 
 Updated translations are pushed to the production server almost daily.
 
-When a brand new page is available for localization, it won't be enabled in production until it's fully localized. When existing pages receive updates with new strings, this new content won't be displayed on production until localized, to avoid displaying a mix of English and localized text.
+When a brand new page is available for localization, it won’t be enabled in production until it’s fully localized. When existing pages receive updates with new strings, this new content won’t be displayed on production until localized, to avoid displaying a mix of English and localized text.
 
 In some cases pages receive major updates that require a complete rewrite of the template: if this happens, the old template is kept online only for a short period of time and, when removed, it will cause the URL to redirect users to the English version.
 
@@ -64,4 +64,4 @@ In some cases pages receive major updates that require a complete rewrite of the
 
 If you work on Pontoon, it is safe to say that it will take less than an hour to see your changes reflected on the dashboard and the dev server.
 
-When a project has a firm deadline to meet, we will communicate it through the [dev-l10n-web mailing list](https://lists.mozilla.org/listinfo/dev-l10n-web). Be sure to sign up so you receive important community wide information on web related projects.
+When a project has a firm deadline to meet, it will be communicated through the [dev-l10n-web mailing list](https://lists.mozilla.org/listinfo/dev-l10n-web). Be sure to sign up so you receive important community wide information on web related projects.

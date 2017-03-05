@@ -64,84 +64,51 @@ $ git checkout beta48
 $ atom app/config/sources.inc.php
 ```
 
-You need to add the new file to `$appstores_lang`. In this case changing from:
+At this point you’re ready to add the new files to `$appstores_lang`. The easiest way is to start by identifying the files used for the previous cycle. For example, if you’re adding 48 Beta and promoting 47 to release, identify files for 47 Beta and 46 Release:
 ```PHP
 $appstores_lang = [
     ...
-    'fx_android/whatsnew/android_46.lang',
-    'fx_android/whatsnew/android_47_beta.lang',
+    'fx_android/whatsnew/android_46.lang' => [
+        'deadline'          => '2016-04-26',
+        'supported_locales' => array_merge($fx_android_store, ['ar']),
+    ],
+    'fx_android/whatsnew/android_47_beta.lang' => [
+        'supported_locales' => $fx_android_store,
+    ],
 ```
 
-To:
+What you’ll need to do is:
+* Add the two new files for 48 Beta (`fx_android/whatsnew/android_48_beta.lang`) and 47 release (`fx_android/whatsnew/android_47.lang`) by copying the ones used in the previous cycle and updating the version number.
+* Mark the previous beta as obsolete by adding to its definition:
+```
+'flags' => [
+    'obsolete' => ['all'],
+],
+```
+* Remove the deadline from the previous release and add it to the new one.
+
 ```PHP
 $appstores_lang = [
     ...
-    'fx_android/whatsnew/android_46.lang',
-    'fx_android/whatsnew/android_47_beta.lang',
-    'fx_android/whatsnew/android_47.lang',
-    'fx_android/whatsnew/android_48_beta.lang',
+    'fx_android/whatsnew/android_46.lang' => [
+        'supported_locales' => array_merge($fx_android_store, ['ar']),
+    ],
+    'fx_android/whatsnew/android_47_beta.lang' => [
+        'flags' => [
+            'obsolete' => ['all'],
+        ],
+        'supported_locales' => $fx_android_store,
+    ],
+    'fx_android/whatsnew/android_47.lang' => [
+        'deadline'          => '2016-06-07',
+        'supported_locales' => array_merge($fx_android_store, ['ar']),
+    ],
+    'fx_android/whatsnew/android_48_beta.lang' => [
+        'supported_locales' => $fx_android_store,
+    ],
 ```
 
-Then update `$lang_flags['appstores']` marking the the old beta file as obsolete. From:
-```PHP
-$lang_flags['appstores'] = [
-    ...
-    'fx_android/whatsnew/android_44.lang'      => [ 'obsolete' => ['all'] ],
-    'fx_android/whatsnew/android_45.lang'      => [ 'obsolete' => ['all'] ],
-    'fx_android/whatsnew/android_46_beta.lang' => [ 'obsolete' => ['all'] ],
-    ...
-```
-
-To:
-```PHP
-$lang_flags['appstores'] = [
-    ...
-    'fx_android/whatsnew/android_44.lang'      => [ 'obsolete' => ['all'] ],
-    'fx_android/whatsnew/android_45.lang'      => [ 'obsolete' => ['all'] ],
-    'fx_android/whatsnew/android_46_beta.lang' => [ 'obsolete' => ['all'] ],
-    'fx_android/whatsnew/android_47_beta.lang' => [ 'obsolete' => ['all'] ],
-    ...
-```
-
-Add a deadline for the new file, removing the old one. From:
-```PHP
-$deadline = [
-    ...
-    'fx_android/whatsnew/android_46.lang'      => '2016-04-26', // appstores project
-    ...
-];
-```
-
-To:
-```PHP
-$deadline = [
-    ...
-    'fx_android/whatsnew/android_47.lang'      => '2016-06-07', // appstores project
-    ...
-];
-```
-
-Finally add the supported locales for these new files. From:
-```PHP
-'appstores' => [
-    ...
-    'fx_android/whatsnew/android_45.lang'      => array_merge($fx_android_store, ['ar']),
-    'fx_android/whatsnew/android_46.lang'      => array_merge($fx_android_store, ['ar']),
-    'fx_android/whatsnew/android_46_beta.lang' => $fx_android_store,
-    'fx_android/whatsnew/android_47_beta.lang' => $fx_android_store,
-```
-
-To:
-```PHP
-'appstores' => [
-    ...
-    'fx_android/whatsnew/android_45.lang'      => array_merge($fx_android_store, ['ar']),
-    'fx_android/whatsnew/android_46.lang'      => array_merge($fx_android_store, ['ar']),
-    'fx_android/whatsnew/android_47.lang'      => array_merge($fx_android_store, ['ar']),
-    'fx_android/whatsnew/android_46_beta.lang' => $fx_android_store,
-    'fx_android/whatsnew/android_47_beta.lang' => $fx_android_store,
-    'fx_android/whatsnew/android_48_beta.lang' => $fx_android_store,
-```
+At this point the previous release (46) is not obsolete yet, you can mark it as such the next time you update the file. As a general rule, there should be only two non obsolete release files near the end of the cycle.
 
 Now you can commit your changes to Langchecker. Always check with `git status` to confirm that you’re only including changes to `sources.inc.php`.
 ```
@@ -236,4 +203,4 @@ Now you’re ready to open pull requests for each of the three involved reposito
 * stores_l10n: https://github.com/mozilla-l10n/stores_l10n/pull/63
 * appstores: https://github.com/mozilla-l10n/appstores/pull/70
 
-If you're using the l10n-drivers VM, both **langchecker** and **stores_l10n** are forks, so you'll find them in your user account, e.g. `https://github.com/flodolo/langchecker/`. **appstores**, on the other hand, is a direct clone of the mozilla-l10n repository.
+If you’re using the l10n-drivers VM, both **langchecker** and **stores_l10n** are forks, so you’ll find them in your user account, e.g. `https://github.com/flodolo/langchecker/`. **appstores**, on the other hand, is a direct clone of the mozilla-l10n repository.

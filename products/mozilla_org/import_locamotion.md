@@ -1,6 +1,6 @@
 # Importing strings from Pootle
 
-Pootle doesn’t commit directly to the repository, periodically we need to import strings.
+Pootle doesn’t commit directly to the repository, periodically strings need to be imported.
 
 There are two ways to import strings:
 * Directly from the online [mozilla-lang repository].
