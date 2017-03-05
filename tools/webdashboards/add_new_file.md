@@ -57,7 +57,7 @@ For the list of locales you should check the definition for existing similar fil
 ```
 
 ### Priority
-Priority is optional and can defined for each file. If the priority is the same for all locales, you can assign the integer value (from 1 to 3) to a `priority` key.
+Priority is optional and can defined for each file. If the priority is the same for all locales, you can assign the integer value (from 1 to 5) to a `priority` key.
 
 ```PHP
 'mozorg/contribute/index.lang' => [
@@ -116,7 +116,7 @@ In this case, the request is to flag the file as opt-in for all locales.
 ### Deadline
 If a file is critical, you also want to set a deadline for it: in the last week before deadline the date will be displayed in orange on the Webdashboard, after deadline it will be displayed in red.
 
-If the deadline is the same for all locales, you can assign the date (as a string in ISO format dd-mm-yyyy) to a `deadline` key. In this case, deadline needs to be set to May 30th, 2016 (2016-05-30):
+If the deadline is the same for all locales, you can assign the date (as a string in ISO format YYYY-MM-DD) to a `deadline` key. In this case, deadline needs to be set to May 30th, 2016 (2016-05-30):
 
 ```PHP
 'mozorg/contribute/signup.lang' => [
@@ -131,7 +131,7 @@ If the deadline is the same for all locales, you can assign the date (as a strin
 ],
 ```
 
-It’s also possible to define different deadlines for locales using an associative array, where to each deadline (date in ISO format dd-mm-yyyy) is associated an array of locales. `all` is a special locale to represent all supported locales for this file. For example, a deadline for German and French, and a later date for other languages:
+It’s also possible to define different deadlines for locales using an associative array, where to each deadline (date in ISO format YYYY-MM-DD) is associated an array of locales. `all` is a special locale to represent all supported locales for this file. For example, a deadline for German and French, and a later date for other languages:
 
 ```PHP
 'deadline' => [
