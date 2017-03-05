@@ -165,9 +165,6 @@ $ git commit -a -m "Add What's new file for iOS 6.0"
 $ git push origin ios6_0
 ```
 
-Now you’re ready to open pull requests for each of the three involved repositories. For example check:
-* Langchecker: https://github.com/mozilla-l10n/langchecker/pull/508
-* stores_l10n: https://github.com/mozilla-l10n/stores_l10n/pull/65
-* appstores: https://github.com/mozilla-l10n/appstores/pull/72
+Now you’re ready to open pull requests for each of the three involved repositories.
 
 If you’re using the l10n-drivers VM, both **langchecker** and **stores_l10n** are forks, so you’ll find them in your user account, e.g. `https://github.com/flodolo/langchecker/`. **appstores**, on the other hand, is a direct clone of the mozilla-l10n repository.

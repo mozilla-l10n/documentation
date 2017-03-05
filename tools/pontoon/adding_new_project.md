@@ -10,13 +10,13 @@ It's important to also check the files for localization issues before exposing t
 ## Create the project in Pontoon STAGE instance
 First you want to test that everything works using Pontoon staging server.
 
-Access Pontoon's [admin console](https://mozilla-pontoon-staging.herokuapp.com/admin/) on the **stage server** and click **ADD NEW PROJECT**.
-* Name: name of the repository (it will be displayed in Pontoon's project selector).
-* Slug: used in URLs, will be generated automatically based on the repository's name.
+Access Pontoon’s [admin console](https://mozilla-pontoon-staging.herokuapp.com/admin/) on the **stage server** and click **ADD NEW PROJECT**.
+* Name: name of the repository (it will be displayed in Pontoon’s project selector).
+* Slug: used in URLs, will be generated automatically based on the repository’s name.
 * Locales: select at least one locale.
 * Deadline: if available, enter project deadline in the YYYY-MM-DD format.
 * Priority: select priority level from one of the 5 levels: Lowest, Low, Normal, High, Highest.
-* Repositories: select the type of repository and URL. Make sure to use SSH to allow write access. For example, if the repository is `https://github.com/meandavejustice/min-vid`, the URL should be `git@github.com:meandavejustice/min-vid.git`. You can use the *Clone or download* button in the repository page on GitHub, making sure that *Clone with SSH* is selected. 
+* Repositories: select the type of repository and URL. Make sure to use SSH to allow write access. For example, if the repository is `https://github.com/meandavejustice/min-vid`, the URL should be `git@github.com:meandavejustice/min-vid.git`. You can use the *Clone or download* button in the repository page on GitHub, making sure that *Clone with SSH* is selected.
 * Leave the `Branch` field empty, unless developers asked to commit translations in a branch instead of *master*.
 * Download prefix: a URL prefix for downloading localized files. For GitHub repositories, select any localized file on GitHub, click `Raw` and replace locale code and the following bits in the URL with `{locale_code}`. For example, if the link is `https://raw.githubusercontent.com/bwinton/TabCenter-l10n/master/locales/en-US/addon.properties`, the field should be set to `https://github.com/bwinton/TabCenter-l10n/blob/master/locales/{locale_code}`.
 * Public Repository Website: displayed on dashboards. E.g. `https://github.com/meandavejustice/min-vid`. Pontoon will try to prefill it after you enter Repository URL.
@@ -30,6 +30,6 @@ Click **SAVE PROJECT** at the bottom of the page, then click **SYNC** to run a t
 ## Create the project in Pontoon PROD instance
 At this point you need to repeat the same steps on the **production server**.
 
-Access Pontoon's [admin console](https://pontoon.mozilla.org/admin/), add the same information you used on the staging server and make sure to select all supported locales for this project.
+Access Pontoon’s [admin console](https://pontoon.mozilla.org/admin/), add the same information you used on the staging server and make sure to select all supported locales for this project.
 
 The new project will appear in the [public list of Projects](https://pontoon.mozilla.org/projects/) only after the next sync cycle.
