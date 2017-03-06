@@ -69,7 +69,7 @@ All projects are now cloned using https and the original repository as `origin` 
 
 Then run the following script providing your GitHub username (e.g. `flodolo`): it will setup the original repository as a remote called `upstream`, and your fork as `origin`. It will also switch relevant l10n repositories, like mozilla_org, to ssh to allow you to make direct commits.
 ```
-$ ~/mozilla/git/scripts/setup_vm/setup_remotes.sh GITHUB_USERNAME"
+$ ~/mozilla/git/scripts/setup_vm/setup_remotes.sh GITHUB_USERNAME
 ```
 
 Make sure to restart the terminal to enable the new command aliases. It’s recommended to use *Terminator*, installed as part of the setup script: it’s an improved terminal with support for tabs and split windows.
