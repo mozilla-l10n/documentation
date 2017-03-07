@@ -25,17 +25,17 @@ Changes to comments (<note>) are irrelevant in terms of string updates, so they�
 
 Remember also that the script converts Unicode literals into UTF-8 characters. Example: https://github.com/mozilla-l10n/firefoxios-l10n/pull/19/commits/713def82602224556d797b46e3f6d611297ee3e3#diff-42d28e544c7a30099950b7a09a69f2caL2289
 
-As you can see, the “&#173;” was not lost - it was converted to the invisible UTF-8 character.
+As you can see, the `&#173;` was not lost - it was converted to the invisible UTF-8 character.
 
 ### Potentially problematic changes (removals)
 Then you start scrolling down, checking if the new strings make sense: the first one you find is NSCameraUsageDescription.
 
-You mostly need to pay attention to the strings removed. Double-check each time that iOS team clearly realizes that l10n-drivers won’t be able to release updates to v5 (or any v5.x release) once strings are exported.
+You mostly need to pay attention to the strings removed. Double-check each time that iOS team clearly realizes that they won’t be able to release updates to v5 (or any v5.x release) once strings are exported.
 
-For example: “Menu.NightModeAction.Title” is removed. If it’s used in v5, and the iOS team plans to release an update to v5 in the future, localizations will miss that string.
+For example: `Menu.NightModeAction.Title` is removed. If it’s used in v5, and the iOS team plans to release an update to v5 in the future, localizations will miss that string.
 
 ### Quickly review other locales
-Once you’ve checked “templates”, you can pick at least one locale and see what changes:
+Once you’ve checked `templates`, you can pick at least one locale and see what changes:
 https://github.com/mozilla-l10n/firefoxios-l10n/pull/19/commits/a1c041a012e6996bd8bdaec88f21f3c34fe383b0
 
 ## Reviewing strings during the cycle
@@ -48,10 +48,10 @@ You might also need to identify the bug that added that string, see if there are
 ### How to find the bug that introduced a string
 Let’s consider an example of new strings for Firefox for iOS, with [this past PR](https://github.com/mozilla-l10n/firefoxios-l10n/pull/19).
 
-The ID is “NSCameraUsageDescription”, the label “This lets you take and upload photos”
+The ID is `NSCameraUsageDescription`, the label `This lets you take and upload photos`
 It doesn’t have a localization comment, which is bad. 
 
-In fact currently, the only strings that can not have localization comments are strings that are located in “InfoPlist.strings” and “Info.plist” - see [Bug 1277515](https://bugzilla.mozilla.org/show_bug.cgi?id=1277515) for more details. Otherwise, strings should always have localization comments.
+In fact currently, the only strings that can not have localization comments are strings that are located in `InfoPlist.strings` and `Info.plist` - see [Bug 1277515](https://bugzilla.mozilla.org/show_bug.cgi?id=1277515) for more details. Otherwise, strings should always have localization comments.
 
 So you open the main repository page:
 https://github.com/mozilla-mobile/firefox-ios
@@ -62,7 +62,7 @@ https://github.com/mozilla-mobile/firefox-ios/search?utf8=%E2%9C%93&q=NSCameraUs
 In this case you find two occurrences. The first one is the most interesting, so you open the file:
 https://github.com/mozilla-mobile/firefox-ios/blob/978bf46bb680291c61c5d21b6dc26472388a374f/Client/en.lproj/InfoPlist.strings
 
-Then use the “Blame” link on top:
+Then use the `Blame` link on top:
 https://github.com/mozilla-mobile/firefox-ios/blame/978bf46bb680291c61c5d21b6dc26472388a374f/Client/en.lproj/InfoPlist.strings
 
 On the left, you should (almost always) find the bug reference:
