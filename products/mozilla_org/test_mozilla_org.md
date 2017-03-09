@@ -66,6 +66,7 @@ If you work on Pontoon, it is safe to say that it will take less than an hour to
 
 When a project has a firm deadline to meet, it will be communicated through the [dev-l10n-web mailing list](https://lists.mozilla.org/listinfo/dev-l10n-web). Be sure to sign up so you receive important community wide information on web related projects.
 
+
 ## Testing Dynamic Pages
 This section focuses on instructions for testing pages with dynamically generated content. Each page or topic is different in terms of steps or flow. These instructions could change overtime to reflect product design updates. Linguistic testing is the main focus. The instrutions below are detailed steps to get to the localized content so it can be reviewed in context.
 
