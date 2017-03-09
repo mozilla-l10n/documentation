@@ -13,7 +13,8 @@ First you want to test that everything works using Pontoon staging server.
 Access Pontoon’s [admin console](https://mozilla-pontoon-staging.herokuapp.com/admin/) on the **stage server** and click **ADD NEW PROJECT**.
 * Name: name of the repository (it will be displayed in Pontoon’s project selector).
 * Slug: used in URLs, will be generated automatically based on the repository’s name.
-* Locales: select at least one locale.
+* Locales: select at least one locale. You can also copy locales from other projects.
+* Uncheck the `Locales can opt-in` checkbox to prevent localizers from requesting the project.
 * Deadline: if available, enter project deadline in the YYYY-MM-DD format.
 * Priority: select priority level from one of the 5 levels: Lowest, Low, Normal, High, Highest.
 * Repositories: select the type of repository and URL. Make sure to use SSH to allow write access. For example, if the repository is `https://github.com/meandavejustice/min-vid`, the URL should be `git@github.com:meandavejustice/min-vid.git`. You can use the *Clone or download* button in the repository page on GitHub, making sure that *Clone with SSH* is selected.
