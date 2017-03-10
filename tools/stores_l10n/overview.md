@@ -16,10 +16,12 @@ This app allows:
 
 Refer to the [README](https://github.com/mozilla-l10n/stores_l10n/#installation) in the code repository for instructions on how to install this app.
 
-# Projects configuration
+## Projects configuration
+
 The entire configuration is stored inside the [Project class](https://github.com/mozilla-l10n/stores_l10n/blob/master/app/classes/Stores/Project.php).
 
 `$products_data` stores all supported products, with the following structure for each of them:
+
 ```PHP
 'fx_android' =>
     [
@@ -48,7 +50,8 @@ In order to add a brand new project, you would need to:
 * Create files in [/templates](https://github.com/mozilla-l10n/stores_l10n/tree/master/app/templates) and [/view](https://github.com/mozilla-l10n/stores_l10n/tree/master/app/views) for each supported channel.
 * Track the new .lang files in Langchecker for the appstores repository.
 
-# Template and View Structure
+## Template and View Structure
+
 This is a portion of the template file used for Focus for iOS.
 
 ```PHP
@@ -73,12 +76,14 @@ Similarly to a Django template, each string is wrapped in a translation function
 Strings are grouped into a variable, like `$screenshots` in this case: this allows, for example, to determine the overall length of all strings included in a section, to see if it exceeds the [limits imposed by stores](https://github.com/mozilla-l10n/stores_l10n/blob/master/app/inc/constants.php#L15-L22). It’s important to note that, since these limits are per-section and not per-string, the standard webdashboard won’t display any warnings. Also, if a string exceeds the maximum length, it won’t be exposed via API and the locale will be marked as incomplete.
 
 These variables are then used in views, for example the variable/function `$description`:
+
 ```PHP
 <h3>Description</h3>
 <pre><?= $description($translations) ?></pre>
 ```
 
 It’s also possible to embed more logic into these view:
+
 ```PHP
 <?php
     /*
