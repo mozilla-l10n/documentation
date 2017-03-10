@@ -40,7 +40,7 @@ You can make linguistic changes directly in [Pontoon](https://pontoon.mozilla.or
 * Click the download link, you should be able to download the product in your language, if it is localized, such as Firefox
 * Font support and readability
 * Footer: verify that the translation of the link is coherent and the link is functional
-* Language list: Is your language listed as one of the options? Check https://www-dev.allizom.org/en-US/ to confirm
+* Language list: Is your language listed as one of the options? Check https://www-dev.allizom.org/ to confirm
 * Error page: Deliberately type a broken link, such as https://www.mozilla.org/firefox/neu/, check whether [404 page](https://www-dev.allizom.org/404/) is localized
 * If your language is RTL, make sure that the page layout and text flow in the correct directions
 
@@ -76,7 +76,7 @@ This section focuses on instructions for testing pages with dynamically generate
 
 ### [firefox/new/horizon.lang](https://www.mozilla.org/firefox/new/)
 * Once page is loaded, click on the link called **Download Firefox for another platform**
-* For alternative message, change URL to [Scene2](https://www.mozilla.org/en-US/firefox/new/?scene=2)
+* For alternative message, change URL to [Scene2](https://www.mozilla.org/firefox/new/?scene=2)
 * To fully review the Firefox download page messages, tests must go through following scenarios:
  * Desktop: Windows, macOS, Linux
  * Mobile: Android and iOS
@@ -92,9 +92,9 @@ The test can be done for all locales only on staging. For production testing, on
 ### firefox/tracking-protection-tour.lang
 * Open Firefox and start a New Private Window
 * Once the window is launched, click on **See how it works** button
-* You are taken to [step one](https://www.mozilla.org/en-US/firefox/51.0.1/tracking-protection/start/?step=1)
-* Click the **Next** button, it takes you to steps [two](https://www.mozilla.org/en-US/firefox/51.0.1/tracking-protection/start/?step=2) and [three](https://www.mozilla.org/en-US/firefox/51.0.1/tracking-protection/start/?step=3)
-* In step [three](https://www.mozilla.org/en-US/firefox/51.0.1/tracking-protection/start/?step=3), an extra text box appears 
+* You are taken to [step one](https://www.mozilla.org/firefox/51.0.1/tracking-protection/start/?step=1)
+* Click the **Next** button, it takes you to steps [two](https://www.mozilla.org/firefox/51.0.1/tracking-protection/start/?step=2) and [three](https://www.mozilla.org/firefox/51.0.1/tracking-protection/start/?step=3)
+* In step [three](https://www.mozilla.org/firefox/51.0.1/tracking-protection/start/?step=3), an extra text box appears 
 * Click on **Disable protection for this session** button to generate a new "step three" message  
 * Click on **Enable protection** button to toggle between "enable" and "disable" protection messages
  * NOTE: In order to see the message of **Disable protection for this site**, the browser must be in _normal mode_
