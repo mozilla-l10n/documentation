@@ -83,7 +83,7 @@ This section focuses on instructions for testing pages with dynamically generate
  * Updating from older version of Firefox to the latest vs. downloading for the first time
 
 ### [firefox/sendto.lang](https://www-dev.allizom.org/styleguide/docs/send-to-device/)
-The test can be done for all locales only on staging. Production is enabled only for these locales: 
+The test can be done for all locales only on staging. For production testing, only these locales are enabled: de, en-GB, en-ZA, es-AR, es-CL, es-ES, es-MX, fr, id, pl, pt-BR, and ru.
 * Enter a mobile phone number, a new page will be generated, suggesting the next action to take
 * Enter a phone number in the wrong phone number format. This will prompt an error message
 
@@ -101,10 +101,9 @@ The test can be done for all locales only on staging. Production is enabled only
 * Click on **Got it!** button to get to the next page
 * Click on **Restart tour** button to go through the above steps  
 
-
 ### [mozorg/about/history.lang](https://www.mozilla.org/about/history/)
 * The slides should automatically scroll to the next in about 10 seconds or so 
-* If it doesn't or it stops, click the next or previous arrows to go to the next slide
+* If it does not or it stops, click the next or previous arrows to go to the next slide
 * Be sure to cycle through until you see the first slide again to ensure you have covered all the slides
 * Text fits inside the box
  
@@ -115,7 +114,7 @@ You can check out the principles of the manifesto without going to the slide mod
 * Check on text layout, alignment and wrapping. Box size should be adjustable to fit all the content
 
 ### [mozorg/contribute/signup.lang](https://www.mozilla.org/)
-There are different ways to access the signup dialog box above the footer area. This is for signing up newsletters. 
+There are different ways to access the signup dialog box above the footer area. This is for signing up to newsletters. 
 * Click on any of the six icons or the links below each of them, you will be prompted to the Sign Up section
 * Leave the name field empty, click on the **Sign Up Now** button. A text bubble will appear
 * Fill out the name field, leave the checkbox unchecked, click on the **Sign Up Now** button. A text bubble will appear
