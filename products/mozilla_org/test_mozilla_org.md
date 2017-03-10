@@ -40,7 +40,7 @@ You can make linguistic changes directly in [Pontoon](https://pontoon.mozilla.or
 * Click the download link, you should be able to download the product in your language, if it is localized, such as Firefox
 * Font support and readability
 * Footer: verify that the translation of the link is coherent and the link is functional
-* Language list: Is your language listed as one of the options? Check https://www-dev.allizom.org/ to confirm
+* Language list: Is your language listed as one of the options? Check https://www-dev.allizom.org/en-US to confirm
 * Error page: Deliberately type a broken link, such as https://www.mozilla.org/firefox/neu/, check whether [404 page](https://www-dev.allizom.org/404/) is localized
 * If your language is RTL, make sure that the page layout and text flow in the correct directions
 
