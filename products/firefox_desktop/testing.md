@@ -29,6 +29,13 @@ From time to time [create a new profile](https://support.mozilla.org/kb/profile-
 * Visit secure and unsecure website, and check the **i** panel near the URL.
 * Right click on a page and verify all panels in the `View Page Info` dialog.
 
+### Testing webextension permissions dialog
+Create a new profile and open `about:config` in your browser:
+* Right click on the list of available keys and create a new boolean key `extensions.webextPermissionPrompts` set to `true`.
+* Search for the key `xpinstall.signatures.required` and set it to `false`. This will allow installing unsigned add-ons.
+* Open [this link](files/webext_permissions.xpi), select **Download** and save the file on your computer.
+* Drag the .xpi file on your browser’s window to display the dialog (you don’t need to actually install it).
+
 ## Test accesskeys and shortcuts
 You can test accesskeys only on Windows and Linux, since they’re not available in OS X.
 If your locale uses a non Latin alphabet and opted to keep the English accesskeys, you don’t have anything to check. If you’re localizing accesskeys, you should check that:
