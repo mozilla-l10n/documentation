@@ -87,8 +87,6 @@ The test can be done for all locales only on staging. For production testing, on
 * Enter a mobile phone number, a new page will be generated, suggesting the next action to take
 * Enter a phone number in the wrong phone number format. This will prompt an error message
 
-### [firefox/sync.lang](https://www.mozilla.org/firefox/sync/) 
-
 ### firefox/tracking-protection-tour.lang
 * Open Firefox and start a New Private Window
 * Once the window is launched, click on **See how it works** button
@@ -112,10 +110,3 @@ You can check out the principles of the manifesto without going to the slide mod
 * Click on the first principle
 * Click on the “next” and the “previous” arrows to move from one slide to the next
 * Check on text layout, alignment and wrapping. Box size should be adjustable to fit all the content
-
-### [mozorg/contribute/signup.lang](https://www.mozilla.org/)
-There are different ways to access the signup dialog box above the footer area. This is for signing up to newsletters. 
-* Click on any of the six icons or the links below each of them, you will be prompted to the Sign Up section
-* Leave the name field empty, click on the **Sign Up Now** button. A text bubble will appear
-* Fill out the name field, leave the checkbox unchecked, click on the **Sign Up Now** button. A text bubble will appear
-* Fill out all the fields and check the box, click on the **Sign Up Now** button. A confirmation message appears on the page
