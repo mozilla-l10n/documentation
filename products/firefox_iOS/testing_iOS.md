@@ -11,12 +11,12 @@ Please note you will need an iOS device running v9 or above.
 
 ## Aspects to review
 Here is a list of issues you should try to identify when testing the build:
-* Language quality
-* Truncated words (cut-off from screen)
-* Anything that appears broken on the UI
-* Check out at all the main screens, UI, menus, tabs, new features, etc. Make sure these all look good, that everything is properly translated and appears as expected
-* Font support
-* Untranslated content
+* Language quality.
+* Truncated words (cut-off from screen).
+* Anything that appears broken on the UI.
+* Check out at all the main screens, UI, menus, tabs, new features, etc. Make sure these all look good, that everything is properly translated and appears as expected.
+* Font support.
+* Untranslated content.
 
 Concerning untranslated content: please note that we currently have [two tiers of support in iOS](https://people-mozilla.org/~sarentz/ios-locales.html). If your locale is only in the Tier 2 support list, then it sometimes happens that menu items, which are part of the OS itself, may not be localizable - and will therefore unfortunately appear in English on the final UI.
 

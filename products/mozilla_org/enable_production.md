@@ -16,6 +16,7 @@ $ git checkout bug1338759
 ```
 
 If you see a message referencing legal-docs like this one, it means that there’s an unwanted change in the legal-docs repository:
+
 ```BASH
 $ git checkout bug1338759
 M	vendor-local/src/legal-docs
@@ -39,6 +40,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 **IMPORTANT**: you need to get rid of this change before doing any work. If you don’t, your pull request will be rejected.
 
 In order to remove this change, run the following commands
+
 ```BASH
 $ cd ~/mozilla/git/bedrock/vendor-local/src/legal-docs/
 $ git checkout master
@@ -50,12 +52,14 @@ Make sure you’re back to the `bedrock` folder in your virtual machine, and che
 
 ## Edit Bedrock’s settings
 The file to modify is `bedrock/base/settings.py`.
+
 ```BASH
 $ cd ~/mozilla/git/bedrock
 $ atom bedrock/settings/base.py
 ```
 
 Search for `PROD_LANGUAGES`.
+
 ```PYTHON
 PROD_LANGUAGES = ('ach', 'af', 'an', 'ar', 'as', 'ast', 'az', 'bg',
                   'bn-BD', 'bn-IN', 'br', 'bs', 'ca', 'cak', 'cs',
@@ -79,6 +83,7 @@ You need to add your locale to the list, making sure to:
 * Enclose the locale code in single quotes.
 
 In Atom there’s a vertical line to display where the 80 characters limit is. If your line is too long, like in this case, you can use a trick to make sure the text fits within the maximum length. First add the new locale code in the correct position, don’t worry about the line length.
+
 ```PYTHON
 PROD_LANGUAGES = ('ach', 'af', 'an', 'ar', 'as', 'ast', 'az', 'bg',
                   'bn-BD', 'bn-IN', 'br', 'bs', 'ca', 'cak', 'cs',
@@ -96,6 +101,7 @@ PROD_LANGUAGES = ('ach', 'af', 'an', 'ar', 'as', 'ast', 'az', 'bg',
 ```
 
 Add an empty line two lines above and below the line you need to fix (more if needed, i.e. all lines are at near the maximum length).
+
 ```PYTHON
 PROD_LANGUAGES = ('ach', 'af', 'an', 'ar', 'as', 'ast', 'az', 'bg',
                   'bn-BD', 'bn-IN', 'br', 'bs', 'ca', 'cak', 'cs',
@@ -115,6 +121,7 @@ PROD_LANGUAGES = ('ach', 'af', 'an', 'ar', 'as', 'ast', 'az', 'bg',
 ```
 
 Position the cursor in the block including the line you need to fix, and select *Edit -> Reflow Selection*. With this command lines are reorganized to fit the 80 characters limit, and this will be the result:
+
 ```PYTHON
 PROD_LANGUAGES = ('ach', 'af', 'an', 'ar', 'as', 'ast', 'az', 'bg',
                   'bn-BD', 'bn-IN', 'br', 'bs', 'ca', 'cak', 'cs',
@@ -134,6 +141,7 @@ PROD_LANGUAGES = ('ach', 'af', 'an', 'ar', 'as', 'ast', 'az', 'bg',
 ```
 
 You can then **remove the empty lines** and save the file. These empty lines are needed to avoid affecting more content than needed, in particular the first line. Withouth them you would end up with this:
+
 ```PYTHON
 PROD_LANGUAGES = ('ach', 'af', 'an', 'ar', 'as', 'ast', 'az', 'bg', 'bn-BD',
 'bn-IN', 'br', 'bs', 'ca', 'cak', 'cs', 'cy', 'da', 'de', 'dsb', 'el', 'en-GB',
@@ -147,6 +155,7 @@ PROD_LANGUAGES = ('ach', 'af', 'an', 'ar', 'as', 'ast', 'az', 'bg', 'bn-BD',
 ```
 
 Verify that there are no other changed files, and the diff looks good with `git diff`. Since you reorganized lines to fit the 80 characters limit, there will be more than one line changed.
+
 ```BASH
 $ git status
 On branch bug1338759
@@ -170,6 +179,7 @@ Then open and save your file again.
 
 ## Commit and open a pull request
 You’re ready to commit your change. Remember to references your bug with "Fix", this will automatically close the bug when the change lands.
+
 ```BASH
 $ git commit -a -m "Fix Bug 1338759 - Enable ne-NP on production for mozilla.org"
 $ git push origin bug1338759

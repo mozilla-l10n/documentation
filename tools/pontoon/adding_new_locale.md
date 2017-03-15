@@ -16,11 +16,13 @@ It’s the language name, in this case `Amharic`.
 
 ### Plural rule
 It’s the GetText plural rule. This [document](http://docs.translatehouse.org/projects/localization-guide/en/latest/l10n/pluralforms.html) has plural rules for several languages. For example, for Amharic it would be:
+
 ```
 nplurals=2; plural=(n > 1);
 ```
 
 As explained in the note below the field, you only need to put the last part in the field:
+
 ```
 (n > 1)
 ```
@@ -29,6 +31,7 @@ As explained in the note below the field, you only need to put the last part in 
 You need to find the locale on [CLDR](http://www.unicode.org/cldr/charts/dev/supplemental/language_plural_rules.html). For Amharic, there are only two **cardinal** plural forms listed: one, other.
 
 The mapping is:
+
 ```
 0 -> zero
 1 -> one

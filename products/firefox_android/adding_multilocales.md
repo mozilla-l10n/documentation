@@ -6,9 +6,10 @@ The list of locales included in the multi-locales build is stored inside a file 
 
 ## File a bug to add the new locale
 You need to file a bug in Firefox for Android::General requesting the new locale (see for example [this bug for Serbian](https://bugzilla.mozilla.org/show_bug.cgi?id=1262464)). You can use this [bug template] to make things faster:
-- Update it with the appropriate locale code and language name.
-- Update the target version for Firefox in comment 0.
-- Set the `relnote-firefox` flag, e.g.
+* Update it with the appropriate locale code and language name.
+* Update the target version for Firefox in comment 0.
+* Set the `relnote-firefox` flag, e.g.
+
 ```
 Release Note Request (optional, but appreciated)
 [Why is this notable]: New locale
@@ -18,14 +19,15 @@ Release Note Request (optional, but appreciated)
 
 ## Creating a patch for maemo-locales
 First of all make sure that your environment is [correctly set up](/config/setting_mercurial_environment.md), and update your local mozilla-aurora clone:
-```
+
+```BASH
 $ cd ~/mozilla/mercurial/mozilla-aurora
 $ hg pull -r default -u
 ```
 
 The file to modify is in `mobile/android/locales/maemo-locales`, open it with your text editor of choice.
 
-```
+```BASH
 $ atom mobile/android/locales/maemo-locales
 ```
 
@@ -33,7 +35,7 @@ And add the new locale to the list. With Atom and the Sort Lines package install
 
 After you’ve finished editing the file, check the status of the repository, and the diff.
 
-```
+```BASH
 $ hg status
 M mobile/android/locales/maemo-locales
 
@@ -54,7 +56,7 @@ $ hg diff
 
 `M` in `hg status` indicates that the file has been modified, `+` in `hg diff` that the line has been added. Everything looks good, there are no unrelated changes, so it’s time to create a patch. You need to assign a name to this patch, it’s easy to use a reference to the bug number: for example, if the bug number is 123456, the file could be called `bug123456.patch` (note the added extension `.patch`).
 
-```
+```BASH
 $ hg qnew bug123456.patch
 ```
 
@@ -63,18 +65,22 @@ At this point you will be asked to provide a commit message for your patch (in `
 The commit message should be the same as the bug, for example `Bug 123456 - Add "ab-CD" to Fennec meamo-locales for multi-locales build`.
 
 You’ready to *pop* the patch out of the queue. Since there are no other patches, you can pop them all with `-a`.
-```
+
+```BASH
 $ hg qpop -a
 popping bug123456.patch
 patch queue now empty
 ```
 
 The patch is stored inside the `.hg/patches` folder in the root of the repository (in the suggested setup, the full path would be `~/mozilla/mercurial/mozilla-aurora/.hg/patches`). You can copy the file through the command line or the file explorer. For example, on Mac you can open the folder in Finder by typing:
-```
+
+```BASH
 $ open ~/mozilla/mercurial/mozilla-aurora/.hg/patches
 ```
+
 Or you can copy the file on the Desktop with
-```
+
+```BASH
 $ cp ~/mozilla/mercurial/mozilla-aurora/.hg/patches/bug123456.patch ~/Desktop
 ```
 

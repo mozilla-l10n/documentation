@@ -23,15 +23,15 @@ You should also be checking your locale’s [Firefox for Android dashboard](http
 Checking your team page and dashboard regularly should be something you do from the very beginning when you start localizing a project, so that it becomes a habit. This helps reduce the chance of breaking the builds in the future, once your locale is actually shipping, and generally helps catch errors earlier on. It also gives you an overview of your locale’s health and status, and overall ensures you’re shipping a good quality localization.
 
 ## Localize the Firefox for Android folder
-* [Pontoon](https://pontoon.mozilla.org/firefox-for-android-aurora/): Choose your locale code from there
-* [Pootle](https://mozilla.locamotion.org/projects/mobile/ ): Choose your locale code from there
+* [Pontoon](https://pontoon.mozilla.org/firefox-for-android-aurora/): choose your locale code from there.
+* [Pootle](https://mozilla.locamotion.org/projects/mobile/ ): choose your locale code from there.
 
 Once you’ve finished covering this folder, please note you still have strings to translate. See below for more instructions.
 
 ## Localize the shared Firefox strings
 In order to reach 100% completion on the Firefox for Android l10n project, you will have to localize the shared Firefox files (so, the ones common to Firefox Desktop and Android) as well. These are found in the Firefox Aurora folder:
-* [Pontoon](https://pontoon.mozilla.org/projects/firefox-aurora/): Choose your locale code from there. Localize all file paths that start with dom, netwerk, security, services and toolkit
-* [Pootle](https://mozilla.locamotion.org/projects/firefox/): Choose your locale code from there. In the list you now see, localize the files found in "androidshared" folder.
+* [Pontoon](https://pontoon.mozilla.org/projects/firefox-aurora/): choose your locale code from there. Localize all file paths that start with dom, netwerk, security, services and toolkit.
+* [Pootle](https://mozilla.locamotion.org/projects/firefox/): choose your locale code from there. In the list you now see, localize the files found in "androidshared" folder.
 
 Once you’ve reached 100% completion for the shared strings: let the Fennec project manager know (currently **delphine** at **mozilla** dot **com**). A bug will be filed to add your locale to the single-locale builds.
 

@@ -1,0 +1,48 @@
+# Documentation style guide
+
+## General rules
+These are some of the general rules to follow when writing and reviewing documentation for this repository:
+* Address the reader as **you**, avoid using **we**.
+* Avoid using generic terms.
+* Avoid unnecessary empty lines in the document.
+
+## Typography
+* Lists: each list item should start with an uppercase letter, and end with a period (only exception when the item ends with a URL). Use the `*` markdown notation for each item.
+* Use lowercase after colons, only one space after a period.
+* Use proper quotes, like `“example”`, instead of straight double quotes.
+* Use typographical apostrophes `’` instead of straight single quotes `'` (code fragments are the only exception).
+* Use backticks `, bold, or italic to highlight text in a sentence, not quotes.
+* Try to use links instead of putting URLs directly in the text. For example, `visit [this page](http://example.com)` should be preferred to `visit http://example.com`.
+* Leave an empty line before and after code fragments, specify the language where possible. For example:
+
+<pre>
+This is some text.
+
+```PHP
+$test = 'test';
+```
+
+This is some other text.
+</pre>
+
+## Titles
+* Use the dash syntax, leave one space after the dash, e.g. `# This is a title`.
+* Use sentence case, avoid title case.
+* Documents should always start with a 1st level title, leave an empty line after it. There should be **only one** 1st level title.
+* 2nd and lower level titles: leave an empty line before each title, don’t leave empty lines after.
+* Make sure to follow a logic when using titles, e.g. a 3rd level title should be in a section starting with a 2nd level title of its own.
+
+This is an example of a good structure:
+
+```
+# This is the main title for this document
+
+## This is a section
+This is some text.
+
+### This is a subsection
+This is some text.
+
+## This is another section
+This is some more text.
+```

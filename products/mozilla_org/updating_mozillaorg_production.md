@@ -6,8 +6,8 @@ For mozilla.org there are two separate repositories:
 
 l10n-drivers are in charge of manually moving files from trunk to prod after doing a technical review. On Linux [meld] is a great tool for this task: you can open both repositories, move files between them and visualize the changes between the two versions.
 
-```
-meld path/to/trunk_repository path/to/production_repository
+```BASH
+$ meld path/to/trunk_repository path/to/production_repository
 ```
 
 If you’re using the virtual machine described in [this document](/config/setup_l10ndrivers_vm.md), there are a few shortcuts:
@@ -20,15 +20,18 @@ If you’re using the virtual machine described in [this document](/config/setup
 Sometimes moving files manually between the two repositories in not viable, for example when updating a file in all locales. In this case it’s possible to cherry-pick a commit from trunk into production.
 
 When you commit a change to the trunk repository you will get a SHA for the changes
-```
+
+```BASH
 $ trunkst
 $ git commit -a -m "Update translation"
 [master 31c3920] Update translation
  1 file changed, 1 insertion(+)
 $ git push
 ```
+
 In this case the changeset is *31c3920*. From the production repository:
-```
+
+```BASH
 $ prodst
 $ git cherry-pick 31c3920
 [master 380ebdc] Update translation

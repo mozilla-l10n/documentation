@@ -20,6 +20,7 @@ Refer to the [README](https://github.com/mozilla-l10n/stores_l10n/#installation)
 The entire configuration is stored inside the [Project class](https://github.com/mozilla-l10n/stores_l10n/blob/master/app/classes/Stores/Project.php).
 
 `$products_data` stores all supported products, with the following structure for each of them:
+
 ```PHP
 'fx_android' =>
     [
@@ -73,12 +74,14 @@ Similarly to a Django template, each string is wrapped in a translation function
 Strings are grouped into a variable, like `$screenshots` in this case: this allows, for example, to determine the overall length of all strings included in a section, to see if it exceeds the [limits imposed by stores](https://github.com/mozilla-l10n/stores_l10n/blob/master/app/inc/constants.php#L15-L22). It’s important to note that, since these limits are per-section and not per-string, the standard webdashboard won’t display any warnings. Also, if a string exceeds the maximum length, it won’t be exposed via API and the locale will be marked as incomplete.
 
 These variables are then used in views, for example the variable/function `$description`:
+
 ```PHP
 <h3>Description</h3>
 <pre><?= $description($translations) ?></pre>
 ```
 
 It’s also possible to embed more logic into these view:
+
 ```PHP
 <?php
     /*
