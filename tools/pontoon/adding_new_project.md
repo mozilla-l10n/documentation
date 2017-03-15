@@ -5,7 +5,7 @@ Project owners can follow the [guidelines](https://developer.mozilla.org/en-US/d
 * Files should be in a folder like `locale(s)/ab-CD/somefile.extension` and be in one of the supported formats (.ftl, .lang, .properties, .po, .xliff).
 * User **mozilla-pontoon** needs write access to the repository.
 
-It's important to also check the files for localization issues before exposing them to localizers: unclear strings, lack of localization comments, missing plural forms are some of the things to check.
+It’s important to also check the files for localization issues before exposing them to localizers: unclear strings, lack of localization comments, missing plural forms are some of the things to check.
 
 ## Create the project in Pontoon STAGE instance
 First you want to test that everything works using Pontoon staging server.
@@ -13,7 +13,7 @@ First you want to test that everything works using Pontoon staging server.
 Access Pontoon’s [admin console](https://mozilla-pontoon-staging.herokuapp.com/admin/) on the **stage server** and click **ADD NEW PROJECT**.
 * Name: name of the repository (it will be displayed in Pontoon’s project selector).
 * Slug: used in URLs, will be generated automatically based on the repository’s name.
-* Locales: 
+* Locales:
   * Select at least one locale. To make things faster it’s possible to copy supported locales from an existing project.
   * You can uncheck the `Locales can opt-in` checkbox to prevent localizers from requesting this specific project.
 * Deadline: if available, enter project deadline in the YYYY-MM-DD format.

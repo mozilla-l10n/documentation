@@ -1,4 +1,5 @@
 # How to identify the bug that introduced a string
+
 Sometimes it’s helpful to identify which bug introduced a specific string, for example to check if an issue was already reported, or find more background on a feature.
 
 ## Find the string

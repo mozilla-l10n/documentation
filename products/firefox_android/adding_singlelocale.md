@@ -1,4 +1,5 @@
 # Adding a new locale to the single-locale build
+
 Android has two different types of builds: a multi-locale build that ships in Google Play Store, and a single-locale build (containing only one locale) that is mostly used for testing.
 
 The list of locales for which single-locale builds are created is stored inside a file named **all-locales** within Mozilla’s code repositories. Since the goal is to create Aurora builds, the file will be in mozilla-aurora: https://hg.mozilla.org/releases/mozilla-aurora/file/default/mobile/android/locales/all-locales

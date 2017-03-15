@@ -29,7 +29,6 @@ $ hg pull -r default -u
 ```
 
 ## Setting up files
-
 ### list.txt
 list.txt is stored in `mobile/searchplugins/list.txt`. If the folder `mobile/searchplugins/` doesn’t exist, you need to create it first.
 

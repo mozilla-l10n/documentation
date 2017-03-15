@@ -1,6 +1,6 @@
 # Webdashboards
-## Structure
 
+## Structure
 There are four interdependent elements in the current webdashboard system.
 
 ### Webdashboard
@@ -29,7 +29,7 @@ See the *[Useful Links](#useful-links)* at the end of the document for links to 
 
 Note that the instances on the l10n community server of all products use a GitHub’s webhook to update code automatically every time the repository is updated.
 
-# Tools
+## Tools
 For detailed information check the specific pages for each project:
 * [Langchecker](langchecker.md)
 * [Webdashboard](webdashboard.md)
@@ -45,8 +45,7 @@ For documentation specific to mozilla.org, see [this page](/products/mozilla_org
 ## Contribution Guidelines
 Always work on forks of the main repository and open pull requests if you’re going to update code. Automated tests are run with Travis on each pull request to check for syntax and functional errors.
 
-# Useful Links
-
+## Useful Links
 ### Mozilla.org
 * Code repository (codename bedrock): https://github.com/mozilla/bedrock
 * Trunk localization: https://github.com/mozilla-l10n/www.mozilla.org

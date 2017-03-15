@@ -1,4 +1,5 @@
 # Stores Application
+
 This web application is used to maintain localized content for mobile stores (Google Play, App Store):
 * Main listing (description).
 * What’s new content for new releases.
@@ -15,7 +16,7 @@ This app allows:
 
 Refer to the [README](https://github.com/mozilla-l10n/stores_l10n/#installation) in the code repository for instructions on how to install this app.
 
-# Projects configuration
+## Projects configuration
 The entire configuration is stored inside the [Project class](https://github.com/mozilla-l10n/stores_l10n/blob/master/app/classes/Stores/Project.php).
 
 `$products_data` stores all supported products, with the following structure for each of them:
@@ -47,7 +48,7 @@ In order to add a brand new project, you would need to:
 * Create files in [/templates](https://github.com/mozilla-l10n/stores_l10n/tree/master/app/templates) and [/view](https://github.com/mozilla-l10n/stores_l10n/tree/master/app/views) for each supported channel.
 * Track the new .lang files in Langchecker for the appstores repository.
 
-# Template and View Structure
+## Template and View Structure
 This is a portion of the template file used for Focus for iOS.
 
 ```PHP

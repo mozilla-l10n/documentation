@@ -26,7 +26,6 @@ In the virtual machine the locale folder is a symbolic link to the mozilla.org t
 Don’t forget to exit the virtual environment by running `deactivate` when you’re finished.
 
 ## Extracting strings from a template
-
 The first part is to identify the template (or templates) you need to extract strings from. For example, assuming that you want to extract strings from `bedrock/mozorg/templates/mozorg/contribute/signup.html`, you would run from Bedrock’s main folder:
 ```
 $ cd ~/mozilla/git/bedrock/
@@ -48,7 +47,6 @@ Note that you can also use wildcards in the command, e.g. `./manage.py l10n_extr
 One final note: you only use this generated .lang file as a reference, you still need to add comments and reorder strings before exposing them for localization.
 
 ## Notes about templates and l10n
-
 ### Wrapping strings
 ```django
 <span class="outline-button more">{{ _('Start using the Mozilla Stumbler app') }}</span>

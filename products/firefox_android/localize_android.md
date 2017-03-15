@@ -11,7 +11,6 @@ Note: please make sure that you’ve already localized mozilla.org before you st
 ## The importance of regularly checking your dashboard
 
 ### Checking for errors
-
 Please keep in mind during your entire localization process to regularly check [your locale’s team page](https://l10n.mozilla.org/teams/). You can just choose your locale from the list there, and bookmark it to easily access it in the future.
 
 Once you are on your team page, under the section "Application & Sign-offs", take a look at the "Translation Status" column. If you have any **errors**, they will show up in red there. The number of missing strings will also appear in that same column. You can click on either of these links to see what’s going on behind these notifications.
@@ -19,7 +18,6 @@ Once you are on your team page, under the section "Application & Sign-offs", tak
 If you notice any errors, they need to be fixed very quickly. This is extremely important because if you break something while your locale is shipping on multi-locale builds (so, the builds that actually ship on the Play Store), you will need to fix it as soon as possible since it breaks the build for everyone!
 
 ### Checking for warnings
-
 You should also be checking your locale’s [Firefox for Android dashboard](https://l10n.mozilla.org/shipping/dashboard?tree=fennec_aurora&tree=fennec_beta) for any possible **warnings**. They would appear under the "Warnings" column. If you see you have a warning, then click on the "Status" column on that same line. It will explain where the warning is so you can go in and fix it.
 
 Checking your team page and dashboard regularly should be something you do from the very beginning when you start localizing a project, so that it becomes a habit. This helps reduce the chance of breaking the builds in the future, once your locale is actually shipping, and generally helps catch errors earlier on. It also gives you an overview of your locale’s health and status, and overall ensures you’re shipping a good quality localization.
@@ -31,7 +29,6 @@ Checking your team page and dashboard regularly should be something you do from 
 Once you’ve finished covering this folder, please note you still have strings to translate. See below for more instructions.
 
 ## Localize the shared Firefox strings
-
 In order to reach 100% completion on the Firefox for Android l10n project, you will have to localize the shared Firefox files (so, the ones common to Firefox Desktop and Android) as well. These are found in the Firefox Aurora folder:
 * [Pontoon](https://pontoon.mozilla.org/projects/firefox-aurora/): Choose your locale code from there. Localize all file paths that start with dom, netwerk, security, services and toolkit
 * [Pootle](https://mozilla.locamotion.org/projects/firefox/): Choose your locale code from there. In the list you now see, localize the files found in "androidshared" folder.
