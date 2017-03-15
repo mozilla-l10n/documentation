@@ -29,6 +29,7 @@ Go into the project settings, panel **Collaborators & teams**:
 
 ## Add a README.md to the project
 Add a README with some useful information about the project. For example, for Focus for Android:
+
 ```
 # Focus by Firefox localization
 Localization for the Focus by Firefox project for Android.

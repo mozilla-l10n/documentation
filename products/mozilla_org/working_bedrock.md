@@ -8,14 +8,16 @@ You can install Bedrock by following the instructions available in [this page](h
 If you’re using the virtual machine described in [this document](/config/setup_l10ndrivers_vm.md), Bedrock is already installed in `~/mozilla/git/bedrock`.
 
 Move into the main folder, activate the Virtual environment, and run the server
-```
+
+```BASH
 $ cd ~/mozilla/git/bedrock/
 $ source venv/bin/activate
 $ ./manage.py runserver
 ```
 
 In a different terminal window run
-```
+
+```BASH
 $ gulp
 ```
 
@@ -27,14 +29,16 @@ Don’t forget to exit the virtual environment by running `deactivate` when you�
 
 ## Extracting strings from a template
 The first part is to identify the template (or templates) you need to extract strings from. For example, assuming that you want to extract strings from `bedrock/mozorg/templates/mozorg/contribute/signup.html`, you would run from Bedrock’s main folder:
-```
+
+```BASH
 $ cd ~/mozilla/git/bedrock/
 $ source venv/bin/activate
 (venv) $ ./manage.py l10n_extract bedrock/mozorg/templates/mozorg/contribute/signup.html
 ```
 
 If the last command returns any error, try reinstalling the requirements with
-```
+
+```BASH
 $ pip install -r requirements/test.txt
 ```
 
@@ -48,14 +52,16 @@ One final note: you only use this generated .lang file as a reference, you still
 
 ## Notes about templates and l10n
 ### Wrapping strings
-```django
+
+```DJANGO
 <span class="outline-button more">{{ _('Start using the Mozilla Stumbler app') }}</span>
 ```
 
 Localizable strings are wrapped like `_('This')`. That means you can simply copy and paste the string `This` instead of performing a full extraction.
 
 More complex strings can be wrapped in *trans* blocks, e.g.
-```django
+
+```DJANGO
 <p class="license">
   {%- trans url=url('foundation.licensing.website-content') -%}
   Portions of this content are ©1998–{{ current_year }} by individual
@@ -74,7 +80,8 @@ If a string is available in one of these files, it can be safely used by any of 
 
 ### Loading other .lang files
 The `add_lang_files` directive is used in templates to specify a different .lang file, or include strings from another .lang file. Example above: normally a template called `bedrock/mozorg/templates/mozorg/contribute/signup.html` should generate a file called `mozorg/contribute/signup.lang`, but instead it generates a .lang file called `mozorg/contribute/index`. Why? Because the template has this directive:
-```django
+
+```DJANGO
 {% add_lang_files "mozorg/contribute/index" %}
 ```
 
@@ -97,7 +104,8 @@ It’s possible to activate l10n files by using the [mark_active script](https:/
 
 ### L10n tags
 Bedrock supports l10n tags through the `l10n_has_tag` function. For example:
-```django
+
+```DJANGO
 {% if l10n_has_tag('sync_device_note') %}
   {{ _('Learn more about bookmarks') }}
 {% else %}
@@ -120,7 +128,7 @@ Let’s assume you want to test a pull request locally, for example to extract s
 
 You can download this patch and apply it locally.
 
-```
+```BASH
 $ cd ~/mozilla/git/bedrock/
 $ source venv/bin/activate
 (venv) $ wget https://github.com/mozilla/bedrock/pull/4101.patch

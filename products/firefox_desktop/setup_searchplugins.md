@@ -5,14 +5,16 @@ The first thing to remember is that you will be working on Aurora for a new loca
 
 l10n repositories for Firefox live in https://hg.mozilla.org/releases/l10n/mozilla-aurora/. In this case let’s assume that l10n clones will be stored in `~/mozilla/mercurial/l10n`, with a subfolder for each locale and each branch. So, if the locale is `ur`, the repository will be stored in `$/mozilla/mercurial/l10n/ur/mozilla-aurora`.
 
-```
+```BASH
 $ mkdir -p ~/mozilla/mercurial/l10n/ur
 $ cd ~/mozilla/mercurial/l10n/ur
 ```
+
 The first command makes sure that the path for `ur` exists, the second moves into the folder.
 
 If you don’t have a clone yet, you need to create it.
-```
+
+```BASH
 $ hg clone ssh://hg.mozilla.org/releases/l10n/mozilla-aurora/ur mozilla-aurora
 ```
 
@@ -23,14 +25,16 @@ A couple of details to note in this `hg clone` command:
 At this point there’s a clone stored in `~/mozilla/mercurial/l10n/ur/mozilla-aurora` (remember that you already moved to `~/mozilla/mercurial/l10n/ur` before running `hg clone`).
 
 If you already have a clone on your computer, always make sure to update it before doing anything:
-```
+
+```BASH
 $ cd ~/mozilla/mercurial/l10n/ur/mozilla-aurora
 $ hg pull -r default -u
 ```
 
 ## Setting up files for mozilla-unified
 First of all make sure that your environment is [correctly set up](/config/setting_mercurial_environment.md), and update your local mozilla-unified clone to be in sync with central:
-```
+
+```BASH
 $ cd ~/mozilla/mercurial/mozilla-central
 $ hg pull -u
 $ hg up central
@@ -40,6 +44,7 @@ $ hg up central
 The list of searchplugins is stored in JSON format in [mozilla-central](https://hg.mozilla.org/mozilla-central/file/default/browser/locales/search/list.json) in `/browser/locales/search/list.json`.
 
 The basic structure for each locale is fairly simple. Assuming the locale code is `ur`, it will have a `default` key, with `visibleDefaultEngines`.
+
 ```JSON
 "ur": {
   "default": {
@@ -49,12 +54,14 @@ The basic structure for each locale is fairly simple. Assuming the locale code i
   }
 },
 ```
+
 Notes about the list:
 * If the searchplugin XML file is called `google.xml`, the item to add in list.json will be only `google`, without the extension but also **respecting the case**.
 * Order should reflect the actual order of searchplugins: if Google is default, Yahoo 2nd, and Bing 3rd, the list should start with `"google", "yahoo", "bing"`. The remaining searchplugins can be in alphabetical order. The actual order in the browser is currently still determined by region.properties, but at some point that file will be removed.
 * If a locale is missing from list.json, it will fall back to `default`, defined at the beginning of the file.
 
 Some locales might have a more complex definition, with searchplugins changing based on the region.
+
 ```JSON
 "zh-TW": {
   "default": {
@@ -97,12 +104,14 @@ You can’t copy the full URL from the address bar since it will encode UTF-8 ch
 **Description:** You will need localizers to provide the translation for `Wikipedia, the Free Encyclopedia`.
 
 **shortName:** In the .xml file there’s an attribute called `shortName`. For English is:
-```
+
+```XML
 <ShortName>Wikipedia</ShortName>
 ```
 
 When you visit a page that exposes a searchplugin, like Wikipedia, Firefox checks if you already have one installed with the same `shortName`: if you don’t, the UI will suggest you to install it by displaying a small green + sign on the magnifying glass icon in the search bar. To avoid this, the searchplugin shipping in Firefox needs to match the shortName of the searchplugin available from Wikipedia. Visit https://gn.wikipedia.org and press `CTRL+U` to view the source code of the page. At the beginning you will find a line looking like this:
-```
+
+```HTML
 <link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="ویکیپیڈیا (ur)"/>
 ```
 
@@ -115,7 +124,8 @@ Unlike Wikipedia, never copy the file from en-US, since Yahoo is the default and
 If you plan to create a patch instead of using mozreview, you can refer to the instructions available in the second part of the document, simply working inside your local clone of mozilla-unified as repository.
 
 After you’ve created all the files you need, check the status of the repository
-```
+
+```BASH
 $ hg status
 M browser/locales/search/list.json
 ? browser/locales/searchplugins/amazon-in.xml
@@ -123,7 +133,8 @@ M browser/locales/search/list.json
 ```
 
 I need to add the new files.
-```
+
+```BASH
 $ hg add browser/locales/searchplugins
 $ hg status
 M browser/locales/search/list.json
@@ -132,21 +143,25 @@ A browser/locales/searchplugins/wikipedia-ur.xml
 ```
 
 Let’s create a bookmark for this pending work, for example `bug1304757`.
-```
+
+```BASH
 $ hg bookmark bug1304757
 ```
 
 Commit the changes with a commit message that includes the reviewer’s nickname after `r?`, for example if flod is the reviewer:
-```
+
+```BASH
 $ hg commit -m "Bug 1304757 - [ur] Search engine setup for Firefox for Urdu, r?flod"
 ```
 
 At this point you can check the status of the tree:
-```
+
+```BASH
 $ hg wip
 ```
 
 And you should be able to identify your work and bookmark (press `q` to leave this view):
+
 ```
 @   358728:c0b04112d4e6 flod tip  bug1304757
 |  Bug 1304757 - [ur] Search engine setup for Firefox for Urdu, r?flod
@@ -163,17 +178,20 @@ o :   358709:f8107cf96144 cbook  central
 ```
 
 Push to review with:
-```
+
+```BASH
 $ hg push review
 ```
 
 If you need to address review comments, you can restore your branch by switching to your bookmark, and start working on it again.
-```
+
+```BASH
 $ hg up bug1304757
 ```
 
 You can check which bookmark is currently active with `hg bookmarks`:
-```
+
+```BASH
 $ hg bookmarks
    aurora                    359014:96503957841c
    beta                      359025:34c73c520f93
@@ -182,16 +200,19 @@ $ hg bookmarks
 ```
 
 Make your changes and commit them
-```
+
+```BASH
 $ hg commit -m "Address review comments"
 ```
 
 Then squash the commit together:
-```
+
+```BASH
 $ hg histedit
 ```
 
 The following screen will look like this:
+
 ```
 pick f6f70f6de69c 358597 Bug 123456 - [ur] Search engine setup for Firefox fo...
 pick 8088fd8658fd 358598 Fix searchplugin name
@@ -214,6 +235,7 @@ pick 8088fd8658fd 358598 Fix searchplugin name
 ```
 
 In this case you want to *roll* the second commit into the first one, so replace `pick` with `roll` (or `r`), save with CTRL+O and exit with CTRL+X (assuming the default editor is nano).
+
 ```
 pick f6f70f6de69c 358597 Bug 123456 - [ur] Search engine setup for Firefox fo...
 roll 8088fd8658fd 358598 Fix searchplugin name
@@ -222,18 +244,21 @@ roll 8088fd8658fd 358598 Fix searchplugin name
 ```
 
 Push again to mozreview
-```
+
+```BASH
 $ hg push review
 ```
 
 You can also use `hg histedit` to reword a commit message (set the commit line to `edit`). Just remember to complete the `histedit` after commit.
-```
+
+```BASH
 $ hg commit -m "Some changes"
 $ hg histedit --continue
 ```
 
 If necessary, you can rebase another bookmark, like `central` or `inbound`
-```
+
+```BASH
 $ hg rebase -d central
 ```
 
@@ -249,25 +274,28 @@ region.properties is stored in `/browser/chrome/browser-region` and it contains 
 Assuming you followed the instructions to [setup the environment](/config/setting_mercurial_environment.md), you’re ready to create the patch.
 
 Move into the repository folder and check its status:
-```
+
+```BASH
 $ cd ~/mozilla/mercurial/l10n/ur/mozilla-aurora
 
 $ hg status
 ? browser/chrome/browser-region/region.properties
 ```
+
 The `?` indicates that these file are not tracked by Mercurial, so they need to be added. If you’re in the root of the repository, you can add the entire `mobile` folder instead of the single files:
 
-```
+```BASH
 $ hg add browser
 
 $ hg status
 A browser/chrome/browser-region/region.properties
 ```
+
 The `A` stands for added (i.e. tracked).
 
 You need to assign a name to this patch, it’s easy to use a reference to the bug number: for example, if the bug number is 123456, the file could be called `bug123456.patch` (note the added extension `.patch`).
 
-```
+```BASH
 $ hg qnew bug123456.patch
 ```
 
@@ -276,18 +304,22 @@ At this point you will be asked to provide a commit message for your patch (in `
 The commit message should be the same as the bug, for example `Bug 123456 - Set up searchplugins for "ur" and Firefox desktop`.
 
 You’ready to *pop* the patch out of the queue. Since there are no other patches, you can pop them all with `-a`.
-```
+
+```BASH
 $ hg qpop -a
 popping bug123456.patch
 patch queue now empty
 ```
 
 The patch is stored inside the `.hg/patches` folder in the root of the repository (in the suggested setup, the full path would be `~/mozilla/mercurial/mozilla-aurora/.hg/patches`). You can copy the file through the command line or the file explorer. For example, on Mac you can open the folder in Finder by typing:
-```
+
+```BASH
 $ open ~/mozilla/mercurial/l10n/ur/mozilla-aurora/.hg/patches
 ```
+
 Or you can copy the file on the Desktop with
-```
+
+```BASH
 $ cp ~/mozilla/mercurial/l10n/ur/mozilla-aurora/.hg/patches/bug123456.patch ~/Desktop
 ```
 
@@ -297,7 +329,8 @@ Now you need to attach the file to Bugzilla and set an appropriate reviewer for 
 Let’s assume that the review found some issues with the patch and you need to update it. The fastest way is to import the .patch file without committing, update the files as needed, and create a new patch using the same process explained above.
 
 Assuming the file is called `bug123456.patch` and it’s in your desktop, you can move in the repository folder and import the file like this:
-```
+
+```BASH
 $ cd ~/mozilla/mercurial/l10n/ur/mozilla-aurora
 
 $ hg import --no-commit ~/Desktop/bug123456.patch
@@ -311,6 +344,7 @@ At this point you’re ready to modify the files, and create a new patch. The on
 Your patch got a `r+`, so you need to update the commit message to reference the review, import the patch and push it to the remote server.
 
 Open the .patch file in your editor, find the line with the commit message, and add `r=NICKNAME` to the commit message. For example, the last line in
+
 ```
 # HG changeset patch
 # User SOMENAME <SOME EMAIL>
@@ -319,19 +353,22 @@ Bug 123456 - Set up searchplugins for "ur" and Firefox for Android
 ```
 
 Should become like this, assuming flod is the reviewer.
+
 ```
 Bug 123456 - Set up searchplugins for "ur" and Firefox for Android, r=flod
 ```
 
 Then you need to import the patch, this time without the `no-commit` parameter.
-```
+
+```BASH
 $ cd ~/mozilla/mercurial/l10n/ur/mozilla-aurora
 
 $ hg import ~/Desktop/bug123456.patch
 ```
 
 The patch has been imported and committed. Now you’re ready to push to the remote repository
-```
+
+```BASH
 $ hg push
 ```
 

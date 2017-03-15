@@ -8,12 +8,12 @@ First, authorize 3rd party app downloads from your Android phone’s settings. F
 Then, choose the .apk link out of the 3 possible options listed. Download should start and once the app is installed, you should be able to test your locale.
 
 ### What to look out for?
-* Language quality
-* Truncated words (cut-off from screen)
-* Anything that appears broken on the UI
-* Check out at all the main screens, UI, menus, tabs, new features, etc. Make sure these all look good, that everything is properly translated and appears as expected
-* Font support
-* Check that all searchplugins are working correctly
+* Language quality.
+* Truncated words (cut-off from screen).
+* Anything that appears broken on the UI.
+* Check out at all the main screens, UI, menus, tabs, new features, etc. Make sure these all look good, that everything is properly translated and appears as expected.
+* Font support.
+* Check that all searchplugins are working correctly.
 
 It is strongly suggested to start using these builds on a daily basis, so that you can get into as many screens as possible and check that everything looks fine.
 

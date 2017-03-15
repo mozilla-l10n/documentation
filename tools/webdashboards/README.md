@@ -31,8 +31,8 @@ Note that the instances on the l10n community server of all products use a GitHu
 
 ## Tools
 For detailed information check the specific pages for each project:
-* [Langchecker](langchecker.md)
-* [Webdashboard](webdashboard.md)
+* [Langchecker](langchecker.md).
+* [Webdashboard](webdashboard.md).
 
 These are detailed instructions for the most common tasks:
 * [Add locales to an existing file](add_locales.md).

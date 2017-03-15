@@ -22,15 +22,17 @@ Search for the filename in [app/config/sources.inc.php](https://github.com/mozil
 ## Update the file for all locales
 At this point you need to run `lang_update` to propagate the update to all locales. Assuming that the file is called `mozorg/contribute/signup.lang`, run:
 
+```BASH
+$ lang_update mozorg/contribute/signup.lang 0 all
 ```
-lang_update mozorg/contribute/signup.lang 0 all
-```
+
 This line updates `mozorg/contribute/signup.lang`, for website `0` (mozilla.org), for **all** locales.
 
 Move in the l10n repository (remember the `trunkst` shortcut) and spot check at least a couple of locales. For example, to check `fr`, run `git diff fr`. **IMPORTANT**: never run just `git diff`, otherwise you’ll get the diff for over a hundred locales.
 
 After checking that everything looks correct, commit (notice the `-a`parameter to commit all changed files already tracked).
-```
+
+```BASH
 $ trunkst
 On branch master
 Your branch is up-to-date with 'origin/master'.
@@ -44,4 +46,5 @@ nothing added to commit but untracked files present (use "git add" to track)
 $ git commit -a -m "Add new strings to mozorg/contribute/signup.lang"
 $ git push
 ```
+
 Make sure to check the commit on GitHub after pushing, especially to verify if the commit included any unwanted change.
