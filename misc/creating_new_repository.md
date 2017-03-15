@@ -1,4 +1,5 @@
 # Creating a new repository for projects
+
 Creating a new repository in the [mozilla-l10n](https://github.com/mozilla-l10n) organization provides the advantage of letting l10n-drivers manage this repository directly, reducing delays when dealing with permissions. It also allows localizers to work directly on GitHub with pull requests.
 
 Note that you need to be a manager of the organization in order to create a new repository.

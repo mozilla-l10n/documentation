@@ -1,4 +1,5 @@
 # Testing on iOS for a new release
+
 Localizers currently mostly rely on screenshots for testing. Latest information and updates about testing are provided on the [dev.l10n mailing list](https://lists.mozilla.org/listinfo/dev-l10n), which you should follow if you are working on l10n for any of the existing Mozilla products.
 
 ## Testing with screenshots

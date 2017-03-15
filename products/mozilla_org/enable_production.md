@@ -49,7 +49,6 @@ $ cd ~/mozilla/git/bedrock
 Make sure you’re back to the `bedrock` folder in your virtual machine, and check that there are no pending changes with `git status`.
 
 ## Edit Bedrock’s settings
-
 The file to modify is `bedrock/base/settings.py`.
 ```BASH
 $ cd ~/mozilla/git/bedrock
@@ -144,7 +143,7 @@ PROD_LANGUAGES = ('ach', 'af', 'an', 'ar', 'as', 'ast', 'az', 'bg', 'bn-BD',
 'kk', 'km', 'kn', 'ko', 'lij', 'lt', 'ltg', 'lv', 'mai', 'mk', 'ml', 'mr', 'ms',
 'my', 'nb-NO', 'ne-NP', 'nl', 'nn-NO', 'oc', 'or', 'pa-IN', 'pl', 'pt-BR',
 'pt-PT', 'rm', 'ro', 'ru', 'si', 'sk', 'sl', 'son', 'sq', 'sr', 'sv-SE', 'ta',
-'te', 'th', 'tr', 'uk', 'ur', 'uz', 'vi', 'xh', 'zh-CN', 'zh-TW', 'zu')                  
+'te', 'th', 'tr', 'uk', 'ur', 'uz', 'vi', 'xh', 'zh-CN', 'zh-TW', 'zu')
 ```
 
 Verify that there are no other changed files, and the diff looks good with `git diff`. Since you reorganized lines to fit the 80 characters limit, there will be more than one line changed.

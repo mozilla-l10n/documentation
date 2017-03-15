@@ -1,4 +1,5 @@
 # Reviewing strings for a new release of Firefox for iOS
+
 Usually, a new release of Firefox for iOS means an update to strings. If this is the case, a pull request will be made by the iOS team, in order to land these new strings in the [mozilla-l10n firefoxios-l10n repository](https://github.com/mozilla-l10n/firefoxios-l10n).
 
 At this point, the PR is reviewed by an l10n-driver - most often by the PM in charge of the project.
@@ -49,7 +50,7 @@ You might also need to identify the bug that added that string, see if there are
 Let’s consider an example of new strings for Firefox for iOS, with [this past PR](https://github.com/mozilla-l10n/firefoxios-l10n/pull/19).
 
 The ID is `NSCameraUsageDescription`, the label `This lets you take and upload photos`
-It doesn’t have a localization comment, which is bad. 
+It doesn’t have a localization comment, which is bad.
 
 In fact currently, the only strings that can not have localization comments are strings that are located in `InfoPlist.strings` and `Info.plist` - see [Bug 1277515](https://bugzilla.mozilla.org/show_bug.cgi?id=1277515) for more details. Otherwise, strings should always have localization comments.
 

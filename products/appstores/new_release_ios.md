@@ -1,4 +1,5 @@
-# Firefox for iOS - Manage a New Release
+# Firefox for iOS - Manage a new release
+
 When creating a new release, normally there’s a new *What’s new* section for the upcoming version.
 
 Assuming the new version is 6.0, the actions to perform are:
