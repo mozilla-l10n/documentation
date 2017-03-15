@@ -46,3 +46,10 @@ This is some text.
 ## This is another section
 This is some more text.
 ```
+
+## Tools
+[Atom](https://atom.io/) is the best tool for editing Markdown files:
+* You can preview the content with `CTRL+SHIFT+M`. If you forget the shortcut, you can always use `CMD+SHIFT+P` to display the list of available commands, and search for `Markdown Preview: Toggle`.
+* You can install a package called [smart-quotes-plus](https://atom.io/packages/smart-quotes-plus), which lets you swap straight quotes with curly ones. Once the package is installed, press `CTRL+ALT+'` to swap quotes on the entire document, or the text currently selected. Again, you can use `CMD+SHIFT+P` and search for `Smart Quote Plus: Smartreplace`. Only make sure to not swap `"` or `'` in code fragments where these characters are wanted.
+
+To install packages in Atom, open the Preferences, select the *Install* panel on the left and search for the package you’re interested in.
