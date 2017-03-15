@@ -17,7 +17,7 @@ Here is a list of issues you should try to identify when testing the build:
 * Font support
 * Untranslated content
 
-Concerning untranslated content, please note that we currently have [two tiers of support in iOS](https://people-mozilla.org/~sarentz/ios-locales.html). If your locale is only in the Tier 2 support list, then it happens that some menu items may fall back to English, when the string comes from the OS itself.
+Concerning untranslated content: please note that we currently have [two tiers of support in iOS](https://people-mozilla.org/~sarentz/ios-locales.html). If your locale is only in the Tier 2 support list, then it sometimes happens that menu items, which are part of the OS itself, may not be localizable - and will therefore unfortunately appear in English on the final UI.
 
 ## Testing a brand new locale
 When a locale is brand new, l10n-drivers and the localization team will work through Bugzilla to process sign-offs on l10n testing.
