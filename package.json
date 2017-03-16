@@ -2,7 +2,7 @@
   "name": "mozilla-l10n-docs",
   "version": "1.0.0",
   "description": "Mozilla l10n documentation",
-  "main": "gulpfile.js",
+  "main": "linter/markdownlint.js",
   "dependencies": {
     "glob": "^7.1.1",
     "markdownlint": "^0.4.0"
