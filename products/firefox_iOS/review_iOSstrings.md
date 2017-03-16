@@ -69,7 +69,7 @@ https://github.com/mozilla-mobile/firefox-ios/blame/978bf46bb680291c61c5d21b6dc2
 On the left, you should (almost always) find the bug reference:
 https://bugzilla.mozilla.org/show_bug.cgi?id=1312842
 
-# Wrapping up your work
+## Wrapping up your work
 So you’ve reviewed the strings during the cycle, and the PR looks good? Wait! Don’t merge it quite yet.
 
 You will need to announce this on [dev.l10n mailing list](https://lists.mozilla.org/listinfo/dev-l10n) as soon as you merge the PR. Prepare your email in advance. Here’s [an example](https://groups.google.com/forum/#!searchin/mozilla.dev.l10n/ios$20v7%7Csort:relevance/mozilla.dev.l10n/oR5u3MdMLgE/952I4eyADAAJ) of what it should contain.

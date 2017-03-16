@@ -336,7 +336,7 @@ $ cd ~/mozilla/mercurial/l10n/ur/mozilla-aurora
 $ hg import --no-commit ~/Desktop/bug123456.patch
 ```
 
-**Note:** You can drag and drop the patch file on the terminal on Mac to get its full path instead of typing it. In other words, type `hg import --no-commit `, then drag the icon of the patch on the Terminal’s window, the path will appear automatically.
+**Note:** You can drag and drop the patch file on the terminal on Mac to get its full path instead of typing it. In other words, type `hg import --no-commit`, then drag the icon of the patch on the Terminal’s window, the path will appear automatically.
 
 At this point you’re ready to modify the files, and create a new patch. The only different is that you will need to use a different filename, for example `bug123456v1.patch`.
 
