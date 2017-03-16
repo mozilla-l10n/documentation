@@ -1,6 +1,5 @@
 language: node_js
 node_js:
-  - "iojs"
   - "6"
 before_install:
   ## Install latest version of node
@@ -10,4 +9,4 @@ install:
 before_script:
   - npm install -g gulp
 script:
-  - gulp
+  - node linter/markdownlint.js
