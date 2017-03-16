@@ -1,12 +1,7 @@
 language: node_js
 node_js:
   - "6"
-before_install:
-  ## Install latest version of node
-  - nvm install node
 install: 
   - npm install  
-before_script:
-  - npm install -g gulp
 script:
   - node linter/markdownlint.js

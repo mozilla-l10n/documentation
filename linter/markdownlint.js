@@ -17,4 +17,6 @@ console.log(results.toString(true));
 
 if (results.toString(true)) {
     process.exit(1);
+} else {
+    console.log('There are linter errors.');
 }
