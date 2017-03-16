@@ -19,7 +19,6 @@ Langchecker’s scripts are used to propagate changes to all .lang files, or add
 ### Stores_l10n
 Stores_l10n is a web application used to manage translations for Google Play Store and Apple App Store. It provides Langchecker with the list of locales supported in stores and iOS/Android products. Its API is used by release drivers in [mozapkpublisher](https://github.com/mozilla-releng/mozapkpublisher/), a tool used to publish .apk on Google Play together with Store listing and whatsnew content. Public views are used to copy and paste content on Apple Store (no automation available at the moment).
 
-
 This diagram describes the relation between each of the components, including relation with external entities.
 
 <a href="/misc/img/webdashboards/webdashboards.png"><img src="/misc/img/webdashboards/webdashboards.png" alt="Webdashboards diagram" style="width: 600px; margin: 0 auto; display: block;"/></a>

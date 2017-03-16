@@ -13,6 +13,7 @@ Topics covered:
 
 ## How to read these documents
 You will need a Unix-like environment (Linux, Mac OS X) to run most of the tools. Across the entire documentation, commands to run in a terminal are described like this:
+
 ```BASH
 $ composer update
 ```

@@ -76,9 +76,9 @@ This section focuses on instructions for testing pages with dynamically generate
 * Once page is loaded, click on the link called **Download Firefox for another platform**.
 * For alternative message, change URL to [Scene2](https://www.mozilla.org/firefox/new/?scene=2).
 * To fully review the Firefox download page messages, tests must go through following scenarios:.
- * Desktop: Windows, macOS, Linux.
- * Mobile: Android and iOS.
- * Updating from older version of Firefox to the latest vs. downloading for the first time.
+  * Desktop: Windows, macOS, Linux.
+  * Mobile: Android and iOS.
+  * Updating from older version of Firefox to the latest vs. downloading for the first time.
 
 ### [firefox/sendto.lang](https://www-dev.allizom.org/styleguide/docs/send-to-device/)
 The test can be done for all locales only on staging. For production testing, only these locales are enabled: de, en-GB, en-ZA, es-AR, es-CL, es-ES, es-MX, fr, id, pl, pt-BR, and ru.
@@ -93,7 +93,7 @@ The test can be done for all locales only on staging. For production testing, on
 * In step [three](https://www.mozilla.org/firefox/51.0.1/tracking-protection/start/?step=3), an extra text box appears.
 * Click on **Disable protection for this session** button to generate a new "step three" message.
 * Click on **Enable protection** button to toggle between "enable" and "disable" protection messages.
- * NOTE: in order to see the message of **Disable protection for this site**, the browser must be in _normal mode_.
+  * NOTE: in order to see the message of **Disable protection for this site**, the browser must be in _normal mode_.
 * Click on **Got it!** button to get to the next page.
 * Click on **Restart tour** button to go through the above steps.
 

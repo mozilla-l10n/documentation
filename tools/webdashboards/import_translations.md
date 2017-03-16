@@ -38,6 +38,7 @@ Note that `$import_files` is an array, which means you could have more source fi
 ```PHP
 $import_files = ['main.lang', 'mozorg/home/index.lang'];
 ```
+
 The order is relevant: files are checked in the order they’re available in the array, the first matching translation is kept.
 
 **Important**: make sure to not commit this change to langchecker. You can either ignore it and it will be removed the next time you run `gitup`, or reset the repository with `git reset --hard`.
