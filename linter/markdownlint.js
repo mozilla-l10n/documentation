@@ -15,6 +15,6 @@ var options = {
 var results = markdownlint.sync(options);
 console.log(results.toString(true));
 
-if (results) {
+if (results.toString(true)) {
     process.exit(1);
 }
