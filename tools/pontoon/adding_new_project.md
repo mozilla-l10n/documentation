@@ -1,6 +1,7 @@
 # Adding a new project on Pontoon
 
 ## Verify that the project is properly localizable
+
 Project owners can follow the [guidelines](https://developer.mozilla.org/en-US/docs/Mozilla/Implementing_Pontoon_in_a_Mozilla_website) available on MDN to properly structure files inside the repository. Some things to check:
 * Files should be in a folder like `locale(s)/ab-CD/somefile.extension` and be in one of the supported formats (.ftl, .lang, .properties, .po, .xliff).
 * User **mozilla-pontoon** needs write access to the repository.
@@ -8,6 +9,7 @@ Project owners can follow the [guidelines](https://developer.mozilla.org/en-US/d
 It’s important to also check the files for localization issues before exposing them to localizers: unclear strings, lack of localization comments, missing plural forms are some of the things to check.
 
 ## Create the project in Pontoon STAGE instance
+
 First you want to test that everything works using Pontoon staging server.
 
 Access Pontoon’s [admin console](https://mozilla-pontoon-staging.herokuapp.com/admin/) on the **stage server** and click **ADD NEW PROJECT**.
@@ -31,6 +33,7 @@ Localization for the <a href="https://testpilot.firefox.com/experiments/min-vid"
 Click **SAVE PROJECT** at the bottom of the page, then click **SYNC** to run a test sync. In the [Sync log](https://mozilla-pontoon-staging.herokuapp.com/sync/log/) you should be able to see if it succeeded or failed.
 
 ## Create the project in Pontoon PROD instance
+
 At this point you need to repeat the same steps on the **production server**.
 
 Access Pontoon’s [admin console](https://pontoon.mozilla.org/admin/), add the same information you used on the staging server and make sure to select all supported locales for this project.

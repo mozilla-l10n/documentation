@@ -3,6 +3,7 @@
 **IMPORTANT:** This configuration has to be done only once on the computer. After that you will simply need to keep Mercurial up to date (a new version is released every month).
 
 ## Mercurial
+
 Most of the work needs to be done in [Mercurial](https://www.mercurial-scm.org/downloads), so you need to install if first. An alternative way to install it on Mac is via [homebrew](http://brew.sh/) with `brew install hg` (`brew upgrade hg` to update it later).
 
 To check if Mercurial is available and up to date, run in the terminal `hg --version`, the output should look like this:
@@ -24,6 +25,7 @@ $ export EDITOR=/usr/bin/nano
 ```
 
 ## Mercurial configuration
+
 Mercurial’s configuration is stored in a hidden file called `.hgrc` inside your user folder (`~/.hgrc`). You will need to create it if it’s not available on the system.
 
 It’s divided into sections, with section names between square parentheses. For example:
@@ -34,6 +36,7 @@ username = something@example.com
 ```
 
 ## Set up SSH access for l10n repositories
+
 In order to be able to commit directly to l10n repositories, you need SSH access via your LDAP account (both obtained through a bug, where you also provide your SSH key).
 
 Assuming your SSH key is stored in `~/.ssh/id_rsa`, your `.ssh/config` file should have a line that looks like this
@@ -45,6 +48,7 @@ IdentityFile ~/.ssh/id_rsa
 ```
 
 ## Set up MozReview
+
 Detailed instructions and explanations are available in [the official documentation](http://mozilla-version-control-tools.readthedocs.io/en/latest/mozreview/install-mercurial.html#mozreview-install-mercurial).
 
 Clone the **version-control-tools** repository on your machine. In this case, the clone’s folder will be stored inside `~/mozilla/mercurial/`. If you move it, you’ll need to update the reference in `~/.hgrc` later.
@@ -130,6 +134,7 @@ unified = 8
 ```
 
 ## Cloning/Updating mozilla-unified
+
 Since searchplugins are stored in mozilla-central, you will also need a clone of it on your computer. Using the [mozilla-unified repository](http://mozilla-version-control-tools.readthedocs.io/en/latest/hgmozilla/unifiedrepo.html) repository is a better solution, especially if you need to work on more than just mozilla-central (e.g. mozilla-aurora to update shipping locales).
 
 ```BASH
@@ -148,6 +153,7 @@ $ hg up central
 The last command makes sure you’re working against central (to be more precise, it moves you to the `central` bookmark).
 
 ## Text editor
+
 The suggestion is to use [Atom](https://atom.io/) with the optional [Sort Lines package](https://atom.io/packages/sort-lines) installed.
 
 If you don’t like to use `nano` to edit commit messages, you can also use a graphical editor. A possible alternative on Mac is to use [TextMate](https://macromates.com/): after installing it, open Preferences and install the *Shell support* (*Terminal* tab), then add a `editor` preference to `.hgrc`.

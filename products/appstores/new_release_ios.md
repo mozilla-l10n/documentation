@@ -11,6 +11,7 @@ This document assumes that you have set up the system as explained in [this docu
 **IMPORTANT:** Remember to run `gitup` before you do anything. If you run the command in the middle of the work, don’t forget to go back to the branch (it will checkout `master` for all repositories).
 
 ## Create the .lang file for the new release
+
 For all changes you need to create branches and then open pull requests.
 
 In this case you’re creating a branch **ios6_0** in the `appstores` repository, and editing in Atom the reference en-US file.
@@ -42,6 +43,7 @@ App optimization improvements
 This file will be committed later to the repository, since it’s still not tracked in langchecker.
 
 ## Track the new file in dashboards updating Langchecker
+
 You then need to start tracking this file in Langchecker. The process is described in detail in [this document](/tools/webdashboards/add_new_file.md).
 
 Again, you need to create a branch in the langchecker repository.
@@ -101,6 +103,7 @@ $ git push origin ios6_0
 ```
 
 ## Commit .lang files to the appstores repository
+
 At this point you’re ready to copy the new file to all locales.
 
 ```BASH
@@ -121,6 +124,7 @@ $ git push origin ios6_0
 Note that you need to explicitly add the files with `git add`, since most of them are not tracked yet.
 
 ## Add strings to templates in stores_l10n
+
 Now you need to use the new file and strings in stores_l10n. Again, you’re going to work on a branch.
 
 ```BASH

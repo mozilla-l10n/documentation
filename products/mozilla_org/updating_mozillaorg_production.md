@@ -17,6 +17,7 @@ If you’re using the virtual machine described in [this document](/config/setup
 * `gitup` will update all Git repositories, discard pending changing, and checkout master branch.
 
 ## Cherry-picking changes
+
 Sometimes moving files manually between the two repositories in not viable, for example when updating a file in all locales. In this case it’s possible to cherry-pick a commit from trunk into production.
 
 When you commit a change to the trunk repository you will get a SHA for the changes
@@ -41,6 +42,7 @@ $ git push
 ```
 
 ## Guidelines
+
 There are some principles to keep in mind when updating the production repository:
 1. Before moving any file, check the [Errors view], possibly on your local installation.
 2. Check the diff for each file before moving it to production, to see if there are any errors.

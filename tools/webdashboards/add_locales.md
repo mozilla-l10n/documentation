@@ -3,6 +3,7 @@
 Example task: add `sv-SE` to the list of supported locales for `foundation/index.lang`.
 
 ## Updating Langchecker sources
+
 First you need to search for the file that you want to update in [app/config/sources.inc.php](https://github.com/mozilla-l10n/langchecker/blob/master/app/config/sources.inc.php).
 
 Always remember to **work on a fork** of the main repository, and **create a branch** in your local clone. Assuming the langchecker installation is in `~/mozilla/git/langchecker`, and that the branch name you want to create is `TESTBRANCH`, the commands to use would be:
@@ -49,6 +50,7 @@ $ git push origin TESTBRANCH
 ```
 
 ## Adding the file to the repository
+
 At this point you need to run `lang_update` to actually add the file to the repository.
 
 ```BASH

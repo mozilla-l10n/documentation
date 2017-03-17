@@ -1,6 +1,7 @@
 # Set up searchplugins
 
 ## Cloning/Updating the locale’s repository
+
 The first thing to remember is that you will be working on Aurora for a new locale, and you need this locale’s Mercurial repository on your computer.
 
 l10n repositories for Android live in https://hg.mozilla.org/releases/l10n/mozilla-aurora/. In this case let’s assume that l10n clones will be stored in `~/mozilla/mercurial/l10n`, with a subfolder for each locale and each branch. So, if the locale is `gn`, the repository will be stored in `$/mozilla/mercurial/l10n/gn/mozilla-aurora`.
@@ -32,7 +33,9 @@ $ hg pull -r default -u
 ```
 
 ## Setting up files
+
 ### list.txt
+
 list.txt is stored in `mobile/searchplugins/list.txt`. If the folder `mobile/searchplugins/` doesn’t exist, you need to create it first.
 
 Things to remember about list.txt:
@@ -41,6 +44,7 @@ Things to remember about list.txt:
 * Each line maps to a searchplugin: if the file for the searchplugin is called `google.xml`, the line will just say `google`, without the extension but also **respecting the case**.
 
 ### XML files
+
 Searchplugins are stored in the `mobile/searchplugins` folder.
 
 You need to add a new .xml file only if the searchplugin is not already shipping in English. You can see the full list of en-US searchplugins in https://hg.mozilla.org/releases/mozilla-aurora/file/default/mobile/locales/en-US/searchplugins
@@ -53,6 +57,7 @@ For other searchplugins you will need to create the .xml file yourself, with som
 * Check if other locales already ship the same searchplugin, and copy their XML file to use as a base. If the searchplugin is brand new, it needs to be approved by BD and it will take some time, so it might be worth starting with a shorter list of searchplugins, and consider the new one in a follow-up bug. Icons will also be provided by the search provider after approval.
 
 #### Wikipedia
+
 **URLs:** If you copy the .xml file from another locale (en-US is always the best choice for Wikipedia), make sure to update all URLs. If the URL for English starts with `en.wikipedia.`, for `gn` it should start with `gn.wikipedia.` (check if the domain actually exists).
 
 **Search template:** There’s one special URL to keep in mind, in English it’s https://en.wikipedia.org/wiki/Special:Search
@@ -76,12 +81,15 @@ When you visit a page that exposes a searchplugin, like Wikipedia, Firefox check
 The shortName to use in your .xml file is `Vikipetã (gn)`.
 
 #### Yahoo
-Unlike Wikipedia, never copy the file from en-US, since Yahoo is the default and has different parameters. In this case you need to copy the file from ``/mobile` in another locale, making sure that the domain is the one you want. For example there’s https://es.search.yahoo.com but also https://espanol.search.yahoo.com (es-ES versus a more generic Spanish).
+
+Unlike Wikipedia, never copy the file from en-US, since Yahoo is the default and has different parameters. In this case you need to copy the file from `/mobile` in another locale, making sure that the domain is the one you want. For example there’s https://es.search.yahoo.com but also https://espanol.search.yahoo.com (es-ES versus a more generic Spanish).
 
 ### region.properties
+
 region.properties is stored in `/mobile/chrome/region.properties` and it contains information about protocol handlers. You can use [this region.properties model](mobile_region.properties) as a base, making sure to remove non existing searchplugins from `search.order`.
 
 ## Creating a patch for review
+
 Assuming you followed the instructions to [setup the environment](/config/setting_mercurial_environment.md), you’re ready to create the patch.
 
 Move into the repository folder and check its status:
@@ -143,6 +151,7 @@ $ cp ~/mozilla/mercurial/l10n/gn/mozilla-aurora/.hg/patches/bug123456.patch ~/De
 Now you need to attach the file to Bugzilla and set an appropriate reviewer for it.
 
 ## Updating the patch
+
 Let’s assume that the review found some issues with the patch and you need to update it. The fastest way is to import the .patch file without committing, update the files as needed, and create a new patch using the same process explained above.
 
 Assuming the file is called `bug123456.patch` and it’s in your desktop, you can move in the repository folder and import the file like this:
@@ -158,6 +167,7 @@ $ hg import --no-commit ~/Desktop/bug123456.patch
 At this point you’re ready to modify the files, and create a new patch. The only different is that you will need to use a different filename, for example `bug123456v1.patch`.
 
 ## Applying the patch
+
 Your patch got a `r+`, so you need to update the commit message to reference the review, import the patch and push it to the remote server.
 
 Open the .patch file in your editor, find the line with the commit message, and add `r=NICKNAME` to the commit message. For example, the last line in

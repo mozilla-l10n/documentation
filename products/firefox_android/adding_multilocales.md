@@ -5,6 +5,7 @@ Android has two different types of builds: a multi-locale build that ships in Go
 The list of locales included in the multi-locales build is stored inside a file named **maemo-locales** within Mozilla’s code repositories. Since the goal is to create Aurora builds, the file will be in mozilla-aurora: https://hg.mozilla.org/releases/mozilla-aurora/file/default/mobile/android/locales/maemo-locales
 
 ## File a bug to add the new locale
+
 You need to file a bug in Firefox for Android::General requesting the new locale (see for example [this bug for Serbian](https://bugzilla.mozilla.org/show_bug.cgi?id=1262464)). You can use this [bug template] to make things faster:
 * Update it with the appropriate locale code and language name.
 * Update the target version for Firefox in comment 0.
@@ -18,6 +19,7 @@ Release Note Request (optional, but appreciated)
 ```
 
 ## Creating a patch for maemo-locales
+
 First of all make sure that your environment is [correctly set up](/config/setting_mercurial_environment.md), and update your local mozilla-aurora clone:
 
 ```BASH
@@ -87,6 +89,7 @@ $ cp ~/mozilla/mercurial/mozilla-aurora/.hg/patches/bug123456.patch ~/Desktop
 Now you need to attach the file to Bugzilla and set an appropriate reviewer for it.
 
 ## After the patch has been reviewed
+
 Once the patch has been reviewed, you need to ask for approval: go in Details for the attachment, set `?` in the `approval‑mozilla‑aurora` flag and specify in the comment that the patch only needs to land in mozilla-aurora.
 
 **IMPORTANT:** an error in a single locale is going to break the multi-locales build for all locales, English included.

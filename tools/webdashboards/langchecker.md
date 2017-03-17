@@ -14,6 +14,7 @@ Langchecker also includes several command line scripts to manage day-to-day oper
 [Langchecker's wiki](https://github.com/mozilla-l10n/langchecker/wiki) has a full list of the available views, API calls, and command line scripts.
 
 ## Sources Structure
+
 Each project is internally called website, and it’s identified by a numeric index. These are the projects currently supported.
 
 | ID | Codename | Description |

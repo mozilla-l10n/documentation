@@ -5,11 +5,13 @@ Android has two different types of builds: a multi-locale build that ships in Go
 The list of locales for which single-locale builds are created is stored inside a file named **all-locales** within Mozilla’s code repositories. Since the goal is to create Aurora builds, the file will be in mozilla-aurora: https://hg.mozilla.org/releases/mozilla-aurora/file/default/mobile/android/locales/all-locales
 
 ## File a bug to add the new locale
+
 You need to file a bug in Firefox for Android::General requesting the new locale (see for example [this bug for Guaraní](https://bugzilla.mozilla.org/show_bug.cgi?id=1271839)). You can use this [bug template] to make things faster (update with the appropriate locale code and language name).
 
 You also want to file a bug to use as tracker ([example for gn](https://bugzilla.mozilla.org/show_bug.cgi?id=1271970)), adding an alias like `fm-l10n-gn` for `gn` and blocking `fm-l10n-tracker`.
 
 ## Creating a patch for all-locales
+
 First of all make sure that your environment is [correctly set up](/config/setting_mercurial_environment.md), and update your local mozilla-aurora clone:
 
 ```BASH
@@ -79,6 +81,7 @@ $ cp ~/mozilla/mercurial/mozilla-aurora/.hg/patches/bug123456.patch ~/Desktop
 Now you need to attach the file to Bugzilla and set an appropriate reviewer for it.
 
 ## After the patch has been reviewed
+
 Once the patch has been reviewed, you need to ask for approval: go in Details for the attachment, set `?` in the `approval‑mozilla‑aurora` flag and specify in the comment that the patch only needs to land in mozilla-aurora.
 
 Once approved for Aurora, sheriffs will land the patch. A couple of days after check on FTP if builds are being generated for this new locale: https://ftp.mozilla.org/pub/mobile/nightly/latest-mozilla-aurora-android-api-15-l10n/
