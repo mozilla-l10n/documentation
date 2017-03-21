@@ -16,6 +16,7 @@ This document assumes that you have set up the system as explained in [this docu
 **IMPORTANT:** Remember to run `gitup` before you do anything. If you run the command in the middle of the work, don’t forget to go back to the branch (it will checkout `master` for all repositories).
 
 ## Create the new .lang files for Beta and Release
+
 For all changes you need to create branches and then open pull requests.
 
 In this case you’re creating a branch **beta48** in the `appstores` repository, and editing in Atom the reference en-US file.
@@ -56,6 +57,7 @@ $ atom en-US/fx_android/whatsnew/android_47.lang
 These files will be committed later to the repository, since they’re still not tracked in Langchecker and you will also need to import existing strings.
 
 ## Track the files in dashboards updating Langchecker
+
 You then need to start tracking these files in Langchecker. The process is described in detail in [this document](/tools/webdashboards/add_new_file.md).
 
 Again, you need to create a branch in the langchecker repository.
@@ -126,6 +128,7 @@ $ git push origin beta48
 ```
 
 ## Commit .lang files to the appstores repository
+
 At this point you’re ready to copy the new files to all locales, but you also want to import the existing strings from `fx_android/whatsnew/android_47_beta.lang`.
 
 Edit your local copy of [app/scripts/lang_update](https://github.com/mozilla-l10n/langchecker/blob/master/app/scripts/lang_update#L105), add `fx_android/whatsnew/android_47_beta.lang` to the variable `$import_files`, and set `$import_website` to `12` (that’s the identifier for the AppStores project).
@@ -159,6 +162,7 @@ $ git push origin beta48
 Note that you need to explicitly add the files with `git add`, since most of them are not tracked yet.
 
 ## Add strings to templates in stores_l10n
+
 Now you need to use the new files and strings in stores_l10n. Again, you’re going to work on a branch.
 
 ```BASH

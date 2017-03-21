@@ -7,6 +7,7 @@ Before doing that, make sure that the locale has reached a good level of complet
 First, [file a bug](https://bugzilla.mozilla.org/enter_bug.cgi?product=www.mozilla.org&component=L10N) to track this change. Bug number will be needed for the commit message later. Consider for example [this bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1338759), to add Nepali to production.
 
 ## Create a new branch
+
 A clone of your fork of Bedrock is already available in the [virtual machine](/config/setup_l10ndrivers_vm.md), so run `gitup` to make sure everything is up to date. Then move to Bedrock’s folder, and create a new branch, for example using the bug number as reference.
 
 ```BASH
@@ -51,6 +52,7 @@ $ cd ~/mozilla/git/bedrock
 Make sure you’re back to the `bedrock` folder in your virtual machine, and check that there are no pending changes with `git status`.
 
 ## Edit Bedrock’s settings
+
 The file to modify is `bedrock/base/settings.py`.
 
 ```BASH
@@ -178,6 +180,7 @@ If you notice **trailing whitespaces** after a line, you need to remove them. Fi
 Then open and save your file again.
 
 ## Commit and open a pull request
+
 You’re ready to commit your change. Remember to references your bug with "Fix", this will automatically close the bug when the change lands.
 
 ```BASH

@@ -11,6 +11,7 @@ This task can be split into smaller tasks:
 To analyze all steps, let’s consider a practical example: you need to add a file called `mozorg/contribute/signup.lang` to the project `www.mozilla.org`. The file is priority 1 only for French and German, `opt-in` for other locales, and deadline is May 30th, 2016. Note that most of the time a file will have the same priority for all locales, and won’t have any flags.
 
 ## Add the file to the list of supported files
+
 The file you need to update is [app/config/sources.inc.php](https://github.com/mozilla-l10n/langchecker/blob/master/app/config/sources.inc.php).
 
 In [app/config/websites.inc.php](https://github.com/mozilla-l10n/langchecker/blob/master/app/config/websites.inc.php) there is a global array `$sites` that defines all parameters for each project. For `www.mozilla.org` it looks like this:
@@ -32,6 +33,7 @@ In [app/config/websites.inc.php](https://github.com/mozilla-l10n/langchecker/blo
 The array storing all supported files is the 5th element (`$mozillaorg_lang`). With time you won’t need to check the configuration array, it will be enough to search for a similar file in the same project.
 
 ### Supported locales
+
 Search for the definition of `$mozillaorg_lang` in `app/config/sources.inc.php` and add the new file, respecting the existing alphabetical order (snippets represent an exception to this rule). This is how the definition’s begin looks:
 
 ```PHP
@@ -61,6 +63,7 @@ For the list of locales you should check the definition for existing similar fil
 ```
 
 ### Priority
+
 Priority is optional and can defined for each file. If the priority is the same for all locales, you can assign the integer value (from 1 to 5) to a `priority` key.
 
 ```PHP
@@ -93,6 +96,7 @@ In this case, the request is to assign priority 1 only to French and German
 ```
 
 ### Flags
+
 Flag are defined for each file as an array associated to the key `flags`:
 
 ```PHP
@@ -121,6 +125,7 @@ In this case, the request is to flag the file as opt-in for all locales.
 ```
 
 ### Deadline
+
 If a file is critical, you also want to set a deadline for it: in the last week before deadline the date will be displayed in orange on the Webdashboard, after deadline it will be displayed in red.
 
 If the deadline is the same for all locales, you can assign the date (as a string in ISO format YYYY-MM-DD) to a `deadline` key. In this case, deadline needs to be set to May 30th, 2016 (2016-05-30):
@@ -156,6 +161,7 @@ Or a deadline only for French:
 ```
 
 ## Add the files to all locales in the l10n repository
+
 At this point you need to run `lang_update` to actually add the file to all locales.
 
 ```BASH

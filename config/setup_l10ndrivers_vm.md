@@ -3,6 +3,7 @@
 This document describes how to configure a virtual machine based on Linux Ubuntu 16.04 LTS to manage tools like Langchecker, Webdashboard, Stores, Bedrock (mozilla.org). The assumption is that you’ve already installed a software to manage virtual machines, like VMWare Fusion on Mac, and installed Linux.
 
 ## Update the system
+
 First of all, make sure to update the installed packages. Search for the terminal and type:
 
 ```BASH
@@ -18,6 +19,7 @@ If you’re using VWMare, make also sure to install VMWare Tools:
 * Remove the folder from your desktop and reboot the VM.
 
 ## Configure Git and repositories
+
 Before starting the setup you need to make sure to setup Git to use SSH on this VM.
 
 Generate a new SSH key for this VM (replace the email address placeholder), make sure to setup a passphrase when asked:
@@ -55,6 +57,7 @@ $ git config --global push.default simple
 ```
 
 ## Run the setup scripts
+
 At this point you can run this command to download and execute a setup script. Note that this script must be run with `sudo`, since it needs to install several packages on the system.
 
 ```BASH

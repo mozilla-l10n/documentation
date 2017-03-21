@@ -13,6 +13,7 @@
   "no-multiple-blanks": {},
   "no-missing-space-atx": {},
   "no-multiple-space-atx": {},
+  "blanks-around-headers": {},
   "header-start-left": {},
   "single-h1": {},
   "list-marker-space": {},

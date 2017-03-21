@@ -1,6 +1,7 @@
 # Bootstrap a new locale
 
 ## Langchecker
+
 The first thing you need to do is to add the new locale code to the `$mozilla` array in [app/config/locales.php](https://github.com/mozilla-l10n/langchecker/blob/master/app/config/locales.inc.php). Note that all lists of locales are in alphabetical order.
 
 If this new locale is going to localize only Fennec, you need to add it also to the `$fennec_locales` array. If it’s only working on mozilla.org, add it to `$mozorg_locales`. In this way desktop specific pages won’t be exposed for this language. If it’s only localizing mozilla.org, add it to the `$mozorg_locales` array.
@@ -24,6 +25,7 @@ $mozilla = [
 If this locale works on Pootle, you also need to add the locale code to the array `$locamotion_locales`, still in the same file ([app/config/locales.php](https://github.com/mozilla-l10n/langchecker/blob/master/app/config/locales.inc.php)).
 
 ## Add files to l10n repositories (mozilla.org, FHR)
+
 At this point you need to add the files to both `www.mozilla.org` and `about:healthreport` (FHR) by using the `lang_update` script. If the new locale is only working on mozilla.org, FHR (website with ID 4) won’t be needed.
 
 Run the following commands:

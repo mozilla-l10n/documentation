@@ -5,6 +5,7 @@ Creating a new repository in the [mozilla-l10n](https://github.com/mozilla-l10n)
 Note that you need to be a manager of the organization in order to create a new repository.
 
 ## Create the new repository
+
 A new repository can be created in [this page](https://github.com/organizations/mozilla-l10n/repositories/new), or using the **New** button in the organization’s landing page.
 
 **Name**: always include the `-l10n` suffix for localization repositories, to differentiate them from other repositories used for tools. Notable exceptions to this rule are `appstores` and `www.mozilla.org`.
@@ -18,6 +19,7 @@ Set the project as **Public** and don’t initialize it with a README.
 ![New repository](/misc/img/new_repository/new_repo.png)
 
 ## Add collaborators
+
 Go into the project settings, panel **Collaborators & teams**:
 
 * Add the relevant l10n-drivers as Admin. You can either pick individuals or one of the pre-existing groups.
@@ -28,6 +30,7 @@ Go into the project settings, panel **Collaborators & teams**:
 ![New repository](/misc/img/new_repository/settings.png)
 
 ## Add a README.md to the project
+
 Add a README with some useful information about the project. For example, for Focus for Android:
 
 ```
@@ -43,4 +46,5 @@ terms of the [Mozilla Public License v2.0](http://www.mozilla.org/MPL/2.0/).
 ```
 
 ## Add topics to the repository (optional)
+
 In the main repository page you can add [topics](https://github.com/blog/2309-introducing-topics) to make the repository more discoverable by potential contributors. For example, all localization projects have the following topics: mozilla-l10n, localization, translation.

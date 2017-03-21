@@ -1,6 +1,7 @@
 # Testing Firefox for Android
 
 ## Testing on single-locale builds
+
 Once you have localized [all the strings needed to complete the Firefox for Android project](/products/firefox_android/localize_android.md), and your language is now up on single-locale builds, you should start testing! This is the moment to engage as much people as possible: have them use and check-out these builds regularly. The more eyes on them, the better.
 
 First, authorize 3rd party app downloads from your Android phone’s settings. From your phone, download your locale from https://ftp.mozilla.org/pub/mobile/nightly/latest-mozilla-aurora-android-api-15-l10n/ by clicking on the most recent link with your locale code in it (Note: you may want to scroll down the page to make sure you are choosing the most recent build!)
@@ -8,6 +9,7 @@ First, authorize 3rd party app downloads from your Android phone’s settings. F
 Then, choose the .apk link out of the 3 possible options listed. Download should start and once the app is installed, you should be able to test your locale.
 
 ### What to look out for?
+
 * Language quality.
 * Truncated words (cut-off from screen).
 * Anything that appears broken on the UI.
@@ -20,6 +22,7 @@ It is strongly suggested to start using these builds on a daily basis, so that y
 It is important that the people testing the localization be not only the one(s) who have localized. Ask other people from your community to help test in order to have fresh eyes looking at your work.
 
 ## Testing on multi-locale builds (shipping in Play Store)
+
 Once the Fennec Project Manager (currently **delphine** at **mozilla** dot **com**) sees that you’ve done at least one cycle on a single-locale build, that nothing breaks during sign-offs, that you’ve continued keeping your work up to date, and that you have been TESTING it - l10n-drivers will consider adding your language to the multi-locale builds. This means that - congratulations! - your locale will now officially be shipping on Firefox for Android.
 
 Once your locale is added to the multi-locale builds, it will "ride the trains" like for Firefox Desktop. It will first ship on Aurora in the Play Store, then 6 weeks later it will ship on Beta, and 6 weeks after that, it will arrive on Release.

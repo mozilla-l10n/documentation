@@ -12,6 +12,7 @@ Topics covered:
 * Other [miscellaneous documents](/misc) related to localization tasks.
 
 ## How to read these documents
+
 You will need a Unix-like environment (Linux, Mac OS X) to run most of the tools. Across the entire documentation, commands to run in a terminal are described like this:
 
 ```BASH
@@ -23,4 +24,5 @@ $ composer update
 In several occasions documents use aliases instead of the complete path to commands: for example `lang_update` instead of `path_to_langchecker_clone/app/scripts/lang_update`. Check [Setting up a Linux Virtual Machine for Webdashboards](/config/setup_l10ndrivers_vm.md) for instructions on how to setup a virtual machine running on Linux Ubuntu with all the necessary packages and aliases.
 
 ## Updating the documentation
+
 Simply open a pull request adding the new file or updating an existing document. Make sure to follow [these style guidelines](misc/documentation_style.md), and note that all pull requests need to be reviewed before merging.
