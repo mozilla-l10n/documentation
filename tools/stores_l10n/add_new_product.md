@@ -142,7 +142,7 @@ Pay attention to the log when testing a new template that you’ve copied from a
 
 The next step is to add a view for each channel supported for this product. Views are stored in `views/product_name/channel`, in case of Focus for Android `views/focus_android/release`. There are 2 files to create:
 * `locale_view.php`: used for *General view*.
-* `locale_view_escaped.php`: used for *Description raw HTML*. It’s the same content as `locale_view.php`, but each element is included in `<pre contenteditable="true"></pre>` elements.
+* `locale_view_escaped.php`: used for *Description raw HTML*. It’s the same content as `locale_view.php`, but each element is included in `<pre <?= $direction ?> contenteditable="true"></pre>` elements.
 
 As for templates, the easiest way to start is by copying files from an existing product.
 
@@ -152,10 +152,10 @@ This is how the first part of `locale_view.php` looks like:
 <h1>Focus for Android Listing Copy (<?= $request['locale'] ?>)</h1>
 
 <h3>Title &mdash; <?= $title_warning ?></h3>
-<pre><?= $app_title($translations) ?></pre>
+<pre <?= $direction ?>><?= $app_title($translations) ?></pre>
 
 <h3>Short Description &mdash; <?= $short_desc_warning ?></h3>
-<pre><?= $short_desc($translations) ?></pre>
+<pre <?= $direction ?>><?= $short_desc($translations) ?></pre>
 ```
 
 As you can see, it simply calls the variables created inside the template. The interesting part is that you can add more complex logic in this file:
@@ -172,7 +172,7 @@ As you can see, it simply calls the variables created inside the template. The i
         if (file_exists($locale_file)) {
             ?>
             <h3>Screenshots</h3>
-            <pre class="text-center"><?= $screenshots($translations) ?></pre>
+            <pre <?= $direction ?> class="text-center"><?= $screenshots($translations) ?></pre>
 <?php
 
         }
@@ -188,10 +188,10 @@ In this case, the screenshots session is displayed only if the requested locale 
 <h1>Focus for Android Listing Copy (<?= $request['locale'] ?>)</h1>
 
 <h3>Title &mdash; <?= $title_warning ?></h3>
-<pre contenteditable="true"><?= htmlspecialchars($app_title($translations)) ?></pre>
+<pre <?= $direction ?> contenteditable="true"><?= htmlspecialchars($app_title($translations)) ?></pre>
 
 <h3>Short Description &mdash; <?= $short_desc_warning ?></h3>
-<pre contenteditable="true"><?= $short_desc($translations) ?></pre>
+<pre <?= $direction ?> contenteditable="true"><?= $short_desc($translations) ?></pre>
 ```
 
 As for the templates, pay attention to differences between a product shipping on Play Store and one shipping on App Stores:
@@ -290,7 +290,7 @@ And use this `$whatsnew` variable in all available views.
 
 ```PHP
 <h3>What’s new &mdash; <?= $whatsnew_warning ?></h3>
-<pre><?= $whatsnew($translations) ?></pre>
+<pre <?= $direction ?>><?= $whatsnew($translations) ?></pre>
 ```
 
 ## Testing

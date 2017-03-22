@@ -79,7 +79,7 @@ These variables are then used in views, for example the variable/function `$desc
 
 ```PHP
 <h3>Description</h3>
-<pre><?= $description($translations) ?></pre>
+<pre <?= $direction ?>><?= $description($translations) ?></pre>
 ```
 
 It’s also possible to embed more logic into these view:
@@ -96,7 +96,7 @@ It’s also possible to embed more logic into these view:
         if (file_exists($locale_file)) {
             ?>
             <h3>Screenshots</h3>
-            <pre class="text-center"><?= $screenshots($translations) ?></pre>
+            <pre <?= $direction ?> class="text-center"><?= $screenshots($translations) ?></pre>
 <?php
 
         };
