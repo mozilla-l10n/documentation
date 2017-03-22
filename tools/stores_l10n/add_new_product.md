@@ -228,6 +228,7 @@ if (! $focus_android_locales = Cache::getKey($cache_id, 60 * 60)) {
     $focus_android_locales = $json_object
         ->setURI(STORES_L10N . 'focus_android/supportedlocales/release')
         ->fetchContent();
+    $focus_android_locales = array_intersect($focus_android_locales, $mozilla);
     Cache::setKey($cache_id, $focus_android_locales);
 }
 ```
