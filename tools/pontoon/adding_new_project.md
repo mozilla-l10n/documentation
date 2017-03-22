@@ -18,8 +18,6 @@ Access Pontoon’s [admin console](https://mozilla-pontoon-staging.herokuapp.com
 * Locales:
   * Select at least one locale. To make things faster it’s possible to copy supported locales from an existing project.
   * You can uncheck the `Locales can opt-in` checkbox to prevent localizers from requesting this specific project.
-* Deadline: if available, enter project deadline in the YYYY-MM-DD format.
-* Priority: select priority level from one of the 5 levels available (Lowest, Low, Normal, High, Highest).
 * Repositories: select the type of repository and URL. Make sure to use SSH to allow write access. For example, if the repository is `https://github.com/meandavejustice/min-vid`, the URL should be `git@github.com:meandavejustice/min-vid.git`. You can use the *Clone or download* button in the repository page on GitHub, making sure that *Clone with SSH* is selected.
 * Leave the `Branch` field empty, unless developers asked to commit translations in a branch instead of *master*.
 * Download prefix: a URL prefix for downloading localized files. For GitHub repositories, select any localized file on GitHub, click `Raw` and replace locale code and the following bits in the URL with `{locale_code}`. For example, if the link is `https://raw.githubusercontent.com/bwinton/TabCenter-l10n/master/locales/en-US/addon.properties`, the field should be set to `https://github.com/bwinton/TabCenter-l10n/blob/master/locales/{locale_code}`.
@@ -29,6 +27,12 @@ Access Pontoon’s [admin console](https://mozilla-pontoon-staging.herokuapp.com
 ```HTML
 Localization for the <a href="https://testpilot.firefox.com/experiments/min-vid">Min Vid add-on</a>.
 ```
+
+* Internal admin notes: use them e.g. for developer contacts and information that other PMs will find useful when covering for you.
+* Deadline: if available, enter project deadline in the YYYY-MM-DD format.
+* Priority: select priority level from one of the 5 levels available (Lowest, Low, Normal, High, Highest).
+* Contact: select the L10n driver in charge of the project, probably yourself.
+* External Resources: provide links to external resources like l10n preview environment. You need to enter the name and the URL for each resource. You can also pick one of the predefined names: Development site, Production site, Development build, Production build, Screenshots, Language pack.
 
 Click **SAVE PROJECT** at the bottom of the page, then click **SYNC** to run a test sync. In the [Sync log](https://mozilla-pontoon-staging.herokuapp.com/sync/log/) you should be able to see if it succeeded or failed.
 
