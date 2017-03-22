@@ -27,6 +27,7 @@ Access Pontoon’s [admin console](https://mozilla-pontoon-staging.herokuapp.com
 ```HTML
 Localization for the <a href="https://testpilot.firefox.com/experiments/min-vid">Min Vid add-on</a>.
 ```
+
 * Internal admin notes: use them e.g. for developer contacts and information that other PMs will find useful when covering for you.
 * Deadline: if available, enter project deadline in the YYYY-MM-DD format.
 * Priority: select priority level from one of the 5 levels available (Lowest, Low, Normal, High, Highest).
