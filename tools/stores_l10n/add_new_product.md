@@ -297,4 +297,4 @@ And use this `$whatsnew` variable in all available views.
 
 When all tools and repositories are ready, make sure to test everything locally and check PHP logs before opening a pull request. It’s strongly recommended to use a virtual machine set up following these [instructions](/config/setup_l10ndrivers_vm.md) running all needed tools.
 
-A good way to test it to provide a fake translation for one locale, slightly altering the translated strings, to check if all views and API calls work as expected.
+A good way to test it is to provide a fake translation for one locale, slightly altering the translated strings, to check if all views and API calls work as expected.
