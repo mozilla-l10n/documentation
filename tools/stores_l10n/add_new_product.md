@@ -44,6 +44,8 @@ private $supported_locales = [
 ];
 ```
 
+This is the list of locales shipping in the app. Currently they’re managed manually, so you will need to chech them periodically and keep them up to date.
+
 Note: it the project is tracked on [Webstatus](https://l10n.mozilla-community.org/webstatus/), you can use its [API](https://github.com/mozilla-l10n/webstatus/#available-urls) to get the list of all locales available ([example](https://l10n.mozilla-community.org/webstatus/api/?product=focus-android&txt) for Focus for Android).
 
 The next step is to add which templates and .lang files will be used for this project. In case of Focus for Android there is:
@@ -193,7 +195,7 @@ In this case, the screenshots session is displayed only if the requested locale 
 ```
 
 As for the templates, pay attention to differences between a product shipping on Play Store and one shipping on App Stores:
-* For Android products there should be length warnings on title, short description, and description.
+* For Android products there should be length warnings on title, short description, and description. For iOS, a warning should be displayed on keywords.
 * There are no keywords in Android, short description is not available for iOS products.
 
 ## Tests
@@ -256,6 +258,43 @@ $appstores_lang = [
 
 Once the configuration is complete, you’ll need to create the actual .lang files and add them to the appstores repository with `lang_update`.
 
+## Adding a What’s new section
+
+As already explained, you won’t need a *What’s new* section for a newly launched product. For further updates, you will need to add a `whatsnew` entry in the project configuration.
+
+```PHP
+private $$templates = [
+...
+    'focus_android' => [
+        'release' => [
+            'template'    => 'focus_android/release/listing_mar_2017.php',
+            'listing'     => 'focus_android/description_release.lang',
+            'screenshots' => 'focus_android/screenshots_v1.lang',
+            'whatsnew'    => 'focus_android/whatsnew/focus_v2.lang',
+        ],
+    ],
+...
+];
+```
+
+Then manage this content in the template:
+
+```PHP
+$whatsnew = function ($translations) use ($_) {
+    return <<<OUT
+* {$_('A brand new feature')}
+OUT;
+```
+
+And use this `$whatsnew` variable in all available views.
+
+```PHP
+<h3>What’s new &mdash; <?= $whatsnew_warning ?></h3>
+<pre><?= $whatsnew($translations) ?></pre>
+```
+
 ## Testing
 
 When all tools and repositories are ready, make sure to test everything locally and check PHP logs before opening a pull request. It’s strongly recommended to use a virtual machine set up following these [instructions](/config/setup_l10ndrivers_vm.md) running all needed tools.
+
+A good way to test it to provide a fake translation for one locale, slightly altering the translated strings, to check if all views and API calls work as expected.
