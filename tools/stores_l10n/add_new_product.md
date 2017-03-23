@@ -6,7 +6,7 @@ This document will explain how to start tracking a new project, using Focus for 
 
 ## Add new product to configuration
 
-Configuration for the Stores web app is in the `Project` class (`app\classes\Stores\Project.php`). The first thing to do it to add the project to `$products_data`, and you’ll need to determine beforehand:
+Configuration for the Stores web app is in the `Project` class (`app\classes\Stores\Project.php`). The first thing to do is to add the project to `$products_data`, and you’ll need to determine beforehand:
 * How many channels are supported.
 * Code name and displayed name for this product.
 * If the product needs to support App Store (apple) or Play Store (google).
@@ -75,7 +75,7 @@ private $$templates = [
 
 ## Add templates
 
-Now that the configuration is done, you need to add the actual template file. Templates are stored in `app/templates`, and the easiest way to start is by copying an existing project, in this case you can copy templates from Focus for iOS, making sure to rename the folder to `focus_android`, and the template to `listing_mar_2017.php`, as specified in the configuration above.
+Now that the configuration is done, you need to add the actual template file. Templates are stored in `app/templates`, and the easiest way to start is by copying an existing project. In this case you can copy templates from Focus for iOS, making sure to rename the folder to `focus_android`, and the template to `listing_mar_2017.php` (as specified in the configuration above).
 
 This is the initial part of the template:
 
