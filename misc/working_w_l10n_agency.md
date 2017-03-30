@@ -6,7 +6,7 @@ This document is a guideline for project manager who interacts with a localizati
 
 A series of activities need to happen before an l10n project can start. Unless there are changes in the document, this step is done once, and only at the beginning of relationship engagement.
 
-* A signed master service agreement (or MSA) between Mozilla and the vendor. Person signed on Mozilla side could be the PM or PM’s manager. This document shows the conditions that the contract is opereated in between the service provider and Mozilla.  Without this agreement, a service can't start. Here is an example of [MSA](https://drive.google.com/a/mozilla.com/file/d/0B7u_NzvpgGcgSW5Jend3TlpyRlE/view?usp=sharing).    
+* A signed master service agreement (or MSA) between Mozilla and the vendor. Person signed on Mozilla side could be the PM or PM’s manager. This document shows the conditions that the contract is opereated in between the service provider and Mozilla.  Without this agreement, a service can't start. Here is an example of [MSA](https://drive.google.com/a/mozilla.com/file/d/0B7u_NzvpgGcgSW5Jend3TlpyRlE/view?usp=sharing).
 * Account Payable (or AP) form that contains banking information, billing cycle (monthly, quarterly, or "as soon as") and payment due terms (within 30 or 45 days); billing email address. Here is an example of [AP form](https://drive.google.com/a/mozilla.com/file/d/0B7u_NzvpgGcgYmN6c0tJc2IwUzA/view?usp=sharing).
 * The rate sheet can be updated annually.  An example of the official [rate sheet](https://drive.google.com/a/mozilla.com/file/d/0B7u_NzvpgGcgTDhoVFBsN3dMc0E/view?usp=sharing) that includes the following but not limited to:
 ** Word rate for each of the interested locales as in new words, 100% match, fuzzy match for translation, review, proofreading
@@ -29,11 +29,11 @@ Depending on the needs and where the source file can be accessed, it’s good to
 * GitHub: usually for content heavy type of projects, such as legal document; can commit directly.
 * Pontoon: as translator when there is no community; or the vendor provides suggestions pending community approval. PM sets permission level.
 * Pootle: as translator when there is no community; or the vendor provides suggestions pending community approval. PM sets permission level.
-* Bugzilla: to be notified when a new project is initiated in addtion to email. 
+* Bugzilla: to be notified when a new project is initiated in addtion to email.
 * Google drive: to view, review, and translate directly.
 
 Additional account setup may be needed:
-* If WordPress platform is used, usually a 3rd party is responsible for buidling the site. This is project specific. Signup is needed to access 3rd party system for translation, for QA and testing on staging server.   
+* If WordPress platform is used, usually a 3rd party is responsible for buidling the site. This is project specific. Signup is needed to access 3rd party system for translation, for QA and testing on staging server.
 
 Once accounts are set up, allow the agency to explore the tools, flows and the product features to familiarize itself before actual work starts. Setting up a meeting to share your screen might be a good idea, and use this opportunity to answer their questions about the project or the tools.
 
@@ -87,4 +87,4 @@ After the project is delivered,
 * Suggest to keep using the same translator(s) or if a replacement is needed.
 * PM then shares the feedback with agency for rebuttal and further feedback if needed.
 
-At the end of a calendar year, review the vendor working model and quality of paid service. Provide feedback and evaluate if the service should be continued. 
+At the end of a calendar year, review the vendor working model and quality of paid service. Provide feedback and evaluate if the service should be continued.
