@@ -61,16 +61,19 @@ This is some more text.
 
 To install packages in Atom, open the Preferences, select the *Install* panel on the left and search for the package you’re interested in.
 
-[markdownlint](https://github.com/DavidAnson/markdownlint), a Markdown linter, is run on automation (Travis) for each pull request. If you want to use this tool on your system, make sure to install [Node.js](https://nodejs.org/en/), then install (only once) dependencies with this command (run from the root folder):
+[markdownlint](https://github.com/DavidAnson/markdownlint), a Markdown linter, is run on automation (Travis) for each pull request. If you want to use this tool on your system, make sure to install [Node.js](https://nodejs.org/en/), then run the following commands from the root of your repository (only once):
 
 ```BASH
-$ npm install
+$ git clone https://github.com/flodolo/l10ndocs-linter
+$ npm --prefix ./l10ndocs-linter install ./l10ndocs-linter
 ```
 
 At this point you can launch the linter with this command:
 
 ```BASH
-$ node linter/markdownlint.js
+$ node l10ndocs-linter/linter/markdownlint.js
+Using config file: /your_path/documentation/l10ndocs-linter/linter/markdownlint.json
+Searching path: /your_path/documentation
 
 There are no linter errors.
 ```
