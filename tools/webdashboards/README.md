@@ -73,7 +73,7 @@ Always work on forks of the main repository and open pull requests if you’re g
 ### Webstatus
 
 * Production instance: https://l10n.mozilla-community.org/webstatus/
-* Code: https://github.com/flodolo/webstatus
+* Code: https://github.com/mozilla-l10n/webstatus
 
 ### Stores
 
