@@ -6,12 +6,47 @@ This document will explain how to start tracking a new project, using Focus for 
 
 ## Add new product to configuration
 
-Configuration for the Stores web app is in the `Project` class (`app\classes\Stores\Project.php`). The first thing to do is to add the project to `$products_data`, and you’ll need to determine beforehand:
+Configuration for the Stores web app is split between `app/config/product_sources.json` and the `Project` class (`app/classes/Stores/Project.php`). The first thing to do is to determine:
 * How many channels are supported.
 * Code name and displayed name for this product.
 * If the product needs to support App Store (apple) or Play Store (google).
 
-This is the configuration for Focus for Android:
+Let’s start with `app/config/product_sources.json`. This is a JSON file with the following structure:
+
+```JSON
+{
+  "product code name": [
+    {
+      "channel": "name of the channel",
+      "format": "format of the remote list",
+      "source": "URL of the remote list"
+    }
+  ]
+}
+```
+
+The only `format` supported at the moment is `txt`: a plain text file with one locale code per line.
+
+If the project is tracked on [Webstatus](https://l10n.mozilla-community.org/webstatus/), you can use its [API](https://github.com/mozilla-l10n/webstatus/#available-urls) to get the list of all locales available ([example](https://l10n.mozilla-community.org/webstatus/api/?product=focus-android&txt) for Focus for Android).
+
+This is the configuration to add to the file for Focus for Android:
+
+```JSON
+"focus_android": [
+  {
+    "channel": "release",
+    "format": "txt",
+    "source": "https://l10n.mozilla-community.org/webstatus/api/?product=focus-android&txt"
+  }
+]
+```
+
+If you’re not used to work with JSON files, once you have updated the configuration, you can use a [validator](http://jsonlint.com/) to ensure that the syntax is correct.
+
+Now that `app/config/product_sources.json` contains Focus for Android, you need to run `apps/scripts/update_shipping_locales.py` to generate the list of locales shipping in this new product.
+The list of locales will be stored in `app/config/shipping_locales.json`, make sure that the product and channel you’ve added are available, and spot check the list of locales generated.
+
+At this point you need to work on `app/classes/Stores/Project.php`. This is the configuration for Focus for Android:
 
 ```PHP
 private $products_data = [
@@ -25,28 +60,6 @@ private $products_data = [
 ...
 ];
 ```
-
-Then you need to add an entry in `$supported_locales` for each of the channels available. Since Focus for Android only has a release channel, it will be:
-
-```PHP
-private $supported_locales = [
-...
-    'focus_android' => [
-        'release' => [
-            'ar', 'ast', 'az', 'bn-BD', 'ca', 'cs', 'cy', 'de', 'el', 'eo',
-            'es-AR', 'es-CL', 'es-ES', 'es-MX', 'fa', 'fr', 'fy-NL', 'he',
-            'hu', 'hy-AM', 'id', 'it', 'ja', 'kab', 'ko', 'lo', 'nl', 'pl',
-            'pt-BR', 'ru', 'sk', 'sl', 'sq', 'sv-SE', 'th', 'tr', 'uk',
-            'zh-CN', 'zh-TW',
-        ],
-    ],
-...
-];
-```
-
-This is the list of locales shipping in the app. Currently they’re managed manually, so you will need to chech them periodically and keep them up to date.
-
-Note: it the project is tracked on [Webstatus](https://l10n.mozilla-community.org/webstatus/), you can use its [API](https://github.com/mozilla-l10n/webstatus/#available-urls) to get the list of all locales available ([example](https://l10n.mozilla-community.org/webstatus/api/?product=focus-android&txt) for Focus for Android).
 
 The next step is to add which templates and .lang files will be used for this project. In case of Focus for Android there is:
 * `template`: PHP file used to display the full information about this product.

@@ -18,7 +18,23 @@ Refer to the [README](https://github.com/mozilla-l10n/stores_l10n/#installation)
 
 ## Projects configuration
 
-The entire configuration is stored inside the [Project class](https://github.com/mozilla-l10n/stores_l10n/blob/master/app/classes/Stores/Project.php).
+Configuration is split between `app/config/product_sources.json` and the `Project` class (`app/classes/Stores/Project.php`).
+
+`app/config/product_sources.json` contains a list of supported products and channels, together with a URL that can be used to retrieve the list of shipping locales. JSON has the following structure:
+
+```JSON
+{
+  "product code name": [
+    {
+      "channel": "name of the channel",
+      "format": "format of the remote list",
+      "source": "URL of the remote list"
+    }
+  ]
+}
+```
+
+`app/scripts/update_shipping_locales.py` can be used to generate, or update, the list of shipping locales which is stored in `app/config/shipping_locales.json`. It’s important to note that these lists are used in [Langchecker](/tools/webdashboards/langchecker.md), to determine which locales should see specific files (product pages on mozilla.org, store content).
 
 `$products_data` stores all supported products, with the following structure for each of them:
 
@@ -36,8 +52,6 @@ Relevant information in this array:
 * Supported channels.
 * Full name of the product, used in views and navigation.
 * In which store the project lives. Currently it can be `apple` or `google`.
-
-`$supported_locales` includes information on all locales supported for each product and channel. It’s important to note that these lists are used in [Langchecker](/tools/webdashboards/langchecker.md), to determine which locales should see specific files (product pages on mozilla.org, store content).
 
 `$locales_mapping` includes information on mappings between Mozilla’s locale codes, and each store’s internal codes.
 
