@@ -277,7 +277,7 @@ https://www.mercurial-scm.org/wiki/Bookmarks
 
 ### region.properties
 
-region.properties is stored in `/browser/chrome/browser-region` and it contains information about protocol handlers. You can use [this region.properties model](desktop_region.properties) as a base, making sure to remove non existing searchplugins from `search.order`.
+region.properties is stored in `/browser/chrome/browser-region` and it contains information about protocol handlers. You can use [this region.properties model](files/desktop_region.properties) as a base, making sure to remove non existing searchplugins from `search.order`.
 
 ## Creating a patch for review (locale repository)
 
