@@ -86,7 +86,7 @@ Unlike Wikipedia, never copy the file from en-US, since Yahoo is the default and
 
 ### region.properties
 
-region.properties is stored in `/mobile/chrome/region.properties` and it contains information about protocol handlers. You can use [this region.properties model](mobile_region.properties) as a base, making sure to remove non existing searchplugins from `search.order`.
+region.properties is stored in `/mobile/chrome/region.properties` and it contains information about protocol handlers. You can use [this region.properties model](files/mobile_region.properties) as a base, making sure to remove non existing searchplugins from `search.order`.
 
 ## Creating a patch for review
 

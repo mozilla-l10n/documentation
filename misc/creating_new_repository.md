@@ -16,7 +16,7 @@ For example, if the project is *Focus for Android*, a good repository name is `f
 
 Set the project as **Public** and don’t initialize it with a README.
 
-![New repository](/misc/img/new_repository/new_repo.png)
+![New repository](/assets/images/new_repository/new_repo.png)
 
 ## Add collaborators
 
@@ -27,7 +27,7 @@ Go into the project settings, panel **Collaborators & teams**:
 * Add relevant developers as contributors if they need to make commits to the repository (that’s usually the case, in order to update strings).
 * Pootle’s bot currently needs to be added as a contributor, in the future it will become part of the **Localizers** group.
 
-![New repository](/misc/img/new_repository/settings.png)
+![New repository](/assets/images/new_repository/settings.png)
 
 ## Add a README.md to the project
 

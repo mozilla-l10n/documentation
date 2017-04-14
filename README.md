@@ -25,4 +25,4 @@ In several occasions documents use aliases instead of the complete path to comma
 
 ## Updating the documentation
 
-Simply open a pull request adding the new file or updating an existing document. Make sure to follow [these style guidelines](misc/documentation_style.md), and note that all pull requests need to be reviewed before merging.
+Simply open a pull request adding the new file or updating an existing document. Make sure to follow [these style guidelines](misc/documentation_styleguide.md), and note that all pull requests need to be reviewed before merging.
