@@ -2,9 +2,9 @@
 
 ## Cloning/Updating the locale’s repository
 
-The first thing to remember is that you will be working on Aurora for a new locale, and you need this locale’s Mercurial repository on your computer.
+You will be working on l10n-central for a new locale, and you need this locale’s Mercurial repository on your computer.
 
-l10n repositories for Firefox live in https://hg.mozilla.org/releases/l10n/mozilla-aurora/. In this case let’s assume that l10n clones will be stored in `~/mozilla/mercurial/l10n`, with a subfolder for each locale and each branch. So, if the locale is `ur`, the repository will be stored in `$/mozilla/mercurial/l10n/ur/mozilla-aurora`.
+l10n repositories for Firefox live in https://hg.mozilla.org/l10n-central/. In this case let’s assume that l10n clones will be stored in `~/mozilla/mercurial/l10n`, with a subfolder for each locale and each branch. So, if the locale is `ur`, the repository will be stored in `~/mozilla/mercurial/l10n/ur/l10n-central`.
 
 ```BASH
 $ mkdir -p ~/mozilla/mercurial/l10n/ur
@@ -16,19 +16,19 @@ The first command makes sure that the path for `ur` exists, the second moves int
 If you don’t have a clone yet, you need to create it.
 
 ```BASH
-$ hg clone ssh://hg.mozilla.org/releases/l10n/mozilla-aurora/ur mozilla-aurora
+$ hg clone ssh://hg.mozilla.org/l10n-central/ur l10n-central
 ```
 
 A couple of details to note in this `hg clone` command:
-* The command uses `ssh://`, which means you need an active (and properly configured) SSH access to the repository.
-* It doesn’t use the default folder for the local clone, but specify a `mozilla-aurora` directory. Without that it would create a `ur` folder, making it impossible to distinguish different branches.
+* The command uses `ssh://`, which means you need an active (and [properly configured](/config/setting_mercurial_environment.md)) SSH access to the repository.
+* It doesn’t use the default folder for the local clone, but specify a `l10n-central` directory. Without that it would create a `ur` folder, making it impossible to distinguish different branches.
 
-At this point there’s a clone stored in `~/mozilla/mercurial/l10n/ur/mozilla-aurora` (remember that you already moved to `~/mozilla/mercurial/l10n/ur` before running `hg clone`).
+At this point there’s a clone stored in `~/mozilla/mercurial/l10n/ur/l10n-central` (remember that you already moved to `~/mozilla/mercurial/l10n/ur` before running `hg clone`).
 
 If you already have a clone on your computer, always make sure to update it before doing anything:
 
 ```BASH
-$ cd ~/mozilla/mercurial/l10n/ur/mozilla-aurora
+$ cd ~/mozilla/mercurial/l10n/ur/l10n-central
 $ hg pull -r default -u
 ```
 
@@ -44,7 +44,9 @@ $ hg up central
 
 ### list.json
 
-The list of searchplugins is stored in JSON format in [mozilla-central](https://hg.mozilla.org/mozilla-central/file/default/browser/locales/search/list.json) in `/browser/locales/search/list.json`.
+The list of searchplugins is stored in JSON format:
+* For Firefox desktop in [/browser/locales/search/list.json](https://hg.mozilla.org/mozilla-central/file/default/browser/locales/search/list.json).
+* For Firefox for Android in [/mobile/locales/search/list.json](https://hg.mozilla.org/mozilla-central/file/default/mobile/locales/search/list.json).
 
 The basic structure for each locale is fairly simple. Assuming the locale code is `ur`, it will have a `default` key, with `visibleDefaultEngines`.
 
@@ -89,12 +91,23 @@ To make sure you’re not creating a broken JSON, you can test the final content
 
 ### XML files
 
-Searchplugins are stored in [mozilla-central](https://hg.mozilla.org/mozilla-central/file/default/browser/locales/searchplugins) in `/browser/locales/searchplugins`.
+Searchplugins are stored:
+* For Firefox desktop in [/browser/locales/searchplugins](https://hg.mozilla.org/mozilla-central/file/default/browser/locales/searchplugins).
+* For Firefox for Android in [/mobile/locales/searchplugins](https://hg.mozilla.org/mozilla-central/file/default/mobile/locales/searchplugins).
 
 For other searchplugins you will need to create the .xml file yourself, with some general rules to keep in mind:
 * Always have a MPL2 license header at the beginning.
-* Icons are currently square 16px or 32px, both embedded in a .ico file.
+* On desktop icons are currently square 16px and 32px, both embedded in a multilayer `.ico` file.
+* On Android icons are currently 96px transparent PNG images, with rounded corners (radius 6px), preferably with a colored background since the UI is white, and a white background wouldn’t show the rounded corners.
 * Check if other locales already ship the same searchplugin, and copy their XML file to use as a base. If the searchplugin is brand new, it needs to be approved by BD and it will take some time, so it might be worth starting with a shorter list of searchplugins, and consider the new one in a follow-up bug. Icons will also be provided by the search provider after approval.
+
+#### Icons
+
+These are some useful tips to deal with new icons for searchplugins:
+* If the image is a PNG (for Android), make sure to optimize it before encoding it to base64 (for example using [tinypng.com](https://tinypng.com/)).
+* You can create an `.ico` file starting from separate 16px and 32px PNG icons. Create a 32px image in [Gimp](https://www.gimp.org/), add each icon to a separate layer, and export the file as `.ico` (make sure to select the option to compress each of the layers).
+* You can use online services (like [this one](http://freeonlinetools24.com/base64-image)) to quickly encode an image to base64.
+* You can test the image in the browser (copy and paste the data URI in the address bar). You will still have to download it to check that everything looks good, since only one image will be displayed for multilayer `.ico` files, and transparency is quite confusing in Firefox preview.
 
 #### Wikipedia
 
@@ -124,13 +137,13 @@ The shortName to use in your .xml file is `ویکیپیڈیا (ur)`. Copying and
 
 #### Yahoo
 
-Unlike Wikipedia, never copy the file from en-US, since Yahoo is the default and has different parameters.
+Unlike Wikipedia, never copy the file from en-US, since Yahoo is the default and has different parameters. When copying the file from another locale, make sure that the domain is the one you want. For example there’s https://es.search.yahoo.com but also https://espanol.search.yahoo.com (es-ES versus a more generic Spanish).
 
 ## Creating a patch for review (mozilla-unified repository)
 
 If you plan to create a patch instead of using mozreview, you can refer to the instructions available in the second part of the document, simply working inside your local clone of mozilla-unified as repository.
 
-After you’ve created all the files you need, check the status of the repository
+After you’ve created all the files you need, check the status of the repository. `/browser` (Firefox desktop will be used as an example from now on, but the procedure is the same for Android, just replace `/browser` with `/mobile`).
 
 ```BASH
 $ hg status
@@ -139,7 +152,7 @@ M browser/locales/search/list.json
 ? browser/locales/searchplugins/wikipedia-ur.xml
 ```
 
-I need to add the new files.
+You need to add the new files.
 
 ```BASH
 $ hg add browser/locales/searchplugins
@@ -270,23 +283,30 @@ $ hg rebase -d central
 ```
 
 More information about this workflow are available in these pages:
-http://mozilla-version-control-tools.readthedocs.io/en/latest/hgmozilla/firefoxworkflow.html
-https://www.mercurial-scm.org/wiki/Bookmarks
+* http://mozilla-version-control-tools.readthedocs.io/en/latest/hgmozilla/firefoxworkflow.html
+* https://www.mercurial-scm.org/wiki/Bookmarks
 
 ## Setting up files for locale’s repository
 
 ### region.properties
 
-region.properties is stored in `/browser/chrome/browser-region` and it contains information about protocol handlers. You can use [this region.properties model](files/desktop_region.properties) as a base, making sure to remove non existing searchplugins from `search.order`.
+region.properties is stored in `/browser/chrome/browser-region` for Firefox desktop (`/mobile/chrome` for Firefox for Android), and it contains information about the default searchplugin, searchplugins order, and protocol handlers. You can use these files as a base:
+* For Firefox desktop [this region.properties model](files/desktop_region.properties).
+* For Firefox for Android [this region.properties model](files/desktop_region.properties).
+
+A few tips:
+* The default searchplugins is defined in `browser.search.defaultenginename`. Unlike `list.json`, here you need to specify the `shortName` attribute included in the XML file, not the filename. So, in case of Google, it will be `Google`, not `google`.
+* Make sure to remove non existing searchplugins from `search.order`.
+* If you’re updating an existing file, make sure to not reset the `gecko.handlerService.defaultHandlersVersion` key. If, on the other hand, you’re adding a new handler, you will have to increment the existing numeric value.
 
 ## Creating a patch for review (locale repository)
 
-Assuming you followed the instructions to [setup the environment](/config/setting_mercurial_environment.md), you’re ready to create the patch.
+Assuming you followed the instructions to [setup the environment](/config/setting_mercurial_environment.md), you’re ready to create the patch. Once again, Firefox desktop will be used as an example, but the procedure is the same for Firefox for Android.
 
 Move into the repository folder and check its status:
 
 ```BASH
-$ cd ~/mozilla/mercurial/l10n/ur/mozilla-aurora
+$ cd ~/mozilla/mercurial/l10n/ur/l10n-central
 
 $ hg status
 ? browser/chrome/browser-region/region.properties
@@ -321,16 +341,16 @@ popping bug123456.patch
 patch queue now empty
 ```
 
-The patch is stored inside the `.hg/patches` folder in the root of the repository (in the suggested setup, the full path would be `~/mozilla/mercurial/mozilla-aurora/.hg/patches`). You can copy the file through the command line or the file explorer. For example, on Mac you can open the folder in Finder by typing:
+The patch is stored inside the `.hg/patches` folder in the root of the repository (in the suggested setup, the full path would be `~/mozilla/mercurial/l10n-central/.hg/patches`). You can copy the file through the command line or the file explorer. For example, on Mac you can open the folder in Finder by typing:
 
 ```BASH
-$ open ~/mozilla/mercurial/l10n/ur/mozilla-aurora/.hg/patches
+$ open ~/mozilla/mercurial/l10n/ur/l10n-central/.hg/patches
 ```
 
 Or you can copy the file on the Desktop with
 
 ```BASH
-$ cp ~/mozilla/mercurial/l10n/ur/mozilla-aurora/.hg/patches/bug123456.patch ~/Desktop
+$ cp ~/mozilla/mercurial/l10n/ur/l10n-central/.hg/patches/bug123456.patch ~/Desktop
 ```
 
 Now you need to attach the file to Bugzilla and set an appropriate reviewer for it.
@@ -342,7 +362,7 @@ Let’s assume that the review found some issues with the patch and you need to 
 Assuming the file is called `bug123456.patch` and it’s in your desktop, you can move in the repository folder and import the file like this:
 
 ```BASH
-$ cd ~/mozilla/mercurial/l10n/ur/mozilla-aurora
+$ cd ~/mozilla/mercurial/l10n/ur/l10n-central
 
 $ hg import --no-commit ~/Desktop/bug123456.patch
 ```
@@ -373,7 +393,7 @@ Bug 123456 - Set up searchplugins for "ur" and Firefox for Android, r=flod
 Then you need to import the patch, this time without the `no-commit` parameter.
 
 ```BASH
-$ cd ~/mozilla/mercurial/l10n/ur/mozilla-aurora
+$ cd ~/mozilla/mercurial/l10n/ur/l10n-central
 
 $ hg import ~/Desktop/bug123456.patch
 ```

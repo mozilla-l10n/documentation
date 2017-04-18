@@ -2,4 +2,4 @@
 
 Some documentation specific for common tasks regarding Firefox desktop and l10n:
 * [Set up the environment](/config/setting_mercurial_environment.md).
-* [Set up searchplugins](setup_searchplugins.md).
+* [Set up searchplugins](../searchplugins/setup_searchplugins.md).
