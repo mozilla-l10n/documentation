@@ -30,22 +30,14 @@ After the first content lands in l10n-central, it’s a good idea to perform som
 * Check `toolkit/global/intl.properties` ([en-US version](https://hg.mozilla.org/mozilla-central/file/default/toolkit/locales/en-US/chrome/global/intl.properties)) for evident mistakes.
 * Check if there’s a `region.properties` file in `browser/chrome/browser-region/region.properties`, if needed replace it with the [stock version](../searchplugins/files/desktop_region.properties).
 
-The next step is to push the same content to mozilla-beta and mozilla-release to populate them. Assuming all 3 repositories are cloned in `~/mozilla/mercurial/l10n` as `l10n-central`, `mozilla-beta`, `mozilla-release`, you can run:
+The next step is to push the same content to mozilla-beta and mozilla-release to populate them. From within your `l10n-central` clone, run:
 
 ```BASH
-$ cd ~/mozilla/mercurial/l10n
-$ hg -R l10n-central push -r default mozilla-beta
-$ hg -R mozilla-beta push -r default
-$ hg -R l10n-central push -r default mozilla-release
-$ hg -R mozilla-release push -r default
+$ hg push -r default ssh://hg.mozilla.org/releases/l10n/mozilla-beta/LOCALE_CODE
+$ hg push -r default ssh://hg.mozilla.org/releases/l10n/mozilla-release/LOCALE_CODE
 ```
 
-This is what each command does:
-* Move in `~/mozilla/mercurial/l10n`.
-* Push the current changesets from the `l10n-central` local folder to the `mozilla-beta` local folder.
-* Push the content of the `mozilla-beta` local folder to the remote Mercurial server.
-* Push the current changesets from the `l10n-central` local folder to the `mozilla-release` local folder.
-* Push the content of the `mozilla-release` local folder to the remote Mercurial server.
+Each command pushes the current changesets from the `l10n-central` local folder to the corresponding remote repository. Make sure to change *LOCALE_CODE* to the locale you’re working on (`lo` in this example).
 
 Once completed, check the history online starting from [l10n-central](https://hg.mozilla.org/l10n-central): all 3 repositories should have the same changeset as default/tip, including the HASH of the commit.
 
