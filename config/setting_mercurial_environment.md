@@ -145,7 +145,7 @@ $ hg clone https://hg.mozilla.org/mozilla-unified
 To update the existing repository:
 
 ```BASH
-$ cd ~/mozilla/mercurial/
+$ cd ~/mozilla/mercurial/mozilla-unified
 $ hg pull -u
 $ hg up central
 ```
