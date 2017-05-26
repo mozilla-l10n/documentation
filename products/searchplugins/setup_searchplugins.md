@@ -292,7 +292,7 @@ More information about this workflow are available in these pages:
 
 region.properties is stored in `/browser/chrome/browser-region` for Firefox desktop (`/mobile/chrome` for Firefox for Android), and it contains information about the default searchplugin, searchplugins order, and protocol handlers. You can use these files as a base:
 * For Firefox desktop [this region.properties model](files/desktop_region.properties).
-* For Firefox for Android [this region.properties model](files/desktop_region.properties).
+* For Firefox for Android [this region.properties model](files/mobile_region.properties).
 
 A few tips:
 * The default searchplugins is defined in `browser.search.defaultenginename`. Unlike `list.json`, here you need to specify the `shortName` attribute included in the XML file, not the filename. So, in case of Google, it will be `Google`, not `google`.
