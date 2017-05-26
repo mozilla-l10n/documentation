@@ -37,7 +37,7 @@ $ hg pull -r default -u
 First of all make sure that your environment is [correctly set up](/config/setting_mercurial_environment.md), and update your local mozilla-unified clone to be in sync with central:
 
 ```BASH
-$ cd ~/mozilla/mercurial/mozilla-central
+$ cd ~/mozilla/mercurial/mozilla-unified
 $ hg pull -u
 $ hg up central
 ```
