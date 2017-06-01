@@ -2,7 +2,7 @@
 
 Android has two different types of builds: a multi-locale build that ships in Google Play Store, and a single-locale build (containing only one locale) that is mostly used for testing.
 
-The list of locales included in the multi-locales build is stored inside a file named **maemo-locales** within Mozilla’s code repositories. Since the goal is to create Aurora builds, the file will be in mozilla-aurora: https://hg.mozilla.org/releases/mozilla-aurora/file/default/mobile/android/locales/maemo-locales
+The list of locales included in the multi-locales build is stored inside a file named **maemo-locales** within Mozilla’s code repositories. Since the goal is to create Central builds, the file will be in mozilla-central: https://hg.mozilla.org/mozilla-central/file/tip/mobile/android/locales/maemo-locales
 
 ## File a bug to add the new locale
 
@@ -20,10 +20,10 @@ Release Note Request (optional, but appreciated)
 
 ## Creating a patch for maemo-locales
 
-First of all make sure that your environment is [correctly set up](/config/setting_mercurial_environment.md), and update your local mozilla-aurora clone:
+First of all make sure that your environment is [correctly set up](/config/setting_mercurial_environment.md), and update your local mozilla-unified clone:
 
 ```BASH
-$ cd ~/mozilla/mercurial/mozilla-aurora
+$ cd ~/mozilla/mercurial/mozilla-unified
 $ hg pull -r default -u
 ```
 
@@ -64,7 +64,7 @@ $ hg qnew bug123456.patch
 
 At this point you will be asked to provide a commit message for your patch (in `nano` if you followed the instructions to set up the environment): write your commit message, then press `CTRL+O` to save the file, `enter` to confirm the proposed filename, and finally `CTRL+X` to exit the editor.
 
-The commit message should be the same as the bug, for example `Bug 123456 - Add "ab-CD" to Fennec meamo-locales for multi-locales build`.
+The commit message should be the same as the bug, for example `Bug 123456 - Add "ab-CD" to Fennec maemo-locales for multi-locales build`.
 
 You’ready to *pop* the patch out of the queue. Since there are no other patches, you can pop them all with `-a`.
 
@@ -74,23 +74,23 @@ popping bug123456.patch
 patch queue now empty
 ```
 
-The patch is stored inside the `.hg/patches` folder in the root of the repository (in the suggested setup, the full path would be `~/mozilla/mercurial/mozilla-aurora/.hg/patches`). You can copy the file through the command line or the file explorer. For example, on Mac you can open the folder in Finder by typing:
+The patch is stored inside the `.hg/patches` folder in the root of the repository (in the suggested setup, the full path would be `~/mozilla/mercurial/mozilla-unified/.hg/patches`). You can copy the file through the command line or the file explorer. For example, on Mac you can open the folder in Finder by typing:
 
 ```BASH
-$ open ~/mozilla/mercurial/mozilla-aurora/.hg/patches
+$ open ~/mozilla/mercurial/mozilla-unified/.hg/patches
 ```
 
 Or you can copy the file on the Desktop with
 
 ```BASH
-$ cp ~/mozilla/mercurial/mozilla-aurora/.hg/patches/bug123456.patch ~/Desktop
+$ cp ~/mozilla/mercurial/mozilla-unified/.hg/patches/bug123456.patch ~/Desktop
 ```
 
 Now you need to attach the file to Bugzilla and set an appropriate reviewer for it.
 
 ## After the patch has been reviewed
 
-Once the patch has been reviewed, you need to ask for approval: go in Details for the attachment, set `?` in the `approval‑mozilla‑aurora` flag and specify in the comment that the patch only needs to land in mozilla-aurora.
+Once the patch has been reviewed, you need to ask for approval: go in Details for the attachment, set `?` in the `approval‑mozilla‑central` flag and specify in the comment that the patch only needs to land in mozilla-central.
 
 **IMPORTANT:** an error in a single locale is going to break the multi-locales build for all locales, English included.
 
