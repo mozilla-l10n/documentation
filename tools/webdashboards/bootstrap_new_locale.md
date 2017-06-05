@@ -4,7 +4,7 @@
 
 The first thing you need to do is to add the new locale code to the `$mozilla` array in [app/config/locales.php](https://github.com/mozilla-l10n/langchecker/blob/master/app/config/locales.inc.php). Note that all lists of locales are in alphabetical order.
 
-If this new locale is going to localize only Fennec, you need to add it also to the `$fennec_locales` array. If it’s only working on mozilla.org, add it to `$mozorg_locales`. In this way desktop specific pages won’t be exposed for this language. If it’s only localizing mozilla.org, add it to the `$mozorg_locales` array.
+If this new locale is going to localize only Fennec, you need to add it also to the `$fennec_locales` array. If it’s only working on mozilla.org, add it to `$mozorg_locales`. In this way desktop specific pages won’t be exposed for this language. 
 
 Example: let’s say you need to add the `ab-CD` locale. This is how the `$mozilla` array begins:
 
