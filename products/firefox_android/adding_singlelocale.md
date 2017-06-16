@@ -2,7 +2,7 @@
 
 Android has two different types of builds: a multi-locale build that ships in Google Play Store, and a single-locale build (containing only one locale) that is mostly used for testing.
 
-The list of locales for which single-locale builds are created is stored inside a file named **all-locales** within Mozilla’s code repositories. Since the goal is to create Central builds, the file will be in mozilla-central: https://hg.mozilla.org/mozilla-central/file/tip/browser/locales/all-locales
+The list of locales for which single-locale builds are created is stored inside a file named **all-locales** within Mozilla’s code repositories. Since the goal is to create Nightly builds, the file will be in mozilla-central: https://hg.mozilla.org/mozilla-central/file/default/browser/locales/all-locales
 
 ## File a bug to add the new locale
 
@@ -17,6 +17,7 @@ First of all make sure that your environment is [correctly set up](/config/setti
 ```BASH
 $ cd ~/mozilla/mercurial/mozilla-unified
 $ hg pull -r default -u
+$ hg update central
 ```
 
 The file to modify is in `mobile/android/locales/all-locales`, open it with your text editor of choice.
@@ -66,7 +67,7 @@ popping bug123456.patch
 patch queue now empty
 ```
 
-The patch is stored inside the `.hg/patches` folder in the root of the repository (in the suggested setup, the full path would be `~/mozilla/mercurial/mozilla-central/.hg/patches`). You can copy the file through the command line or the file explorer. For example, on Mac you can open the folder in Finder by typing:
+The patch is stored inside the `.hg/patches` folder in the root of the repository (in the suggested setup, the full path would be `~/mozilla/mercurial/mozilla-unified/.hg/patches`). You can copy the file through the command line or the file explorer. For example, on Mac you can open the folder in Finder by typing:
 
 ```BASH
 $ open ~/mozilla/mercurial/mozilla-unified/.hg/patches
@@ -82,10 +83,10 @@ Now you need to attach the file to Bugzilla and set an appropriate reviewer for 
 
 ## After the patch has been reviewed
 
-Once the patch has been reviewed, you need to ask for approval: go in Details for the attachment, set `?` in the `approval‑mozilla‑central` flag and specify in the comment that the patch only needs to land in mozilla-central.
+Once the patch has been reviewed, sheriffs or the reviewer will land it in mozilla-central.
 
-Once approved for Central, sheriffs will land the patch. A couple of days after check on FTP if builds are being generated for this new locale: http://ftp.mozilla.org/pub/mobile/nightly/latest-mozilla-central-android-api-15-l10n/
+A couple of days after check on FTP if builds are being generated for this new locale: http://ftp.mozilla.org/pub/mobile/nightly/latest-mozilla-central-android-api-15-l10n/
 
 If there are no builds present, it’s usually due to errors in the locale, for example straight single or double quotes in Android DTDs. Check the team’s dashboard for these kind of errors.
 
-[bug template]: https://bugzilla.mozilla.org/enter_bug.cgi?assigned_to=lebedel.delphine%40gmail.com&bug_file_loc=http%3A%2F%2F&bug_ignored=0&bug_severity=normal&bug_status=NEW&cc=francesco.lodolo%40gmail.com&cf_blocking_b2g=---&cf_blocking_fennec=---&cf_fx_iteration=---&cf_fx_points=---&cf_status_b2g_2_0=---&cf_status_b2g_2_0m=---&cf_status_b2g_2_1=---&cf_status_b2g_2_1_s=---&cf_status_b2g_2_2=---&cf_status_b2g_2_2r=---&cf_status_b2g_2_5=---&cf_status_b2g_2_6=---&cf_status_b2g_master=---&cf_status_firefox46=---&cf_status_firefox47=---&cf_status_firefox48=---&cf_status_firefox49=---&cf_status_firefox_esr38=---&cf_status_firefox_esr45=---&cf_tracking_b2g=---&cf_tracking_firefox46=---&cf_tracking_firefox47=---&cf_tracking_firefox48=---&cf_tracking_firefox49=---&cf_tracking_firefox_esr38=---&cf_tracking_firefox_esr45=---&cf_tracking_firefox_relnote=---&cf_tracking_relnote_b2g=---&comment=Please%20add%20the%20LOCALENAME%20%28ab-CD%29%20locale%20to%20all-locales%20to%20start%20Fennec%20single-locale%20builds%20in%20aurora%20and%20add%20Fennec%20to%20this%20team%27s%20dashboard.&component=General&contenttypemethod=autodetect&contenttypeselection=text%2Fplain&defined_groups=1&flag_type-37=X&flag_type-4=X&flag_type-41=X&flag_type-607=X&flag_type-720=X&flag_type-721=X&flag_type-737=X&flag_type-781=X&flag_type-787=X&flag_type-799=X&flag_type-800=X&flag_type-803=X&flag_type-835=X&flag_type-855=X&flag_type-864=X&flag_type-875=X&flag_type-889=X&flag_type-892=X&flag_type-901=X&flag_type-905=X&flag_type-908=X&form_name=enter_bug&maketemplate=Remember%20values%20as%20bookmarkable%20template&op_sys=Unspecified&priority=--&product=Firefox%20for%20Android&rep_platform=Unspecified&short_desc=%20Add%20%22ab-CD%22%20to%20Fennec%20all-locales%20for%20single-locale%20builds&target_milestone=---&version=unspecified
+[bug template]: https://bugzilla.mozilla.org/enter_bug.cgi?assigned_to=lebedel.delphine%40gmail.com&bug_file_loc=http%3A%2F%2F&bug_ignored=0&bug_severity=normal&bug_status=NEW&cc=francesco.lodolo%40gmail.com&cf_blocking_b2g=---&cf_blocking_fennec=---&cf_fx_iteration=---&cf_fx_points=---&cf_status_b2g_2_0=---&cf_status_b2g_2_0m=---&cf_status_b2g_2_1=---&cf_status_b2g_2_1_s=---&cf_status_b2g_2_2=---&cf_status_b2g_2_2r=---&cf_status_b2g_2_5=---&cf_status_b2g_2_6=---&cf_status_b2g_master=---&cf_status_firefox46=---&cf_status_firefox47=---&cf_status_firefox48=---&cf_status_firefox49=---&cf_status_firefox_esr38=---&cf_status_firefox_esr45=---&cf_tracking_b2g=---&cf_tracking_firefox46=---&cf_tracking_firefox47=---&cf_tracking_firefox48=---&cf_tracking_firefox49=---&cf_tracking_firefox_esr38=---&cf_tracking_firefox_esr45=---&cf_tracking_firefox_relnote=---&cf_tracking_relnote_b2g=---&comment=Please%20add%20the%20LOCALENAME%20%28ab-CD%29%20locale%20to%20all-locales%20to%20start%20Fennec%20single-locale%20builds%20in%20central%20and%20add%20Fennec%20to%20this%20team%27s%20dashboard.&component=General&contenttypemethod=autodetect&contenttypeselection=text%2Fplain&defined_groups=1&flag_type-37=X&flag_type-4=X&flag_type-41=X&flag_type-607=X&flag_type-720=X&flag_type-721=X&flag_type-737=X&flag_type-781=X&flag_type-787=X&flag_type-799=X&flag_type-800=X&flag_type-803=X&flag_type-835=X&flag_type-855=X&flag_type-864=X&flag_type-875=X&flag_type-889=X&flag_type-892=X&flag_type-901=X&flag_type-905=X&flag_type-908=X&form_name=enter_bug&maketemplate=Remember%20values%20as%20bookmarkable%20template&op_sys=Unspecified&priority=--&product=Firefox%20for%20Android&rep_platform=Unspecified&short_desc=%20Add%20%22ab-CD%22%20to%20Fennec%20all-locales%20for%20single-locale%20builds&target_milestone=---&version=unspecified
