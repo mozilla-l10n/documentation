@@ -12,7 +12,7 @@ You also want to file a bug to use as tracker ([example for gn](https://bugzilla
 
 ## Creating a patch for all-locales
 
-First of all make sure that your environment is [correctly set up](/config/setting_mercurial_environment.md), and update your local mozilla-unified clone:
+First of all make sure that your environment is [correctly set up](/tools/mercurial/setting_mercurial_environment.md), and update your local mozilla-unified clone:
 
 ```BASH
 $ cd ~/mozilla/mercurial/mozilla-unified

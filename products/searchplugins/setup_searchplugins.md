@@ -20,7 +20,7 @@ $ hg clone ssh://hg.mozilla.org/l10n-central/ur l10n-central
 ```
 
 A couple of details to note in this `hg clone` command:
-* The command uses `ssh://`, which means you need an active (and [properly configured](/config/setting_mercurial_environment.md)) SSH access to the repository.
+* The command uses `ssh://`, which means you need an active (and [properly configured](/tools/mercurial/setting_mercurial_environment.md)) SSH access to the repository.
 * It doesn’t use the default folder for the local clone, but specify a `l10n-central` directory. Without that it would create a `ur` folder, making it impossible to distinguish different branches.
 
 At this point there’s a clone stored in `~/mozilla/mercurial/l10n/ur/l10n-central` (remember that you already moved to `~/mozilla/mercurial/l10n/ur` before running `hg clone`).
@@ -34,7 +34,7 @@ $ hg pull -r default -u
 
 ## Setting up files for mozilla-unified
 
-First of all make sure that your environment is [correctly set up](/config/setting_mercurial_environment.md), and update your local mozilla-unified clone to be in sync with central:
+First of all make sure that your environment is [correctly set up](/tools/mercurial/setting_mercurial_environment.md), and update your local mozilla-unified clone to be in sync with central:
 
 ```BASH
 $ cd ~/mozilla/mercurial/mozilla-unified
@@ -301,7 +301,7 @@ A few tips:
 
 ## Creating a patch for review (locale repository)
 
-Assuming you followed the instructions to [setup the environment](/config/setting_mercurial_environment.md), you’re ready to create the patch. Once again, Firefox desktop will be used as an example, but the procedure is the same for Firefox for Android.
+Assuming you followed the instructions to [setup the environment](/tools/mercurial/setting_mercurial_environment.md), you’re ready to create the patch. Once again, Firefox desktop will be used as an example, but the procedure is the same for Firefox for Android.
 
 Move into the repository folder and check its status:
 

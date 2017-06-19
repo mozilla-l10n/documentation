@@ -47,7 +47,7 @@ Check the [Set up searchplugins](../searchplugins/setup_searchplugins.md) docume
 
 ## Add new locale to build configuration
 
-First of all make sure that your environment is [correctly set up](/config/setting_mercurial_environment.md), update your local mozilla-unified clone and make sure it’s on the `central` bookmark:
+First of all make sure that your environment is [correctly set up](/tools/mercurial/setting_mercurial_environment.md), update your local mozilla-unified clone and make sure it’s on the `central` bookmark:
 
 ```BASH
 $ cd ~/mozilla/mercurial/mozilla-unified
