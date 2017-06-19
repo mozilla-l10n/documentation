@@ -57,41 +57,7 @@ $ hg diff
  es-ES
 ```
 
-`M` in `hg status` indicates that the file has been modified, `+` in `hg diff` that the line has been added. Everything looks good, there are no unrelated changes, so it’s time to create a patch. You need to assign a name to this patch, it’s easy to use a reference to the bug number: for example, if the bug number is 123456, the file could be called `bug123456.patch` (note the added extension `.patch`).
-
-```BASH
-$ hg qnew bug123456.patch
-```
-
-At this point you will be asked to provide a commit message for your patch (in `nano` if you followed the instructions to set up the environment): write your commit message, then press `CTRL+O` to save the file, `enter` to confirm the proposed filename, and finally `CTRL+X` to exit the editor.
-
-The commit message should be the same as the bug, for example `Bug 123456 - Add "ab-CD" to Fennec maemo-locales for multi-locales build`.
-
-You’ready to *pop* the patch out of the queue. Since there are no other patches, you can pop them all with `-a`.
-
-```BASH
-$ hg qpop -a
-popping bug123456.patch
-patch queue now empty
-```
-
-The patch is stored inside the `.hg/patches` folder in the root of the repository (in the suggested setup, the full path would be `~/mozilla/mercurial/mozilla-unified/.hg/patches`). You can copy the file through the command line or the file explorer. For example, on Mac you can open the folder in Finder by typing:
-
-```BASH
-$ open ~/mozilla/mercurial/mozilla-unified/.hg/patches
-```
-
-Or you can copy the file on the Desktop with
-
-```BASH
-$ cp ~/mozilla/mercurial/mozilla-unified/.hg/patches/bug123456.patch ~/Desktop
-```
-
-Now you need to attach the file to Bugzilla and set an appropriate reviewer for it.
-
-## After the patch has been reviewed
-
-Once the patch has been reviewed, sheriffs or the reviewer will land it in mozilla-central.
+`M` in `hg status` indicates that the file has been modified, `+` in `hg diff` that the line has been added. Follow the instructions available in [this document](/tools/mercurial/creating_mercurial_patch.md) to create a patch, submit it for review, and land it.
 
 **IMPORTANT:** an error in a single locale is going to break the multi-locales build for all locales, English included.
 

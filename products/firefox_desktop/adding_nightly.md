@@ -82,27 +82,7 @@ $ hg diff
  lv
 ```
 
-`M` in `hg status` indicates that the file has been modified, `+` in `hg diff` that the line has been added. At this point you’re ready to create the patch: [Set up searchplugins](../searchplugins/setup_searchplugins.md) has detailed instructions on how to do that, both using queues and mozreview. This document only includes instructions for mozreview.
-
-Let’s create a bookmark for this pending work, for example `bug1361247`.
-
-```BASH
-$ hg bookmark bug1361247
-```
-
-Commit the changes with a commit message that includes the reviewer’s nickname after `r?`, for example if `flod` is the reviewer
-
-```BASH
-$ hg commit -m "Bug 1361247 - Add Lao (lo) to Firefox Nightly builds r?flod"
-```
-
-Push to review with:
-
-```BASH
-$ hg push review
-```
-
-Once the patch has been reviewed, you can land it directly from mozreview (if you have L3 commit level), or set the `checkin-needed` keyword in the bug.
+`M` in `hg status` indicates that the file has been modified, `+` in `hg diff` that the line has been added. Follow the instructions available in [this document](/tools/mercurial/creating_mercurial_patch.md) to create a patch, submit it for review, and land it.
 
 ## Add new locale to product-details
 

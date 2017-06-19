@@ -47,25 +47,8 @@ $ hg diff
  zh-CN
 ```
 
-Let’s create a bookmark for this pending work, for example `bug1342318`.
+`M` in `hg status` indicates that the file has been modified, `+` in `hg diff` that the line has been added. Follow the instructions available in [this document](/tools/mercurial/creating_mercurial_patch.md) to create a patch, submit it for review, and land it.
 
-```BASH
-$ hg bookmark bug1342318
-```
-
-Commit the changes with a commit message that includes the reviewer’s nickname after `r?`, for example if `flod` is the reviewer
-
-```BASH
-$ hg commit -m "Bug 1342318 - Add Urdu(ur) to shipped-locales r?flod"
-```
-
-Push to review with:
-
-```BASH
-$ hg push review
-```
-
-Once the patch has been reviewed, you can land it directly from mozreview (if you have L3 commit level), or set the `checkin-needed` keyword in the bug.
 You also need to set the `relnote-firefox` flag to `?` in the bug, the suggested comment is `Suggested for release notes: "Locale added: LANGUAGE_NAME (LOCALE_CODE)"`.
 
 In order to have builds when the Beta cycle starts, make sure to sign-off the locale on [the dashboard](https://l10n.mozilla.org/) (elmo) for central before next merge day, and verify that a sign-off is correctly available on beta before beta1.
