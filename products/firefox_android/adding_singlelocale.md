@@ -53,7 +53,7 @@ $ hg diff
 
 ## After the patch has landed
 
-A couple of days after the patch has landed check on FTP if builds are being generated for this new locale: http://ftp.mozilla.org/pub/mobile/nightly/latest-mozilla-central-android-api-15-l10n/
+A couple of days after the patch has landed check on FTP if builds are being generated for this new locale: https://ftp.mozilla.org/pub/mobile/nightly/latest-mozilla-central-android-api-15-l10n/
 
 If there are no builds present, it’s usually due to errors in the locale, for example straight single or double quotes in Android DTDs. Check the team’s dashboard for these kind of errors.
 

@@ -87,7 +87,7 @@ Some locales might have a more complex definition, with searchplugins changing b
 }
 ```
 
-To make sure you’re not creating a broken JSON, you can test the final content with an online validator like [jsonlint](http://jsonlint.com/).
+To make sure you’re not creating a broken JSON, you can test the final content with an online validator like [jsonlint](https://jsonlint.com/).
 
 ### XML files
 

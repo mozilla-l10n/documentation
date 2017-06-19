@@ -4,7 +4,7 @@
 
 ## Mercurial
 
-Most of the work needs to be done in [Mercurial](https://www.mercurial-scm.org/downloads), so you need to install if first. An alternative way to install it on macOS is via [homebrew](http://brew.sh/) with `brew install hg` (`brew upgrade hg` to update it later).
+Most of the work needs to be done in [Mercurial](https://www.mercurial-scm.org/downloads), so you need to install if first. An alternative way to install it on macOS is via [homebrew](https://brew.sh/) with `brew install hg` (`brew upgrade hg` to update it later).
 
 To check if Mercurial is available and up to date, run in the terminal `hg --version`, the output should look like this:
 
@@ -49,7 +49,7 @@ IdentityFile ~/.ssh/id_rsa
 
 ## Set up MozReview
 
-Detailed instructions and explanations are available in [the official documentation](http://mozilla-version-control-tools.readthedocs.io/en/latest/mozreview/install-mercurial.html#mozreview-install-mercurial).
+Detailed instructions and explanations are available in [the official documentation](https://mozilla-version-control-tools.readthedocs.io/en/latest/mozreview/install-mercurial.html#mozreview-install-mercurial).
 
 Clone the **version-control-tools** repository on your machine. In this case, the clone’s folder will be stored inside `~/mozilla/mercurial/`. If you move it, you’ll need to update the reference in `~/.hgrc` later.
 
@@ -95,7 +95,7 @@ Add the path to the review repository (HTTPS version is enough for our use case)
 review = https://reviewboard-hg.mozilla.org/autoreview
 ```
 
-The first time you’ll need to [link](http://mozilla-version-control-tools.readthedocs.io/en/latest/mozreview/install.html#manually-associating-your-ldap-account-with-mozreview) your LDAP account with MozReview:
+The first time you’ll need to [link](https://mozilla-version-control-tools.readthedocs.io/en/latest/mozreview/install.html#manually-associating-your-ldap-account-with-mozreview) your LDAP account with MozReview:
 
 ```BASH
 $ ssh reviewboard-hg.mozilla.org mozreview-ldap-associate
@@ -135,7 +135,7 @@ unified = 8
 
 ## Cloning and updating mozilla-unified
 
-Since searchplugins are stored in mozilla-central, you will also need a clone of it on your computer. Using the [mozilla-unified repository](http://mozilla-version-control-tools.readthedocs.io/en/latest/hgmozilla/unifiedrepo.html) repository is a better solution, especially if you need to work on more than just mozilla-central.
+Since searchplugins are stored in mozilla-central, you will also need a clone of it on your computer. Using the [mozilla-unified repository](https://mozilla-version-control-tools.readthedocs.io/en/latest/hgmozilla/unifiedrepo.html) repository is a better solution, especially if you need to work on more than just mozilla-central.
 
 ```BASH
 $ cd ~/mozilla/mercurial/

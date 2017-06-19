@@ -172,7 +172,7 @@ $ hg rebase -d central
 ```
 
 More information about this workflow are available in the following pages:
-* http://mozilla-version-control-tools.readthedocs.io/en/latest/hgmozilla/firefoxworkflow.html
+* https://mozilla-version-control-tools.readthedocs.io/en/latest/hgmozilla/firefoxworkflow.html
 * https://www.mercurial-scm.org/wiki/Bookmarks
 
 ### Landing the patch

@@ -41,7 +41,7 @@ This is the configuration to add to the file for Focus for Android:
 ]
 ```
 
-If you’re not used to work with JSON files, once you have updated the configuration, you can use a [validator](http://jsonlint.com/) to ensure that the syntax is correct.
+If you’re not used to work with JSON files, once you have updated the configuration, you can use a [validator](https://jsonlint.com/) to ensure that the syntax is correct.
 
 Now that `app/config/product_sources.json` contains Focus for Android, you need to run `apps/scripts/update_shipping_locales.py` to generate the list of locales shipping in this new product.
 The list of locales will be stored in `app/config/shipping_locales.json`, make sure that the product and channel you’ve added are available, and spot check the list of locales generated.
@@ -133,7 +133,7 @@ $app_title = function ($translations) use ($_) {
 
 `$app_title` is defined as a function that returns the translation, using the helper function `$_()`, for only one string.
 
-In case there are more strings in a section, [HEREDOC](http://php.net/manual/en/language.types.string.php#language.types.string.syntax.heredoc) syntax can be used.
+In case there are more strings in a section, [HEREDOC](https://php.net/manual/en/language.types.string.php#language.types.string.syntax.heredoc) syntax can be used.
 
 ```PHP
 $screenshots = function ($translations) use ($_) {
