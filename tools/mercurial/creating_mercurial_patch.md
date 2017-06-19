@@ -25,10 +25,10 @@ These are all status codes relevant for working with patches:
 * M = modified. File was already tracked but has been modified.
 * A = added. File is new and was already added with `hg add`.
 * R = removed. File has been removed with `hg remove`.
-* ! = missing. File has been removed from the filesystem but it's still tracked. Use `hg remove` to stop tracking it.
-* ? = not tracked. File is not yet tracked.
+* ! = missing. File has been removed from the filesystem but it’s still tracked. Use `hg remove` to stop tracking it.
+* ? = not tracked. File is not tracked yet. You can start tracking it by using `hg add`.
 
-Note that the file status will change once you commit them, `hg status` only shows information about pending changes.
+Note that the file status will change once you commit, `hg status` only shows information about pending changes.
 
 Now you need to add the new files. You can add them using the full path, or a parent folder, just make sure you’re not adding unnecessary files.
 
@@ -143,7 +143,7 @@ pick 8088fd8658fd 358598 Fix searchplugin name
 #
 ```
 
-In this case you want to *roll* the second commit into the first one, so replace `pick` with `roll` (or `r`), save with CTRL+O and exit with CTRL+X (assuming the default editor is nano).
+In this case you want to *roll* the second commit into the first one, so replace `pick` with `roll` (or `r`), save with `CTRL+O` and exit with `CTRL+X` (assuming the default editor is nano).
 
 ```
 pick f6f70f6de69c 358597 Bug 123456 - [ur] Search engine setup for Firefox fo...
@@ -178,14 +178,14 @@ More information about this workflow are available in the following pages:
 ### Landing the patch
 
 Once the patch has been reviewed, you have two options:
-* If you have L3 access to the repository, you can use Autoland to land your commit directly from MozReview. If your reviewer has it, you can ask your reviewer.
+* If you have L3 access to the repository, you can use Autoland to land your commit directly from MozReview. If your reviewer has it, you can ask them to land.
 * You can set the `checkin-needed` keyword in the bug, and sheriffs will land it from you.
 
 ## Creating a patch using Queues
 
 ### Creating a patch
 
-Consider the following example: setting up productization for Urdu (ur) on Firefox desktop. The first step is to create a brand new `region.properties` file. Move into the repository folder and check its status:
+Consider the following example: setting up productization for Urdu (ur) on Firefox desktop (l10n repository). The first step is to create a `region.properties` file. Move into the repository folder and check its status:
 
 ```BASH
 $ cd ~/mozilla/mercurial/l10n/ur/l10n-central
@@ -250,7 +250,7 @@ $ hg import --no-commit ~/Desktop/bug123456.patch
 Don’t forget the `--no-commit` part. If you do, the patch will be added to your repository and you’ll need to clone the original repository again.
 
 <!-- markdownlint-disable MD038 -->
-**Note:** You can drag and drop the patch file on the terminal on macOS to get its full path instead of typing it. In other words, type `hg import --no-commit ` (leave an empty space at the end), then drag the icon of the patch on the Terminal’s window, the path will appear automatically.
+**Note:** You can drag and drop the patch file on the terminal on macOS to get its full path instead of typing it. In other words, type `hg import --no-commit ` (leave an empty space at the end), then drag the icon of the patch on the Terminal’s window: its full path will appear automatically.
 <!-- markdownlint-enable MD038 -->
 
 At this point you’re ready to modify the files, and create a new patch. The only difference is that you will need to use a different filename, for example `bug123456v1.patch`.
@@ -259,7 +259,7 @@ At this point you’re ready to modify the files, and create a new patch. The on
 
 Your patch got a `r+`, so you need to update the commit message to reference the review, import the patch and push it to the remote server.
 
-**Note:** If the patch is for a repository where you don’t have write access, you don’t need this step, but will only need to set the `checkin-needed` flag in Bugzilla.
+**Note:** If the patch is for a repository where you don’t have write access, you don’t need to follow these instructions, only to set the `checkin-needed` flag in Bugzilla.
 
 Open the .patch file in your editor, find the line with the commit message, and add `r=NICKNAME` to the commit message. For example, the last line in
 
@@ -284,7 +284,9 @@ $ cd ~/mozilla/mercurial/l10n/ur/l10n-central
 $ hg import ~/Desktop/bug123456.patch
 ```
 
-The patch has been imported and committed. Now you’re ready to push to the remote repository
+The patch has been imported and committed. If you get an error while applying the patch, check if the editor you’re using hasn’t modified other lines of the patch, for example removing trailing whitespaces. In that case, using `nano` to edit the patch is probably your faster option.
+
+Now you’re ready to push to the remote repository
 
 ```BASH
 $ hg push

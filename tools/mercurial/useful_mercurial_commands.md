@@ -2,7 +2,7 @@
 
 ## Display log
 
-To display the log you can use `hg log -l NUMBER`, where *NUMBER* is the number of commits. Note that Mercurial uses `l` instead of Git's `n`. Use the space bar to move to the next page if the results don't fit in the screen.
+To display the log you can use `hg log -l NUMBER`, where *NUMBER* is the number of commits. Note that Mercurial uses `l` instead of Git’s `n`. Use the space bar to move to the next page if the results don’t fit in the screen.
 
 You can also browse the history by running `hg serve` within the repository folder, then opening http://localhost:8000
 
@@ -21,7 +21,7 @@ Press the space bar to move to the next page, `q` to quit.
 Let’s assume that you have staged (uncommitted) changes in your repositories but you want to go back to a clean state:
 * If you only want to reset one file, you can use `hg revert FILENAME`. Note that this will leave a `FILENAME.orig` in the repository, in case you decide to change your mind. To avoid that, use the `-C` option: `hg revert -C FILENAME`. You can use this command also to restore a file marked as `!` (missing in the filesystem, but still tracked).
 * `hg up -C` will reset all changed files to the last commit. Note that it won’t remove untracked files.
-* To remove all untracked files, you can use the `purge` extension and run `hg purge`. It won't remove staged changes, like modified files still uncommitted.
+* To remove all untracked files, you can use the `purge` extension and run `hg purge`. It won’t remove staged changes, like modified files still uncommitted.
 
 ## Revert changes already committed
 
