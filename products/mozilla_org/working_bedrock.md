@@ -4,7 +4,7 @@ This document covers a few tasks and tips regarding Bedrock.
 
 ## Running Bedrock
 
-You can install Bedrock by following the instructions available in [this page](http://bedrock.readthedocs.io/en/latest/install.html).
+You can install Bedrock by following the instructions available in [this page](https://bedrock.readthedocs.io/en/latest/install.html).
 
 If you’re using the virtual machine described in [this document](/config/setup_l10ndrivers_vm.md), Bedrock is already installed in `~/mozilla/git/bedrock`.
 
