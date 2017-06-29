@@ -37,10 +37,10 @@ Since you have stated that you would like to start a new localization effort, [m
 
 Here's how you can get started:
 
-# Check our list of existing [https://wiki.mozilla.org/L10n:Teams L10n teams] to see if an effort for your locale already exists. If an effort exists, contact the team owner to join the team and help drive the effort. If it doesn't exist, introduce your new L10n team on the [http://groups.google.com/group/mozilla.dev.l10n.new-locales new locales newsgroup].
-# Introduce yourself to the L10n community on the [http://groups.google.com/group/mozilla.dev.l10n.new-locales L10n newsgroup] by subscribing and posting an introduction. In your introduction, please add some brief information about yourself e.g., professional background, interests, etc.) and what you hope to work on (e.g., "I saw that there was xx-XX localization team and I'd like to help them out.").
-# Visit [https://wiki.mozilla.org/L10n:Localization_Process L10n process doc] to become familiar with how we localize.
-# Visit the [https://developer.mozilla.org/en/Localization_Quick_Start_Guide L10n Quick Start Guide] to find tutorials on how to jump in and start localizing.
+*Check our list of existing [https://wiki.mozilla.org/L10n:Teams L10n teams] to see if an effort for your locale already exists. If an effort exists, contact the team owner to join the team and help drive the effort. If it doesn't exist, introduce your new L10n team on the [http://groups.google.com/group/mozilla.dev.l10n.new-locales new locales newsgroup].
+*Introduce yourself to the L10n community on the [http://groups.google.com/group/mozilla.dev.l10n.new-locales L10n newsgroup] by subscribing and posting an introduction. In your introduction, please add some brief information about yourself e.g., professional background, interests, etc.) and what you hope to work on (e.g., "I saw that there was xx-XX localization team and I'd like to help them out.").
+*Visit [https://wiki.mozilla.org/L10n:Localization_Process L10n process doc] to become familiar with how we localize.
+*Visit the [https://developer.mozilla.org/en/Localization_Quick_Start_Guide L10n Quick Start Guide] to find tutorials on how to jump in and start localizing.
 
 For general information on the Mozilla localization program, visit our [https://wiki.mozilla.org/L10n wiki home page]. You're also welcome to read through and post to  [http://groups.google.com/group/mozilla.dev.l10n/topics the localization discussion newsgroup].
 Hope to see more from you soon!
@@ -50,13 +50,13 @@ Hope to see more from you soon!
 We're glad to see you're interested in localizing Thunderbird and we're happy to help you get started.
 
 Follow these steps to get involved:
-#Check to see if your [http://wiki.mozilla.org/L10n:Teams l10n team] is already localizing Thunderbird & connect with the Thunderbird/mail toolkit owner about getting involved.
-#Start localizing Firefox in your language. Hook up with your [http://wiki.mozilla.org/L10n:Teams l10n team], help them out to get used to the process and language, and then see if they want to extend to Thunderbird.
-#If they don't want to extend to Thunderbird, see if they mind if you start a Thunderbird localization.
+*Check to see if your [http://wiki.mozilla.org/L10n:Teams l10n team] is already localizing Thunderbird & connect with the Thunderbird/mail toolkit owner about getting involved.
+*Start localizing Firefox in your language. Hook up with your [http://wiki.mozilla.org/L10n:Teams l10n team], help them out to get used to the process and language, and then see if they want to extend to Thunderbird.
+*If they don't want to extend to Thunderbird, see if they mind if you start a Thunderbird localization.
 
 Our products follow essentially the same l10n process. Localizing Thunderbird is really no different. You use the same tools and work in the same timeframe. Review these to see how to get started:
-* Visit [https://wiki.mozilla.org/L10n:Localization_Process L10n process doc] to become familiar with how we localize.
-* Visit the [https://developer.mozilla.org/en/Localization_Quick_Start_Guide L10n Quick Start Guide] to find tutorials on how to jump in and start localizing.
+*Visit [https://wiki.mozilla.org/L10n:Localization_Process L10n process doc] to become familiar with how we localize.
+*Visit the [https://developer.mozilla.org/en/Localization_Quick_Start_Guide L10n Quick Start Guide] to find tutorials on how to jump in and start localizing.
 
 ## Having problems with Verbatim/Pootle/MozillaTranslator
 
