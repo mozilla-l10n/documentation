@@ -13,8 +13,8 @@ Joining our L10n effort is easy. Within five easy steps you can start contributi
 Could you also please provide me with some additional information about yourself, such as languages you speak, country you live in, and technical background?
 
 You can also visit the following wiki pages to learn the details of how we localize:
-* [https://wiki.mozilla.org/L10n:Localization_Process L10n:Localization Process:] A good description of the whole process.
-* [https://developer.mozilla.org/en/Localization_Quick_Start_Guide The L10n Quick Start Guide:] A resource of technical tutorials you’ll need to know as you get more involved.
+* [L10n:Localization Process:](https://wiki.mozilla.org/L10n:Localization_Process) A good description of the whole process.
+* [The L10n Quick Start Guide:](https://developer.mozilla.org/en/Localization_Quick_Start_Guide) A resource of technical tutorials you’ll need to know as you get more involved.
 Looking forward to hearing from you,
 
 [name]
@@ -23,7 +23,7 @@ Looking forward to hearing from you,
 
 We’re very excited to have you join the Mozilla localization (l10n) effort! Your skills and dedication will be very valuable to your l10n team.
 
-Next step, follow the steps outline on https://wiki.mozilla.org/L10n:Contribute. When you contact your l10n team, please CC me on that email so that I can help to make sure you receive a prompt response.
+Next step, follow the steps outlined on https://wiki.mozilla.org/L10n:Contribute. When you contact your l10n team, please CC me on that email so that I can help to make sure you receive a prompt response.
 
 If you have any questions or difficulties, please let me know.
 
@@ -37,34 +37,34 @@ Since you have stated that you would like to start a new localization effort, wi
 
 Here’s how you can get started:
 
-* Check our list of existing [https://pontoon.mozilla.org/teams localization communities] to see if an effort for your language already exists. If an effort exists, contact the community to join the team and help drive the effort. If it doesn’t exist, introduce your new l10n community on the [https://groups.google.com/group/mozilla.dev.l10n Mozilla localization mailing list].
-* Introduce yourself to the L10n community on the [https://groups.google.com/group/mozilla.dev.l10n Mozilla localization mailing list] by subscribing and posting an introduction. In your introduction, please add some brief information about yourself e.g., professional background, interests, etc.) and what you hope to work on (e.g., "I saw that there was a xx-XX community and I’d like to help them out.").
+* Check our list of existing [localization communities](https://pontoon.mozilla.org/teams) to see if an effort for your language already exists. If an effort exists, contact the community to join the team and help drive the effort. If it doesn’t exist, introduce your new l10n community on the [Mozilla localization mailing list](https://groups.google.com/group/mozilla.dev.l10n).
+* Introduce yourself to the L10n community on the [Mozilla localization mailing list](https://groups.google.com/group/mozilla.dev.l10n) by subscribing and posting an introduction. In your introduction, please add some brief information about yourself (e.g., professional background, interests, etc.) and what you hope to work on (e.g., "I saw that there was a xx-XX community and I’d like to help them out.").
 * Visit [L10n process doc needed] to become familiar with how we localize.
 
-For general information on the Mozilla localization program, visit our [GitBook link]. You’re also welcome to read through and post to  [https://groups.google.com/group/mozilla.dev.l10n/topics the localization discussion newsgroup].
+For general information on the Mozilla localization program, visit our [GitBook link]. You’re also welcome to read through and post to  [the localization discussion newsgroup](https://groups.google.com/group/mozilla.dev.l10n/topics).
 Hope to see more from you soon!
 
 ## Localizing Thunderbird
 
-We’re glad to see you’re interested in localizing Thunderbird. Please get in touch with [mailto:mozilla@kewis.ch the Thunderbird community] to learn how to contribute to localization.
+We’re glad to see you’re interested in localizing Thunderbird. Please get in touch with [the Thunderbird community](mailto:mozilla@kewis.ch) to learn how to contribute to localization.
 
 ## Having problems with Pontoon
 
 Sorry to hear that you’re having problems with Pontoon. Please do the following to allow us to troubleshoot your problem(s):
 
-* Search [https://bugzilla.mozilla.org Bugzilla] to see if a bug has already been filed for your problem(s).
-* Check the [http://groups.google.com/group/mozilla.dev.l10n l10n mailing list] to see if anyone else has had the same problem.
+* Search [Bugzilla](https://bugzilla.mozilla.org) to see if a bug has already been filed for your problem(s).
+* Check the [l10n mailing list](http://groups.google.com/group/mozilla.dev.l10n) to see if anyone else has had the same problem.
 * If you can’t find a discussion thread about your problem, begin a discussion topic in those newsgroups asking for help. Include as much detail as possible.
-* If no one in the discussion group can offer a solution and there are no bugs currently filed, [https://mzl.la/2tp26Ag file a new bug] providing as many details about the problem as possible.
+* If no one in the discussion group can offer a solution and there are no bugs currently filed, [file a new bug](https://mzl.la/2tp26Ag) providing as many details about the problem as possible.
 
 If the first three steps don’t solve your problem and you have to file a bug, rest assured that the l10n-drivers will respond promptly.
 
-## Having problems with hg
+## Having problems with Mercurial (hg)
 
 Sorry to hear that you’re having problems with hg. Please do the following to allow us to troubleshoot your problem(s):
 
-* Search [https://bugzilla.mozilla.org Bugzilla] to see if a bug has already been filed for your problem(s).
-* Check the [http://groups.google.com/group/mozilla.dev.l10n l10n mailing list] to see if anyone else has had the same problem.
+* Search [Bugzilla](https://bugzilla.mozilla.org) to see if a bug has already been filed for your problem(s).
+* Check the [l10n mailing list](http://groups.google.com/group/mozilla.dev.l10n) to see if anyone else has had the same problem.
 * If you can’t find a discussion thread about your problem, begin a discussion topic in those newsgroups asking for help. Include as much detail as possible.
 * If no one in the discussion group can offer a solution and there are no bugs currently filed, file a new bug providing as many details about the  problem as possible.
 
@@ -76,7 +76,7 @@ Subject: [locale code]Please update [locale name] wiki page
 
 I’m writing you to verify that your L10n team’s information on your wiki page (https://wiki.mozilla.org/L10n:Teams:[your-locale-here]) is up-to-date and accurate. Please take a look at your page and update it as needed.
 
-Please follow the format outlined in this wiki template (https://wiki.mozilla.org/Template:L10n:Teams).
+Please follow the format outlined in [this wiki template](https://wiki.mozilla.org/Template:L10n:Teams).
 
 If you have any questions, please feel free to contact me.
 
