@@ -66,11 +66,11 @@ More complex strings can be wrapped in *trans* blocks, e.g.
 
 ```DJANGO
 <p class="license">
-  {%- trans url=url('foundation.licensing.website-content') -%}
+  {% trans url=url('foundation.licensing.website-content') %}
   Portions of this content are ©1998–{{ current_year }} by individual
   mozilla.org contributors. Content available under
   a <a href="{{ url }}">Creative Commons license</a>.
-  {%- endtrans -%}
+  {% endtrans %}
 </p>
 ```
 

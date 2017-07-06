@@ -9,7 +9,7 @@
 * [Firefox for Desktop](products/firefox_desktop/README.md)
 * [Firefox for iOS](products/firefox_iOS/README.md)
 * [Mozilla.org](products/mozilla_org/README.md)
-* [searchplugins](products/searchplugins/setup_searchplugins.md)
+* [Searchplugins](products/searchplugins/setup_searchplugins.md)
 
 ## Tools
 
