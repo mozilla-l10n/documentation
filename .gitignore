@@ -1,2 +1,3 @@
-l10ndocs-linter
 .DS_Store
+l10ndocs-linter
+node_modules
