@@ -65,6 +65,7 @@ Localizable strings are wrapped like `_('This')`. That means you can simply copy
 More complex strings can be wrapped in *trans* blocks, e.g.
 
 ```DJANGO
+{% raw %}
 <p class="license">
   {% trans url=url('foundation.licensing.website-content') %}
   Portions of this content are ©1998–{{ current_year }} by individual
@@ -72,6 +73,7 @@ More complex strings can be wrapped in *trans* blocks, e.g.
   a <a href="{{ url }}">Creative Commons license</a>.
   {% endtrans %}
 </p>
+{% raw %}
 ```
 
 ### Shared .lang files
