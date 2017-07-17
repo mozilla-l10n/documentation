@@ -59,3 +59,6 @@ ssh-add deploy_key
 # Now that we're all set up, we can push.
 cd $root_directory/gitbook
 git push -f $SSH_REPO $TARGET_BRANCH > /dev/null 2>&1
+
+# Exit without errors to stop Travis build
+exit 0
