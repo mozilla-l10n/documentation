@@ -60,4 +60,6 @@ ssh-add deploy_key
 cd $root_directory/gitbook
 echo "Pushing to $TARGET_BRANCH..."
 git push -f $SSH_REPO $TARGET_BRANCH > /dev/null 2>&1
-echo "Push completed"
+
+# Kill the ssh-agent to let Travis-CI builds complete
+ssh-agent -k
