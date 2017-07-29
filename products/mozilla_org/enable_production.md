@@ -8,7 +8,7 @@ First, [file a bug](https://bugzilla.mozilla.org/enter_bug.cgi?product=www.mozil
 
 ## Create a new branch
 
-A clone of your fork of Bedrock is already available in the [virtual machine](/config/setup_l10ndrivers_vm.md), so run `gitup` to make sure everything is up to date. Then move to Bedrock’s folder, and create a new branch, for example using the bug number as reference.
+A clone of your fork of Bedrock is already available in the [virtual machine](../../config/setup_l10ndrivers_vm.md), so run `gitup` to make sure everything is up to date. Then move to Bedrock’s folder, and create a new branch, for example using the bug number as reference.
 
 ```BASH
 $ cd ~/mozilla/git/bedrock

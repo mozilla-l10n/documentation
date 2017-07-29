@@ -12,7 +12,7 @@ You also want to file a bug to use as tracker ([example for gn](https://bugzilla
 
 ## Creating a patch for all-locales
 
-First of all make sure that your environment is [correctly set up](/tools/mercurial/setting_mercurial_environment.md), and update your local mozilla-unified clone:
+First of all make sure that your environment is [correctly set up](../../tools/mercurial/setting_mercurial_environment.md), and update your local mozilla-unified clone:
 
 ```BASH
 $ cd ~/mozilla/mercurial/mozilla-unified
@@ -49,7 +49,7 @@ $ hg diff
  es-ES
 ```
 
-`M` in `hg status` indicates that the file has been modified, `+` in `hg diff` that the line has been added. Follow the instructions available in [this document](/tools/mercurial/creating_mercurial_patch.md) to create a patch, submit it for review, and land it.
+`M` in `hg status` indicates that the file has been modified, `+` in `hg diff` that the line has been added. Follow the instructions available in [this document](../../tools/mercurial/creating_mercurial_patch.md) to create a patch, submit it for review, and land it.
 
 ## After the patch has landed
 

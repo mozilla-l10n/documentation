@@ -6,7 +6,7 @@ This document covers a few tasks and tips regarding Bedrock.
 
 You can install Bedrock by following the instructions available in [this page](https://bedrock.readthedocs.io/en/latest/install.html).
 
-If you’re using the virtual machine described in [this document](/config/setup_l10ndrivers_vm.md), Bedrock is already installed in `~/mozilla/git/bedrock`.
+If you’re using the virtual machine described in [this document](../../config/setup_l10ndrivers_vm.md), Bedrock is already installed in `~/mozilla/git/bedrock`.
 
 Move into the main folder, activate the Virtual environment, and run the server
 

@@ -226,7 +226,7 @@ Some tests will need to be updated, for example `testGetSupportedProducts` in [t
 
 ## Track .lang files in Langchecker
 
-The Stores web app is going to use .lang files from the [appstores repository](https://github.com/mozilla-l10n/appstores). This document won’t go into much detail about these configuration files, if you’re not familiar with Langchecker you should read [this document](/tools/webdashboard/add_new_file-md) first.
+The Stores web app is going to use .lang files from the [appstores repository](https://github.com/mozilla-l10n/appstores). This document won’t go into much detail about these configuration files, if you’re not familiar with Langchecker you should read [this document](../../tools/webdashboard/add_new_file-md) first.
 
 In the configuration two .lang file are associated to Focus for Android:
 * `focus_android/description_release.lang` for the main content.
@@ -309,6 +309,6 @@ And use this `$whatsnew` variable in all available views.
 
 ## Testing
 
-When all tools and repositories are ready, make sure to test everything locally and check PHP logs before opening a pull request. It’s strongly recommended to use a virtual machine set up following these [instructions](/config/setup_l10ndrivers_vm.md) running all needed tools.
+When all tools and repositories are ready, make sure to test everything locally and check PHP logs before opening a pull request. It’s strongly recommended to use a virtual machine set up following these [instructions](../../config/setup_l10ndrivers_vm.md) running all needed tools.
 
 A good way to test it is to provide a fake translation for one locale, slightly altering the translated strings, to check if all views and API calls work as expected.

@@ -47,7 +47,7 @@ Check the [Set up searchplugins](../searchplugins/setup_searchplugins.md) docume
 
 ## Add new locale to build configuration
 
-First of all make sure that your environment is [correctly set up](/tools/mercurial/setting_mercurial_environment.md), update your local mozilla-unified clone and make sure it’s on the `central` bookmark:
+First of all make sure that your environment is [correctly set up](../../tools/mercurial/setting_mercurial_environment.md), update your local mozilla-unified clone and make sure it’s on the `central` bookmark:
 
 ```BASH
 $ cd ~/mozilla/mercurial/mozilla-unified
@@ -82,7 +82,7 @@ $ hg diff
  lv
 ```
 
-`M` in `hg status` indicates that the file has been modified, `+` in `hg diff` that the line has been added. Follow the instructions available in [this document](/tools/mercurial/creating_mercurial_patch.md) to create a patch, submit it for review, and land it.
+`M` in `hg status` indicates that the file has been modified, `+` in `hg diff` that the line has been added. Follow the instructions available in [this document](../../tools/mercurial/creating_mercurial_patch.md) to create a patch, submit it for review, and land it.
 
 ## Add new locale to product-details
 

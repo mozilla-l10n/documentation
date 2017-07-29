@@ -6,7 +6,7 @@ There are currently two different methods available to create a patch for Mercur
 
 MozReview is the preferred method for patches to main code repositories, like `mozilla-central`. On the other hand, Queues is the only tool available for patches to l10n repositories.
 
-As a general rule, before creating a patch, make sure that your environment is [correctly set up](/tools/mercurial/setting_mercurial_environment.md), and update your local clones.
+As a general rule, before creating a patch, make sure that your environment is [correctly set up](../../tools/mercurial/setting_mercurial_environment.md), and update your local clones.
 
 ## Creating a patch using MozReview
 
