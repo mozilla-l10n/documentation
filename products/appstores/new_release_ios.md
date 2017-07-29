@@ -6,7 +6,7 @@ Assuming the new version is 6.0, the actions to perform are:
 * Create a new file `fx_ios/whatsnew/ios_6_0.lang`.
 * Track the file in both Langchecker and Stores apps.
 
-This document assumes that you have set up the system as explained in [this document](/config/setup_l10ndrivers_vm.md), so aliases like `lang_update` are available, repositories are already cloned in `~/mozilla/repositories`, Atom is available and includes the syntax highlighter for LANG files.
+This document assumes that you have set up the system as explained in [this document](../../config/setup_l10ndrivers_vm.md), so aliases like `lang_update` are available, repositories are already cloned in `~/mozilla/repositories`, Atom is available and includes the syntax highlighter for LANG files.
 
 **IMPORTANT:** Remember to run `gitup` before you do anything. If you run the command in the middle of the work, don’t forget to go back to the branch (it will checkout `master` for all repositories).
 
@@ -44,7 +44,7 @@ This file will be committed later to the repository, since it’s still not trac
 
 ## Track the new file in dashboards updating Langchecker
 
-You then need to start tracking this file in Langchecker. The process is described in detail in [this document](/tools/webdashboards/add_new_file.md).
+You then need to start tracking this file in Langchecker. The process is described in detail in [this document](../../tools/webdashboards/add_new_file.md).
 
 Again, you need to create a branch in the langchecker repository.
 

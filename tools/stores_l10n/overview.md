@@ -34,7 +34,7 @@ Configuration is split between `app/config/product_sources.json` and the `Projec
 }
 ```
 
-`app/scripts/update_shipping_locales.py` can be used to generate, or update, the list of shipping locales which is stored in `app/config/shipping_locales.json`. It’s important to note that these lists are used in [Langchecker](/tools/webdashboards/langchecker.md), to determine which locales should see specific files (product pages on mozilla.org, store content).
+`app/scripts/update_shipping_locales.py` can be used to generate, or update, the list of shipping locales which is stored in `app/config/shipping_locales.json`. It’s important to note that these lists are used in [Langchecker](../../tools/webdashboards/langchecker.md), to determine which locales should see specific files (product pages on mozilla.org, store content).
 
 `$products_data` stores all supported products, with the following structure for each of them:
 
@@ -55,7 +55,7 @@ Relevant information in this array:
 
 `$locales_mapping` includes information on mappings between Mozilla’s locale codes, and each store’s internal codes.
 
-`$templates` determines, for each product and channel, which template is used, and which .lang files are associated to a specific part of the template (What’s new, main listing, screenshots). This array is updated every time there is a [new release](/products/appstores/README.md).
+`$templates` determines, for each product and channel, which template is used, and which .lang files are associated to a specific part of the template (What’s new, main listing, screenshots). This array is updated every time there is a [new release](../../products/appstores/README.md).
 
 In order to add a brand new project, you would need to:
 * Define the new project and supported channels in `$products_data`.

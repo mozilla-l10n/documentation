@@ -20,7 +20,7 @@ Release Note Request (optional, but appreciated)
 
 ## Creating a patch for maemo-locales
 
-First of all make sure that your environment is [correctly set up](/tools/mercurial/setting_mercurial_environment.md), and update your local mozilla-unified clone:
+First of all make sure that your environment is [correctly set up](../../tools/mercurial/setting_mercurial_environment.md), and update your local mozilla-unified clone:
 
 ```BASH
 $ cd ~/mozilla/mercurial/mozilla-unified
@@ -57,7 +57,7 @@ $ hg diff
  es-ES
 ```
 
-`M` in `hg status` indicates that the file has been modified, `+` in `hg diff` that the line has been added. Follow the instructions available in [this document](/tools/mercurial/creating_mercurial_patch.md) to create a patch, submit it for review, and land it.
+`M` in `hg status` indicates that the file has been modified, `+` in `hg diff` that the line has been added. Follow the instructions available in [this document](../../tools/mercurial/creating_mercurial_patch.md) to create a patch, submit it for review, and land it.
 
 **IMPORTANT:** an error in a single locale is going to break the multi-locales build for all locales, English included.
 

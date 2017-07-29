@@ -50,3 +50,4 @@
     * [New l10n repository](misc/creating_new_repository.md).
     * [Documentation styleguide](misc/documentation_styleguide.md).
     * [Stock emails](misc/stock_emails.md).
+    * [L10n-drivers VM setup](config/setup_l10ndrivers_vm.md).

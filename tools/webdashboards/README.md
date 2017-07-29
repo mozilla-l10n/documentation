@@ -46,7 +46,7 @@ These are detailed instructions for the most common tasks:
 * [Add a new file to an existing project](add_new_file.md).
 * [Bootstrap a new locale](bootstrap_new_locale.md).
 
-For documentation specific to mozilla.org, see [this page](/products/mozilla_org/README.md).
+For documentation specific to mozilla.org, see [this page](../../products/mozilla_org/README.md).
 
 ## Contribution Guidelines
 
