@@ -8,12 +8,12 @@ Topics covered:
 * Manage [mozilla.org](products/mozilla_org/README.md) localization.
 * Technical documentation and common tasks for our [webdashboards](tools/webdashboards/README.md).
 * Technical documentation for the [Stores web app](tools/stores_l10n/README.md).
-* Perform common tasks on [Pontoon](tools/pontoon/README.md) like adding new locale, and creating a new project.
+* Perform common and advanced tasks on [Pontoon](tools/pontoon/README.md) like adding new locale, and creating a new project.
 * Other [miscellaneous documents](misc/README.md) related to localization tasks.
 
 ## How to read these documents
 
-You will need a Unix-like environment (Linux, Mac OS X) to run most of the tools. Across the entire documentation, commands to run in a terminal are described like this:
+You will need a Unix-like environment (Linux, macOS) to run most of the tools. Across the entire documentation, commands to run in a terminal are described like this:
 
 ```BASH
 $ composer update
