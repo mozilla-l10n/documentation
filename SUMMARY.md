@@ -29,6 +29,7 @@
     * [New project](tools/pontoon/adding_new_project.md).
     * [New locale](tools/pontoon/adding_new_locale.md).
     * [Notifications](tools/pontoon/sending_notifications.md).
+    * [Renaming a localization file](tools/pontoon/renaming_a_file.md).
 * [Stores webapp](tools/stores_l10n/README.md)
     * [Overview](tools/stores_l10n/overview.md).
     * [New product](tools/stores_l10n/add_new_product.md).
