@@ -4,7 +4,7 @@ In some cases, project owners will want to rename a file for clarity, or for tec
 
 ## Get a Pull Request ready
 
-Either you or the project owners will get a Pull Request ready that renames the file for all locales. Using a script is recommended as you will need to generate the patch not too long before the next steps to avoid conflicts. Make sure the patch is only renaming the file and not touching content. If you need to move strings into another file, you can do it in a separate Pull Request and merge it after the renaming has been synced.
+Either you or the project owners will get a Pull Request ready that renames the file for all locales. Using a script is recommended as you will need to generate the patch not too long before the next steps to avoid conflicts.
 
 ## Rename the resource in Pontoon admin panel
 
