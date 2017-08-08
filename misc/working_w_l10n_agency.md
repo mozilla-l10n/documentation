@@ -55,10 +55,13 @@ Now that you have all the initial info you need, you are good to go ahead and re
 
 Now that you got a quote, you need to get it approved, send content to the vendor, and check permission.
 
-* Provide quote/estimate to the project requestor for approval.
+* Provide a quote/estimate to the project requestor for approval.
 * For all the target locales, make sure both agency and the community have the proper access to the l10n tool or platform where the localizable content is staged and roles properly assigned per agreement.
-[//]: <> (* Share the scope, the plan, and the expectations to both the agency and the community.)
-[//]: <> (* Communicate the plan and the finalized schedule with the project stakeholders.)
+* Information to share with both the vendor and the community:
+  * Scope: volume, type of content being localized, list of locales and type of service.
+  * Plan: schedule with milestones.
+  * Expectations: how you want the translations to be delivered (as a single batch or as each locale is ready), the file format you want the translations to be delivered into, and any additional service you would need, like following a specific test plan.
+* Communicate the plan and the finalized schedule with the project stakeholders.
 * File a bug to track project progress. It can be a good idea to remind project specifics (repositories, deadline(s), locales…).
 
 ### Executing the request
@@ -69,7 +72,6 @@ The initial quote has been approved, roles and permission are set accordingly to
   * Strings (whether it’s text files, a link to Pontoon, a link to a repository, a spreadsheet, a Google Doc…).
   * Locale specific style guides and product specific term list.
   * Terminology: Ask them to always refer to [Transvision](https://transvision.mozfr.org/) to check terminology.
-  * How you want the translations to be delivered — as a single batch or as each locale is ready.
 * Confirm with the vendor the following: word count, schedule and cost of the service.
 * Run testing/QA once you’ve received the translations, either by the community or the vendor, depending on the project agreement.
 * Communicate with communities for a chance to review and sign off on the project before releasing to the internal customer.

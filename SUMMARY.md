@@ -49,6 +49,7 @@
     * [Useful Mercurial commands](tools/mercurial/useful_mercurial_commands.md).
 * [Other docs](misc/README.md)
     * [New l10n repository](misc/creating_new_repository.md).
+    * [How to work with a Localization Agency](misc/working_w_l10n_agency.md)
     * [Documentation styleguide](misc/documentation_styleguide.md).
     * [Stock emails](misc/stock_emails.md).
     * [L10n-drivers VM setup](config/setup_l10ndrivers_vm.md).
