@@ -37,6 +37,7 @@ Let’s consider a simple website like about:healthreport. This is how its defin
     $repositories['about:healthreport']['public_path'],
     2,
     'lang',
+    'firefox-health-report',
 ],
 ```
 
@@ -51,6 +52,7 @@ The structure of each item is:
 7. URL to public repo (used to create links to files).
 8. Default priority, used as fallback when files don't specify one.
 9. Type of files (`lang`, `raw`).
+10. Project name on Pontoon (used for edit links).
 
 For each website there is a list of supported locales, but each file might only use a subset of this list.
 
