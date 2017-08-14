@@ -14,13 +14,13 @@ You will need to complete the following fields in the next page.
 
 It’s the locale code, in this case `am`.
 
-### MS Translator Code
+### MS translator code
 
 Microsoft Translator maintains a list of supported locales in its own format. Choose one that matches the locale from [a list of supported locales](https://msdn.microsoft.com/en-us/library/hh456380.aspx) or leave it blank to disable support for Microsoft Translator for this locale.
 
-### MS Terminology Code
+### MS terminology code
 
-Microsoft Terminology maintains a list of supported locales in its own format. Choose one that matches the locale from a list provided in the admin below the field or leave it blank to disable support for Microsoft Terminology for this locale. The
+Microsoft Terminology maintains a list of supported locales in its own format. Choose one that matches the locale from a list provided below the field or leave it blank to disable support for Microsoft Terminology for this locale.
 
 ### Name
 
