@@ -18,7 +18,6 @@
 * [Mozilla.org](products/mozilla_org/README.md)
     * [Working with Bedrock](products/mozilla_org/working_bedrock.md).
     * [Importing translations](tools/webdashboards/import_translations.md).
-    * [Pootle](products/mozilla_org/import_locamotion.md).
     * [Updating production](products/mozilla_org/updating_mozillaorg_production.md).
     * [New locales](products/mozilla_org/enable_production.md).
 * [Searchplugins](products/searchplugins/setup_searchplugins.md)

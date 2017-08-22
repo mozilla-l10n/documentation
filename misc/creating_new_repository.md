@@ -25,7 +25,6 @@ Go into the project settings, panel **Collaborators & teams**:
 * Add the relevant l10n-drivers as Admin. You can either pick individuals or one of the pre-existing groups.
 * Only when the project is ready for localization, add the **Localizers** group with **Write** permissions. Note that Pontoon’s bot is included in the localizers group, so you will need to enable it for testing the sync process.
 * Add relevant developers as contributors if they need to make commits to the repository (that’s usually the case, in order to update strings).
-* Pootle’s bot currently needs to be added as a contributor, in the future it will become part of the **Localizers** group.
 
 ![New repository](/assets/images/new_repository/settings.png)
 
