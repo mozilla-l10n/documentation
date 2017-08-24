@@ -22,22 +22,19 @@ $mozilla = [
     'bm', 'bn-BD', 'bn-IN', 'br', 'brx', 'bs', 'ca', 'cak',
 ```
 
-If this locale works on Pootle, you also need to add the locale code to the array `$locamotion_locales`, still in the same file ([app/config/locales.php](https://github.com/mozilla-l10n/langchecker/blob/master/app/config/locales.inc.php)).
+## Add files to l10n repositories (mozilla.org)
 
-## Add files to l10n repositories (mozilla.org, FHR)
-
-At this point you need to add the files to both `www.mozilla.org` and `about:healthreport` (FHR) by using the `lang_update` script. If the new locale is only working on mozilla.org, FHR (website with ID 4) won’t be needed.
+At this point you need to add the files to `www.mozilla.org` by using the `lang_update` script.
 
 Run the following commands:
 
 ```BASH
 $ lang_update all 0 ab-CD
-$ lang_update all 4 ab-CD
 ```
 
-The first line will add **all** missing files to mozilla.org (ID: 0) for the **ab-CD** locale (you could also run it with the **all** parameter, but it might introduce changes not relevant for this task), the second to FHR (ID: 4).
+This will add **all** missing files to mozilla.org (ID: 0) for the **ab-CD** locale (you could also run it with the **all** parameter, but it might introduce changes not relevant for this task).
 
-Move to each l10n repository, check the status and commit (don’t forget to add the new folder). `trunkst` is available as a shortcut for mozilla.org, for `fhr-l10n` you will need to manually move to `~/mozilla/repositories/fhr-l10n` and check `git status`.
+Move to the l10n repository for mozilla.org, check the status and commit (don’t forget to add the new folder). `trunkst` is available as a shortcut to move in the folder and run `git status`.
 
 ```BASH
 $ trunkst

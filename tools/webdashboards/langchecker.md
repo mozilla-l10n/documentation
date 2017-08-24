@@ -20,24 +20,23 @@ Each project is internally called website, and it’s identified by a numeric in
 | ID | Codename | Description |
 | --- | --- | --- |
 | 0 | www.mozilla.org | Used to track all files for www.mozilla.org |
-| 4 | about:healthreport | Used for about:healthreport. Rarely updated. |
 | 6 | engagement | Used for Engagement material, typically snippets. |
 | 12 | appstores | Used to localize material for AppStore (iOS) and Google Play (Android). |
 
-Let’s consider a simple website like about:healthreport. This is how its definition looks like in the main `$sites` variable.
+Let’s consider a simple project like Engagement. This is how its definition looks like in the main `$sites` variable.
 
 ```PHP
-4 => [
-    'about:healthreport',
-    $repositories['about:healthreport']['local_path'],
+6 => [
+    'engagement',
+    $repositories['engagement']['local_path'],
     '',
-    $firefox_desktop_android,
-    $firefoxhealthreport_lang,
+    $engagement_locales,
+    $engagement_lang,
     'en-US', // source locale
-    $repositories['about:healthreport']['public_path'],
-    2,
+    $repositories['engagement']['public_path'],
+    1,
     'lang',
-    'firefox-health-report',
+    'engagement',
 ],
 ```
 
@@ -56,17 +55,19 @@ The structure of each item is:
 
 For each website there is a list of supported locales, but each file might only use a subset of this list.
 
-For about:healthreport, the list of supported files is stored in `$firefoxhealthreport_lang`.
+For this project, the list of supported files is stored in `$engagement_lang`.
 
 ```PHP
-$firefoxhealthreport_lang = [
-    'fhr.lang' => [
-        'supported_locales' => array_diff($firefox_desktop_android, $mozorg_locales),
+$engagement_lang = [
+    'ads/ios_android_apr2016.lang' => [
+        'supported_locales' => ['de', 'es-ES', 'fr', 'pl'],
     ],
-];
+    'ads/ios_android_feb2017.lang' => [
+        'deadline'          => '2017-02-02',
+        'supported_locales' => ['zh-HK', 'zh-TW'],
+    ],
+    ...
 ```
-
-In this case there is only one file supported (`fhr.lang`).
 
 Flags commonly used are:
 * **obsolete**: the file won’t be displayed in webdashboard at all, and its strings won’t be counted in stats. It’s usually used to mark a file that will be completely deleted later but needs to remain in the repository.

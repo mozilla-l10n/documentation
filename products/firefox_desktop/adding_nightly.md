@@ -24,7 +24,7 @@ Always double check the content of the bugs for errors or outdated content. If t
 
 ## Land initial content in l10n repositories
 
-Once all l10n repositories are available, you need to land the initial localized content in l10n-central. If the locale is working on Pootle, you need to contact them at `tech-team(at)translate.org.za` to perform the landing. For Pontoon it will happen automatically when the project is enabled.
+Once all l10n repositories are available, you need to land the initial localized content in l10n-central. For Pontoon it will happen automatically when the project is enabled and translations added. If the locale was already working out of a BitBucket repository, content will need to be manually moved to hg.mozilla.org **before** enabling Pontoon.
 
 After the first content lands in l10n-central, it’s a good idea to perform some basic checks before enabling the build:
 * Check `toolkit/global/intl.properties` ([en-US version](https://hg.mozilla.org/mozilla-central/file/default/toolkit/locales/en-US/chrome/global/intl.properties)) for evident mistakes.

@@ -13,10 +13,8 @@ When you’re getting close to the end of the [Firefox for iOS l10n cycle](https
 Let’s consider a past PR, which was done for v6.0:
 https://github.com/mozilla-l10n/firefoxios-l10n/pull/19
 
-The first thing you’ll want to do is to check the changes to the /templates folder:
-https://github.com/mozilla-l10n/firefoxios-l10n/pull/19/commits/8a8ecbcb748b0f023557d6c1b07e6208a2e953ea
-
-This folder is used by Pootle, and it’s the easiest point to start from, because it doesn’t have translations to make the diff larger and harder to read.
+The first thing you’ll want to do is to check the changes to the /en-US folder:
+https://github.com/mozilla-l10n/firefoxios-l10n/pull/19/commits/edcee6500a4cec7cd40251e0dd2c047a5ffbe3ae
 
 ### Acceptable changes
 
@@ -81,4 +79,4 @@ So you’ve reviewed the strings during the cycle, and the PR looks good? Wait! 
 
 You will need to announce this on [dev.l10n mailing list](https://lists.mozilla.org/listinfo/dev-l10n) as soon as you merge the PR. Prepare your email in advance. Here’s [an example](https://groups.google.com/forum/#!searchin/mozilla.dev.l10n/ios$20v7%7Csort:relevance/mozilla.dev.l10n/oR5u3MdMLgE/952I4eyADAAJ) of what it should contain.
 
-[Pontoon](https://pontoon.mozilla.org/projects/firefox-for-ios/) and [Pootle](https://mozilla.locamotion.org/projects/ios/) should get the new strings automatically, but it’s always a good idea to double check just in case.
+[Pontoon](https://pontoon.mozilla.org/projects/firefox-for-ios/) should get the new strings automatically, but it’s always a good idea to double check just in case.
