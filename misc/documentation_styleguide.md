@@ -13,7 +13,7 @@ These are some of the general rules to follow when writing and reviewing documen
 * Use lowercase after colons, only one space after a period.
 * Use proper quotes, like `“example”`, instead of straight double quotes.
 * Use typographical apostrophes `’` instead of straight single quotes `'` (code fragments are the only exception).
-* Use backticks `, bold, or italic to highlight text in a sentence, not quotes.
+* Use backticks `, **bold**, or *italic* to highlight text in a sentence, not quotes.
 * Try to use links instead of putting URLs directly in the text. For example, `visit [this page](http://example.com)` should be preferred to `visit http://example.com`.
 * Leave an empty line before and after code fragments, specify the language where possible. For example:
 
@@ -52,6 +52,24 @@ This is some text.
 
 This is some more text.
 ```
+
+## Bullet and numbered items
+
+First level is flushed all the way to the left. A sub level is offset by 4 spaces. The next sub level is offset by 8 spaces. You get the idea!
+
+```
+* The first level bullet point
+    * A second level bullet point
+        * A third level bullet point
+```
+
+## Links
+
+When cross reference a document, there are three kinds: within a document, within a project group, and outside a project group. The `[displayed text]` should be to the point and within a pair of square brackets. The displayed text must be followed by `(the link)` enclosed in a pair parenthesis. Follow the formats below to ensure link connection.
+
+* Reference within the same document: the link is proceeded with a # - [General rules]`(#General rules)`.
+* Reference within a project group: the link is proceeded with ../ - [Firefox Focus]`(../products/focus/testing_focus.md)`.
+* Reference outside mozilla-l10n group: the link is a full path - [OpenDesign github repository]`(https://github.com/mozilla/OpenDesign/tree/master/2017)`.
 
 ## Tools
 
