@@ -14,7 +14,7 @@ These are some of the general rules to follow when writing and reviewing documen
 * Use proper quotes, like `“example”`, instead of straight double quotes.
 * Use typographical apostrophes `’` instead of straight single quotes `'` (code fragments are the only exception).
 * Use backticks `, **bold**, or *italic* to highlight text in a sentence, not quotes.
-* Use * instead of _ for bold and italic.
+* Use `*` instead of `_` for bold and italic.
 * Try to use links instead of putting URLs directly in the text. For example, `visit [this page](http://example.com)` should be preferred to `visit http://example.com`.
 * Leave an empty line before and after code fragments, specify the language where possible. For example:
 
@@ -76,14 +76,12 @@ There are three kind of links when cross referencing a document: within a docume
 
 When adding images to a repository, make sure that the size is not too big for the content displayed on GitHub. In case of PNG files, make also sure to optimize files through online services like [TinyPNG](https://tinypng.com/).
 
-* Create a folder that maps to your folder. If there are too many images, create a subfolder for a particular document.
+* Create a folder that maps to the main folder in which your documented is stored.
 * Naming convention: if only a couple of images are needed, make the file name easily identifiable, e.g.: product_feature_type.png.
-* File name: No spaces, no uppercase, use underscore if there are more than two words.
-* File size: keep it under 800px. If necessary, create two versions: a small one and a bigger one when clicked.
-* Image insertion and format:
-    * `![Encoding bug](/assets/images/l10n_testing/encoding_bug.png)`: This is a standalone image, within the testing topic.
-    * `![Pontoon login](/assets/images/pontoon/users/translation_locales.png)`: this is one of the many images within the subfolder of **Pontoon Users** topics.
-* When images with personal information are clearly on display, blur it out.    
+* File name must not spaces and uppercase, and must use underscore to separate words as needed.
+* Image size: keep it under 800px. If necessary, create two versions: a small one and a bigger one to open when clicked.
+* Image format: `![Encoding bug](/assets/images/l10n_testing/encoding_bug.png)`
+* When images contain personal information, such as email addresses, try to blur it out.   
 
 ## Tools
 
