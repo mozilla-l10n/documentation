@@ -14,6 +14,7 @@ These are some of the general rules to follow when writing and reviewing documen
 * Use proper quotes, like `“example”`, instead of straight double quotes.
 * Use typographical apostrophes `’` instead of straight single quotes `'` (code fragments are the only exception).
 * Use backticks `, **bold**, or *italic* to highlight text in a sentence, not quotes.
+* Use * instead of _ for bold and italic.
 * Try to use links instead of putting URLs directly in the text. For example, `visit [this page](http://example.com)` should be preferred to `visit http://example.com`.
 * Leave an empty line before and after code fragments, specify the language where possible. For example:
 
@@ -55,7 +56,7 @@ This is some more text.
 
 ## Bullet and numbered items
 
-First level is flushed all the way to the left. A sub level is offset by 4 spaces. The next sub level is offset by 8 spaces. You get the idea!
+The first level has no indentation, and it's completely aligned to the left. Sub levels should be indented using 4 spaces. Use `*` instead of `-` to create items. Example:
 
 ```
 * The first level bullet point
@@ -65,11 +66,24 @@ First level is flushed all the way to the left. A sub level is offset by 4 space
 
 ## Links
 
-When cross reference a document, there are three kinds: within a document, within a project group, and outside a project group. The `[displayed text]` should be to the point and within a pair of square brackets. The displayed text must be followed by `(the link)` enclosed in a pair parenthesis. Follow the formats below to ensure link connection.
+There are three kind of links when cross referencing a document: within a document, within a project group, and outside a project group. The `[displayed text]` should be to the point and within a pair of square brackets. The displayed text must be followed by `(the link)` enclosed in a pair of parenthesis. Follow these formats for each case:
 
-* Reference within the same document: the link is proceeded with a # - [General rules]`(#General rules)`.
-* Reference within a project group: the link is proceeded with ../ - [Firefox Focus]`(../products/focus/testing_focus.md)`.
-* Reference outside mozilla-l10n group: the link is a full path - [OpenDesign github repository]`(https://github.com/mozilla/OpenDesign/tree/master/2017)`.
+* Reference within the same document: link directly to the anchor, e.g. `[General rules](#general-rules)`. Note that GitHub automatically creates anchors for titles: if the title is *Title Example*, the anchor will be lowercase, with spaces replaced by dashes, i.e. `#title-example`.
+* Reference within a project group: use relative links, instead of absolute links (starting with `/`) or full GitHub URLs. For example, to link to a document in the parent folder, use `[other document](../other.md)`.
+* Reference outside the current repository: use the full GitHub URL, e.g. `[OpenDesign GitHub repository](https://github.com/mozilla/OpenDesign/tree/master/2017)`.
+
+## Images
+
+When adding images to a repository, make sure that the size is not too big for the content displayed on GitHub. In case of PNG files, make also sure to optimize files through online services like [TinyPNG](https://tinypng.com/).
+
+* Create a folder that maps to your folder. If there are too many images, create a subfolder for a particular document.
+* Naming convention: if only a couple of images are needed, make the file name easily identifiable, e.g.: product_feature_type.png.
+* File name: No spaces, no uppercase, use underscore if there are more than two words.
+* File size: keep it under 800px. If necessary, create two versions: a small one and a bigger one when clicked.
+* Image insertion and format:
+    * `![Encoding bug](/assets/images/l10n_testing/encoding_bug.png)`: This is a standalone image, within the testing topic.
+    * `![Pontoon login](/assets/images/pontoon/users/translation_locales.png)`: this is one of the many images within the subfolder of **Pontoon Users** topics.
+* When images with personal information are clearly on display, blur it out.    
 
 ## Tools
 
