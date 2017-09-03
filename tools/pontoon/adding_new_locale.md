@@ -69,7 +69,30 @@ Writing direction of the script. Set to `right-to-left` if `rtl` value for the l
 
 ### Population
 
-Number of native speakers. Find locale code in [CLDR territoryInfo.json](https://github.com/unicode-cldr/cldr-core/blob/master/supplemental/territoryInfo.json) and multiply its `_populationPercent` with the territory `_population`. Repeat if multiple occurrences of locale code exist and sum products.
+This represents the number of native speakers. There are two ways to get this information from CLDR.
+
+#### Using a script
+
+Python needs to be available on the method to use this system: save [this file](https://raw.githubusercontent.com/mozilla-l10n/documentation/master/scripts/cldr_population.py) on your computer as `cldr_population.py` and run it as `python cldr_population.py LOCALE_CODE`.
+
+For example, this is the output of the script when checking data for `sl`:
+
+```
+$ python scripts/cldr_population.py sl
+
+Adding HU: 4937 (0.05% of 9874780)
+Adding IT: 105412 (0.17% of 62007500)
+Adding SI: 1720886 (87% of 1978030)
+Adding AT: 32233 (0.37% of 8711770)
+--------
+Territories: AT, HU, IT, SI
+Population: 1863468
+--------
+```
+
+#### Manual process
+
+Find the locale code in [CLDR territoryInfo.json](https://github.com/unicode-cldr/cldr-core/blob/master/supplemental/territoryInfo.json) and multiply its `_populationPercent` with the territory `_population`. Repeat if multiple occurrences of locale code exist and sum products.
 
 At this point click **SAVE** in the bottom right corner to save the new locale, and check if the locale’s page is available, in this case at https://pontoon.mozilla.org/am/
 
