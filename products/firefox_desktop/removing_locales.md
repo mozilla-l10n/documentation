@@ -1,7 +1,7 @@
 # Removing a locale from Firefox for desktop
 
 Removing a locale from Firefox builds should be the last step in a long series of passages. A locale is removed when:
-* There’s no visible activity in Pontoon for several months.
+* There’s no visible activity in Pontoon for a year.
 * The translation level of Firefox is dropping, causing a good portion of the user interface to appear in English.
 * Outreach to existing community and locale leaders doesn’t produce results.
 * Attempts to find new localizers, via social networks and other tools (e.g. [snippets](https://github.com/mozilla-l10n/localizer-documentation/blob/master/webprojects/snippets.md)), doesn’t find any potential contributors.
