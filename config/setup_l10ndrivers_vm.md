@@ -12,7 +12,7 @@ $ sudo sh -c "apt-get update;apt-get dist-upgrade -y;apt-get autoremove -y"
 
 The password for `sudo` is the same you use to login to the system with your user. Once finished, reboot the virtual machine to make sure that all packages are updated.
 
-If you’re using VWMare, make also sure to install VMWare Tools:
+If you’re using VMWare, make also sure to install VMWare Tools:
 * Select Virtual Machine -> Reinstall VM Tools.
 * Right click on the tar.gz file that will be displayed on the mounted CD-ROM and *Extract to…* the Desktop.
 * Open the terminal and run the installer with `sudo ~/Desktop/vmware-tools-distrib/vmware-install.pl -default`.
