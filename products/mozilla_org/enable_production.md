@@ -142,7 +142,7 @@ PROD_LANGUAGES = ('ach', 'af', 'an', 'ar', 'as', 'ast', 'az', 'bg',
                   'uz', 'vi', 'xh', 'zh-CN', 'zh-TW', 'zu')
 ```
 
-You can then **remove the empty lines** and save the file. These empty lines are needed to avoid affecting more content than needed, in particular the first line. Withouth them you would end up with this:
+You can then **remove the empty lines** and save the file. These empty lines are needed to avoid affecting more content than needed, in particular the first line. Without them you would end up with this:
 
 ```PYTHON
 PROD_LANGUAGES = ('ach', 'af', 'an', 'ar', 'as', 'ast', 'az', 'bg', 'bn-BD',
