@@ -1,7 +1,7 @@
 # Update an existing file
 
 This task can be split into smaller tasks:
-* Add the new strings to the reference file (tipically en-US).
+* Add the new strings to the reference file (typically en-US).
 * Update the deadline (optional).
 * Update the file for all locales adding the new strings.
 
