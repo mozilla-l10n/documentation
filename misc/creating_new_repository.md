@@ -44,6 +44,22 @@ Translations in this repository are available under the
 terms of the [Mozilla Public License v2.0](https://www.mozilla.org/MPL/2.0/).
 ```
 
+## Add a CODEOWNERS file
+
+It’s possible to add a *CODEOWNERS* file to automatically ping the owner of the project in case of pull requests. File should be placed in the root of the repository, it’s called `CODEOWNERS` and uses the following format:
+
+```
+path/to/files/to/monitor @nickname_of_owner
+```
+
+For example, this is the content of the [CODEOWNERS](https://github.com/mozilla-l10n/focus-android-l10n/blob/master/CODEOWNERS) file for Focus for Android:
+
+```
+locales/templates/*.pot @delphine
+```
+
+Pull requests to update strings always modify `locales/templates/app.pot`, while `delphine` is the nickname of the PM in charge of this product. Any pull request trying to modify files matching that path will automatically send a review request to the code owner.
+
 ## Add topics to the repository (optional)
 
 In the main repository page you can add [topics](https://github.com/blog/2309-introducing-topics) to make the repository more discoverable by potential contributors. For example, all localization projects have the following topics: mozilla-l10n, localization, translation.
