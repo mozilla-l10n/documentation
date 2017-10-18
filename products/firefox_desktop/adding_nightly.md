@@ -70,7 +70,7 @@ locales = [
 ...
 ```
 
-Identify the `locales` section, and add the new locale code between parenthesis, followed by a comma. As before, you can use Atom to make sure the list is in alphabetical order (make sure to select only the lines with actual locale codes before pressing `F5`).
+Identify the `locales` section, and add the new locale code between double quotes, followed by a comma. As before, you can use Atom to make sure the list is in alphabetical order (make sure to select only the lines with actual locale codes before pressing `F5`).
 
 After you’ve finished editing the files, check the status of the repository, and the diff.
 
