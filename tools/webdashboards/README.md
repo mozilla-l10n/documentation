@@ -45,6 +45,7 @@ These are detailed instructions for the most common tasks:
 * [Update an existing file](update_existing_file.md).
 * [Add a new file to an existing project](add_new_file.md).
 * [Bootstrap a new locale](bootstrap_new_locale.md).
+* [Remove obsolete files](remove_obsolete_files.md).
 
 For documentation specific to mozilla.org, see [this page](../../products/mozilla_org/README.md).
 

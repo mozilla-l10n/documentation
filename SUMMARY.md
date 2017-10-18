@@ -39,6 +39,7 @@
     * [Bootstrap a new locale](tools/webdashboards/bootstrap_new_locale.md).
     * [Add locales to an existing file](tools/webdashboards/add_locales.md).
     * [Update an existing file](tools/webdashboards/update_existing_file.md).
+    * [Remove obsolete files](tools/webdashboards/remove_obsolete_files.md).
     * [Add a new file to an existing project](tools/webdashboards/add_new_file.md).
 
 ## Misc
