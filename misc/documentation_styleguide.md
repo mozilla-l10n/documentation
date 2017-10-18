@@ -56,7 +56,7 @@ This is some more text.
 
 ## Bullet and numbered items
 
-The first level has no indentation, and it's completely aligned to the left. Sub levels should be indented using 4 spaces. Use `*` instead of `-` to create items. Example:
+The first level has no indentation, and it’s completely aligned to the left. Sub levels should be indented using 4 spaces. Use `*` instead of `-` to create items. Example:
 
 ```
 * The first level bullet point
