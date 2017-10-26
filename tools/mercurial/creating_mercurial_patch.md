@@ -8,6 +8,8 @@ MozReview is the preferred method for patches to main code repositories, like `m
 
 As a general rule, before creating a patch, make sure that your environment is [correctly set up](../../tools/mercurial/setting_mercurial_environment.md), and update your local clones.
 
+<!-- toc -->
+
 ## Creating a patch using MozReview
 
 ### Creating a patch
@@ -108,13 +110,33 @@ $ hg bookmarks
    central                   358999:a69583d2dbc6
 ```
 
-Make your changes and commit them
+After addressing the review comments and editing your local files, you have two choices to save your work:
+* Amend the last commit.
+* Create a new commit and squash history.
+
+#### Amend the last commit
+
+To amend the last commit, simply execute:
+
+```BASH
+$ hg commit --amend
+```
+
+Then confirm (or edit) the commit message by saving with `CTRL+O` and exiting with `CTRL+X` (assuming the default editor is nano). Finally, push again to MozReview.
+
+```BASH
+$ hg push review
+```
+
+#### Create a new commit and squash history
+
+If you prefer to have a separate commit, execute:
 
 ```BASH
 $ hg commit -m "Address review comments"
 ```
 
-Then squash the commit together:
+Then squash the commits together by editing history:
 
 ```BASH
 $ hg histedit
@@ -292,4 +314,4 @@ Now you’re ready to push to the remote repository
 $ hg push
 ```
 
-The reply from the server will contain the URL to your changeset: copy and paste that URL in the bug and close it.
+The reply from the server will contain the URL to your changeset: copy and paste that URL in the bug. If the bug only contains a patch to region.properties, you can close the bug after landing; if it also contains a patch stored in MozReview, the bug will be automatically closed when the patch is merged to mozilla-central.
