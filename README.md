@@ -4,6 +4,7 @@ This repository includes several documents describing how to perform internal ta
 
 Topics covered:
 * Manage [Firefox for Android](products/firefox_android/README.md) and [Firefox desktop](products/firefox_desktop/README.md): setting up builds, bootstrap productization settings, and testing.
+* How to [review strings](products/review/review.md) and [perform sign-offs](products/review/signoffs.md) for Firefox desktop and Firefox for Android.
 * Manage [App Store and Google Play](products/appstores/README.md) content updates.
 * Manage [mozilla.org](products/mozilla_org/README.md) localization.
 * Technical documentation and common tasks for our [webdashboards](tools/webdashboards/README.md).

@@ -1,4 +1,4 @@
-# L10n and Firefox for desktop
+# L10n and Firefox desktop
 
 Some documentation specific for common tasks regarding Firefox desktop and l10n:
 * [Set up the environment](../../tools/mercurial/setting_mercurial_environment.md).

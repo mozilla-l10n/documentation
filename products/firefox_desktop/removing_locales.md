@@ -1,4 +1,4 @@
-# Removing a locale from Firefox for desktop
+# Removing a locale from Firefox desktop
 
 Removing a locale from Firefox builds should be the last step in a long series of passages. A locale is removed when:
 * There’s no visible activity in Pontoon for a year.
