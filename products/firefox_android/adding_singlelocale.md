@@ -10,6 +10,18 @@ You need to file a bug in Firefox for Android::General requesting the new locale
 
 You also want to file a bug to use as tracker ([example for gn](https://bugzilla.mozilla.org/show_bug.cgi?id=1271970)), adding an alias like `fm-l10n-gn` for `gn` and blocking `fm-l10n-tracker`.
 
+## Land initial content in l10n repository
+
+With cross-channel, all builds of Firefox and Firefox Android are generated using strings from the l10n-central repository. If a project started localizing using a BitBucket repository, it’s **fundamental** to populate l10n-central with that content when requesting the official repository creation on `https://hg.mozilla.org/l10n-central/LOCALE_CODE`.
+
+After the first content lands in l10n-central, it’s a good idea to perform some basic checks before enabling the build:
+* Check `toolkit/global/intl.properties` ([en-US version](https://hg.mozilla.org/mozilla-central/file/default/toolkit/locales/en-US/chrome/global/intl.properties)) for evident mistakes.
+* Check if there’s a `region.properties` file in `mobile/chrome/region.properties`. If needed replace it with the [stock version](../searchplugins/files/mobile_region.properties).
+
+## Set up searchplugins
+
+Check the [Set up searchplugins](../searchplugins/setup_searchplugins.md) document for detailed instructions on how to set up searchplugins for new locales.
+
 ## Creating a patch for all-locales
 
 First of all make sure that your environment is [correctly set up](../../tools/mercurial/setting_mercurial_environment.md), and update your local mozilla-unified clone:
@@ -28,7 +40,27 @@ $ atom mobile/android/locales/all-locales
 
 And add the new locale to the list. With Atom and the Sort Lines package installed, you can press `F5` to make sure that the list is in **alphabetical order**. Let’s say for example that you need to add `ab-CD` to the list of supported locales.
 
-After you’ve finished editing the file, check the status of the repository, and the diff.
+The second file to modify is `mobile/android/locales/l10n.toml`. This is the beginning of the file:
+
+```
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+basepath = "../../.."
+
+locales = [
+    "an",
+    "ar",
+    "as",
+    "ast",
+    "az",
+...
+```
+
+Identify the `locales` section, and add the new locale code between double quotes, followed by a comma. As before, you can use Atom to make sure the list is in alphabetical order (make sure to select only the lines with actual locale codes before pressing `F5`).
+
+After you’ve finished editing the files, check the status of the repository, and the diff.
 
 ```BASH
 $ hg status
@@ -47,13 +79,25 @@ $ hg diff
  de
  es-AR
  es-ES
+
+ diff --git a/mobile/android/locales/l10n.toml b/mobile/android/locales/l10n.toml
+ --- a/mobile/android/locales/l10n.toml
+ +++ b/mobile/android/locales/l10n.toml
+ @@ -9,8 +9,9 @@ locales = [
+ +    "ab-CD",
+      "ar",
+      "be",
+      "ca",
+      "cs",
+      "da",
+      "es-AR",
 ```
 
 `M` in `hg status` indicates that the file has been modified, `+` in `hg diff` that the line has been added. Follow the instructions available in [this document](../../tools/mercurial/creating_mercurial_patch.md) to create a patch, submit it for review, and land it.
 
 ## After the patch has landed
 
-A couple of days after the patch has landed check on FTP if builds are being generated for this new locale: https://ftp.mozilla.org/pub/mobile/nightly/latest-mozilla-central-android-api-15-l10n/
+A couple of days after the patch has landed check on FTP if builds are being generated for this new locale: https://ftp.mozilla.org/pub/mobile/nightly/latest-mozilla-central-android-api-16-l10n/
 
 If there are no builds present, it’s usually due to errors in the locale, for example straight single or double quotes in Android DTDs. Check the team’s dashboard for these kind of errors.
 
