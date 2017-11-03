@@ -36,7 +36,7 @@ For each changeset, it’s possible to check `compare-locale`’s results by cli
 
 Some changesets won’t have a link to `compare-locales`’s results (e.g. the second row in the image above). That indicates a changeset that doesn’t affect the product you’re currently signing off (e.g. a Thunderbird change in Firefox), and it’s not a good candidate for sign-offs.
 
-By clicking the top gray circle on the rightmost column, you can display a diff between the latest changeset and the most recent sign-off. Note that both circles can be dragged, to display the diff between specific changesets. It’s also possible to load more changeset at the bottom of the table using the *Load more* button.
+By clicking in one of the cells in the rightmost column, by default you can display a diff between the latest changeset and the most recent sign-off. Note that both circles can be dragged, to display the diff between specific changesets. It’s also possible to load more changeset at the bottom of the table using the *Load more* button.
 
 ![Diff view](/assets/images/signoffs/diff_view.png)
 
