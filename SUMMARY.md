@@ -15,7 +15,6 @@
     * [Beta/Release builds](products/firefox_desktop/adding_release.md).
     * [Removing locales](products/firefox_desktop/removing_locales.md).
 * Review
-    * [Review strings](products/review/review.md).
     * [Sign-offs](products/review/signoffs.md).
 * [Firefox for iOS](products/firefox_iOS/README.md)
     * [Reviewing new strings](products/firefox_iOS/review_iOSstrings.md).
