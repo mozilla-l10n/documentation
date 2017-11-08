@@ -52,7 +52,7 @@ To explicitly reject a sign-off, unselect the *Sign off and accept* checkbox. Th
 
 ## Things to check when doing a sign-off
 
-The first thing to do is to look at error and warnings. For warnings, always double check if the number increased from the last sign-off, identify which changeset introduced new warnings, and if they’re acceptable.
+The first thing to do is to look at errors and warnings. For warnings, always double check if the number increased from the last sign-off, identify which changeset introduced new warnings, and if they’re acceptable.
 
 Here are a few more things to look out for when doing sign-offs:
 * Strings, or portion of text, remaining in English or becoming empty.
