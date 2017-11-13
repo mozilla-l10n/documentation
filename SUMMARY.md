@@ -16,6 +16,7 @@
     * [Removing locales](products/firefox_desktop/removing_locales.md).
 * Review
     * [Sign-offs](products/review/signoffs.md).
+    * [Review strings](products/review/review.md).
 * [Firefox for iOS](products/firefox_iOS/README.md)
     * [Reviewing new strings](products/firefox_iOS/review_iOSstrings.md).
 * [Mozilla.org](products/mozilla_org/README.md)
