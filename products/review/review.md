@@ -4,9 +4,11 @@
 
 ## Review landed strings
 
-Starting from Firefox 57, all versions of Firefox desktop and Firefox for Android ship from a single localization repository ([l10n-central](https://hg.mozilla.org/l10n-central/)). The repository containining the reference English strings, called [gecko-strings](https://hg.mozilla.org/l10n/gecko-strings), is generated from strings landing in the code repository for each branch (e.g. mozilla-central and comm-central for Nightly, mozilla-beta and comm-beta for Beta, etc.), and it’s exposed to localization tools like Pontoon.
+Starting from Firefox 57, all versions of Firefox desktop and Firefox for Android ship by localizing a single repository containining the reference English strings, called [gecko-strings](https://hg.mozilla.org/l10n/gecko-strings). It is generated from strings landing in the code repository for each branch (e.g. mozilla-central and comm-central for Nightly, mozilla-beta and comm-beta for Beta, etc.), and it’s exposed to localization tools like Pontoon.
 
-There is a third repository, [gecko-strings-quarantine](https://hg.mozilla.org/users/axel_mozilla.com/gecko-strings-quarantine), used as a buffer to avoid exposing poor strings to the larger audience of localizers.
+There is a second repository, [gecko-strings-quarantine](https://hg.mozilla.org/users/axel_mozilla.com/gecko-strings-quarantine), used as a buffer to avoid exposing poor strings to the larger audience of localizers.
+
+The localizations for all channels can be found in [l10n-central](https://hg.mozilla.org/l10n-central/), with a single repository for each locale.
 
 The review process consists of three parts:
 * Review strings landing in `mozilla-central`. Currently `comm-central` doesn’t undergo a similar review process.
@@ -15,9 +17,9 @@ The review process consists of three parts:
 
 ### Review strings landing in mozilla-central
 
-Currently, the only way to check strings landing in `mozilla-central` is to verify frequently – ideally daily – this URL: https://hg.mozilla.org/mozilla-central/log?rev=locales%2Fen-US
+You can get the list of changesets touching localized strings in the last 2 days from [mozilla-central](https://hg.mozilla.org/mozilla-central/log?rev=keyword("locales/en-US")+and+pushdate("-2")). Adjust the `pushdate` part if you want to see more or less days.
 
-Frequency is important, since the search results page only contains a limited number of results. There are some unrelevant changesets, like en-US dictionary updates, but the majority of landings are relevant and need to be checked for localization issues.
+There are some unrelevant changesets, like en-US dictionary updates, but the majority of landings are relevant and need to be checked for localization issues.
 
 You need to open each changeset, and identify changed files that are relevant for localization (.properties, .dtd, .ini).
 
@@ -37,9 +39,9 @@ The next step is to spot check changes landed in [gecko-strings-quarantine](http
 * Check if a changeset is removing strings. This should happen only when a string landed in Nightly and was removed during the same cycle, or at the beginning of a release cycle when a group of strings becomes unused in all shipping versions.
 * Compare the changeset with the original landing in mozilla-central. Each changeset’s header contains a set of references (consider [this example](https://hg.mozilla.org/users/axel_mozilla.com/gecko-strings-quarantine/rev/9c9e89dd4fd5)), the most important one is `X-Channel-Converted-Revision`, which links to the original landing in the code repository.
 
-### Run compare-locales against a localization repository
+### Run compare-locales against gecko-strings
 
-A good next step to check for issues is to run [compare-locales](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/compare-locales) against a localization repository frequently updated (Italian and French are good example).
+A good next step to check for issues is to run [compare-locales](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/compare-locales) against the gecko-strings repository.
 
 First of all make sure that your environment is [correctly set up](../../tools/mercurial/setting_mercurial_environment.md), and update your local `mozilla-unified` clone.
 
@@ -51,9 +53,33 @@ compare-locales 2.1
 ```
 
 Let’s assume that:
-* [l10n-central/it](https://hg.mozilla.org/l10n-central/it) is cloned in `~/l10n/it`.
 * [gecko-strings-quarantine](https://hg.mozilla.org/users/axel_mozilla.com/gecko-strings-quarantine) is cloned in `~/l10n/gecko-strings-quarantine`.
-* [mozilla-unified](https://hg.mozilla.org/mozilla-unified) is cloned in `~/src/mozilla-unified`, and the `central` bookmark is activated.
+* [mozilla-unified](https://hg.mozilla.org/mozilla-unified) is cloned in `~/src/mozilla-unified`, and you checked out the version corresponding to the converted changeset.
+
+Then run
+
+```
+$ compare-locales --unified --full ~/src/mozilla-unified/browser/locales/l10n.toml ~/src/mozilla-unified/mobile/android/locales/l10n.toml ~/l10n gecko-strings-quarantine
+```
+
+If you also have `comm-central` checked out,
+
+* [comm-central](https://hg.mozilla.org/comm-central)
+
+you can also check Thunderbird and allies with
+
+```
+$ compare-locales --unified --full -Dmozilla=~/src/mozilla-unified/ ~/src/comm-central/mail/locales/l10n.toml ~/src/comm-central/calendar/locales/l10n.toml ~/src/comm-central/suite/locales/l10n.toml ~/l10n gecko-strings-quarantine
+```
+
+When running these, you should see no errors or warnings. When running them against the central revisions, you should see no missing or changed strings, having obsolete strings is expected. When running against beta or release revisions, expect to have changed strings, but again, no missing strings.
+
+Note: When running compare-locales against a non-existing locale code, use the `--full` commandline argument to get all strings in submodules. In particular for gecko-strings, you need that, otherwise you only get the strings in the browser and mobile/android directories.
+
+### Run compare-locales against a localization repository
+
+A good next step to check for issues is to run compare-locales against a localization repository frequently updated (Italian and French are good example).
+* [l10n-central/it](https://hg.mozilla.org/l10n-central/it) is cloned in `~/l10n/it`.
 
 To run compare-locales against `mozilla-unified` and Italian, for both desktop and Android, you can run:
 
