@@ -41,7 +41,7 @@ The next step is to spot check changes landed in [gecko-strings-quarantine](http
 
 ### Run compare-locales against gecko-strings
 
-A good next step to check for issues is to run [compare-locales](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/compare-locales) against the gecko-strings repository.
+A good next step to check for issues is to run [compare-locales](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/compare-locales) against the `gecko-strings` repository.
 
 First of all make sure that your environment is [correctly set up](../../tools/mercurial/setting_mercurial_environment.md), and update your local `mozilla-unified` clone.
 
@@ -62,23 +62,19 @@ Then run
 $ compare-locales --unified --full ~/src/mozilla-unified/browser/locales/l10n.toml ~/src/mozilla-unified/mobile/android/locales/l10n.toml ~/l10n gecko-strings-quarantine
 ```
 
-If you also have `comm-central` checked out,
-
-* [comm-central](https://hg.mozilla.org/comm-central)
-
-you can also check Thunderbird and allies with
+If you also have [comm-central](https://hg.mozilla.org/comm-central) checked out, you can check Thunderbird and allies with:
 
 ```
 $ compare-locales --unified --full -Dmozilla=~/src/mozilla-unified/ ~/src/comm-central/mail/locales/l10n.toml ~/src/comm-central/calendar/locales/l10n.toml ~/src/comm-central/suite/locales/l10n.toml ~/l10n gecko-strings-quarantine
 ```
 
-When running these, you should see no errors or warnings. When running them against the central revisions, you should see no missing or changed strings, having obsolete strings is expected. When running against beta or release revisions, expect to have changed strings, but again, no missing strings.
+When running these, you should see no errors or warnings. When running them against the central revisions, you should see no missing or changed strings, while having obsolete strings is expected. When running against beta or release revisions, expect to have changed strings, but again, no missing strings.
 
-Note: When running compare-locales against a non-existing locale code, use the `--full` commandline argument to get all strings in submodules. In particular for gecko-strings, you need that, otherwise you only get the strings in the browser and mobile/android directories.
+Note: when running compare-locales against a non-existing locale code, use the `--full` commandline argument to get all strings in submodules. In particular for gecko-strings, you need that, otherwise you only get the strings in the `browser` and `mobile/android` directories.
 
 ### Run compare-locales against a localization repository
 
-A good next step to check for issues is to run compare-locales against a localization repository frequently updated (Italian and French are good example).
+A good next step to check for issues is to run compare-locales against a localization repository frequently updated (Italian and French are good examples).
 * [l10n-central/it](https://hg.mozilla.org/l10n-central/it) is cloned in `~/l10n/it`.
 
 To run compare-locales against `mozilla-unified` and Italian, for both desktop and Android, you can run:
