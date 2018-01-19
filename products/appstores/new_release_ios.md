@@ -9,6 +9,7 @@ Assuming the new version is 6.0, the actions to perform are:
 This document assumes that you have set up the system as explained in [this document](../../config/setup_l10ndrivers_vm.md), so aliases like `lang_update` are available, repositories are already cloned in `~/mozilla/repositories`, Atom is available and includes the syntax highlighter for LANG files.
 
 **IMPORTANT:** Remember to run `gitup` before you do anything. If you run the command in the middle of the work, don’t forget to go back to the branch (it will checkout `master` for all repositories).
+Then remember to run the `app/scripts/update_shipping_locales.py` script in the `~/mozilla/git/stores_l10n/` directory, as stores_l10n is used to keep track of which locales ship in each version of supported apps (Firefox for Android/iOS, Focus for Android/iOS). In fact as a general rule, you should periodically run this script - especially before starting to work on stores_l10n.
 
 ## Create the .lang file for the new release
 
