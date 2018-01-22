@@ -1,4 +1,5 @@
 # Firefox for iOS - Manage a new release
+ <!-- toc --> 
 
 When creating a new release, normally there’s a new *What’s new* section for the upcoming version.
 
@@ -7,9 +8,6 @@ Assuming the new version is 6.0, the actions to perform are:
 * Track the file in both Langchecker and Stores apps.
 
 This document assumes that you have set up the system as explained in [this document](../../config/setup_l10ndrivers_vm.md), so aliases like `lang_update` are available, repositories are already cloned in `~/mozilla/repositories`, Atom is available and includes the syntax highlighter for LANG files.
-
-**IMPORTANT:** Remember to run `gitup` before you do anything. If you run the command in the middle of the work, don’t forget to go back to the branch (it will checkout `master` for all repositories).
-Then remember to run the `app/scripts/update_shipping_locales.py` script in the `~/mozilla/git/stores_l10n/` directory, as stores_l10n is used to keep track of which locales ship in each version of supported apps (Firefox for Android/iOS, Focus for Android/iOS). In fact as a general rule, you should periodically run this script - especially before starting to work on stores_l10n.
 
 ## Create the .lang file for the new release
 
@@ -123,6 +121,12 @@ $ git push origin ios6_0
 ```
 
 Note that you need to explicitly add the files with `git add`, since most of them are not tracked yet.
+
+## Updating the list of supported locales
+
+Before you start working on stores_l10n, remember to run the `app/scripts/update_shipping_locales.py` script in the `~/mozilla/git/stores_l10n/` directory, as stores_l10n is used to keep track of which locales ship in each version of supported apps (Firefox for Android/iOS, Focus for Android/iOS). You can use the same branch for running the script and then adding strings to templates (explained in the section below).
+
+In fact as a general rule, you should periodically run this script - especially before starting to work on stores_l10n. If the script changes the list of locales, it's important to run `lang_update all 12 all` to add missing files in appstores. Check in Pontoon if the new locales are already present in appstores. If not, you will have to add the locale to appstores.
 
 ## Add strings to templates in stores_l10n
 
