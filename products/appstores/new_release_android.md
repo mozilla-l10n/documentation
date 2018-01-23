@@ -1,4 +1,5 @@
 # Firefox for Android - Manage a new release
+
 <!-- toc -->
 
 When creating a new release, normally the *What’s new* section needs to be moved from Beta to Release, and there are new strings to expose for the Beta channel.
@@ -164,9 +165,11 @@ Note that you need to explicitly add the files with `git add`, since most of the
 
 ## Updating the list of supported locales
 
-Before you start working on stores_l10n, remember to run the `app/scripts/update_shipping_locales.py` script in the `~/mozilla/git/stores_l10n/` directory, as stores_l10n is used to keep track of which locales ship in each version of supported apps (Firefox for Android/iOS, Focus for Android/iOS). You can use the same branch for running the script and then adding strings to templates (explained in the section below).
+Before you start working on stores_l10n, remember to run the `app/scripts/update_shipping_locales.py` script in the `~/mozilla/git/stores_l10n/` directory, as this project is used to keep track of which locales ship in each version of supported apps (Firefox for Android/iOS, Focus for Android/iOS). You can use the same branch for running the script, then adding strings to templates (explained in the next section).
 
-In fact as a general rule, you should periodically run this script - especially before starting to work on stores_l10n. If the script changes the list of locales, it's important to run `lang_update all 12 all` to add missing files in appstores. Check in Pontoon if the new locales are already present in appstores. If not, you will have to add the locale to appstores.
+In fact, as a general rule, you should periodically run this script - especially before starting to work on stores_l10n. If the script changes the list of locales:
+* Run `lang_update all 12 all` to add missing files in the `appstores` repository.
+* Check in Pontoon if the new locales already have the [Appstores](https://pontoon.mozilla.org/projects/appstores/) project enabled. If not, you will have to add the locale in the Admin interface, but only **after files have been added** to the repository, i.e. all branches have been merged.
 
 ## Add strings to templates in stores_l10n
 
