@@ -60,6 +60,8 @@ locales = [
 
 Identify the `locales` section, and add the new locale code between double quotes, followed by a comma. As before, you can use Atom to make sure the list is in alphabetical order (make sure to select only the lines with actual locale codes before pressing `F5`).
 
+Once this is done, identify the `exclude-multi-locale` section. Since this locale is not shipping on multi-locale builds yet, you should add it there too, in the same way you just did above.
+
 After you’ve finished editing the files, check the status of the repository, and the diff.
 
 ```BASH
@@ -91,6 +93,11 @@ $ hg diff
       "cs",
       "da",
       "es-AR",
+@@ -9,8 +9,9 @@ exclude-multi-locale = [
+  +    "ab-CD",
+       "ia",
+       "oc",
+...
 ```
 
 `M` in `hg status` indicates that the file has been modified, `+` in `hg diff` that the line has been added. Follow the instructions available in [this document](../../tools/mercurial/creating_mercurial_patch.md) to create a patch, submit it for review, and land it.
