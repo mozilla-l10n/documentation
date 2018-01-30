@@ -60,7 +60,7 @@ locales = [
 
 Identify the `locales` section, and add the new locale code between double quotes, followed by a comma. As before, you can use Atom to make sure the list is in alphabetical order (make sure to select only the lines with actual locale codes before pressing `F5`).
 
-Once this is done, identify the `exclude-multi-locale` section. Since this locale is not shipping on multi-locale builds yet, you should add it there too, in the same way you just did above.
+Once this is done, identify the `exclude-multi-locale` section. Since this locale is not shipping on multi-locale builds yet, you should add it there too.
 
 After you’ve finished editing the files, check the status of the repository, and the diff.
 

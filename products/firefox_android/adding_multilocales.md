@@ -55,9 +55,9 @@ locales = [
 ...
 ```
 
-Identify the `locales` section, and make sure the locale is already listed under the `locales` section (it should be already). In the example above, the locale is represented by `ab-CD`.
+Identify the `locales` section, and make sure the locale is already listed under the `locales` section (it should have been added when enabling single locale builds). In the example above, the locale is represented by `ab-CD`.
 
-Then locate the `exclude-multi-locale` section, and remove the locale from there.
+Then locate the `exclude-multi-locale` section, and remove the locale from this list.
 
 After you’ve finished editing the files, check the status of the repository, and the diff.
 
