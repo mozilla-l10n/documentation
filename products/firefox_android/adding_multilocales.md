@@ -46,6 +46,7 @@ The second file to modify is `mobile/android/locales/l10n.toml`. This is the beg
 basepath = "../../.."
 
 locales = [
+    "ab-CD",
     "an",
     "ar",
     "as",
@@ -54,9 +55,9 @@ locales = [
 ...
 ```
 
-Identify the `locales` section, and make sure the locale is already listed under the `locales` section (it should be already).
+Identify the `locales` section, and make sure the locale is already listed under the `locales` section (it should be already). In the example above, the locale is represented by `ab-CD`.
 
-Then locate the `exclude-multi-locale` section, and remove it from there.
+Then locate the `exclude-multi-locale` section, and remove the locale from there.
 
 After you’ve finished editing the files, check the status of the repository, and the diff.
 
@@ -82,7 +83,7 @@ $ hg diff
  --- a/mobile/android/locales/l10n.toml
  +++ b/mobile/android/locales/l10n.toml
  @@ -9,8 +9,9 @@ locales = [
- +    "ab-CD",
+      "ab-CD",
       "ar",
       "be",
       "ca",
