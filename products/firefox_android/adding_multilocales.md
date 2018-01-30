@@ -18,7 +18,7 @@ Release Note Request (optional, but appreciated)
 [Links (documentation, blog post, etc)]:
 ```
 
-## Creating a patch for maemo-locales
+## Creating a patch build configuration
 
 First of all make sure that your environment is [correctly set up](../../tools/mercurial/setting_mercurial_environment.md), and update your local mozilla-unified clone:
 
@@ -28,7 +28,7 @@ $ hg pull -r default -u
 $ hg update central
 ```
 
-The file to modify is in `mobile/android/locales/maemo-locales`, open it with your text editor of choice.
+The first file to modify is in `mobile/android/locales/maemo-locales`, open it with your text editor of choice.
 
 ```BASH
 $ atom mobile/android/locales/maemo-locales
@@ -36,7 +36,29 @@ $ atom mobile/android/locales/maemo-locales
 
 And add the new locale to the list. With Atom and the Sort Lines package installed, you can press `F5` to make sure that the list is in **alphabetical order**. Let’s say for example that you need to add `ab-CD` to the list of supported locales.
 
-After you’ve finished editing the file, check the status of the repository, and the diff.
+The second file to modify is `mobile/android/locales/l10n.toml`. This is the beginning of the file:
+
+```
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+basepath = "../../.."
+
+locales = [
+    "an",
+    "ar",
+    "as",
+    "ast",
+    "az",
+...
+```
+
+Identify the `locales` section, and make sure the locale is already listed under the `locales` section (it should be already).
+
+Then locate the `exclude-multi-locale` section, and remove it from there.
+
+After you’ve finished editing the files, check the status of the repository, and the diff.
 
 ```BASH
 $ hg status
@@ -55,9 +77,26 @@ $ hg diff
  de
  es-AR
  es-ES
+
+ diff --git a/mobile/android/locales/l10n.toml b/mobile/android/locales/l10n.toml
+ --- a/mobile/android/locales/l10n.toml
+ +++ b/mobile/android/locales/l10n.toml
+ @@ -9,8 +9,9 @@ locales = [
+ +    "ab-CD",
+      "ar",
+      "be",
+      "ca",
+      "cs",
+      "da",
+      "es-AR",
+@@ -9,8 +9,9 @@ exclude-multi-locale = [
+  -    "ab-CD",
+       "ia",
+       "oc",
+...
 ```
 
-`M` in `hg status` indicates that the file has been modified, `+` in `hg diff` that the line has been added. Follow the instructions available in [this document](../../tools/mercurial/creating_mercurial_patch.md) to create a patch, submit it for review, and land it.
+`M` in `hg status` indicates that the file has been modified, `+` in `hg diff` that the line has been added, and `-` means it was removed. Follow the instructions available in [this document](../../tools/mercurial/creating_mercurial_patch.md) to create a patch, submit it for review, and land it.
 
 **IMPORTANT:** an error in a single locale is going to break the multi-locales build for all locales, English included.
 
