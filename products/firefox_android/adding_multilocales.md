@@ -18,7 +18,7 @@ Release Note Request (optional, but appreciated)
 [Links (documentation, blog post, etc)]:
 ```
 
-## Creating a patch build configuration
+## Creating a patch for build configuration
 
 First of all make sure that your environment is [correctly set up](../../tools/mercurial/setting_mercurial_environment.md), and update your local mozilla-unified clone:
 

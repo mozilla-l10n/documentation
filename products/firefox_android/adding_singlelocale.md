@@ -22,7 +22,7 @@ After the first content lands in l10n-central, it’s a good idea to perform som
 
 Check the [Set up searchplugins](../searchplugins/setup_searchplugins.md) document for detailed instructions on how to set up searchplugins for new locales.
 
-## Creating a patch for all-locales
+## Creating a patch for build configuration
 
 First of all make sure that your environment is [correctly set up](../../tools/mercurial/setting_mercurial_environment.md), and update your local mozilla-unified clone:
 
