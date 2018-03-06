@@ -27,6 +27,7 @@ In [app/config/websites.inc.php](https://github.com/mozilla-l10n/langchecker/blo
     $repositories['www.mozilla.org']['public_path'],
     3,
     'lang',
+    [],
 ],
 ```
 

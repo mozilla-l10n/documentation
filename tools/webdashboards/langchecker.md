@@ -37,6 +37,7 @@ Let’s consider a simple project like Engagement. This is how its definition lo
     1,
     'lang',
     'engagement',
+    ['tags'],
 ],
 ```
 
@@ -52,6 +53,7 @@ The structure of each item is:
 8. Default priority, used as fallback when files don't specify one.
 9. Type of files (`lang`, `raw`).
 10. Project name on Pontoon (used for edit links).
+11. Array of excluded error checks.
 
 For each website there is a list of supported locales, but each file might only use a subset of this list.
 
