@@ -53,7 +53,7 @@ The structure of each item is:
 8. Default priority, used as fallback when files don't specify one.
 9. Type of files (`lang`, `raw`).
 10. Project name on Pontoon (used for edit links).
-11. Array of excluded error checks.
+11. Array of excluded error checks (`tags`).
 
 For each website there is a list of supported locales, but each file might only use a subset of this list.
 
