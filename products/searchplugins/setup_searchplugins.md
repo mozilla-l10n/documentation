@@ -54,7 +54,7 @@ The basic structure for each locale is fairly simple. Assuming the locale code i
 "ur": {
   "default": {
     "visibleDefaultEngines": [
-      "google", "yahoo-in", "bing", "amazon-in", "ddg", "wikipedia-ur"
+      "google", "bing", "amazon-in", "ddg", "wikipedia-ur"
     ]
   }
 },
@@ -62,30 +62,8 @@ The basic structure for each locale is fairly simple. Assuming the locale code i
 
 Notes about the list:
 * If the searchplugin XML file is called `google.xml`, the item to add in list.json will be only `google`, without the extension but also **respecting the case**.
-* Order should reflect the actual order of searchplugins: if Google is default, Yahoo 2nd, and Bing 3rd, the list should start with `"google", "yahoo", "bing"`. The remaining searchplugins can be in alphabetical order. The actual order in the browser is currently still determined by region.properties, but at some point that file will be removed.
+* Order should reflect the actual order of searchplugins: if Google is default, and Bing 2nd, the list should start with `"google", "bing"`. The remaining searchplugins can be in alphabetical order. The actual order in the browser is currently still determined by region.properties, but at some point that file will be removed.
 * If a locale is missing from list.json, it will fall back to `default`, defined at the beginning of the file.
-
-Some locales might have a more complex definition, with searchplugins changing based on the region.
-
-```JSON
-"zh-TW": {
-  "default": {
-    "visibleDefaultEngines": [
-      "yahoo-zh-TW", "google", "ddg", "findbook-zh-TW", "wikipedia-zh-TW", "yahoo-zh-TW-HK", "yahoo-bid-zh-TW", "yahoo-answer-zh-TW"
-    ]
-  },
-  "TW": {
-    "visibleDefaultEngines": [
-      "yahoo-zh-TW", "google-nocodes", "ddg", "findbook-zh-TW", "wikipedia-zh-TW", "yahoo-zh-TW-HK", "yahoo-bid-zh-TW", "yahoo-answer-zh-TW"
-    ]
-  },
-  "HK": {
-    "visibleDefaultEngines": [
-      "yahoo-zh-TW-HK", "google-nocodes", "ddg", "findbook-zh-TW", "wikipedia-zh-TW", "yahoo-zh-TW", "yahoo-bid-zh-TW", "yahoo-answer-zh-TW"
-    ]
-  }
-}
-```
 
 To make sure you’re not creating a broken JSON, you can test the final content with an online validator like [jsonlint](https://jsonlint.com/).
 
@@ -134,10 +112,6 @@ When you visit a page that exposes a searchplugin, like Wikipedia, Firefox check
 ```
 
 The shortName to use in your .xml file is `ویکیپیڈیا (ur)`. Copying and pasting RTL languages is particularly tricky.
-
-#### Yahoo
-
-Unlike Wikipedia, never copy the file from en-US, since Yahoo is the default and has different parameters. When copying the file from another locale, make sure that the domain is the one you want. For example there’s https://es.search.yahoo.com but also https://espanol.search.yahoo.com (es-ES versus a more generic Spanish).
 
 ## Creating a patch for review
 
