@@ -28,8 +28,20 @@ In several occasions documents use aliases instead of the complete path to comma
 
 Simply open a pull request adding the new file or updating an existing document. Make sure to follow [these style guidelines](misc/documentation_styleguide.md), and note that all pull requests need to be reviewed before merging.
 
+You can run the following commands to make sure that files are correctly formatted (you will need to [install npm](https://www.npmjs.com/get-npm) if it’s not already available):
+
+```
+$ npm install
+$ npm test
+```
+
 ## GitBook
 
-GitBook is built automatically via Travis, and changes pushed to the gh-pages branch.
+GitBook is built automatically via Travis, and changes pushed to the `gh-pages` branch. If you want to build and preview the GitBook locally, [install npm](https://www.npmjs.com/get-npm) and and run the following commands from the root of the repository:
+
+```
+$ npm install
+$ npm start
+```
 
 If you want content to appear on Gitbook, it needs to be listed in [SUMMARY.md](SUMMARY.md).
