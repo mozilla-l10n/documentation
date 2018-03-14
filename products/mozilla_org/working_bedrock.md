@@ -67,7 +67,6 @@ Localizable strings are wrapped like `_('This')`. That means you can simply copy
 More complex strings can be wrapped in *trans* blocks, e.g.
 
 ```DJANGO
-{% raw %}
 <p class="license">
   {% trans url=url('foundation.licensing.website-content') %}
   Portions of this content are ©1998–{{ current_year }} by individual
@@ -75,7 +74,6 @@ More complex strings can be wrapped in *trans* blocks, e.g.
   a <a href="{{ url }}">Creative Commons license</a>.
   {% endtrans %}
 </p>
-{% endraw %}
 ```
 
 ### Shared .lang files
@@ -91,9 +89,7 @@ If a string is available in one of these files, it can be safely used by any of 
 The `add_lang_files` directive is used in templates to specify a different .lang file, or include strings from another .lang file. Example above: normally a template called `bedrock/mozorg/templates/mozorg/contribute/signup.html` should generate a file called `mozorg/contribute/signup.lang`, but instead it generates a .lang file called `mozorg/contribute/index`. Why? Because the template has this directive:
 
 ```DJANGO
-{% raw %}
 {% add_lang_files "mozorg/contribute/index" %}
-{% endraw %}
 ```
 
 This is particularly important to understand .lang file activation.
@@ -119,13 +115,11 @@ It’s possible to activate l10n files by using the [mark_active script](https:/
 Bedrock supports l10n tags through the `l10n_has_tag` function. For example:
 
 ```DJANGO
-{% raw %}
 {% if l10n_has_tag('sync_device_note') %}
   {{ _('Learn more about bookmarks') }}
 {% else %}
   {{ _('Learn more') }}
 {% endif %}
-{% endraw %}
 ```
 
 l10n tags allow to add a new string in the template and to push it to production without waiting for localization to happen: if the l10n .lang file has this tag, the template will use the new string `Learn more about bookmarks`, otherwise if will fallback to the previous version `Learn more`.
