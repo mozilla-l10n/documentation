@@ -6,11 +6,11 @@ When creating a new release, normally the *What’s new* section needs to be mov
 
 In this example:
 * *What’s new* strings for the current Release is stored in `fx_android/whatsnew/android_46.lang`.
-* *What’s new* strings for the current Beta is stored in `fx_android/whatsnew/android_47_beta.lang`.
+* *What’s new* strings for the current Beta is stored in `fx_android/whatsnew/android_47.lang`.
 
 The actions to perform are:
-* Create a new file `fx_android/whatsnew/android_48_beta.lang` for the Beta channel.
-* Copy strings from `fx_android/whatsnew/android_47_beta.lang` to `fx_android/whatsnew/android_47.lang`.
+* Create a new file `fx_android/whatsnew/android_48.lang` for the upcoming Beta version.
+* Update comment references in `fx_android/whatsnew/android_47.lang`, moving from Beta to Release.
 * Track the files in both Langchecker and Stores apps.
 
 This document assumes that you have set up the system as explained in [this document](../../config/setup_l10ndrivers_vm.md), so aliases like `lang_update` are available, repositories are already cloned in `~/mozilla/repositories`, Atom is available and includes the syntax highlighter for LANG files.
@@ -27,10 +27,10 @@ In this case you’re creating a branch **beta48** in the `appstores` repository
 $ cd ~/mozilla/repositories/appstores/
 $ git branch beta48
 $ git checkout beta48
-$ atom en-US/fx_android/whatsnew/android_48_beta.lang
+$ atom en-US/fx_android/whatsnew/android_48.lang
 ```
 
-This is the content of the new file (strings are communicated by mobile marketing).
+This is the content of the new file (strings are communicated by Release Driver, about a week before the release date).
 
 ```
 ## NOTE: These strings are displayed on Google Play in the What’s new section for Firefox 48 beta
@@ -49,14 +49,21 @@ Suggest “Add to home screen” for frequently used websites
 Migrate reading list to bookmarks
 ```
 
-Now create `en-US/fx_android/whatsnew/android_47.lang`, copying the existing beta file and adapting the initial notes.
+Now update the initial content of `en-US/fx_android/whatsnew/android_47.lang`, replacing references to `beta` with `release`. For example, from:
 
-```BASH
-$ cp en-US/fx_android/whatsnew/android_47_beta.lang en-US/fx_android/whatsnew/android_47.lang
-$ atom en-US/fx_android/whatsnew/android_47.lang
+```
+## NOTE: These strings are displayed on Google Play in the What’s new section for Firefox 47 beta
+## NOTE: See https://l10n.mozilla-community.org/stores_l10n/locale/fx_android/beta/
 ```
 
-These files will be committed later to the repository, since they’re still not tracked in Langchecker and you will also need to import existing strings.
+to:
+
+```
+## NOTE: These strings are displayed on Google Play in the What’s new section for Firefox 47
+## NOTE: See https://l10n.mozilla-community.org/stores_l10n/locale/fx_android/release/
+```
+
+These files will be committed later to the repository, since they’re still not tracked in Langchecker.
 
 ## Track the files in dashboards updating Langchecker
 
@@ -78,47 +85,46 @@ $appstores_lang = [
     ...
     'fx_android/whatsnew/android_46.lang' => [
         'deadline'          => '2016-04-26',
-        'supported_locales' => array_merge($fx_android_store, ['ar']),
+        'supported_locales' => $fx_android_store,
     ],
-    'fx_android/whatsnew/android_47_beta.lang' => [
+    'fx_android/whatsnew/android_47.lang' => [
         'supported_locales' => $fx_android_store,
     ],
 ```
 
 What you’ll need to do is:
-* Add the two new files for 48 Beta (`fx_android/whatsnew/android_48_beta.lang`) and 47 release (`fx_android/whatsnew/android_47.lang`) by copying the ones used in the previous cycle and updating the version number.
-* Mark the previous beta as obsolete by adding to its definition:
-
-```PHP
-'flags' => [
-    'obsolete' => ['all'],
-],
-```
-
-* Remove the deadline from the previous release and add it to the new one.
+* Add the new file for 48 Beta (`fx_android/whatsnew/android_48.lang`).
+* Remove the deadline from the previous release and add it to the new file.
 
 ```PHP
 $appstores_lang = [
     ...
     'fx_android/whatsnew/android_46.lang' => [
-        'supported_locales' => array_merge($fx_android_store, ['ar']),
+        'supported_locales' => $fx_android_store,
     ],
-    'fx_android/whatsnew/android_47_beta.lang' => [
+    'fx_android/whatsnew/android_47.lang' => [
+        'deadline'          => '2016-06-07',
+        'supported_locales' => $fx_android_store,
+    ],
+    'fx_android/whatsnew/android_48.lang' => [
+        'supported_locales' => $fx_android_store,
+    ],
+```
+
+The previous release (46) is not obsolete yet, you can mark it as such the next time you update the file. The result would be:
+
+```PHP
+$appstores_lang = [
+    ...
+    'fx_android/whatsnew/android_46.lang' => [
         'flags' => [
             'obsolete' => ['all'],
         ],
         'supported_locales' => $fx_android_store,
     ],
-    'fx_android/whatsnew/android_47.lang' => [
-        'deadline'          => '2016-06-07',
-        'supported_locales' => array_merge($fx_android_store, ['ar']),
-    ],
-    'fx_android/whatsnew/android_48_beta.lang' => [
-        'supported_locales' => $fx_android_store,
-    ],
 ```
 
-At this point the previous release (46) is not obsolete yet, you can mark it as such the next time you update the file. As a general rule, there should be only two non obsolete release files near the end of the cycle.
+As a general rule, there should be only two non obsolete release files near the end of the cycle.
 
 Now you can commit your changes to Langchecker. Always check with `git status` to confirm that you’re only including changes to `sources.inc.php`.
 
@@ -131,20 +137,7 @@ $ git push origin beta48
 
 ## Commit .lang files to the appstores repository
 
-At this point you’re ready to copy the new files to all locales, but you also want to import the existing strings from `fx_android/whatsnew/android_47_beta.lang`.
-
-Edit your local copy of [app/scripts/lang_update](https://github.com/mozilla-l10n/langchecker/blob/master/app/scripts/lang_update#L105), add `fx_android/whatsnew/android_47_beta.lang` to the variable `$import_files`, and set `$import_website` to `12` (that’s the identifier for the AppStores project).
-
-```PHP
-$import_files = ['fx_android/whatsnew/android_47_beta.lang'];
-$import_website = 12;
-```
-
-This will make the next run of `lang_update` importing existing strings from `fx_android/whatsnew/android_47_beta.lang`.
-
-**Important**: make sure to not commit this last change to langchecker. You can either ignore it and it will be removed the next time you run `gitup`, or reset the repository with `git reset --hard`.
-
-Now you can run the update, propagating updates to all locales:
+Now you’re ready to copy the new files to all locales, and propagate all comment changes to `fx_android/whatsnew/android_47.lang`:
 
 ```BASH
 $ lang_update all 12 all
@@ -195,7 +188,7 @@ public $templates = [
         'beta' => [
             'template' => 'fx_android/beta/listing_may_2015.php',
             'langfile' => 'fx_android/description_beta.lang',
-            'whatsnew' => 'fx_android/whatsnew/android_47_beta.lang',
+            'whatsnew' => 'fx_android/whatsnew/android_47.lang',
             ],
     ],
 ```
@@ -213,7 +206,7 @@ public $templates = [
         'beta' => [
             'template' => 'fx_android/beta/listing_may_2015.php',
             'langfile' => 'fx_android/description_beta.lang',
-            'whatsnew' => 'fx_android/whatsnew/android_48_beta.lang',
+            'whatsnew' => 'fx_android/whatsnew/android_48.lang',
             ],
     ],
 ```
