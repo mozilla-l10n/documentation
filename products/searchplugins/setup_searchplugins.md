@@ -172,6 +172,13 @@ region.properties is stored in `/browser/chrome/browser-region` for Firefox desk
 * For Firefox desktop [this region.properties model](files/desktop_region.properties).
 * For Firefox for Android [this region.properties model](files/mobile_region.properties).
 
+Note that `region.properties` for Firefox for Android, unlike desktop, still needs to include the name of the default searchplugin:
+
+```
+# This preference is only used to generate browsersearch.json.
+browser.search.defaultenginename=Google
+```
+
 A few tips:
 * Make sure to remove non existing searchplugins from `search.order`.
 * If you’re updating an existing file, make sure to not reset the `gecko.handlerService.defaultHandlersVersion` key. If, on the other hand, you’re adding a new handler, you will have to increment the existing numeric value.
