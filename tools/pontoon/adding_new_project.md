@@ -42,7 +42,7 @@ Tags can be used in a project to logically group resources, assigning them a pri
 
 For each tag, it’s possible to define:
 * *Name*: it will be displayed in project (e.g. `/projects/firefox/tags/`) and localization dashboards (e.g. `/it/firefox/tags/`), but also in search filters.
-* *Slug*: used for tag dashboards, e.g. `/projects/firefox/tags/devtools/`.
+* *Slug*: used in URLs for tag dashboards, e.g. `/projects/firefox/tags/devtools/`.
 * *Priority*: like for a project, it’s possible to select a priority level from one of the 5 levels available (Lowest, Low, Normal, High, Highest).
 
 ![Tags resources](/assets/images/pontoon/manage_tags_resources.png)
