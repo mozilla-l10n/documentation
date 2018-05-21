@@ -36,6 +36,27 @@ Localization for the <a href="https://testpilot.firefox.com/experiments/min-vid"
 
 Click **SAVE PROJECT** at the bottom of the page, then click **SYNC** to run a test sync. In the [Sync log](https://mozilla-pontoon-staging.herokuapp.com/sync/log/) you should be able to see if it succeeded or failed.
 
+### Tags
+
+Tags can be used in a project to logically group resources, assigning them a priority. To enable tags for a project, check *Tags enabled* and save the project.
+
+For each tag, it’s possible to define:
+* *Name*: it will be displayed in project (e.g. `/projects/firefox/tags/`) and localization dashboards (e.g. `/it/firefox/tags/`), but also in search filters.
+* *Slug*: used for tag dashboards, e.g. `/projects/firefox/tags/devtools/`.
+* *Priority*: like for a project, it’s possible to select a priority level from one of the 5 levels available (Lowest, Low, Normal, High, Highest).
+
+![Tags resources](/assets/images/pontoon/manage_tags_resources.png)
+
+Once you’ve created a new tag, you need to save the project in order to be able to manage the resources associated to the tag itself, using the button highlighted in red.
+
+A few tips on using this section:
+* Use the selector on the right (highlighted in orange) to switch between *Linked* resources, i.e. resources already associated to the tag, and *Unlinked* resources.
+* It’s possible to use wildcards in the search box, e.g. `devtools/*` or `*/client/*`.
+* The first checkbox on the left (highlighted in green) allows to select all displayed items. Note: if the search returns multiple pages, only those currently displayed are selected and will be linked if *Link resources* is clicked.
+* There is no need to save the project when adding resources to a tag: linked resources are stored in the database as soon as they’re added with the *Link resources* button.
+
+Considering the amount of information required to properly set up tags in a project, it’s recommended to set them up directly in production, and use stage only for specific testing.
+
 ## Create the project in Pontoon PROD instance
 
 At this point you need to repeat the same steps on the **production server**.
