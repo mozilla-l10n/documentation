@@ -48,18 +48,19 @@ The list of searchplugins is stored in JSON format:
 * For Firefox desktop in [/browser/locales/search/list.json](https://hg.mozilla.org/mozilla-central/file/default/browser/locales/search/list.json).
 * For Firefox for Android in [/mobile/locales/search/list.json](https://hg.mozilla.org/mozilla-central/file/default/mobile/locales/search/list.json).
 
-The default search engine is defined as `searchDefault` in a `default` key, together with a list of searchplugins:
+The default search engine is defined as `searchDefault` in a `default` key, together with a list of searchplugins and their `searchOrder`:
 
 ```JSON
 "default": {
   "searchDefault": "Google",
+  "searchOrder": ["Google", "Bing"],
   "visibleDefaultEngines": [
     "google", "amazondotcom", "bing", "ddg", "ebay", "twitter", "wikipedia"
   ]
 }
 ```
 
-Unlike the list in `visibleDefaultEngines`, `searchDefault` requires the searchplugin name, defined as `ShortName` in the corresponding XML file. For example, in `google.xml`:
+Unlike the list in `visibleDefaultEngines`, `searchDefault` and `searchOrder` require the searchplugin name, defined as `ShortName` in the corresponding XML file. For example, in `google.xml`:
 
 ```XML
 <SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/">
@@ -67,7 +68,7 @@ Unlike the list in `visibleDefaultEngines`, `searchDefault` requires the searchp
 <Description>Google Search</Description>
 ```
 
-If a locale is missing from `list.json`, or doesn’t provide any of these values, the `default` key is used as a fallback. Since `Google` is the default for most locales, this system allows to avoid defining the same `searchDefault` for each locale.
+If a locale is missing from `list.json`, or doesn’t provide any of these values, the `default` key is used as a fallback. Since `Google` is the default for most locales, this system allows to avoid defining the same `searchDefault` for each locale. The same is valid for `searchOrder`, using `Google` and `Bing` as first two searchplugins for most locales.
 
 The basic structure for each locale is fairly simple. Assuming the locale code is `ur`, it will have a `default` key, with `visibleDefaultEngines`.
 
@@ -82,8 +83,8 @@ The basic structure for each locale is fairly simple. Assuming the locale code i
 ```
 
 Notes about the list:
-* If the searchplugin XML file is called `google.xml`, the item to add to `visibleDefaultEngines` will be only `google`, without the extension but also **respecting the case**. Only `searchDefault` uses the *ShortName* of the searchplugin.
-* Order should reflect the actual order of searchplugins: if Google is default, and Bing 2nd, the list should start with `"google", "bing"`. The remaining searchplugins can be in alphabetical order. The actual order in the browser is currently still determined by region.properties, but at some point that file will be removed.
+* If the searchplugin XML file is called `google.xml`, the item to add to `visibleDefaultEngines` will be only `google`, without the extension but also **respecting the case**. Only `searchDefault` and `searchOrder` use the *ShortName* of the searchplugin.
+* Order should reflect the actual order of searchplugins: if Google is default, and Bing 2nd, the list should start with `"google", "bing"`. The remaining searchplugins can be in alphabetical order.
 * If a locale is missing from `list.json`, it will fall back to `default`, defined at the beginning of the file.
 
 A locale can also have regional overrides, for example:
@@ -111,6 +112,19 @@ A locale can also have regional overrides, for example:
 ```
 
 This defines a different default engine for Belarussian in 4 countries, each one indicated by its [country code](https://www.iso.org/obp/ui/#search).
+
+A locale can also override the default search order:
+
+```JSON
+"cs": {
+  "default": {
+    "searchOrder": ["Google", "Seznam"],
+    "visibleDefaultEngines": [
+      "google", "seznam-cz", "ddg", "heureka-cz", "mapy-cz", "wikipedia-cz"
+    ]
+  }
+}
+```
 
 To make sure you’re not creating a broken JSON, you can test the final content with an online validator like [jsonlint](https://jsonlint.com/).
 
@@ -168,7 +182,7 @@ Once files are ready, follow the instructions available in [this document](../..
 
 ### region.properties
 
-region.properties is stored in `/browser/chrome/browser-region` for Firefox desktop (`/mobile/chrome` for Firefox for Android), and it contains information about searchplugins order and protocol handlers. You can use these files as a base:
+region.properties is stored in `/browser/chrome/browser-region` for Firefox desktop (`/mobile/chrome` for Firefox for Android), and it contains information about protocol handlers. You can use these files as a base:
 * For Firefox desktop [this region.properties model](files/desktop_region.properties).
 * For Firefox for Android [this region.properties model](files/mobile_region.properties).
 
@@ -180,7 +194,6 @@ browser.search.defaultenginename=Google
 ```
 
 A few tips:
-* Make sure to remove non existing searchplugins from `search.order`.
 * If you’re updating an existing file, make sure to not reset the `gecko.handlerService.defaultHandlersVersion` key. If, on the other hand, you’re adding a new handler, you will have to increment the existing numeric value.
 
 ## Creating a patch for review (locale repository)
