@@ -76,6 +76,8 @@ What you’ll need to do is:
 ],
 ```
 
+As a general rule, there should be only one obsolete file in total, and the previous obsolete file can be deleted.
+
 * Remove the deadline from the previous file and add it to the new one.
 
 ```PHP
