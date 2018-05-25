@@ -68,15 +68,13 @@ $appstores_lang = [
 
 What you’ll need to do is:
 * Add the new file for 6.0 (`fx_ios/whatsnew/ios_6_0.lang`) by copying the one used in the previous cycle and updating the version number.
-* Mark the previous file as obsolete by adding to its definition:
+* Mark the previous file as obsolete by adding to its definition as indicated in the following example. As a general rule, there should be only one obsolete file in total, and the previous obsolete file can be deleted.
 
 ```PHP
 'flags' => [
     'obsolete' => ['all'],
 ],
 ```
-
-As a general rule, there should be only one obsolete file in total, and the previous obsolete file can be deleted.
 
 * Remove the deadline from the previous file and add it to the new one.
 
