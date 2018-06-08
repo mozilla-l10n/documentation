@@ -45,8 +45,8 @@ $ hg up central
 ### list.json
 
 The list of searchplugins is stored in JSON format:
-* For Firefox desktop in [/browser/locales/search/list.json](https://hg.mozilla.org/mozilla-central/file/default/browser/locales/search/list.json).
-* For Firefox for Android in [/mobile/locales/search/list.json](https://hg.mozilla.org/mozilla-central/file/default/mobile/locales/search/list.json).
+* For Firefox desktop in [browser/components/search/searchplugins/list.json](https://hg.mozilla.org/mozilla-central/file/default/browser/components/search/searchplugins/list.json).
+* For Firefox for Android in [mobile/android/components/search/searchplugins/list.json](https://hg.mozilla.org/mozilla-central/file/default/mobile/android/components/search/searchplugins/list.json).
 
 The default search engine is defined as `searchDefault` in a `default` key, together with a list of searchplugins and their `searchOrder`:
 
@@ -131,8 +131,8 @@ To make sure you’re not creating a broken JSON, you can test the final content
 ### XML files
 
 Searchplugins are stored:
-* For Firefox desktop in [/browser/locales/searchplugins](https://hg.mozilla.org/mozilla-central/file/default/browser/locales/searchplugins).
-* For Firefox for Android in [/mobile/locales/searchplugins](https://hg.mozilla.org/mozilla-central/file/default/mobile/locales/searchplugins).
+* For Firefox desktop in [browser/locales/searchplugins](https://hg.mozilla.org/mozilla-central/file/default/browser/components/search/searchplugins).
+* For Firefox for Android in [mobile/android/components/search/searchplugins](https://hg.mozilla.org/mozilla-central/file/default/mobile/android/components/search/searchplugins).
 
 For other searchplugins you will need to create the .xml file yourself, with some general rules to keep in mind:
 * Always have a MPL2 license header at the beginning.
