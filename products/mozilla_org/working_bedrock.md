@@ -43,7 +43,7 @@ $ source venv/bin/activate
 If the last command returns any error, try reinstalling the requirements with
 
 ```BASH
-$ pip install -r requirements/test.txt
+$ pip install -r requirements/dev.txt
 ```
 
 At this point a .lang file will be created inside `/locale/templates` with all the strings extracted. The name of the file depends on several factors: for example the template could include another template that specify a specific .lang file so, instead of having `locale/templates/mozorg/contribute/signup.lang`, you have `locale/templates/mozorg/contribute/index.lang`.
