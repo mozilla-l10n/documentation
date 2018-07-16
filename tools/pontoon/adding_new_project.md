@@ -57,6 +57,12 @@ A few tips on using this section:
 
 Considering the amount of information required to properly set up tags in a project, it’s recommended to set them up directly in production, and use stage only for specific testing.
 
+### Resource deadline
+
+Like for a project, it’s possible to set a deadline for a Resource.
+
+Go to the [resource section](https://pontoon.mozilla.org/a/base/resource/) of the admin panel, then type the name of your project (e.g. `engagement`) and hit `Enter`. All the resources for your project should appear. Click on the one you want to edit, set the deadline in the `Deadline` field, then click `SAVE`.
+
 ## Create the project in Pontoon PROD instance
 
 At this point you need to repeat the same steps on the **production server**.
