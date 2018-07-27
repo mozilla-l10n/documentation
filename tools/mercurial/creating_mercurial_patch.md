@@ -1,16 +1,16 @@
 # Create a patch in Mercurial
 
 There are currently two different methods available to create a patch for Mercurial repositories:
-* [Using **MozReview**](#creating-a-patch-using-mozreview).
+* [Using **Phabricator**](#creating-a-patch-using-phabricator).
 * [Using **Mercurial Queues**](#creating-a-patch-using-queues) (`mq` extension).
 
-MozReview is the preferred method for patches to main code repositories, like `mozilla-central`. On the other hand, Queues is the only tool available for patches to l10n repositories.
+Phabricator is the preferred method for patches to main code repositories, like `mozilla-central`. On the other hand, Queues is the only tool available for patches to l10n repositories.
 
 As a general rule, before creating a patch, make sure that your environment is [correctly set up](../../tools/mercurial/setting_mercurial_environment.md), and update your local clones.
 
 <!-- toc -->
 
-## Creating a patch using MozReview
+## Creating a patch using Phabricator
 
 ### Creating a patch
 
@@ -48,10 +48,10 @@ Let’s create a bookmark for this pending work, for example `bug1304757`.
 $ hg bookmark bug1304757
 ```
 
-Commit the changes with a commit message that includes the reviewer’s nickname after `r?`, for example if flod is the reviewer:
+Commit the changes:
 
 ```BASH
-$ hg commit -m "Bug 1304757 - [ur] Search engine setup for Firefox for Urdu, r?flod"
+$ hg commit -m "Bug 1304757 - [ur] Search engine setup for Firefox for Urdu"
 ```
 
 At this point you can check the status of the tree:
@@ -77,20 +77,51 @@ o :   358709:f8107cf96144 cbook  central
 :/   merge mozilla-inbound to mozilla-central a=merge
 ```
 
-Push to review with:
+Create a revision in Differential:
 
 ```BASH
-$ hg push review
+$ arc diff
 ```
 
-At the end of the process, press enter or type `y` to publish your review.
+An editor will open, asking for some information about the commit:
 
 ```
-publish these review requests now (Yn)?  y
-(published review request XXXX)
+Bug 1304757 - [ur] Search engine setup for Firefox for Urdu
+
+Summary:
+
+Test Plan:
+
+Reviewers: flod
+
+Subscribers:
+
+Bug #: 1304757
 ```
 
-Once published, the review request will be attached automatically to the bug, and the reviewer will be flagged.
+You need to provide:
+* **Reviewers**: use the Phabricator nickname (usually matches the nickname on Bugzilla). In this example: `flod`.
+* **Bug #**: provide the bug number. In this example: `1304757`.
+
+Once finished, save the editor and exit. At the end of the process, you should find a link to a Differential in Phrabricator:
+
+```BASH
+Linting...
+No lint engine configured for this project.
+Running unit tests...
+No unit test engine is configured for this project.
+ SKIP STAGING  Phabricator does not support staging areas for this repository.
+Updating commit message...
+Created a new Differential revision:
+        Revision URI: https://phabricator.services.mozilla.com/Dxxxx
+
+Included changes:
+  M       browser/locales/search/list.json
+  A       browser/locales/searchplugins/amazon-in.xml
+  A       browser/locales/searchplugins/wikipedia-ur.xml
+```
+
+Once published, the review request will be attached automatically to the bug, and the reviewer will be flagged. Note that you can also update information about the patch, like reviewer or bug, directly in Phrabricator after using `arc diff`.
 
 ### Updating an existing patch
 
@@ -122,10 +153,10 @@ To amend the last commit, simply execute:
 $ hg commit --amend
 ```
 
-Then confirm (or edit) the commit message by saving with `CTRL+O` and exiting with `CTRL+X` (assuming the default editor is nano). Finally, push again to MozReview.
+Then confirm (or edit) the commit message by saving with `CTRL+O` and exiting with `CTRL+X` (assuming the default editor is nano). Finally, update phabricator (you will need to provide a commit message):
 
 ```BASH
-$ hg push review
+$ arc diff
 ```
 
 #### Create a new commit and squash history
@@ -174,10 +205,10 @@ roll 8088fd8658fd 358598 Fix searchplugin name
 ...
 ```
 
-Push again to MozReview
+Update Phabricator (you will need to provide a commit message):
 
 ```BASH
-$ hg push review
+$ arc diff
 ```
 
 You can also use `hg histedit` to reword a commit message (set the commit line to `edit`). Just remember to complete the `histedit` after commit.
@@ -200,7 +231,7 @@ More information about this workflow are available in the following pages:
 ### Landing the patch
 
 Once the patch has been reviewed, you have two options:
-* If you have L3 access to the repository, you can use Autoland to land your commit directly from MozReview. If your reviewer has it, you can ask them to land.
+* If you have L3 access to the repository, you can use [Lando](https://moz-conduit.readthedocs.io/en/latest/lando-user.html) to land your commit directly. If your reviewer has it, you can ask them to land.
 * You can set the `checkin-needed` keyword in the bug, and sheriffs will land it from you.
 
 ## Creating a patch using Queues

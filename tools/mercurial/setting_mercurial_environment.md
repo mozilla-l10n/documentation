@@ -47,91 +47,30 @@ User YOUR_LDAP_EMAIL_ADDRESS
 IdentityFile ~/.ssh/id_rsa
 ```
 
-## Set up MozReview
+## Set up Arcanist for Phabricator
 
-Detailed instructions and explanations are available in [the official documentation](https://mozilla-version-control-tools.readthedocs.io/en/latest/mozreview/install-mercurial.html#mozreview-install-mercurial).
+Detailed instructions and explanations are available in [the official documentation](https://phabricator.services.mozilla.com/book/phabricator/article/arcanist_quick_start/).
 
-Clone the **version-control-tools** repository on your machine. In this case, the clone’s folder will be stored inside `~/mozilla/mercurial/`. If you move it, you’ll need to update the reference in `~/.hgrc` later.
-
-```BASH
-$ hg clone https://hg.mozilla.org/hgcustom/version-control-tools ~/mozilla/mercurial/version-control-tools
-```
-
-At this point you need to enable the reviewboard extension by editing the `.hgrc` file. If the file doesn’t have an `[extensions]` section create one and add a line `reviewboard = ~/mozilla/mercurial/version-control-tools/hgext/reviewboard/client.py` to enable the *reviewboard* extension.
-
-Other useful extensions are `Mercurial Queues Extension` (queues), `color` (colorize output, for example diffs) and `purge` (to remove untracked files from the repository).
-
-Create some aliases that you’ll use in your work with MozReview:
-
-```INI
-[alias]
-shortlog = log --template "{node|short} | {date|isodatesec} | {author|user}: {desc|strip|firstline}\n"
-wip = log --graph --rev=wip --template=wip
-
-[templates]
-wip = '{label("log.branch", branches)} {label("changeset.{phase}", rev)}{label("changeset.{phase}", ":")}{label("changeset.{phase}", short(node))} {label("grep.user", author|user)}{label("log.tag", if(tags," {tags}"))}{label("log.tag", if(fxheads," {fxheads}"))} {label("log.bookmark", if(bookmarks," {bookmarks}"))}\n{label(ifcontains(rev, revset("."), "desc.here"),desc|firstline)}'
-```
-
-Add your Bugzilla ID (email address) and an API key (use https://bugzilla.mozilla.org/userprefs.cgi?tab=apikey to generate one):
-
-```INI
-[bugzilla]
-username = YOUR EMAIL
-apikey = APIKEY
-```
-
-Add your IRC Nickname (used for reviews):
-
-```INI
-[mozilla]
-ircnick = mynick
-```
-
-Add the path to the review repository (HTTPS version is enough for our use case):
-
-```INI
-[paths]
-# For HTTP pushing
-review = https://reviewboard-hg.mozilla.org/autoreview
-```
-
-The first time you’ll need to [link](https://mozilla-version-control-tools.readthedocs.io/en/latest/mozreview/install.html#manually-associating-your-ldap-account-with-mozreview) your LDAP account with MozReview:
+On macOS, PHP is already shipping as part of the operating system, but you might need to install [Git](https://git-scm.com/) if not available. The following commands clone two repositories inside `~/mozilla/mercurial/`. If you move them, you’ll need to update the `PATH` command accordingly.
 
 ```BASH
-$ ssh reviewboard-hg.mozilla.org mozreview-ldap-associate
+$ git clone https://github.com/phacility/libphutil.git ~/mozilla/mercurial/libphutil
+$ git clone https://github.com/phacility/arcanist.git ~/mozilla/mercurial/arcanist
+$ echo -e '\n# Arcanist path for Phabricator\nPATH="$PATH:$HOME/mozilla/mercurial/arcanist/bin/"' >> ~/.bash_profile
+$ source ~/.bash_profile
 ```
 
-This is how a complete basic configuration file would look like:
+Check that the `arc` command is available:
 
-```INI
-[ui]
-username = YOUR NAME <YOUR EMAIL>
-ignore.other = ~/.hgignore
-
-[defaults]
-qnew = -Ue
-
-[extensions]
-color =
-mq =
-purge =
-reviewboard = ~/mozilla/mercurial/version-control-tools/hgext/reviewboard/client.py
-
-[bugzilla]
-username = YOUR EMAIL
-apikey = APIKEY
-
-[mozilla]
-ircnick = YOURNICK
-
-[paths]
-review = https://reviewboard-hg.mozilla.org/autoreview
-
-[diff]
-git = 1
-showfunc = 1
-unified = 8
+```BASH
+$ arc --version
+arcanist 875d018360374cb4b1287309782fcb9a75d4bcbf (9 Jul 2018)
+libphutil 1613e68f474030e2c8de2797080a6872c140b1ef (20 Jul 2018)
 ```
+
+You also need to [create an account](https://moz-conduit.readthedocs.io/en/latest/phabricator-user.html) on Phabricator and [log in](https://phabricator.services.mozilla.com/).
+
+At this point you still have to install Arcanist credentials, but you need a clone of mozilla-unified first.
 
 ## Cloning and updating mozilla-unified
 
@@ -151,6 +90,37 @@ $ hg up central
 ```
 
 The last command makes sure you’re working against central (to be more precise, it moves you to the `central` bookmark).
+
+Now you can complete the setup for Arcanist. Follow the instructions on screen to complete, it will require you to connect to Phrabricator and generate an API key to copy in the terminal:
+
+```BASH
+$ cd ~/mozilla/mercurial/mozilla-unified
+$ arc install-certificate
+```
+
+## Mercurial configuration
+
+Mercurial configuration is stored in the `.hgrc` file in the user’s home directory.
+
+Useful extensions are `Mercurial Queues Extension` (queues), `color` (colorize output, for example diffs) and `purge` (to remove untracked files from the repository). If the `.hgrc` file doesn’t have an `[extensions]` section create one and add the following lines:
+
+```INI
+[extensions]
+mq =
+color =
+purge =
+```
+
+Some aliases are also useful to work with bookmarks:
+
+```INI
+[alias]
+shortlog = log --template "{node|short} | {date|isodatesec} | {author|user}: {desc|strip|firstline}\n"
+wip = log --graph --rev=wip --template=wip
+
+[templates]
+wip = '{label("log.branch", branches)} {label("changeset.{phase}", rev)}{label("changeset.{phase}", ":")}{label("changeset.{phase}", short(node))} {label("grep.user", author|user)}{label("log.tag", if(tags," {tags}"))}{label("log.tag", if(fxheads," {fxheads}"))} {label("log.bookmark", if(bookmarks," {bookmarks}"))}\n{label(ifcontains(rev, revset("."), "desc.here"),desc|firstline)}'
+```
 
 ## Text editor
 
