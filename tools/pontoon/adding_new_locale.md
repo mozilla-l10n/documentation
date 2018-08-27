@@ -98,6 +98,4 @@ Population: 1863468
 
 Find the locale code in [CLDR territoryInfo.json](https://github.com/unicode-cldr/cldr-core/blob/master/supplemental/territoryInfo.json) and multiply its `_populationPercent` with the territory `_population`. Repeat if multiple occurrences of locale code exist and sum products.
 
-At this point click **SAVE** in the bottom right corner to save the new locale, and check if the locale’s page is available, in this case at https://pontoon.mozilla.org/am/
-
-You should also add the Pontoon Intro project to this locale, through the [standard admin interface](https://pontoon.mozilla.org/admin/projects/pontoon-intro/).
+At this point click **SAVE** in the bottom right corner to save the new locale. Then, from the [standard admin interface](https://pontoon.mozilla.org/admin/),  enable at least one "non system project" (i.e. not https://pontoon.mozilla.org/projects/tutorial/ nor https://pontoon.mozilla.org/projects/pontoon-intro) - as well as the the Pontoon Intro project - and wait until Pontoon syncs for the locale dashboard to work. You can then check if the locale’s page, as well as the new project, are available - in this case at https://pontoon.mozilla.org/am/
