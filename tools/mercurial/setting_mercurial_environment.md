@@ -91,7 +91,7 @@ $ hg up central
 
 The last command makes sure you’re working against central (to be more precise, it moves you to the `central` bookmark).
 
-Now you can complete the setup for Arcanist. Follow the instructions on screen to complete, it will require you to connect to Phrabricator and generate an API key to copy in the terminal:
+Now you can complete the setup for Arcanist. Follow the instructions on screen to complete, it will require you to connect to Phabricator and generate an API key to copy in the terminal:
 
 ```BASH
 $ cd ~/mozilla/mercurial/mozilla-unified
