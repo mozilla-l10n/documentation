@@ -19,7 +19,7 @@ The review process consists of three parts:
 
 You can get the list of changesets touching localized strings in the last 2 days from [mozilla-central](https://hg.mozilla.org/mozilla-central/log?rev=keyword("locales/en-US")+and+pushdate("-2")). Adjust the `pushdate` part if you want to see more or less days.
 
-There are some unrelevant changesets, like en-US dictionary updates, but the majority of landings are relevant and need to be checked for localization issues.
+There are some irrelevant changesets, like en-US dictionary updates, but the majority of landings are relevant and need to be checked for localization issues.
 
 You need to open each changeset, and identify changed files that are relevant for localization (.properties, .dtd, .ini).
 
