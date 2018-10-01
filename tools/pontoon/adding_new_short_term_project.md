@@ -1,6 +1,6 @@
 # Adding a new short-term project on Pontoon
 
-Short-term projects are things like newsletters, marketing campains, surveys… They do not have a repository, and data is instead stored only in Pontoon’s database.
+Short-term projects are things like newsletters, marketing campaigns, surveys… They do not have a repository, and data is instead stored only in Pontoon’s database.
 
 The process to create a short-term project is very similar to that of a regular one.
 
