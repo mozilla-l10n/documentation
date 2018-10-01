@@ -266,7 +266,7 @@ At this point you will be asked to provide a commit message for your patch (in `
 
 The commit message should be the same as the bug, for example `Bug 123456 - Set up searchplugins for "ur" and Firefox desktop`.
 
-You’ready to *pop* the patch out of the queue. Since it’s likely that there are no other patches, you can pop them all with `-a`.
+You are ready to *pop* the patch out of the queue. Since it’s likely that there are no other patches, you can pop them all with `-a`.
 
 ```BASH
 $ hg qpop -a
