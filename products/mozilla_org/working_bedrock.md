@@ -82,7 +82,7 @@ There are some [shared .lang files](https://github.com/mozilla/bedrock/blob/mast
 * main.lang
 * download_button.lang
 
-If a string is available in one of these files, it can be safely used by any of the other templates. This is useful, but these files should’t become bigger than necessary.
+If a string is available in one of these files, it can be safely used by any of the other templates. This is useful, but these files shouldn’t become bigger than necessary.
 
 ### Loading other .lang files
 
