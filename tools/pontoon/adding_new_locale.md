@@ -18,6 +18,10 @@ You will need to complete the following fields in the next page.
 
 It’s the locale code, in this case `am`.
 
+### Google Translate code
+
+Google Translate maintains a list of supported locales in its own format. Choose one that matches the locale from [a list of supported locales](https://translate.google.com/intl/en/about/languages/) or leave it blank to disable support for Google Translate for this locale.
+
 ### MS translator code
 
 Microsoft Translator maintains a list of supported locales in its own format. Choose one that matches the locale from [a list of supported locales](https://msdn.microsoft.com/en-us/library/hh456380.aspx) or leave it blank to disable support for Microsoft Translator for this locale.
