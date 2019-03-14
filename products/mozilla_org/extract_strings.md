@@ -37,7 +37,6 @@ Note: if there is an update to an existing page, it is advised to still generate
 ### Add notes and comments to the extracted file:
 
 Add important information at the top of the file:
-  `## NOTE: this is a note.`
 * A Note (`## NOTE:`) for [demo/test URLs](https://github.com/mozilla-l10n/www.mozilla.org/blob/master/en-US/firefox/facebookcontainer/index.lang#L2).
 * A Note for test instruction if necessary, for a page that is more dynamic, such as the [privacy_protection_tour.lang](https://github.com/mozilla-l10n/www.mozilla.org/blob/master/en-US/firefox/tracking-protection-tour.lang#L8).
 * Make sure to add tags, if there are strings [bound to l10n tags](working_bedrock.md#l10n-tags).
