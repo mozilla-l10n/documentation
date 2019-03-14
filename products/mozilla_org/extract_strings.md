@@ -37,15 +37,15 @@ Note: if there is an update to an existing page, it is advised to still generate
 ### Add notes and comments to the extracted file:
 
 Add important information at the top of the file:
-* A Note (`## NOTE:`) for [demo/test URLs](https://github.com/mozilla-l10n/www.mozilla.org/blob/master/en-US/firefox/facebookcontainer/index.lang#L2).
-* A Note for test instruction if necessary, for a page that is more dynamic, such as the [privacy_protection_tour.lang](https://github.com/mozilla-l10n/www.mozilla.org/blob/master/en-US/firefox/tracking-protection-tour.lang#L8).
+* A Note (`## NOTE:`) for [demo/test URLs](https://github.com/mozilla-l10n/www.mozilla.org/blob/f5747193ee5af7e83fafa2cf70a2031dfa3d9773/en-US/firefox/facebookcontainer/index.lang#L2).
+* A Note for test instruction if necessary, for a page that is more dynamic, such as the [privacy_protection_tour.lang](https://github.com/mozilla-l10n/www.mozilla.org/blob/f5747193ee5af7e83fafa2cf70a2031dfa3d9773/en-US/firefox/tracking-protection-tour.lang#L8).
 * Make sure to add tags, if there are strings [bound to l10n tags](working_bedrock.md#l10n-tags).
 
 Proceed to the content of the file. Add a comment to the following type of strings to provide more context:
 * Page title and description. Typically, a page title string should be translated in a short or catchy way.
-* If the string contains a link, to which [URL](https://github.com/mozilla-l10n/www.mozilla.org/blob/master/en-US/firefox/tracking-protection-tour.lang#L129) it points to. This gives context to localizers.
-* If a string is behind a tag, make sure to add the [tag binding](https://github.com/mozilla-l10n/langchecker/wiki/.lang-files-format#string-meta-data) it.
-* A new string behind a tag makes another string obsolete. Make sure to add [an obsolete comment](https://github.com/mozilla-l10n/www.mozilla.org/blob/master/en-US/firefox/tracking-protection-tour.lang#L99) to help localizers prioritize their work, and that old and new strings are next to each other. This will also make removal of old strings easier in further updates.
+* If the string contains a link, to which [URL](https://github.com/mozilla-l10n/www.mozilla.org/blob/f5747193ee5af7e83fafa2cf70a2031dfa3d9773/en-US/firefox/tracking-protection-tour.lang#L129) it points to. This gives context to localizers.
+* If a string is behind a tag, make sure to add the [tag bindings](https://github.com/mozilla-l10n/langchecker/wiki/.lang-files-format#string-meta-data).
+* A new string behind a tag makes another string obsolete. Make sure to add [an obsolete comment](https://github.com/mozilla-l10n/www.mozilla.org/blob/f5747193ee5af7e83fafa2cf70a2031dfa3d9773/en-US/firefox/tracking-protection-tour.lang#L99) to help localizers prioritize their work, and that old and new strings are next to each other. This will also make removal of old strings easier in further updates.
 * A comment for an alternative to an expression that may not be culturally relevant, or to a pun that doesn’t translate well.
 * Check English content for capitalization, hyphenated word to make sure they are consistent with the [Firefox style guide](https://design.firefox.com/photon/copy/word-list.html) (macOS vs. MacOS, sign in to vs. sign into).
 

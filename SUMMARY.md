@@ -20,6 +20,7 @@
 * [Firefox for iOS](products/firefox_iOS/README.md)
     * [Reviewing new strings](products/firefox_iOS/review_iOSstrings.md).
 * [Mozilla.org](products/mozilla_org/README.md)
+    * [Process overview to expose mozilla.org content for localization](extract_strings.md)
     * [Working with Bedrock](products/mozilla_org/working_bedrock.md).
     * [Importing translations](tools/webdashboards/import_translations.md).
     * [Updating production](products/mozilla_org/updating_mozillaorg_production.md).
