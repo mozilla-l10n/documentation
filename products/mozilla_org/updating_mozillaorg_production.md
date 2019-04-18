@@ -41,6 +41,17 @@ $ git cherry-pick 31c3920
 $ git push
 ```
 
+## Doing a manual push to production
+
+If you want to do this all manually using Git, you can follow these steps:
+
+1. Make sure the master branches for your clones of both the trunk and production repositories are up to date.
+2. In your local clone of the **production** repo, add a remote that points to the **trunk** repo using `git remote add trunk https://github.com/%GITUHB-USERNAME%/www.mozilla.org.git`.
+3. Run `git checkout master`.
+4. Run `git fetch trunk`.
+5. Now `git cherry-pick` the commit from the **trunk** repo, referencing the Git hash of the commit you wish to include (e.g. `git cherry-pick 31c3920`).
+6. Push the changes to master using `git push upstream master` (assuming `upstream` is your remote that points to `https://github.com/mozilla-l10n/bedrock-l10n.git`).
+
 ## Guidelines
 
 There are some principles to keep in mind when updating the production repository:
