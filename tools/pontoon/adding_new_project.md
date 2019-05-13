@@ -2,7 +2,7 @@
 
 ## Verify that the project is properly localizable
 
-Project owners can follow the [guidelines](https://developer.mozilla.org/en-US/docs/Mozilla/Implementing_Pontoon_in_a_Mozilla_website) available on MDN to properly structure files inside the repository. Some things to check:
+Project owners can follow the [guidelines](https://mozilla-pontoon.readthedocs.io/en/latest/user/localizing-your-projects.html) available in Pontoon Documentation to properly structure files inside the repository. Some things to check:
 * Files should be in a folder like `locale(s)/ab-CD/somefile.extension` and be in one of the supported formats (.ftl, .lang, .properties, .po, .xliff).
 * User **mozilla-pontoon** needs write access to the repository.
 
