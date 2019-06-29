@@ -61,7 +61,7 @@ git config --global push.default simple
 At this point you can run this command to download and execute a setup script. Note that this script must be run with `sudo`, since it needs to install several packages on the system.
 
 ```BASH
-sudo sh -c "wget -O - https://raw.githubusercontent.com/mozilla-l10n/vm_scripts/setup_scripts/setup_vm/setup_vm.sh | bash"
+sudo sh -c "wget -O - https://raw.githubusercontent.com/mozilla-l10n/vm_scripts/master/setup_vm/setup_vm.sh | bash"
 ```
 
 Then run this script as standard user to clone all requested repositories:
