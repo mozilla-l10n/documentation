@@ -1,26 +1,34 @@
 # Setting up a Linux Virtual Machine for Webdashboards
 
-This document describes how to configure a virtual machine based on Linux Ubuntu 16.04 LTS to manage tools like Langchecker, Webdashboard, Stores, Bedrock (mozilla.org). The assumption is that you’ve already installed a software to manage virtual machines, like VMWare Fusion on Mac, and installed Linux.
+This document describes how to configure a virtual machine based on Linux Ubuntu 18.04 LTS to manage tools like Langchecker, Webdashboard, Stores, Bedrock (mozilla.org). The assumption is that you’ve already installed a software to manage virtual machines, like VMWare Fusion on Mac, and installed Linux. The virtual machine should have at least 40 GB of disk, 2 cores and 4 GB or memory.
 
 ## Update the system
 
 First of all, make sure to update the installed packages. Search for the terminal and type:
 
 ```BASH
-sudo sh -c "apt-get update;apt-get dist-upgrade -y;apt-get autoremove -y"
+sudo sh -c "apt update;apt dist-upgrade -y;apt autoremove -y"
 ```
 
 The password for `sudo` is the same you use to login to the system with your user. Once finished, reboot the virtual machine to make sure that all packages are updated.
 
 If you’re using VMWare, make also sure to install VMWare Tools:
-* Select Virtual Machine -> Reinstall VM Tools.
-* Right click on the tar.gz file that will be displayed on the mounted CD-ROM and *Extract to…* the Desktop.
-* Open the terminal and run the installer with `sudo ~/Desktop/vmware-tools-distrib/vmware-install.pl -default`.
-* Remove the folder from your desktop and reboot the VM.
+
+```BASH
+sudo apt install open-vm-tools open-vm-tools-desktop -y
+```
+
+Restart the virtual machine at the end to make sure all packages are up to date.
 
 ## Configure Git and repositories
 
 Before starting the setup you need to make sure to setup Git to use SSH on this VM.
+
+Install Git:
+
+```BASH
+sudo apt install git -y
+```
 
 Generate a new SSH key for this VM (replace the email address placeholder), make sure to setup a passphrase when asked:
 
@@ -85,24 +93,3 @@ Then run the following script providing your GitHub username (e.g. `flodolo`): i
 ```
 
 Make sure to restart the terminal to enable the new command aliases. It’s recommended to use *Terminator*, installed as part of the setup script: it’s an improved terminal with support for tabs and split windows.
-
-## Upgrade to Linux Ubuntu 18.04 LTS
-
-If PHP pages don’t work after upgrading to Ubuntu 18.04 LTS, try removing completely PHP and reinstalling the necessary packages:
-
-```BASH
-sudo apt-get --purge remove php*
-sudo apt-get autoremove -y
-sudo apt-get install -y php php-xml libapache2-mod-php php-cli php-mbstring
-sudo service apache2 restart
-```
-
-For Bedrock, the virtual environment should be removed and recreated from scratch:
-
-```BASH
-cd ~/mozilla/git/bedrock
-rm -rf venv
-virtualenv -p python2.7 venv
-source venv/bin/activate
-pip install -r requirements/dev.txt
-```
