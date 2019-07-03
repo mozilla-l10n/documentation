@@ -3,14 +3,14 @@
 This repository includes several documents describing how to perform internal tasks within the [l10n-drivers team](https://wiki.mozilla.org/L10n:Mozilla_Team) at Mozilla.
 
 Topics covered:
-* Manage [Firefox for Android](products/firefox_android/README.md) and [Firefox desktop](products/firefox_desktop/README.md): setting up builds, bootstrap productization settings, and testing.
+* Manage [Firefox for Android](products/firefox_android/) and [Firefox desktop](products/firefox_desktop/): setting up builds, bootstrap productization settings, and testing.
 * How to [review strings](products/review/review.md) and [perform sign-offs](products/review/signoffs.md) for Firefox desktop and Firefox for Android.
-* Manage [App Store and Google Play](products/appstores/README.md) content updates.
-* Manage [mozilla.org](products/mozilla_org/README.md) localization.
-* Technical documentation and common tasks for our [webdashboards](tools/webdashboards/README.md).
-* Technical documentation for the [Stores web app](tools/stores_l10n/README.md).
-* Perform common and advanced tasks on [Pontoon](tools/pontoon/README.md) like adding new locale, and creating a new project.
-* Other [miscellaneous documents](misc/README.md) related to localization tasks.
+* Manage [App Store and Google Play](products/appstores/) content updates.
+* Manage [mozilla.org](products/mozilla_org/) localization.
+* Technical documentation and common tasks for our [webdashboards](tools/webdashboards/).
+* Technical documentation for the [Stores web app](tools/stores_l10n/).
+* Perform common and advanced tasks on [Pontoon](tools/pontoon/) like adding new locale, and creating a new project.
+* Other [miscellaneous documents](misc/) related to localization tasks.
 
 ## How to read these documents
 

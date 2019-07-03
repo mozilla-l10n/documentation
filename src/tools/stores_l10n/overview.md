@@ -55,7 +55,7 @@ Relevant information in this array:
 
 `$locales_mapping` includes information on mappings between Mozilla’s locale codes, and each store’s internal codes.
 
-`$templates` determines, for each product and channel, which template is used, and which .lang files are associated to a specific part of the template (What’s new, main listing, screenshots). This array is updated every time there is a [new release](../../products/appstores/README.md).
+`$templates` determines, for each product and channel, which template is used, and which .lang files are associated to a specific part of the template (What’s new, main listing, screenshots). This array is updated every time there is a [new release](../../products/appstores/).
 
 In order to add a brand new project, you would need to:
 * Define the new project and supported channels in `$products_data`.
