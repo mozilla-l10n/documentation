@@ -80,7 +80,7 @@ When adding images to a repository, make sure that the size is not too big for t
 * Naming convention: if only a couple of images are needed, make the file name easily identifiable, e.g.: product_feature_type.png.
 * File name must not contain spaces and uppercase, and must use underscore to separate words as needed.
 * Image size: keep it under 800px. If necessary, create two versions: a small one and a bigger one to open when clicked.
-* Image format: `![Encoding bug](/assets/images/l10n_testing/encoding_bug.png)`.
+* Image format: `![Encoding bug](../assets/images/l10n_testing/encoding_bug.png)`.
 * When images contain personal information, such as email addresses, try to blur it out.
 
 ## Tools

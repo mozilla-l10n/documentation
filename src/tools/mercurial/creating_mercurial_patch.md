@@ -8,8 +8,6 @@ Phabricator is the preferred method for patches to main code repositories, like 
 
 As a general rule, before creating a patch, make sure that your environment is [correctly set up](../../tools/mercurial/setting_mercurial_environment.md), and update your local clones.
 
-<!-- toc -->
-
 ## Creating a patch using Phabricator
 
 ### Creating a patch
