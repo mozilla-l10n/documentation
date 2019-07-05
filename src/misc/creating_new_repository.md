@@ -16,7 +16,7 @@ For example, if the project is *Focus for Android*, a good repository name is `f
 
 Set the project as **Public** and don’t initialize it with a README.
 
-![New repository](/assets/images/new_repository/new_repo.png)
+![New repository](../assets/images/new_repository/new_repo.png)
 
 ## Add collaborators
 
@@ -26,7 +26,7 @@ Go into the project settings, panel **Collaborators & teams**:
 * Only when the project is ready for localization, add the **Localizers** group with **Write** permissions. Note that Pontoon’s bot is included in the localizers group, so you will need to enable it for testing the sync process.
 * Add relevant developers as contributors if they need to make commits to the repository (that’s usually the case, in order to update strings).
 
-![New repository](/assets/images/new_repository/settings.png)
+![New repository](../assets/images/new_repository/settings.png)
 
 ## Add a README.md to the project
 

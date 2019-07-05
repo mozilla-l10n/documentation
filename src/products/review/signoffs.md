@@ -1,7 +1,5 @@
 # Sign-offs for Firefox desktop and Firefox for Android
 
-<!-- toc -->
-
 Sign-offs are a way for l10n-drivers to indicate that a specific changeset is technically sound and ready to ship in Firefox desktop or Firefox for Android. Currently, thanks to cross-channel, we ship all versions of Firefox from a [single localization repository](https://hg.mozilla.org/l10n-central/), but sign-offs only happen for the Beta channel:
 * Nightly builds always use the tip of the repository, i.e. the latest changes available.
 * Beta builds only use the signed off version.
@@ -17,7 +15,7 @@ Beta sign-offs are performed on l10n.mozilla.org (elmo) [in this page](https://l
 
 [This page](https://l10n.mozilla.org/shipping/dashboard?tree=fennec_beta&tree=fx_beta) only includes sign-offs for Firefox desktop (`fx_beta`) and Firefox for Android (`fennec_beta`) beta.
 
-![Sign-offs table repository](/assets/images/signoffs/signoffs_table.png)
+![Sign-offs table repository](../../assets/images/signoffs/signoffs_table.png)
 
 A green checkmark is displayed in the *Status* column if the locale has a sign-off, while it’s empty if there are no sign-offs for this locale. This typically happens for brand new locales that are only shipping in Nightly.
 
@@ -30,7 +28,7 @@ The *Action* column can display several icons:
 
 To perform the sign-off, click on the sparkline icon. It will open a new page, showing information about the last sign-off, and the changesets that follows it.
 
-![List of changesets](/assets/images/signoffs/changesets_table.png)
+![List of changesets](../../assets/images/signoffs/changesets_table.png)
 
 For each changeset, it’s possible to check `compare-locale`’s results by clicking on the link in the second column from the left. Errors and warnings would be reported in the link too.
 
@@ -38,17 +36,17 @@ Some changesets won’t have a link to `compare-locales`’s results (e.g. the s
 
 By clicking in one of the cells in the rightmost column, by default you can display a diff between the latest changeset and the most recent sign-off. Note that both circles can be dragged, to display the diff between specific changesets. It’s also possible to load more changeset at the bottom of the table using the *Load more* button.
 
-![Diff view](/assets/images/signoffs/diff_view.png)
+![Diff view](../../assets/images/signoffs/diff_view.png)
 
 In this view, green means that content has been added, red it’s been removed, while orange indicates a change. Each level of the diff can be collapsed simply by clicking on the same line as the file or folder name.
 
 Once you have reviewed the diff, you can return to the previous page, and sign off the changeset by clicking the *sign off…* button. To accept the sign-off, simply click the *Sign off* button:
 
-![Requesting and accepting a sign-off](/assets/images/signoffs/accept_signoff.png)
+![Requesting and accepting a sign-off](../../assets/images/signoffs/accept_signoff.png)
 
 To explicitly reject a sign-off, unselect the *Sign off and accept* checkbox. Then click on *Review…* and reject the sign-off with a reason.
 
-![Rejecting a sign-off](/assets/images/signoffs/reject_signoff.png)
+![Rejecting a sign-off](../../assets/images/signoffs/reject_signoff.png)
 
 ## Things to check when doing a sign-off
 

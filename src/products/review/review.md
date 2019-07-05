@@ -1,7 +1,5 @@
 # Reviewing strings in Firefox desktop and Firefox for Android
 
-<!-- toc -->
-
 ## Review landed strings
 
 Starting from Firefox 57, all versions of Firefox desktop and Firefox for Android ship by localizing a single repository containining the reference English strings, called [gecko-strings](https://hg.mozilla.org/l10n/gecko-strings). It is generated from strings landing in the code repository for each branch (e.g. mozilla-central and comm-central for Nightly, mozilla-beta and comm-beta for Beta, etc.), and it’s exposed to localization tools like Pontoon.

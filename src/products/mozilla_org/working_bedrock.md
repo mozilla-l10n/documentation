@@ -2,8 +2,6 @@
 
 This document covers a few tasks and tips regarding Bedrock.
 
-<!-- toc -->
-
 ## Running Bedrock
 
 You can install Bedrock by following the instructions available in [this page](https://bedrock.readthedocs.io/en/latest/install.html).
