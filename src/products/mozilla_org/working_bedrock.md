@@ -1,5 +1,7 @@
 # Working with Bedrock
 
+<!-- toc -->
+
 This document covers a few tasks and tips regarding Bedrock.
 
 ## Running Bedrock

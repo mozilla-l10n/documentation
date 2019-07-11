@@ -1,5 +1,7 @@
 # Create a patch in Mercurial
 
+<!-- toc -->
+
 There are currently two different methods available to create a patch for Mercurial repositories:
 * [Using **Phabricator**](#creating-a-patch-using-phabricator).
 * [Using **Mercurial Queues**](#creating-a-patch-using-queues) (`mq` extension).
