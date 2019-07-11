@@ -1,5 +1,7 @@
 # Firefox for Android - Manage a new release
 
+<!-- toc -->
+
 When creating a new release, normally the *What’s new* section needs to be moved from Beta to Release, and there are new strings to expose for the Beta channel.
 
 In this example:

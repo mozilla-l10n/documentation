@@ -1,5 +1,7 @@
 # Sign-offs for Firefox desktop and Firefox for Android
 
+<!-- toc -->
+
 Sign-offs are a way for l10n-drivers to indicate that a specific changeset is technically sound and ready to ship in Firefox desktop or Firefox for Android. Currently, thanks to cross-channel, we ship all versions of Firefox from a [single localization repository](https://hg.mozilla.org/l10n-central/), but sign-offs only happen for the Beta channel:
 * Nightly builds always use the tip of the repository, i.e. the latest changes available.
 * Beta builds only use the signed off version.
