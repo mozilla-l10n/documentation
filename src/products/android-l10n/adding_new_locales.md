@@ -1,6 +1,6 @@
 # Adding new locales to specific projects
 
-These are instructions in order to add new locales to Android mobile products living within the android-l10n project.
+These are instructions in order to add new locales to Android mobile products living within the [android-l10n project](https://github.com/mozilla-l10n/android-l10n/).
 
 ## Edit the l10n.toml file(s)
 
