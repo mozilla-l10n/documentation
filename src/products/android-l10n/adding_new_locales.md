@@ -1,4 +1,9 @@
-# Edit the l10n.toml file(s)
+
+# Adding new locales to specific projects
+
+These are instructions in order to add new locales to Android mobile products living within the android-l10n project.
+
+## Edit the l10n.toml file(s)
 
 All android-l10n products live within the [android-l10n project](https://github.com/mozilla-l10n/android-l10n/). Depending on the product that requires new locales to be added, the corresponding l10n.toml file will have to be edited by adding the new locale(s) code(s) in it.
 
@@ -43,6 +48,6 @@ Save your edited file, then commit and push from your branch to the android-l10n
 
 Note that all products except Firefox for Fire TV share strings with Android Components, so you will also have to edit the Android Components l10n.toml file and add the new locale(s) there.
 
-# Add new locales to Pontoon
+## Add new locales to Pontoon
 
 Once the patch has landed, the new locale(s) have to be added in Pontoon as well. The steps to follow can be found in the existing [Pontoon documentation here](https://github.com/mozilla-l10n/documentation/blob/master/src/tools/pontoon/adding_new_locale.md).
