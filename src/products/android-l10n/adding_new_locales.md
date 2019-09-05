@@ -49,4 +49,4 @@ Note that all products except Firefox for Fire TV share strings with Android Com
 
 ## Add new locales to Pontoon
 
-Once the patch has landed, the new locale(s) have to be added in Pontoon as well. The steps to follow can be found in the existing [Pontoon documentation here](tools/pontoon/adding_new_locale.md).
+Once the patch has landed, the new locale(s) have to be added in Pontoon as well. The steps to follow can be found in the existing [Pontoon documentation here](../../tools/pontoon/adding_new_locale.md).
