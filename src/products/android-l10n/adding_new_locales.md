@@ -7,11 +7,11 @@ These are instructions in order to add new locales to Android mobile products li
 All android-l10n products live within the [android-l10n project](https://github.com/mozilla-l10n/android-l10n/). Depending on the product that requires new locales to be added, the corresponding l10n.toml file will have to be edited by adding the new locale(s) code(s) in it.
 
 The l10n.toml files live in their corresponding project folder, located here for:
-* Fenix: https://github.com/mozilla-l10n/android-l10n/blob/master/mozilla-mobile/fenix/l10n.toml
-* Android-Components: https://github.com/mozilla-l10n/android-l10n/blob/master/mozilla-mobile/android-components/l10n.toml
-* Firefox for Fire TV: https://github.com/mozilla-l10n/android-l10n/blob/master/mozilla-mobile/firefox-tv/l10n.toml
-* Firefox Reality: https://github.com/mozilla-l10n/android-l10n/blob/master/MozillaReality/FirefoxReality/l10n.toml
-* Lockwise for Android: https://github.com/mozilla-l10n/android-l10n/blob/master/mozilla-lockwise/lockwise-android/l10n.toml
+* [Fenix](https://github.com/mozilla-l10n/android-l10n/blob/master/mozilla-mobile/fenix/l10n.toml)
+* [Android-Components](https://github.com/mozilla-l10n/android-l10n/blob/master/mozilla-mobile/android-components/l10n.toml)
+* [Firefox for Fire TV](https://github.com/mozilla-l10n/android-l10n/blob/master/mozilla-mobile/firefox-tv/l10n.toml)
+* [Firefox Reality](https://github.com/mozilla-l10n/android-l10n/blob/master/MozillaReality/FirefoxReality/l10n.toml)
+* [Lockwise for Android](https://github.com/mozilla-l10n/android-l10n/blob/master/mozilla-lockwise/lockwise-android/l10n.toml)
 
 Each l10n.toml file typically looks like this:
 
@@ -49,4 +49,4 @@ Note that all products except Firefox for Fire TV share strings with Android Com
 
 ## Add new locales to Pontoon
 
-Once the patch has landed, the new locale(s) have to be added in Pontoon as well. The steps to follow can be found in the existing [Pontoon documentation here](https://github.com/mozilla-l10n/documentation/blob/master/src/tools/pontoon/adding_new_locale.md).
+Once the patch has landed, the new locale(s) have to be added in Pontoon as well. The steps to follow can be found in the existing [Pontoon documentation here](tools/pontoon/adding_new_locale.md).
