@@ -4,8 +4,8 @@
 
 ## Products
 
-* [Android-l10n](products/android_l10n/README.md)
-    * [Adding new locales to specific projects](products/android_l10n/adding_new_locales.md).
+* [Android-l10n](products/android-l10n/README.md)
+    * [Adding new locales](products/android-l10n/adding_new_locales.md).
 * [App stores](products/appstores/README.md)
     * [New Android release](products/appstores/new_release_android.md).
     * [New iOS release](products/appstores/new_release_ios.md).
