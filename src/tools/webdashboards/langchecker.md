@@ -21,7 +21,6 @@ Each project is internally called website, and it’s identified by a numeric in
 | --- | --- | --- |
 | 0 | www.mozilla.org | Used to track all files for www.mozilla.org |
 | 6 | engagement | Used for Engagement material, typically snippets. |
-| 12 | appstores | Used to localize material for AppStore (iOS) and Google Play (Android). |
 
 Let’s consider a simple project like Engagement. This is how its definition looks like in the main `$sites` variable.
 

@@ -20,13 +20,9 @@ Langchecker’s scripts are used to propagate changes to all .lang files, or add
 
 [Webstatus] is used to analyze external projects, currently supporting the following formats: `.po` (Gettext), `.properties`, `.xliff`, and `.ftl` (l20n). It also provides an [API](https://github.com/mozilla-l10n/webstatus/#available-urls) to get list of locales (supported, complete), in JSON or TXT format, for a specific product.
 
-### Stores_l10n
-
-Stores_l10n is a web application used to manage translations for Google Play Store and Apple App Store. It provides Langchecker with the list of locales supported in stores and iOS/Android products. Its API is used by release drivers in [mozapkpublisher](https://github.com/mozilla-releng/mozapkpublisher/), a tool used to publish .apk on Google Play together with Store listing and whatsnew content. Public views are used to copy and paste content on Apple Store (no automation available at the moment).
-
 This diagram describes the relation between each of the components, including relation with external entities.
 
-<a href="/assets/images/webdashboards/webdashboards.png"><img src="/assets/images/webdashboards/webdashboards.png" alt="Webdashboards diagram" style="width: 600px; margin: 0 auto; display: block;"/></a>
+<a href="../../assets/images/webdashboards/webdashboards.png"><img src="../../assets/images/webdashboards/webdashboards.png" alt="Webdashboards diagram" style="width: 600px; margin: 0 auto; display: block;"/></a>
 
 ## Installation
 
@@ -75,11 +71,6 @@ Always work on forks of the main repository and open pull requests if you’re g
 
 * Production instance: https://l10n.mozilla-community.org/webstatus/
 * Code: https://github.com/mozilla-l10n/webstatus
-
-### Stores
-
-* Production instance: https://l10n.mozilla-community.org/stores_l10n/
-* Code: https://github.com/mozilla-l10n/stores_l10n
 
 [Webdashboard]: https://l10n.mozilla-community.org/webdashboard/
 [Webstatus]: https://l10n.mozilla-community.org/webstatus/

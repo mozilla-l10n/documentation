@@ -1,6 +1,6 @@
 # Setting up a Linux Virtual Machine for Webdashboards
 
-This document describes how to configure a virtual machine based on Linux Ubuntu 18.04 LTS to manage tools like Langchecker, Webdashboard, Stores, Bedrock (mozilla.org). The assumption is that you’ve already installed a software to manage virtual machines, like VMWare Fusion on Mac, and installed Linux. The virtual machine should have at least 40 GB of disk, 2 cores and 4 GB or memory.
+This document describes how to configure a virtual machine based on Linux Ubuntu 18.04 LTS to manage tools like Langchecker, Bedrock (mozilla.org). The assumption is that you’ve already installed a software to manage virtual machines, like VMWare Fusion on Mac, and installed Linux. The virtual machine should have at least 40 GB of disk, 2 cores and 4 GB or memory.
 
 ## Update the system
 
@@ -83,7 +83,6 @@ The entire procedure will take several minutes, depending on the speed of your I
 All projects are now cloned using https and the original repository as `origin` (e.g. mozilla-l10n for langchecker), so you won’t be able to commit any changes. **If you plan to make updates and commit them**, make sure to create forks of the following repositories in your account:
 * langchecker: https://github.com/mozilla-l10n/langchecker
 * webdashboard: https://github.com/mozilla-l10n/webdashboard
-* stores_l10n: https://github.com/mozilla-l10n/stores_l10n
 * bedrock: https://github.com/mozilla/bedrock
 
 Then run the following script providing your GitHub username (e.g. `flodolo`): it will setup the original repository as a remote called `upstream`, and your fork as `origin`. It will also switch relevant l10n repositories, like mozilla_org, to ssh to allow you to make direct commits.
