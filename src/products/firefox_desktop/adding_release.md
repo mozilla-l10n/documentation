@@ -5,6 +5,7 @@ The majority of the work has already been completed when setting up [Nightly bui
 * Localization team has demonstrated a consistent effort, being able to keep up for at least a couple of cycles with the incoming flow of new strings.
 * L10n-drivers have performed testing of the builds on different operative systems without identifying critical issues.
 * There is a relevant number of users on the Nightly channel. This number varies based on the language, for minority languages 10-20 users is a good result. Also, a trend showing growth is important as well.
+* Make sure that `MOZ_LANG_TITLE` in `toolkit/defines.inc` has the correct value, since it’s used to set up the language pack on AMO.
 
 To track this work, you need to file a bug in Firefox::Build Config (like [this example](https://bugzilla.mozilla.org/show_bug.cgi?id=1359321)), blocking the original tracking bug for the locale (`fx-l10n-LOCALE`).
 
@@ -60,6 +61,6 @@ The language pack for the new locale will be uploaded automatically by release a
 * The `target_locale` field needs to be set for the language pack (via Django admin UI).
 * The locale needs to be defined in [this JavaScript file](https://github.com/mozilla/addons-frontend/blob/master/src/core/languages.js).
 
-For the first two steps, an email needs to be sent to AMO administrators (amo-admins(at)mozilla.org).
+For the first two steps, an email needs to be sent to AMO administrators (amo-admins(at)mozilla.com).
 
 These steps will make the language pack available in both the [Language Tools](https://addons.mozilla.org/firefox/language-tools/) page and the API used by Firefox to add new languages from preferences.
