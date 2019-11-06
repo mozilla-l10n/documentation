@@ -11,7 +11,7 @@ Sign-offs are tied to a specific app version. For example, Firefox 57 starts in 
 
 Note that sign-offs on Beta are not possible through the entire cycle: sign-offs deadline is normally on Wednesday, about 2 weeks before the release, to allow time for at least one more Beta build before the end of the cycle.
 
-Beta sign-offs are performed on l10n.mozilla.org (elmo) [in this page](https://l10n.mozilla.org/shipping/dashboard?tree=fennec_beta&tree=fx_beta).
+Beta sign-offs are performed on l10n.mozilla.org (Elmo) [in this page](https://l10n.mozilla.org/shipping/dashboard?tree=fennec_beta&tree=fx_beta).
 
 ## How to perform sign-offs
 
@@ -49,6 +49,25 @@ Once you have reviewed the diff, you can return to the previous page, and sign o
 To explicitly reject a sign-off, unselect the *Sign off and accept* checkbox. Then click on *Review…* and reject the sign-off with a reason.
 
 ![Rejecting a sign-off](../../assets/images/signoffs/reject_signoff.png)
+
+## Bulk sign-offs
+
+A [new view](https://l10n.mozilla.org/shipping/drivers) has been added to Elmo to perform sign-offs in bulk. This is particularly useful, for example, after running Fluent migrations, when all locales receive changes and would require an updated sign-off.
+
+![Bulk sign-offs landing page](../../assets/images/signoffs/drivers_view.png)
+
+In the initial page it’s possible to select a product version. For example, clicking `Firefox 71` in the *Bulk Sign-Off* column will lead to this view:
+
+![Single product, bulk sign-offs page](../../assets/images/signoffs/drivers_view_product.png)
+
+The number of rows displayed depends on how many pending sign-offs there are for the requested product version. If there aren’t new changesets compared to the existing sign-offs, the table will be empty.
+
+In each row:
+* The first column shows the locale code, with a link to the locale’s sign-off page for the product version (e.g. `/shipping/signoffs/ach/fx71`).
+* The second column has the summary of `compare-locales`’s run for the latest changeset (link points to the full results). If empty, it means that there are no results available: either checks are still queued, or they didn’t run because the latest changeset doesn’t include files relevant for the requested product version (e.g. only Thunderbird changes, when the sign-off is for Firefox).
+* The third column links to the diff view between the last accepted sign-off and the latest changeset.
+
+After reviewing the diff, to accept a sign-off you can click the *Accept* button. It’s important to note that there will be no confirmation dialog, and it’s not possible to reject a sign-off from this view. The row will be automatically removed from the table after accepting a sign-off.
 
 ## Things to check when doing a sign-off
 
