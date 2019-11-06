@@ -7,6 +7,7 @@ Topics covered:
 * How to [review strings](products/review/review.md) and [perform sign-offs](products/review/signoffs.md) for Firefox desktop and Firefox for Android.
 * Manage [App Store and Google Play](products/appstores/) content updates.
 * Manage [mozilla.org](products/mozilla_org/) localization.
+* Manage [other projects](products/other/) (Firefox Monitor, Firefox Send).
 * Technical documentation and common tasks for our [webdashboards](tools/webdashboards/).
 * Perform common and advanced tasks on [Pontoon](tools/pontoon/) like adding new locale, and creating a new project.
 * Other [miscellaneous documents](misc/) related to localization tasks.
