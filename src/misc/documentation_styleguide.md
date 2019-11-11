@@ -30,7 +30,7 @@ This is some other text.
 
 ## Titles
 
-* Use the dash syntax, leave one space after the dash, e.g. `# This is a title`.
+* Use the hash syntax, leave one space after the hash, e.g. `# This is a title`.
 * Use sentence case, avoid title case.
 * Documents should always start with a 1st level title. There should be **only one** 1st level title across the document.
 * Leave an empty line before and after each title. The only exception is the 1st level title at the beginning of the page.
