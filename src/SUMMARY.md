@@ -13,6 +13,7 @@
     * [Single-locale builds](products/firefox_android/adding_singlelocale.md).
     * [Multi-locales build](products/firefox_android/adding_multilocales.md).
 * [Firefox Desktop](products/firefox_desktop/README.md)
+    * [Add to Pontoon](products/firefox_desktop/adding_pontoon.md).
     * [Nightly builds](products/firefox_desktop/adding_nightly.md).
     * [Beta/Release builds](products/firefox_desktop/adding_release.md).
     * [Removing locales](products/firefox_desktop/removing_locales.md).
