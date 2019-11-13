@@ -9,9 +9,6 @@
 * [App stores](products/appstores/README.md)
     * [New Android release](products/appstores/new_release_android.md).
     * [New iOS release](products/appstores/new_release_ios.md).
-* [Firefox for Android](products/firefox_android/README.md)
-    * [Single-locale builds](products/firefox_android/adding_singlelocale.md).
-    * [Multi-locales build](products/firefox_android/adding_multilocales.md).
 * [Firefox Desktop](products/firefox_desktop/README.md)
     * [Nightly builds](products/firefox_desktop/adding_nightly.md).
     * [Beta/Release builds](products/firefox_desktop/adding_release.md).
