@@ -3,8 +3,7 @@
 This repository includes several documents describing how to perform internal tasks within the [l10n-drivers team](https://wiki.mozilla.org/L10n:Mozilla_Team) at Mozilla.
 
 Topics covered:
-* Manage [Firefox for Android](products/firefox_android/) and [Firefox desktop](products/firefox_desktop/): setting up builds, bootstrap productization settings, and testing.
-* How to [review strings](products/review/review.md) and [perform sign-offs](products/review/signoffs.md) for Firefox desktop and Firefox for Android.
+* How to [review strings](products/review/review.md) and [perform sign-offs](products/review/signoffs.md) for Firefox desktop.
 * Manage [App Store and Google Play](products/appstores/) content updates.
 * Manage [mozilla.org](products/mozilla_org/) localization.
 * Manage [other projects](products/other/) (Firefox Monitor, Firefox Send).
