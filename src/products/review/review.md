@@ -1,10 +1,10 @@
-# Reviewing strings in Firefox desktop and Firefox for Android
+# Reviewing strings in Firefox desktop
 
 <!-- toc -->
 
 ## Review landed strings
 
-Starting from Firefox 57, all versions of Firefox desktop and Firefox for Android ship by localizing a single repository containining the reference English strings, called [gecko-strings](https://hg.mozilla.org/l10n/gecko-strings). It is generated from strings landing in the code repository for each branch (e.g. mozilla-central and comm-central for Nightly, mozilla-beta and comm-beta for Beta, etc.), and it’s exposed to localization tools like Pontoon.
+Starting from Firefox 57, all versions of Firefox desktop ship by localizing a single repository containing the reference English strings, called [gecko-strings](https://hg.mozilla.org/l10n/gecko-strings). It is generated from strings landing in the code repository for each branch (e.g. mozilla-central and comm-central for Nightly, mozilla-beta and comm-beta for Beta, etc.), and it’s exposed to localization tools like Pontoon.
 
 There is a second repository, [gecko-strings-quarantine](https://hg.mozilla.org/users/axel_mozilla.com/gecko-strings-quarantine), used as a buffer to avoid exposing poor strings to the larger audience of localizers.
 
@@ -59,7 +59,7 @@ Let’s assume that:
 Then run
 
 ```
-$ compare-locales --unified --full ~/src/mozilla-unified/browser/locales/l10n.toml ~/src/mozilla-unified/mobile/android/locales/l10n.toml ~/l10n gecko-strings-quarantine
+$ compare-locales --unified --full ~/src/mozilla-unified/browser/locales/l10n.toml ~/l10n gecko-strings-quarantine
 ```
 
 If you also have [comm-central](https://hg.mozilla.org/comm-central) checked out, you can check Thunderbird and allies with:
@@ -70,30 +70,30 @@ $ compare-locales --unified --full -Dmozilla=~/src/mozilla-unified/ ~/src/comm-c
 
 When running these, you should see no errors or warnings. When running them against the central revisions, you should see no missing or changed strings, while having obsolete strings is expected. When running against beta or release revisions, expect to have changed strings, but again, no missing strings.
 
-Note: when running compare-locales against a non-existing locale code, use the `--full` commandline argument to get all strings in submodules. In particular for gecko-strings, you need that, otherwise you only get the strings in the `browser` and `mobile/android` directories.
+Note: when running compare-locales against a non-existing locale code, use the `--full` commandline argument to get all strings in submodules. In particular for gecko-strings, you need that, otherwise you only get the strings in the `browser` directory.
 
 ### Run compare-locales against a localization repository
 
 A good next step to check for issues is to run compare-locales against a localization repository frequently updated (Italian and French are good examples).
 * [l10n-central/it](https://hg.mozilla.org/l10n-central/it) is cloned in `~/l10n/it`.
 
-To run compare-locales against `mozilla-unified` and Italian, for both desktop and Android, you can run:
+To run compare-locales against `mozilla-unified` and Italian you can run:
 
 ```
-$ compare-locales --unified ~/src/mozilla-unified/browser/locales/l10n.toml ~/src/mozilla-unified/mobile/android/locales/l10n.toml ~/l10n it
+$ compare-locales --unified ~/src/mozilla-unified/browser/locales/l10n.toml ~/l10n it
 ```
 
-To run compare-locales against `gecko-strings-quarantine` and Italian, for both desktop and Android, you can run:
+To run compare-locales against `gecko-strings-quarantine` and Italian you can run:
 
 ```
-$ compare-locales --unified ~/l10n/gecko-strings-quarantine/_configs/browser.toml ~/l10n/gecko-strings-quarantine/_configs/mobile-android.toml ~/l10n it
+$ compare-locales --unified ~/l10n/gecko-strings-quarantine/_configs/browser.toml ~/l10n it
 ```
 
 Both are really long commands, so it’s convenient to create Bash aliases in `~/.bash_profile` for them, e.g.
 
 ```
-cmp_moz="compare-locales --unified ~/src/mozilla-unified/browser/locales/l10n.toml ~/src/mozilla-unified/mobile/android/locales/l10n.toml ~/l10n it"
-cmp_mozx="compare-locales --unified ~/l10n/gecko-strings-quarantine/_configs/browser.toml ~/l10n/gecko-strings-quarantine/_configs/mobile-android.toml ~/l10n it"
+cmp_moz="compare-locales --unified ~/src/mozilla-unified/browser/locales/l10n.toml ~/l10n it"
+cmp_mozx="compare-locales --unified ~/l10n/gecko-strings-quarantine/_configs/browser.toml ~/l10n it"
 ```
 
 Let’s start with the output of `compare-locales` against `gecko-strings-quarantine`: most of the time, it should only report missing strings. There will be obsolete strings only if a string was removed, which is a rare event in cross-channel.
@@ -101,7 +101,7 @@ Let’s start with the output of `compare-locales` against `gecko-strings-quaran
 For example, this is the output for a fully localized locale.
 
 ```
-$ compare-locales --unified ~/l10n/gecko-strings-quarantine/_configs/browser.toml ~/l10n/gecko-strings-quarantine/_configs/mobile-android.toml ~/l10n it
+$ compare-locales --unified ~/l10n/gecko-strings-quarantine/_configs/browser.toml ~/l10n it
 it:
 changed: 9914
 changed_w: 52351
@@ -116,7 +116,7 @@ Check the results for duplicated strings and errors. For example, if a new error
 The output of `compare-locales` against `mozilla-unified` is going to contain a lot of noise, since it includes all strings that are obsolete for `mozilla-central`, but are still needed for other branches. If you’re interested in only seeing missing strings, i.e. strings that need to be added to the l10n repository, you can `grep` the results by piping the output to `egrep '^\s*\+'`.
 
 ```
-$ compare-locales --unified ~/src/mozilla-unified/browser/locales/l10n.toml ~/src/mozilla-unified/mobile/android/locales/l10n.toml ~/l10n it | egrep '^\s*\+'
+$ compare-locales --unified ~/src/mozilla-unified/browser/locales/l10n.toml ~/l10n it | egrep '^\s*\+'
 ```
 
 ### Push reviewed strings to gecko-strings
