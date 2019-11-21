@@ -2,7 +2,6 @@
 
 Langchecker is the main repository to update when adding or updating files. There are four different configuration files:
 * [app/config/locales.inc.php](https://github.com/mozilla-l10n/langchecker/blob/master/app/config/locales.inc.php): it contains several lists of locales, like locales supported in mozilla.org, locales only working in Fennec, etc. These lists are then used in the main configuration file to determine which locales are supported for each file. Normally you would need to update this file only when bootstrapping new languages.
-* [app/config/store_locales.inc.php](https://github.com/mozilla-l10n/langchecker/blob/master/app/config/store_locales.inc.php): this file is generated automatically from external data and tracks locales supported in online stores (Play Store, App Store).
 * [app/config/websites.inc.php](https://github.com/mozilla-l10n/langchecker/blob/master/app/config/websites.inc.php): it contains the configuration for websites (projects) supported in Langchecker.
 * [app/config/sources.inc.php](https://github.com/mozilla-l10n/langchecker/blob/master/app/config/sources.inc.php): it contains the configuration for all files supported in Langchecker.
 
