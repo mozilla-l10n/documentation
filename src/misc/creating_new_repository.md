@@ -8,7 +8,7 @@ Note that you need to be a manager of the organization in order to create a new 
 
 A new repository can be created in [this page](https://github.com/organizations/mozilla-l10n/repositories/new), or using the **New** button in the organization’s landing page.
 
-**Name**: always include the `-l10n` suffix for localization repositories, to differentiate them from other repositories used for tools. Notable exceptions to this rule are `appstores` and `www.mozilla.org`.
+**Name**: always include the `-l10n` suffix for localization repositories, to differentiate them from other repositories used for tools. Notable exception to this rule is `www.mozilla.org`.
 
 For example, if the project is *Focus for Android*, a good repository name is `focus-android-l10n`.
 
