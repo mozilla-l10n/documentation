@@ -4,7 +4,6 @@ This repository includes several documents describing how to perform internal ta
 
 Topics covered:
 * How to [review strings](products/review/review.md) and [perform sign-offs](products/review/signoffs.md) for Firefox desktop.
-* Manage [App Store and Google Play](products/appstores/) content updates.
 * Manage [mozilla.org](products/mozilla_org/) localization.
 * Manage [other projects](products/other/) (Firefox Monitor, Firefox Send).
 * Technical documentation and common tasks for our [webdashboards](tools/webdashboards/).
