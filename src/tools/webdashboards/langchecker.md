@@ -70,7 +70,7 @@ $engagement_lang = [
 ```
 
 Flags commonly used are:
-* **obsolete**: the file won’t be displayed in webdashboard at all, and its strings won’t be counted in stats. It’s usually used to mark a file that will be completely deleted later but needs to remain in the repository.
+* **obsolete**: this field was used to hide specific elements from the Webdashboard, typically files that needed to remain in the repository and would be removed later.
 * **opt-in**: the file was requested only for some locales, but others can decide to *opt-in* and request the page for translation through Bugzilla.
 
 For more details on the structure of this file, check the [add_new_file.md](documentation to track new files).

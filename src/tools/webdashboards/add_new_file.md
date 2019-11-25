@@ -65,6 +65,8 @@ For the list of locales you should check the definition for existing similar fil
 
 ### Priority
 
+NOTE: The *priority* field was used only by the Webdashboard. It can still be used to store a reference to the expected priority.
+
 Priority is optional and can defined for each file. If the priority is the same for all locales, you can assign the integer value (from 1 to 5) to a `priority` key.
 
 ```PHP
@@ -127,7 +129,7 @@ In this case, the request is to flag the file as opt-in for all locales.
 
 ### Deadline
 
-If a file is critical, you also want to set a deadline for it: in the last week before deadline the date will be displayed in orange on the Webdashboard, after deadline it will be displayed in red.
+NOTE: The *deadline* field was used only by the Webdashboard. It can still be used to store a reference to the expected deadline.
 
 If the deadline is the same for all locales, you can assign the date (as a string in ISO format YYYY-MM-DD) to a `deadline` key. In this case, deadline needs to be set to May 30th, 2016 (2016-05-30):
 
