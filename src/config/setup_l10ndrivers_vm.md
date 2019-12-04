@@ -82,7 +82,6 @@ The entire procedure will take several minutes, depending on the speed of your I
 
 All projects are now cloned using https and the original repository as `origin` (e.g. mozilla-l10n for langchecker), so you won’t be able to commit any changes. **If you plan to make updates and commit them**, make sure to create forks of the following repositories in your account:
 * langchecker: https://github.com/mozilla-l10n/langchecker
-* webdashboard: https://github.com/mozilla-l10n/webdashboard
 * bedrock: https://github.com/mozilla/bedrock
 
 Then run the following script providing your GitHub username (e.g. `flodolo`): it will setup the original repository as a remote called `upstream`, and your fork as `origin`. It will also switch relevant l10n repositories, like mozilla_org, to ssh to allow you to make direct commits.

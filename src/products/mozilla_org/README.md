@@ -7,4 +7,4 @@ Some documentation specific for common tasks on mozilla.org
 * [Updating mozilla.org production](updating_mozillaorg_production.md).
 * [Enable a new locale on production](enable_production.md).
 
-For documentation about Webdashboard and Langchecker, see [this page](../../tools/webdashboards/).
+For documentation about Langchecker, see [this page](../../tools/webdashboards/).

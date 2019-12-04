@@ -1,28 +1,10 @@
 # Webdashboards
 
-## Structure
-
-There are four interdependent elements in the current webdashboard system.
-
-### Webdashboard
-
-[Webdashboard] is the main dashboard used by localizers. It contains information about files with missing strings, deadlines, and more. Data is also available via RSS, with information about missing strings and deadlines.
-
-Webdashboard in itself doesn’t generate any data, it just displays information provided by Langchecker and Webstatus in JSON format.
-
-### Langchecker
+## Langchecker
 
 [Langchecker](langchecker.md) is used to analyze all projects using .lang files as data sources. It also stores all configuration information needed to manage these repositories: which projects are supported, which files are in each project, which locales are supported for each project or file, metadata like critical status or deadlines.
 
 Langchecker’s scripts are used to propagate changes to all .lang files, or add news ones, in l10n repositories. It also provides an API to retrieve translations, and information about coverage, i.e how many locales translated a specific string or a page, and what percentage of the l10n population that represents.
-
-### Webstatus
-
-[Webstatus] is used to analyze external projects, currently supporting the following formats: `.po` (Gettext), `.properties`, `.xliff`, and `.ftl` (l20n). It also provides an [API](https://github.com/mozilla-l10n/webstatus/#available-urls) to get list of locales (supported, complete), in JSON or TXT format, for a specific product.
-
-This diagram describes the relation between each of the components, including relation with external entities.
-
-<a href="../../assets/images/webdashboards/webdashboards.png"><img src="../../assets/images/webdashboards/webdashboards.png" alt="Webdashboards diagram" style="width: 600px; margin: 0 auto; display: block;"/></a>
 
 ## Installation
 
@@ -34,7 +16,6 @@ Note that the instances on the l10n community server of all products use a GitHu
 
 For detailed information check the specific pages for each project:
 * [Langchecker](langchecker.md).
-* [Webdashboard](webdashboard.md).
 
 These are detailed instructions for the most common tasks:
 * [Add locales to an existing file](add_locales.md).
@@ -53,24 +34,11 @@ Always work on forks of the main repository and open pull requests if you’re g
 
 ### Mozilla.org
 
-* Code repository (codename bedrock): https://github.com/mozilla/bedrock
-* Trunk localization: https://github.com/mozilla-l10n/www.mozilla.org
-* Production localization: https://github.com/mozilla-l10n/bedrock-l10n
-
-### Webdashboard
-
-* Production instance: https://l10n.mozilla-community.org/webdashboard/
-* Code: https://github.com/mozilla-l10n/webdashboard/
+* Code repository (codename bedrock): [https://github.com/mozilla/bedrock](https://github.com/mozilla/bedrock)
+* Trunk localization: [https://github.com/mozilla-l10n/www.mozilla.org](https://github.com/mozilla-l10n/www.mozilla.org)
+* Production localization: [https://github.com/mozilla-l10n/bedrock-l10n](https://github.com/mozilla-l10n/bedrock-l10n)
 
 ### Langchecker
 
-* Production instance:https://l10n.mozilla-community.org/langchecker/
-* Code: https://github.com/mozilla-l10n/langchecker/
-
-### Webstatus
-
-* Production instance: https://l10n.mozilla-community.org/webstatus/
-* Code: https://github.com/mozilla-l10n/webstatus
-
-[Webdashboard]: https://l10n.mozilla-community.org/webdashboard/
-[Webstatus]: https://l10n.mozilla-community.org/webstatus/
+* Production instance: [https://l10n.mozilla-community.org/langchecker/](https://l10n.mozilla-community.org/langchecker/)
+* Code: [https://github.com/mozilla-l10n/langchecker/](https://github.com/mozilla-l10n/langchecker/)
