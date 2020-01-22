@@ -52,7 +52,6 @@ Once you’ve created a new tag, you need to save the project in order to be abl
 
 A few tips on using this section:
 * Use the selector on the right (highlighted in orange) to switch between *Linked* resources, i.e. resources already associated to the tag, and *Unlinked* resources.
-* It’s possible to use wildcards in the search box, e.g. `devtools/*` or `*/client/*`.
 * The first checkbox on the left (highlighted in green) allows to select all displayed items. Note: if the search returns multiple pages, only those currently displayed are selected and will be linked if *Link resources* is clicked.
 * There is no need to save the project when adding resources to a tag: linked resources are stored in the database as soon as they’re added with the *Link resources* button.
 
