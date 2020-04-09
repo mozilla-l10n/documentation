@@ -1,8 +1,7 @@
 # Adding a new locale to Pontoon
 
-Before addind a new locale to Pontoon, the `hg` repository needs to be already set up. For brand new locales:
-
-* Create a new public Mercurial repository in the [mozilla-l10n](https://bitbucket.org/mozilla-l10n/) organization on BitBucket.
-* Push at least one change to the repository, otherwise Pontoon will not pick it up during sync. The safest change it to initialize the `toolkit/chrome/global/intl.properties` file with the correct values ([example](https://bitbucket.org/mozilla-l10n/ppl/commits/b3fd0faf59b0b45b2cf30c01d85157beee2a0bd0 )).
+* If the locale is not [available](https://pontoon.mozilla.org/teams/) in Pontoon yet, [consult this document](../../tools/pontoon/adding_new_locale.md) for instructions on how to add it.
+* File a bug to create a new Mercurial repository in [l10n-central](https://hg.mozilla.org/l10n-central/). Several bug templates, including one to request a new repository, are available in [this page](https://l10n.mozilla.org/bugs/new-locale). For more information about these templates, [refer to this document](adding_nightly.md).
+* Push at least one change to the repository, otherwise Pontoon will not pick it up during sync. The safest change is to initialize the `toolkit/chrome/global/intl.properties` file with the correct values ([example](https://hg.mozilla.org/l10n-central/ppl/rev/b3fd0faf59b0b45b2cf30c01d85157beee2a0bd0)).
 
 Once the repository is available and contains at least one commit, the locale can be added to the Firefox project in Pontoon.

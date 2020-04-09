@@ -17,11 +17,9 @@ Click the *Create Buglinks* button, and a set of links will appear at the bottom
 
 Always double check the content of the bugs for errors or outdated content. If the information is obsolete, you can update the templates in this [Wiki page](https://wiki.mozilla.org/L10n:Bugogram) (it will require a new deployment of Elmo to production to update the code generating the links).
 
-## Land initial content in l10n repository
+## Verify content in l10n repository
 
-With cross-channel, all builds of Firefox are generated using strings from the l10n-central repository. If a project started localizing using a BitBucket repository, it’s **fundamental** to populate l10n-central with that content when requesting the official repository creation on `https://hg.mozilla.org/l10n-central/LOCALE_CODE`.
-
-After the first content lands in l10n-central, it’s a good idea to perform some basic checks before enabling the build:
+Before enabling the build, it’s a good idea to perform some basic checks:
 * Check `toolkit/global/intl.properties` ([en-US version](https://hg.mozilla.org/mozilla-central/file/default/toolkit/locales/en-US/chrome/global/intl.properties)) for evident mistakes.
 * Check if there’s a `region.properties` file in `browser/chrome/browser-region/region.properties`, if needed replace it with the [stock version](../searchplugins/files/desktop_region.properties).
 
