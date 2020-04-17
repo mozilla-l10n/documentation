@@ -67,7 +67,7 @@ The duration of this step depends on the number of migrations and the speed of t
 
 While migrations run, it’s important to look out for errors in the console, even if the standard output is quite noisy:
 * Python errors with a stack trace are unlikely at this stage of the development, since it means that the code encountered a scenario that it’s unable to manage. If something is broken in the `fluent.migrate` package, or there are issues with Python dependencies, the migration should stop at the very beginning.
-* For Mercurial, one potential error scenario is a push that would create a new head in the remote repository. The script automatically pulls from the remote repository before running migrations, and Pontoon’s sync is disabled, so that shouldn’t happen, unless a previous migration failed to push to remote and left unsynced local commits.
+* For Mercurial, one potential error scenario is a push that would create a new head in the remote repository (`abort: push creates new remote head`, followed by a changeset ID). The script automatically pulls from the remote repository before running migrations, and Pontoon’s sync is disabled, so that shouldn’t happen, unless a previous migration failed to push to remote and left unsynced local commits. In this case, the easiest solution is to clone the repository for this locale from scratch, and run the migration only for that specific locale.
 
 ## Re-enable Sync in Pontoon
 
