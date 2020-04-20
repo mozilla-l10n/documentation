@@ -7,7 +7,11 @@ At the core of each migration there is a Python file, called **migration recipe*
 * Remove obsolete strings.
 * Include a migration recipe.
 
-The goal is to port existing translations to the new format without forcing community to retranslate them. For that to happen, migrations need to be performed before the new strings are available in our localization tool (Pontoon). This means that patches including migrations should only be pushed from the quarantine repository to `gecko-strings` following the steps described in this document.
+Once such patch lands in `mozilla-central`, it will be converted as part of the cross-channel generation, and pushed to a quarantine repository (`gecko-strings-quarantine`). At this point, this new content is not visible yet in [Pontoon](https://pontoon.mozilla.org/).
+
+The goal of migrations is to port existing translations to the new format without forcing community to retranslate them. For that to happen, migrations need to be performed before the new strings are pushed to the official `gecko-strings` repository, and become available in Pontoon.
+
+This means that patches including migrations should only be pushed from the quarantine repository to `gecko-strings` following the steps described in this document.
 
 ## Running Fluent migrations
 
