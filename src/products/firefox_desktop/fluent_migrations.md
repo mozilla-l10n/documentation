@@ -1,12 +1,25 @@
-# Running Fluent migrations
+# Fluent migrations
 
-[Fluent migrations](https://firefox-source-docs.mozilla.org/l10n/migrations/index.html) are used to migrate existing translations from legacy formats (DTD, properties) to Fluent, or existing Fluent messages to new messages or different FTL files. This document describes in detail which operations need to be performed in order to run migrations on over 150 Mercurial repositories for Firefox. Several access rights are required:
+[Fluent migrations](https://firefox-source-docs.mozilla.org/l10n/migrations/index.html) are used to migrate existing translations from legacy formats (DTD, properties) to Fluent, or existing Fluent messages to new messages or different FTL files.
+
+At the core of each migration there is a Python file, called **migration recipe**, that instructs the system on how to port existing translations to Fluent. Typically, a patch migrating content to Fluent will:
+* Add new Fluent strings or files.
+* Remove obsolete strings.
+* Include a migration recipe.
+
+The goal is to port existing translations to the new format without forcing community to retranslate them. For that to happen, migrations need to be performed before the new strings are available in our localization tool (Pontoon). This means that patches including migrations should only be pushed from the quarantine repository to `gecko-strings` following the steps described in this document.
+
+## Running Fluent migrations
+
+This section of the document describes in detail which operations need to be performed in order to run migrations on over 150 Mercurial repositories for Firefox.
+
+### Prerequisites
+
+Several access rights are required:
 * Write access to [l10n-central](https://hg.mozilla.org/l10n-central), i.e. SSH access with `active_scm_l10n` rights. It’s possible to check your *Access Groups* in [your profile on people.mozilla.org](https://people.mozilla.org/e#nav-access-groups).
 * Sign-off rights in [Elmo](https://l10n.mozilla.org/).
 * Admin access to [Pontoon](https://pontoon.mozilla.org/).
 * An account on Heroku with access to [Pontoon apps](https://dashboard.heroku.com/apps/mozilla-pontoon/resources).
-
-## Prerequisites
 
 In order to run migrations:
 * Install the [fluent.migrate](https://pypi.org/project/fluent.migrate/) Python package.
@@ -15,11 +28,11 @@ In order to run migrations:
 
 A set of scripts to automate cloning and updating of the l10n-central repositories is [available here](https://github.com/flodolo/scripts/tree/master/mozilla_l10n/clone_hgmo).
 
-## Preliminary steps
+### Clean up existing sign-offs
 
 Migrations will create new changesets in each of the repositories. Before starting, it’s highly recommended to review all pending sign-offs in Elmo for the current Firefox Beta. More details about the sign-off process are available in [this document](../review/signoffs.md).
 
-## Stop sync in Pontoon
+### Stop sync in Pontoon
 
 Before starting the migration process, sync needs to be suspended for all projects relying on the l10n-central repositories. The list of affected projects is:
 * Firefox
@@ -39,13 +52,13 @@ The last step here is to make sure that the current sync process has completed, 
 
 It’s important to make sure that there is no sync in progress when upgrading the worker, because that will kill any pending process.
 
-## Push updates to gecko-strings
+### Push updates to gecko-strings
 
 Assuming the new strings are available in the [quarantine repository](https://hg.mozilla.org/users/axel_mozilla.com/gecko-strings-quarantine), it’s now time to push the updates to the official [gecko-strings repository](https://hg.mozilla.org/l10n/gecko-strings).
 
 Pontoon relies on a [different repository](https://hg.mozilla.org/users/m_owca.info/firefox-central/), that is generated every 20 minutes based on the content of `gecko-strings`. That’s why it’s useful to run this update before starting the actual migrations.
 
-## Run migrations
+### Run migrations
 
 A series of tools and helpers to run migrations is available in [this repository](https://github.com/flodolo/fluent-migrations):
 * Clone the repository locally and follow the instructions available in the [README](https://github.com/flodolo/fluent-migrations/blob/master/README.md) to set the configuration file.
@@ -69,7 +82,7 @@ While migrations run, it’s important to look out for errors in the console, ev
 * Python errors with a stack trace are unlikely at this stage of the development, since it means that the code encountered a scenario that it’s unable to manage. If something is broken in the `fluent.migrate` package, or there are issues with Python dependencies, the migration should stop at the very beginning.
 * For Mercurial, one potential error scenario is a push that would create a new head in the remote repository (`abort: push creates new remote head`, followed by a changeset ID). The script automatically pulls from the remote repository before running migrations, and Pontoon’s sync is disabled, so that shouldn’t happen, unless a previous migration failed to push to remote and left unsynced local commits. In this case, the easiest solution is to clone the repository for this locale from scratch, and run the migration only for that specific locale.
 
-## Re-enable Sync in Pontoon
+### Re-enable Sync in Pontoon
 
 Once the actual migration is complete, the next step is to re-enable sync in Pontoon, one project at a time. Before starting, make sure that the [Pontoon repository](https://hg.mozilla.org/users/m_owca.info/firefox-central/) has the commit with the new strings.
 
@@ -80,7 +93,7 @@ Once the sync is completed, repeat the process for all other projects (Thunderbi
 
 When sync is re-enabled for all projects, switch back the *worker* to `PM` in [Heroku](https://dashboard.heroku.com/apps/mozilla-pontoon/resources). Once again, make sure that there are no running sync processes before doing it.
 
-## Update sign-offs
+### Update sign-offs
 
 At this point all locales with migrated strings will have a new changeset available for sign off. Given that the changes are relatively safe, [bulk sign-offs](../review/signoffs.md#bulk-sign-offs) can be used, monitoring only a few locales to double check the output (the only diff will be from the migration).
 
