@@ -30,7 +30,7 @@ Things to look out for:
 * [Localization issues](https://developer.mozilla.org/en-US/docs/Mozilla/Localization/Localization_content_best_practices), like misused plural forms, unclear comments, etc.
 
 In case of issues, you have two options:
-* Ask sheriffs (via bug or IRC in #sheriffs) to back out the patch.
+* Ask sheriffs (via bug or [Matrix in #sheriffs](https://chat.mozilla.org/#/room/#sheriffs:mozilla.org)) to back out the patch.
 * Ask clarifications in the bug, and decide if it’s worth to stop exposing new strings until the issue is fixed.
 
 ### Review strings landing in gecko-strings-quarantine
@@ -38,6 +38,8 @@ In case of issues, you have two options:
 The next step is to spot check changes landed in [gecko-strings-quarantine](https://hg.mozilla.org/users/axel_mozilla.com/gecko-strings-quarantine/shortlog). Here are some things to look out for:
 * Check if a changeset is removing strings. This should happen only when a string landed in Nightly and was removed during the same cycle, or at the beginning of a release cycle when a group of strings becomes unused in all shipping versions.
 * Compare the changeset with the original landing in mozilla-central. Each changeset’s header contains a set of references (consider [this example](https://hg.mozilla.org/users/axel_mozilla.com/gecko-strings-quarantine/rev/9c9e89dd4fd5)), the most important one is `X-Channel-Converted-Revision`, which links to the original landing in the code repository.
+
+**IMPORTANT:** Patches including Fluent migrations need to be kept in quarantine, and can only be pushed to `gecko-strings` following the process described in [this document](../firefox_desktop/fluent_migrations.md).
 
 ### Run compare-locales against gecko-strings
 
@@ -121,7 +123,7 @@ $ compare-locales --unified ~/src/mozilla-unified/browser/locales/l10n.toml ~/l1
 
 ### Push reviewed strings to gecko-strings
 
-If there are no issues in `gecko-strings-quarantine`, the next step is to push changes to `gecko-strings` and expose content to tools.
+If there are no issues in `gecko-strings-quarantine` and no pending [Fluent migrations](../firefox_desktop/fluent_migrations.md), the next step is to push changes to `gecko-strings` and expose content to tools.
 
 One time setup: after you cloned `gecko-strings-quarantine` on your system, you need to edit its `.hg/hgrc` file, and add `gecko-strings` as path. While you only need `https` for pulling the quarantine repository, you need `ssh` in order to push updates to `gecko-strings`.
 

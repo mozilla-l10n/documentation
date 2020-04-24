@@ -32,9 +32,17 @@ In order to run migrations:
 
 A set of scripts to automate cloning and updating of the l10n-central repositories is [available here](https://github.com/flodolo/scripts/tree/master/mozilla_l10n/clone_hgmo).
 
+### Ensure there are no blocking issues in gecko-strings-quarantine
+
+As part of migrations, content needs to be pushed from the quarantine repository to `gecko-strings`. Since content can’t be pushed selectively, any pending issue needs to be solved before starting the process. For more information about the review process, see [this document](../review/review.md).
+
 ### Clean up existing sign-offs
 
-Migrations will create new changesets in each of the repositories. Before starting, it’s highly recommended to review all pending sign-offs in Elmo for the current Firefox Beta. More details about the sign-off process are available in [this document](../review/signoffs.md).
+Migrations will create new changesets in each of the repositories, resulting in new sign-offs to review for the PM in charge of Firefox or l10n-drivers.
+
+Before starting, it’s highly recommended to review all pending sign-offs in Elmo for the current Firefox Beta. More details about the sign-off process are available in [this document](../review/signoffs.md).
+
+In case of issues with one or more locales, the best solution is to either fix or unapprove the problematic strings in Pontoon, and wait for the changes to land in the next scheduled sync, in order to completely empty the queue of pending sign-offs.
 
 ### Stop sync in Pontoon
 
@@ -48,6 +56,7 @@ In order to disable sync, access each project from the [admin panel](https://pon
 
 This is needed for several reasons:
 * Pontoon takes a lot of time processing this amount of changes, creating a bottleneck in the sync for all projects.
+* It removes the chance of conflicts in the l10n repository between the running migration and Pontoon committing changes for other projects.
 * The migrated strings need to be added in the same cycle as the new strings for the source language (`en-US`). If they’re added before, Pontoon will ignore them, creating a misalignment between internal database and l10n repositories. If they’re added after, these strings will be displayed as missing in Pontoon, and some locales might try to translate them while it’s not needed.
 
 The last step here is to make sure that the current sync process has completed, then increase the resources assigned to the Heroku worker:
@@ -56,29 +65,34 @@ The last step here is to make sure that the current sync process has completed, 
 
 It’s important to make sure that there is no sync in progress when upgrading the worker, because that will kill any pending process.
 
+### Test the migrations locally
+
+A series of tools and helpers to run migrations is available in [this repository](https://github.com/flodolo/fluent-migrations):
+* Clone the repository locally and follow the instructions available in the [README](https://github.com/flodolo/fluent-migrations/blob/master/README.md) to set the configuration file.
+* Add the new migration recipes in the `recipes` folder. The script will look for any Python file starting with `bug_` in that folder, so it’s possible to run multiple migrations in one pass. More information about the folder’s structure are available in the repository’s README.
+
+At this point, while each migration has been tested as part of the review before landing, it’s always good to run the migration against one locale, e.g. `it`:
+* Update the locale’s repository, check the results of `compare-locales`. Assuming l10n repositories are cloned in `~/migrations/locales`, and the quarantine repository in `~/migrations/gecko-strings-quarantine`, the command to run is `compare-locales ~/migrations/gecko-strings-quarantine/_configs/browser.toml ~/migrations/locales it`. Save the output in order to compare it with the results after the migration.
+* Run the migration, without pushing, only for `it`: `./scripts/migrate it wet-run`. Then run compare-locales again, and check if the results are as expected: migrated strings should not appear as missing anymore, and there should be no errors.
+* If everything looks as expected, re-run the script adding the push option `./scripts/migrate it wet-run push`.
+
 ### Push updates to gecko-strings
 
-Assuming the new strings are available in the [quarantine repository](https://hg.mozilla.org/users/axel_mozilla.com/gecko-strings-quarantine), it’s now time to push the updates to the official [gecko-strings repository](https://hg.mozilla.org/l10n/gecko-strings).
+Before [pushing updates](../review/review.md#push-reviewed-strings-to-gecko-strings) to the official [gecko-strings repository](https://hg.mozilla.org/l10n/gecko-strings), make sure that:
+* The new strings and migrations are available in the [quarantine repository](https://hg.mozilla.org/users/axel_mozilla.com/gecko-strings-quarantine).
+* There are [no pending issues](#ensure-there-are-no-blocking-issues-in-gecko-strings-quarantine) that prevent the current content to be exposed in Pontoon.
+* The migration has been tested locally and works as expected.
+
+Once the new strings are pushed to `gecko-strings`, there’s no easy way to roll back, and the procedure needs to be completed before re-enabling sync in Pontoon. The alternative is forcing all locales to retranslate this content, and losing the entire benefit of migrations.
 
 Pontoon relies on a [different repository](https://hg.mozilla.org/users/m_owca.info/firefox-central/), that is generated every 20 minutes based on the content of `gecko-strings`. That’s why it’s useful to run this update before starting the actual migrations.
 
 ### Run migrations
 
-A series of tools and helpers to run migrations is available in [this repository](https://github.com/flodolo/fluent-migrations):
-* Clone the repository locally and follow the instructions available in the [README](https://github.com/flodolo/fluent-migrations/blob/master/README.md) to set the configuration file.
-* Add the new migration recipe in the `recipes` folder. The script will look for any Python file starting with `bug_` in that folder. More information about the folder’s structure are available in the repository’s README.
-
-At this point, while the migration has been tested as part of the review before landing, it’s always good to run the migration against one locale, e.g. `it`:
-* Update the locale’s repository, check the results of `compare-locales`. Assuming l10n repositories are cloned in `~/migrations/locales`, and the quarantine repository in `~/migrations/gecko-strings-quarantine`, the command to run is `compare-locales ~/migrations/gecko-strings-quarantine/_configs/browser.toml ~/migrations/locales it`. Save the output in order to compare it with the results after the migration.
-* Run the migration, without pushing, only for `it`: `./scripts/migrate it wet-run`. Then run compare-locales again, and check if the results are as expected: migrated strings should not appear as missing anymore, and there should be no errors.
-* If everything looks good, re-run the script adding the push option `./scripts/migrate it wet-run push`.
-
-To run the migration on all repositories, use `./scripts/migrate wet-run push`. For each repository, this will:
+To run the migration on all repositories, use `./scripts/migrate wet-run push` in the same environment used for testing. For each repository, this will:
 * Pull changes.
 * Run the migration and commit changes.
 * Push changes to the remote.
-
-To run multiple migrations, put all recipes in the `recipes` folder.
 
 The duration of this step depends on the number of migrations and the speed of the Internet connection, but it should take about 20-30 minutes.
 
