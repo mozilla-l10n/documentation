@@ -11,6 +11,7 @@
     * [Nightly builds](products/firefox_desktop/adding_nightly.md).
     * [Beta/Release builds](products/firefox_desktop/adding_release.md).
     * [Removing locales](products/firefox_desktop/removing_locales.md).
+    * [Fluent migrations](products/firefox_desktop/fluent_migrations.md).
 * [Review](products/review/README.md)
     * [Sign-offs](products/review/signoffs.md).
     * [Review strings](products/review/review.md).

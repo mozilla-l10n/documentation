@@ -60,7 +60,7 @@ In the initial page it’s possible to select a product version. For example, cl
 
 ![Single product, bulk sign-offs page](../../assets/images/signoffs/drivers_view_product.png)
 
-The number of rows displayed depends on how many pending sign-offs there are for the requested product version. If there aren’t new changesets compared to the existing sign-offs, the table will be empty.
+The number of rows displayed depends on the number of changesets available to sign off for the requested product version. If there aren’t new changesets compared to the existing sign-offs, the table will be empty.
 
 In each row:
 * The first column shows the locale code, with a link to the locale’s sign-off page for the product version (e.g. `/shipping/signoffs/ach/fx71`).
