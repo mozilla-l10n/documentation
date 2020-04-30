@@ -40,7 +40,7 @@ As part of migrations, content needs to be pushed from the quarantine repository
 
 Migrations will create new changesets in each of the repositories, resulting in new sign-offs to review for the PM in charge of Firefox or l10n-drivers.
 
-Before starting, sign off in Elmo all available changesets for the current Firefox Beta in the *Bulk Sign-offs* view. More details about the sign-off process are available in [this document](../review/signoffs.md#bulk-sign-offs ).
+Before starting, sign off in Elmo all available changesets for the current Firefox Beta in the *Bulk Sign-offs* view. More details about the sign-off process are available in [this document](../review/signoffs.md#bulk-sign-offs).
 
 In case of issues with one or more locales, the best solution is to either fix or unapprove the problematic strings in Pontoon, and wait for the changes to land in the next scheduled sync, in order to completely empty the queue of sign-offs.
 
