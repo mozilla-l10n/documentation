@@ -2,16 +2,32 @@
 
 <!-- toc -->
 
-Sign-offs are a way for l10n-drivers to indicate that a specific changeset is technically sound and ready to ship in Firefox desktop or Firefox for Android. Currently, thanks to cross-channel, we ship all versions of Firefox from a [single localization repository](https://hg.mozilla.org/l10n-central/), but sign-offs only happen for the Beta channel:
+Sign-offs are a way for l10n-drivers to indicate that a specific changeset is technically sound and ready to ship in Firefox desktop or Firefox for Android. Currently, thanks to cross-channel, we ship all versions of Firefox from a [single localization repository](https://hg.mozilla.org/l10n-central/):
 * Nightly builds always use the tip of the repository, i.e. the latest changes available.
 * Beta builds only use the signed off version.
 * Release builds uses the latest signed off version from Beta, and can’t normally be updated to use a most recent version.
 
-Sign-offs are tied to a specific app version. For example, Firefox 57 starts in Nightly and doesn’t get any sign-off; it then moves to Beta and get multiple sign-offs as the localization progresses. It then moves to release, and any dot release (e.g. 57.0.1) will use the latest sign-off available for the 57 version, done when it was still in Beta.
+Sign-offs are tied to a specific app version. For example, Firefox 77 starts in Nightly and sign-off data is not relevant; it then moves to Beta and gets multiple sign-offs as the localization progresses. It then moves to release, and any dot release (e.g. 77.0.1) will use the latest sign-off available for the 77 version, done when it was still in Beta.
 
-Note that sign-offs on Beta are not possible through the entire cycle: sign-offs deadline is normally on Wednesday, about 2 weeks before the release, to allow time for at least one more Beta build before the end of the cycle.
+## Timeline and deadlines
+
+This is how Beta looks like in a 4 weeks release cycle, with relevant milestones.
+
+![Beta cycle](../../assets/images/signoffs/beta_cycle.png)
+
+Sign-offs on Beta are not possible through the entire cycle: sign-offs deadline is on Wednesday, about 2 weeks before the release, to allow time for at least one more Beta build before the end of the cycle.
+
+While it’s still possible to take last minute sign-offs during the rest of the third week, for example to fix bugs or improve coverage for tier 1 languages. that comes with increased risk, since there will be no time for another beta build to test these changes. Once the code merges from Beta to Release, any sign-off update would require a manual uplift to `mozilla-release` and a new Release Candidate (RC) build.
 
 Beta sign-offs are performed on l10n.mozilla.org (Elmo) [in this page](https://l10n.mozilla.org/shipping/dashboard?tree=fennec_beta&tree=fx_beta).
+
+Given that the Beta version is closed to sign-offs for more than 10 days, to avoid accumulating a lot of review backlog, the PM in charge can decide to take sign-offs on the [Nightly version](https://l10n.mozilla.org/shipping/dashboard?tree=fennec_central&tree=fx_central) for the remaining part of the cycle.
+
+![Beta cycle](../../assets/images/signoffs/beta_and_nightly.png)
+
+As explained at the beginning, sign-offs are not used for Nightly builds, but this approach has a few benefits:
+* It reduces the content to review at the beginning of the Beta cycle. That's particularly important when it comes to the amount of changes generated for Firefox desktop by [Fluent migrations](../firefox_desktop/fluent_migrations.md).
+* Since sign-offs are tied to a version number, when Nightly moves to Beta, the new Beta version will already have updated sign-offs and won’t fall back to outdated changesets. As a consequence, the first beta of the cycle will ships with better l10n coverage. In the example above, you start taking sign-offs for 77 at the end of the Nightly cycle. When 77 moves to Beta, it will already have update content compared to the last 76 sign-offs.
 
 ## How to perform sign-offs
 
@@ -19,7 +35,7 @@ Beta sign-offs are performed on l10n.mozilla.org (Elmo) [in this page](https://l
 
 ![Sign-offs table repository](../../assets/images/signoffs/signoffs_table.png)
 
-A green checkmark is displayed in the *Status* column if the locale has a sign-off, while it’s empty if there are no sign-offs for this locale. This typically happens for brand new locales that are only shipping in Nightly.
+A green checkmark is displayed in the *Status* column if the locale has a sign-off, while it’s empty if there are no sign-offs. This only happens for brand new locales that are only shipping in Nightly.
 
 The *Action* column can display several icons:
 * A prohibited icon indicates that there is no activity after the last sign-off (belonging to a previous version), and therefore it’s not possible to do an updated sign-off.
@@ -28,7 +44,7 @@ The *Action* column can display several icons:
     * Orange means that the product is still incomplete.
     * Red means that there are errors in the localization. The number of errors and warnings is also reported within the table.
 
-To perform the sign-off, click on the sparkline icon. It will open a new page, showing information about the last sign-off, and the changesets that follows it.
+To perform the sign-off, click on the sparkline icon. It will open a new page, showing information about the last sign-off, and the changesets that follow it.
 
 ![List of changesets](../../assets/images/signoffs/changesets_table.png)
 
@@ -40,9 +56,9 @@ By clicking in one of the cells in the rightmost column, by default you can disp
 
 ![Diff view](../../assets/images/signoffs/diff_view.png)
 
-In this view, green means that content has been added, red it’s been removed, while orange indicates a change. Each level of the diff can be collapsed simply by clicking on the same line as the file or folder name.
+In this view, green means that content has been added, red it’s been removed, while orange indicates a change. Each level of the diff can be collapsed by clicking on the same line as the file or folder name.
 
-Once you have reviewed the diff, you can return to the previous page, and sign off the changeset by clicking the *sign off…* button. To accept the sign-off, simply click the *Sign off* button:
+Once you have reviewed the diff, you can return to the previous page, and sign off the changeset by clicking the *sign off…* button. To accept the sign-off, click the *Sign off* button:
 
 ![Requesting and accepting a sign-off](../../assets/images/signoffs/accept_signoff.png)
 
@@ -52,7 +68,7 @@ To explicitly reject a sign-off, unselect the *Sign off and accept* checkbox. Th
 
 ## Bulk sign-offs
 
-A [new view](https://l10n.mozilla.org/shipping/drivers) has been added to Elmo to perform sign-offs in bulk. This is particularly useful, for example, after running Fluent migrations, when all locales receive changes and would require an updated sign-off.
+A [new view](https://l10n.mozilla.org/shipping/drivers) has been added to Elmo to perform sign-offs in bulk. This is particularly useful, for example, after running [Fluent migrations](../firefox_desktop/fluent_migrations.md), when all locales receive changes and would require an updated sign-off.
 
 ![Bulk sign-offs landing page](../../assets/images/signoffs/drivers_view.png)
 
@@ -77,5 +93,5 @@ Here are a few more things to look out for when doing sign-offs:
 * Strings, or portion of text, remaining in English or becoming empty.
 * Translated keyboard shortcuts (command keys). Unlike access keys, they should remain identical to English.
 * Changes to files that require review, like `region.properties`.
-* [Changes to branding](https://www.mozilla.org/en-US/styleguide/communications/translation/), i.e. translated or transliterated brand names (Mozilla, Firefox).
+* [Changes to branding](https://mozilla-l10n.github.io/styleguides/mozilla_general/#brands-copyright-and-trademark), i.e. translated or transliterated brand names (Mozilla, Firefox).
 * Changes to `extensions/spellcheck` (dictionaries). We can only ship dictionaries if they have a compatible license. If a dictionary was already present, it’s likely to be OK. A brand new dictionary should land with a bug associated.
