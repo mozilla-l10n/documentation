@@ -5,6 +5,7 @@ The majority of the work has already been completed when setting up [Nightly bui
 * Localization team has demonstrated a consistent effort, being able to keep up for at least a couple of cycles with the incoming flow of new strings.
 * L10n-drivers have performed testing of the builds on different operative systems without identifying critical issues.
 * There is a relevant number of users on the Nightly channel. This number varies based on the language, for minority languages 10-20 users is a good result. Also, a trend showing growth is important as well.
+* [Set up searchplugins](../searchplugins/setup_searchplugins.md), if configuration was not completed before enabling Nightly builds.
 * Make sure that `MOZ_LANG_TITLE` in `toolkit/defines.inc` has the correct value, since it’s used to set up the language pack on AMO.
 
 To track this work, you need to file a bug in Firefox::Build Config (like [this example](https://bugzilla.mozilla.org/show_bug.cgi?id=1359321)), blocking the original tracking bug for the locale (`fx-l10n-LOCALE`).
