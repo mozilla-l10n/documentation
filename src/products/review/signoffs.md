@@ -2,12 +2,14 @@
 
 <!-- toc -->
 
-Sign-offs are a way for l10n-drivers to indicate that a specific changeset is technically sound and ready to ship in Firefox desktop or Firefox for Android. Currently, thanks to cross-channel, we ship all versions of Firefox from a [single localization repository](https://hg.mozilla.org/l10n-central/):
-* Nightly builds always use the tip of the repository, i.e. the latest changes available.
-* Beta builds only use the signed off version.
-* Release builds uses the latest signed off version from Beta, and can’t normally be updated to use a most recent version.
+## Overview
 
-Sign-offs are tied to a specific app version. For example, Firefox 77 starts in Nightly and sign-off data is not relevant; it then moves to Beta and gets multiple sign-offs as the localization progresses. It then moves to release, and any dot release (e.g. 77.0.1) will use the latest sign-off available for the 77 version, done when it was still in Beta.
+Sign-offs are a way for l10n-drivers to indicate that a specific changeset is technically sound and ready to ship to general audience in Firefox (Beta, Release). Currently, thanks to cross-channel, we ship all versions of Firefox from a [single localization repository](https://hg.mozilla.org/l10n-central/), but each channel uses a different snapshot in time of that repository.
+
+While sign-offs are performed on l10n.mozilla.org (*Elmo*), the resulting data is stored in each tree (`mozilla-central`, `mozilla-beta`, etc.) to be used directly by the build system. A job, called `l10n-bumper`, runs on Taskcluster every hour, retrieves sign-off information from Elmo via API, and stores it in a file called `l10n-changesets.json`:
+* For Nightly (`mozilla-central`), [l10n-changesets.json](https://hg.mozilla.org/mozilla-central/file/default/browser/locales/l10n-changesets.json) always uses the revision `default`, and it’s only updated when changing the locales available in the build. That means that Nightly builds always use the tip of the l10n repository, i.e. the latest changes available for each locale.
+* Beta builds (`mozilla-beta`) only use the signed off changesets for each locale. Unlike in `mozilla-central`, [l10n-changesets.json](https://hg.mozilla.org/releases/mozilla-beta/file/default/browser/locales/l10n-changesets.json) contains the changesets signed off in Elmo instead of `default`.
+* When the Beta code is merged to Release, [l10n-changesets.json](https://hg.mozilla.org/releases/mozilla-release/file/default/browser/locales/l10n-changesets.json) moves together with the rest of the code to `mozilla-release`. That means that Release builds will use the same changesets as the last beta with the same version number, and any further change [requires code uplifts](#updating-release).
 
 ## Timeline and deadlines
 
@@ -19,15 +21,21 @@ Sign-offs on Beta are not possible through the entire cycle: sign-offs deadline 
 
 While it’s still possible to take last minute sign-offs during the rest of the third week, for example to fix bugs or improve coverage for tier 1 languages. that comes with increased risk, since there will be no time for another beta build to test these changes. Once the code merges from Beta to Release, any sign-off update would require a manual uplift to `mozilla-release` and a new Release Candidate (RC) build.
 
-Beta sign-offs are performed on l10n.mozilla.org (Elmo) [in this page](https://l10n.mozilla.org/shipping/dashboard?tree=fennec_beta&tree=fx_beta).
-
 Given that the Beta version is closed to sign-offs for more than 10 days, to avoid accumulating a lot of review backlog, the PM in charge can decide to take sign-offs on the [Nightly version](https://l10n.mozilla.org/shipping/dashboard?tree=fennec_central&tree=fx_central) for the remaining part of the cycle.
 
-![Beta cycle](../../assets/images/signoffs/beta_and_nightly.png)
+![Timeline of all channels, 2 cycles](../../assets/images/signoffs/all_channels_timeline.png)
 
 As explained at the beginning, sign-offs are not used for Nightly builds, but this approach has a few benefits:
-* It reduces the content to review at the beginning of the Beta cycle. That's particularly important when it comes to the amount of changes generated for Firefox desktop by [Fluent migrations](../firefox_desktop/fluent_migrations.md).
+* It reduces the content to review at the beginning of the Beta cycle. That’s particularly important when it comes to the amount of changes generated for Firefox desktop by [Fluent migrations](../firefox_desktop/fluent_migrations.md).
 * Since sign-offs are tied to a version number, when Nightly moves to Beta, the new Beta version will already have updated sign-offs and won’t fall back to outdated changesets. As a consequence, the first beta of the cycle will ships with better l10n coverage. In the example above, you start taking sign-offs for 77 at the end of the Nightly cycle. When 77 moves to Beta, it will already have update content compared to the last 76 sign-offs.
+
+### Updating release
+
+When the code moves from `mozilla-beta` to `mozilla-release`, `l10n-changesets.json` is frozen, as `l10n-bumper` is not configured to run against the release branch, and Elmo doesn’t allow to sign off changesets on the release channel.
+
+In case of severe issues affecting one or more locales, it’s still possible to manually update the shipping changesets. A patch needs to be provided for `l10n-changesets.json` in `mozilla-release` branch and approved for uplift by Release Drivers (see for example [this bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1513259) and [associated patch](https://hg.mozilla.org/releases/mozilla-release/rev/308fd26a204e)). Note that a dot release is needed in order to ship the updated version to users.
+
+The same process applies to ESR versions, as long as the associated esr repository is included in the [current version of cross-channel](https://hg.mozilla.org/users/axel_mozilla.com/cross-channel-experimental/file/tip/initial/cli/_config.py).
 
 ## How to perform sign-offs
 
