@@ -5,6 +5,6 @@ Access Django’s admin interface at `https://pontoon.mozilla.org/a/` (note that
 * Click on the user among the results displayed under the search field.
 * In the *Permissions* section, deselect the `Active` checkbox and click `SAVE` at the bottom of the page.
 
-This will prevent them from logging in in Pontoon, and disconnect them immediately from the system.
+This will prevent them from logging into Pontoon, and will log them out of the system immediately.
 
 At the moment, it’s not possible to safely remove users with all the associated data, and removal needs to be performed manually by developers.
