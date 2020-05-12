@@ -121,3 +121,5 @@ The final entry in `product-details` would look like this (`bo` is the locale co
     "native": "\u0f56\u0f7c\u0f51\u0f0b\u0f66\u0f90\u0f51\u0f0b"
 },
 ```
+
+Updates to `product-details` are pushed to production every time a new Beta or Release build is released. In case of urgency, updates can be triggered manually by Release Engineering.
