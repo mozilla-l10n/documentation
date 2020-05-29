@@ -38,7 +38,7 @@ Localization for the <a href="https://testpilot.firefox.com/experiments/min-vid"
   * private (default) - only administrators can access the project.
   * public - the project is visible for everyone.
 
-Click **SAVE PROJECT** at the bottom of the page, then click **SYNC** to run a test sync. In the [Sync log](https://mozilla-pontoon-staging.herokuapp.com/sync/log/) you should be able to see if it succeeded or failed. When everything is synchronized correctly, you can go to the project's admin page and change its visibility to `public`.
+Click **SAVE PROJECT** at the bottom of the page, then click **SYNC** to run a test sync. In the [Sync log](https://mozilla-pontoon-staging.herokuapp.com/sync/log/) you should be able to see if it succeeded or failed.
 
 ### Tags
 
