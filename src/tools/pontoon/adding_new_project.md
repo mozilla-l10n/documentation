@@ -34,6 +34,9 @@ Localization for the <a href="https://testpilot.firefox.com/experiments/min-vid"
 * Priority: select priority level from one of the 5 levels available (Lowest, Low, Normal, High, Highest).
 * Contact: select the L10n driver in charge of the project, probably yourself.
 * External Resources: provide links to external resources like l10n preview environment. You need to enter the name and the URL for each resource. You can also pick one of the predefined names: Development site, Production site, Development build, Production build, Screenshots, Language pack.
+* Visibility: determines who can access the project. Pontoon supports the following visibility types:
+  * private (default) - only administrators can access the project.
+  * public - the project is visible for everyone.
 
 Click **SAVE PROJECT** at the bottom of the page, then click **SYNC** to run a test sync. In the [Sync log](https://mozilla-pontoon-staging.herokuapp.com/sync/log/) you should be able to see if it succeeded or failed.
 
