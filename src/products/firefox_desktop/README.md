@@ -8,3 +8,4 @@ Some documentation specific for common tasks regarding Firefox desktop and l10n:
 * [Set up searchplugins](../searchplugins/setup_searchplugins.md).
 * [Removing a locale](removing_locales.md).
 * [Running Fluent migrations](fluent_migrations.md).
+* [FAQs for Firefox and L10N](firefox_l10n_faqs.md).
