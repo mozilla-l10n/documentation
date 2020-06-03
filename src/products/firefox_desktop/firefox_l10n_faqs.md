@@ -57,6 +57,7 @@ A document including plenty of best practices is [available on MDN](https://deve
 All shipping versions of Firefox are built from a single Mercurial repository for each locale (`l10n-central`). Repositories are available [here](https://hg.mozilla.org/l10n-central/).
 
 ### How can I test a different locale?
+
 The answer depends on the version you want to test:
 * On Beta and Release, you can switch the UI language directly from Firefox settings. You can also download localized builds [from mozilla.org](http://www.mozilla.org/firefox/all).
 * On Nightly and Developer Edition this feature is disabled, since language packs are not reliable. You can still manually install language packs for the version you’re using directly from FTP ([Nightly](http://ftp.mozilla.org/pub/firefox/nightly/latest-mozilla-central-l10n/linux-x86_64/xpi/), [DevEdition](http://archive.mozilla.org/pub/devedition/releases/77.0b2/win64/xpi/) changing the build in the URL), then enable the language switcher by setting `intl.multilingual.enabled` to `True` in about:config.
