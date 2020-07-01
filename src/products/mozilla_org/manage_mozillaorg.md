@@ -29,11 +29,12 @@ Once the PR passes the review, L10n PM will approve and merge the PR to master.
 
 ### Updating status in Pontoon
 
-* After Pontoon syncs with the repository, the newly added file will appear on the dashboard of a locale. * Go to the [project admin page](https://pontoon.mozilla.org/admin/projects/mozillaorg/).
-* Scroll to the **Linked tags** section to set priority to the new file by following [these steps](https://github.com/mozilla-l10n/documentation/blob/master/src/tools/pontoon/adding_new_project.md#tags).
+* After Pontoon syncs with the repository, the newly added file will appear on the dashboard of a locale.
+* Go to the [project admin page](https://pontoon.mozilla.org/admin/projects/mozillaorg/).
+Scroll to the **Linked tags** section to set priority to the new file by following [these steps](https://github.com/mozilla-l10n/documentation/blob/master/src/tools/pontoon/adding_new_project.md#tags).
 * Set a new deadline for the project if applicable.
 * Save the changes made.
-* If necessary, set a page-level deadline by going to the [Resource page](https://pontoon.mozilla.org/a/base/resource/). Select the file, then add the deadline near the bottom of the page by following the instructions.
+* If necessary, set a page-level deadline by following the instructions on the [Resource page](https://pontoon.mozilla.org/a/base/resource/). Select the file, then add the deadline near the bottom of the page.
 
 ### Email communication
 
@@ -43,7 +44,7 @@ Sometimes a page is tied to a release. Either the time is short or we want to ha
 * Priority locales if any.
 * Deadlines if they are different between priority locales.
 * Specify the locales that are covered by Mozilla staff, as long as they are working in Pontoon.
-* Demo URL.
+* Demo URL for testing.
 * Special instruction for this particular file to watch out for if any.
 
 Send the email to the web [project mailing list](https://groups.google.com/g/mozilla.dev.l10n.web). Forward the same information to the Mozilla copywriters.
@@ -58,7 +59,7 @@ The list of completed locales is due to the release team on Friday, 10 days prio
 
 Pontoon syncs with the repository every 10 minutes. GitHub makes a production push every 5 minutes. Unless a page is tied to a release on a particular day, chances are, the localization review is done on Production.
 
-When a localized string contains Fluent syntax error, it will be rejected in the  production push, thus the string appears in English. 
+When a localized string contains Fluent syntax error, it will be rejected in the  production push, thus the string appears in English.
 
 ### Page Activation
 

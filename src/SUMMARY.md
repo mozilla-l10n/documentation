@@ -24,7 +24,7 @@
     * [Importing translations](tools/webdashboards/import_translations.md).
     * [Updating production](products/mozilla_org/updating_mozillaorg_production.md).
     * [New locales](products/mozilla_org/enable_production.md).
-    * [Manage mozilla.org](products/mozilla_org/manage_mozillaorg.md))
+    * [Managing mozilla.org](products/mozilla_org/manage_mozillaorg.md))
 * [Other Projects](products/other/README.md)
 * [Searchplugins](products/searchplugins/setup_searchplugins.md)
 
