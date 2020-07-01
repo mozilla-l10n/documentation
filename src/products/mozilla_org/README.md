@@ -6,5 +6,5 @@ Some documentation specific for common tasks on mozilla.org
 * [Importing translations from existing files](../../tools/webdashboards/import_translations.md).
 * [Updating mozilla.org production](updating_mozillaorg_production.md).
 * [Enable a new locale on production](enable_production.md).
-
+* [managing mozilla.org](manage_mozillaorg.md)
 For documentation about Langchecker, see [this page](../../tools/webdashboards/).
