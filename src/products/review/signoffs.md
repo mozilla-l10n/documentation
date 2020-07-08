@@ -4,7 +4,7 @@
 
 ## Overview
 
-Sign-offs are a way for l10n-drivers to indicate that a specific changeset is technically sound and ready to ship to general audience in Firefox (Beta, Release). Currently, thanks to cross-channel, we ship all versions of Firefox from a [single localization repository](https://hg.mozilla.org/l10n-central/), but each channel uses a different snapshot in time of that repository.
+Sign-offs are a way for l10n-drivers to indicate that a specific changeset is technically sound and ready to ship to general audience in Firefox (Beta, Release). Currently, thanks to [cross-channel](https://firefox-source-docs.mozilla.org/l10n/crosschannel/index.html), we ship all versions of Firefox from a [single localization repository](https://hg.mozilla.org/l10n-central/), but each channel uses a different snapshot in time of that repository.
 
 While sign-offs are performed on l10n.mozilla.org (*Elmo*), the resulting data is stored in each tree (`mozilla-central`, `mozilla-beta`, etc.) to be used directly by the build system. A job, called `l10n-bumper`, runs on Taskcluster every hour, retrieves sign-off information from Elmo via API, and stores it in a file called `l10n-changesets.json`:
 * For Nightly (`mozilla-central`), [l10n-changesets.json](https://hg.mozilla.org/mozilla-central/file/default/browser/locales/l10n-changesets.json) always uses the revision `default`, and it’s only updated when changing the locales available in the build. That means that Nightly builds always use the tip of the l10n repository, i.e. the latest changes available for each locale.
