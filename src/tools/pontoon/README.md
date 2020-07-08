@@ -7,3 +7,4 @@ Some documentation specific for common and advanced tasks on Pontoon
 * [Sending notifications](sending_notifications.md).
 * [Renaming a localization file](renaming_a_file.md).
 * [Deactivating users](deactivating_users.md).
+* [Removing users](removing_users.md).
