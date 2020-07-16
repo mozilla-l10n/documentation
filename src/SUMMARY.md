@@ -36,6 +36,7 @@
     * [Notifications](tools/pontoon/sending_notifications.md).
     * [Renaming a localization file](tools/pontoon/renaming_a_file.md).
     * [Deactivating users](tools/pontoon/deactivating_users.md).
+    * [Removing users](tools/pontoon/removing_users.md).
 * [Web dashboards](tools/webdashboards/README.md)
     * [Langchecker](tools/webdashboards/langchecker.md).
     * [Bootstrap a new locale](tools/webdashboards/bootstrap_new_locale.md).
