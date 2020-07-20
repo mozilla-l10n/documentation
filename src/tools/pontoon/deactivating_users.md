@@ -7,4 +7,4 @@ Access Django’s admin interface at `https://pontoon.mozilla.org/a/` (note that
 
 This will prevent them from logging into Pontoon, and will log them out of the system immediately.
 
-It's possible to safely remove users with all the associated data. Refer to [Removing users](removing_users.md) for more details.
+It’s possible to safely remove users with all the associated data. Refer to [Removing users](removing_users.md) for more details.
