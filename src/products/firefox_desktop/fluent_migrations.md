@@ -21,7 +21,6 @@ This section of the document describes in detail which operations need to be per
 
 Several access rights are required:
 * Write access to [l10n-central](https://hg.mozilla.org/l10n-central), i.e. SSH access with `active_scm_l10n` rights. It’s possible to check your *Access Groups* in [your profile on people.mozilla.org](https://people.mozilla.org/e#nav-access-groups).
-* Sign-off rights in [Elmo](https://l10n.mozilla.org/).
 * Admin access to [Pontoon](https://pontoon.mozilla.org/).
 * An account on Heroku with access to [Pontoon apps](https://dashboard.heroku.com/apps/mozilla-pontoon/resources).
 
@@ -36,15 +35,7 @@ A set of scripts to automate cloning and updating of the l10n-central repositori
 
 As part of migrations, content needs to be pushed from the quarantine repository to `gecko-strings`. Since content can’t be pushed selectively, any pending issue needs to be solved before starting the process. For more information about the review process, see [this document](../review/review.md).
 
-### Clean up existing sign-offs
-
-Migrations will create new changesets in each of the repositories, resulting in new sign-offs to review for the PM in charge of Firefox or l10n-drivers.
-
-Before starting, sign off in Elmo all available changesets for the current Firefox Beta in the *Bulk Sign-offs* view. More details about the sign-off process are available in [this document](../review/signoffs.md#bulk-sign-offs).
-
-In case of issues with one or more locales, the best solution is to either fix or unapprove the problematic strings in Pontoon, and wait for the changes to land in the next scheduled sync, in order to completely empty the queue of sign-offs.
-
-### Stop sync in Pontoon
+s### Stop sync in Pontoon
 
 Before starting the migration process, sync needs to be suspended for all projects relying on the l10n-central repositories. The list of affected projects is:
 * Firefox
@@ -111,9 +102,3 @@ Before starting, make sure that the [Pontoon repository](https://hg.mozilla.org/
 Once the sync is completed, repeat the process for each of the other projects (Thunderbird, Seamonkey, Lightning).
 
 When sync is re-enabled for all projects, switch back the *worker* to `PM` in [Heroku](https://dashboard.heroku.com/apps/mozilla-pontoon/resources). Once again, make sure that there are no running sync processes before doing it.
-
-### Update sign-offs
-
-At this point all locales with migrated strings will have a new changeset available for sign off. Given that the changes are relatively safe, [bulk sign-offs](../review/signoffs.md#bulk-sign-offs) can be used, monitoring only a few locales to double check the output (the only diff will be from the migration).
-
-This can be done concurrently with the previous step.
