@@ -12,9 +12,9 @@
     * [Beta/Release builds](products/firefox_desktop/adding_release.md).
     * [Removing locales](products/firefox_desktop/removing_locales.md).
     * [Fluent migrations](products/firefox_desktop/fluent_migrations.md).
+    * [Build system](products/review/build_system.md).
     * [L10N FAQs](products/firefox_desktop/firefox_l10n_faqs.md).
 * [Review](products/review/README.md)
-    * [Sign-offs](products/review/signoffs.md).
     * [Review strings](products/review/review.md).
 * [Firefox for iOS](products/firefox_iOS/README.md)
     * [Reviewing new strings](products/firefox_iOS/review_iOSstrings.md).

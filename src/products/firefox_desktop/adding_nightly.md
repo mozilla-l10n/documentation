@@ -4,18 +4,16 @@
 
 ## File a tracking bug and dependencies to add the new locale
 
-The first step is to create [all the bugs](https://l10n.mozilla.org/bugs/new-locale) you need for this new locale. Let’s consider `Lao (lo)` as an example:
-* Locale: `lo`.
-* Language: `Lao`.
-* Component: leave `Other` if there’s no component on Bugzilla yet, otherwise type in the component name in the `Mozilla Localizations` product (in this case `lo / Lao`).
-* Name: first name of the locale leader. It will be used as part of the bug messages.
-* Bugzilla ID: Bugzilla ID (email address) of the locale leader. It will be used to CC them to all these bugs.
-* Application: leave Firefox.
-* Version: leave the default.
+A list of bug templates is available in this [Wiki page](https://wiki.mozilla.org/L10n:Bugogram). There is currently no automation to help filing them, although search and replace could be used on some variables across the templates.
 
-Click the *Create Buglinks* button, and a set of links will appear at the bottom of the page. Not all of them might be needed, for example LDAP is required only for Tableau access, repositories might already exist, etc. Make sure to always start with the `shipping` link, since that’s going to be the tracker bug, with an alias used in other bugs to set dependencies (`fx-l10n-LOCALECODE`, `fx-l10n-lo` in this example).
+Let’s consider `Lao (lo)` as an example:
+* Locale (`%(loc)s`): `lo`.
+* Language (`%(language)s`): `Lao`.
+* Component: use `Mozilla Localizations :: Other` if there’s no component on Bugzilla yet, otherwise use `Mozilla Localizations :: Language Name` (in this case `Mozilla Localizations :: lo / Lao`).
+* Name (`%(name)s`): first name of the locale leader.
+* Bugzilla ID (`%(bugmail)s`): Bugzilla ID (email address) of the locale leader.
 
-Always double check the content of the bugs for errors or outdated content. If the information is obsolete, you can update the templates in this [Wiki page](https://wiki.mozilla.org/L10n:Bugogram) (it will require a new deployment of Elmo to production to update the code generating the links).
+Make sure to always start with the `shipping` template, since that’s going to be the tracker bug, with an alias used in other bugs to set dependencies (`fx-l10n-LOCALECODE`, `fx-l10n-lo` in this example).
 
 ## Verify content in l10n repository
 

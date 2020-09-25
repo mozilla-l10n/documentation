@@ -59,8 +59,6 @@ $ hg diff
 
 You also need to set the `relnote-firefox` flag to `?` in the bug, the suggested comment is `Suggested for release notes: "Locale added: LANGUAGE_NAME (LOCALE_CODE)"`.
 
-In order to have builds when the Beta cycle starts, make sure to sign-off the locale on [the dashboard](https://l10n.mozilla.org/) (elmo) for central before next merge day, and verify that a sign-off is correctly available on beta before beta1.
-
 ## Update language pack settings on AMO
 
 The language pack for the new locale will be uploaded automatically by release automation on *addons.mozilla.org* (starting with the Beta version). A few follow-up manual steps are needed:
