@@ -8,11 +8,12 @@ Project owners can follow the [guidelines](https://mozilla-pontoon.readthedocs.i
 
 It’s important to also check the files for localization issues before exposing them to localizers: unclear strings, lack of localization comments, missing plural forms are some of the things to check.
 
-## Create the project in Pontoon STAGE instance
+## Create the project
 
-First you want to test that everything works using Pontoon staging server.
+Access Pontoon’s [admin console](https://pontoon.mozilla.org/admin/) and click **ADD NEW PROJECT**.
 
-Access Pontoon’s [admin console](https://mozilla-pontoon-staging.herokuapp.com/admin/) on the **stage server** and click **ADD NEW PROJECT**.
+The new project will appear in the [public list of Projects](https://pontoon.mozilla.org/projects/) only after the next sync cycle.
+
 * Name: name of the repository (it will be displayed in Pontoon’s project selector).
 * Slug: used in URLs, will be generated automatically based on the repository’s name.
 * Locales:
@@ -38,7 +39,9 @@ Localization for the <a href="https://testpilot.firefox.com/experiments/min-vid"
   * private (default) - only administrators can access the project.
   * public - the project is visible for everyone.
 
-Click **SAVE PROJECT** at the bottom of the page, then click **SYNC** to run a test sync. In the [Sync log](https://mozilla-pontoon-staging.herokuapp.com/sync/log/) you should be able to see if it succeeded or failed.
+Click **SAVE PROJECT** at the bottom of the page, then click **SYNC** to run a test sync. In the [Sync log](https://pontoon.mozilla.org/sync/log/) you should be able to see if it succeeded or failed. If all went well, the new project will appear in the [public list of Projects](https://pontoon.mozilla.org/projects/).
+
+**Important**: once you verify the project works as expected, enable it for the general audience by setting Visibility to Public.
 
 ### Tags
 
@@ -58,18 +61,8 @@ A few tips on using this section:
 * The first checkbox on the left (highlighted in green) allows to select all displayed items. Note: if the search returns multiple pages, only those currently displayed are selected and will be linked if *Link resources* is clicked.
 * There is no need to save the project when adding resources to a tag: linked resources are stored in the database as soon as they’re added with the *Link resources* button.
 
-Considering the amount of information required to properly set up tags in a project, it’s recommended to set them up directly in production, and use stage only for specific testing.
-
 ### Resource deadline
 
 Like for a project, it’s possible to set a deadline for a Resource.
 
 Go to the [resource section](https://pontoon.mozilla.org/a/base/resource/) of the admin panel, then type the name of your project (e.g. `engagement`) and hit `Enter`. All the resources for your project should appear. Click on the one you want to edit, set the deadline in the `Deadline` field, then click `SAVE`.
-
-## Create the project in Pontoon PROD instance
-
-At this point you need to repeat the same steps on the **production server**.
-
-Access Pontoon’s [admin console](https://pontoon.mozilla.org/admin/), add the same information you used on the staging server and make sure to select all supported locales for this project.
-
-The new project will appear in the [public list of Projects](https://pontoon.mozilla.org/projects/) only after the next sync cycle.
