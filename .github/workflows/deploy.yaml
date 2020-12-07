@@ -1,0 +1,43 @@
+name: Deploy to GitHub Pages
+
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ master ]
+  # TODO: remove
+  pull_request:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  fetch:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v2
+      - name: Install Rust mdbook
+        uses: actions-rs/install@v0.1
+        with:
+          crate: mdbook
+          version: latest
+          use-tool-cache: true
+      - name: Install Rust mdbook-toc
+        uses: actions-rs/install@v0.1
+        with:
+          crate: mdbook-toc
+          version: latest
+          use-tool-cache: true
+      - name: Build book
+        run: |
+            mdbook --version
+            mdbook-toc --version
+            mdbook build
+      - name: Deploy to GitHub Page
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: book
+          CLEAN: true
