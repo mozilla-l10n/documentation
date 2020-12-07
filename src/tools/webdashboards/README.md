@@ -28,7 +28,7 @@ For documentation specific to mozilla.org, see [this page](../../products/mozill
 
 ## Contribution Guidelines
 
-Always work on forks of the main repository and open pull requests if you’re going to update code. Automated tests are run with Travis on each pull request to check for syntax and functional errors.
+Always work on forks of the main repository and open pull requests if you’re going to update code. Automated tests are run in automation on each pull request to check for syntax and functional errors.
 
 ## Useful Links
 
