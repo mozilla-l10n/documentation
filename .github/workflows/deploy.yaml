@@ -17,18 +17,12 @@ jobs:
     steps:
       - name: Clone repository
         uses: actions/checkout@v2
-      - name: Install Rust mdbook
-        uses: actions-rs/install@v0.1
-        with:
-          crate: mdbook
-          version: latest
-          use-tool-cache: true
-      - name: Install Rust mdbook-toc
-        uses: actions-rs/install@v0.1
-        with:
-          crate: mdbook-toc
-          version: latest
-          use-tool-cache: true
+      - name: Set up Rust
+        uses: hecrj/setup-rust-action@v1
+      - name: Install packages
+        run: |
+          curl -LSfs https://japaric.github.io/trust/install.sh | sh -s -- --git rust-lang/mdBook
+          curl -LSfs https://japaric.github.io/trust/install.sh | sh -s -- --git badboy/mdbook-toc
       - name: Build book
         run: |
             mdbook --version
