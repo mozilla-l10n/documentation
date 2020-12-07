@@ -35,7 +35,7 @@ A set of scripts to automate cloning and updating of the l10n-central repositori
 
 As part of migrations, content needs to be pushed from the quarantine repository to `gecko-strings`. Since content can’t be pushed selectively, any pending issue needs to be solved before starting the process. For more information about the review process, see [this document](../review/review.md).
 
-s### Stop sync in Pontoon
+### Stop sync in Pontoon
 
 Before starting the migration process, sync needs to be suspended for all projects relying on the l10n-central repositories. The list of affected projects is:
 * Firefox
