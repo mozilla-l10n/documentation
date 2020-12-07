@@ -91,7 +91,7 @@ When adding images to a repository, make sure that the size is not too big for t
 
 To install packages in Atom, open the Preferences, select the *Install* panel on the left and search for the package you’re interested in.
 
-[markdownlint](https://github.com/DavidAnson/markdownlint), a Markdown linter, is run on automation (Travis) for each pull request. If you want to use this tool on your system, make sure to install [Node.js](https://nodejs.org/en/), then run the following commands from the root of your repository (only once):
+[markdownlint](https://github.com/DavidAnson/markdownlint), a Markdown linter, is run on automation for each pull request. If you want to use this tool on your system, make sure to install [Node.js](https://nodejs.org/en/), then run the following commands from the root of your repository (only once):
 
 ```BASH
 $ git clone https://github.com/flodolo/l10ndocs-linter
