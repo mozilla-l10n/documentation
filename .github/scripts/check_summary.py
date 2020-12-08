@@ -23,7 +23,7 @@ if os.path.isfile(exceptions_file):
         for line in f.readlines():
             if line.startswith("#"):
                 continue
-            exceptions.append(line.strip())
+            exceptions.append(line.rstrip())
 
 # Get a list of all .md files
 md_files = []
@@ -53,7 +53,7 @@ status = 0
 if extra_files:
     print("\nThere are markdown files not referenced in SUMMARY.md")
     for f in extra_files:
-        print(f"  - {f}\n")
+        print(f"  - {f}")
     print("To create an exception, add the path above to summary_exceptions.txt")
     status = 1
 else:
@@ -62,9 +62,9 @@ else:
 if missing_files:
     print("\nThere are non existing markdown files referenced in SUMMARY.md")
     for f in missing_files:
-        print(f"  - {f}\n")
+        print(f"  - {f}")
     status = 1
 else:
-    print("All markdown files referenced in SUMMARY.md are available in the repository")
+    print("\nAll markdown files referenced in SUMMARY.md are available in the repository")
 
 sys.exit(status)
