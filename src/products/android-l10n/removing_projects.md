@@ -11,6 +11,7 @@ This step will help ensure that any automation linked to this product will be di
 ## RelEng files a PR
 
 RelEng will then create a PR in the [android-l10n-tooling GitHub repository](https://github.com/mozilla-l10n/android-l10n-tooling). Make sure to wait for that PR to be merged by RelEng before continuing to the next steps, since otherwise, automation will not have been stopped.
+
 Example PR for the removal of Firefox for Fire TV product: https://github.com/mozilla-l10n/android-l10n-tooling/pull/29
 
 ## Stop sync for the android-l10n project in Pontoon
@@ -23,6 +24,7 @@ This will ensure that the project stops syncing between Pontoon and the GitHub a
 * Delete pertaining project .json file contained within the [_meta folder](https://github.com/mozilla-l10n/android-l10n/tree/master/_meta)
 * Remove corresponding project lines contained within the [config.toml](https://github.com/mozilla-l10n/android-l10n/blob/master/config.toml)
 * Remove corresponding project lines contained within the [l10n.toml](https://github.com/mozilla-l10n/android-l10n/blob/master/l10n.toml)
+
 Example PR that does all of this for Fire TV: https://github.com/mozilla-l10n/android-l10n/pull/289
 
 ## Remove the project tag in Pontoon
