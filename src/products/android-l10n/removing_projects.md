@@ -35,4 +35,4 @@ This ensures that the project will not be listed under “Tags” along with oth
 
 ## Re-enable sync in Pontoon
 
-Log in to the [admin view of android-l10n](https://pontoon.mozilla.org/admin/projects/android-l10n/), scroll to the bottom of the page, and click on “sync enabled” on the left.
+Log in to the [admin view of android-l10n](https://pontoon.mozilla.org/admin/projects/android-l10n/), scroll to the bottom of the page, and click on the checkbox “Sync Disabled” on the left. This will re-enable sync for the project in Pontoon.
