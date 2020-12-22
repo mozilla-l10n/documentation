@@ -6,6 +6,7 @@
 
 * [Android-l10n](products/android-l10n/README.md)
     * [Adding new locales](products/android-l10n/adding_new_locales.md).
+    * [Removing projects](products/android-l10n/removing_projects.md).
 * [Firefox Desktop](products/firefox_desktop/README.md)
     * [Add to Pontoon](products/firefox_desktop/adding_pontoon.md).
     * [Nightly builds](products/firefox_desktop/adding_nightly.md).
