@@ -20,6 +20,7 @@ In order to disable sync in Pontoon, log in to [the admin view of android-l10n](
 This will ensure that the project stops syncing between Pontoon and the GitHub android-l10n repository, in order to safely remove it from the repo, and avoid any possible conflicts between files.
 
 ## Remove - and update - android-l10n GitHub files
+
 * Remove the entire project folder
 * Delete pertaining project .json file contained within the [_meta folder](https://github.com/mozilla-l10n/android-l10n/tree/master/_meta)
 * Remove corresponding project lines contained within the [config.toml](https://github.com/mozilla-l10n/android-l10n/blob/master/config.toml)
@@ -28,8 +29,10 @@ This will ensure that the project stops syncing between Pontoon and the GitHub a
 Example PR that does all of this for Fire TV: https://github.com/mozilla-l10n/android-l10n/pull/289
 
 ## Remove the project tag in Pontoon
+
 Go to the [admin view of android-l10n](https://pontoon.mozilla.org/admin/projects/android-l10n/), scroll to the bottom of the page, and remove the product under the “Tags” section.
 This ensures that the project will not be listed under “Tags” along with other active android-l10n projects in Pontoon.
 
 ## Re-enable sync in Pontoon
+
 Log in to the [admin view of android-l10n](https://pontoon.mozilla.org/admin/projects/android-l10n/), scroll to the bottom of the page, and click on “sync enabled” on the left.
