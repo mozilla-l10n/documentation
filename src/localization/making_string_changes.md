@@ -34,7 +34,7 @@ When updating IDs, make sure to also update references to the old ID in both exi
 ## Why is it necessary to use new IDs?
 
 This is very specific to how localization works at Mozilla, and mostly depends on two key elements:
-* String IDs are used to identify strings throughout the entire localization toolchain.
+* String IDs (and not their values) are used to identify strings throughout the entire localization toolchain.
 * Translations stored in Version Control Systems – Mercurial or GitHub depending on the project – are treated as the **source of truth**.
 
 Changing the message ID will invalidate existing translations, the new message will be reported as missing (new) in all tools, and localizers will have to retranslate it. This is the only reliable method to ensure that localizers update existing localizations, and run-time stops using obsolete translations.
@@ -53,7 +53,7 @@ This message needs to be updated to `Please enter your primary password`. This i
 primary-password-notification = Please enter your primary password
 ```
 
-This is effectively a brand new string for the localization toolchain. The downside is that it requires more work for developers to update references in code.
+The localization toolchain considers this a brand new string and notifies localizers that it requires translation. Pontoon leverages the prior translation, so that the localizer only has to translate the diff (e.g., “Please enter your password” would be leveraged, the localizer would only need to add “primary”). The downside, however, is that it requires more work for developers to update references in code.
 
 ![Generic product: starting point with existing string](../assets/images/localization/string_changes_simple_start.png)
 
@@ -81,7 +81,7 @@ At this point:
 * The l10n repository will keep storing older translations (in green), although they are likely obsolete at this point.
 * Both run-time and build system won’t know anything about the different versions of this string, they won’t be able to differentiate values that were updated from those that are obsolete and use that information for the fallback logic.
 
-As explained before, at Mozilla VCS is the source of truth, and it can be accessed directly by localizers, or by tools other than Pontoon. As a consequence, as you can see from the picture, the sync between Pontoon and l10n repositories needs to be bidirectional: new translations are written by Pontoon in the l10n repository, but Pontoon also reads changes made to the repository. The latter is quite common in Firefox, for example when we run [Fluent migrations](../products/firefox_desktop/fluent_migrations.md).
+As explained before, at Mozilla the VCS is the source of truth, and it can be accessed directly by localizers, or by tools other than Pontoon. As a consequence, as you can see from the picture, the sync between Pontoon and l10n repositories needs to be bidirectional: new translations are written by Pontoon in the l10n repository, but Pontoon also reads changes made to the repository. The latter is quite common in Firefox, for example when we run [Fluent migrations](../products/firefox_desktop/fluent_migrations.md).
 
 In this scenario, the only way to ensure that obsolete translations are ignored by the entire toolchain is to change string IDs. The alternative would be gating access to the repository, allowing only translation via Pontoon, and automatically remove all obsolete translations as soon as the source locale changes. It’s worth noting that this approach might prevent us from shipping localization updates for a previous version of the product (in the example, one where *master password* is still in use).
 
