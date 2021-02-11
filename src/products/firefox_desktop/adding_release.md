@@ -13,8 +13,9 @@ To track this work, you need to file a bug in Firefox::Build Config (like [this 
 ## Verify language name
 
 The language name associated to the locale code is displayed in a few places in Firefox interface (language settings for web content, contextual menu for dictionaries). The language name needs to be defined in:
-* [languageNames.ftl](https://searchfox.org/mozilla-central/source/toolkit/locales/en-US/toolkit/intl/languageNames.ftl).
-* [mozIntl.jsm](https://searchfox.org/mozilla-central/source/toolkit/components/mozintl/mozIntl.jsm) (in the `availableLocaleDisplayNames` constant, `language` [set](https://searchfox.org/mozilla-central/rev/131338e5017bc0283d86fb73844407b9a2155c98/toolkit/components/mozintl/mozIntl.jsm#451)).
+* [languageNames.ftl](https://searchfox.org/mozilla-central/source/toolkit/locales/en-US/toolkit/intl/languageNames.ftl): ID with structure `language-name-LOCALECODE = (name of the language in English)`. Note that the locale code can only be a 2/3 letter code, locales like `ca-valencia` are not valid.
+* [mozIntl.jsm](https://searchfox.org/mozilla-central/source/toolkit/components/mozintl/mozIntl.jsm): add the locale code in the `availableLocaleDisplayNames` constant, `language` [set](https://searchfox.org/mozilla-central/rev/131338e5017bc0283d86fb73844407b9a2155c98/toolkit/components/mozintl/mozIntl.jsm#451).
+* [language.properties](https://searchfox.org/mozilla-central/source/intl/locale/language.properties): add a value in the form `LOCALECODE.accept = true`. This is needed to list the language in the language settings dialog for web content.
 
 ## Add locale to build configuration
 
