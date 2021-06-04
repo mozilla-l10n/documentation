@@ -35,9 +35,9 @@ In case of issues, you have two options:
 
 ### Review strings landing in gecko-strings-quarantine
 
-The next step is to spot check changes landed in [gecko-strings-quarantine](https://hg.mozilla.org/users/axel_mozilla.com/gecko-strings-quarantine/shortlog). Here are some things to look out for:
+The next step is to spot check changes landed in [gecko-strings-quarantine](https://hg.mozilla.org/l10n/gecko-strings-quarantine/shortlog). Here are some things to look out for:
 * Check if a changeset is removing strings. This should happen only when a string landed in Nightly and was removed during the same cycle, or at the beginning of a release cycle when a group of strings becomes unused in all shipping versions.
-* Compare the changeset with the original landing in mozilla-central. Each changeset’s header contains a set of references (consider [this example](https://hg.mozilla.org/users/axel_mozilla.com/gecko-strings-quarantine/rev/9c9e89dd4fd5)), the most important one is `X-Channel-Converted-Revision`, which links to the original landing in the code repository.
+* Compare the changeset with the original landing in mozilla-central. Each changeset’s header contains a set of references (consider [this example](https://hg.mozilla.org/l10n/gecko-strings-quarantine/rev/9c9e89dd4fd5)), the most important one is `X-Channel-Converted-Revision`, which links to the original landing in the code repository.
 
 **IMPORTANT:** Patches including Fluent migrations need to be kept in quarantine, and can only be pushed to `gecko-strings` following the process described in [this document](../firefox_desktop/fluent_migrations.md).
 

@@ -27,7 +27,7 @@ Several access rights are required:
 In order to run migrations:
 * Install the [fluent.migrate](https://pypi.org/project/fluent.migrate/) Python package.
 * Clone all [l10n-central](https://hg.mozilla.org/l10n-central) repositories.
-* Clone [gecko-strings-quarantine](https://hg.mozilla.org/users/axel_mozilla.com/gecko-strings-quarantine/) and [gecko-strings](https://hg.mozilla.org/l10n/gecko-strings).
+* Clone [gecko-strings-quarantine](https://hg.mozilla.org/l10n/gecko-strings-quarantine/) and [gecko-strings](https://hg.mozilla.org/l10n/gecko-strings).
 
 A set of scripts to automate cloning and updating of the l10n-central repositories is [available here](https://github.com/flodolo/scripts/tree/master/mozilla_l10n/clone_hgmo).
 
