@@ -8,7 +8,7 @@ Note that you need to be a manager of the organization in order to create a new 
 
 A new repository can be created in [this page](https://github.com/organizations/mozilla-l10n/repositories/new), or using the **New** button in the organization’s landing page.
 
-**Name**: always include the `-l10n` suffix for localization repositories, to differentiate them from other repositories used for tools. Notable exception to this rule is `www.mozilla.org`.
+**Name**: always include the `-l10n` suffix for localization repositories, to differentiate them from other repositories used for tools.
 
 For example, if the project is *Focus for Android*, a good repository name is `focus-android-l10n`.
 
@@ -20,13 +20,11 @@ Set the project as **Public** and don’t initialize it with a README.
 
 ## Add collaborators
 
-Go into the project settings, panel **Collaborators & teams**:
+Go into the project settings:
 
-* Add the relevant l10n-drivers as Admin. You can either pick individuals or one of the pre-existing groups.
-* Only when the project is ready for localization, add the **Localizers** group with **Write** permissions. Note that Pontoon’s bot is included in the localizers group, so you will need to enable it for testing the sync process.
+* Add the relevant l10n-drivers as Admin ([see GitHub documentation](https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/managing-access-to-your-personal-repositories/inviting-collaborators-to-a-personal-repository)). You can either pick individuals or one of the pre-existing groups.
+* Add the **Tool-bots** group with **Write** permissions to give Pontoon write access. If localizers need direct access, you can use the **Localizers** group.
 * Add relevant developers as contributors if they need to make commits to the repository (that’s usually the case, in order to update strings).
-
-![New repository](../assets/images/new_repository/settings.png)
 
 ## Add a README.md to the project
 
@@ -46,7 +44,7 @@ terms of the [Mozilla Public License v2.0](https://www.mozilla.org/MPL/2.0/).
 
 ## Add a CODEOWNERS file
 
-It’s possible to add a *CODEOWNERS* file to automatically ping the owner of the project in case of pull requests. File should be placed in the root of the repository, it’s called `CODEOWNERS` and uses the following format:
+It’s possible to add a *CODEOWNERS* file to automatically ping the owner of the project in case of pull requests. File can be placed in the root of the repository or specific subfolders ([see GitHub documentation](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/about-code-owners)), it’s called `CODEOWNERS` and uses the following format:
 
 ```
 path/to/files/to/monitor @nickname_of_owner
