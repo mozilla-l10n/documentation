@@ -4,9 +4,7 @@ This repository includes several documents describing how to perform internal ta
 
 Topics covered:
 * How to [review strings](products/firefox_desktop/review.md) for Firefox desktop.
-* Manage [mozilla.org](products/mozilla_org/) localization.
 * Manage [other projects](products/other/) (Firefox Monitor, VPN Client).
-* Technical documentation and common tasks for our [webdashboards](tools/webdashboards/).
 * Perform common and advanced tasks on [Pontoon](tools/pontoon/) like adding new locale, and creating a new project.
 * Other [miscellaneous documents](misc/) related to localization tasks.
 
@@ -19,8 +17,6 @@ $ composer update
 ```
 
 `$` is not part of the command, it just indicates the terminal prompt. The command to type or copy and paste is simply `composer update`.
-
-In several occasions documents use aliases instead of the complete path to commands: for example `lang_update` instead of `path_to_langchecker_clone/app/scripts/lang_update`. Check [Setting up a Linux Virtual Machine for Webdashboards](config/setup_l10ndrivers_vm.md) for instructions on how to setup a virtual machine running on Linux Ubuntu with all the necessary packages and aliases.
 
 ## Updating the documentation
 

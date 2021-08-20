@@ -21,12 +21,6 @@
     * [Change existing strings](localization/making_string_changes.md).
 * [Firefox for iOS](products/firefox_iOS/README.md)
     * [Reviewing new strings](products/firefox_iOS/review_iOSstrings.md).
-* [Mozilla.org](products/mozilla_org/README.md)
-    * [Process overview](products/mozilla_org/extract_strings.md).
-    * [Working with Bedrock](products/mozilla_org/working_bedrock.md).
-    * [Importing translations](tools/webdashboards/import_translations.md).
-    * [Updating production](products/mozilla_org/updating_mozillaorg_production.md).
-    * [New locales](products/mozilla_org/enable_production.md).
 * [Other Projects](products/other/README.md)
 
 ## Tools
@@ -39,13 +33,6 @@
     * [Renaming a localization file](tools/pontoon/renaming_a_file.md).
     * [Deactivating users](tools/pontoon/deactivating_users.md).
     * [Removing users](tools/pontoon/removing_users.md).
-* [Web dashboards](tools/webdashboards/README.md)
-    * [Langchecker](tools/webdashboards/langchecker.md).
-    * [Bootstrap a new locale](tools/webdashboards/bootstrap_new_locale.md).
-    * [Add locales to an existing file](tools/webdashboards/add_locales.md).
-    * [Update an existing file](tools/webdashboards/update_existing_file.md).
-    * [Remove obsolete files](tools/webdashboards/remove_obsolete_files.md).
-    * [Add a new file to an existing project](tools/webdashboards/add_new_file.md).
 
 ## Misc
 
@@ -58,4 +45,3 @@
     * [How to work with a Localization Agency](misc/working_w_l10n_agency.md)
     * [Documentation styleguide](misc/documentation_styleguide.md).
     * [Stock emails](misc/stock_emails.md).
-    * [L10n-drivers VM setup](config/setup_l10ndrivers_vm.md).
