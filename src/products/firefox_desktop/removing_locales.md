@@ -1,7 +1,7 @@
 # Removing a locale from Firefox desktop
 
 Removing a locale from Firefox builds should be the last step in a long series of passages. A locale is removed when:
-* There’s no visible activity in Pontoon for a year.
+* There’s no visible activity in Pontoon for at least a year.
 * The translation level of Firefox is dropping, causing a good portion of the user interface to appear in English.
 * Outreach to existing community and locale leaders doesn’t produce results.
 * Attempts to find new localizers, via social networks and other tools (e.g. snippets), doesn’t find any potential contributors.
@@ -10,7 +10,7 @@ Removing a locale from Firefox builds should be the last step in a long series o
 
 If a locale is only shipping in Nightly, it’s enough to remove the locale from build configuration.
 
-The process is identical to the one use to [add a new locale](adding_nightly.md#add-new-locale-to-build-configuration), just removing the locale code from `browser/locales/all-locales`.
+The process is identical to the one use to [add a new locale](adding_nightly.md#add-new-locale-to-build-configuration), just removing the locale code from `browser/locales/all-locales` and `browser/locales/l10n.toml`.
 
 Locale also needs to be removed from [Ship It](https://github.com/mozilla-releng/ship-it/blob/master/README-l10n.md).
 
@@ -27,13 +27,11 @@ Given the number of teams and processes involved, a **tracking bug should be fil
 
 ### Check usage statistics
 
-Existing users for this locale need to be moved to another language, otherwise they would remain forever on an obsolete build. The first step is to determine the current usage statistics:
-* Check the number of ADIs for this locale on [Tableau](https://dataviz.mozilla.org/#/views/LocalizedFirefoxDesktopADI/LocalizedFirefoxDesktopADI).
-* Check usage on Telemetry using a [query similar to this one](https://sql.telemetry.mozilla.org/queries/4237).
+Existing users for this locale need to be moved to another language, otherwise they would remain forever on an obsolete build. The first step is to determine the current usage statistics on Telemetry using a [query similar to this one](https://sql.telemetry.mozilla.org/queries/4237).
 
 If the locale has a significant userbase (in the hundreds of users), you need to determine the best locale to fall back to. Possible sources of information are:
 * Wikipedia page for the language to determine where it’s spoken, and if there are other languages commonly spoken in the area.
-* [Tableau](https://dataviz.mozilla.org/#/views/LocalizedFirefoxDesktopADI/LocalizedFirefoxDesktopADI) for the language distribution in these countries.
+* Telemetry ([example for France](https://sql.telemetry.mozilla.org/queries/77772)) for the language distribution in these countries.
 
 You also need to verify with Business Development if there are **contractual obligations regarding search engines**.
 
@@ -42,7 +40,7 @@ For example, Belarusian was recently removed from builds:
 * Russian is an official language of Belarus.
 * Russia has a low percentage of [population speaking English](https://en.wikipedia.org/wiki/List_of_countries_by_English-speaking_population).
 
-For these reasons, Russian was selected as the best fall back language for Belarusian. Unfortunately, sources might not always point into the same direction, in some cases en-US might be the only viable option.
+For these reasons, Russian was selected as the best fall back language for Belarusian. Unfortunately, sources might not always point into the same direction, in that case en-US might be the only viable option.
 
 ### Redirect existing users to another locale
 
