@@ -11,6 +11,7 @@
     * [Add to Pontoon](products/firefox_desktop/adding_pontoon.md).
     * [Nightly builds](products/firefox_desktop/adding_nightly.md).
     * [Beta/Release builds](products/firefox_desktop/adding_release.md).
+    * [Searchplugins](products/firefox_desktop/setup_searchplugins.md)
     * [Removing locales](products/firefox_desktop/removing_locales.md).
     * [Fluent migrations](products/firefox_desktop/fluent_migrations.md).
     * [Build system](products/firefox_desktop/build_system.md).
@@ -28,7 +29,6 @@
     * [Updating production](products/mozilla_org/updating_mozillaorg_production.md).
     * [New locales](products/mozilla_org/enable_production.md).
 * [Other Projects](products/other/README.md)
-* [Searchplugins](products/searchplugins/setup_searchplugins.md)
 
 ## Tools
 
