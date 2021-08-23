@@ -69,7 +69,7 @@ At this point, while each migration has been tested as part of the review before
 ### Push updates to gecko-strings
 
 Before [pushing updates](../review/review.md#push-reviewed-strings-to-gecko-strings) to the official [gecko-strings repository](https://hg.mozilla.org/l10n/gecko-strings), make sure that:
-* The new strings and migrations are available in the [quarantine repository](https://hg.mozilla.org/users/axel_mozilla.com/gecko-strings-quarantine).
+* The new strings and migrations are available in the [quarantine repository](https://hg.mozilla.org/l10n/gecko-strings-quarantine).
 * There are [no pending issues](#ensure-there-are-no-blocking-issues-in-gecko-strings-quarantine) that prevent the current content to be exposed in Pontoon.
 * The migration has been tested locally and works as expected.
 

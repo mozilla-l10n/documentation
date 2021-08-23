@@ -6,20 +6,20 @@
 
 Starting from Firefox 57, all versions of Firefox desktop ship by localizing a single repository containing the reference English strings, called [gecko-strings](https://hg.mozilla.org/l10n/gecko-strings). It is generated from strings landing in the code repository for each branch (e.g. mozilla-central and comm-central for Nightly, mozilla-beta and comm-beta for Beta, etc.), and it’s exposed to localization tools like Pontoon.
 
-There is a second repository, [gecko-strings-quarantine](https://hg.mozilla.org/users/axel_mozilla.com/gecko-strings-quarantine), used as a buffer to avoid exposing poor strings to the larger audience of localizers.
+There is a second repository, [gecko-strings-quarantine](https://hg.mozilla.org/l10n/gecko-strings-quarantine/), used as a buffer to avoid exposing poor strings to the larger audience of localizers.
 
 The localizations for all channels can be found in [l10n-central](https://hg.mozilla.org/l10n-central/), with a single repository for each locale.
 
 The review process consists of three parts:
 * Review strings landing in `mozilla-central`. Currently `comm-central` doesn’t undergo a similar review process.
-* Review strings landing in `gecko-strings-quarantine`. Currently, the quarantine repository is updated manually every few days.
+* Review strings landing in `gecko-strings-quarantine`. The quarantine repository is updated twice a day via automation in [Task Cluster](https://firefox-source-docs.mozilla.org/taskcluster/kinds.html#l10n-cross-channel).
 * Push reviewed strings to `gecko-strings`, and start the localization process.
 
 ### Review strings landing in mozilla-central
 
 You can get the list of changesets touching localized strings in the last 2 days from [mozilla-central](https://hg.mozilla.org/mozilla-central/log?rev=keyword("locales/en-US")+and+pushdate("-2")). Adjust the `pushdate` part if you want to see more or less days.
 
-There are some irrelevant changesets, like en-US dictionary updates, but the majority of landings are relevant and need to be checked for localization issues.
+There are some unrelated changesets, like en-US dictionary updates, but the majority of landings are relevant and need to be checked for localization issues.
 
 You need to open each changeset, and identify changed files that are relevant for localization (.properties, .dtd, .ini).
 
@@ -37,7 +37,6 @@ In case of issues, you have two options:
 
 The next step is to spot check changes landed in [gecko-strings-quarantine](https://hg.mozilla.org/l10n/gecko-strings-quarantine/shortlog). Here are some things to look out for:
 * Check if a changeset is removing strings. This should happen only when a string landed in Nightly and was removed during the same cycle, or at the beginning of a release cycle when a group of strings becomes unused in all shipping versions.
-* Compare the changeset with the original landing in mozilla-central. Each changeset’s header contains a set of references (consider [this example](https://hg.mozilla.org/l10n/gecko-strings-quarantine/rev/9c9e89dd4fd5)), the most important one is `X-Channel-Converted-Revision`, which links to the original landing in the code repository.
 
 **IMPORTANT:** Patches including Fluent migrations need to be kept in quarantine, and can only be pushed to `gecko-strings` following the process described in [this document](../firefox_desktop/fluent_migrations.md).
 
@@ -51,11 +50,11 @@ First of all make sure that your environment is [correctly set up](../../tools/m
 
 ```
 $ compare-locales --version
-compare-locales 2.1
+compare-locales 8.1
 ```
 
 Let’s assume that:
-* [gecko-strings-quarantine](https://hg.mozilla.org/users/axel_mozilla.com/gecko-strings-quarantine) is cloned in `~/l10n/gecko-strings-quarantine`.
+* [gecko-strings-quarantine](https://hg.mozilla.org/l10n/gecko-strings-quarantine) is cloned in `~/l10n/gecko-strings-quarantine`.
 * [mozilla-unified](https://hg.mozilla.org/mozilla-unified) is cloned in `~/src/mozilla-unified`, and you checked out the version corresponding to the converted changeset.
 
 Then run
@@ -131,7 +130,7 @@ The content of `~/l10n/gecko-strings-quarantine/.hg/hgrc` should be similar to t
 
 ```
 [paths]
-default = https://hg.mozilla.org/users/axel_mozilla.com/gecko-strings-quarantine
+default = https://hg.mozilla.org/l10n/gecko-strings-quarantine
 gecko-strings = ssh://hg.mozilla.org/l10n/gecko-strings
 ```
 
