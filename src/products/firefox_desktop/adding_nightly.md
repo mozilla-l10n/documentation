@@ -23,7 +23,7 @@ Before enabling the build, it’s a good idea to perform some basic checks:
 
 ## Set up searchplugins
 
-Check the [Set up searchplugins](../searchplugins/setup_searchplugins.md) document for detailed instructions on how to set up searchplugins for new locales. This has become an optional step for setting up Nightly builds, but it remains mandatory before allowing the locale to ride the trains to Beta and Release.
+Check the [Set up searchplugins](setup_searchplugins.md) document for detailed instructions on how to set up searchplugins for new locales. This has become an optional step for setting up Nightly builds, but it remains mandatory before allowing the locale to ride the trains to Beta and Release.
 
 ## Add new locale to build configuration
 

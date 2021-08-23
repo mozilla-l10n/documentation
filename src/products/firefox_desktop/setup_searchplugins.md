@@ -37,7 +37,7 @@ Starting with Firefox 68, the [XML OpenSearch](https://developer.mozilla.org/en-
   },
 ```
 
-As of Firefox 77, the search configuration is still stored in-tree ([list.json](https://searchfox.org/mozilla-central/rev/41c3ea3ee8eab9ce7b82932257cb80b703cbba67/browser/components/search/extensions/list.json)). More recent versions of Firefox will switch to a new configuration system (`search-config.json`), and use [Remote Settings](https://firefox.settings.services.mozilla.com/v1/buckets/main/collections/search-config/records) to be able to update the configuration independently from the release cycle. The new system, including the schema for `search-config.json`, is documented in [Firefox Documentation - Search Service](https://firefox-source-docs.mozilla.org/toolkit/search/index.html).
+Search configuration is stored in [Remote Settings](https://firefox.settings.services.mozilla.com/v1/buckets/main/collections/search-config/records). The system, including the schema for `search-config.json`, is documented in [Firefox Documentation - Search Service](https://firefox-source-docs.mozilla.org/toolkit/search/index.html).
 
 When [filing a new bug](https://bugzilla.mozilla.org/enter_bug.cgi?product=Firefox&component=Search), make sure to provide the following information:
 * The list of searchplugins to use for the locale.
@@ -113,7 +113,7 @@ $ hg pull -r default -u
 
 ### region.properties
 
-region.properties is stored in `/browser/chrome/browser-region` for Firefox desktop, and it contains information about protocol handlers. You can use [this region.properties model](files/desktop_region.properties) as a base.
+region.properties is stored in `/browser/chrome/browser-region` for Firefox desktop, and it contains information about protocol handlers. You can use [this region.properties model](../../assets/files/searchplugins/desktop_region.properties) as a base.
 
 If you’re updating an existing file, make sure to not reset the `gecko.handlerService.defaultHandlersVersion` key. If, on the other hand, you’re adding a new handler, you will have to increment the existing numeric value.
 
