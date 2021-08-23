@@ -43,7 +43,7 @@ The next step is to spot check changes landed in [gecko-strings-quarantine](http
 
 ### Run compare-locales against gecko-strings
 
-A good next step to check for issues is to run [compare-locales](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/compare-locales) against the `gecko-strings` repository.
+A good next step to check for issues is to run [compare-locales](https://pypi.org/project/compare-locales/) against the `gecko-strings` repository.
 
 First of all make sure that your environment is [correctly set up](../../tools/mercurial/setting_mercurial_environment.md), and update your local `mozilla-unified` clone.
 

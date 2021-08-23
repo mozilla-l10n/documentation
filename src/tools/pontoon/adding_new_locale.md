@@ -50,7 +50,7 @@ As explained in the note below the field, you only need to put the last part in 
 
 ### CLDR Plurals
 
-You need to find the locale on [CLDR](http://www.unicode.org/cldr/charts/dev/supplemental/language_plural_rules.html). For Amharic, there are only two **cardinal** plural forms listed: one, other.
+You need to find the locale on [CLDR](https://unicode-org.github.io/cldr-staging/charts/latest/supplemental/language_plural_rules.html). For Amharic, there are only two **cardinal** plural forms listed: one, other.
 
 The mapping is:
 
