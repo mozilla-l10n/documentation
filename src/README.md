@@ -3,7 +3,7 @@
 This repository includes several documents describing how to perform internal tasks within the [l10n-drivers team](https://wiki.mozilla.org/L10n:Mozilla_Team) at Mozilla.
 
 Topics covered:
-* How to [review strings](products/review/review.md) for Firefox desktop.
+* How to [review strings](products/firefox_desktop/review.md) for Firefox desktop.
 * Manage [mozilla.org](products/mozilla_org/) localization.
 * Manage [other projects](products/other/) (Firefox Monitor, VPN Client).
 * Technical documentation and common tasks for our [webdashboards](tools/webdashboards/).

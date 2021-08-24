@@ -33,7 +33,7 @@ A set of scripts to automate cloning and updating of the l10n-central repositori
 
 ### Ensure there are no blocking issues in gecko-strings-quarantine
 
-As part of migrations, content needs to be pushed from the quarantine repository to `gecko-strings`. Since content can’t be pushed selectively, any pending issue needs to be solved before starting the process. For more information about the review process, see [this document](../review/review.md).
+As part of migrations, content needs to be pushed from the quarantine repository to `gecko-strings`. Since content can’t be pushed selectively, any pending issue needs to be solved before starting the process. For more information about the review process, see [this document](review.md).
 
 ### Stop sync in Pontoon
 
@@ -68,7 +68,7 @@ At this point, while each migration has been tested as part of the review before
 
 ### Push updates to gecko-strings
 
-Before [pushing updates](../review/review.md#push-reviewed-strings-to-gecko-strings) to the official [gecko-strings repository](https://hg.mozilla.org/l10n/gecko-strings), make sure that:
+Before [pushing updates](review.md#push-reviewed-strings-to-gecko-strings) to the official [gecko-strings repository](https://hg.mozilla.org/l10n/gecko-strings), make sure that:
 * The new strings and migrations are available in the [quarantine repository](https://hg.mozilla.org/l10n/gecko-strings-quarantine).
 * There are [no pending issues](#ensure-there-are-no-blocking-issues-in-gecko-strings-quarantine) that prevent the current content to be exposed in Pontoon.
 * The migration has been tested locally and works as expected.
