@@ -1,16 +1,28 @@
 # Adding a new locale to Beta and Release builds
 
-The majority of the work has already been completed when setting up [Nightly builds](adding_nightly.md). There are a few prerequisites before adding a new locale to Beta and Release:
-* Localization should have reached a good level of completion, especially for user facing parts of the UI.
+## Prerequisites
+
+The majority of the technical work has already been completed when setting up [Nightly builds](adding_nightly.md).
+
+There are a few important prerequisites before adding a new locale to Beta and Release.
+
+For the localization community:
+* Localization should have reached a high level of completion, especially for user facing parts of the UI:
+  * All [Tags](https://mozilla-l10n.github.io/localizer-documentation/tools/pontoon/search_filters.html#tags) with high priority (4 and 5 stars) should be at 100% (or very close).
+  * Lower priority Tags should be at least above 30%.
 * Localization team has demonstrated a consistent effort, being able to keep up for at least a couple of cycles with the incoming flow of new strings.
-* L10n-drivers have performed testing of the builds on different operative systems without identifying critical issues.
-* There is a relevant number of users on the Nightly channel. This number varies based on the language, for minority languages 10-20 users is a good result. Also, a trend showing growth is important as well.
-* [Set up searchplugins](setup_searchplugins.md), if configuration was not completed before enabling Nightly builds.
-* Make sure that `MOZ_LANG_TITLE` in `toolkit/defines.inc` has the correct value, since it’s used to set up the language pack on AMO.
+  * There must be more than one active translator on the project, to ensure that the content has been peer reviewed.
+* There is a relevant number of users on the Nightly channel testing the localization. This number varies based on the language, for minority languages 10-20 users is an excellent result. Also, a trend showing growth is important as well.
+
+For the localization PM:
+* Builds have been tested on different operating systems without identifying critical issues.
+* [Searchplugins are set up](setup_searchplugins.md).
 
 To track this work, you need to file a bug in Firefox::Build Config (like [this example](https://bugzilla.mozilla.org/show_bug.cgi?id=1359321)), blocking the original tracking bug for the locale (`fx-l10n-LOCALE`).
 
 ## Verify language name
+
+First of all, make sure that `MOZ_LANG_TITLE` in `toolkit/defines.inc` has the correct value, since it’s used to set up the language pack on AMO.
 
 The language name associated to the locale code is displayed in a few places in Firefox interface (language settings for web content, contextual menu for dictionaries). The language name needs to be defined in:
 * [languageNames.ftl](https://searchfox.org/mozilla-central/source/toolkit/locales/en-US/toolkit/intl/languageNames.ftl): ID with structure `language-name-LOCALECODE = (name of the language in English)`. Note that the locale code can only be a 2/3 letter code, locales like `ca-valencia` are not valid.
