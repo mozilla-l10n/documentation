@@ -2,6 +2,10 @@
 
 <!-- toc -->
 
+## Prerequisites
+
+Locales will be added to Nightly builds only after reaching at least 30% overall completion in Pontoon. For details on the requirements to move to Beta/Release, see [this document](adding_release.md#prerequisites).
+
 ## File a tracking bug and dependencies to add the new locale
 
 A list of bug templates is available in this [Wiki page](https://wiki.mozilla.org/L10n:Bugogram). There is currently no automation to help filing them, although search and replace could be used on some variables across the templates.
