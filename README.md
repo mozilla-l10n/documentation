@@ -17,8 +17,6 @@ $ composer update
 
 `$` is not part of the command, it just indicates the terminal prompt. The command to type or copy and paste is simply `composer update`.
 
-In several occasions documents use aliases instead of the complete path to commands: for example `lang_update` instead of `path_to_langchecker_clone/app/scripts/lang_update`. Check [Setting up a Linux Virtual Machine for Webdashboards](src/config/setup_l10ndrivers_vm.md) for instructions on how to setup a virtual machine running on Linux Ubuntu with all the necessary packages and aliases.
-
 ## Updating the documentation
 
 Simply open a pull request adding the new file or updating an existing document. Make sure to follow [these style guidelines](src/misc/documentation_styleguide.md), and note that all pull requests need to be reviewed before merging.
