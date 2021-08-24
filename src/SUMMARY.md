@@ -19,6 +19,7 @@
     * [L10N FAQs](products/firefox_desktop/firefox_l10n_faqs.md).
 * [Localization](localization/README.md)
     * [Change existing strings](localization/making_string_changes.md).
+    * [Best practices for developers](localization/dev_best_practices.md).
 * [Firefox for iOS](products/firefox_iOS/README.md)
     * [Reviewing new strings](products/firefox_iOS/review_iOSstrings.md).
 * [Other Projects](products/other/README.md)
