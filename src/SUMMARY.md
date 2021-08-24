@@ -13,13 +13,12 @@
     * [Beta/Release builds](products/firefox_desktop/adding_release.md).
     * [Searchplugins](products/firefox_desktop/setup_searchplugins.md)
     * [Removing locales](products/firefox_desktop/removing_locales.md).
+    * [Review strings](products/firefox_desktop/review.md).
     * [Fluent migrations](products/firefox_desktop/fluent_migrations.md).
     * [Build system](products/firefox_desktop/build_system.md).
     * [L10N FAQs](products/firefox_desktop/firefox_l10n_faqs.md).
 * [Localization](localization/README.md)
     * [Change existing strings](localization/making_string_changes.md).
-* [Review](products/review/README.md)
-    * [Review strings](products/review/review.md).
 * [Firefox for iOS](products/firefox_iOS/README.md)
     * [Reviewing new strings](products/firefox_iOS/review_iOSstrings.md).
 * [Mozilla.org](products/mozilla_org/README.md)
