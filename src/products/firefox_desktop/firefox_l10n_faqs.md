@@ -44,7 +44,7 @@ The sooner you land content in mozilla-central, the higher will be the chances t
 
 ### Where can I find guidelines for developers?
 
-A document including plenty of best practices is [available on MDN](https://developer.mozilla.org/en-US/docs/Mozilla/Localization/Localization_content_best_practices), while specific information around Fluent is available [in this document](https://firefox-source-docs.mozilla.org/l10n/fluent/review.html). In case of doubts, reach out to the Firefox L10N PM or localization team for clarifications.
+A document including plenty of best practices is [available here](../../localization/dev_best_practices.md), while specific information around Fluent is available [in this document](https://firefox-source-docs.mozilla.org/l10n/fluent/review.html). In case of doubts, reach out to the Firefox L10N PM or localization team for clarifications.
 
 ### How can I get my strings localized?
 
