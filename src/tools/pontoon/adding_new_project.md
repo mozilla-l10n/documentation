@@ -3,8 +3,8 @@
 ## Verify that the project is properly localizable
 
 Project owners can follow the [guidelines](https://mozilla-pontoon.readthedocs.io/en/latest/user/localizing-your-projects.html) available in Pontoon Documentation to properly structure files inside the repository. Some things to check:
-* Files should be in a folder like `locale(s)/ab-CD/somefile.extension` and be in one of the supported formats (.ftl, .lang, .properties, .po, .xliff).
-* User **mozilla-pontoon** needs write access to the repository.
+* Files should be organized in subfolders, one per locale, and the filename should remain the same across locales. More details on the [supported formats](https://mozilla-pontoon.readthedocs.io/en/latest/index.html) and [folder structure](https://mozilla-pontoon.readthedocs.io/en/latest/user/localizing-your-projects.html#folder-structure) are available in Pontoon’s documentation.
+* Pontoon needs write access to the repository ([see this document](../../misc/creating_new_repository.md#add-collaborators)).
 
 It’s important to also check the files for localization issues before exposing them to localizers: unclear strings, lack of localization comments, missing plural forms are some of the things to check.
 
