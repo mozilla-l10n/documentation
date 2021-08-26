@@ -2,7 +2,7 @@
 
 <!-- toc -->
 
-This document provides best practices for developers to create localizable code, and describes how to avoid some localizability (l12y) common mistakes. Some additional guidelines specific for Fluent in Firefox are also available in [this page](https://firefox-source-docs.mozilla.org/l10n/fluent/review.html).
+This document provides best practices for developers to create localizable code, and describes how to avoid some localizability common mistakes. Some additional guidelines specific for Fluent in Firefox are also available in [this page](https://firefox-source-docs.mozilla.org/l10n/fluent/review.html).
 
 Specific channels dedicated to localization are available on Matrix, in case you have more questions:
 * [#l10n-community](https://chat.mozilla.org/#/room/#l10n-community:mozilla.org) is used by localizers, and it's a good place to ask for questions about specific languages.
@@ -62,6 +62,8 @@ Fluent [supports several types of comments](https://projectfluent.org/fluent/gui
 
 ## Section comment
 
+# Standalone comment
+
 # Message comment
 my-message = Example
 ```
@@ -78,9 +80,9 @@ cfr-doorhanger-extension-author = by { $name }
 #### Properties files
 
 ```
-# LOCALIZATION NOTE(privacy-text): {{privacy}} will be replaced at run-time by an
+# LOCALIZATION NOTE(privacy-text): %S will be replaced at run-time by an
 # active link. the string “privacy-link” will be used as text for this link.
-privacy-text = By proceeding you accept the {{privacy}}.
+privacy-text = By proceeding you agree to the %S.
 privacy-link = Privacy Terms
 ```
 
@@ -89,8 +91,10 @@ File-wide comments should use the same format, they should be at the top of the 
 #### DTD files
 
 ```
-<!-- LOCALIZATION NOTE (entity name): {{privacy}} will be replaced at run-time by an
-     active link. the string “privacy-link” will be used as text for this link. -->
+<!-- LOCALIZATION NOTE: The accessibleLabel is a spoken label that should not
+include the word "toolbar" or such, because screen readers already know that
+this container is a toolbar. This avoids double-speaking. -->
+<!ENTITY navbar.accessibleLabel "Navigation">
 ```
 
 #### JSON (webextension)
@@ -259,7 +263,7 @@ general-site-identity = This website is owned by { $owner }. This has been verif
 Consider these strings:
 
 ```
-tos-text = By proceeding you accept the
+tos-text = By proceeding you agree to the
 tos-link = Terms of Service
 ```
 
@@ -273,19 +277,19 @@ A much more flexible solution would be:
 # LOCALIZATION NOTE (tos-text): %S will be replaced at run-time
 # by an active link. String with ID “tos-link” will be used as text
 # for this link.
-tos-text = By proceeding you accept the %S
+tos-text = By proceeding you agree to the %S
 tos-link = Terms of Service
 ```
 
-And then replace `%S` at run-time with the second string. Note also the localization comment and make sure it is clear to the localizer which placeholder string will appear in place of the placeholder as this may affect translation and/or inflection. For example, `By proceeding you accept the {{Terms of Service}}` will result in the Gaelic translation `Ma leanas tu air adhart, bidh tu a’ gabhail ri teirmichean na seirbheise`. But in another grammatical context, `Terms of Service` may require a different inflection, for example `theirmichean na seirbheise`. So if the localizer is left unsure as to which string goes into which placeholder, this may lead to bad translations.
+And then replace `%S` at run-time with the second string. Note also the localization comment and make sure it is clear to the localizer which placeholder string will appear in place of the placeholder as this may affect translation and/or inflection. For example, `By proceeding you agree to the Terms of Service` will result in the Slovenian translation `Z nadaljevanjem sprejemate pogoje uporabe`. But in another grammatical context, `Terms of Service` may require a different inflection, for example `pogojev uporabe` or `pogoji uporabe`. So if the localizer is left unsure as to which string goes into which placeholder, this may lead to bad translations.
 
 In Fluent it can be even more straightforward, without need of replacements:
 
 ```
 # DOM implementation
-tos-text = By proceeding you accept the <a data-l10n-name="tos">Terms of Services</a>
+tos-text = By proceeding you agree to the <a data-l10n-name="tos">Terms of Services</a>
 # React implementation
-tos-text = By proceeding you accept the <a>Terms of Services</a>
+tos-text = By proceeding you agree to the <a>Terms of Services</a>
 ```
 
 ### Don’t reuse strings in different contexts
@@ -299,23 +303,23 @@ Another example: some locales use nouns for titles, and verbs for actions (for e
 Consider this string:
 
 ```
-privacy-link = <p>By proceeding you accept the <a href="https://www.mozilla.org/privacy" class="external">Privacy Terms</a>.</p>
+privacy-link = <p>By proceeding you agree to the <a href="https://www.mozilla.org/privacy" class="external">Privacy Terms</a>.</p>
 ```
 
 In this case, you shouldn’t put the URL inside the localization string, unless you need it to be localizable. If you change the URL, you’re going to need a new string ID; the same goes for the anchor’s attributes, or the paragraph markup. Instead, you should use the following approach:
 
 ```
 # DOM implementation
-tos-text = By proceeding you accept the <a data-l10n-name="privacy">Privacy Terms</a>
+tos-text = By proceeding you agree to the <a data-l10n-name="privacy">Privacy Terms</a>
 # React implementation
-tos-text = By proceeding you accept the <a>Privacy Terms</a>
+tos-text = By proceeding you agree to the <a>Privacy Terms</a>
 ```
 
 ```
 # LOCALIZATION NOTE(privacy-text): %s will be replaced at run-time
 # by an active link. String with ID “privacy-link” will be used as text
 # for this link.
-privacy-text = By proceeding you accept the %S.
+privacy-text = By proceeding you agree to the %S.
 privacy-link = Privacy Terms
 ```
 
@@ -335,10 +339,17 @@ If you’re removing features, don’t leave around unused strings in the locali
 
 ### CSS issues
 
-Some CSS text/font properties may cause problems with text legibility when applied to certain scripts.
+Some CSS text/font properties may cause problems with text legibility when applied to certain scripts. For example, avoid using Italic for CJKT locales — Chinese (Simplified and Traditional), Japanese, Korean, and Taiwanese.
 
-* Avoid using Italic for CJKT. This acronym stands for: Chinese (Simplified and Traditional), Japanese, Korean, and Taiwanese.
-* The [`text-transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform) property is not reliable for some locales; for example, `text-transform: uppercase` won’t work properly with languages such as Irish/Gaelic. For example, `App Size` in English may be capitalized via `text-transform: uppercase` to `APP SIZE` but in Gaelic this would change `Meud na h-aplacaid` to `MEUD NA H-APLACAID` which violates the locales orthographic rules, as it ought to be `MEUD NA hAPLACAID`. In general, localizers should make the decision about capitalization. If you want to display `WARNING`, add a string with that capitalization, and explain it in the localization note. This is particularly important for web content, where the CSS implementation depends on the browser in use.
+The [`text-transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform) property is not reliable for some locales; for example, `text-transform: uppercase` won’t work with languages such as Irish/Gaelic or Turkish (`İi` vs `Iı`). `App Size` in English may be capitalized via `text-transform: uppercase` to `APP SIZE` but in Gaelic this would change `Meud na h-aplacaid` to `MEUD NA H-APLACAID`, which violates the locales orthographic rules, as it ought to be `MEUD NA hAPLACAID`. In some cases, it can even lead to a different meaning. Consider the following examples in Irish:
+* `Athair` = Father
+* `Nathair` = Snake
+* `Ár nAthair` = Our Father
+* `Ár Nathair` = Our Snake
+* `ÁR NATHAIR` = OUR SNAKE
+* `ÁR nATHAIR` = OUR FATHER
+
+ In general, localizers should make the decision about capitalization. If you want to display `WARNING` uppercase, add a string directly with that capitalization, and explain it in the localization note. This is particularly important for web content, where the CSS implementation depends on the browser in use. Even within Firefox, the correct behavior depends on having the correct `lang` attribute associated to the text or document.
 
 ### Design for at least +30%
 
@@ -347,7 +358,7 @@ Bear in mind that English strings will likely be shorter than their internationa
 * `OK` in English becomes `Ceart ma-thà` in Gaelic.
 * `Save document?` in English becomes `A bheil thu airson an sgrìobhainn a shàbhaladh` in Gaelic.
 
-Another good example is *Yes/No*. There are two types of languages, those that have *Yes/No* as a single word, and those that don’t and work on mirroring the verb. For example, a `Do you want to open the page?` > `Yes/No` dialog works in English, but in Gaelic/Irish/Welsh and several other languages the equivalent answer is `Want/Not want`.
+Another good example is *Yes/No*. There are two types of languages, those that have *Yes/No* as a single word, and those that don’t and work on mirroring the verb. For example, a `Do you want to open the page?` > `Yes/No` dialog works in English, but in Celtic languages (and several others) the equivalent answer is `Want/Not want`.
 
 W3C has a good [guide](http://www.w3.org/International/articles/article-text-size) on the length ratios a developer should be prepared for.
 
