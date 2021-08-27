@@ -2,10 +2,10 @@
 
 <!-- toc -->
 
-This document provides best practices for developers to create localizable code, and describes how to avoid some localizability common mistakes. Some additional guidelines specific for Fluent in Firefox are also available in [this page](https://firefox-source-docs.mozilla.org/l10n/fluent/review.html).
+This document provides best practices for developers to create localizable code, and describes how to avoid some common localizability mistakes. Some additional guidelines specific for Fluent in Firefox are also available in [this page](https://firefox-source-docs.mozilla.org/l10n/fluent/review.html).
 
 Specific channels dedicated to localization are available on Matrix, in case you have more questions:
-* [#l10n-community](https://chat.mozilla.org/#/room/#l10n-community:mozilla.org) is used by localizers, and it's a good place to ask for questions about specific languages.
+* [#l10n-community](https://chat.mozilla.org/#/room/#l10n-community:mozilla.org) is used by localizers, and it’s a good place to ask for questions about specific languages.
 * [#l10n-dev](https://chat.mozilla.org/#/room/#l10n-dev:mozilla.org) can be used for more technical questions.
 * [#i18n](https://chat.mozilla.org/#/room/#i18n:mozilla.org) is the channel of the Internationalization (i18n) team.
 
@@ -131,7 +131,7 @@ If you have any doubts about the quality of strings, ask the Content Team to do 
 
 ### Create flexible content
 
-You need to account for different grammar structures in different locales, and add switching mechanisms to present them appropriately. You shouldn’t make assumptions as to what those structures will be: instead, let locales/localizers decide. When in doubt, ask the localizers.
+You need to account for different grammar structures in different locales, and add switching mechanisms to present them appropriately. You shouldn’t make assumptions as to what those structures will be. Instead, let locales/localizers decide. When in doubt, ask the localizers.
 
 #### Date, time and unit formatting
 
@@ -269,7 +269,7 @@ tos-link = Terms of Service
 
 Most developers would consider this a good solution and display the concatenation of `tos-text+tos-link`, with an active link on the second part. It has the benefit of hiding HTML tags, and not requiring the use of `innerHTML` to inject the result in the UI.
 
-Unfortunately, this won’t work at all: you need at least a third string to place after the link, without that some languages won’t be able to create a natural sounding sentence.
+Unfortunately, this won’t work, as you need at least a third string to place after the link. Without that some languages won’t be able to create a natural sounding sentence.
 
 A much more flexible solution would be:
 
@@ -339,7 +339,7 @@ If you’re removing features, don’t leave around unused strings in the locali
 
 ### CSS issues
 
-Some CSS text/font properties may cause problems with text legibility when applied to certain scripts. For example, avoid using Italic for CJKT locales — Chinese (Simplified and Traditional), Japanese, Korean, and Taiwanese.
+Some CSS text/font properties may cause problems with text legibility when applied to certain scripts. For example, avoid using Italic for [CJK locales](https://en.wikipedia.org/wiki/CJK_characters) — Chinese (Simplified and Traditional), Japanese, and Korean.
 
 The [`text-transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform) property is not reliable for some locales; for example, `text-transform: uppercase` won’t work with languages such as Irish/Gaelic or Turkish (`İi` vs `Iı`). `App Size` in English may be capitalized via `text-transform: uppercase` to `APP SIZE` but in Gaelic this would change `Meud na h-aplacaid` to `MEUD NA H-APLACAID`, which violates the locales orthographic rules, as it ought to be `MEUD NA hAPLACAID`. In some cases, it can even lead to a different meaning. Consider the following examples in Irish:
 * `Athair` = Father
