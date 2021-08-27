@@ -49,7 +49,7 @@ Don’t forget to add a localization note when:
 * String includes variables: always explain what will be the value of these variables at run-time.
 * English could be ambiguous. For example: `bookmark` can be a noun or a verb. Using meaningful IDs can also help in these cases.
 * Strings are used in a specific context. For example accessibility (a11y) strings: in this case space is less important than clarity, since these strings are not displayed in the UI but used by tools like screen readers.
-* The string contains an adjective, but the noun it refers to it’s not part of the string. Most languages need to decline adjectives based on number and gender.
+* The string contains an adjective, but the noun it refers to is not part of the string. Most languages need to decline adjectives based on number and gender.
 
 There is an established format for localization comments: it’s important to follow the format as closely as possible, since there are a number of automated tools that parse these comments for easier access and use by localizers.
 
@@ -100,32 +100,42 @@ this container is a toolbar. This avoids double-speaking. -->
 #### JSON (webextension)
 
 ```
-    "disableDataCollection": {
-        "message": "Disable data collection",
-        "description": "The label on the toggle that DISABLES sending interaction data to Mozilla."
-    }
+"disableDataCollection": {
+    "message": "Disable data collection",
+    "description": "The label on the toggle that DISABLES sending interaction data to Mozilla."
+}
+```
+
+#### XML (Android)
+
+```
+<!-- The same as 'shortcut_erase_short_label' but more descriptive. The launcher shows this
+      instead of the short title when it has enough space. Android recommends a maximum length
+      of 25 characters.
+      %1$s will be replaced by the app name (e.g. Firefox Focus) -->
+<string name="shortcut_erase_and_open_long_label">Erase and open %1$s</string>
 ```
 
 #### XLIFF (iOS, qt)
 
 ```
-      <trans-unit id="vpn.controller.active">
-        <source>Secure and private</source>
-        <note>This refers to the user’s internet connection.</note>
-      </trans-unit>
+<trans-unit id="vpn.controller.active">
+  <source>Secure and private</source>
+  <note>This refers to the user’s internet connection.</note>
+</trans-unit>
 ```
 
 ## Land good quality strings
 
 Try not to land temporary strings. If you already know that your strings are temporary, they shouldn’t be exposed to the localization process. This would waste everybody’s time and create unnecessary frustration: localizers have to translate strings that are destined to change, developers will need to [use new IDs](making_string_changes.md) later to update them.
 
-In case of Fluent and Firefox, it’s possible to save these strings in a file that it’s not exposed to localization ([example](https://hg.mozilla.org/mozilla-central/rev/7b4db2f1bf8f)). This has two benefits:
+In case of Fluent and Firefox, it’s possible to save these strings in a file that is not exposed to localization ([example](https://hg.mozilla.org/mozilla-central/rev/7b4db2f1bf8f)). This has two benefits:
 * It won’t be necessary to change the code to make it localizable, e.g. to remove hard-coded strings.
 * When the content is ready, the file can simply be moved and exposed to the localization toolchain.
 
 If you’re reviewing a patch, check also strings (and comments) for grammar errors, capitalization or inconsistencies. Each product should have its own set of copy rules. For example, in Firefox typographical quotes (`’“”`) should be used instead of straight ASCII quotes (`'"`), and there are automated tests enforcing that.
 
-If you have any doubts about the quality of strings, ask the Content Team to do a copy review of this text. Ideally, all strings landing in code should originate from approved UX wireframes, any copy review should be part of the initial stage of creating these wireframes.
+If you have any doubts about the quality of strings, ask the Content Team to do a copy review of this text. Ideally, all strings landing in code should originate from approved UX wireframes, and copy review should be part of the initial stage of creating these wireframes.
 
 ## Make strings properly localizable
 
@@ -144,7 +154,7 @@ For example, you shouldn’t hard code date formats into applications:
 
 This is fine in English, but in Italian it results in “Mercoledì, Mag 20”, which sounds unnatural. Every time you use this kind of structure, you should have a localizable string behind it, and let localizers decide the best order for their language.
 
-Another example is localizing percentages or units. Some locales use a space between the number and the `%` symbol, some don’t, some use a non-breaking space.
+Another example is localizing percentages or units. Some locales use a space between the number and the `%` symbol, some don’t, and some use a non-breaking space.
 
 Fluent [provides built-in functions](https://projectfluent.org/fluent/guide/functions.html) (`DATETIME()` and `NUMBER()`) to deal flexibly with both date and number formatting.
 
@@ -231,7 +241,7 @@ delete-cookies = Delete #1 cookie;Delete #1 cookies
 
 **Important:** always include the localization note with this format if you use a plural form in Firefox. This comment is used by tools to identify strings with plural forms.
 
-For some formats, **plural forms are not supported**, for a limitation in either the format itself (DTD, JSON) or in our toolchain (XLIFF). In these cases, you should try to use plural neuter forms: instead of `%S files were copied`, use `Copied files: %S`.
+For some formats, **plural forms are not supported**, for a limitation in either the format itself (DTD, JSON) or in our toolchain (XLIFF, XML). In these cases, you should try to use plural neuter forms: instead of `%S files were copied`, use `Copied files: %S`.
 
 ### Use ordered variables in string with multiple variables
 
