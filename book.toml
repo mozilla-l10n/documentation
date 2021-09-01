@@ -1,8 +1,12 @@
 [book]
 multilingual = false
 src = "src"
-title = "Documentation for Mozilla l10n Drivers"
+title = "Localization at Mozilla - Internal Documentation"
 
 [preprocessor.toc]
 command = "mdbook-toc"
 renderer = ["html"]
+
+[output.html]
+git-repository-url = "https://github.com/mozilla-l10n/documentation/"
+edit-url-template = "https://github.com/mozilla-l10n/documentation/edit/master/{path}"
