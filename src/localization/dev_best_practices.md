@@ -17,11 +17,18 @@ It’s important to consider this when adding strings, and especially localizati
 
 ## Localization files
 
-### Choose self-explanatory string IDs
+### String identifiers (IDs)
 
-The ID chosen for your string, regardless of the file format, should always be descriptive of the message and its role in the interface (button label, title, etc.). Think of them as long variable names. Picking specific IDs also prevents other developers from [reusing strings](#dont-reuse-strings-in-different-contexts) in different contexts.
+In most localization formats, a translation unit consists of a unique identifier (ID, often *string ID* or *message ID*) associated to a segment of text. The ID chosen for your string, regardless of the file format, should always be descriptive of the message and its role in the interface (button label, title, etc.). Using specific IDs also will discourage other developers from [reusing strings](#dont-reuse-strings-in-different-contexts) in different contexts.
 
-When you have to [change an existing string](making_string_changes.md), adding a progressive number to the existing key should always be used as a last resort. For example, suppose this string needs to be changed from `Event` to `Add New Event`:
+In most case, when **updating an existing string** already exposed for localization, a new string ID is necessary (for more details, see [this document](making_string_changes.md)):
+* If you are changing a string such that its **meaning has changed**, you must update the string ID.
+* In case of Fluent, you need to update the string ID also when **the morphology of the message changes**, i.e. attributes are added or removed.
+* If your changes are relevant only for English — for example, to correct a typographical error or to make capitalization consistent — then there is generally no need to update the string ID.
+
+There is a gray area between needing a new ID or not. In some cases, it will be necessary to look at all the existing translations to determine if a new ID would be beneficial. You should always reach out to the l10n team in case of doubt.
+
+If a new ID is needed, adding a progressive number to the existing ID should always be used as a last resort. For example, suppose this string needs to be changed from `Event` to `Add New Event`:
 
 ```
 new-event-header = Event
