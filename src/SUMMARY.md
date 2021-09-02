@@ -32,6 +32,7 @@
     * [New locale](tools/pontoon/adding_new_locale.md).
     * [Notifications](tools/pontoon/sending_notifications.md).
     * [Renaming a localization file](tools/pontoon/renaming_a_file.md).
+    * [Renaming a project](renaming_a_project.md).
     * [Deactivating users](tools/pontoon/deactivating_users.md).
     * [Removing users](tools/pontoon/removing_users.md).
 
