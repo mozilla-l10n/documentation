@@ -82,6 +82,21 @@ If your content is not stable, or you want to iterate quickly over it before exp
 
 For Fluent, you can follow examples like [this patch](https://hg.mozilla.org/mozilla-central/rev/e3bc9f1bde6e), where the FTL file is stored outside of the localizable paths, and loaded as “preview”.
 
+### Can I restore an old string?
+
+It’s always possibile to restore an old string that was removed from code, as long as the text remains the same, and the string is used exactly in the same context.
+
+It might also be possible to uplift the patch if the string is still available in the [gecko-string repository](https://hg.mozilla.org/l10n/gecko-strings). `gecko-strings` is a repository with a [superset](https://firefox-source-docs.mozilla.org/l10n/crosschannel/index.html) of strings from all [supported versions](https://hg.mozilla.org/mozilla-unified/file/tip/python/l10n/mozxchannel/__init__.py#l31) of Firefox: nightly, beta, release, ESR.
+
+Consider this example:
+* The original string landed in Firefox 85, and was removed later in Firefox 92.
+* The list of support versions in cross-channel includes: ESR91, 92, 93, 94.
+* The string is restored in Firefox 94.
+
+The string will still be available in `gecko-strings` until ESR91 becomes unsupported, since the string was removed after that release (in Firefox 92). This patch could be uplifted without creating any issue to localization (it would be a *no-op*).
+
+If the string is not available anymore, this is effectively a new string, and must be [treated as such](#can-i-uplift-a-patch-to-beta-or-release).
+
 ### How can I test a different locale?
 
 The answer depends on the version you want to test.
