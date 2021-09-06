@@ -304,9 +304,9 @@ In Fluent it can be even more straightforward, without need of replacements:
 
 ```
 # DOM implementation
-tos-text = By proceeding you agree to the <a data-l10n-name="tos">Terms of Services</a>
+tos-text = By proceeding you agree to the <a data-l10n-name="tos">Terms of Service</a>
 # React implementation
-tos-text = By proceeding you agree to the <a>Terms of Services</a>
+tos-text = By proceeding you agree to the <a>Terms of Service</a>
 ```
 
 ### Don’t reuse strings in different contexts
@@ -325,26 +325,30 @@ privacy-link = <p>By proceeding you agree to the <a href="https://www.mozilla.or
 
 In this case, you shouldn’t put the URL inside the localization string, unless you need it to be localizable. If you change the URL, you’re going to need a new string ID; the same goes for the anchor’s attributes, or the paragraph markup. Instead, you should use the following approach:
 
-```
-# DOM implementation
-tos-text = By proceeding you agree to the <a data-l10n-name="privacy">Privacy Terms</a>
-# React implementation
-tos-text = By proceeding you agree to the <a>Privacy Terms</a>
-```
+In Fluent:
 
 ```
-# LOCALIZATION NOTE(privacy-text): %s will be replaced at run-time
-# by an active link. String with ID “privacy-link” will be used as text
+# DOM implementation
+privacy-link = By proceeding you agree to the <a data-l10n-name="privacy">Privacy Terms</a>
+# React implementation
+privacy-link = By proceeding you agree to the <a>Privacy Terms</a>
+```
+
+In properties:
+
+```
+# LOCALIZATION NOTE(privacy-link): %s will be replaced at run-time
+# by an active link. String with ID “privacy-link-text” will be used as text
 # for this link.
-privacy-text = By proceeding you agree to the %S.
-privacy-link = Privacy Terms
+privacy-link = By proceeding you agree to the %S.
+privacy-link-text = Privacy Terms
 ```
 
 And then replace `%S` at run-time with the mark-up and link text.
 
 ### Don’t hardcode characters
 
-Typically white spaces, commas, or other separators (`:`, `|`). Sometimes this is even done implicitly, by relying on new lines converted to a single white space in HTML.
+Typically hardcoding happens for white spaces, commas, or other separators (`:`, `|`). Sometimes this is even done implicitly, by relying on new lines converted to a single white space in HTML.
 
 If you need a trailing white space in a string, use the Unicode character `\u0020` in Properties, or `{ " " } in Fluent. But this is usually a bad sign, because it means you’re concatenating it to another string.
 
