@@ -34,7 +34,7 @@ While it’s important to note that there’s no real multilingual package for F
 * Flatpak (Linux)
 * Snap (Ubuntu Linux)
 
-For MSIX the application is distributed with all available language packs as part of the package, and they're all installed and listed in `about:addons`. On Linux, only a subset is installed based on the OS locale settings. All of these systems then rely on the the preference `intl.locale.requested` set to an empty string to [automatically match](https://firefox-source-docs.mozilla.org/intl/locale.html#requested-locales) the OS language.
+All available language packs are distributed as part of the package, but only a subset is installed based on the OS locale settings. All of these systems then rely on the the preference `intl.locale.requested` set to an empty string to [automatically match](https://firefox-source-docs.mozilla.org/intl/locale.html#requested-locales) the OS language.
 
 These approaches allow to ship one package and support multiple languages, but there are known limitations (e.g. dictionaries are not included, and language packs cannot translate some parts of the UI).
 
