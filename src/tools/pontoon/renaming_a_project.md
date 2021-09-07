@@ -1,6 +1,6 @@
 # Renaming a project
 
-You need to think carefully on the name when setting up a new project. This is because when a new project  is set up, a corresponding slug is automatically generated. Though rare, sometimes a project needs to be renamed because the product name has changed or for some other reasons. To rename it, go to the project Admin page, update the `Name` field and click the `SAVE PROJECT` button. That’s it! It won't cause any interruption for those in the middle of their work in Pontoon. Do send a communication on the name change to the communities.
+You need to think carefully on the name when setting up a new project. This is because when a new project is set up, a corresponding slug is automatically generated. Though rare, sometimes a project needs to be renamed because the product name has changed or for some other reasons. To rename it, go to the project Admin page, update the `Name` field and click the `SAVE PROJECT` button. This won't cause any interruption for those in the middle of their work in Pontoon. Do send a communication on the name change to the communities.
 
 A slug is the part of a URL that identifies a page in human-readable keywords. It is usually the end part of the URL.
 There is no need to change the `Slug` field to make it match the revised project name. The reasons are:
