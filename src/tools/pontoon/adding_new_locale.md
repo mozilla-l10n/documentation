@@ -80,7 +80,7 @@ This represents the number of native speakers. There are two ways to get this in
 
 #### Using a script
 
-Python needs to be available on the method to use this system: save [this file](https://raw.githubusercontent.com/mozilla-l10n/documentation/master/scripts/cldr_population.py) on your computer as `cldr_population.py` and run it as `python cldr_population.py LOCALE_CODE`.
+Python needs to be available on the method to use this system: save [this file](https://raw.githubusercontent.com/mozilla-l10n/documentation/main/scripts/cldr_population.py) on your computer as `cldr_population.py` and run it as `python cldr_population.py LOCALE_CODE`.
 
 For example, this is the output of the script when checking data for `sl`:
 

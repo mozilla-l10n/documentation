@@ -9,4 +9,4 @@ renderer = ["html"]
 
 [output.html]
 git-repository-url = "https://github.com/mozilla-l10n/documentation/"
-edit-url-template = "https://github.com/mozilla-l10n/documentation/edit/master/{path}"
+edit-url-template = "https://github.com/mozilla-l10n/documentation/edit/main/{path}"

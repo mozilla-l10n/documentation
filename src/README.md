@@ -20,4 +20,4 @@ $ composer update
 
 ## Updating the documentation
 
-Please see the [README file in our GitHub repository](https://github.com/mozilla-l10n/documentation/blob/master/README.md).
+Please see the [README file in our GitHub repository](https://github.com/mozilla-l10n/documentation/blob/main/README.md).
