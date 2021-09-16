@@ -9,8 +9,7 @@ All android-l10n products live within the [android-l10n project](https://github.
 The l10n.toml files live in their corresponding project folder, located here for:
 * [Fenix](https://github.com/mozilla-l10n/android-l10n/blob/master/mozilla-mobile/fenix/l10n.toml)
 * [Android-Components](https://github.com/mozilla-l10n/android-l10n/blob/master/mozilla-mobile/android-components/l10n.toml)
-* [Firefox for Fire TV](https://github.com/mozilla-l10n/android-l10n/blob/master/mozilla-mobile/firefox-tv/l10n.toml)
-* [Firefox Reality](https://github.com/mozilla-l10n/android-l10n/blob/master/MozillaReality/FirefoxReality/l10n.toml)
+* [Focus for Android](https://github.com/mozilla-l10n/android-l10n/blob/master/mozilla-mobile/focus-android/l10n.toml)
 * [Lockwise for Android](https://github.com/mozilla-l10n/android-l10n/blob/master/mozilla-lockwise/lockwise-android/l10n.toml)
 
 Each l10n.toml file typically looks like this:
@@ -31,7 +30,7 @@ locales = [
 # Expose the following branches to localization
 # Changes to this list should be announced to the l10n team ahead of time.
 branches = [
-    "master",
+    "main",
 ]
 
 [env]
@@ -45,7 +44,7 @@ Identify the `locales` section, add the desired new locale code in this  list. W
 
 Save your edited file, then commit and push from your branch to the android-l10n repository.
 
-Note that all products except Firefox for Fire TV share strings with Android Components, so you will also have to edit the Android Components l10n.toml file and add the new locale there.
+Note that all products share strings with Android Components, so you will also have to edit the Android Components l10n.toml file and add the new locale there.
 
 ## Add new locales to Pontoon
 
