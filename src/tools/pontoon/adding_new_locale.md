@@ -101,4 +101,4 @@ Population: 1863468
 
 Find the locale code in [CLDR territoryInfo.json](https://github.com/unicode-cldr/cldr-core/blob/master/supplemental/territoryInfo.json) and multiply its `_populationPercent` with the territory `_population`. Repeat if multiple occurrences of locale code exist and sum products.
 
-At this point click **SAVE** in the bottom right corner to save and create the new locale. The "Terminology" project should then appear under the new team's page. Wait until Pontoon syncs for the locale dashboard to work. You can then check if the locale’s page, as well as the new project, are available - in this case at https://pontoon.mozilla.org/am/
+At this point click **SAVE** in the bottom right corner to save and create the new locale. The "Terminology" project should appear automatically under the new team's page — in this case at https://pontoon.mozilla.org/am/
