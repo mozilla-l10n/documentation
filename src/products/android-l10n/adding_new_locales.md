@@ -9,6 +9,7 @@ All android-l10n products live within the [android-l10n project](https://github.
 The l10n.toml files live in their corresponding project folder, located here for:
 * [Fenix](https://github.com/mozilla-l10n/android-l10n/blob/master/mozilla-mobile/fenix/l10n.toml)
 * [Android-Components](https://github.com/mozilla-l10n/android-l10n/blob/master/mozilla-mobile/android-components/l10n.toml)
+* [Focus for Android](https://github.com/mozilla-l10n/android-l10n/blob/master/mozilla-mobile/focus-android/l10n.toml)
 * [Lockwise for Android](https://github.com/mozilla-l10n/android-l10n/blob/master/mozilla-lockwise/lockwise-android/l10n.toml)
 
 Each l10n.toml file typically looks like this:
