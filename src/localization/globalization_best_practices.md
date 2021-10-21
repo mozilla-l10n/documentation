@@ -1,4 +1,4 @@
-# Localization and globalization best practices
+# Globalization best practices for product managers
 
 <!-- toc -->
 
