@@ -8,7 +8,7 @@ This document includes a series of frequently asked questions regarding Firefox 
 
 ### Who can I contact if I have more questions?
 
-A Program Manager (L10N PM) is assigned to any Mozilla project that is localized through community. You can find this information in [Pontoon](https://pontoon.mozilla.org/projects/firefox/) for any project in the header section, and more information about the localization team is available in the Mana page dedicated to [Localization](https://mana.mozilla.org/wiki/pages/viewpage.action?pageId=66651657) (available to staff/NDA only).
+A Program Manager (L10N PM) is assigned to any Mozilla project that is localized through community. You can find this information in [Pontoon](https://pontoon.mozilla.org/projects/firefox/) for any project in the header section, and more information about the localization team is available in the Mana page dedicated to [Localization](https://mana.mozilla.org/wiki/pages/viewpage.action?pageId=66651657) (available to Mozilla staff only).
 
 ### Should I enable my feature only for English, or ship it in English for everyone?
 
@@ -117,7 +117,7 @@ Local builds:
 
 Each community will localize new content at different times: some locales will have a complete localization within hours, while others might take weeks or months. Our continuous localization infrastructure allows us to release Firefox with incomplete translations falling back on a backup locale in case of missing strings or errors.
 
-Given that localization is managed by community volunteers, there is no SLA or guarantee that a product will be completely localized before launch. For more information, see [this page on Mana](https://mana.mozilla.org/wiki/pages/viewpage.action?pageId=66651657) (available to staff/NDA only).
+Given that localization is managed by community volunteers, there is no SLA or guarantee that a product will be completely localized before launch. For more information, see [this page on Mana](https://mana.mozilla.org/wiki/pages/viewpage.action?pageId=66651657) (available to Mozilla staff only).
 
 ### How do I communicate with localizers about my feature or patch?
 
