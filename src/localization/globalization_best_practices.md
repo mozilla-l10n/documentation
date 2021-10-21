@@ -34,7 +34,7 @@ There are a few key moments in the schedule for a localized product:
 * **Content freeze**: even with _continuous localization_, there must be a moment in the cycle when the content gets frozen, and stops receiving updates. This time after content freeze can be dedicated to complete and test localization.
 * **QA:** Does QA need to test localized versions of the product? If so, this could only happen after the product has been localized.
 
-The time needed to complete localization will depend on the size of content. When working with volunteers, it’s also important to un
+The time needed to complete localization will depend on the size of content. When working with volunteers, it’s also important to understand that there’s no guarantee that localization will be completed by the end of the cycle:
 * The localization implementation should be able to gracefully deal with incomplete localizations, i.e. **implement a robust fallback system**. For example, if a translation is missing for French, the app should keep working and display English content (i.e. the “source” content) only for that specific string.  \
 Ideally, there should be a full chain of fallback locales, instead of just a pair: for example, for a minority language spoken in Mexico, a fallback chain that looks like language -> es-MX -> es-ES -> en-US provides a much better experience for users.
 * Being able to **quickly ship localization updates** after the initial release is a major benefit, both for increasing localization coverage and fixing bugs.
