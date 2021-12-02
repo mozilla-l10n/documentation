@@ -1,6 +1,6 @@
-# Reviewing strings for a new release of Firefox for iOS
+# Reviewing strings for a new release of a Mozilla iOS product
 
-Usually, a new release of Firefox for iOS means an update to strings. If this is the case, a pull request will be made by the iOS team, in order to land these new strings in the [mozilla-l10n firefoxios-l10n repository](https://github.com/mozilla-l10n/firefoxios-l10n).
+Usually, a new release of our iOS products means an update to strings. If this is the case, a pull request will be made by the iOS team, in order to land these new strings, either in the [mozilla-l10n firefoxios-l10n repository](https://github.com/mozilla-l10n/firefoxios-l10n) or the [mozilla-l10n focusios-l10n repository](https://github.com/mozilla-l10n/focusios-l10n).
 
 At this point, the PR is reviewed by an l10n-driver - most often by the PM in charge of the project.
 
@@ -8,7 +8,7 @@ Let’s go over some of the steps needed over time in order to review correctly 
 
 ## Reviewing the PR
 
-When you’re getting close to the end of the [Firefox for iOS l10n cycle](https://wiki.mozilla.org/Firefox_for_iOS_Train_Schedule), the iOS team will make a pull request in order to land new strings for the upcoming release.
+Let's take examples from Firefox for iOS - in fact, these apply to other iOS products as well, and they also follow the same train schedule. When you’re getting close to the end of the [iOS l10n cycle](https://docs.google.com/spreadsheets/d/1hER_w7pOsWSjeBaUqMd_9ClYCCGlwc4jaFYpcBvFE8g/edit#gid=1960046531), the iOS team will make a pull request in order to land new strings for the upcoming release.
 
 Let’s consider a past PR, which was done for v6.0:
 https://github.com/mozilla-l10n/firefoxios-l10n/pull/19
@@ -43,8 +43,6 @@ https://github.com/mozilla-l10n/firefoxios-l10n/pull/19/commits/a1c041a012e6996b
 
 ## Reviewing strings during the cycle
 
-It’s good to keep an eye on the strings landing during the Firefox for iOS cycle. In fact, if you wait to review strings when the PR is already opened, it’s going to be complicated to get a fix in (until [Bug 1270855](https://bugzilla.mozilla.org/show_bug.cgi?id=1270855) is resolved).
-
 You should try to periodically check out the strings landing, and try to localize them in your head: how would you translate them? Would you be able to do it without the app? Is the localization comment clear enough?
 
 You might also need to identify the bug that added that string, see if there are screenshots, or ask if the iOS team can provide one. The point below explains how to find that bug.
@@ -73,10 +71,12 @@ https://github.com/mozilla-mobile/firefox-ios/blame/978bf46bb680291c61c5d21b6dc2
 On the left, you should (almost always) find the bug reference:
 https://bugzilla.mozilla.org/show_bug.cgi?id=1312842
 
+Note that we now usually use GitHub issues instead of Bugzilla bugs, so `Blame` will most surely bring you to a GitHub issue.
+
 ## Wrapping up your work
 
-So you’ve reviewed the strings during the cycle, and the PR looks good? Wait! Don’t merge it quite yet.
+So you’ve reviewed the strings during the cycle, and the PR looks good - this means you can now merge the PR so the strings get exposed in Pontoon.
 
-You will need to announce this on [dev.l10n mailing list](https://lists.mozilla.org/listinfo/dev-l10n) as soon as you merge the PR. Prepare your email in advance. Here’s [an example](https://groups.google.com/forum/#!searchin/mozilla.dev.l10n/ios$20v7%7Csort:relevance/mozilla.dev.l10n/oR5u3MdMLgE/952I4eyADAAJ) of what it should contain.
+Pontoon ([here for Firefox for iOS](https://pontoon.mozilla.org/projects/firefox-for-ios/) and [here for Focus for iOS](https://pontoon.mozilla.org/projects/focus-for-ios/) should get the new strings automatically after a few minutes, but it’s always a good idea to double check just in case.
 
-[Pontoon](https://pontoon.mozilla.org/projects/firefox-for-ios/) should get the new strings automatically, but it’s always a good idea to double check just in case.
+One last thing is to not forget to update the l10n completion deadline under Pontoon resources for each product.
