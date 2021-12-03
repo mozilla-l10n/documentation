@@ -1,6 +1,6 @@
-# Reviewing strings for a new release of a Mozilla iOS product
+# Reviewing strings for a new release of Mozilla iOS products
 
-Usually, a new release of our iOS products means an update to strings. If this is the case, a pull request will be made by the iOS team, in order to land these new strings, either in the [mozilla-l10n firefoxios-l10n repository](https://github.com/mozilla-l10n/firefoxios-l10n) or the [mozilla-l10n focusios-l10n repository](https://github.com/mozilla-l10n/focusios-l10n).
+Usually, a new release of our iOS products means an update to strings. If this is the case, a pull request will be made by the iOS team, in order to land these new strings, either in the [firefoxios-l10n](https://github.com/mozilla-l10n/firefoxios-l10n) or the [focusios-l10n](https://github.com/mozilla-l10n/focusios-l10n) repositories in `mozilla-l10n`.
 
 At this point, the PR is reviewed by an l10n-driver - most often by the PM in charge of the project.
 
@@ -8,25 +8,20 @@ Let’s go over some of the steps needed over time in order to review correctly 
 
 ## Reviewing the PR
 
-Let's take examples from Firefox for iOS - in fact, these apply to other iOS products as well, and they also follow the same train schedule. When you’re getting close to the end of the [iOS l10n cycle](https://docs.google.com/spreadsheets/d/1hER_w7pOsWSjeBaUqMd_9ClYCCGlwc4jaFYpcBvFE8g/edit#gid=1960046531), the iOS team will make a pull request in order to land new strings for the upcoming release.
+Let's consider Firefox for iOS as an example - in fact, these apply to other iOS products as well, and they also follow the same train schedule. When you’re getting close to the end of the [iOS l10n cycle](https://docs.google.com/spreadsheets/d/1hER_w7pOsWSjeBaUqMd_9ClYCCGlwc4jaFYpcBvFE8g/edit#gid=1960046531), the iOS team will make a pull request in order to land new strings for the upcoming release.
 
-Let’s consider a past PR, which was done for v6.0:
-https://github.com/mozilla-l10n/firefoxios-l10n/pull/19
+Let’s consider a past PR, which was done for [v6.0 here](https://github.com/mozilla-l10n/firefoxios-l10n/pull/19).
 
-The first thing you’ll want to do is to check the changes to the /en-US folder:
-https://github.com/mozilla-l10n/firefoxios-l10n/pull/19/commits/edcee6500a4cec7cd40251e0dd2c047a5ffbe3ae
+The first thing you’ll want to do is to check the changes to the [/templates folder]
+(https://github.com/mozilla-l10n/firefoxios-l10n/pull/19/commits/8a8ecbcb748b0f023557d6c1b07e6208a2e953ea).
 
 ### Acceptable changes
 
 Changes to attributes like tool-version and build-num are expected, they happen every time you change the version of Xcode.
 
-Same for the utf-8 -> UTF-8 at the beginning, and version number bumping to 6.0. Note that these should now be automatically translated (so will not appear as new strings for localizers and they will not need to touch them).
+Note that these will not appear as new strings for localizers and they will not need to touch them.
 
 Changes to comments (<note>) are irrelevant in terms of string updates, so they’re also OK.
-
-Remember also that the script converts Unicode literals into UTF-8 characters. Example: https://github.com/mozilla-l10n/firefoxios-l10n/pull/19/commits/713def82602224556d797b46e3f6d611297ee3e3#diff-42d28e544c7a30099950b7a09a69f2caL2289
-
-As you can see, the `&#173;` was not lost - it was converted to the invisible UTF-8 character.
 
 ### Potentially problematic changes (removals)
 
@@ -38,8 +33,7 @@ For example: `Menu.NightModeAction.Title` is removed. If it’s used in v5, and 
 
 ### Quickly review other locales
 
-Once you’ve checked `templates`, you can pick at least one locale and see what changes:
-https://github.com/mozilla-l10n/firefoxios-l10n/pull/19/commits/a1c041a012e6996bd8bdaec88f21f3c34fe383b0
+Once you’ve checked `templates`, you can pick at least one locale and see what changes, as you can see [for example here](https://github.com/mozilla-l10n/firefoxios-l10n/pull/19/commits/a1c041a012e6996bd8bdaec88f21f3c34fe383b0).
 
 ## Reviewing strings during the cycle
 
@@ -51,25 +45,20 @@ You might also need to identify the bug that added that string, see if there are
 
 Let’s consider an example of new strings for Firefox for iOS, with [this past PR](https://github.com/mozilla-l10n/firefoxios-l10n/pull/19).
 
-The ID is `NSCameraUsageDescription`, the label `This lets you take and upload photos`
+The ID is `NSCameraUsageDescription`, the label `This lets you take and upload photos`.
 It doesn’t have a localization comment, which is bad.
 
 In fact currently, the only strings that can not have localization comments are strings that are located in `InfoPlist.strings` and `Info.plist` - see [Bug 1277515](https://bugzilla.mozilla.org/show_bug.cgi?id=1277515) for more details. Otherwise, strings should always have localization comments.
 
-So you open the main repository page:
-https://github.com/mozilla-mobile/firefox-ios
+So first you open the [main repository page](https://github.com/mozilla-mobile/firefox-ios).
 
-And use the search box at the top, searching for the string ID (or the string):
-https://github.com/mozilla-mobile/firefox-ios/search?utf8=%E2%9C%93&q=NSCameraUsageDescription
+Then you use the search box at the top, searching for the [string ID (or the string)](https://github.com/mozilla-mobile/firefox-ios/search?utf8=%E2%9C%93&q=NSCameraUsageDescription).
 
-In this case you find two occurrences. The first one is the most interesting, so you open the file:
-https://github.com/mozilla-mobile/firefox-ios/blob/978bf46bb680291c61c5d21b6dc26472388a374f/Client/en.lproj/InfoPlist.strings
+In this case you find two occurrences. The first one is the most interesting, so you open [the file here](https://github.com/mozilla-mobile/firefox-ios/blob/978bf46bb680291c61c5d21b6dc26472388a374f/Client/en.lproj/InfoPlist.strings).
 
-Then use the `Blame` link on top:
-https://github.com/mozilla-mobile/firefox-ios/blame/978bf46bb680291c61c5d21b6dc26472388a374f/Client/en.lproj/InfoPlist.strings
+Then use the `Blame` [link on top](https://github.com/mozilla-mobile/firefox-ios/blame/978bf46bb680291c61c5d21b6dc26472388a374f/Client/en.lproj/InfoPlist.strings).
 
-On the left, you should (almost always) find the bug reference:
-https://bugzilla.mozilla.org/show_bug.cgi?id=1312842
+On the left, you should (almost always) find the (bug reference)(https://bugzilla.mozilla.org/show_bug.cgi?id=1312842).
 
 Note that we now usually use GitHub issues instead of Bugzilla bugs, so `Blame` will most surely bring you to a GitHub issue.
 
@@ -77,6 +66,6 @@ Note that we now usually use GitHub issues instead of Bugzilla bugs, so `Blame` 
 
 So you’ve reviewed the strings during the cycle, and the PR looks good - this means you can now merge the PR so the strings get exposed in Pontoon.
 
-Pontoon ([here for Firefox for iOS](https://pontoon.mozilla.org/projects/firefox-for-ios/) and [here for Focus for iOS](https://pontoon.mozilla.org/projects/focus-for-ios/) should get the new strings automatically after a few minutes, but it’s always a good idea to double check just in case.
+Pontoon ([here for Firefox for iOS](https://pontoon.mozilla.org/projects/firefox-for-ios/) and [here for Focus for iOS](https://pontoon.mozilla.org/projects/focus-for-ios/)) should get the new strings automatically after a few minutes, but it’s always a good idea to double check just in case.
 
 One last thing is to not forget to update the l10n completion deadline under Pontoon resources for each product.
