@@ -12,8 +12,7 @@ Let's consider Firefox for iOS as an example - in fact, these apply to other iOS
 
 Let’s consider a past PR, which was done for [v6.0 here](https://github.com/mozilla-l10n/firefoxios-l10n/pull/19).
 
-The first thing you’ll want to do is to check the changes to the [/templates folder]
-(https://github.com/mozilla-l10n/firefoxios-l10n/pull/19/commits/8a8ecbcb748b0f023557d6c1b07e6208a2e953ea).
+The first thing you’ll want to do is to check the changes to the [/templates folder](https://github.com/mozilla-l10n/firefoxios-l10n/pull/19/commits/8a8ecbcb748b0f023557d6c1b07e6208a2e953ea).
 
 ### Acceptable changes
 
@@ -58,7 +57,7 @@ In this case you find two occurrences. The first one is the most interesting, so
 
 Then use the `Blame` [link on top](https://github.com/mozilla-mobile/firefox-ios/blame/978bf46bb680291c61c5d21b6dc26472388a374f/Client/en.lproj/InfoPlist.strings).
 
-On the left, you should (almost always) find the (bug reference)(https://bugzilla.mozilla.org/show_bug.cgi?id=1312842).
+On the left, you should (almost always) find the [bug reference](https://bugzilla.mozilla.org/show_bug.cgi?id=1312842).
 
 Note that we now usually use GitHub issues instead of Bugzilla bugs, so `Blame` will most surely bring you to a GitHub issue.
 
