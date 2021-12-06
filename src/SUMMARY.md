@@ -21,8 +21,8 @@
     * [Change existing strings](localization/making_string_changes.md).
     * [Best practices for developers](localization/dev_best_practices.md).
     * [Globalization best practices for product managers](localization/globalization_best_practices.md).
-* [Firefox for iOS](products/firefox_iOS/README.md)
-    * [Reviewing new strings](products/firefox_iOS/review_iOSstrings.md).
+* [iOS Products](products/iOS_products/README.md)
+    * [Reviewing new strings](products/iOS_products/review_iOSstrings.md).
 * [Other Projects](products/other/README.md)
 
 ## Tools
