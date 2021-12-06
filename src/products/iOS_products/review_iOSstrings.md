@@ -24,7 +24,7 @@ Changes to comments (<note>) are irrelevant in terms of string updates, so they�
 
 ### Potentially problematic changes (removals)
 
-Then you start scrolling down, checking if the new strings make sense: the first one you find is NSCameraUsageDescription.
+Then you start scrolling down, checking if the new strings make sense: the first one you find is `NSCameraUsageDescription`.
 
 You mostly need to pay attention to the strings removed. Double-check each time that iOS team clearly realizes that they won’t be able to release updates to v5 (or any v5.x release) once strings are exported.
 
@@ -36,11 +36,11 @@ Once you’ve checked `templates`, you can pick at least one locale and see what
 
 ## Reviewing strings during the cycle
 
-You should try to periodically check out the strings landing, and try to localize them in your head: how would you translate them? Would you be able to do it without the app? Is the localization comment clear enough?
+You should try to check out the strings landing, and try to localize them in your head: how would you translate them? Would you be able to do it without the app? Is the localization comment clear enough?
 
 You might also need to identify the bug that added that string, see if there are screenshots, or ask if the iOS team can provide one. The point below explains how to find that bug.
 
-### How to find the bug that introduced a string
+### How to find the code that introduced a string
 
 Let’s consider an example of new strings for Firefox for iOS, with [this past PR](https://github.com/mozilla-l10n/firefoxios-l10n/pull/19).
 
@@ -59,7 +59,7 @@ Then use the `Blame` [link on top](https://github.com/mozilla-mobile/firefox-ios
 
 On the left, you should (almost always) find the [bug reference](https://bugzilla.mozilla.org/show_bug.cgi?id=1312842).
 
-Note that we now usually use GitHub issues instead of Bugzilla bugs, so `Blame` will most surely bring you to a GitHub issue.
+Note that we now use GitHub issues instead of Bugzilla bugs, so `Blame` will most surely bring you to a GitHub issue.
 
 ## Wrapping up your work
 
