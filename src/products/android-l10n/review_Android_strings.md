@@ -12,13 +12,13 @@ Let's consider Firefox for Android as an example - in fact, these apply to other
 
 Let’s consider a past PR [here](https://github.com/mozilla-l10n/android-l10n/pull/391/files).
 
-The first file present is `_meta/mozilla-mobile-fenix.json`. Updates to the `main` section are expected and can be ignored.
+The first file present is `_meta/mozilla-mobile-fenix.json`. This file is part of a [changeset](https://github.com/mozilla-mobile/fenix/commit/76c0c4ad1425cfd79c25d707921e8185620ad080) from the Fenix repository, and is used to generate the strings in export PRs. Updates to the `main` section are expected and can be ignored.
 
 The second file - `values/strings.xml` - is the actual strings file, containing all needed updates.
 
 ### Acceptable changes
 
-The first [string change](https://github.com/mozilla-l10n/android-l10n/pull/391/files#diff-b8d7151f11faa90ad8cfbb96437f96d05602954aa79c1145cb3232f6a5eb6d38R52) adds attributes: `string moz:removedIn="94" name="recently_bookmarked" tools:ignore="UnusedResources"`. You can ignore these kind of changes, as they will not affect localizations. They are a reminder for mobile developers that they will be safely able to delete a string once it has finished riding the Nightly/Beta/Release train, and is no longer needed in an upcoming version. More details [here](https://github.com/mozilla-mobile/fenix/wiki/Removing-strings).
+The first [string change](https://github.com/mozilla-l10n/android-l10n/pull/391/files#diff-b8d7151f11faa90ad8cfbb96437f96d05602954aa79c1145cb3232f6a5eb6d38R52) adds attributes: `string moz:removedIn="94" name="recently_bookmarked" tools:ignore="UnusedResources"`. You can ignore this kind of changes, as they will not affect localizations. They are a reminder for mobile developers that they will be safely able to delete a string once it has finished riding the Nightly/Beta/Release train, and is no longer needed in an upcoming version. More details [here](https://github.com/mozilla-mobile/fenix/wiki/Removing-strings).
 
 Changes to comments are irrelevant in terms of string updates, so they’re also OK.
 
@@ -26,7 +26,7 @@ The general review of strings, such as [this one](https://github.com/mozilla-l10
 
 Things to look out for:
 * Unclear strings and missing localization comments: the best way to identify them is to translate the strings, only having the string and comment as context (not the entire file, or the bug). For example: is the word used both a noun and a verb in English? Is the ID clear enough to give context (e.g. `buttonLabel`)?
-* String changes without new IDs.
+* String changes without new IDs. IDs in XML files are typically located right below the localization comment, and start with `<string name=`, followed by the string ID in quotes - which is then followed by the actual string. So for example [here](https://github.com/mozilla-l10n/android-l10n/pull/391/files#diff-b8d7151f11faa90ad8cfbb96437f96d05602954aa79c1145cb3232f6a5eb6d38R223), the string ID is `browser_menu_customize_home`.
 * Duplicated strings.
 * [Localization issues](https://developer.mozilla.org/en-US/docs/Mozilla/Localization/Localization_content_best_practices), like misused plural forms, unclear comments, etc.
 
