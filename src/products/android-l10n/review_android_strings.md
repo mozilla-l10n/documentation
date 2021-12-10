@@ -12,7 +12,7 @@ Let's consider Firefox for Android as an example - in fact, these apply to other
 
 Let’s consider a past PR [here](https://github.com/mozilla-l10n/android-l10n/pull/391/files).
 
-The first file present is `_meta/mozilla-mobile-fenix.json`. This file is part of a [changeset](https://github.com/mozilla-mobile/fenix/commit/76c0c4ad1425cfd79c25d707921e8185620ad080) from the Fenix repository, and is used to generate the strings in export PRs. Updates to the `main` section are expected and can be ignored.
+The first file present is `_meta/mozilla-mobile-fenix.json`. This file is managed by the automation syncing content between code and l10n repositories, and it’s used to track which [changeset](https://github.com/mozilla-mobile/fenix/commit/76c0c4ad1425cfd79c25d707921e8185620ad080) from the `fenix` repository was used to export the strings in this pull requests. `main` is the name of the branch from which strings are extracted, `fenix` is the internal project name of Firefox for Android. Updates to the value of `main` can be ignored, while changes to the name of the branch need to be coordinated with developers and release engineering.
 
 The second file - `values/strings.xml` - is the actual strings file, containing all needed updates.
 
@@ -26,7 +26,7 @@ The general review of strings, such as [this one](https://github.com/mozilla-l10
 
 Things to look out for:
 * Unclear strings and missing localization comments: the best way to identify them is to translate the strings, only having the string and comment as context (not the entire file, or the bug). For example: is the word used both a noun and a verb in English? Is the ID clear enough to give context (e.g. `buttonLabel`)?
-* String changes without new IDs. IDs in XML files are typically located right below the localization comment, and start with `<string name=`, followed by the string ID in quotes - which is then followed by the actual string. So for example [here](https://github.com/mozilla-l10n/android-l10n/pull/391/files#diff-b8d7151f11faa90ad8cfbb96437f96d05602954aa79c1145cb3232f6a5eb6d38R223), the string ID is `browser_menu_customize_home`.
+* String changes without new IDs. IDs in XML files are stored in the `name` attribute; for example, the ID of [this string](https://github.com/mozilla-l10n/android-l10n/pull/391/files#diff-b8d7151f11faa90ad8cfbb96437f96d05602954aa79c1145cb3232f6a5eb6d38R223) is `browser_menu_customize_home`.
 * Duplicated strings.
 * [Localization issues](https://developer.mozilla.org/en-US/docs/Mozilla/Localization/Localization_content_best_practices), like misused plural forms, unclear comments, etc.
 
