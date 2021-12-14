@@ -54,11 +54,13 @@ Uplifts need to be evaluated case by case, but in general they should be avoided
 
 One more thing to consider is the timing of the uplift. The second part of the Beta cycle is completely frozen, meaning that we can’t take any updates to localization and ship it in that version. Anything uplifted close to the deadline, or after, will ship untranslated. For more details about the Beta timeline for l10n, see the [Build system document](build_system.md#timeline-and-deadlines).
 
-### I need to add new strings for version X, do I still have time?
+### I need to add new strings for version X: when is the deadline?
 
-If version X is in Nightly, i.e. currently developed in mozilla-central, there is time to land until merge day, when the code moves from mozilla-central to mozilla-beta.
+If version X is in Nightly, i.e. currently developed in mozilla-central, there is time to land until merge day, when the code moves from mozilla-central to mozilla-beta. Technically, the string freeze date is on the Friday before merge day, to account for possible back-outs, l10n reviews needed, etc.
 
 The sooner you land content in mozilla-central, the higher will be the chances that the content will be localized in several languages before reaching release.
+
+A webapp is [available here](https://fx-trains.herokuapp.com/release/) with all the deadlines, including string freeze start, for current and future versions of Firefox (use the `«` and `»` near the title to change version).
 
 ## Development
 
