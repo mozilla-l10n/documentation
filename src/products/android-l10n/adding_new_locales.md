@@ -50,6 +50,6 @@ Note that all products share strings with Android Components, so you will also h
 
 Once the patch has landed, the new locale has to be added in Pontoon as well. The steps to follow can be found in the existing [Pontoon documentation here](../../tools/pontoon/adding_new_locale.md).
 
-Note that the next string quarantine PR coming from the `mozilla-mobile` repository will probably show these locales as removed from their corresponding mobile `l10n.toml` file (example of Fenix `l10n.toml` [here](https://github.com/mozilla-mobile/fenix/blob/main/l10n.toml). More information about string quarantine PRs [here](review_android_strings.md)).
-You will need to wait until the next l10n import happens on their side as they update their repository.
-You can know the status of l10n imports by checking the commit history, for example [here](https://github.com/mozilla-mobile/fenix/commits/main) for Fenix. They are usually entitled `import l10n`. Do not merge the quarantine PR until the `l10n.toml` file shows the locales as added.
+Note that the next string quarantine PR coming from the `mozilla-mobile` repository will probably show these locales as removed from their corresponding mobile `l10n.toml` file (example of Fenix `l10n.toml` [here](https://github.com/mozilla-mobile/fenix/blob/main/l10n.toml), and more information about string quarantine PRs [here](review_android_strings.md)).
+In fact, you will need to wait until the next l10n import to see these locales as added.
+You can know the status of l10n imports by checking commit history, for example [here](https://github.com/mozilla-mobile/fenix/commits/main) for Fenix. They are usually entitled `import l10n`. Do not merge the quarantine PR until the `l10n.toml` file shows the locales as added.
