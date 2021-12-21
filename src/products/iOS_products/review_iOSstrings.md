@@ -16,11 +16,11 @@ The first thing you’ll want to do is to check the changes to the [/templates f
 
 ### Acceptable changes
 
-Changes to attributes like tool-version and build-num are expected, they happen every time you change the version of Xcode.
+Changes to attributes like `tool-version` and `build-num` are expected, they happen every time you change the version of Xcode.
 
 Note that these will not appear as new strings for localizers and they will not need to touch them.
 
-Changes to comments (<note>) are irrelevant in terms of string updates, so they’re also OK.
+Changes to comments (`<note>`) are irrelevant in terms of string updates, so they’re also OK.
 
 ### Potentially problematic changes (removals)
 
