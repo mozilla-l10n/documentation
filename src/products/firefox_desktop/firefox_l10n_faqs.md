@@ -84,6 +84,10 @@ If your content is not stable, or you want to iterate quickly over it before exp
 
 For Fluent, you can follow examples like [this patch](https://hg.mozilla.org/mozilla-central/rev/e3bc9f1bde6e), where the FTL file is stored outside of the localizable paths, and loaded as “preview”.
 
+### Can I get content translated only in selected languages?
+
+No, the existing infrastructure only allows to expose strings to all locales. If a feature is exposed for localization, it will get localized in all supported languages.
+
 ### Can I restore an old string?
 
 It’s always possibile to restore an old string that was removed from code, as long as the text remains the same, and the string is used exactly in the same context.
