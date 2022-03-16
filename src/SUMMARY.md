@@ -5,7 +5,7 @@
 ## Products
 
 * [Android-l10n](products/android-l10n/README.md)
-    * [Adding new locales](products/android-l10n/adding_new_locales.md).
+    * [Updating locales](products/android-l10n/updating_locales.md).
     * [Reviewing new strings](products/android-l10n/review_android_strings.md).
     * [Removing projects](products/android-l10n/removing_projects.md).
 * [Firefox Desktop](products/firefox_desktop/README.md)
