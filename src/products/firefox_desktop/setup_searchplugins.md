@@ -83,40 +83,4 @@ The *Name* to use in your localization is `ویکیپیڈیا (ur)`. Copying and
 
 ## Set up protocol handlers
 
-You will be working on l10n-central to set up protocol handlers for a new locale, and you need this locale’s Mercurial repository on your computer.
-
-l10n repositories for Firefox live in https://hg.mozilla.org/l10n-central. In this case, let’s assume that l10n clones will be stored in `~/mozilla/mercurial/l10n`, with a subfolder for each locale. So, if the locale is `ur`, the repository will be stored in `~/mozilla/mercurial/l10n/ur`.
-
-```BASH
-$ mkdir -p ~/mozilla/mercurial/l10n
-$ cd ~/mozilla/mercurial/l10n
-```
-
-The first command makes sure that the path for l10n repositories exists, the second moves into the folder.
-
-If you don’t have a clone yet, you need to create it:
-
-```BASH
-$ hg clone ssh://hg.mozilla.org/l10n-central/ur
-```
-
-The command uses `ssh://`, which means you need an active (and [properly configured](../../tools/mercurial/setting_mercurial_environment.md)) SSH access to the repository.
-
-Once the execution is completed, there should be a clone stored in `~/mozilla/mercurial/l10n/ur`.
-
-If you already have a clone on your computer, always make sure to update it before doing anything:
-
-```BASH
-$ cd ~/mozilla/mercurial/l10n/ur
-$ hg pull -r default -u
-```
-
-### region.properties
-
-region.properties is stored in `/browser/chrome/browser-region` for Firefox desktop, and it contains information about protocol handlers. You can use [this region.properties model](../../assets/files/searchplugins/desktop_region.properties) as a base.
-
-If you’re updating an existing file, make sure to not reset the `gecko.handlerService.defaultHandlersVersion` key. If, on the other hand, you’re adding a new handler, you will have to increment the existing numeric value.
-
-### Creating a patch for review (locale repository)
-
-Once files are ready, follow the instructions available in [this document](../../tools/mercurial/creating_mercurial_patch.md) to create a patch, submit it for review, and land it.
+Starting with Firefox 98, the configuration for protocol handlers is [centralized in mozilla-central](https://searchfox.org/mozilla-central/source/uriloader/exthandler/HandlerList.jsm). For most new locales, the default configuration should be acceptable.

@@ -27,7 +27,7 @@ Things to look out for:
 * Unclear strings and missing localization comments: the best way to identify them is to translate the strings, only having the string and comment as context (not the entire file, or the bug). For example: is the word used both a noun and a verb in English? Is the ID clear enough to give context (e.g. `buttonLabel`)?
 * String changes without new IDs.
 * Duplicated strings.
-* [Localization issues](https://developer.mozilla.org/en-US/docs/Mozilla/Localization/Localization_content_best_practices), like misused plural forms, unclear comments, etc.
+* [Localization issues](https://mozilla-l10n.github.io/documentation/localization/dev_best_practices.html), like misused plural forms, unclear comments, etc.
 
 In case of issues, you have two options:
 * Ask sheriffs (via bug or [Matrix in #sheriffs](https://chat.mozilla.org/#/room/#sheriffs:mozilla.org)) to back out the patch.

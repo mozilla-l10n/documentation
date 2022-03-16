@@ -28,7 +28,7 @@ Things to look out for:
 * Unclear strings and missing localization comments: the best way to identify them is to translate the strings, only having the string and comment as context (not the entire file, or the bug). For example: is the word used both a noun and a verb in English? Is the ID clear enough to give context (e.g. `buttonLabel`)?
 * String changes without new IDs. IDs in XML files are stored in the `name` attribute; for example, the ID of [this string](https://github.com/mozilla-l10n/android-l10n/pull/391/files#diff-b8d7151f11faa90ad8cfbb96437f96d05602954aa79c1145cb3232f6a5eb6d38R223) is `browser_menu_customize_home`.
 * Duplicated strings.
-* [Localization issues](https://developer.mozilla.org/en-US/docs/Mozilla/Localization/Localization_content_best_practices), like misused plural forms, unclear comments, etc.
+* [Localization issues](https://mozilla-l10n.github.io/documentation/localization/dev_best_practices.html), like misused plural forms, unclear comments, etc.
 
 In case of issues, you can comment and CC the developer who introduced the string(s) by checking under the corresponding `Commits` section (example [here](https://github.com/mozilla-l10n/android-l10n/pull/391/commits)). This can be done directly in the corresponding `mozilla-l10n` GitHub PR where your review has taken place.
 

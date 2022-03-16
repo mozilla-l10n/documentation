@@ -14,7 +14,7 @@ Could you also please provide me with some additional information about yourself
 
 You can also visit the following wiki pages to learn the details of how we localize:
 * [L10n:Localization Process:](https://wiki.mozilla.org/L10n:Localization_Process) A good description of the whole process.
-* [The L10n Quick Start Guide:](https://developer.mozilla.org/en/Localization_Quick_Start_Guide) A resource of technical tutorials you’ll need to know as you get more involved.
+
 Looking forward to hearing from you,
 
 [name]

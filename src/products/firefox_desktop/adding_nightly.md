@@ -23,7 +23,6 @@ Make sure to always start with the `shipping` template, since that’s going to 
 
 Before enabling the build, it’s a good idea to perform some basic checks:
 * Check `toolkit/global/intl.properties` ([en-US version](https://hg.mozilla.org/mozilla-central/file/default/toolkit/locales/en-US/chrome/global/intl.properties)) for evident mistakes.
-* Check if there’s a `region.properties` file in `browser/chrome/browser-region/region.properties`, if needed replace it with the [stock version](../searchplugins/files/desktop_region.properties).
 
 ## Set up searchplugins
 

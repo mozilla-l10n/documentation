@@ -23,7 +23,7 @@ Google Translate maintains a list of supported locales in its own format. Choose
 
 ### MS translator code
 
-Microsoft Translator maintains a list of supported locales in its own format. Choose one that matches the locale from [a list of supported locales](https://msdn.microsoft.com/en-us/library/hh456380.aspx) or leave it blank to disable support for Microsoft Translator for this locale.
+Microsoft Translator maintains a list of supported locales in its own format. Choose one that matches the locale from [a list of supported locales](https://docs.microsoft.com/azure/cognitive-services/Translator/language-support) or leave it blank to disable support for Microsoft Translator for this locale.
 
 ### MS terminology code
 
