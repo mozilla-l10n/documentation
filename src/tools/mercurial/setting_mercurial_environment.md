@@ -51,7 +51,7 @@ IdentityFile ~/.ssh/id_rsa
 
 Detailed instructions and explanations are available in [the official documentation](https://phabricator.services.mozilla.com/book/phabricator/article/arcanist_quick_start/).
 
-On macOS, PHP is already shipping as part of the operating system, but you might need to install [Git](https://git-scm.com/) if not available. The following commands clone two repositories inside `~/mozilla/mercurial/`. If you move them, you’ll need to update the `PATH` command accordingly.
+On macOS 11 and older, PHP is already shipping as part of the operating system, but you might need to install [Git](https://git-scm.com/) if not available. On macOS 12 (Monterey), PHP is not provided and you will need to install [PHP](https://www.php.net/) as well. The following commands clone two repositories inside `~/mozilla/mercurial/`. If you move them, you’ll need to update the `PATH` command accordingly.
 
 ```BASH
 $ git clone https://github.com/phacility/libphutil.git ~/mozilla/mercurial/libphutil
