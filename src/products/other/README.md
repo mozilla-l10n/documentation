@@ -25,12 +25,11 @@ Localization PM is automatically set as reviewer via [CODEOWNER](https://github.
 * Bug reports: [GitHub](https://github.com/mozilla-mobile/mozilla-vpn-client/issues)
 * Testing web app: [link](https://mozilla-mobile.github.io/mozilla-vpn-client/)
 
-To add a new locale to this project it’s enough to add the locale to Pontoon. The locale will be added automatically to Nightly builds, but will be available in production builds only after
-it reaches 70% completion (and dropped automatically if it gets lower).
+To add a new locale to this project it’s enough to add the locale to Pontoon. The locale will be added automatically to Nightly builds, but will be available in production builds only after it reaches 70% completion (and dropped automatically if it gets lower).
 
 Builds are created via GitHub automation and available as assets in each run of [GitHub Actions](https://github.com/mozilla-mobile/mozilla-vpn-client/actions). Builds are multilocale, and users can switch language directly from the app settings.
 
-For this project, there are several elements of automation running.
+For this project, there are several elements of automation running (linter, [string extraction](https://github.com/mozilla-l10n/mozilla-vpn-client-l10n#string-updates)).
 
 ### Automation: Strings export
 
