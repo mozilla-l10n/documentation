@@ -47,30 +47,13 @@ User YOUR_LDAP_EMAIL_ADDRESS
 IdentityFile ~/.ssh/id_rsa
 ```
 
-## Set up Arcanist for Phabricator
+## Set up MozPhab for Phabricator
 
-Detailed instructions and explanations are available in [the official documentation](https://phabricator.services.mozilla.com/book/phabricator/article/arcanist_quick_start/).
-
-On macOS 11 and older, PHP is already shipping as part of the operating system, but you might need to install [Git](https://git-scm.com/) if not available. On macOS 12 (Monterey), PHP is not provided and you will need to install [PHP](https://www.php.net/) as well. The following commands clone two repositories inside `~/mozilla/mercurial/`. If you move them, you’ll need to update the `PATH` command accordingly.
-
-```BASH
-$ git clone https://github.com/phacility/libphutil.git ~/mozilla/mercurial/libphutil
-$ git clone https://github.com/phacility/arcanist.git ~/mozilla/mercurial/arcanist
-$ echo -e '\n# Arcanist path for Phabricator\nPATH="$PATH:$HOME/mozilla/mercurial/arcanist/bin/"' >> ~/.bash_profile
-$ source ~/.bash_profile
-```
-
-Check that the `arc` command is available:
-
-```BASH
-$ arc --version
-arcanist 875d018360374cb4b1287309782fcb9a75d4bcbf (9 Jul 2018)
-libphutil 1613e68f474030e2c8de2797080a6872c140b1ef (20 Jul 2018)
-```
+Detailed instructions and explanations are available in [the official documentation](https://moz-conduit.readthedocs.io/en/latest/phabricator-user.html#setting-up-mozphab).
 
 You also need to [create an account](https://moz-conduit.readthedocs.io/en/latest/phabricator-user.html) on Phabricator and [log in](https://phabricator.services.mozilla.com/).
 
-At this point you still have to install Arcanist credentials, but you need a clone of mozilla-unified first.
+The configuration will be completed after cloning `mozilla-unified`.
 
 ## Cloning and updating mozilla-unified
 
@@ -91,11 +74,11 @@ $ hg up central
 
 The last command makes sure you’re working against central (to be more precise, it moves you to the `central` bookmark).
 
-Now you can complete the setup for Arcanist. Follow the instructions on screen to complete, it will require you to connect to Phabricator and generate an API key to copy in the terminal:
+Now you can complete the setup for MozPhab. Follow the instructions on screen to complete, it will require you to connect to Phabricator and generate an API key to copy in the terminal:
 
 ```BASH
 $ cd ~/mozilla/mercurial/mozilla-unified
-$ arc install-certificate
+$ moz-phab install-certificate
 ```
 
 ## Mercurial configuration
