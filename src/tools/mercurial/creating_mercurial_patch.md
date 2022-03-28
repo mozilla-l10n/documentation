@@ -48,10 +48,12 @@ Let’s create a bookmark for this pending work, for example `bug1304757`.
 $ hg bookmark bug1304757
 ```
 
-Commit the changes:
+Commit the changes. In the commit message:
+* Don’t forget to start with the bug number, i.e. `Bug XXXXXX -`
+* At the end of the commit message, add the reviewer with the format `r=phab_user`. `phab_user` is the reviewer’s username on Phabricator, e.g. `flod`. You can add an exclamation mark at the end to set it as blocking reviewer, i.e. `r=phab_user!`.
 
 ```BASH
-$ hg commit -m "Bug 1304757 - [ur] Search engine setup for Firefox for Urdu"
+$ hg commit -m "Bug 1304757 - [ur] Search engine setup for Firefox for Urdu, r=flod!"
 ```
 
 At this point you can check the status of the tree:
@@ -77,51 +79,15 @@ o :   358709:f8107cf96144 cbook  central
 :/   merge mozilla-inbound to mozilla-central a=merge
 ```
 
-Create a revision in Differential:
-
-```BASH
-$ arc diff
-```
-
-An editor will open, asking for some information about the commit:
+To push to Phabricator use:
 
 ```
-Bug 1304757 - [ur] Search engine setup for Firefox for Urdu
-
-Summary:
-
-Test Plan:
-
-Reviewers: flod
-
-Subscribers:
-
-Bug #: 1304757
+$ moz-phab
 ```
 
-You need to provide:
-* **Reviewers**: use the Phabricator nickname (usually matches the nickname on Bugzilla). In this example: `flod`.
-* **Bug #**: provide the bug number. In this example: `1304757`.
+You can add `-s` to only push a single commit, i.e. `moz-phab -s`.
 
-Once finished, save the editor and exit. At the end of the process, you should find a link to a Differential in Phrabricator:
-
-```BASH
-Linting...
-No lint engine configured for this project.
-Running unit tests...
-No unit test engine is configured for this project.
- SKIP STAGING  Phabricator does not support staging areas for this repository.
-Updating commit message...
-Created a new Differential revision:
-        Revision URI: https://phabricator.services.mozilla.com/Dxxxx
-
-Included changes:
-  M       browser/locales/search/list.json
-  A       browser/locales/searchplugins/amazon-in.xml
-  A       browser/locales/searchplugins/wikipedia-ur.xml
-```
-
-Once published, the review request will be attached automatically to the bug, and the reviewer will be flagged. Note that you can also update information about the patch, like reviewer or bug, directly in Phrabricator after using `arc diff`.
+Once published, the review request will be attached automatically to the bug, and the reviewer will be flagged. Note that you can also update information about the patch, like reviewer or bug, directly in Phrabricator after pushing with MozPhab.
 
 ### Updating an existing patch
 
@@ -153,10 +119,10 @@ To amend the last commit, simply execute:
 $ hg commit --amend
 ```
 
-Then confirm (or edit) the commit message by saving with `CTRL+O` and exiting with `CTRL+X` (assuming the default editor is nano). Finally, update phabricator (you will need to provide a commit message):
+Then confirm (or edit) the commit message by saving with `CTRL+O` and exiting with `CTRL+X` (assuming the default editor is nano). Finally, update Phabricator (don’t make changes to the metadata in the commit):
 
 ```BASH
-$ arc diff
+$ moz-phab
 ```
 
 #### Create a new commit and squash history
@@ -208,7 +174,7 @@ roll 8088fd8658fd 358598 Fix searchplugin name
 Update Phabricator (you will need to provide a commit message):
 
 ```BASH
-$ arc diff
+$ moz-phab
 ```
 
 You can also use `hg histedit` to reword a commit message (set the commit line to `edit`). Just remember to complete the `histedit` after commit.
@@ -232,7 +198,6 @@ More information about this workflow are available in the following pages:
 
 Once the patch has been reviewed, you have two options:
 * If you have L3 access to the repository, you can use [Lando](https://moz-conduit.readthedocs.io/en/latest/lando-user.html) to land your commit directly. If your reviewer has it, you can ask them to land.
-* You can set the `checkin-needed` keyword in the bug, and sheriffs will land it from you.
 
 ## Creating a patch using Queues
 
