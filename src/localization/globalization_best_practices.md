@@ -98,3 +98,39 @@ Changing a feature name afterwards is confusing for users, so it’s important t
 If the feature name can be localized, we need to provide as much context as possible on the choice, i.e. why that specific name was chosen for English.
 
 We also need to give time to localizers to come up with a good choice. After all, the same process likely required a significant amount of time for English.
+
+### Requesting a change for existing translations
+
+As a product manager, you might receive feedback that a specific translation is not optimal and should be changed, or that English should be used instead of a translated term.
+
+This section aims to provide more context about our work with the community, highlight aspects to keep in mind when evaluating this type of feedback, and describe how to effectively request a change.
+
+#### Community
+
+As detailed in [this Mana page](https://mana.mozilla.org/wiki/display/FIREFOX/Localization+%28l10n%29+and+Translation), all Mozilla products are localized by a community of volunteers.
+
+Our community members invest hundreds of hours translating the entire Mozilla ecosystem, and often do more than just translation: grass-root marketing, support, brand evangelism, QA, and more. We built a relationship based on cooperation over the years, and that includes trusting them with making good choices when it comes to translating specific feature names.
+
+With the help of our community we established a sustainable localization system, which is key for Mozilla’s success and embodies our mission of making the internet truly accessible to all. Thanks to them, we’re often able to support more languages than our competitors.
+
+#### Evaluating feedback and alternatives
+
+The in-house Localization team acts as a **steward of the relationship with our community**. As a rule of thumb, feedback should not be forwarded unfiltered to translators. Feedback should be first evaluated internally:
+* **Decide if the proposed change is worth the possible confusion that existing users will feel.** They have already been exposed to the existing translation, and all of a sudden the product will start using a different term, potentially one they don’t understand.
+* **Explain why the new translation is considered more effective than the existing one.** Where possible, support the proposal with data.
+
+The in-house Localization team should be the first point of contact. While we don’t have the internal resources to evaluate linguistic feedback for specific locales, we have more context on existing policies around translation, and can help identify all the risks associated with a change.
+
+In an ideal scenario, we should rely on user research to understand how the target audience reacts to both alternatives. Looking at what other companies do can be an effective approach, but it’s important to note that they might target a completely different audience (age, interests, familiarity with English).
+
+**Considerations when deciding whether an English term is best:**
+* **We often have biases, because of age, environment or experience.** Mozilla is an international company where everyone speaks English. Most non-native speakers at Mozilla use their browser, operating system, and even mobile phone in English. As an employee, we might not be a representative sample when it comes to deciding if English is an effective choice.
+* **Consider the product strategy and target audience.** Will we see better results with a more evocative and modern name (as English often is perceived), or a more descriptive translation that is more easily understood? For example, if the goal is to grow the number of users for the product through this feature, is there a risk that they might be pushed back by an English name? Or will they be more attracted?
+* **Depending on the language, switching to an English term might not be a straightforward replacement**, e.g. if the term is used in sentences and with different grammatical roles.
+* **English might have a negative impact on specific languages and cultures.** For example, consider languages using a different [text direction](https://en.wikipedia.org/wiki/Bidirectional_text): in right-to-left languages, the text flows from right to left. An English set of words will force the reader to suddenly jump forward, read the characters left to right, then return to the natural reading flow for the rest of the sentence. While this has become second nature for younger generations, it might not be for all speakers, or even for all regions where the language is spoken.<br/> The English words might also be pronounced in a way that evokes existing words in the local language, giving the feature a negative or even obscene connotation. There are plenty of examples of major international companies rebranding locally to avoid this type of situation.
+
+#### How to request a change
+
+The localization program manager in charge of the product can reach out to a specific language community to get more background on existing translations, for example to verify if alternatives were already considered and rejected.
+
+Our team can also create a communication channel between product and localizers to propose a change, but simply imposing a specific choice from the top comes with the risk of alienating our volunteers.
