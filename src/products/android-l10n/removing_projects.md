@@ -1,23 +1,23 @@
 # Removing projects from android-l10n
 
-Below are listed the steps to follow in order to safely remove projects from [android-l10n](https://github.com/mozilla-l10n/android-l10n).
+Follow the steps below to safely remove projects from [android-l10n](https://github.com/mozilla-l10n/android-l10n).
 
 ## Contact Release Engineering
 
-The first thing to do is to request from the Release Engineering team (“RelEng”) that they disable automation associated to the [android-l10n project](https://github.com/mozilla-l10n/android-l10n) you want to remove.
-Currently, the way to make this request is to send an email directly to RelEng (“Aki” and “Mihai”).
+First, make a request to the Release Engineering team (“RelEng”) to disable the automation associated with the [android-l10n project](https://github.com/mozilla-l10n/android-l10n) you want to remove.
+Currently, the way to make this request is to send an email directly to RelEng at releng(at)mozilla(dot)com.
 This step will help ensure that any automation linked to this product will be discontinued, as it will remove all config/automation/localizable files and prevent future updates to release.
 
 ## RelEng files a PR
 
 RelEng will then create a PR in the [android-l10n-tooling GitHub repository](https://github.com/mozilla-l10n/android-l10n-tooling). Make sure to wait for that PR to be merged by RelEng before continuing to the next steps, since otherwise, automation will not have been stopped.
 
-Example PR for the removal of Firefox for Fire TV product: https://github.com/mozilla-l10n/android-l10n-tooling/pull/29
+See [example PR](https://github.com/mozilla-l10n/android-l10n-tooling/pull/29) for the removal of Firefox for Fire TV product.
 
-## Stop sync for the android-l10n project in Pontoon
+## Disable the project in Pontoon
 
-In order to disable sync in Pontoon, log in to [the admin view of android-l10n](https://pontoon.mozilla.org/admin/projects/android-l10n/), scroll to the bottom of the page, and click on “sync disabled” on the left.
-This will ensure that the project stops syncing between Pontoon and the GitHub android-l10n repository, in order to safely remove it from the repo, and avoid any possible conflicts between files.
+In order to disable a project in Pontoon, log in to admin view of the project (e.g. [Firefox for Android](https://pontoon.mozilla.org/admin/projects/firefox-for-android/), [Focus for Android](https://pontoon.mozilla.org/admin/projects/focus-for-android/), etc.) and scroll to the bottom of the page. Click the “Disabled” checkbox on the left and then "Save Project".
+The project will no longer be shown to localizers and will stop syncing between Pontoon and the GitHub android-l10n repository. This allows safe removal of the project from the repo and avoids any possible conflicts between files.
 
 ## Remove - and update - android-l10n GitHub files
 
@@ -26,13 +26,4 @@ This will ensure that the project stops syncing between Pontoon and the GitHub a
 * Remove corresponding project lines contained within the [config.toml](https://github.com/mozilla-l10n/android-l10n/blob/master/config.toml)
 * Remove corresponding project lines contained within the [l10n.toml](https://github.com/mozilla-l10n/android-l10n/blob/master/l10n.toml)
 
-Example PR that does all of this for Fire TV: https://github.com/mozilla-l10n/android-l10n/pull/289
-
-## Remove the project tag in Pontoon
-
-Go to the [admin view of android-l10n](https://pontoon.mozilla.org/admin/projects/android-l10n/), scroll to the bottom of the page, and remove the product under the “Tags” section.
-This ensures that the project will not be listed under “Tags” along with other active android-l10n projects in Pontoon.
-
-## Re-enable sync in Pontoon
-
-Log in to the [admin view of android-l10n](https://pontoon.mozilla.org/admin/projects/android-l10n/), scroll to the bottom of the page, and click on the checkbox “Sync Disabled” on the left. This will re-enable sync for the project in Pontoon.
+See [example PR](https://github.com/mozilla-l10n/android-l10n/pull/289) that does all of this for Fire TV.
