@@ -4,3 +4,4 @@
 * [How to work with a Localization Agency](working_w_l10n_agency.md).
 * [Documentation styleguide](documentation_styleguide.md).
 * [Stock email for interaction with localizers and vendors](stock_emails.md).
+* [Exporting terminology from Pontoon to Smartling](terminology_export.md)

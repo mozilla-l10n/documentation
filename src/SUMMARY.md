@@ -49,3 +49,4 @@
     * [How to work with a Localization Agency](misc/working_w_l10n_agency.md)
     * [Documentation styleguide](misc/documentation_styleguide.md).
     * [Stock emails](misc/stock_emails.md).
+    * [Exporting terminology](misc/terminology_export.md)
