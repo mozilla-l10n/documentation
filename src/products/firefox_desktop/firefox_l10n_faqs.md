@@ -42,7 +42,7 @@ These approaches allow to ship one package and support multiple languages, but t
 
 ### I landed strings in mozilla-central, when are they going to be localized?
 
-New string changes are periodically exported from mozilla-central into a repository called `gecko-strings-quarantine`, a unified repository that includes strings for all shipping versions of Firefox (nightly, beta, release). This repository is used as a buffer to avoid exposing potential issues to all locales working on Firefox.
+New string changes are exported twice a day from mozilla-central into a repository called `gecko-strings-quarantine`, a unified repository that includes strings for all shipping versions of Firefox (nightly, beta, release). This repository is used as a buffer to avoid exposing potential issues to all locales working on Firefox.
 
 Typically once or twice a week, the content of the quarantine repository is pushed to the official repository, called `gecko-strings`, used by [Pontoon](https://pontoon.mozilla.org/projects/firefox/) as source reference. At this point, strings can be localized by community.
 
