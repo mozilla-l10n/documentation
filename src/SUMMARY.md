@@ -37,6 +37,7 @@
     * [Renaming a localization file](tools/pontoon/renaming_a_file.md).
     * [Deactivating users](tools/pontoon/deactivating_users.md).
     * [Removing users](tools/pontoon/removing_users.md).
+    * [New terminology](tools/pontoon/adding_new_terminology.md).
 
 ## Misc
 
