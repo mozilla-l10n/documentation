@@ -18,7 +18,7 @@ To add a new term, click `Add Term +`. The following page will have the followin
 * Exact match: Flag if the term should only match on an exact match. (Unflagged allows fuzzy matching.)
 * Do not translate: Flag if the term should not be translated (example brand names like Firefox).
 * Forbidden: Flag if this term is forbidden from usage.
-* Entity: *Ignore*
+* Created by: *Ignore*
 
 Once the necessary information has been filled out click one of the three save options `Save and add another`, `Save and continue editing`, or `SAVE` to register the term to Pontoon.
 
