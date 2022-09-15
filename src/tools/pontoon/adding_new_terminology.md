@@ -10,8 +10,8 @@ To add a new term, click `Add Term +`. The following page will have the followin
 
 * Text: Term you wish to register.
 * Entity: *Ignore*
-* Part of speech: Select the part of speech that applies to your term. In some cases the same string can be registered twice with different parts of speech,e.g. bookmark as a noun (“open your bookmarks”) or as a verb (“bookmark this website”).
-* Definition: Definition of the meaning of the term, or explanatio of what the term is.
+* Part of speech: Select the part of speech that applies to your term. In some cases the same string can be registered twice with different parts of speech, e.g. bookmark as a noun (“open your bookmarks”) or as a verb (“bookmark this website”).
+* Definition: Definition of the meaning of the term, or explanation of what the term is.
 * Usage: Example usage of the term.
 * Notes: Any other notes or context that could be pertinent to localizers.
 * Case sensitive: Flag if the term should only match when case matches.
