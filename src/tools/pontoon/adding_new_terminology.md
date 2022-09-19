@@ -7,7 +7,6 @@ Find and click `Terms` on the navigation pane on the left. Check on the followin
 To add a new term, click `ADD TERM +`. The next page will have the following fields:
 
 * Text (required): Term you wish to register.
-* Entity: *Leave empty*.
 * Part of speech (required): Select the part of speech that applies to your term. In some cases the same string can be registered twice with different parts of speech, e.g. bookmark as a noun (“open your bookmarks”) or as a verb (“bookmark this website”).
 * Definition: Meaning of the term, or explanation of what the term is.
 * Usage: Example usage of the term.
