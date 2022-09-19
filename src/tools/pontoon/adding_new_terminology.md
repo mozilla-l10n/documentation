@@ -14,7 +14,6 @@ To add a new term, click `ADD TERM +`. The next page will have the following fie
 * Case sensitive: Select if the term should only match when case matches.
 * Do not translate: Select if the term should not be translated (example brand names like Firefox).
 * Forbidden: Select if this term should not be used.
-* Created by: *Do not change*.
 
 Once the necessary information has been filled out, click one of the three save options `Save and add another`, `Save and continue editing`, or `SAVE` to register the term to Pontoon.
 
