@@ -13,7 +13,6 @@ To add a new term, click `ADD TERM +`. The next page will have the following fie
 * Usage: Example usage of the term.
 * Notes: Any other notes or context that could be relevant.
 * Case sensitive: Select if the term should only match when case matches.
-* Exact match: Select if the term should only match a perfect match. If not selected, fuzzy matching will be used.
 * Do not translate: Select if the term should not be translated (example brand names like Firefox).
 * Forbidden: Select if this term should not be used.
 * Created by: *Do not change*.
