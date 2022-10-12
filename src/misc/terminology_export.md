@@ -65,7 +65,7 @@ $ python tbx_merge.py --locales path/locales.txt --id-format new
 
 The steps are mostly the same, as before, but you will need to first export the target glossary from Smartling as a tbx file.
 
-1. Within Smartling, select the glossary you wish to import terms into and choose `...` > `Export Glossary`. For Download File Type choose `TBX V2 Core` and from the Languages dropdown select `Select displayed results (n)` to choose all target languages in the glossary. Save *glossary* file to *path*.
+1. Within Smartling, select the glossary you wish to import terms into and choose `...` > `Export Glossary`. For Download File Type choose `TBX V2 Core` and from the Languages dropdown select `Select displayed results (n)` to choose all target languages in the glossary. Save *glossary* file to *path*. Note: You must always include the source "en-US" locale when exporting from Smartling.
 2. Create a locales.txt file with your desired locales separated on newlines, saved to *path*.
 3. Run tbx_merge from the commandline (ensure you have the requests module installed):
 
