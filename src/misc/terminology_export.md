@@ -1,6 +1,6 @@
 # Exporting terminology
 
-When new terminology is added to Pontoon, we may want to ensure that those latest terms are added to our vendor platform Smartling. The [TBX Merge tool](https://github.com/mozilla-l10n/pontoon-scripts/tree/main/tbx_merge) can be used to export all terminology for a defined set of locales and merged into a single .tbx file for import into Smartling.
+When new terminology is added to Pontoon, we may want to ensure that those latest terms are added to our vendor platform Smartling. The [TBX Merge tool](https://github.com/mozilla-l10n/terminology_management/tree/main/scripts/tbx_merge) can be used to export all terminology for a defined set of locales and merged into a single .tbx file for import into Smartling.
 
 ## TBX Merge tool documentation
 
