@@ -23,7 +23,7 @@ Google Translate maintains a list of supported locales in its own format. Choose
 
 ### Google AutoML model
 
-Set your [Google Cloud AutoML Translation](https://cloud.google.com/translate/) model ID to use the custom translation engine with a trained model. You can find the model ID in Google Cloud management console. If the value is not set, Google’s generic machine translation technology is used instead.
+Set your [Google Cloud AutoML Translation](https://cloud.google.com/translate/) model ID to use the custom translation engine with a trained model. You can find the model ID in [Google Cloud management console](https://console.cloud.google.com/translation/models/list). If the value is not set, Google’s generic machine translation technology is used instead.
 
 ### MS translator code
 
