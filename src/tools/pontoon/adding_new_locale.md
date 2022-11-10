@@ -21,6 +21,10 @@ It’s the locale code, in this case `am`.
 
 Google Translate maintains a list of supported locales in its own format. Choose one that matches the locale from [a list of supported locales](https://translate.google.com/intl/en/about/languages/) or leave it blank to disable support for Google Translate for this locale.
 
+### Google AutoML model
+
+Set your [Google Cloud AutoML Translation](https://cloud.google.com/translate/) model ID to use the custom translation engine with a trained model. You can find the model ID in [Google Cloud management console](https://console.cloud.google.com/translation/models/list). If the value is not set, Google’s generic machine translation technology is used instead.
+
 ### MS translator code
 
 Microsoft Translator maintains a list of supported locales in its own format. Choose one that matches the locale from [a list of supported locales](https://docs.microsoft.com/azure/cognitive-services/Translator/language-support) or leave it blank to disable support for Microsoft Translator for this locale.
