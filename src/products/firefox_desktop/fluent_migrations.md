@@ -37,13 +37,7 @@ As part of migrations, content needs to be pushed from the quarantine repository
 
 ### Stop sync in Pontoon
 
-Before starting the migration process, sync needs to be suspended for all projects relying on the l10n-central repositories. The list of affected projects is:
-* Firefox
-* Thunderbird
-* Seamonkey
-* Lightning
-
-In order to disable sync, access each project from the [admin panel](https://pontoon.mozilla.org/admin/), and select the checkbox `SYNC DISABLED` at the bottom of the page, then `SAVE PROJECT`.
+Before starting the migration process, sync needs to be suspended for Firefox from the [admin panel](https://pontoon.mozilla.org/admin/projects/firefox/) by selecting the checkbox `SYNC DISABLED` at the bottom of the page, then clicking `SAVE PROJECT`.
 
 This is needed for several reasons:
 * It removes the chance of conflicts in the l10n repository between the running migration and Pontoon committing changes for other projects.
@@ -92,13 +86,9 @@ While migrations run, it’s important to look out for errors in the console, ev
 
 ### Re-enable Sync in Pontoon
 
-Once the actual migration is complete, the next step is to re-enable sync in Pontoon. This needs to be done one project at a time, since Pontoon takes a lot of time processing this amount of changes, creating a bottleneck in the sync for all projects.
-
-Before starting, make sure that the [Pontoon repository](https://hg.mozilla.org/users/m_owca.info/firefox-central/) has the commit with the new strings.
+Once the actual migration is complete, the next step is to re-enable sync in Pontoon. Before starting, make sure that the [Pontoon repository](https://hg.mozilla.org/users/m_owca.info/firefox-central/) has a commit with the new strings.
 
 * Access the [admin panel for Firefox](https://pontoon.mozilla.org/admin/projects/firefox/), click the `SYNC` button at the bottom, then deselect `SYNC DISABLED` and click `SAVE PROJECT`.
 * Clicking the `SYNC` button will spawn a new sync process just for Firefox. Check the [Sync Logs](https://pontoon.mozilla.org/sync/log/) page to see when it’s finished. Depending on the amount of changes, this can require from 15 to over 30 minutes. It’s also possible to monitor the status in Papertrail, accessible from the [Resources](https://dashboard.heroku.com/apps/mozilla-pontoon/resources) page in Heroku, and filter the log using the string `app/worker`.
 
-Once the sync is completed, repeat the process for each of the other projects (Thunderbird, Seamonkey, Lightning).
-
-When sync is re-enabled for all projects, switch back the *worker* to `PM` in [Heroku](https://dashboard.heroku.com/apps/mozilla-pontoon/resources). Once again, make sure that there are no running sync processes before doing it.
+When sync is complete, switch back the *worker* to `PM` in [Heroku](https://dashboard.heroku.com/apps/mozilla-pontoon/resources). Once again, make sure that there are no running sync processes before doing it.
