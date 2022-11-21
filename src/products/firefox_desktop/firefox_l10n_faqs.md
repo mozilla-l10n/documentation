@@ -142,5 +142,5 @@ There’s no easy way to see this information in Pontoon. If all the strings are
 ### How can I see all translations available for a specific string?
 
 Pontoon doesn’t allow to see all translations for a specific string, but you can use [Transvision](https://transvision.mozfr.org/) for it:
-* Search for the string (by ID or text), making sure that gecko-strings is selected as repository
+* Search for the string (by ID or text), making sure that `Firefox` is selected as repository.
 * In the results, click on the green `all locales` tag close a string to see all available translations. Results are also available via API (linked at the bottom of the page).
