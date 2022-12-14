@@ -383,6 +383,18 @@ Another good example is *Yes/No*. There are two types of languages, those that h
 
 W3C has a good [guide](http://www.w3.org/International/articles/article-text-size) on the length ratios a developer should be prepared for.
 
+### Design to avoid breaking words
+
+Not only do strings become longer (as above), individual words can be much longer than you expect in some languages. This could lead to strings overflowing, particularly if a design contains elements with small widths or uses a large font. For example: `Account recovery key` in English becomes `Kontowiederherstellungsschlüssel` in German.
+
+You should avoid using CSS styling like `word-break` to automatically add line-breaks to these words, as the output will result in text that appears incorrect and unnatural to a local audience as in the examples below. In the first example, `word-break` is applied to a title with a large font applied, causing a word to break at the very last letter. In the second example, you can see a layout that does not account for unexpectedly long words where `word-break` causes issues for German.
+
+Example 1  
+![word break example 1](../assets/images/localization/word_break_example_1.png)
+
+Example 2  
+![word break example 2](../assets/images/localization/word_break_example_2.png)
+
 ## Test localizability
 
 As a developer, you should always test your patches not just for code errors, but also for localizability issues in case they involve string or UI changes. The best way to test localizability in Firefox is to use Fluent and then enable [pseudolocalization](https://firefox-source-docs.mozilla.org/l10n/fluent/tutorial.html#pseudolocalization). Other localization systems should have equivalent tools to help testing for localizability issues.
