@@ -20,7 +20,7 @@ def getPopulation(locale, t_name, t_data):
         print(f"Adding {t_name}: {l_population} ({percentage}% of {t_population})")
         return l_population
     else:
-        return -1
+        return "N/A"
 
 
 def main():
@@ -30,7 +30,7 @@ def main():
     locale = args.locale
 
     # Get CLDR data
-    cldr_source = "https://raw.githubusercontent.com/unicode-org/cldr-json/master/cldr-json/cldr-core/supplemental/territoryInfo.json"
+    cldr_source = "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json"
     cldr_data = json.load(urlopen(cldr_source))
 
     # Initialize data
@@ -52,7 +52,7 @@ def main():
             "territoryInfo"
         ].items():
             l_population = getPopulation(locale, territory, territory_data)
-            if l_population == -1:
+            if l_population == "N/A":
                 # Territory is not defined
                 continue
             population += l_population
