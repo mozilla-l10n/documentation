@@ -112,7 +112,7 @@ wip = '{label("log.branch", branches)} {label("changeset.{phase}", rev)}{label("
 
 ## Text editor
 
-The suggestion is to use [Atom](https://atom.io/) with the optional [Sort Lines package](https://atom.io/packages/sort-lines) installed.
+The suggestion is to use [Visual Studio Code](https://code.visualstudio.com/download).
 
 If you don’t like to use `nano` to edit commit messages, you can also use a graphical editor. A possible alternative on macOS is to use [TextMate](https://macromates.com/): after installing it, open Preferences and install the *Shell support* (*Terminal* tab), then add a `editor` preference to `.hgrc`.
 
@@ -123,13 +123,13 @@ ignore.other = ~/.hgignore
 editor = mate -w
 ```
 
-You can also use Atom, but it’s definitely slower.
+You can also use Visual Studio Code, but it’s definitely slower.
 
 ```INI
 [ui]
 username = YOUR NAME <YOUR EMAIL>
 ignore.other = ~/.hgignore
-editor = atom --wait
+editor = code --wait
 ```
 
 In general, in order to be able to use it for commit messages, you’ll need a text editor available from the command line, and with a `wait` option.

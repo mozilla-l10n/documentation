@@ -38,13 +38,13 @@ $ hg pull -u
 $ hg up central
 ```
 
-The first file to modify is `browser/locales/all-locales`, open it with your text editor of choice.
+The first file to modify is `browser/locales/all-locales`, open it with your text editor of choice (in this example, Visual Studio Code).
 
 ```BASH
-$ atom browser/locales/all-locales
+$ code browser/locales/all-locales
 ```
 
-And add the new locale to the list. With Atom and the Sort Lines package installed, you can press `F5` to make sure that the list is in **alphabetical order**.
+And add the new locale to the list. With Visual Studio Code, you can open the *Command Palette* and select *Sort Line Ascending* to make sure that the list is in **alphabetical order**.
 
 The second file to modify is `browser/locales/l10n.toml`. This is the beginning of the file:
 
@@ -64,7 +64,7 @@ locales = [
 ...
 ```
 
-Identify the `locales` section, and add the new locale code between double quotes, followed by a comma. As before, you can use Atom to make sure the list is in alphabetical order (make sure to select only the lines with actual locale codes before pressing `F5`).
+Identify the `locales` section, and add the new locale code between double quotes, followed by a comma. As before, you can use the editor to make sure the list is in alphabetical order (make sure to select only the lines with actual locale codes before pressing running the command).
 
 After you’ve finished editing the files, check the status of the repository, and the diff.
 

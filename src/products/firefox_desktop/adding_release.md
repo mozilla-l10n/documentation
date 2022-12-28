@@ -22,11 +22,10 @@ To track this work, you need to file a bug in Firefox::Build Config (like [this 
 
 ## Verify language name
 
-First of all, make sure that `MOZ_LANG_TITLE` in `toolkit/defines.inc` has the correct value, since it’s used to set up the language pack on AMO.
-
 The language name associated to the locale code is displayed in a few places in Firefox interface (language settings for web content, contextual menu for dictionaries). The language name needs to be defined in:
 * [languageNames.ftl](https://searchfox.org/mozilla-central/source/toolkit/locales/en-US/toolkit/intl/languageNames.ftl): ID with structure `language-name-LOCALECODE = (name of the language in English)`. Note that the locale code can only be a 2/3 letter code, locales like `ca-valencia` are not valid.
-* [mozIntl.jsm](https://searchfox.org/mozilla-central/source/toolkit/components/mozintl/mozIntl.jsm):
+* [langpack_localeNames.json](https://searchfox.org/mozilla-central/source/python/mozbuild/mozbuild/action/langpack_localeNames.json): add the locale code with the `native` name, add `english` only if the English name differs from the native name. This list is used to generate language pack names and descriptions.
+* [mozIntl.jsm](https://searchfox.org/mozilla-central/source/toolkit/components/mozintl/mozIntl.sys.mjs):
   * Add the locale code in the `availableLocaleDisplayNames` constant, `language` [set](https://searchfox.org/mozilla-central/rev/131338e5017bc0283d86fb73844407b9a2155c98/toolkit/components/mozintl/mozIntl.jsm#451).
   * Add the localized language name in the `nativeLocaleNames` [map](https://searchfox.org/mozilla-central/rev/b3933df6e119bd6caf5d9e5868670348ec26dee3/toolkit/components/mozintl/mozIntl.jsm#650). The localized language name should also be stored in [this repository](https://github.com/mozilla-l10n/firefox-languages/blob/master/output/languages_curated.json).
 * [language.properties](https://searchfox.org/mozilla-central/source/intl/locale/language.properties): add a value in the form `LOCALECODE.accept = true`. This is needed to list the language in the language settings dialog for web content.
@@ -41,13 +40,13 @@ $ hg pull -u
 $ hg up central
 ```
 
-The file to modify is in `browser/locales/shipped-locales`, open it with your text editor of choice.
+The file to modify is in `browser/locales/shipped-locales`, open it with your text editor of choice (in this example, Visual Studio Code).
 
 ```BASH
-$ atom browser/locales/shipped-locales
+$ code browser/locales/shipped-locales
 ```
 
-And add the new locale to the list. With Atom and the Sort Lines package installed, you can press `F5` to make sure that the list is in **alphabetical order**.
+And add the new locale to the list. With Visual Studio Code, you can open the *Command Palette* and select *Sort Line Ascending* to make sure that the list is in **alphabetical order**.
 
 After you’ve finished editing the file, check the status of the repository, and the diff. Let’s consider for example the task of adding Urdu (ur).
 
