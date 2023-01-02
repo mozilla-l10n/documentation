@@ -6,27 +6,22 @@
 
 Locales will be added to Nightly builds only after reaching at least 30% overall completion in Pontoon. For details on the requirements to move to Beta/Release, see [this document](adding_release.md#prerequisites).
 
-## File a tracking bug and dependencies to add the new locale
+## Create a tracking GitHub issue and set up bugs to add the new locale
 
-A list of bug templates is available in this [Wiki page](https://wiki.mozilla.org/L10n:Bugogram). There is currently no automation to help filing them, although search and replace could be used on some variables across the templates.
+This [GitHub project](https://github.com/orgs/mozilla-l10n/projects/3/views/1) is used to track locales added to or removed from Firefox. The `Queue - WIP` column includes all locales currently in Nightly, once they move to Release a new column is added for the specific Firefox version in which they shipped (e.g. `Firefox 91`).
 
-Let’s consider `Lao (lo)` as an example:
-* Locale (`%(loc)s`): `lo`.
-* Language (`%(language)s`): `Lao`.
-* Component: use `Mozilla Localizations :: Other` if there’s no component on Bugzilla yet, otherwise use `Mozilla Localizations :: Language Name` (in this case `Mozilla Localizations :: lo / Lao`).
-* Name (`%(name)s`): first name of the locale leader.
-* Bugzilla ID (`%(bugmail)s`): Bugzilla ID (email address) of the locale leader.
+As a first step, file an issue using the [New Locale for Firefox Desktop template](https://github.com/mozilla-l10n/pm-projects/issues/new/choose). Replace `%LOCALE_NAME% (%LOCALE_CODE%)` with the locale name and code in the title field, e.g. `Lao (lo)`, and add the issue to the `Queue - WIP` column in the [GitHub project](https://github.com/orgs/mozilla-l10n/projects/3/views/1).
 
-Make sure to always start with the `shipping` template, since that’s going to be the tracker bug, with an alias used in other bugs to set dependencies (`fx-l10n-LOCALECODE`, `fx-l10n-lo` in this example).
+Then file a new tracking bug using this [bug template](https://mzl.la/3vwVtub). Replace `%LOCALE_NAME%` with the locale name, e.g. `Lao`, and `%LOCALE_CODE%` with the locale code, e.g. `lo`. Pay attention to update the `alias` field as well, and CC the locale manager if they already have a Bugzilla account. Once the bug is filed, update the link in the GitHub issue.
+
+Note that the tracking bug is filed under `Mozilla Localizations :: Other`, as creating the Bugzilla component is a step that will be performed when the locale is ready to move to Beta/Release. If the component for this locale is already available, the bug should to be moved directly there.
+
+To make it easier to track dependencies, also add the bug used to create the l10n-central repository (see [Adding a new locale to Pontoon](adding_pontoon.md)) as a dependency (`Depends on:` field) of the tracking bug.
 
 ## Verify content in l10n repository
 
 Before enabling the build, it’s a good idea to perform some basic checks:
 * Check `toolkit/global/intl.properties` ([en-US version](https://hg.mozilla.org/mozilla-central/file/default/toolkit/locales/en-US/chrome/global/intl.properties)) for evident mistakes.
-
-## Set up searchplugins
-
-Check the [Set up searchplugins](setup_searchplugins.md) document for detailed instructions on how to set up searchplugins for new locales. This has become an optional step for setting up Nightly builds, but it remains mandatory before allowing the locale to ride the trains to Beta and Release.
 
 ## Add new locale to build configuration
 
@@ -37,6 +32,8 @@ $ cd ~/mozilla/mercurial/mozilla-unified
 $ hg pull -u
 $ hg up central
 ```
+
+File a bug using [this template](https://mzl.la/3QcddVk), replacing the locale name and code placeholders, and update the link in the GitHub tracking issue.
 
 The first file to modify is `browser/locales/all-locales`, open it with your text editor of choice (in this example, Visual Studio Code).
 
@@ -104,7 +101,7 @@ diff --git a/browser/locales/all-locales b/browser/locales/all-locales
 ## Verify product-details configuration
 
 Once a locale is added to Nightly builds, `product-details` will pick up automatically the new build. In order for the new build to be listed on [mozilla.org](https://www.mozilla.org/firefox/nightly/all/), the language name needs to be available in [languages.json](https://github.com/mozilla-releng/product-details/blob/production/public/1.0/languages.json). If missing:
-* Open a pull request against the `production` branch of [product-details](https://github.com/mozilla-releng/product-details) ([example](https://github.com/mozilla-releng/product-details/pull/4)).
+* Open a pull request against the `production` branch of [product-details](https://github.com/mozilla-releng/product-details) ([example](https://github.com/mozilla-releng/product-details/pull/4)), and update the GitHub tracking issue accordingly.
 * The language name needs to use Unicode code points in the format `\uXXXX` for non ASCII characters.
 
 The easiest way to convert the language name from UTF-8 is to use Python's JSON module. For example, to convert Tibetan (`བོད་སྐད་`):
