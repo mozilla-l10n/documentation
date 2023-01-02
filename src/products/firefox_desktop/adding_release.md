@@ -20,6 +20,18 @@ For the localization PM:
 
 To track this work, you need to file a bug in Firefox::Build Config (like [this example](https://bugzilla.mozilla.org/show_bug.cgi?id=1359321)), blocking the original tracking bug for the locale (`fx-l10n-LOCALE`).
 
+## Create a Bugzilla component
+
+Before filing a new bug, the localization team needs to provide the translation for `%LOCALE_NAME% Localization`, as the component description includes both English and translated versions.
+
+Once that information is available:
+* File a new bug following [this template](https://mzl.la/3jzjaza). Replace `%LOCALE_NAME%` with the locale name (e.g. `Lao`), `%LOCALE_CODE%` with the locale code (e.g. `lo`), and `%LOCALIZED_DESCRIPTION%` with the translation provided by the team. For example, for Lao the whole description will result in `Lao Localization (ການແປພາສາລາວ)`.
+* Once the component is available, update the [GitHub tracking issue](https://github.com/orgs/mozilla-l10n/projects/3/views/1) with the link to this bug, and move all existing bugs from `Other` to this new component.
+
+## Set up searchplugins
+
+Check the [Set up searchplugins](setup_searchplugins.md) document for detailed instructions on how to set up searchplugins for new locales.
+
 ## Verify language name
 
 The language name associated to the locale code is displayed in a few places in Firefox interface (language settings for web content, contextual menu for dictionaries). The language name needs to be defined in:
@@ -30,6 +42,8 @@ The language name associated to the locale code is displayed in a few places in 
   * Add the localized language name in the `nativeLocaleNames` [map](https://searchfox.org/mozilla-central/rev/b3933df6e119bd6caf5d9e5868670348ec26dee3/toolkit/components/mozintl/mozIntl.jsm#650). The localized language name should also be stored in [this repository](https://github.com/mozilla-l10n/firefox-languages/blob/master/output/languages_curated.json).
 * [language.properties](https://searchfox.org/mozilla-central/source/intl/locale/language.properties): add a value in the form `LOCALECODE.accept = true`. This is needed to list the language in the language settings dialog for web content.
 
+This is an [example of a bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1807794) created to add this information. Don’t forget to update the GitHub tracking issue for the locale with a link to this bug.
+
 ## Add locale to build configuration
 
 First of all make sure that your environment is [correctly set up](../../tools/mercurial/setting_mercurial_environment.md), update your local mozilla-unified clone and make sure it’s on the `central` bookmark:
@@ -39,6 +53,8 @@ $ cd ~/mozilla/mercurial/mozilla-unified
 $ hg pull -u
 $ hg up central
 ```
+
+This is an [example of a recent bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1716987) used to track the build changes.
 
 The file to modify is in `browser/locales/shipped-locales`, open it with your text editor of choice (in this example, Visual Studio Code).
 
@@ -83,3 +99,9 @@ The language pack for the new locale will be uploaded automatically by release a
 For the first two steps, an email needs to be sent to AMO administrators (amo-admins(at)mozilla.com).
 
 These steps will make the language pack available in both the [Language Tools](https://addons.mozilla.org/firefox/language-tools/) page and the API used by Firefox to add new languages from preferences.
+
+## Close GitHub tracking issue
+
+Once the locale ships to release:
+* Create a new column for the Firefox version, e.g. `Firefox 91`, in the [GitHub project](https://github.com/orgs/mozilla-l10n/projects/3/views/1).
+* Close the tracking issue and move it from `Queue - WIP` to this new column.
