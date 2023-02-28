@@ -1,36 +1,32 @@
 # Reviewing strings for a new release of Mozilla Android products
 
-Usually, a new release of our Android products means an update to strings. If this is the case, pull requests will be made throughout the release cycle by the mobile team, in order to land these new strings in the [android-l10n](https://github.com/mozilla-l10n/android-l10n) repository in `mozilla-l10n`.
+Usually, a new release of our Android products requires updates to strings. Mobile developers will land strings in the code repository throughout the release cycle, and pull requests will be opened by GitHub automation in the [android-l10n](https://github.com/mozilla-l10n/android-l10n) repository to expose these strings for localization in Pontoon.
 
-The PRs (also marked as `quarantine`) are reviewed by an l10n-driver - most often by the PM in charge of the project.
+The pull requests, tagged as `l10n-bot`, are then reviewed by an l10n-driver - most often by the PM in charge of the project.
 
 Let’s go over some of the steps needed over time in order to review strings correctly for a new release.
 
 ## Reviewing the PR
 
-Let's consider Firefox for Android as an example - in fact, these apply to other Android products as well, and they also follow the same train schedule. During the [Android l10n cycle](https://docs.google.com/spreadsheets/d/1hER_w7pOsWSjeBaUqMd_9ClYCCGlwc4jaFYpcBvFE8g/edit#gid=1960046531), the Android team will make pull requests, in order to land new strings for the upcoming release.
+Let's consider Firefox for Android as an example - in fact, these apply to other Android products as well, and they also follow the same train schedule. During the [Android l10n cycle](https://docs.google.com/spreadsheets/d/1hER_w7pOsWSjeBaUqMd_9ClYCCGlwc4jaFYpcBvFE8g/edit#gid=1960046531), automation will create pull requests, in order to land new strings for the upcoming release.
 
-Let’s consider a past PR [here](https://github.com/mozilla-l10n/android-l10n/pull/391/files).
-
-The first file present is `_meta/mozilla-mobile-fenix.json`. This file is managed by the automation syncing content between code and l10n repositories, and it’s used to track which [changeset](https://github.com/mozilla-mobile/fenix/commit/76c0c4ad1425cfd79c25d707921e8185620ad080) from the `fenix` repository was used to export the strings in this pull requests. `main` is the name of the branch from which strings are extracted, `fenix` is the internal project name of Firefox for Android. Updates to the value of `main` can be ignored, while changes to the name of the branch need to be coordinated with developers and release engineering.
-
-The second file - `values/strings.xml` - is the actual strings file, containing all needed updates.
+Let’s consider a past PR [here](https://github.com/mozilla-l10n/android-l10n/pull/606/files). `values/strings.xml` is the file containing all needed string updates.
 
 ### Acceptable changes
 
-The first [string change](https://github.com/mozilla-l10n/android-l10n/pull/391/files#diff-b8d7151f11faa90ad8cfbb96437f96d05602954aa79c1145cb3232f6a5eb6d38R52) adds attributes: `string moz:removedIn="94" name="recently_bookmarked" tools:ignore="UnusedResources"`. You can ignore this kind of changes, as they will not affect localizations. They are a reminder for mobile developers that they will be safely able to delete a string once it has finished riding the Nightly/Beta/Release train, and is no longer needed in an upcoming version. More details [here](https://github.com/mozilla-mobile/fenix/wiki/Removing-strings).
+The first [string change](https://github.com/mozilla-l10n/android-l10n/pull/606/files#diff-b8d7151f11faa90ad8cfbb96437f96d05602954aa79c1145cb3232f6a5eb6d38R701) adds attributes: `moz:RemovedIn="111" tools:ignore="UnusedResources"` to an existing string. You can ignore this kind of changes, as they will not affect localization. They are a reminder for mobile developers that they will be safely able to delete a string once it has finished riding the Nightly/Beta/Release train, and is no longer needed in an upcoming version. More details [here](https://github.com/mozilla-mobile/fenix/wiki/Removing-strings).
 
 Changes to comments are irrelevant in terms of string updates, so they’re also OK.
 
-The general review of strings, such as [this one](https://github.com/mozilla-l10n/android-l10n/pull/391/files#diff-b8d7151f11faa90ad8cfbb96437f96d05602954aa79c1145cb3232f6a5eb6d38R662), remains about the same as the usual string review process for other Mozilla products.
+The general review of strings, such as [this one](https://github.com/mozilla-l10n/android-l10n/pull/606/files#diff-b8d7151f11faa90ad8cfbb96437f96d05602954aa79c1145cb3232f6a5eb6d38R704), is similar to the review process used in other Mozilla products.
 
 Things to look out for:
-* Unclear strings and missing localization comments: the best way to identify them is to translate the strings, only having the string and comment as context (not the entire file, or the bug). For example: is the word used both a noun and a verb in English? Is the ID clear enough to give context (e.g. `buttonLabel`)?
-* String changes without new IDs. IDs in XML files are stored in the `name` attribute; for example, the ID of [this string](https://github.com/mozilla-l10n/android-l10n/pull/391/files#diff-b8d7151f11faa90ad8cfbb96437f96d05602954aa79c1145cb3232f6a5eb6d38R223) is `browser_menu_customize_home`.
+* Unclear strings and missing localization comments: the best way to identify them is to translate the strings, only having the string and comment as context (not the entire file, or the associated bug). For example: is the word used both a noun and a verb in English? Is the ID clear enough to give context (e.g. `buttonLabel`)?
+* String changes without new IDs. IDs in XML files are stored in the `name` attribute; for example, the ID of [this string](https://github.com/mozilla-l10n/android-l10n/pull/391/files#diff-b8d7151f11faa90ad8cfbb96437f96d05602954aa79c1145cb3232f6a5eb6d38R223) is `browser_menu_customize_home`. This type of issue, together with misused characters, is reported by Checks running automatically on pull requests.
 * Duplicated strings.
-* [Localization issues](https://mozilla-l10n.github.io/documentation/localization/dev_best_practices.html), like misused plural forms, unclear comments, etc.
+* Other general [localization issues](https://mozilla-l10n.github.io/documentation/localization/dev_best_practices.html).
 
-In case of issues, you can comment and CC the developer who introduced the string(s) by checking under the corresponding `Commits` section (example [here](https://github.com/mozilla-l10n/android-l10n/pull/391/commits)). This can be done directly in the corresponding `mozilla-l10n` GitHub PR where your review has taken place.
+In case of issues, you can comment and CC the developer who introduced the string(s). This can be done directly in the corresponding `mozilla-l10n` GitHub PR where your review has taken place.
 
 ## Wrapping up your work
 
