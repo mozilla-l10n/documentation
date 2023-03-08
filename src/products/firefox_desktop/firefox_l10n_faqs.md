@@ -84,6 +84,8 @@ If your content is not stable, or you want to iterate quickly over it before exp
 
 For Fluent, you can follow examples like [this patch](https://hg.mozilla.org/mozilla-central/rev/e3bc9f1bde6e), where the FTL file is stored outside of the localizable paths, and loaded as “preview”.
 
+If you follow this approach, make sure to have a bug on file — or an explicit task in your roadmap — to expose this file to localization with sufficient lead time for translation before the targeted release.
+
 ### Can I get content translated only in selected languages?
 
 No, the existing infrastructure only allows to expose strings to all locales. If a feature is exposed for localization, it will get localized in all supported languages.
