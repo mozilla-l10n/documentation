@@ -2,7 +2,7 @@
 
 <!-- toc -->
 
-This document provides best practices for developers to create localizable code, and describes how to avoid some common localizability mistakes. Some additional guidelines specific for Fluent in Firefox are also available in [this page](https://firefox-source-docs.mozilla.org/l10n/fluent/review.html).
+This document provides best practices for developers to create localizable code, and describes how to avoid some common localizability mistakes. Some additional guidelines specific for Fluent in Firefox are also available in [this page](https://firefox-source-docs.mozilla.org/l10n/fluent/review.html), and there is a [collection of FAQs specific for Firefox localization](../products/firefox_desktop/firefox_l10n_faqs.md).
 
 Specific channels dedicated to localization are available on Matrix, in case you have more questions:
 * [#l10n-community](https://chat.mozilla.org/#/room/#l10n-community:mozilla.org) is used by localizers, and it’s a good place to ask for questions about specific languages.
@@ -389,10 +389,10 @@ Not only do strings become longer (as above), individual words can be much longe
 
 You should avoid using CSS styling like `word-break` to automatically add line-breaks to these words, as the output will result in text that appears incorrect and unnatural to a local audience as in the examples below. In the first example, `word-break` is applied to a title with a large font applied, causing a word to break at the very last letter. In the second example, you can see a layout that does not account for unexpectedly long words where `word-break` causes issues for German.
 
-Example 1  
+Example 1
 ![word break example 1](../assets/images/localization/word_break_example_1.png)
 
-Example 2  
+Example 2
 ![word break example 2](../assets/images/localization/word_break_example_2.png)
 
 ## Test localizability
