@@ -5,8 +5,8 @@
 This document aims to describe a few of the common pitfalls when it comes to localizing products or websites, and it targets a less technical audience than [Localization best practices for developers](dev_best_practices.md).
 
 The following content is also accessible to Mozilla staff (not public):
-* For more detailed information about how we currently ship localized products, you can check out [this Confluence page](https://mozilla-hub.atlassian.net/wiki/spaces/FIREFOX/pages/11046419/Overview+and+distribution+of+localized+products).
-* To understand how different content types are translated at Mozilla, you can check the [main Localization page on Confluence](https://mozilla-hub.atlassian.net/wiki/spaces/FIREFOX/pages/11045331/Localization+l10n+and+Translation#Localization(l10n)andTranslation-Standardlocalizationservicesbycontenttype).
+* For more detailed information about how we currently ship localized products, you can check out [this Confluence page](https://mozilla-hub.atlassian.net/wiki/spaces/FDPDT/pages/11046419/Overview+and+distribution+of+localized+products).
+* To understand how different content types are translated at Mozilla, you can check the [main Localization page on Confluence](https://mozilla-hub.atlassian.net/wiki/spaces/FDPDT/pages/11045331/Localization+l10n+and+Translation#Standard-localization-services-by-content-type).
 
 ## Planning
 
@@ -43,7 +43,7 @@ Ideally, there should be a full chain of fallback locales, instead of just a pai
 
 ### New feature ≠ new product
 
-If a product is already localized, the new feature will inherit the same infrastructure, processes, and limitations of the main product (check this internal [Confluence page](https://mozilla-hub.atlassian.net/wiki/spaces/FIREFOX/pages/11046419/Overview+and+distribution+of+localized+products) for more details on some of Mozilla products).
+If a product is already localized, the new feature will inherit the same infrastructure, processes, and limitations of the main product (check this internal [Confluence page](https://mozilla-hub.atlassian.net/wiki/spaces/FDPDT/pages/11046419/Overview+and+distribution+of+localized+products) for more details on some of Mozilla products).
 
 For example, if you’re adding a new feature in Firefox:
 * It will be localized by volunteers.
@@ -107,7 +107,7 @@ This section aims to provide more context about our work with the community, hig
 
 #### Community
 
-As detailed in [this Confluence page](https://mozilla-hub.atlassian.net/wiki/spaces/FIREFOX/pages/11045331/Localization+l10n+and+Translation#Localization(l10n)andTranslation-Standardlocalizationservicesbycontenttype), all Mozilla products are localized by a community of volunteers.
+As detailed in [this Confluence page](https://mozilla-hub.atlassian.net/wiki/spaces/FDPDT/pages/11045331/Localization+l10n+and+Translation#Standard-localization-services-by-content-type), all Mozilla products are localized by a community of volunteers.
 
 Our community members invest hundreds of hours translating the entire Mozilla ecosystem, and often do more than just translation: grass-root marketing, support, brand evangelism, QA, and more. We built a relationship based on cooperation over the years, and that includes trusting them with making good choices when it comes to translating specific feature names.
 

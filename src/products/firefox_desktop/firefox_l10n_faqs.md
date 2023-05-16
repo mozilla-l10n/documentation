@@ -8,7 +8,7 @@ This document includes a series of frequently asked questions regarding Firefox 
 
 ### Who can I contact if I have more questions?
 
-A Program Manager (L10N PM) is assigned to any Mozilla project that is localized through community. You can find this information in [Pontoon](https://pontoon.mozilla.org/projects/firefox/) for any project in the header section, and more information about the localization team is available in the Confluence page dedicated to [Localization](https://mozilla-hub.atlassian.net/wiki/spaces/FIREFOX/pages/11045331/Localization+l10n+and+Translation) (available to Mozilla staff only).
+A Program Manager (L10N PM) is assigned to any Mozilla project that is localized through community. You can find this information in [Pontoon](https://pontoon.mozilla.org/projects/firefox/) for any project in the header section, and more information about the localization team is available in the Confluence page dedicated to [Localization](https://mozilla-hub.atlassian.net/wiki/spaces/FDPDT/pages/11045331/Localization+l10n+and+Translation) (available to Mozilla staff only).
 
 ### Should I enable my feature only for English, or ship it in English for everyone?
 
@@ -16,7 +16,7 @@ Shipping a feature only for en-US is not great, since it creates confusion for u
 
 Shipping a feature in English for everyone is not a good option either: as an English speaker, imagine starting your browser and finding a window in Chinese.
 
-In the end, both options are a product decision, and the localization team can help assess the impact on users and community. How to ship a feature only to en-US users depends on several factors (technology, information available at the time the feature is loaded, etc.), and the best approach is to get in touch with the [engineering part of the Localization team](https://mozilla-hub.atlassian.net/wiki/spaces/FIREFOX/pages/11045331/Localization+l10n+and+Translation) (aka “tech team”).
+In the end, both options are a product decision, and the localization team can help assess the impact on users and community. How to ship a feature only to en-US users depends on several factors (technology, information available at the time the feature is loaded, etc.), and the best approach is to get in touch with the [engineering part of the Localization team](https://mozilla-hub.atlassian.net/wiki/spaces/FDPDT/pages/11045331/Localization+l10n+and+Translation) (aka “tech team”).
 
 ## Builds and distribution
 
@@ -131,7 +131,7 @@ Local builds:
 
 Each community will localize new content at different times: some locales will have a complete localization within hours, while others might take weeks or months. Our continuous localization infrastructure allows us to release Firefox with incomplete translations falling back on a backup locale in case of missing strings or errors.
 
-Given that localization is managed by community volunteers, there is no SLA or guarantee that a product will be completely localized before launch. For more information, see [this page on Confluence](https://mozilla-hub.atlassian.net/wiki/spaces/FIREFOX/pages/11045331/Localization+l10n+and+Translation) (available to Mozilla staff only).
+Given that localization is managed by community volunteers, there is no SLA or guarantee that a product will be completely localized before launch. For more information, see [this page on Confluence](https://mozilla-hub.atlassian.net/wiki/spaces/FDPDT/pages/11045331/Localization+l10n+and+Translation) (available to Mozilla staff only).
 
 ### How do I communicate with localizers about my feature or patch?
 
