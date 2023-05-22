@@ -105,4 +105,14 @@ Population: 1863468
 
 Find the locale code in [CLDR territoryInfo.json](https://github.com/unicode-cldr/cldr-core/blob/master/supplemental/territoryInfo.json) and multiply its `_populationPercent` with the territory `_population`. Repeat if multiple occurrences of locale code exist and sum products.
 
-At this point click **SAVE** in the bottom right corner to save and create the new locale. The "Terminology" project should appear automatically under the new team's page — in this case at https://pontoon.mozilla.org/am/
+At this point click **SAVE** in the bottom right corner to save and create the new locale. The "Terminology" project should appear automatically under the new team’s page — in this case at https://pontoon.mozilla.org/am/
+
+### Access key localization
+
+In software, access keys allow users to activate a menu command using their keyboard, and they’re displayed as an underlined character in the menu label. Some locales, especially those using a script different than Latin (Chinese, Japanese, etc.), don’t localize access keys, and use the same character as English. In this case, the access key will be appended to the label as an underlined character between parentheses.
+
+Pontoon can recognize an access key attribute in Fluent strings, and provide translators with a dynamic UI to select one of the characters available in the localized label.
+
+When the checkbox is selected (default), Pontoon will leave the access key field empty, and show the dynamic UI when translating. For pretranslation, it will use the first character from the pretranslated label.
+
+When the checkbox is deselected, Pontoon will automatically use the same access key as the source string, for both manual translation and pretranslation.
