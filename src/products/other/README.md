@@ -5,6 +5,7 @@
 ## Firefox Monitor
 
 * Repository: [GitHub](https://github.com/mozilla/blurts-server/)
+* L10n Repository: [GitHub](https://github.com/mozilla-l10n/monitor-website-l10n)
 * L10n format: Fluent
 * Bug reports: [GitHub](https://github.com/mozilla/blurts-server/issues)
 * Dev server: [link](https://fx-breach-alerts.herokuapp.com/)
@@ -13,9 +14,9 @@
 
 To add a new locale to this project it’s enough to add the locale to Pontoon. This will make the locale automatically available on the dev server and commit to the repository.
 
-For production, locales need to be added to the `supportedLocales` list in [package.json](https://github.com/mozilla/blurts-server/blob/main/package.json).
-
 Localization PM is automatically set as reviewer via [CODEOWNER](https://github.com/mozilla/blurts-server/blob/main/docs/CODEOWNERS) for pull requests affecting Fluent files.
+
+For information on the automation, see the [README](https://github.com/mozilla-l10n/monitor-website-l10n#automation) in the l10n repository.
 
 ## Mozilla VPN Client
 
