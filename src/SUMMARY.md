@@ -23,6 +23,7 @@
     * [Best practices for developers](localization/dev_best_practices.md).
     * [Globalization best practices for product managers](localization/globalization_best_practices.md).
 * [iOS Products](products/iOS_products/README.md)
+    * [Updating locales](products/iOS_products/updating_locales.md)
     * [Reviewing new strings](products/iOS_products/review_iOSstrings.md).
 * [Other Projects](products/other/README.md)
 
