@@ -17,7 +17,7 @@ In Pontoon, you can add and remove locales from the admin project page: [here](h
 ### Adding locales
 
 Once you have added a new locale in Pontoon, there is nothing more to do in order to get the locale into Nightly builds. This should happen automatically within 24-48 hours. To check that the locale is indeed now set up in the repository, you can check that its correspoding locale folder has been created [here](https://github.com/mozilla-l10n/firefoxios-l10n) for Firefox for iOS and [here](https://github.com/mozilla-l10n/focusios-l10n) for Focus for iOS.
-The locale will then ride the trains to release. The iOS release calendar follows closely the Android and Firefox desktop calendar, which can be found [here](https://whattrainisitnow.com/release/?version=release).
+The locale will then ride the trains to release. The iOS release calendar follows closely the Android and Firefox desktop calendar, which can be found [here](https://whattrainisitnow.com/).
 
 ### Removing locales
 
