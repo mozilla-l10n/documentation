@@ -13,3 +13,16 @@ To tell if a locale is supported or not, take a look on an actual device, under 
 Once you’ve determined if the locale can be added you must go to Pontoon to update the list of current locales. If the locale is not [available](https://pontoon.mozilla.org/teams/) in Pontoon yet, [consult this document](../../tools/pontoon/adding_new_locale.md) for instructions on how to add it.
 
 In Pontoon, you can add and remove locales from the admin project page: [here](https://pontoon.mozilla.org/admin/projects/firefox-for-ios/) for Firefox for iOS, and [here](https://pontoon.mozilla.org/admin/projects/focus-for-ios/) for Focus for iOS. The project will be availble after the next [Pontoon sync](https://pontoon.mozilla.org/sync/log/).
+
+### Adding locales
+
+Once you have added a new locale in Pontoon, there is nothing more to do in order to get the locale into Nightly builds. This should happen automatically within 24-48 hours. To check that the locale is indeed now set up in the repository, you can check that its correspoding locale folder has been created [here](https://github.com/mozilla-l10n/firefoxios-l10n) for Firefox for iOS and [here](https://github.com/mozilla-l10n/focusios-l10n) for Focus for iOS.
+The locale will then ride the trains to release. The iOS release calendar follows closely the Android and Firefox desktop calendar, which can be found [here](https://whattrainisitnow.com/release/?version=release).
+
+### Removing locales
+
+Once you have removed a new locale from Pontoon, the existing locale folder then needs to be removed from the l10n repository, and all files should also be removed from the code repository.
+
+As a mozilla-l10n code owner, you should be able to delete this folder yourself from the mozilla-l10n repo.
+
+Then, file an issue on Github ([here](https://github.com/mozilla-mobile/firefox-ios) for Firefox for iOS, and [here](https://github.com/mozilla-mobile/focus-ios) for Focus for iOS), so that the mobile team can work on removing their corresponding files. Once the issue is filed, and if you don't get any traction after a few days, you can ask for help in the #mobile-xfnl-leads Slack channel.
