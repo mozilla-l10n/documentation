@@ -25,4 +25,4 @@ Once you have removed a new locale from Pontoon, the existing locale folder then
 
 As a mozilla-l10n code owner, you should be able to delete this folder yourself from the mozilla-l10n repo.
 
-Then, file an issue on Github ([here](https://github.com/mozilla-mobile/firefox-ios) for Firefox for iOS, and [here](https://github.com/mozilla-mobile/focus-ios) for Focus for iOS), so that the mobile team can work on removing their corresponding files. Once the issue is filed, and if you don't get any traction after a few days, you can ask for help in the #mobile-xfnl-leads Slack channel.
+Then, file an issue on Github ([here](https://github.com/mozilla-mobile/firefox-ios) for Firefox for iOS, and [here](https://github.com/mozilla-mobile/focus-ios) for Focus for iOS), so that the mobile team can work on removing their corresponding files. Once the issue is filed, and if you don't get any traction after a few days, you can ask for help in the `#mobile-xfnl-leads` Slack channel.
