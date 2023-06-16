@@ -1,6 +1,6 @@
 # Updating locales for specific projects
 
-These are the instructions to update locales on iOS mobile products, currently living within the [Firefox for iOS project](https://github.com/mozilla-l10n/firefoxios-l10n), and in the [Focus for iOS project](https://github.com/mozilla-l10n/focusios-l10n).
+These are the instructions to update locales on iOS mobile products, currently living within the [Firefox for iOS](https://github.com/mozilla-l10n/firefoxios-l10n), and in the [Focus for iOS](https://github.com/mozilla-l10n/focusios-l10n) projects.
 
 ## Prerequisites to adding a locale
 
