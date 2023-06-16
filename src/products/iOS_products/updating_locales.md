@@ -4,7 +4,7 @@ These are the instructions to update locales on iOS mobile products, currently l
 
 ## Prerequisites to adding a locale
 
-First, you will have to check that the locale is available within the iOS system settings. iOS currently supports two tiers of locales, and a locale must be part of one of these two lists in order to ship on Firefox for iOS. Unlike Firefox for Android, there’s no locale switcher included in the app, so it’s possible to ship only locales that are supported by iOS.
+First, you will have to check that the locale is available within the iOS system settings. iOS currently supports two tiers of locales, and a locale must be part of one of these two lists in order to ship on Mozilla products for iOS. Unlike Mozilla products for Android, there’s no locale switcher included in the app, so it’s possible to ship only locales that are supported by iOS.
 
 To tell if a locale is supported or not, take a look on an actual device, under the Language Settings of the most recent iOS version available. Tier one locales are the ones listed under “iPod/iPhone/iPad Language”, and Tier 2 locales appear under “Other Language” (or “Add Language” if there are already some languages under that list). If a locale doesn’t appear in any of these lists, then it is currently not supported by iOS.
 
