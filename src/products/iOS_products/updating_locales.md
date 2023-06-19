@@ -16,13 +16,14 @@ In Pontoon, you can add and remove locales from the admin project page: [here](h
 
 ### Adding locales
 
-Once you have added a new locale in Pontoon, there is nothing more to do in order to get the locale into Nightly builds. This should happen automatically within 24-48 hours. To check that the locale is indeed now set up in the repository, you can check that its correspoding locale folder has been created [here](https://github.com/mozilla-l10n/firefoxios-l10n) for Firefox for iOS and [here](https://github.com/mozilla-l10n/focusios-l10n) for Focus for iOS.
+Once you have added a new locale in Pontoon, there is nothing more to do in order to get the locale into Nightly builds. This should happen automatically within 24-48 hours. To check that the locale is indeed now set up in the l10n repository, you can check that its correspoding locale folder has been created [here](https://github.com/mozilla-l10n/firefoxios-l10n) for Firefox for iOS and [here](https://github.com/mozilla-l10n/focusios-l10n) for Focus for iOS.
+To check that the locale made in into the code repository, there is a script running (note that this method may not always be 100% reliable): [here](https://github.com/mozilla-l10n/firefoxios-l10n#locales-in-build) for Firefox for iOS and [here](https://github.com/mozilla-l10n/focusios-l10n#locales-in-build) for Focus for iOS. A more reliable method would be to look for the pull request that imports translations in the code repository, and verify that it created files for that new locale.
 The locale will then ride the trains to release. The iOS release calendar follows closely the Android and Firefox desktop calendar, which can be found [here](https://whattrainisitnow.com/).
 
 ### Removing locales
 
 Once you have removed a new locale from Pontoon, the existing locale folder then needs to be removed from the l10n repository, and all files should also be removed from the code repository.
 
-As a mozilla-l10n code owner, you should be able to delete this folder yourself from the mozilla-l10n repo.
+As a mozilla-l10n code owner, you should be able to delete this folder yourself from the mozilla-l10n repo. This should be done via pull request, so we can keep track of the removal, and in case we'd want to reverse that action.
 
 Then, file an issue on Github ([here](https://github.com/mozilla-mobile/firefox-ios) for Firefox for iOS, and [here](https://github.com/mozilla-mobile/focus-ios) for Focus for iOS), so that the mobile team can work on removing their corresponding files. Once the issue is filed, and if you don't get any traction after a few days, you can ask for help in the `#mobile-xfnl-leads` Slack channel.
