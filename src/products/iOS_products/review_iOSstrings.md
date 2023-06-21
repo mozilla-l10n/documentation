@@ -8,7 +8,7 @@ Let’s go over some of the steps needed over time in order to review correctly 
 
 ## Reviewing the PR
 
-Let's consider Firefox for iOS as an example. As a matter of fact, the iOS release cycles follow closely the Android and Firefox desktop calendar, which can be found [here](https://whattrainisitnow.com). During the release cycle, automation will cerate pull requests as explained in the section above, in order to land strings fr the upcoming release.
+Let's consider Firefox for iOS as an example. As a matter of fact, the iOS release cycles follow closely the Android and Firefox desktop calendar, which can be found [here](https://whattrainisitnow.com). During the release cycle, automation will create pull requests as explained in the section above, in order to land strings for the upcoming release.
 
 Let’s consider a past PR, [here](https://github.com/mozilla-l10n/firefoxios-l10n/pull/192).
 
@@ -16,7 +16,7 @@ The first thing you’ll want to do is to check the changes to the [/templates f
 
 ### Acceptable changes
 
-Changes to attributes like `tool-version` and `build-num` are expected, they happen every time you change the version of Xcode. Seeing `datatype="plaintext"` move to the end of <file original> is also acceptable, such as [here](https://github.com/mozilla-l10n/firefoxios-l10n/pull/195/files#diff-6f29eb799be1b575316c0187d69a38fce3c63e27e5a22eb180b338ee177e9caeL3529).
+Changes to attributes like `tool-version` and `build-num` are expected, they happen every time you change the version of Xcode. Seeing `datatype="plaintext"` move to the end of `file original` is also acceptable, such as [here](https://github.com/mozilla-l10n/firefoxios-l10n/pull/195/files#diff-6f29eb799be1b575316c0187d69a38fce3c63e27e5a22eb180b338ee177e9caeL3529).
 
 Note that these will not appear as new strings for localizers and they will not need to touch them.
 
@@ -27,7 +27,7 @@ Changes to comments (`<note>`) are irrelevant in terms of string updates, so the
 Then you start scrolling down, checking if the new strings make sense: the first one you find is `CreditCard.DisplayCard.ExpiresLabel.v115`.
 
 Things to look out for:
-* Unclear strings and missing localization comments: the best way to identify them is to translate the strings, only having the string and comment as context (not the entire file, or the associated bug). For example: is the word used both a noun and a verb in English? Is the ID clear enough to give context (e.g. `buttonLabel`)?
+* Unclear strings and missing localization comments: the best way to identify them is to translate the strings, only having the string and comment as context (not the entire file, or the associated commit where the string landed). For example: is the word used both a noun and a verb in English? Is the ID clear enough to give context (e.g. `buttonLabel`)?
 * String changes without new IDs. IDs in XLIFF files are stored in the `trans-unit` attribute; for example, the ID of [this string](https://github.com/mozilla-l10n/firefoxios-l10n/pull/192/files#diff-6f29eb799be1b575316c0187d69a38fce3c63e27e5a22eb180b338ee177e9caeR3201) is `CreditCard.DisplayCard.ExpiresLabel.v115`.
 * Duplicated strings.
 * Other general [localization issues](https://mozilla-l10n.github.io/documentation/localization/dev_best_practices.html).
