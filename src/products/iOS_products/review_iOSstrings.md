@@ -55,7 +55,7 @@ So first you open the [main repository page](https://github.com/mozilla-mobile/f
 
 Then you use the search box at the top, searching for the [string ID (or the string)](https://github.com/search?q=repo%3Amozilla-mobile%2Ffirefox-ios%20CreditCard.DisplayCard.ExpiresLabel.v115&type=code).
 
-Then to the left, filter by `Pull Requests`. This should bring you to the Pull Request were the string was introduced, as well as the author of the string. 
+Then to the left, filter by `Pull Requests`. This should bring you to the Pull Request were the string was introduced, as well as the author of the string.
 
 If there are no PRs associated to the string, instead click on the link to the right finishing by /Strings.swift, to open up (in this case) [this file](https://github.com/mozilla-mobile/firefox-ios/blob/4bba2a088f0e5795dca89c10b3194dd97f3c2621/Client/Frontend/Strings.swift#L250). Then use the `Blame` [link on top](https://github.com/mozilla-mobile/firefox-ios/blame/4bba2a088f0e5795dca89c10b3194dd97f3c2621/Client/Frontend/Strings.swift#L250). On the left, you should (almost always) find the GitHub PR that introduced the string and its author.
 
