@@ -44,28 +44,26 @@ You might also need to identify the commit that added that string, see if there 
 
 ### How to find the code that introduced a string
 
-Let’s consider an example of new strings for Firefox for iOS, with [this past PR](https://github.com/mozilla-l10n/firefoxios-l10n/pull/19).
+Let’s consider an example of new strings for Firefox for iOS, with [this past PR](https://github.com/mozilla-l10n/firefoxios-l10n/pull/192).
 
-The ID is `NSCameraUsageDescription`, the label `This lets you take and upload photos`.
-It doesn’t have a localization comment, which is bad.
+The ID is `CreditCard.DisplayCard.ExpiresLabel.v115`, the label `Expires`.
+Imagine there is no localization comment there, you will want to know which GitHub PR introduced this string, and who was the author.
 
 In fact currently, the only strings that can not have localization comments are strings that are located in `InfoPlist.strings` and `Info.plist` - see [Bug 1277515](https://bugzilla.mozilla.org/show_bug.cgi?id=1277515) for more details. Otherwise, strings should always have localization comments.
 
 So first you open the [main repository page](https://github.com/mozilla-mobile/firefox-ios).
 
-Then you use the search box at the top, searching for the [string ID (or the string)](https://github.com/mozilla-mobile/firefox-ios/search?utf8=%E2%9C%93&q=NSCameraUsageDescription).
+Then you use the search box at the top, searching for the [string ID (or the string)](https://github.com/search?q=repo%3Amozilla-mobile%2Ffirefox-ios%20CreditCard.DisplayCard.ExpiresLabel.v115&type=code).
 
-In this case you find two occurrences. The first one is the most interesting, so you open [the file here](https://github.com/mozilla-mobile/firefox-ios/blob/978bf46bb680291c61c5d21b6dc26472388a374f/Client/en.lproj/InfoPlist.strings).
+Then to the left, filter by `Pull Requests`. This should bring you to the Pull Request were the string was introduced, as well as the author of the string. 
 
-Then use the `Blame` [link on top](https://github.com/mozilla-mobile/firefox-ios/blame/978bf46bb680291c61c5d21b6dc26472388a374f/Client/en.lproj/InfoPlist.strings).
+If there are no PRs associated to the string, instead click on the link to the right finishing by /Strings.swift, to open up (in this case) [this file](https://github.com/mozilla-mobile/firefox-ios/blob/4bba2a088f0e5795dca89c10b3194dd97f3c2621/Client/Frontend/Strings.swift#L250). Then use the `Blame` [link on top](https://github.com/mozilla-mobile/firefox-ios/blame/4bba2a088f0e5795dca89c10b3194dd97f3c2621/Client/Frontend/Strings.swift#L250). On the left, you should (almost always) find the GitHub PR that introduced the string and its author.
 
-On the left, you should (almost always) find the [bug reference](https://bugzilla.mozilla.org/show_bug.cgi?id=1312842).
-
-Note that we now use GitHub issues instead of Bugzilla bugs, so `Blame` will most surely bring you to a GitHub issue.
+You can then CC directly the author of the string in the new strings PR that arrived in the mozilla-l10n repository, and ask for a fix there.
 
 ## Wrapping up your work
 
-So you’ve reviewed the strings during the cycle, and the PR looks good - this means you can now merge the PR so the strings get exposed in Pontoon.
+So you’ve reviewed the strings, and the PR looks good - this means you can now merge the PR so the strings get exposed in Pontoon.
 
 Pontoon ([here for Firefox for iOS](https://pontoon.mozilla.org/projects/firefox-for-ios/) and [here for Focus for iOS](https://pontoon.mozilla.org/projects/focus-for-ios/)) should get the new strings automatically after a few minutes, but it’s always a good idea to double check just in case.
 
