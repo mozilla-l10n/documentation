@@ -38,7 +38,7 @@ Once you’ve checked `templates`, you can pick at least one locale and see what
 
 ## Reviewing strings during the cycle
 
-You should try to check out the strings landing, and try to localize them in your head: how would you translate them? Would you be able to do it without the app? Is the localization comment clear enough?
+You should try to check out the strings landing, and try to localize them in your head: how would you translate them? Would you be able to do it without the app? Is the localization comment clear enough? The section above explains what else to look out for and to keep in mind while your review.
 
 You might also need to identify the commit that added that string, see if there are screenshots, or ask if the iOS team can provide one. The point below explains how to find that commit.
 
@@ -57,9 +57,9 @@ Then you use the search box at the top, searching for the [string ID (or the str
 
 Then to the left, filter by `Pull Requests`. This should bring you to the Pull Request were the string was introduced, as well as the author of the string.
 
-If there are no PRs associated to the string, instead click on the link to the right finishing by /Strings.swift, to open up (in this case) [this file](https://github.com/mozilla-mobile/firefox-ios/blob/4bba2a088f0e5795dca89c10b3194dd97f3c2621/Client/Frontend/Strings.swift#L250). Then use the `Blame` [link on top](https://github.com/mozilla-mobile/firefox-ios/blame/4bba2a088f0e5795dca89c10b3194dd97f3c2621/Client/Frontend/Strings.swift#L250). On the left, you should (almost always) find the GitHub PR that introduced the string and its author.
+If there are no PRs associated to the string, instead click on the link to the right finishing by `/Strings.swift`, to open up (in this case) [this file](https://github.com/mozilla-mobile/firefox-ios/blob/4bba2a088f0e5795dca89c10b3194dd97f3c2621/Client/Frontend/Strings.swift#L250). Then use the `Blame` [link on top](https://github.com/mozilla-mobile/firefox-ios/blame/4bba2a088f0e5795dca89c10b3194dd97f3c2621/Client/Frontend/Strings.swift#L250). On the left, you should (almost always) find the GitHub PR that introduced the string and its author.
 
-You can then CC directly the author of the string in the new strings PR that arrived in the mozilla-l10n repository, and ask for a fix there.
+You can then CC directly the author of the string in the new strings PR that arrived in the `mozilla-l10n` repository, and ask for a fix there.
 
 ## Wrapping up your work
 
