@@ -34,7 +34,7 @@ Things to look out for:
 
 ### Quickly review other locales
 
-Once you’ve checked `templates`, you can pick at least one locale and see what changes, as you can see [for example here](https://github.com/mozilla-l10n/firefoxios-l10n/pull/192/files#diff-220a1dc4ddc01bbae6a176ba4122aa644042181c78a638b052f45462b758ca6f).
+Once you’ve checked `templates`, you can pick at least one locale and see what changes, as you can see [for example here](https://github.com/mozilla-l10n/firefoxios-l10n/pull/192/files#diff-220a1dc4ddc01bbae6a176ba4122aa644042181c78a638b052f45462b758ca6f). Checking another locale helps to easily spot if there are any file removals that might be deleting entire sections of existing translations. In case you are unsure about deletions, pinging an iOS developer is recommended.
 
 ## Reviewing strings during the cycle
 
