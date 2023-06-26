@@ -4,7 +4,7 @@ Usually, a new release of our iOS products means an update to strings. Like for 
 
 At this point, the PR is reviewed by an l10n-driver - most often by the PM in charge of mobile projects.
 
-Note that there is a linter in place that checks reference strings for common errors. When opening a pull request that touches the `en-US` folder, a GitHub workflow is used to check errors such as misused quotes or ellipsis, and hard-coded brand names. It's possible to add exceptions in this [JSON file](.github/scripts/linter_config.json). 
+Note that there is a linter in place that checks reference strings for common errors. When opening a pull request that touches the `en-US` folder, a GitHub workflow is used to check errors such as misused quotes or ellipsis, and hard-coded brand names. It's possible to add exceptions in this [JSON file](.github/scripts/linter_config.json).
 
 Let’s go over some of the steps needed over time in order to review correctly strings for a new release.
 
