@@ -18,7 +18,7 @@ The first thing you’ll want to do is to check the changes to the [/templates f
 
 Changes to attributes like `tool-version` and `build-num` are expected, they happen every time you change the version of Xcode. Seeing `datatype="plaintext"` move to the end of `file original` is also acceptable, such as [here](https://github.com/mozilla-l10n/firefoxios-l10n/pull/195/files#diff-6f29eb799be1b575316c0187d69a38fce3c63e27e5a22eb180b338ee177e9caeL3529).
 
-Note that these will not appear as new strings for localizers and they will not need to touch them.
+Note that these will not appear as new strings for localizers and they will not need to retranslate them.
 
 Changes to comments (`<note>`) are irrelevant in terms of string updates, so they’re also OK.
 
