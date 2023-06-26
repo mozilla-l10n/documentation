@@ -1,8 +1,10 @@
 # Reviewing strings for a new release of Mozilla iOS products
 
-Usually, a new release of our iOS products means an update to strings. Like for Android products, mobile developers will land strings in their respective code repositories throughout the release cycle, and pull requests will be opened by GitHub automation in the iOS repositories to expose these strings for localization in Pontoon (either under the [firefoxios-l10n](https://github.com/mozilla-l10n/firefoxios-l10n) or the [focusios-l10n](https://github.com/mozilla-l10n/focusios-l10n) repositories in `mozilla-l10n`). Automation will try to import strings twice a week (Tuesdays and Thursdays), but it's also possible to manually trigger a string import to the `mozilla-l10n` repository any time by going to the GitHub `Actions` section of the l10n repository and then importing strings again by running the string import workflow. It is always a good idea to import strings right before you review a PR, in case changes have been made in the meantime in the source repository. Example for Firefox for iOS [here](https://github.com/mozilla-l10n/firefoxios-l10n/actions/workflows/import_strings.yml).
+Usually, a new release of our iOS products means an update to strings. Like for Android products, mobile developers will land strings in their respective code repositories throughout the release cycle, and pull requests will be opened by GitHub automation in the iOS repositories to expose these strings for localization in Pontoon (either under the [firefoxios-l10n](https://github.com/mozilla-l10n/firefoxios-l10n) or the [focusios-l10n](https://github.com/mozilla-l10n/focusios-l10n) repositories in `mozilla-l10n`). Automation will try to import strings twice a week (Tuesdays and Thursdays), but it's also possible to manually trigger a string import to the `mozilla-l10n` repository any time by going to the GitHub `Actions` section of the l10n repository and then importing strings again by running the string import workflow.
 
 At this point, the PR is reviewed by an l10n-driver - most often by the PM in charge of mobile projects.
+
+Note that there is a linter in place that checks reference strings for common errors. When opening a pull request that touches the `en-US` folder, a GitHub workflow is used to check errors such as misused quotes or ellipsis, and hard-coded brand names. It's possible to add exceptions in this [JSON file](.github/scripts/linter_config.json). 
 
 Let’s go over some of the steps needed over time in order to review correctly strings for a new release.
 
@@ -34,9 +36,7 @@ Things to look out for:
 
 ### Quickly review other locales
 
-Once you’ve checked `templates`, you can pick at least one locale and see what changes, as you can see [for example here](https://github.com/mozilla-l10n/firefoxios-l10n/pull/192/files#diff-220a1dc4ddc01bbae6a176ba4122aa644042181c78a638b052f45462b758ca6f).
-
-Checking another locale helps to easily spot if there are any file removals that might be deleting entire sections of existing translations. It can also help spot instances where existing translations are accidentally removed or reverted. See for example this [past PR](https://github.com/mozilla-l10n/firefoxios-l10n/pull/124), where engineers did not import the latest localizations before exporting again strings from their code repository side.
+Once you’ve checked `templates`, you can pick at least one locale and see what changes, as you can see [for example here](https://github.com/mozilla-l10n/firefoxios-l10n/pull/192/files#diff-220a1dc4ddc01bbae6a176ba4122aa644042181c78a638b052f45462b758ca6f). Checking another locale helps to easily spot if there are any file removals that might be deleting entire sections of existing translations.
 
 Any time you are unsure about deletions, pinging an iOS developer is recommended.
 
