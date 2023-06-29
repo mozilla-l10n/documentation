@@ -12,7 +12,7 @@ The `firefox-android` repository currently uses a [single workflow](https://gith
 
 On the `android-l10n` repository side, you will need to set up [automation](https://github.com/mozilla-l10n/android-l10n/tree/main/.github/workflows) to import strings from the code repository. This automation will be responsible for creating all needed files in the repository. You may need to sync up with a technical localization EPM to set this up.
 
-Once automation is in place, it will extract daily new English strings from the code repository. It's also possible to invoke automation [manually](https://github.com/mozilla-l10n/android-l10n/actions).
+Once automation is in place, it will extract new English strings from the code repository. It should also be possible to invoke automation [manually](https://github.com/mozilla-l10n/android-l10n/actions).
 
 ## Add the project in Pontoon
 
