@@ -10,7 +10,7 @@ Android developers need to create a TOML file in their code repository and under
 
 The `firefox-android` repository currently uses a [single workflow](https://github.com/mozilla-mobile/firefox-android/blob/main/.github/workflows/import-l10n.yml) (GitHub action) to import strings for all projects from `android-l10n`. Sync with mobile developers to make sure that the code to import strings for this project has been added.
 
-On the `android-l10n` repository side, you will need to set up [import automation](https://github.com/mozilla-l10n/android-l10n/tree/main/.github/workflows) to import strings from the code repository, and the automation will create all needed files in the `mozilla-l10n` repo. You may need to sync up with a technical localization EPM to set this up.
+On the `android-l10n` repository side, you will need to set up [automation](https://github.com/mozilla-l10n/android-l10n/tree/main/.github/workflows) to import strings from the code repository. This automation will be responsible for creating all needed files in the repository. You may need to sync up with a technical localization EPM to set this up.
 
 Once automation is in place, it will extract daily new English strings from the code repository. It's also possible to invoke automation [manually](https://github.com/mozilla-l10n/android-l10n/actions).
 
