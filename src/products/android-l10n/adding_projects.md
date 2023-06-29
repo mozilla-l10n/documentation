@@ -2,7 +2,7 @@
 
 Follow the steps below to add new projects to [android-l10n](https://github.com/mozilla-l10n/android-l10n). You will have to coordinate with android-l10n developers and a technical Localization EPM throughout the process.
 
-## Setting up android-l10n files
+## Setting up the project in source and l10n repositories
 
 Before anything happens, check that the new project is properly localizable by following the directions in [this section](https://github.com/mozilla-l10n/documentation/blob/main/src/tools/pontoon/adding_new_project.md#adding-a-new-project-on-pontoon). Once the new project exists in its corresponding source repo and is properly localizable, it can then be added to the android-l10n repository.
 
