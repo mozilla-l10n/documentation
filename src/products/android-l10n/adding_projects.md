@@ -16,4 +16,4 @@ Once automation is in place, it will extract new English strings from the code r
 
 ## Add the project in Pontoon
 
-Once all of this is done and merged, you can now enable the new project on Pontoon. Instructions for adding new projects can be found [here](https://github.com/mozilla-l10n/documentation/blob/main/src/tools/pontoon/adding_new_project.md#create-the-project).
+Once all of this is done and merged, you can now enable the new project in Pontoon. Instructions for adding new projects can be found [here](https://github.com/mozilla-l10n/documentation/blob/main/src/tools/pontoon/adding_new_project.md#create-the-project).
