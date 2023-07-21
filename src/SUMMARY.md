@@ -35,6 +35,7 @@
     * [Renaming a project](tools/pontoon/renaming_a_project.md).
     * [New short-term project](tools/pontoon/adding_new_short_term_project.md).
     * [New locale](tools/pontoon/adding_new_locale.md).
+    * [Pretranslation](tools/pontoon/managing_pretranslation.md).
     * [Notifications](tools/pontoon/sending_notifications.md).
     * [Renaming a localization file](tools/pontoon/renaming_a_file.md).
     * [Deactivating users](tools/pontoon/deactivating_users.md).
