@@ -38,6 +38,7 @@ Localization for the <a href="https://testpilot.firefox.com/experiments/min-vid"
 * Visibility: determines who can access the project. Pontoon supports the following visibility types:
   * private (default) - only administrators can access the project.
   * public - the project is visible for everyone.
+* Pretranslation: see the [document dedicated to pretranslation](managing_pretranslation.md).
 
 Click **SAVE PROJECT** at the bottom of the page, then click **SYNC** to run a test sync. In the [Sync log](https://pontoon.mozilla.org/sync/log/) you should be able to see if it succeeded or failed. If all went well, the new project will appear in the [public list of Projects](https://pontoon.mozilla.org/projects/).
 
