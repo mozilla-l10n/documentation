@@ -350,7 +350,7 @@ And then replace `%S` at run-time with the mark-up and link text.
 
 Typically hardcoding happens for white spaces, commas, or other separators (`:`, `|`). Sometimes this is even done implicitly, by relying on new lines converted to a single white space in HTML.
 
-If you need a trailing white space in a string, use the Unicode character `\u0020` in Properties, or `{ " " } in Fluent. But this is usually a bad sign, because it means you’re concatenating it to another string.
+If you need a trailing white space in a string, use the Unicode character `\u0020` in Properties, or `{ " " }` in Fluent. But this is usually a bad sign, because it means you’re concatenating it to another string.
 
 ### Remove unused strings
 
