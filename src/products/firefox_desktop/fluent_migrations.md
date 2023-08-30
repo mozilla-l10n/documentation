@@ -33,7 +33,7 @@ A set of scripts to automate cloning and updating of the l10n-central repositori
 
 ### Ensure there are no blocking issues in gecko-strings-quarantine
 
-As part of migrations, content needs to be pushed from the quarantine repository to `gecko-strings`. Since content can’t be pushed selectively, any pending issue needs to be solved before starting the process. For more information about the review process, see [this document](review.md).
+As part of migrations, content needs to be pushed from the quarantine repository to `gecko-strings`. Since content can’t be pushed selectively, any pending issue needs to be solved before starting the process (eventually backing out problematic changes). For more information about the review process, see [this document](review.md).
 
 ### Stop sync in Pontoon
 
@@ -43,11 +43,8 @@ This is needed for several reasons:
 * It removes the chance of conflicts in the l10n repository between the running migration and Pontoon committing changes for other projects.
 * The migrated strings need to be added in the same cycle as the new strings for the source language (`en-US`). If they’re added before, Pontoon will ignore them, creating a misalignment between internal database and l10n repositories. If they’re added after, these strings will be displayed as missing in Pontoon, and some locales might try to translate them while it’s not needed.
 
-The last step here is to make sure that the current sync process has completed, then increase the resources assigned to the Heroku worker:
+The last step here is to make sure that the current sync process has completed:
 * Check the [Sync Logs](https://pontoon.mozilla.org/sync/log/) page, click on the last one, and make sure that there are no projects with `---` in the `DURATION` field.
-* In [Heroku](https://dashboard.heroku.com/apps/mozilla-pontoon/resources), switch the *worker* from `PM` (Performance-M dynos) to `PL` (Performance-L dynos).
-
-It’s important to make sure that there is no sync in progress when upgrading the worker, because that will kill any pending process.
 
 ### Test the migrations locally
 
@@ -90,5 +87,3 @@ Once the actual migration is complete, the next step is to re-enable sync in Pon
 
 * Access the [admin panel for Firefox](https://pontoon.mozilla.org/admin/projects/firefox/), click the `SYNC` button at the bottom, then deselect `SYNC DISABLED` and click `SAVE PROJECT`.
 * Clicking the `SYNC` button will spawn a new sync process just for Firefox. Check the [Sync Logs](https://pontoon.mozilla.org/sync/log/) page to see when it’s finished. Depending on the amount of changes, this can require from 15 to over 30 minutes. It’s also possible to monitor the status in Papertrail, accessible from the [Resources](https://dashboard.heroku.com/apps/mozilla-pontoon/resources) page in Heroku, and filter the log using the string `app/worker`.
-
-When sync is complete, switch back the *worker* to `PM` in [Heroku](https://dashboard.heroku.com/apps/mozilla-pontoon/resources). Once again, make sure that there are no running sync processes before doing it.

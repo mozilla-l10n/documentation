@@ -63,15 +63,9 @@ Then run
 $ compare-locales --unified --full ~/src/mozilla-unified/browser/locales/l10n.toml ~/l10n gecko-strings-quarantine
 ```
 
-If you also have [comm-central](https://hg.mozilla.org/comm-central) checked out, you can check Thunderbird and allies with:
-
-```
-$ compare-locales --unified --full -Dmozilla=~/src/mozilla-unified/ ~/src/comm-central/mail/locales/l10n.toml ~/src/comm-central/calendar/locales/l10n.toml ~/src/comm-central/suite/locales/l10n.toml ~/l10n gecko-strings-quarantine
-```
-
 When running these, you should see no errors or warnings. When running them against the central revisions, you should see no missing or changed strings, while having obsolete strings is expected. When running against beta or release revisions, expect to have changed strings, but again, no missing strings.
 
-Note: when running compare-locales against a non-existing locale code, use the `--full` commandline argument to get all strings in submodules. In particular for gecko-strings, you need that, otherwise you only get the strings in the `browser` directory.
+Note: when running compare-locales against a non-existing locale code, use the `--full` command line argument to get all strings in submodules. In particular for gecko-strings, you need that, otherwise you only get the strings in the `browser` directory.
 
 ### Run compare-locales against a localization repository
 
