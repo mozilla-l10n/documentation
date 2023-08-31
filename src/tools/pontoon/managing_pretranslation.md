@@ -32,7 +32,7 @@ To improve performance of the machine translation engine powering the pretransla
 
 To create a custom translation model, first go to the [team page](https://mozilla-l10n.github.io/localizer-documentation/tools/pontoon/teams_projects.html#team-page) of the locale you are creating custom translation model for and download its [translation memory file](https://mozilla-l10n.github.io/localizer-documentation/tools/pontoon/translate.html#downloading-and-uploading-translations).
 
-Next, go to the [Google Cloud console](https://console.cloud.google.com/translation/datasets?project=moz-fx-pontoon-prod) and follow the [official instructions](https://cloud.google.com/translate/automl/docs/create-machine-translation-model) for creating a translation dataset from the uploaded translation memory file and training an AutoML translation model.
+Next, go to the [Google Cloud console](https://console.cloud.google.com/translation/datasets?project=moz-fx-pontoon-prod) (requires permission) and follow the [official instructions](https://cloud.google.com/translate/automl/docs/create-machine-translation-model) for creating a translation dataset from the uploaded translation memory file and training an AutoML translation model.
 
 When choosing the name for the dataset, follow the pattern used by existing datasets - `dataset_LOCALE_YYYY_MM_DD`. When choosing the Cloud Storage path where the uploaded files are to be stored, pick `pontoon-prod-model-data-c1107144`.
 
