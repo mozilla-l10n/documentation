@@ -28,7 +28,7 @@ Use the checkbox `PRETRANSLATION ENABLED` to enable the feature for the project,
 
 ## Train and set up a custom machine translation model
 
-To improve performance of the machine translation engine powering the pretranslation feature, custom machine translation models are trained for each locale using Pontoon’s translation memory. That results in better translation quality than what’s suggested by the generic machine translation engine.
+To improve performance of the machine translation engine powering the pretranslation feature, custom machine translation models are trained for each locale using Pontoon’s translation memory. That results in better translation quality than what’s provided by the generic machine translation engine.
 
 To create a custom translation model, first go to the [team page](https://mozilla-l10n.github.io/localizer-documentation/tools/pontoon/teams_projects.html#team-page) of the locale you are creating custom translation model for and download its [translation memory file](https://mozilla-l10n.github.io/localizer-documentation/tools/pontoon/translate.html#downloading-and-uploading-translations).
 
