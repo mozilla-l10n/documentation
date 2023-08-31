@@ -118,6 +118,8 @@ $ compare-locales --unified ~/src/mozilla-unified/browser/locales/l10n.toml ~/l1
 
 If there are no issues in `gecko-strings-quarantine` and no pending [Fluent migrations](../firefox_desktop/fluent_migrations.md), the next step is to push changes to `gecko-strings` and expose content to tools.
 
+Before pushing, [this script](https://github.com/flodolo/scripts/blob/main/mozilla_l10n/gecko_strings/gecko-quarantine-diff.py) can be used to compare the tip of the two repositories (it requires a local clone of `gecko-strings-quarantine`).
+
 One time setup: after you cloned `gecko-strings-quarantine` on your system, you need to edit its `.hg/hgrc` file, and add `gecko-strings` as path. While you only need `https` for pulling the quarantine repository, you need `ssh` in order to push updates to `gecko-strings`.
 
 The content of `~/l10n/gecko-strings-quarantine/.hg/hgrc` should be similar to this:
