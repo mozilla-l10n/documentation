@@ -36,6 +36,6 @@ Next, go to the [Google Cloud console](https://console.cloud.google.com/translat
 
 When choosing the name for the dataset, follow the pattern used by existing datasets - `dataset_LOCALE_YYYY_MM_DD`. When choosing the Cloud Storage path where the uploaded files are to be stored, pick `pontoon-prod-model-data-c1107144`.
 
-Note that creating the model takes a few hours. When the model is created, store its name (usally starting with `NM`, followed by a series of integers) under *Google automl model* in the [Django’s admin interface](https://pontoon.mozilla.org/a/) of the locale.
+Note that creating the model is a background job which takes a few hours, and models for at most 4 locales can be trained concurrently. When the model is created, store its name (usally starting with `NM`, followed by a series of integers) under *Google automl model* in the [Django’s admin interface](https://pontoon.mozilla.org/a/) of the locale.
 
-From that point on, Machiney will start using the custom machine translation model instead of the generic one and you’ll be set to enable pretranslation for the locale.
+From that point on, Machinery will start using the custom machine translation model instead of the generic one and you’ll be set to enable pretranslation for the locale.
