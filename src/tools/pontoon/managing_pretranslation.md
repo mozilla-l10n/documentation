@@ -34,8 +34,8 @@ To create a custom translation model, first go to the [team page](https://mozill
 
 Next, go to the [Google Cloud console](https://console.cloud.google.com/translation/datasets?project=moz-fx-pontoon-prod) (requires permission) and follow the [official instructions](https://cloud.google.com/translate/automl/docs/create-machine-translation-model) for creating a translation dataset from the uploaded translation memory file and training an AutoML translation model.
 
-When choosing the name for the dataset, follow the pattern used by existing datasets - `dataset_LOCALE_YYYY_MM_DD`. When choosing the Cloud Storage path where the uploaded files are to be stored, pick `pontoon-prod-model-data-c1107144`.
+When choosing the name for the dataset, follow the pattern used by existing datasets — `dataset_LOCALE_YYYY_MM_DD`. When importing the data to train the model, select `pontoon-prod-model-data-c1107144` as the Cloud Storage path to store uploaded files.
 
-Note that creating the model is a background job which takes a few hours, and models for at most 4 locales can be trained concurrently. When the model is created, store its name (usally starting with `NM`, followed by a series of integers) under *Google automl model* in the [Django’s admin interface](https://pontoon.mozilla.org/a/) of the locale.
+Note that creating the model is a background job which takes a few hours, and models for at most 4 locales can be trained concurrently. When the model is created, store its name (usually starting with `NM`, followed by a series of alphanumeric characters) under *Google automl model* in the [Django’s admin interface](https://pontoon.mozilla.org/a/) of the locale.
 
 From that point on, Machinery will start using the custom machine translation model instead of the generic one and you’ll be set to enable pretranslation for the locale.
