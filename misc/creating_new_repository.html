@@ -1,0 +1,272 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>New l10n repository - Localization at Mozilla - Internal Documentation</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="../products/android-l10n/index.html">Android-l10n</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../products/android-l10n/adding_projects.html">Adding projects</a></li><li class="chapter-item expanded "><a href="../products/android-l10n/updating_locales.html">Updating locales</a></li><li class="chapter-item expanded "><a href="../products/android-l10n/review_android_strings.html">Reviewing new strings</a></li><li class="chapter-item expanded "><a href="../products/android-l10n/removing_projects.html">Removing projects</a></li></ol></li><li class="chapter-item expanded "><a href="../products/firefox_desktop/index.html">Firefox Desktop</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../products/firefox_desktop/adding_pontoon.html">Add to Pontoon</a></li><li class="chapter-item expanded "><a href="../products/firefox_desktop/adding_nightly.html">Nightly builds</a></li><li class="chapter-item expanded "><a href="../products/firefox_desktop/adding_release.html">Beta/Release builds</a></li><li class="chapter-item expanded "><a href="../products/firefox_desktop/setup_searchplugins.html">Searchplugins</a></li><li class="chapter-item expanded "><a href="../products/firefox_desktop/removing_locales.html">Removing locales</a></li><li class="chapter-item expanded "><a href="../products/firefox_desktop/review.html">Review strings</a></li><li class="chapter-item expanded "><a href="../products/firefox_desktop/fluent_migrations.html">Fluent migrations</a></li><li class="chapter-item expanded "><a href="../products/firefox_desktop/build_system.html">Build system</a></li><li class="chapter-item expanded "><a href="../products/firefox_desktop/firefox_l10n_faqs.html">L10N FAQs</a></li></ol></li><li class="chapter-item expanded "><a href="../localization/index.html">Localization</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../localization/making_string_changes.html">Change existing strings</a></li><li class="chapter-item expanded "><a href="../localization/dev_best_practices.html">Best practices for developers</a></li><li class="chapter-item expanded "><a href="../localization/globalization_best_practices.html">Globalization best practices for product managers</a></li></ol></li><li class="chapter-item expanded "><a href="../products/iOS_products/index.html">iOS Products</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../products/iOS_products/updating_locales.html">Updating locales</a></li><li class="chapter-item expanded "><a href="../products/iOS_products/review_iOSstrings.html">Reviewing new strings</a></li></ol></li><li class="chapter-item expanded "><a href="../products/other/index.html">Other Projects</a></li><li class="chapter-item expanded "><a href="../tools/pontoon/index.html">Pontoon</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tools/pontoon/adding_new_project.html">New project</a></li><li class="chapter-item expanded "><a href="../tools/pontoon/renaming_a_project.html">Renaming a project</a></li><li class="chapter-item expanded "><a href="../tools/pontoon/adding_new_short_term_project.html">New short-term project</a></li><li class="chapter-item expanded "><a href="../tools/pontoon/adding_new_locale.html">New locale</a></li><li class="chapter-item expanded "><a href="../tools/pontoon/managing_pretranslation.html">Pretranslation</a></li><li class="chapter-item expanded "><a href="../tools/pontoon/sending_notifications.html">Notifications</a></li><li class="chapter-item expanded "><a href="../tools/pontoon/renaming_a_file.html">Renaming a localization file</a></li><li class="chapter-item expanded "><a href="../tools/pontoon/deactivating_users.html">Deactivating users</a></li><li class="chapter-item expanded "><a href="../tools/pontoon/removing_users.html">Removing users</a></li><li class="chapter-item expanded "><a href="../tools/pontoon/adding_new_terminology.html">New terminology</a></li></ol></li><li class="chapter-item expanded "><a href="../tools/mercurial/index.html">Mercurial</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tools/mercurial/setting_mercurial_environment.html">Set up the environment</a></li><li class="chapter-item expanded "><a href="../tools/mercurial/creating_mercurial_patch.html">Create a patch</a></li><li class="chapter-item expanded "><a href="../tools/mercurial/useful_mercurial_commands.html">Useful Mercurial commands</a></li></ol></li><li class="chapter-item expanded "><a href="../misc/index.html">Other docs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../misc/creating_new_repository.html" class="active">New l10n repository</a></li><li class="chapter-item expanded "><a href="../misc/working_w_l10n_agency.html">How to work with a Localization Agency</a></li><li class="chapter-item expanded "><a href="../misc/documentation_styleguide.html">Documentation styleguide</a></li><li class="chapter-item expanded "><a href="../misc/stock_emails.html">Stock emails</a></li><li class="chapter-item expanded "><a href="../misc/terminology_export.html">Exporting terminology</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Localization at Mozilla - Internal Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/mozilla-l10n/documentation/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/mozilla-l10n/documentation/edit/main/src/misc/creating_new_repository.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="creating-a-new-repository-for-projects"><a class="header" href="#creating-a-new-repository-for-projects">Creating a new repository for projects</a></h1>
+<p>Creating a new repository in the <a href="https://github.com/mozilla-l10n">mozilla-l10n</a> organization provides the advantage of letting l10n-drivers manage this repository directly, reducing delays when dealing with permissions. It also allows localizers to work directly on GitHub with pull requests.</p>
+<p>Note that you need to be a manager of the organization in order to create a new repository.</p>
+<h2 id="create-the-new-repository"><a class="header" href="#create-the-new-repository">Create the new repository</a></h2>
+<p>A new repository can be created in <a href="https://github.com/organizations/mozilla-l10n/repositories/new">this page</a>, or using the <strong>New</strong> button in the organization’s landing page.</p>
+<p><strong>Name</strong>: always include the <code>-l10n</code> suffix for localization repositories, to differentiate them from other repositories used for tools.</p>
+<p>For example, if the project is <em>Focus for Android</em>, a good repository name is <code>focus-android-l10n</code>.</p>
+<p><strong>Description</strong>: add a short description, e.g. <code>Strings for the Focus (Android) project</code>.</p>
+<p>Set the project as <strong>Public</strong> and don’t initialize it with a README.</p>
+<p><img src="../assets/images/new_repository/new_repo.png" alt="New repository" /></p>
+<h2 id="add-collaborators"><a class="header" href="#add-collaborators">Add collaborators</a></h2>
+<p>Go into the project settings:</p>
+<ul>
+<li>Add the relevant l10n-drivers as Admin (<a href="https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/managing-access-to-your-personal-repositories/inviting-collaborators-to-a-personal-repository">see GitHub documentation</a>). You can either pick individuals or one of the pre-existing groups.</li>
+<li>Add the <strong>Tool-bots</strong> group with <strong>Write</strong> permissions to give Pontoon write access. If localizers need direct access, you can use the <strong>Localizers</strong> group.</li>
+<li>Add relevant developers as contributors if they need to make commits to the repository (that’s usually the case, in order to update strings).</li>
+</ul>
+<h2 id="add-a-readmemd-to-the-project"><a class="header" href="#add-a-readmemd-to-the-project">Add a README.md to the project</a></h2>
+<p>Add a README with some useful information about the project. For example, for Focus for Android:</p>
+<pre><code># Focus by Firefox localization
+Localization for the Focus by Firefox project for Android.
+
+The application code with build instructions can be found
+at &lt;https://github.com/mozilla-mobile/focus-android&gt;.
+
+# License
+Translations in this repository are available under the
+terms of the [Mozilla Public License v2.0](https://www.mozilla.org/MPL/2.0/).
+</code></pre>
+<h2 id="add-a-codeowners-file"><a class="header" href="#add-a-codeowners-file">Add a CODEOWNERS file</a></h2>
+<p>It’s possible to add a <em>CODEOWNERS</em> file to automatically ping the owner of the project in case of pull requests. File can be placed in the root of the repository or specific subfolders (<a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/about-code-owners">see GitHub documentation</a>), it’s called <code>CODEOWNERS</code> and uses the following format:</p>
+<pre><code>path/to/files/to/monitor @nickname_of_owner
+</code></pre>
+<p>For example, this is the content of the <a href="https://github.com/mozilla-l10n/focus-android-l10n/blob/master/CODEOWNERS">CODEOWNERS</a> file for Focus for Android:</p>
+<pre><code>locales/templates/*.pot @delphine
+</code></pre>
+<p>Pull requests to update strings always modify <code>locales/templates/app.pot</code>, while <code>delphine</code> is the nickname of the PM in charge of this product. Any pull request trying to modify files matching that path will automatically send a review request to the code owner.</p>
+<h2 id="add-topics-to-the-repository-optional"><a class="header" href="#add-topics-to-the-repository-optional">Add topics to the repository (optional)</a></h2>
+<p>In the main repository page you can add <a href="https://github.com/blog/2309-introducing-topics">topics</a> to make the repository more discoverable by potential contributors. For example, all localization projects have the following topics: mozilla-l10n, localization, translation.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../misc/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../misc/working_w_l10n_agency.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../misc/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../misc/working_w_l10n_agency.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
