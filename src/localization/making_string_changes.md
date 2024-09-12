@@ -89,9 +89,11 @@ In this scenario, the only way to ensure that obsolete translations are ignored 
 
 Things become a lot more complicated for Firefox:
 * Each localization is stored in a separate Mercurial repository.
-* The `en-US` locale is stored in the code repository (e.g. `mozilla-central`). That locale is used by the build system to build the US English version of Firefox, but it’s not used as source by the localization toolchain. In fact, in order to ship all versions of Firefox (Nightly, Beta, Developer Edition, Release, ESR) from a single l10n repository, we rely on a special [cross-channel repository](https://firefox-source-docs.mozilla.org/l10n/crosschannel/index.html) called `gecko-strings`, which includes all strings for all shipping versions of Firefox.
+* The `en-US` locale is stored in the code repository (e.g. `mozilla-central`). That locale is used by the build system to build the US English version of Firefox, but it’s not used as source by the localization toolchain. In fact, in order to ship all versions of Firefox (Nightly, Beta, Developer Edition, Release, ESR) from a single l10n repository, we rely on a special unified [repository](https://https://github.com/mozilla-l10n/firefox-l10n-source) in GitHub called `firefox-l10n-source`, which includes all strings for all shipping versions of Firefox.
 
 This is the scenario before the string change. Once again, although it already looks very busy, it’s a simplified high level view of the actual system.
+
+**Note**: The l10n repository transitioned to `firefox-l10n-source`, but was previously hosted in a Mercurial repository called `gecko-strings`. Images below use the former repository name.
 
 ![Firefox: starting point with existing string](../assets/images/localization/string_changes_firefox_start.png)
 
@@ -99,7 +101,7 @@ And this is what happens if a string is changed without new ID:
 
 ![Firefox: change without new ID](../assets/images/localization/string_changes_firefox_change.png)
 
-* The string is changed in `mozilla-central`, and the en-US Nightly build will start using it. This change is reflected in `gecko-strings`, but doesn’t impact other builds (e.g. beta), because that’s not used by the build system.
+* The string is changed in `mozilla-central`, and the en-US Nightly build will start using it. This change is reflected in `firefox-l10n-soruce` (formerly `gecko-strings`), but doesn’t impact other builds (e.g. beta), because that’s not used by the build system.
 * As for the generic product, Pontoon reads the updated change, but doesn’t notify localizers or invalidate existing translations.
 
 In this scenario, simply removing existing translations from VCS isn’t possible, because we still need them to ship in older builds.

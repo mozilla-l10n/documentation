@@ -16,12 +16,10 @@ Then file a new tracking bug using this [bug template](https://mzl.la/3vwVtub). 
 
 Note that the tracking bug is filed under `Mozilla Localizations :: Other`, as creating the Bugzilla component is a step that will be performed when the locale is ready to move to Beta/Release. If the component for this locale is already available, the bug should to be moved directly there.
 
-To make it easier to track dependencies, also add the bug used to create the l10n-central repository (see [Adding a new locale to Pontoon](adding_pontoon.md)) as a dependency (`Depends on:` field) of the tracking bug.
-
 ## Verify content in l10n repository
 
 Before enabling the build, it’s a good idea to perform some basic checks:
-* Check `toolkit/global/intl.properties` ([en-US version](https://hg.mozilla.org/mozilla-central/file/default/toolkit/locales/en-US/chrome/global/intl.properties)) for evident mistakes.
+* Check `it/toolkit/chrome/global/intl.properties` ([it version](https://github.com/mozilla-l10n/firefox-l10n/blob/main/it/toolkit/chrome/global/intl.properties)) for evident mistakes.
 
 ## Add new locale to build configuration
 

@@ -42,9 +42,9 @@ These approaches allow to ship one package and support multiple languages, but t
 
 ### I landed strings in mozilla-central, when are they going to be localized?
 
-New string changes are exported twice a day from mozilla-central into a repository called `gecko-strings-quarantine`, a unified repository that includes strings for all shipping versions of Firefox (nightly, beta, release). This repository is used as a buffer to avoid exposing potential issues to all locales working on Firefox.
+New string changes are extracted twice a day from `gecko-dev` (the git mirror of mozilla-central) into a repository called `firefox-l10n-source`, a unified repository that includes strings for all shipping versions of Firefox (nightly, beta, release). This repository is used as a buffer to avoid exposing potential issues to all locales working on Firefox.
 
-Typically once or twice a week, the content of the quarantine repository is pushed to the official repository, called `gecko-strings`, used by [Pontoon](https://pontoon.mozilla.org/projects/firefox/) as source reference. At this point, strings can be localized by community.
+Typically once or twice a week, the content of the quarantine (the `update` branch) is pushed to the `main` branch which acts as the official repository, used by [Pontoon](https://pontoon.mozilla.org/projects/firefox/) as source reference. At this point, strings can be localized by the community.
 
 ### Can I uplift a patch to Beta or Release?
 
@@ -60,7 +60,7 @@ If version X is in Nightly, i.e. currently developed in mozilla-central, there i
 
 The sooner you land content in mozilla-central, the higher will be the chances that the content will be localized in several languages before reaching release.
 
-A webapp is [available here](https://fx-trains.herokuapp.com/release/) with all the deadlines, including string freeze start, for current and future versions of Firefox (use the `«` and `»` near the title to change version).
+A webapp is [available here](https://whattrainisitnow.com/release/?version=release) with all the deadlines, including string freeze start, for current and future versions of Firefox (use the `«` and `»` near the title to change version).
 
 ## Development
 
@@ -72,11 +72,11 @@ A document including plenty of best practices is [available here](../../localiza
 
 Strings need to be added to localization files in known locations within the mozilla-central tree. For all the technical details about these paths and the supported formats, see [this document](https://firefox-source-docs.mozilla.org/build/buildsystem/locales.html#exposing-strings).
 
-Once strings land in mozilla-central, they will be exposed for localization in Pontoon within a few days.
+Once strings land in mozilla-central, they will be exposed for localization in Pontoon typically within a week or sooner.
 
 ### Where can I find the localized strings?
 
-All shipping versions of Firefox are built from a single Mercurial repository for each locale (`l10n-central`). Repositories are available [here](https://hg.mozilla.org/l10n-central/).
+All shipping versions of Firefox are built from a single GitHub repository with a subdirectory for each locale called `firefox-l10n`, available [here](https://github.com/mozilla-l10n/firefox-l10n).
 
 ### Can I land content without exposing it for localization?
 
@@ -94,14 +94,14 @@ No, the existing infrastructure only allows to expose strings to all locales. If
 
 It’s always possible to restore an old string that was removed from code, as long as the text remains the same, and the string is used exactly in the same context.
 
-It might also be possible to uplift the patch if the string is still available in the [gecko-string repository](https://hg.mozilla.org/l10n/gecko-strings). `gecko-strings` is a repository with a [superset](https://firefox-source-docs.mozilla.org/l10n/crosschannel/index.html) of strings from all [supported versions](https://hg.mozilla.org/mozilla-unified/file/tip/python/l10n/mozxchannel/__init__.py#l31) of Firefox: nightly, beta, release, ESR.
+It might also be possible to uplift the patch if the string is still available in the [firefox-l10n-source](https://github.com/mozilla-l10n/firefox-l10n-source). `firefox-l10n` acts as a single localization source for multiple builds, with a [superset](https://firefox-source-docs.mozilla.org/l10n/singlel10nsource.html) of strings from all [supported versions](https://github.com/mozilla-l10n/firefox-l10n-source/blob/main/.github/update-config.json#L2) of Firefox: nightly, beta, release, ESR.
 
 Consider this example:
 * The original string landed in Firefox 85, and was removed later in Firefox 92.
 * The list of support versions in cross-channel includes: ESR91, 92, 93, 94.
 * The string is restored in Firefox 94.
 
-The string will still be available in `gecko-strings` until ESR91 becomes unsupported, since the string was removed after that release (in Firefox 92). This patch could be uplifted without creating any issue to localization (it would be a *no-op*).
+The string will still be available in `firefox-l10n-source` until ESR91 becomes unsupported, since the string was removed after that release (in Firefox 92). This patch could be uplifted without creating any issue to localization (it would be a *no-op*).
 
 If the string is not available anymore, this is effectively a new string, and must be [treated as such](#can-i-uplift-a-patch-to-beta-or-release).
 
@@ -135,7 +135,7 @@ Given that localization is managed by community volunteers, there is no SLA or g
 
 ### How do I communicate with localizers about my feature or patch?
 
-If there is some specific information that you want to convey to localizers, like testing instructions or particular issues to look out for, get in touch with the [L10N PM for Firefox](#who-can-i-contact-if-i-have-more-questions). They will help you identify the best channel and way to relay this information.
+If there is some specific information that you want to convey to localizers, like testing instructions or particular issues to look out for, get in touch with the [L10N PM for Firefox Desktop](#who-can-i-contact-if-i-have-more-questions). They will help you identify the best channel and way to relay this information.
 
 ### I see pending suggestions in Pontoon, how can I get them approved?
 
