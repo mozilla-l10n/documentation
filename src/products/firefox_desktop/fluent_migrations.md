@@ -7,7 +7,7 @@ At the core of each migration there is a Python file, called a **migration recip
 * Remove obsolete strings.
 * Include a migration recipe.
 
-Once one such patch lands in [gecko-dev](https://github.com/mozilla/gecko-dev), string changes will be pushed to a quarantine repository (the `update` branch of [firefox-l10n-source](https://github.com/mozilla-l10n/firefox-l10n-source)). At this point, this new content is not visible yet in [Pontoon](https://pontoon.mozilla.org/).
+Once one such patch lands in [gecko-dev](https://github.com/mozilla/gecko-dev), string changes will be pushed to the `update` branch of [firefox-l10n-source](https://github.com/mozilla-l10n/firefox-l10n-source). At this point, this new content is not visible yet in [Pontoon](https://pontoon.mozilla.org/).
 
 The goal of a migration is to port existing translations to a new format or file without forcing the community localizers to retranslate them. For this to happen, migrations need to be performed before the new strings are pushed to the `main` branch of the `firefox-l10n-source` repository and become available in Pontoon.
 
@@ -31,7 +31,7 @@ In order to run migrations:
 
 ### Ensure there are no blocking issues in the update branch of firefox-l10n-source
 
-As part of migrations, content needs to be pushed from the `update` branch to the `main` branch of `firefox-l10n-source`. Since content can’t be pushed selectively, any pending issue needs to be solved before starting the process (eventually backing out problematic changes). For more information about the review process, see [this document](review.md).
+As part of migrations, content needs to be pushed from the `update` branch to the `main` branch of `firefox-l10n-source`. Any pending issue needs to be solved before starting the process (eventually backing out problematic changes) or need to be temporarily removed manually to prevent problematic strings being exposed to localizers. For more information about the review process, see [this document](review.md).
 
 ### Stop sync in Pontoon
 
@@ -56,12 +56,12 @@ At this point, while each migration has been tested as part of the review before
 
 ### Push updates to the main branch of firefox-l10n-source
 
-Before [merging updates](review.md#merge-reviewed-strings-to-main-branch-of-firefox-l10n-source) to the `main` branch of `firefox-l10n-source`, make sure that:
+Before running the migration of localization strings, [merge](review.md#merge-reviewed-strings-to-main-branch-of-firefox-l10n-source) the source (en-US) strings of the `update` branch in `firefox-l10n-source` to the `main` branch. Make sure that:
 * The new strings and migrations are available in the `update` branch.
-* There are [no pending issues](#ensure-there-are-no-blocking-issues-in-the-update-branch-of-firefox-l10n-source) that prevent the current content to be exposed in Pontoon.
+* All [pending issues](#ensure-there-are-no-blocking-issues-in-the-update-branch-of-firefox-l10n-source) are dealt with.
 * The migration has been tested locally and works as expected.
 
-Once the new strings are pushed to `main` the procedure needs to be completed before re-enabling sync in Pontoon, otherwise additional manual work on the repository to revert the commit will be required. The alternative is forcing all locales to retranslate this content, and losing the entire benefit of migrations.
+Once the new source strings are merged, the remaining procedures need to be completed before re-enabling sync in Pontoon, otherwise additional manual work on the repository to revert the commit will be required. The alternative is forcing all locales to retranslate this content, and losing the entire benefit of migrations.
 
 ### Run migrations
 

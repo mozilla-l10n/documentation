@@ -44,7 +44,7 @@ These approaches allow to ship one package and support multiple languages, but t
 
 New string changes are extracted twice a day from `gecko-dev` (the git mirror of mozilla-central) into a repository called `firefox-l10n-source`, a unified repository that includes strings for all shipping versions of Firefox (nightly, beta, release). This repository is used as a buffer to avoid exposing potential issues to all locales working on Firefox.
 
-Typically once or twice a week, the content of the quarantine (the `update` branch) is pushed to the `main` branch which acts as the official repository, used by [Pontoon](https://pontoon.mozilla.org/projects/firefox/) as source reference. At this point, strings can be localized by the community.
+Typically once or twice a week, the quarantined content (in the `update` branch) is pushed to the `main` branch which acts as the official repository, used by [Pontoon](https://pontoon.mozilla.org/projects/firefox/) as source reference. At this point, strings can be localized by the community.
 
 ### Can I uplift a patch to Beta or Release?
 
@@ -76,7 +76,7 @@ Once strings land in mozilla-central, they will be exposed for localization in P
 
 ### Where can I find the localized strings?
 
-All shipping versions of Firefox are built from a single GitHub repository with a subdirectory for each locale called `firefox-l10n`, available [here](https://github.com/mozilla-l10n/firefox-l10n).
+All shipping versions of Firefox are built from a single GitHub repository called [firefox-l10n](https://github.com/mozilla-l10n/firefox-l10n), with a subdirectory for each locale.
 
 ### Can I land content without exposing it for localization?
 
@@ -94,7 +94,7 @@ No, the existing infrastructure only allows to expose strings to all locales. If
 
 It’s always possible to restore an old string that was removed from code, as long as the text remains the same, and the string is used exactly in the same context.
 
-It might also be possible to uplift the patch if the string is still available in the [firefox-l10n-source](https://github.com/mozilla-l10n/firefox-l10n-source). `firefox-l10n` acts as a single localization source for multiple builds, with a [superset](https://firefox-source-docs.mozilla.org/l10n/singlel10nsource.html) of strings from all [supported versions](https://github.com/mozilla-l10n/firefox-l10n-source/blob/main/.github/update-config.json#L2) of Firefox: nightly, beta, release, ESR.
+It might also be possible to uplift the patch if the string is still available in the [firefox-l10n-source](https://github.com/mozilla-l10n/firefox-l10n-source) repository. `firefox-l10n` acts as a single localization source for multiple builds, with a [superset](https://firefox-source-docs.mozilla.org/l10n/singlel10nsource.html) of strings from all [supported versions](https://github.com/mozilla-l10n/firefox-l10n-source/blob/main/.github/update-config.json#L2) of Firefox: nightly, beta, release, ESR.
 
 Consider this example:
 * The original string landed in Firefox 85, and was removed later in Firefox 92.

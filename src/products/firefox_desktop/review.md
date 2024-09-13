@@ -25,9 +25,9 @@ Things to look out for during the review process:
 
 You can get the list of changesets touching localized strings in the last 2 days from [mozilla-central](https://hg.mozilla.org/mozilla-central/log?rev=keyword("locales/en-US")+and+pushdate("-2")). Adjust the `pushdate` part if you want to see more or less days.
 
-Note: this review includes changes landing in `mozilla-central`, but those changes may not have landed yet. Once changes have completed the landing process, those strings will also be available to review in the next step - [Review strings in update branch of firefox-l10n-source](#review-strings-in-update-branch-of-firefox-l10n-source).
+Note: this review includes changes landing in `mozilla-central`, but those changes may not have landed yet (in `gecko-dev` / `firefox-l10n-source`). Once changes have completed the landing process, those strings will also be available to review in the next step - [Review strings in update branch of firefox-l10n-source](#review-strings-in-update-branch-of-firefox-l10n-source).
 
-There are some unrelated changesets, like en-US dictionary updates, but the majority of landings are relevant and need to be checked for localization issues.
+There are some unrelated changesets, like en-US dictionary updates, but the majority of landings are relevant and need to be checked for localization issues. One exception to this are strings that are purposely not meant to be exposed to localizers, typically called "preview" strings. While these strings are often saved to files within the `browser/locales-preview` directory, any localization file not saved in a `locales/en-US` path.
 
 You need to open each changeset, and identify changed files that are relevant for localization (.properties, .dtd, .ini).
 
@@ -48,7 +48,7 @@ Here are some things to look out for:
 
 A good next step to check for issues is to run compare-locales against a localization repository frequently updated (Italian and French are good examples).
 
-First of all make sure that you have both [firefox-l10n-source](https://github.com/mozilla-l10n/firefox-l10n-source/) and [firefox-l10n](https://github.com/mozilla-l10n/firefox-l10n) repositories downloaded, and your local copies are updated.
+First of all make sure that you have both [firefox-l10n-source](https://github.com/mozilla-l10n/firefox-l10n-source/) and [firefox-l10n](https://github.com/mozilla-l10n/firefox-l10n) repositories cloned locally, and your local clones are updated.
 
 `compare-locales` needs to be installed on your system. You can either install a specific release, or install the latest release version via `pip install compare-locales`. You can check that `compare-locales` is running correctly by checking its version:
 
@@ -61,7 +61,7 @@ Let’s assume that:
 * `firefox-l10n-source` is cloned in `~/firefox-l10n-source`.
 * `firefox-l10n` is cloned in `~/firefox-l10n`.
 
-To run compare-locales against the string quarantine of `firefox-l10n-source` and Italian, first checkout the `update` branch of `firefox-l10n-source`, then run the same command:
+To run compare-locales against the string quarantine of `firefox-l10n-source` and Italian, first checkout the `update` branch of `firefox-l10n-source`, then run this command:
 
 ```
 $ compare-locales ~/firefox-l10n-source/_configs/browser.toml ~/firefox-l10n it
@@ -98,4 +98,4 @@ $ compare-locales ~/mozilla-unified/browser/locales/l10n.toml ~/l10n it | egrep 
 
 ### Merge reviewed strings to main branch of firefox-l10n-source
 
-If there are no issues in the `update` branch of `firefox-l10n-source` and no pending [Fluent migrations](../firefox_desktop/fluent_migrations.md), the next step is to merge the `update` branch into the `main` repository by approving and merging the [pull request](https://github.com/mozilla-l10n/firefox-l10n-source/pulls) in GitHub. Once merged this will expose content to tools.
+If there are no issues in the `update` branch of `firefox-l10n-source` and no pending [Fluent migrations](../firefox_desktop/fluent_migrations.md), the next step is to merge the `update` branch into the `main` repository by approving and merging the [pull request](https://github.com/mozilla-l10n/firefox-l10n-source/pulls) in GitHub. Once merged this will expose content to Pontoon.
