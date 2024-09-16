@@ -99,7 +99,7 @@ And this is what happens if a string is changed without new ID:
 
 ![Firefox: change without new ID](../assets/images/localization/string_changes_firefox_change.png)
 
-* The string is changed in `mozilla-central`, and the en-US Nightly build will start using it. This change is reflected in `firefox-l10n-soruce`, but doesn’t impact other builds (e.g. beta), because that’s not used by the build system.
+* The string is changed in `mozilla-central`, and the en-US Nightly build will start using it. This change is reflected in `firefox-l10n-source`, but doesn’t impact other builds (e.g. beta), because that’s not used by the build system.
 * As for the generic product, Pontoon reads the updated change, but doesn’t notify localizers or invalidate existing translations.
 
 In this scenario, simply removing existing translations from VCS isn’t possible, because we still need them to ship in older builds.

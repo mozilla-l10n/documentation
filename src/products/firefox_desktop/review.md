@@ -25,9 +25,9 @@ Things to look out for during the review process:
 
 You can get the list of changesets touching localized strings in the last 2 days from [mozilla-central](https://hg.mozilla.org/mozilla-central/log?rev=keyword("locales/en-US")+and+pushdate("-2")). Adjust the `pushdate` part if you want to see more or less days.
 
-Note: this review includes changes landing in `mozilla-central`, but those changes may not have landed yet (in `gecko-dev` / `firefox-l10n-source`). Once changes have completed the landing process, those strings will also be available to review in the next step - [Review strings in update branch of firefox-l10n-source](#review-strings-in-update-branch-of-firefox-l10n-source).
+Note: this review includes changes landing in `mozilla-central`, but those changes may not have landed yet in `gecko-dev`, and consequently in `firefox-l10n-source`. Once changes have completed the landing process, those strings will also be available to review in the next step - [Review strings in update branch of firefox-l10n-source](#review-strings-in-update-branch-of-firefox-l10n-source).
 
-There are some unrelated changesets, like en-US dictionary updates, but the majority of landings are relevant and need to be checked for localization issues. One exception to this are strings that are purposely not meant to be exposed to localizers, typically called "preview" strings. While these strings are often saved to files within the `browser/locales-preview` directory, any localization file not saved in a `locales/en-US` path.
+There are some unrelated changesets, like en-US dictionary updates, but the majority of landings are relevant and need to be checked for localization issues. One exception to this are strings that are purposely not meant to be exposed to localizers, typically called "preview" strings. While these strings are often saved to files within the `browser/locales-preview` directory, this includes any localization file not saved in a `locales/en-US` path.
 
 You need to open each changeset, and identify changed files that are relevant for localization (.properties, .dtd, .ini).
 

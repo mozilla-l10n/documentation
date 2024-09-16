@@ -11,7 +11,7 @@ Once one such patch lands in [gecko-dev](https://github.com/mozilla/gecko-dev), 
 
 The goal of a migration is to port existing translations to a new format or file without forcing the community localizers to retranslate them. For this to happen, migrations need to be performed before the new strings are pushed to the `main` branch of the `firefox-l10n-source` repository and become available in Pontoon.
 
-This means that patches that include migrations should only be pushed from the quarantine repository to `main` following the steps described in this document.
+This means that patches that include migrations should only be pushed from the `update` branch to `main` following the steps described in this document.
 
 ## Running Fluent migrations
 
@@ -31,7 +31,7 @@ In order to run migrations:
 
 ### Ensure there are no blocking issues in the update branch of firefox-l10n-source
 
-As part of migrations, content needs to be pushed from the `update` branch to the `main` branch of `firefox-l10n-source`. Any pending issue needs to be solved before starting the process (eventually backing out problematic changes) or need to be temporarily removed manually to prevent problematic strings being exposed to localizers. For more information about the review process, see [this document](review.md).
+As part of migrations, content needs to be pushed from the `update` branch to the `main` branch of `firefox-l10n-source`. Any pending issue needs to be solved before starting the process (eventually manually backing out problematic changes) to prevent problematic strings being exposed to localizers. For more information about the review process, see [this document](review.md).
 
 ### Stop sync in Pontoon
 
@@ -51,7 +51,7 @@ A series of tools and helpers to run migrations is available in [this repository
 * Add the new migration recipes in the `recipes` folder. The script will look for any Python file starting with `bug_` in that folder, so it’s possible to run multiple migrations in one pass. More information about the folder’s structure is available in the repository’s README.
 
 At this point, while each migration has been tested as part of the review before landing, it’s always good to run the migration against one locale, e.g. `it`:
-* Update the locale’s repository, check the results of `compare-locales`. Assuming the l10n repository is cloned in `~/migrations/firefox-l10n`, and the quarantine repository is in `~/migrations/firefox-l10n-source` and the `update` branch is checked out, the command to run is `compare-locales ~/migrations/firefox-l10n-source/_configs/browser.toml ~/migrations/firefox-l10n it`. Save the output in order to compare it with the results after the migration.
+* Update the locale’s repository, check the results of `compare-locales`. Assuming the l10n repository is cloned in `~/migrations/firefox-l10n`, and the quarantine repository is in `~/migrations/firefox-l10n-source` with the `update` branch checked out, the command to run is `compare-locales ~/migrations/firefox-l10n-source/_configs/browser.toml ~/migrations/firefox-l10n it`. Save the output in order to compare it with the results after the migration.
 * Run the migration, without pushing, only for `it`: `./scripts/migrate it wet-run`. Then run compare-locales again, and check if the results are as expected: migrated strings should not appear as missing anymore, and there should be no errors.
 
 ### Push updates to the main branch of firefox-l10n-source
