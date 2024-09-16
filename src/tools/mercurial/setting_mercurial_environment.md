@@ -35,18 +35,6 @@ It’s divided into sections, with section names between square parentheses. For
 username = something@example.com
 ```
 
-## Set up SSH access for l10n repositories
-
-In order to be able to commit directly to l10n repositories, you need SSH access via your LDAP account (both obtained through a bug, where you also provide your SSH key).
-
-Assuming your SSH key is stored in `~/.ssh/id_rsa`, your `.ssh/config` file should have a line that looks like this
-
-```
-Host hg.mozilla.org
-User YOUR_LDAP_EMAIL_ADDRESS
-IdentityFile ~/.ssh/id_rsa
-```
-
 ## Set up MozPhab for Phabricator
 
 Detailed instructions and explanations are available in [the official documentation](https://moz-conduit.readthedocs.io/en/latest/phabricator-user.html#setting-up-mozphab).
