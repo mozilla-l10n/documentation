@@ -1,0 +1,331 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>How to work with a Localization Agency - Localization at Mozilla - Internal Documentation</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="../products/android-l10n/index.html">Android-l10n</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../products/android-l10n/adding_projects.html">Adding projects</a></li><li class="chapter-item expanded "><a href="../products/android-l10n/updating_locales.html">Updating locales</a></li><li class="chapter-item expanded "><a href="../products/android-l10n/review_android_strings.html">Reviewing new strings</a></li><li class="chapter-item expanded "><a href="../products/android-l10n/removing_projects.html">Removing projects</a></li></ol></li><li class="chapter-item expanded "><a href="../products/firefox_desktop/index.html">Firefox Desktop</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../products/firefox_desktop/adding_pontoon.html">Add to Pontoon</a></li><li class="chapter-item expanded "><a href="../products/firefox_desktop/adding_nightly.html">Nightly builds</a></li><li class="chapter-item expanded "><a href="../products/firefox_desktop/adding_release.html">Beta/Release builds</a></li><li class="chapter-item expanded "><a href="../products/firefox_desktop/setup_searchplugins.html">Searchplugins</a></li><li class="chapter-item expanded "><a href="../products/firefox_desktop/removing_locales.html">Removing locales</a></li><li class="chapter-item expanded "><a href="../products/firefox_desktop/review.html">Review strings</a></li><li class="chapter-item expanded "><a href="../products/firefox_desktop/fluent_migrations.html">Fluent migrations</a></li><li class="chapter-item expanded "><a href="../products/firefox_desktop/build_system.html">Build system</a></li><li class="chapter-item expanded "><a href="../products/firefox_desktop/firefox_l10n_faqs.html">L10N FAQs</a></li></ol></li><li class="chapter-item expanded "><a href="../localization/index.html">Localization</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../localization/making_string_changes.html">Change existing strings</a></li><li class="chapter-item expanded "><a href="../localization/dev_best_practices.html">Best practices for developers</a></li><li class="chapter-item expanded "><a href="../localization/globalization_best_practices.html">Globalization best practices for product managers</a></li></ol></li><li class="chapter-item expanded "><a href="../products/iOS_products/index.html">iOS Products</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../products/iOS_products/updating_locales.html">Updating locales</a></li><li class="chapter-item expanded "><a href="../products/iOS_products/review_iOSstrings.html">Reviewing new strings</a></li></ol></li><li class="chapter-item expanded "><a href="../products/other/index.html">Other Projects</a></li><li class="chapter-item expanded "><a href="../tools/pontoon/index.html">Pontoon</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tools/pontoon/adding_new_project.html">New project</a></li><li class="chapter-item expanded "><a href="../tools/pontoon/renaming_a_project.html">Renaming a project</a></li><li class="chapter-item expanded "><a href="../tools/pontoon/adding_new_short_term_project.html">New short-term project</a></li><li class="chapter-item expanded "><a href="../tools/pontoon/adding_new_locale.html">New locale</a></li><li class="chapter-item expanded "><a href="../tools/pontoon/managing_pretranslation.html">Pretranslation</a></li><li class="chapter-item expanded "><a href="../tools/pontoon/sending_notifications.html">Notifications</a></li><li class="chapter-item expanded "><a href="../tools/pontoon/renaming_a_file.html">Renaming a localization file</a></li><li class="chapter-item expanded "><a href="../tools/pontoon/deactivating_users.html">Deactivating users</a></li><li class="chapter-item expanded "><a href="../tools/pontoon/removing_users.html">Removing users</a></li><li class="chapter-item expanded "><a href="../tools/pontoon/adding_new_terminology.html">New terminology</a></li></ol></li><li class="chapter-item expanded "><a href="../tools/mercurial/index.html">Mercurial</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tools/mercurial/setting_mercurial_environment.html">Set up the environment</a></li><li class="chapter-item expanded "><a href="../tools/mercurial/creating_mercurial_patch.html">Create a patch</a></li><li class="chapter-item expanded "><a href="../tools/mercurial/useful_mercurial_commands.html">Useful Mercurial commands</a></li></ol></li><li class="chapter-item expanded "><a href="../misc/index.html">Other docs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../misc/creating_new_repository.html">New l10n repository</a></li><li class="chapter-item expanded "><a href="../misc/working_w_l10n_agency.html" class="active">How to work with a Localization Agency</a></li><li class="chapter-item expanded "><a href="../misc/documentation_styleguide.html">Documentation styleguide</a></li><li class="chapter-item expanded "><a href="../misc/stock_emails.html">Stock emails</a></li><li class="chapter-item expanded "><a href="../misc/terminology_export.html">Exporting terminology</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Localization at Mozilla - Internal Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/mozilla-l10n/documentation/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/mozilla-l10n/documentation/edit/main/src/misc/working_w_l10n_agency.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="working-with-a-localization-agency"><a class="header" href="#working-with-a-localization-agency">Working with a Localization Agency</a></h1>
+<p>This document is a guideline for project manager who interacts with a localization agency that already successfully went through our <a href="https://docs.google.com/document/d/1Y0xfGo-24ZJI_uYFLtJFcuxCi20FNIqaeEc7v_FlaY4/edit">vetting process</a>. Our vetting process helps us ensure the vendors we work with are able to deliver translations in a timely manner, with the required level of quality and following our localization processes. We are also assessing their flexibility to work efficiently with our communities and our tools when it’s required.</p>
+<h2 id="initial-set-up-before-sending-localization-requests"><a class="header" href="#initial-set-up-before-sending-localization-requests">Initial set up before sending localization requests</a></h2>
+<h3 id="ask-for-a-rate-sheet"><a class="header" href="#ask-for-a-rate-sheet">Ask for a rate sheet</a></h3>
+<ul>
+<li>Make sure you have received a rate sheet customized for Mozilla needs. This should have been sent as part of the vetting process, and it can be updated annually. An example of the official <a href="https://drive.google.com/a/mozilla.com/file/d/0B7u_NzvpgGcgTDhoVFBsN3dMc0E/view?usp=sharing">rate sheet</a> that includes the following but not limited to:
+<ul>
+<li>Word rate for each of the interested locales as in new words, 100% match, fuzzy match for translation, review, proofreading.</li>
+<li>Hourly rate: engineering, QA and testing, PM rate.</li>
+<li>Minimum charge for a project and the thresholds by number of words per locale.</li>
+<li>Rush rate, and its threshold.</li>
+</ul>
+</li>
+</ul>
+<h3 id="do-the-initial-paperwork"><a class="header" href="#do-the-initial-paperwork">Do the initial paperwork</a></h3>
+<p>A series of activities need to happen before an l10n project can start. The first step is doing the paperwork to be able to receive quotes for projects and pay bills for requests.</p>
+<p>Unless there are changes in the signed document, this step is done once, for the whole organization, and only at the beginning of relationship engagement.</p>
+<ul>
+<li>A master service agreement (or MSA) has to be signed between Mozilla and the vendor. The person signing on Mozilla side could be the PM or PM’s manager. This document shows the conditions that the contract is operated in between the service provider and Mozilla. Without this agreement, a service can’t start. Here is an example of <a href="https://drive.google.com/a/mozilla.com/file/d/0B7u_NzvpgGcgSW5Jend3TlpyRlE/view?usp=sharing">MSA</a>. Note that two separate MSA must be signed, one for Mozilla Corporation and another one for Mozilla Foundation.</li>
+<li>An Account Payable (or AP) form has to be filled. It contains banking information, billing cycle (monthly, quarterly, or “as soon as”) and payment due terms (within 30 or 45 days), billing email address. Here is an example of <a href="https://drive.google.com/a/mozilla.com/file/d/0B7u_NzvpgGcgYmN6c0tJc2IwUzA/view?usp=sharing">AP form</a>.</li>
+</ul>
+<p>PO, or Purchase Order, may or may not be necessary in order to get vendor service. Some teams have ongoing need for l10n service and have a budget set aside annually. This is a good reason to have a PO established. For most projects that are one time need, or sporadic, it’s best to go without a PO, and bill to the serviced department as needed.</p>
+<h3 id="set-up-accounts"><a class="header" href="#set-up-accounts">Set up accounts</a></h3>
+<p>Depending on the needs and where the source file can be accessed, it’s good to have an account set up for the vendor’s project manager in the following places:</p>
+<ul>
+<li>Pontoon: set up a “translator” account when there is no community; or a basic “contributor” account when a community exists so that the vendor provides suggestions and the community can review them.</li>
+<li>Bugzilla: so that the vendor’s project manager can interact in bugs. Bugzilla will allow us to have a central place to post project details and updates. Communication is generally handled via email with the vendor, but it’s useful to have a bug number to reference to, and the vendor can use the bug to quickly access all the details.</li>
+<li>Google Drive: create a shared folder for the vendor to view, review, and translate directly spreadsheets or Google Docs.</li>
+<li>GitHub: give commit permission if they need to commit directly in a repository (e.g. <a href="https://github.com/mozilla/legal-docs/">Legal docs</a>).</li>
+</ul>
+<p>Note: additional account setup may be needed if the project does not support our localization process (e.g. WordPress).</p>
+<p>Once accounts are set up, allow the agency to explore the tools, flows and the product features to familiarize itself before actual work starts. Make sure to provide links to documentation as needed on how to use Pontoon and explain how to perform queries on Transvision. Setting up a meeting to share your screen might be a good idea, and use this opportunity to answer their questions about the project or the tools.</p>
+<h2 id="localizing-a-project"><a class="header" href="#localizing-a-project">Localizing a project</a></h2>
+<h3 id="planning-the-request"><a class="header" href="#planning-the-request">Planning the request</a></h3>
+<p>Once outsourcing is a necessity for a project, before reaching out to the l10n agency to make an official request, make sure to check the following:</p>
+<ul>
+<li>Required locales.</li>
+<li>Scope of work: is the request asking for anything other than translation, review and testing?</li>
+<li>Milestones and Deadlines: negotiate it so the agency has sufficient time to finish each of the required tasks, and the community has enough time to review and sign off.</li>
+<li>Check with communities if they want to fully handle the request, handle only some parts (e.g. initial translation or QA), or can’t work on it at all and let the agency do the work.</li>
+</ul>
+<h3 id="quotation"><a class="header" href="#quotation">Quotation</a></h3>
+<p>Now that you have all the initial info you need, you are good to go ahead and reach out to the vendor and provide what they need to generate a quote. Get a quote from the agency by communicating volume, locales, deadline, level of service needed, and type of content.</p>
+<h3 id="setting-everything-up-for-the-request"><a class="header" href="#setting-everything-up-for-the-request">Setting everything up for the request</a></h3>
+<p>Now that you got a quote, you need to get it approved, send content to the vendor, and check permission.</p>
+<ul>
+<li>Provide a quote/estimate to the project requestor for approval.</li>
+<li>For all the target locales, make sure both agency and the community have the proper access to the l10n tool or platform where the localizable content is staged and roles properly assigned per agreement.</li>
+<li>Information to share with both the vendor and the community:
+<ul>
+<li>Scope: volume, type of content being localized, list of locales and type of service.</li>
+<li>Plan: schedule with milestones.</li>
+<li>Expectations: how you want the translations to be delivered (as a single batch or as each locale is ready), the file format you want the translations to be delivered into, and any additional service you would need, like following a specific test plan.</li>
+</ul>
+</li>
+<li>Communicate the plan and the finalized schedule with the project stakeholders.</li>
+<li>File a bug to track project progress. It can be a good idea to remind project specifics (repositories, deadline(s), locales…).</li>
+</ul>
+<h3 id="executing-the-request"><a class="header" href="#executing-the-request">Executing the request</a></h3>
+<p>The initial quote has been approved, roles and permission are set accordingly to the request. You can now execute it, receive translations and deliver them to the project stakeholders.</p>
+<ul>
+<li>Share the content with the agency:
+<ul>
+<li>Strings (whether it’s text files, a link to Pontoon, a link to a repository, a spreadsheet, a Google Doc…).</li>
+<li>Locale specific style guides and product specific term list.</li>
+<li>Terminology: Ask them to always refer to <a href="https://transvision.mozfr.org/">Transvision</a> to check terminology.</li>
+</ul>
+</li>
+<li>Confirm with the vendor the following: word count, schedule and cost of the service.</li>
+<li>Run testing/QA once you’ve received the translations, either by the community or the vendor, depending on the project agreement.</li>
+<li>Communicate with communities for a chance to review and sign off on the project before releasing to the internal customer.</li>
+</ul>
+<h3 id="post-mortem"><a class="header" href="#post-mortem">Post mortem</a></h3>
+<p>After the project is delivered, you need to handle payment with the vendor and feedback with the community.
+At the end of a calendar year, you would review the vendor working model and quality of paid service. You then provide feedback and evaluate if the service should be continued.</p>
+<h4 id="steps-to-go-through-with-the-agency"><a class="header" href="#steps-to-go-through-with-the-agency">Steps to go through with the agency</a></h4>
+<ul>
+<li>Have the agency send an updated quote, in case there is a change of scope in the project.</li>
+<li>PM reviews the quote and checks for discrepancies and then approves the quote.</li>
+<li>The agency’s account payable contact sends invoice to mozilla@bill.com and accounting@mozilla.com.</li>
+<li>In a few days, PM will be notified and asked to approve the invoice in bill.com system.</li>
+<li>PM reviews the bill one more time, updates the Cost Center to the one corresponding the internal customer’s.</li>
+</ul>
+<h4 id="steps-to-go-through-with-the-community"><a class="header" href="#steps-to-go-through-with-the-community">Steps to go through with the community</a></h4>
+<ul>
+<li>PM should check with community periodically to gather input on translation quality if needed but it’s not necessary to do it every time. A necessary case could be if the community wants to replace the translator for their language because there are quality concerns.</li>
+<li>Gather feedback in a spreadsheet, with summary in category of the type of issues reported, and detailed examples to support the summary.</li>
+<li>Mozilla localizers give an overall quality rating and suggest to keep using the same translator(s) or ask for a replacement. The PM then shares the feedback with the agency for rebuttal and further feedback if needed.</li>
+</ul>
+<h2 id="terminology"><a class="header" href="#terminology">Terminology</a></h2>
+<dl>
+  <dt>Account Manager</dt>
+  <dd>Relationship, escalation of issues; handles complaints about quality or deadlines.</dd>
+  <dt>Project Manager</dt>
+  <dd>Handles day-to-day operations. Coordinates resources on the agency side; provides estimate of a project’s deadline and cost.</dd>
+  <dt>Account Payable Manager</dt>
+  <dd>Sends the bill to Mozilla Account Payable.</dd>
+</dl>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../misc/creating_new_repository.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../misc/documentation_styleguide.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../misc/creating_new_repository.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../misc/documentation_styleguide.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
