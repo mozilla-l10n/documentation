@@ -131,8 +131,9 @@ Except for special cases, strings should be landed at the same time as the assoc
 
 Please consult with a [localization PM](#who-can-i-contact-if-i-have-more-questions) if you have a need to land strings early. Note that landing strings early would also involve additional considerations such as:
 
-1. The strings do not change after they merge to the Beta repository
-2. The strings include comments that link to public-facing screenshots or Figma specifications to help our localizers understand how the strings are being used
+1. The strings must still be [good quality strings](../../localization/dev_best_practices.md#land-good-quality-strings), not temporary or placeholders
+2. The strings do not change after they merge to the Beta repository
+3. The strings include comments that link to public-facing screenshots or Figma specifications to help our localizers understand how the strings are being used
 
 Once the feature is built-out and testable, the links in the comments can be removed.
 
