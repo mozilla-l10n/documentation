@@ -127,7 +127,9 @@ Local builds:
 
 ### Can I land strings early, before my feature is fully built-out?
 
-This makes it difficult for our localizers to know how the strings are being used, which can make it harder to supply a translation that fully fits the context. If you plan on going this route, it is only advisable with the following conditions:
+Except for special cases, strings should be landed at the same time as the associated UI changes. Otherwise, this makes it difficult for our localizers to know how the strings are being used, which can make it harder to supply an accurate translation that fully fits the context. 
+
+Please consult with a [localization PM](#who-can-i-contact-if-i-have-more-questions) if you have a need to land strings early. Note that landing strings early would also involve additional considerations such as:
 
 1. The strings do not change after they merge to the Beta repository
 2. The strings include comments that link to public-facing screenshots or Figma specifications to help our localizers understand how the strings are being used
