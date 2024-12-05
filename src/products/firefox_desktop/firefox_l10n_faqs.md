@@ -125,6 +125,18 @@ Local builds:
 * You can [build directly in a different locale](https://firefox-source-docs.mozilla.org/build/buildsystem/locales.html#instructions-for-single-locale-repacks-for-developers) (no support for artifact builds).
 * It’s possible to add specific l10n repacks to a [Try Server](https://wiki.mozilla.org/ReleaseEngineering/TryServer#Scheduling_jobs_with_Treeherder) push. For example, to add French: select *Add new Jobs*, then select the `fr` locale in `L10n-Rpk`. Once the job is completed, builds will be available as artifacts under `L10n (BsX)`, where `X` changes depending on the locale.
 
+### Can I land strings early, before my feature is fully built-out?
+
+Except for special cases, strings should be landed at the same time as the associated UI changes. Otherwise, this makes it difficult for our localizers to know how the strings are being used, which can make it harder to supply an accurate translation that fully fits the context.
+
+Please consult with a [localization PM](#who-can-i-contact-if-i-have-more-questions) if you have a need to land strings early. Note that landing strings early would also involve additional considerations such as:
+
+1. The strings must still be [good quality strings](../../localization/dev_best_practices.md#land-good-quality-strings), not temporary or placeholders
+2. The strings do not change after they merge to the Beta repository
+3. The strings include comments that link to public-facing screenshots or Figma specifications to help our localizers understand how the strings are being used
+
+Once the feature is built-out and testable, the links in the comments can be removed.
+
 ## Translation completion and community
 
 ### Is my feature going to be localized in language X before launch?

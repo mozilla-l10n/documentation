@@ -57,6 +57,7 @@ Don’t forget to add a localization note when:
 * English could be ambiguous. For example: `bookmark` can be a noun or a verb. Using meaningful IDs can also help in these cases.
 * Strings are used in a specific context. For example accessibility (a11y) strings: in this case space is less important than clarity, since these strings are not displayed in the UI but used by tools like screen readers.
 * The string contains an adjective, but the noun it refers to is not part of the string. Most languages need to decline adjectives based on number and gender.
+* The UI that the string is used for is not testable yet. In this case, a comment supplying links to screenshots or public Figma specifications can reduce ambiguity and unblock the localization of the strings. Once the UI is testable, these links can be removed from the comments.
 
 There is an established format for localization comments: it’s important to follow the format as closely as possible, since there are a number of automated tools that parse these comments for easier access and use by localizers.
 
