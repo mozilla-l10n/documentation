@@ -127,7 +127,7 @@ Local builds:
 
 ### Can I land strings early, before my feature is fully built-out?
 
-Except for special cases, strings should be landed at the same time as the associated UI changes. Otherwise, this makes it difficult for our localizers to know how the strings are being used, which can make it harder to supply an accurate translation that fully fits the context. 
+Except for special cases, strings should be landed at the same time as the associated UI changes. Otherwise, this makes it difficult for our localizers to know how the strings are being used, which can make it harder to supply an accurate translation that fully fits the context.
 
 Please consult with a [localization PM](#who-can-i-contact-if-i-have-more-questions) if you have a need to land strings early. Note that landing strings early would also involve additional considerations such as:
 
