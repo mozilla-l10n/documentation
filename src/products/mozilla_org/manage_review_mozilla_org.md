@@ -63,7 +63,7 @@ Here are some issues that commonly occur:
   * If a string is revised, a version number must be added to the ID. This is necessary because updates to strings without changes to IDs will not trigger updates in Pontoon for strings already localized. 
 Example: Update the string ID to `features-fast-firefox-is-powered-by-the-world-v2`.
 * Configuration changes for new files: 
-  * When a new file is added to a PR, verify that it’s covered by the `pontoon.toml` configuration file. If a new entry is required, ensure the file name matches exactly, as mismatches will prevent it from being available in Pontoon. Check out the [Add or remove file](#addorremovefiles) section when to add an entry.
+  * When a new file is added to a PR, verify that it’s covered by the `pontoon.toml` configuration file. If a new entry is required, ensure the file name matches exactly, as mismatches will prevent it from being available in Pontoon. Check out the [Add or remove file](#addorremovefile) section when to add an entry.
 * [Dashes](https://acorn.firefox.com/latest/content/punctuation-7J3JVM4o#section-hyphens-and-dashes-c9): correct use of hyphens (-), en-dashes (–) and em-dashes (—)
   * Use hyphens for words like well-being, with no space before and after.
   * Use en-dashes for ranges, such as numbers (1–3), with no space before and after.
@@ -92,7 +92,7 @@ locales = [
     "an",
     "ast",
      …
-    “scn”,
+    "scn",
      …
 ]
 ````
