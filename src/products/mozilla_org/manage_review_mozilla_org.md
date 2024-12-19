@@ -2,11 +2,11 @@
 
 <!-- toc -->
 
-# Content flow between Bedrock and www-l10n
+## Content flow between Bedrock and www-l10n
 
 Source locale resource files consist of both independent files, which correspond to a specific web page, and groups of files that collectively contain the source strings for a single page. Shared components, such as navigation and footers, use shared resource files containing strings that may appear across multiple pages.
 
-Mozilla.org uses the [Fluent](https://projectfluent.org/) localization system. The process of extracting strings for new Fluent (.ftl) files or updating existing .ftl content is fully automated. Once code changes are merged in the [Bedrock repository](https://github.com/mozilla/bedrock), new strings land in the [en folder(https://github.com/mozilla/bedrock/tree/main/l10n)] within the www-l10n repository, which serves as the source for localizable content. Meanwhile, the en-US folder contains US-specific content, treated as a separate locale in this context.
+Mozilla.org uses the [Fluent](https://projectfluent.org/) localization system. The process of extracting strings for new Fluent (.ftl) files or updating existing .ftl content is fully automated. Once code changes are merged in the [Bedrock repository](https://github.com/mozilla/bedrock), new strings land in the [en folder](https://github.com/mozilla/bedrock/tree/main/l10n) within the www-l10n repository, which serves as the source for localizable content. Meanwhile, the en-US folder contains US-specific content, treated as a separate locale in this context.
 
 The localization infrastructure relies on multiple configuration files. Changes to these files must be done in the [Bedrock l10n](https://github.com/mozilla/bedrock/tree/main/l10n) folder, as updates will be automatically pushed to the [www-l10n repository](https://github.com/mozilla-l10n/www-l10n), overwriting any local change.
 * [configs/pontoon.toml](https://github.com/mozilla/bedrock/blob/main/l10n/configs/vendor.toml): Specifies locales with localization enabled in Pontoon, identifies the files or sets of files available for translation, and designates files limited to specific locales.
@@ -18,7 +18,7 @@ Within the [Bedrock l10n](https://github.com/mozilla/bedrock/tree/main/l10n) fol
 * [l10n-pontoon.toml](https://github.com/mozilla/bedrock/blob/main/l10n/l10n-pontoon.toml) is used in Pontoon to configure the mozilla.org project (it includes the configuration files configs/pontoon.toml and special-templates.toml).
 * [l10n-vendor.toml](https://github.com/mozilla/bedrock/blob/main/l10n/l10n-vendor.toml) currently unused, it includes the configuration files configs/vendor.toml and special-templates.toml.
 
-Automation in Bedrock checks for new strings [every three hours(https://github.com/mozilla/bedrock/blob/main/.github/workflows/send_mozorg_fluent_strings_to_l10n_org.yml)]. If there is new content and there are no open PRs in www-l10n, it will create one, otherwise it will add new commits to the existing PR. When necessary, automation can be manually run by developers to ensure timely delivery of new content to the localization team.
+Automation in Bedrock checks for new strings [every three hours](https://github.com/mozilla/bedrock/blob/main/.github/workflows/send_mozorg_fluent_strings_to_l10n_org.yml). If there is new content and there are no open PRs in www-l10n, it will create one, otherwise it will add new commits to the existing PR. When necessary, automation can be manually run by developers to ensure timely delivery of new content to the localization team.
 
 The [www-l10n repository](https://github.com/mozilla-l10n/www-l10n) mirrors the [Bedrock l10n](https://github.com/mozilla/bedrock/tree/main/l10n) folder but includes localized content organized in locale-specific folders.
 
@@ -33,7 +33,7 @@ Relevant links:
 
 ## Review PRs and address common errors
 
-## PR review
+### PR review
 
 When a new PR is created, [a group](https://github.com/orgs/mozilla-l10n/teams/l10n-bedrock) of l10n team members will be flagged for review. Note that the PR might involve multiple developers so, if a change request is required, be sure to identify the relevant persons and notify them to follow up. Leaving a PR unattended for too long can lead to new changes being added to the existing open PR, resulting in delays if the new content has issues (these would block from merging all pending updates).
 
@@ -49,29 +49,29 @@ Over the years, our style guide and branding guidelines have evolved, leading to
 
 * Use lowercase for these terms: internet and web.
 * Mozilla account(s): Both the singular or plural expressions are treated as one Fluent term.
-** Correct: `{ -brand-name-mozilla-account } `or `{ -brand-name-mozilla-accounts }`.
-** Incorrect: `{ -brand-name-mozilla } account` or `{ -brand-name-mozilla } accounts`.
+  * Correct: `{ -brand-name-mozilla-account } `or `{ -brand-name-mozilla-accounts }`.
+  * Incorrect: `{ -brand-name-mozilla } account` or `{ -brand-name-mozilla } accounts`.
 * Firefox Browser
-** The marketing team is phasing out the placeholder `{ -brand-name-firefox-browser }`. Instead, use the `{ -brand-name-firefox } browser` for both singular and plural forms.
+  * The marketing team is phasing out the placeholder `{ -brand-name-firefox-browser }`. Instead, use the `{ -brand-name-firefox } browser` for both singular and plural forms.
 * Third-Party brands and products
-** Brand and product names from third parties — like Google, Apple, etc. — are no longer coded as Fluent terms in new content.
+  * Brand and product names from third parties — like Google, Apple, etc. — are no longer coded as Fluent terms in new content.
 
 ### Common issues to watch out for
 
 Here are some issues that commonly occur:
 * Content changes without new string IDs:
-** If a string is revised, a version number must be added to the ID. This is necessary because updates to strings without changes to IDs will not trigger updates in Pontoon for strings already localized. 
+  * If a string is revised, a version number must be added to the ID. This is necessary because updates to strings without changes to IDs will not trigger updates in Pontoon for strings already localized. 
 Example: Update the string ID to `features-fast-firefox-is-powered-by-the-world-v2`.
 * Configuration changes for new files: 
-** When a new file is added to a PR, verify that it’s covered by the `pontoon.toml` configuration file. If a new entry is required, ensure the file name matches exactly, as mismatches will prevent it from being available in Pontoon. Check out the [Add or remove file](## Add or remove files) section when to add an entry.
-[Dashes](https://acorn.firefox.com/latest/content/punctuation-7J3JVM4o#section-hyphens-and-dashes-c9): correct use of hyphens (-), en-dashes (–) and em-dashes (—)
-** Use hyphens for words like well-being, with no space before and after.
-** Use en-dashes for ranges, such as numbers (1–3), with no space before and after.
-** Use em-dashes to add additional information to a sentence, with a space before and after it.
+  * When a new file is added to a PR, verify that it’s covered by the `pontoon.toml` configuration file. If a new entry is required, ensure the file name matches exactly, as mismatches will prevent it from being available in Pontoon. Check out the [Add or remove file](#addorremovefiles) section when to add an entry.
+* [Dashes](https://acorn.firefox.com/latest/content/punctuation-7J3JVM4o#section-hyphens-and-dashes-c9): correct use of hyphens (-), en-dashes (–) and em-dashes (—)
+  * Use hyphens for words like well-being, with no space before and after.
+  * Use en-dashes for ranges, such as numbers (1–3), with no space before and after.
+  * Use em-dashes to add additional information to a sentence, with a space before and after it.
 * Hard-coded content: 
-** Look out for hard-coded discount codes or dates, often found in promotional content (e.g., VPN discount codes with specific validity periods). Ask the developer to use variables and provide examples in the comment of what the variables represent.
+  * Look out for hard-coded discount codes or dates, often found in promotional content (e.g., VPN discount codes with specific validity periods). Ask the developer to use variables and provide examples in the comment of what the variables represent.
 * Unnecessary HTML attributes: 
-** Encourage developers not to expose unnecessary HTML attributes — such as href, class, or id, particularly with links — to localization to minimize errors.
+  * Encourage developers not to expose unnecessary HTML attributes — such as href, class, or id, particularly with links — to localization to minimize errors.
 Example of a good string with a link: `<a {$attrs}>{ -brand-name-mozilla }</a>` where `{$attrs}` is the link.
 * `##` or `#` are used properly for comments. `##` is used for section comments while `#` is only associated with the string right below it. For more information, see the [Fluent guide on the use of comments](https://projectfluent.org/fluent/guide/comments.html).
 * Obsolete strings should have a date of removal in the comment. There is typically a two-month window for the removal according to the latest Bedrock policy.
@@ -127,6 +127,7 @@ This process will remove the locale from Pontoon; however, the localized files f
 When a PR includes a new file, ensure that it is accounted for in the pontoon.toml file, depending on its context and inclusion criteria. Here’s how to handle different scenarios:
 
 **Automatically Included Files**
+
 If the file falls under an umbrella path already specified in the `pontoon.toml` file, no additional entry is needed. For example:
 ````BASH
 [[paths]]
@@ -136,6 +137,7 @@ If the file falls under an umbrella path already specified in the `pontoon.toml`
 In this case, ** means files from all subfolders of `en/firefox/new/` will be included, so there’s no need to add `en/firefox/new/desktop.ftl` explicitly.
 
 **Specific File Entries**
+
 If a file follows a naming convention that requires explicit entries, such as welcome pages (`…/welcome/page1`, `…/welcome/page2`, etc.), add each file individually to the `pontoon.toml` file:
 ````BASHO
 [[paths]]
@@ -143,6 +145,7 @@ If a file follows a naming convention that requires explicit entries, such as we
     l10n = "{locale}/firefox/welcome/page1.ftl"
 ````
 **Files for Specific Locales**
+
 For files targeting specific locales, such as those for marketing campaigns, include the `locales` parameter to specify the supported languages:
 ````BASH
 [[paths]]
