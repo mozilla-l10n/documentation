@@ -49,7 +49,7 @@ Over the years, our style guide and branding guidelines have evolved, leading to
 
 * Use lowercase for these terms: internet and web.
 * Mozilla account(s): Both the singular or plural expressions are treated as one Fluent term.
-  * Correct: `{ -brand-name-mozilla-account } `or `{ -brand-name-mozilla-accounts }`.
+  * Correct: `{ -brand-name-mozilla-account }`or `{ -brand-name-mozilla-accounts }`.
   * Incorrect: `{ -brand-name-mozilla } account` or `{ -brand-name-mozilla } accounts`.
 * Firefox Browser
   * The marketing team is phasing out the placeholder `{ -brand-name-firefox-browser }`. Instead, use the `{ -brand-name-firefox } browser` for both singular and plural forms.
@@ -60,17 +60,17 @@ Over the years, our style guide and branding guidelines have evolved, leading to
 
 Here are some issues that commonly occur:
 * Content changes without new string IDs:
-  * If a string is revised, a version number must be added to the ID. This is necessary because updates to strings without changes to IDs will not trigger updates in Pontoon for strings already localized. 
+  * If a string is revised, a version number must be added to the ID. This is necessary because updates to strings without changes to IDs will not trigger updates in Pontoon for strings already localized.
 Example: Update the string ID to `features-fast-firefox-is-powered-by-the-world-v2`.
-* Configuration changes for new files: 
+* Configuration changes for new files:
   * When a new file is added to a PR, verify that it’s covered by the `pontoon.toml` configuration file. If a new entry is required, ensure the file name matches exactly, as mismatches will prevent it from being available in Pontoon. Check out the [Add or remove file](#addorremovefile) section when to add an entry.
 * [Dashes](https://acorn.firefox.com/latest/content/punctuation-7J3JVM4o#section-hyphens-and-dashes-c9): correct use of hyphens (-), en-dashes (–) and em-dashes (—)
   * Use hyphens for words like well-being, with no space before and after.
   * Use en-dashes for ranges, such as numbers (1–3), with no space before and after.
   * Use em-dashes to add additional information to a sentence, with a space before and after it.
-* Hard-coded content: 
+* Hard-coded content:
   * Look out for hard-coded discount codes or dates, often found in promotional content (e.g., VPN discount codes with specific validity periods). Ask the developer to use variables and provide examples in the comment of what the variables represent.
-* Unnecessary HTML attributes: 
+* Unnecessary HTML attributes:
   * Encourage developers not to expose unnecessary HTML attributes — such as href, class, or id, particularly with links — to localization to minimize errors.
 Example of a good string with a link: `<a {$attrs}>{ -brand-name-mozilla }</a>` where `{$attrs}` is the link.
 * `##` or `#` are used properly for comments. `##` is used for section comments while `#` is only associated with the string right below it. For more information, see the [Fluent guide on the use of comments](https://projectfluent.org/fluent/guide/comments.html).
@@ -80,10 +80,11 @@ Example of a good string with a link: `<a {$attrs}>{ -brand-name-mozilla }</a>` 
 
 ### Add a new locale
 
-When a community manager or translator requests a new locale, ensure that at least one browser (mobile or desktop) is already localized in that language. The reason is that without the browser in the target language, users are unlikely to see the localized content; this is especially true for smaller locales that are not supported by other browsers. 
+When a community manager or translator requests a new locale, ensure that at least one browser (mobile or desktop) is already localized in that language. The reason is that without the browser in the target language, users are unlikely to see the localized content; this is especially true for smaller locales that are not supported by other browsers.
 
 * Navigate to the [configs/pontoon.toml](https://github.com/mozilla/bedrock/blob/main/l10n/configs/pontoon.toml) file and create a PR to add the requested locale.
 Insert the new locale in alphabetical order near the top of the file. Follow this convention, using `scn` as an example:
+
 ````BASH
 locales = [
     "ach",
@@ -96,6 +97,7 @@ locales = [
      …
 ]
 ````
+
 * The PR will be reviewed, approved and merged by the Bedrock team. The new locale will be included in the next code push from the Bedrock l10n repository to the www-l10n repository.
 * After the updated config file is merged in www-l10n, go to the mozilla.org project view in Pontoon. Click on the [Admin - Current Project](https://pontoon.mozilla.org/admin/projects/mozillaorg/) link in your Profile dropdown list, move the new locale from Available column to the Localizable column. Then click the SAVE PROJECT button on the bottom of the page, and click SYNC to trigger a sync.
 * This update will enable the locale and the standard set of pages in Pontoon. After the sync is complete, verify the changes in Pontoon and notify the community that the project is ready for localization.
@@ -114,7 +116,7 @@ Although the 85% threshold policy for enabling a brand-new locale has been in pl
 
 The removal of a locale is typically initiated at the request of a community. However, if the completion rate for a locale becomes too low, the l10n PM should first discuss the situation with the community managers and get their agreement before proceeding.
 
-* Go to Pontoon, in the mozilla.org project view, click on the [Admin - Current Project](https://pontoon.mozilla.org/admin/projects/mozillaorg/) link in your Profile dropdown list, remove the locale from Localizable column to the Available column. Then click the SAVE PROJECT button on the bottom of the page. 
+* Go to Pontoon, in the mozilla.org project view, click on the [Admin - Current Project](https://pontoon.mozilla.org/admin/projects/mozillaorg/) link in your Profile dropdown list, remove the locale from Localizable column to the Available column. Then click the SAVE PROJECT button on the bottom of the page.
 * Navigate to the Bedrock repository and remove the locale from the supported list in the `pontoon.toml` file. Create a PR with this change. Once the PR is reviewed and merged, it will automatically trigger a corresponding PR in the www-l10n repository.
 * The l10n PM should then review the PR in the www-l10n repository, approve it, and merge the changes.
 
@@ -129,24 +131,29 @@ When a PR includes a new file, ensure that it is accounted for in the pontoon.to
 **Automatically Included Files**
 
 If the file falls under an umbrella path already specified in the `pontoon.toml` file, no additional entry is needed. For example:
+
 ````BASH
 [[paths]]
     reference = "en/firefox/new/**/*.ftl"
     l10n = "{locale}/firefox/new/**/*.ftl"
 ````
+
 In this case, ** means files from all subfolders of `en/firefox/new/` will be included, so there’s no need to add `en/firefox/new/desktop.ftl` explicitly.
 
 **Specific File Entries**
 
 If a file follows a naming convention that requires explicit entries, such as welcome pages (`…/welcome/page1`, `…/welcome/page2`, etc.), add each file individually to the `pontoon.toml` file:
-````BASHO
+
+````BASH
 [[paths]]
     reference = "en/firefox/welcome/page1.ftl"
     l10n = "{locale}/firefox/welcome/page1.ftl"
 ````
+
 **Files for Specific Locales**
 
 For files targeting specific locales, such as those for marketing campaigns, include the `locales` parameter to specify the supported languages:
+
 ````BASH
 [[paths]]
     reference = "en/firefox/welcome/page13.ftl"
@@ -157,13 +164,14 @@ For files targeting specific locales, such as those for marketing campaigns, inc
         "nl",
     ]
 ````
+
 ### Remove a file
 
 Files are typically removed when they become obsolete or are replaced by newer versions. Follow these steps to ensure proper removal:
 
 **Update configs/pontoon.toml**: When a PR in the www-l10n repository proposes the removal of a file, check whether the `pontoon.toml` file needs to be updated. Once the PR is reviewed and merged, the file is removed from the en folder, and the localized versions disappear from Pontoon.
 
-**Remove localized files**: To remove the corresponding localized files, the L10n PM must file an issue in the www-l10n repository. Clearly specify which source file was removed so that the localized versions can be deleted as well. The l10n technical team will process the request and remove the files from the repository. 
+**Remove localized files**: To remove the corresponding localized files, the L10n PM must file an issue in the www-l10n repository. Clearly specify which source file was removed so that the localized versions can be deleted as well. The l10n technical team will process the request and remove the files from the repository.
 
 ## Manage files in Pontoon
 
@@ -179,7 +187,7 @@ With the advice from marketing or the Bedrock team, if a file needs to be tagged
 
 ### Add deadlines
 
-Deadlines are almost always associated with individual files, but can also be added at project level in the case of a major campaign. To add a deadline to a file, go to the [Pontoon admin page](https://pontoon.mozilla.org/a/), select Resources under the Base category on the left panel. A list of files is listed on the main page. The new file should be among the top of the search results. If not, type in the newly added file name in the Search field. Click on the PK number of the desired file you want to add the deadline to. Scroll to the bottom of the page, add the date in the Deadline field. Click the SAVE PROJECT button to save the changes. Once the deadline has passed for two weeks, remember to remove it by going back to the same page to empty the Deadline field. 
+Deadlines are almost always associated with individual files, but can also be added at project level in the case of a major campaign. To add a deadline to a file, go to the [Pontoon admin page](https://pontoon.mozilla.org/a/), select Resources under the Base category on the left panel. A list of files is listed on the main page. The new file should be among the top of the search results. If not, type in the newly added file name in the Search field. Click on the PK number of the desired file you want to add the deadline to. Scroll to the bottom of the page, add the date in the Deadline field. Click the SAVE PROJECT button to save the changes. Once the deadline has passed for two weeks, remember to remove it by going back to the same page to empty the Deadline field.
 
 ## Common errors detected by linters
 
@@ -192,4 +200,4 @@ Content:
 * Use Fluent terms for Mozilla account, instead of combining the term for “Mozilla” with the word “account”.
 
 Other:
-* String IDs should use only lowercase characters and hyphens. 
+* String IDs should use only lowercase characters and hyphens.
