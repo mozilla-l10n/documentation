@@ -1,4 +1,4 @@
 # Mozilla.org
 
-Documentation pertains managing the mozilla.org project:
-* [How to manage and review mozilla.org project](manage_review_mozilla_org.md)
+Documentation specific for common tasks regarding the mozilla.org project and l10n:
+* [How to manage the project and review content for mozilla.org](manage_review_mozilla_org.md)

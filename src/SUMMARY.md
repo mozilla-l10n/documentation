@@ -20,7 +20,7 @@
     * [Build system](products/firefox_desktop/build_system.md).
     * [L10N FAQs](products/firefox_desktop/firefox_l10n_faqs.md).
 * [Mozilla.org](products/mozilla_org/README.md)
-    * [Manage and review mozilla.org project](products/mozilla_org/manage_review_mozilla_org.md).
+    * [Manage and review content](products/mozilla_org/manage_review_mozilla_org.md).
 * [Localization](localization/README.md)
     * [Change existing strings](localization/making_string_changes.md).
     * [Best practices for developers](localization/dev_best_practices.md).
