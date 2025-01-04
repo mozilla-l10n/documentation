@@ -130,7 +130,7 @@ When adding images to a repository, make sure that the size is not too big for t
 
 VS Code allows the user to [set different personal settings](https://code.visualstudio.com/docs/getstarted/settings): *User settings* (global personal settings) and *Workplace setting* (settings specific for a project that override user settings). These are some useful settings for working with Markdown files:
 * Enable `Editor: Trim Auto Whitespace` to trim automatically trailing whitespaces.
-* Enable `Files: Insert Final Newline` and `Files: Trim Final Newlines` to automatically have leave only one line at the end of files.
+* Enable `Files: Insert Final Newline` and `Files: Trim Final Newlines` to automatically leave only one line at the end of files.
 
 Here's an example of [workplace setting](https://github.com/mozilla/legal-docs/blob/main/.vscode/settings.json) in a repository to preserve trailing whitespaces, even when the user setting has `Editor: Trim Auto Whitespace` enabled. Opening the editor in the root of the repository, e.g. with `code .`, will load and enforce this override.
 
