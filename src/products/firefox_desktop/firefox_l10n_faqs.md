@@ -50,7 +50,9 @@ Typically once or twice a week, the quarantined content (in the `update` branch)
 
 While Nightly is always open for new strings, Beta and Release are string frozen, meaning that patches with new strings are normally not allowed to land.
 
-Uplifts need to be evaluated case by case, but in general they should be avoided in the context of a 4-weeks release cycle. Possible alternatives are uplifting ad-hoc patches without string changes, or exposing the feature/change only to English users. In the event an uplift request is made and approved, an updated [`l10n-changesets.json`](https://searchfox.org/mozilla-central/source/browser/locales/l10n-changesets.json) with the revision set to an appropriate commit hash needs to be included.
+Uplifts need to be evaluated case by case, but in general they should be avoided in the context of a 4-weeks release cycle. Possible alternatives are uplifting ad-hoc patches without string changes, or exposing the feature/change only to English users.
+
+In the event an uplift request is made and approved, translations for uplifted strings should be included in the uplift patch if they have landed and have had enough time for localization. To include the latest translations, an appropriate commit hash from [`firefox-l10n`](https://github.com/mozilla-l10n/firefox-l10n) (usually the most recent commit) should replace the values of `revision` for all locales in [`l10n-changesets.json`](https://searchfox.org/mozilla-central/source/browser/locales/l10n-changesets.json).
 
 One more thing to consider is the timing of the uplift. The second part of the Beta cycle is completely frozen, meaning that we can’t take any updates to localization and ship it in that version. Anything uplifted close to the deadline, or after, will ship untranslated. For more details about the Beta timeline for l10n, see the [Build system document](build_system.md#timeline-and-deadlines).
 
