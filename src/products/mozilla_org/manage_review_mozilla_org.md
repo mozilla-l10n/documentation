@@ -57,7 +57,7 @@ Over the years, our style guide and branding guidelines have evolved, leading to
 
 Here are some issues that commonly occur:
 * Content changes without new string IDs: If a string is revised, a version number must be added to the ID. [This is necessary](https://mozilla-l10n.github.io/documentation/localization/making_string_changes.html#why-is-it-necessary-to-use-new-ids) because updates to strings without changes to IDs will not trigger updates in Pontoon for strings already localized.<br>
-Example: Update the string ID from ``features-fast-firefox-is-powered-by-the-world` to `features-fast-firefox-is-powered-by-the-world-v2`.
+Example: Update the string ID from `features-fast-firefox-is-powered-by-the-world` to `features-fast-firefox-is-powered-by-the-world-v2`.
 * Configuration changes for new files: When a new file is added to a PR, verify that it’s covered by the `configs/pontoon.toml` configuration file. If a new entry is required, ensure the file name matches exactly, as mismatches will prevent it from being available in Pontoon. Check out the [Add or remove file](#add-or-remove-files) section when to add an entry.
 * [Dashes](https://acorn.firefox.com/latest/content/punctuation-7J3JVM4o#section-hyphens-and-dashes-c9): correct use of hyphens (-), en-dashes (–) and em-dashes (—)
   * Use hyphens for words like `well-being`, with no space before and after.
