@@ -106,7 +106,7 @@ The first level has no indentation, and it’s completely aligned to the left. S
 
 There are three kind of links when cross referencing a document: within a document, within a project group, and outside a project group. The `[displayed text]` should be to the point and within a pair of square brackets. The displayed text must be followed by `(the link)` enclosed in a pair of parenthesis. Follow these formats for each case:
 
-* Reference within the same document: link directly to the anchor, e.g. `[General rules](#general-rules)`. Note that GitHub automatically creates anchors for titles: if the title is *Title Example*, the anchor will be lowercase, with spaces replaced by dashes, i.e. `#title-example`.
+* Reference within the same document: link directly to the anchor, e.g. `[General rules](#general-rules)`. Note that GitHub automatically creates anchors for titles: if the title is *Title Example*, the anchor will be lowercase, with spaces replaced by dashes, i.e. `#title-example`. Periods are also removed, e.g. *firefox.ftl* becomes `#firefoxftl` as an anchor.
 * Reference within a project group: use relative links, instead of absolute links (starting with `/`) or full GitHub URLs. For example, to link to a document in the parent folder, use `[other document](../other.md)`.
 * Reference outside the current repository: use the full GitHub URL, e.g. `[OpenDesign GitHub repository](https://github.com/mozilla/OpenDesign/tree/master/2017)`.
 
