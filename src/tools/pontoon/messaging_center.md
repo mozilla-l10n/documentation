@@ -37,4 +37,5 @@ Target users based on the number of reviews they have conducted, using threshold
 Filter contributors based on their last login activity within a specific date range.
 
 ### Review and send message
+
 Then, click on “REVIEW MESSAGE” at the bottom of the page to review your message content, recipients, and associated projects. You’ll also see a confirmation of the message type you’ve selected. You will have the option to either return to editing, send the message to yourself, or send it to the recipients. A confirmation message will appear at the top of the page once the message has been sent out.
