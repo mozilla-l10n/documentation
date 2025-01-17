@@ -49,4 +49,4 @@ Click “REVIEW MESSAGE” at the bottom of the page to review your message cont
 
 The `SEND TO * RECIPIENTS` button will display the number of users who will receive the message. Review contents of the page carefully and if everything looks okay, complete sending the messages by clicking the button.
 
-A confirmation message will appear at the top of the page once the message has been sent out.
+A confirmation will appear at the top of the page once the messages have been sent out.
