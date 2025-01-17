@@ -6,7 +6,14 @@ Pontoon allows you to send emails and in-app notifications to contributors, with
 
 To send emails or notifications, go to the Messaging Center on Pontoon by selecting the [Messaging](https://pontoon.mozilla.org/messaging/) tab, which is accessible from the main Pontoon UI when logged in with an account with staff permissions.
 
-Once in the Messaging Center, you will be able to choose your message type at the top of the page.
+## Message type
+
+Once in the Messaging Center, you will be able to choose your message type at the top of the page. You can choose to send as a `Notification`, an `Email`, or both (by selecting both types).
+
+By default, emails will only be sent to users who have opted into `News and updates` in their settings. However, if the message is considered transactional (e.g. an email about a password reset) then the `Transactional` option can be selected and emails will also be sent to users who have not opted in to email communication.
+
+Note: Messages marked as Notification are not currently included in Email digests.
+
 
 ### Enter message
 
