@@ -13,7 +13,7 @@ Note: Notifications sent via Messaging Center are not included in Notification e
 
 ## Message content
 
-Next, enter your message using the Subject and Body fields. Links will be rendered as clickable when the message is sent. Markdown is supported for advanced formatting, such as embedding a link within a word.
+Next, enter your message using the Subject and Body fields. Links will be rendered as clickable when the message is sent. Markdown is supported for advanced formatting, such as creating links.
 
 ## Choose recipients
 
