@@ -46,7 +46,9 @@ You can set a minimum threshold, maximum threshold, start of date range, and/or 
 
 
 * By last login\
-Filter contributors based on their last login activity within a specific date range.
+Filter contributors based on their last login activity.
+
+You can set the start of date range and/or end of date range. Fields can be left empty (e.g. setting just the `From` field will search for users who have logged in on the specified day or later.)
 
 ### Review and send message
 
