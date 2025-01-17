@@ -14,7 +14,6 @@ By default, emails will only be sent to users who have opted into `News and upda
 
 Note: Messages marked as Notification are not currently included in Email digests.
 
-
 ## Message Content
 
 Next, enter your message using the Subject and Body fields. Links will be rendered as clickable when the message is sent. Markdown is supported for advanced formatting, such as embedding a link within a word.
@@ -44,7 +43,6 @@ Filter users based on the number of reviews they have conducted, or when they co
 
 You can set a minimum threshold, maximum threshold, start of date range, and/or end of date range for reviews conducted. Fields can be left empty (e.g. setting the minimum threshold to 5 and leaving maximum blank will set the filter to those with 5 or more reviews).
 
-
 * By last login\
 Filter contributors based on their last login activity.
 
@@ -55,5 +53,5 @@ You can set the start of date range and/or end of date range. Fields can be left
 Click “REVIEW MESSAGE” at the bottom of the page to review your message content, recipients, and associated projects. You’ll also see a confirmation of the message type you’ve selected. You will have the option to either return to editing, send the message to yourself (to view the rendered message), or send to recipients.
 
 The send to recipients button will display the number of users who will receive the message. Review all the content in this section and the number of recipients. If everything looks okay, then you can complete sending the message by clicking `SEND TO * RECIPIENTS`.
- 
+
 A confirmation message will appear at the top of the page once the message has been sent out.
