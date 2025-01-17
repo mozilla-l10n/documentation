@@ -34,8 +34,8 @@ Filters users by the number of translations they have submitted, or when they su
 You can set a minimum threshold, maximum threshold, start of date range, and/or end of date range for submitted translations. Fields can be left empty (e.g. setting the minimum threshold to 5 and leaving maximum blank will set the filter to those with 5 or more translations).
 
 ### Filter by performed reviews
-Filter users based on the number of reviews they have conducted, or when they conducted a review.
-
+Filter users based on the number of reviews they have conducted, or when they conducted a review.\
+\
 You can set a minimum threshold, maximum threshold, start of date range, and/or end of date range for reviews conducted. Fields can be left empty (e.g. setting the minimum threshold to 5 and leaving maximum blank will set the filter to those with 5 or more reviews).
 
 * By last login\
