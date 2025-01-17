@@ -1,9 +1,6 @@
 # Sending emails and notifications in Pontoon
 
 Pontoon allows you to send emails and in-app notifications to contributors, with advanced filtering options.
-
-## Access the Messaging Center
-
 To send emails or notifications, go to the Messaging Center on Pontoon by selecting the [Messaging](https://pontoon.mozilla.org/messaging/) tab, which is accessible from the main Pontoon UI when logged in with an account with staff permissions.
 
 ## Message type
