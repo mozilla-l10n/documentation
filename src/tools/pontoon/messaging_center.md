@@ -17,7 +17,7 @@ Note: Messages marked as Notification are not currently included in Email digest
 
 ## Message Content
 
-Next, enter your message using the Subject and Body fields. Links will be rendered as clickable when the message will be sent out, but to embed a link within a word, HTML is required.
+Next, enter your message using the Subject and Body fields. Links will be rendered as clickable when the message is sent. Markdown is supported for advanced formatting, such as embedding a link within a word.
 
 ## Choose recipients
 
