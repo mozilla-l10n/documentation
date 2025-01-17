@@ -19,9 +19,7 @@ Next, enter your message using the Subject and Body fields. Links will be render
 
 You can send messages to a wide range of targeted groups by applying precise filters.
 
-### Filter options
-
-* By user role\
+### Filter by user role
 Select whether you’d like to send your message to Managers, Translators, Contributors, or all of them.
 
 * By locale\
