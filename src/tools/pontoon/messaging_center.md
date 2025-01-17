@@ -50,6 +50,6 @@ Filter contributors based on their last login activity.
 
 You can set the start of date range and/or end of date range. Fields can be left empty (e.g. setting just the `From` field will search for users who have logged in on the specified day or later.)
 
-### Review and send message
+## Reviewing and sending messages
 
 Then, click on “REVIEW MESSAGE” at the bottom of the page to review your message content, recipients, and associated projects. You’ll also see a confirmation of the message type you’ve selected. You will have the option to either return to editing, send the message to yourself, or send it to the recipients. A confirmation message will appear at the top of the page once the message has been sent out.
