@@ -11,7 +11,7 @@ By default, emails will only be sent to users who have opted in to `News and upd
 
 Note: Notifications sent via Messaging Center are not included in Notification email digests.
 
-## Message Content
+## Message content
 
 Next, enter your message using the Subject and Body fields. Links will be rendered as clickable when the message is sent. Markdown is supported for advanced formatting, such as embedding a link within a word.
 
