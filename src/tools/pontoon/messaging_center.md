@@ -15,7 +15,7 @@ Note: Notifications sent via Messaging Center are not included in Notification e
 
 Next, enter your message using the Subject and Body fields. Links will be rendered as clickable when the message is sent. Markdown is supported for advanced formatting, such as creating links.
 
-## Choose recipients
+## Choosing recipients
 
 You can send messages to a wide range of targeted groups by applying precise filters.
 
