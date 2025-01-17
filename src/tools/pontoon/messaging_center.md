@@ -22,7 +22,7 @@ You can send messages to a wide range of targeted groups by applying precise fil
 ### Filter by user role
 Select whether you’d like to send your message to Managers, Translators, Contributors, or all of them.
 
-* By locale\
+### Filter by locale
 All locales are included by default and are listed under the “Chosen” column to the right. You can choose to remove a subset of locales by clicking on them one by one, so they get moved to the “Available” column to the left. You can also use the “MOVE ALL” options to move all locales from one column to the other.
 
 * By project\
