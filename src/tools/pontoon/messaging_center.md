@@ -12,7 +12,7 @@ Once in the Messaging Center, you will be able to choose your message type at th
 
 By default, emails will only be sent to users who have opted in to `News and updates` in their settings. However, if the message is considered transactional (e.g. an email about a password reset) then the `Transactional` option can be selected and emails will also be sent to users who have not opted in to email communication.
 
-Note: Messages marked as Notification are not currently included in Email digests.
+Note: Notifications sent via Messaging Center are not included in Notification email digests.
 
 ## Message Content
 
