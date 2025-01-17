@@ -32,7 +32,7 @@ Select whether you’d like to send your message to Managers, Translators, Contr
 All locales are included by default and are listed under the “Chosen” column to the right. You can choose to remove a subset of locales by clicking on them one by one, so they get moved to the “Available” column to the left. You can also use the “MOVE ALL” options to move all locales from one column to the other.
 
 * By project\
-As for locales, all projects are included by default and are listed under the “Chosen” column to the right. You can choose to remove a subset of products by clicking on them one by one, so they get moved to the “Available” column to the left. You can also use the “MOVE ALL” options to move all projects from one column to the other.
+All projects are included by default and are listed under the “Chosen” column to the right. You can choose to remove a subset of projects by clicking on them one by one, so they get moved to the “Available” column to the left. You can also use the “MOVE ALL” options to move all projects from one column to the other.
 
 * By submitted translations\
 Set minimum and maximum thresholds for submitted translations, and/or select a date range for submitted translations.
