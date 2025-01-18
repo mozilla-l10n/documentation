@@ -20,25 +20,31 @@ Next, enter your message using the Subject and Body fields. Links will be render
 You can send messages to a wide range of targeted groups by applying precise filters.
 
 ### Filter by user role
+
 Select whether you’d like to send your message to Managers, Translators, Contributors, or all of them.
 
 ### Filter by locale
+
 All locales are included by default and are listed under the “Chosen” column to the right. You can choose to remove a subset of locales by clicking on them one by one, so they get moved to the “Available” column to the left. You can also use the “MOVE ALL” options to move all locales from one column to the other.
 
 ### Filter by project
+
 All projects are included by default and are listed under the “Chosen” column to the right. You can choose to remove a subset of projects by clicking on them one by one, so they get moved to the “Available” column to the left. You can also use the “MOVE ALL” options to move all projects from one column to the other.
 
 ### Filter by submitted translations
+
 Filters users by the number of translations they have submitted, or when they submitted a translation.\
 \
 You can set a minimum threshold, maximum threshold, start of date range, and/or end of date range for submitted translations. Fields can be left empty (e.g. setting the minimum threshold to 5 and leaving maximum blank will set the filter to those with 5 or more translations).
 
 ### Filter by performed reviews
+
 Filter users based on the number of reviews they have conducted, or when they conducted a review.\
 \
 You can set a minimum threshold, maximum threshold, start of date range, and/or end of date range for reviews conducted. Fields can be left empty (e.g. setting the minimum threshold to 5 and leaving maximum blank will set the filter to those with 5 or more reviews).
 
 ### Filter by last login
+
 Filter contributors based on their last login activity.\
 \
 You can set the start of date range and/or end of date range. Fields can be left empty (e.g. setting just the `From` field will search for users who have logged in on the specified day or later.)
