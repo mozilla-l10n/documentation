@@ -51,7 +51,7 @@ You can set the start of date range and/or end of date range. Fields can be left
 
 ## Reviewing and sending messages
 
-Click “REVIEW MESSAGE” at the bottom of the page to review your message content, recipients, and selected message type. You will have the option to either return to editing, send the message to yourself (to view the actual rendered notification or email), or send to recipients.
+Click `REVIEW MESSAGE` at the bottom of the page to review your message content, recipients, and selected message type. You will have the option to either return to editing, send the message to yourself (to view the actual rendered notification or email), or send to recipients.
 
 The `SEND TO * RECIPIENTS` button will display the number of users who will receive the message. Review contents of the page carefully and if everything looks okay, complete sending the messages by clicking the button.
 
