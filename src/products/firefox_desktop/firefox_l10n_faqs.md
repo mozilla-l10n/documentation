@@ -50,7 +50,9 @@ Typically once or twice a week, the quarantined content (in the `update` branch)
 
 While Nightly is always open for new strings, Beta and Release are string frozen, meaning that patches with new strings are normally not allowed to land.
 
-Uplifts need to be evaluated case by case, but in general they should be avoided in the context of a 4-weeks release cycle. Possible alternatives are uplifting ad-hoc patches without string changes, or exposing the feature/change only to English users.
+Uplifts need to be evaluated case by case, but in general they should be avoided in the context of a [4-week release cycle](./build_system.md). Possible alternatives are uplifting ad-hoc patches without string changes, or exposing the feature/change only to English users.
+
+If the uplift request is approved, translations for uplifted strings should also be uplifted if there was enough time for localization. For translations to appear in the build, the `revision` value for all locales in [`l10n-changesets.json`](https://searchfox.org/mozilla-central/source/browser/locales/l10n-changesets.json) must have a commit hash containing the appropriate translations from [`firefox-l10n`](https://github.com/mozilla-l10n/firefox-l10n). Typically, the content of `l10n-changesets.json` from `mozilla-beta` is used since it has gone through the build system at least once (even if it isn’t the latest). There are two options to ensure these changes are uplifted: an ad-hoc patch including the updates to the `l10n-changesets.json` file ([example](https://hg.mozilla.org/releases/mozilla-esr128/rev/4298182958af)) or asking Release Management to land a follow-up change for the l10n changesets ([example](https://hg.mozilla.org/releases/mozilla-esr128/rev/213534997a7c)).
 
 One more thing to consider is the timing of the uplift. The second part of the Beta cycle is completely frozen, meaning that we can’t take any updates to localization and ship it in that version. Anything uplifted close to the deadline, or after, will ship untranslated. For more details about the Beta timeline for l10n, see the [Build system document](build_system.md#timeline-and-deadlines).
 
