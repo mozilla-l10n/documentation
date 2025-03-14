@@ -1,6 +1,6 @@
 # Updating locales for specific projects
 
-These are instructions in order to update locales to Android mobile products living within the [android-l10n project](https://github.com/mozilla-l10n/android-l10n/).
+These are instructions to update locales for Android mobile products living within the [android-l10n project](https://github.com/mozilla-l10n/android-l10n/).
 
 ## Edit the l10n.toml file(s)
 
@@ -42,8 +42,8 @@ Note that:
 
 ## Updating locales in Pontoon
 
-Once the patch has landed, the locale has to be added - or removed - in Pontoon as well. The steps to follow can be found in the existing [Pontoon documentation here](../../tools/pontoon/adding_new_locale.md).
+Once the patch has landed, the locale has to be added — or removed — in Pontoon as well. The steps to follow can be found in the existing [Pontoon documentation](https://github.com/mozilla-l10n/documentation/blob/main/src/tools/pontoon/adding_new_locale.md).
 
-One thing to note is that, once you merge the pull request (PR) adding or removing locales in the l10n repository, automation will send that updated list over to the [code repository](https://github.com/mozilla-mobile/firefox-android). However use caution, as the next string quarantine PRs you receive might try to undo your changes (example of Fenix `l10n.toml` [here](https://github.com/mozilla-mobile/firefox-android/blob/main/fenix/l10n.toml), and more information about string quarantine PRs [here](review_android_strings.md)).
+One thing to note is that, once you merge the pull request adding or removing locales in the localization repository, automation will send that updated list over to the `mozilla-central` Android [code repository](https://hg.mozilla.org/mozilla-central/file/tip/mobile/android/).
 
-You can know the status of l10n imports by checking the list of [closed pull requests](https://github.com/mozilla-mobile/firefox-android/pulls?q=is%3Apr+is%3Aclosed+Import+translations+) in `firefox-android`.
+You can check the status of l10n imports by using this filtered [search](https://hg.mozilla.org/mozilla-central/log?rev=Import+translations+from+android-l10n).
