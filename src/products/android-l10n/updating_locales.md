@@ -1,6 +1,6 @@
 # Updating locales for specific projects
 
-These are instructions in order to update locales to Android mobile products living within the [android-l10n project](https://github.com/mozilla-l10n/android-l10n/).
+These are instructions to update locales for Android mobile products living within the [android-l10n project](https://github.com/mozilla-l10n/android-l10n/).
 
 ## Edit the l10n.toml file(s)
 
@@ -42,7 +42,7 @@ Note that:
 
 ## Updating locales in Pontoon
 
-Once the patch has landed, the locale has to be added — or removed — in Pontoon as well. The steps to follow can be found in the existing [Pontoon documentation here](https://github.com/mozilla-l10n/documentation/blob/main/src/tools/pontoon/adding_new_locale.md). The locale will then ride the trains to release.
+Once the patch has landed, the locale has to be added — or removed — in Pontoon as well. The steps to follow can be found in the existing [Pontoon documentation](https://github.com/mozilla-l10n/documentation/blob/main/src/tools/pontoon/adding_new_locale.md).
 
 One thing to note is that, once you merge the pull request adding or removing locales in the localization repository, automation will send that updated list over to the `mozilla-central` Android [code repository](https://hg.mozilla.org/mozilla-central/file/tip/mobile/android/).
 
