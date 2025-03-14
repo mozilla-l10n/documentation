@@ -4,7 +4,7 @@ Follow the steps below to add new projects to [android-l10n](https://github.com/
 
 ## Setting up the project in source and l10n repositories
 
-Before anything happens, check that the new project is properly localizable by following the directions in [this section](https://github.com/mozilla-l10n/documentation/blob/main/src/tools/pontoon/adding_new_project.md#adding-a-new-project-on-pontoon). Once the new project exists in its corresponding source repo and is ready, it can then be added to the `android-l10n` repository.
+Before anything happens, check that the new project is properly localizable by following the directions in [this section](https://github.com/mozilla-l10n/documentation/blob/main/src/tools/pontoon/adding_new_project.md#adding-a-new-project-on-pontoon). Once the new project exists in its corresponding source repository and is ready, it can then be added to the `android-l10n` repository.
 
 Android developers need to create a TOML file in their code directory and under its corresponding project folder ([example for fenix](https://hg.mozilla.org/mozilla-central/file/tip/mobile/android/fenix/l10n.toml)), as well as the file containing the source strings in `res/values/strings.xml` ([example for fenix](https://hg.mozilla.org/mozilla-central/file/tip/mobile/android/fenix/app/src/main/res/values/strings.xml)). The `mobile/android` directory in `mozilla-central` contains all [current Android projects](https://hg.mozilla.org/mozilla-central/file/tip/mobile/android).
 
