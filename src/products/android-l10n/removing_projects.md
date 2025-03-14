@@ -12,6 +12,6 @@ In order to disable a project in Pontoon, visit the admin page for the project (
 
 ## Remove android-l10n files
 
-* Remove [GitHub workflow](https://github.com/mozilla-l10n/android-l10n/tree/main/.github/workflows) associated with the project.
+* Remove [GitHub workflows](https://github.com/mozilla-l10n/android-l10n/tree/main/.github/workflows) associated with the project.
 * If available, remove TOML files associated to the project in the root of the repository (e.g. `focus.toml` for `Focus for Android`).
 * Remove the entire project folder.
