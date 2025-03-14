@@ -21,7 +21,7 @@ Let’s go over some of the steps needed over time in order to review strings co
 
 [Here](https://phabricator.services.mozilla.com/D239505) is an example where the group reviewer was tagged. Navigate to the `strings.xml` file found under the Table of Contents on the left, and click to review it. When this is a new request, you will have the option to comment on the strings and leave a review. If the strings look good, you can navigate to the bottom of the page to “Add Action” and “Accept Revision”. If changes are needed, select “Request Changes”.
 
-Let’s consider Firefox for Android (code named “fenix” in the [`mobile/android`](https://hg.mozilla.org/mozilla-central/file/tip/mobile/android) directory)  as an example —- in fact, these apply to other Android products as well, and they also follow the same [train schedule](https://whattrainisitnow.com/).
+Let’s consider Firefox for Android (code named “fenix” in the [`mobile/android`](https://hg.mozilla.org/mozilla-central/file/tip/mobile/android) directory)  as an example — in fact, these apply to other Android products as well, and they also follow the same [train schedule](https://whattrainisitnow.com/).
 
 Let’s consider a past revision [here](https://phabricator.services.mozilla.com/D225047). `values/strings.xml` is the file containing all needed string updates.
 
