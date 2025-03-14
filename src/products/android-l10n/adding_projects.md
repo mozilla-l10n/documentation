@@ -14,6 +14,8 @@ Localized files are stored in GitHub under the `android-l10n` repository [here](
 
 TaskCluster is used to import translations and TOML files to [`autoland`](https://hg.mozilla.org/integration/autoland/), then code sheriffs merge new translations to `mozilla-central` together with other code changes. This allows sheriffs to back out updates with errors that break Android builds. TaskCluster is also used to uplift strings from `mozilla-central` to `mozilla-beta`. Sync with release engineers to make sure that the automation to import strings for this project has been added.
 
+![Android automation](../../assets/images/android/android_autom.png)
+
 On the `android-l10n` repository side, you will need to set up [automation](https://github.com/mozilla-l10n/android-l10n/tree/main/.github/workflows) to import strings and TOML files from the code repository. This automation will be responsible for creating all needed files in the repository. You may need to sync up with a technical localization EPM to set this up.
 
 Once automation is in place, it will extract new English strings and configurations from the code repository. It should also be possible to invoke automation [manually](https://github.com/mozilla-l10n/android-l10n/actions).
