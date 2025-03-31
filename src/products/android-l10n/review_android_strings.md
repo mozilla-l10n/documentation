@@ -42,7 +42,7 @@ A [linter](https://searchfox.org/mozilla-central/source/mobile/android/android-c
   * Incorrect straight quotes (`'` instead of typographic apostrophe `’`).
   * Incorrect double quotes (`""` instead of `“”`).
 * Hardcoded brand names (as defined [here](https://searchfox.org/mozilla-central/source/mobile/android/android-components/components/tooling/lint/src/main/java/mozilla/components/tooling/lint/StringLintXmlDetector.kt#106-111)).
-* Comments lacking explicit references to placeables (or placeholders) like `%s` or `%1$s` when the string uses them. This is set up to enforce developers to explain what replaces these variables at run-time, providing additional context for localizers.
+* Comments lacking explicit references to placeables (also referred to as placeholders) like `%s` or `%1$s` when the string uses them. This is set up to enforce developers to explain what replaces these variables at run-time, providing additional context for localizers.
 
 As mentioned before, you will notice `tools:ignore` attributes associated to some strings, e.g. `tools:ignore="UnusedResources"`. This attribute is used for strings that have been pre-landed in the codebase, but are not actually used in the code yet. Once a string is ready for use, developers will remove the `UnusedResources` value from the attribute, for example see line 1026 in the `strings.xml` file in [this Phabricator diff](https://phabricator.services.mozilla.com/D240991).
 
