@@ -29,4 +29,3 @@ Once you have removed a new locale from Pontoon, the existing locale folder then
 As a mozilla-l10n code owner, you should be able to delete this folder yourself from the mozilla-l10n repo. This should be done via pull request, so we can keep track of the removal, and in case we'd want to reverse that action.
 
 Then, file an issue on [GitHub](https://github.com/mozilla-mobile/firefox-ios/issues) so that the mobile team can work on removing their corresponding files. Once the issue is filed, and if you don't get any traction after a few days, you can ask for help in the `#firefox-ios-dev` Slack channel.
-
