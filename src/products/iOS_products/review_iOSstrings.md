@@ -1,6 +1,6 @@
 # Reviewing strings for a new release of Mozilla iOS products
 
-Usually, a new release of our iOS products means an update to strings. Like for Android products, mobile developers will land strings in their respective code repositories throughout the [release cycle](https://whattrainisitnow.com/release/), and automation will export these strings to the localization repository, where they will need to be reviewed by a localization EPM before being exposed to localizers on Pontoon (see adding\_projects.md for more details on the automation used).
+Usually, a new release of our iOS products means an update to strings. Like for Android products, mobile developers will land strings in their respective code repositories throughout the [release cycle](https://whattrainisitnow.com/release/), and automation will export these strings to the localization repository, where they will need to be reviewed by a localization EPM before being exposed to localizers on Pontoon (see [Adding projects](adding_projects.md) for more details on the automation used).
 
 It's also possible to manually trigger a string import (`import_strings.yml`) at any time. To do so, go to the GitHub `Actions` section of the relevant localization iOS repository and run the string import workflow.  Manual string imports are useful in cases when developers land new, time-sensitive strings (like for an upcoming release), when updates or fixes in the code need to be pulled in before the next scheduled import, or in cases where you’d like to use a different criterion (described below).
 

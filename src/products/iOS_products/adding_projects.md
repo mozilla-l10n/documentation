@@ -20,6 +20,6 @@ You can now enable the new project in Pontoon (see [instructions for adding new 
 
 Going forward, remember to update the localization completion deadline under Pontoon resources. For existing iOS projects, the deadline falls one day before the *Release Candidate* date of the current [Beta version](https://whattrainisitnow.com/release/?version=beta). They follow the same four-week release cycle as other Firefox browsers, so these deadlines must be updated regularly. When setting up a new project, confirm what type of release cycle it will follow. To update, navigate to the [Pontoon admin](https://pontoon.mozilla.org/admin/) page, select your project, and update the *Target date*.
 
-When a new project is added and announced, you typically reach out to localizers on existing communication channels, so they can opt in for their locale (see [Updating locales](../updating_locales.md) for more info).
+When a new project is added and announced, you typically reach out to localizers on existing communication channels, so they can opt in for their locale (see [Updating locales](updating_locales.md) for more info).
 
 Note that to remove existing projects, all you have to do is archive the repository under the `mozilla-l10n` organization. You will also have to remove the project from the Pontoon admin interface (example with [Firefox for iOS](https://pontoon.mozilla.org/admin/projects/firefox-for-ios/)).
