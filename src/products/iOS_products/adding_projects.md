@@ -4,7 +4,7 @@ We will go over the steps to set up a new iOS project, using current iOS project
 
 ## Setting up the project in source and l10n repositories
 
-Before anything happens, check that the new project is properly localizable by following the directions in [this section](https://github.com/mozilla-l10n/documentation/blob/main/src/tools/pontoon/adding_new_project.md#adding-a-new-project-on-pontoon).
+Before anything happens, check that the new project is properly localizable by following the directions in [this section](../../tools/pontoon/adding_new_project.md#adding-a-new-project-on-pontoon).
 
 Note that the existing iOS projects — Firefox for iOS and Focus for iOS — share the same [source repository](https://github.com/mozilla-mobile/firefox-ios) as they have a significant amount of common code.
 
@@ -16,7 +16,7 @@ The first step is to make sure we can extract and use strings in an XLIFF file. 
 
 A GitHub workflow (see examples for [Firefox](https://github.com/mozilla-l10n/firefoxios-l10n/blob/main/.github/workflows/import_strings.yml) and [Focus](https://github.com/mozilla-l10n/focusios-l10n/blob/main/.github/workflows/import_strings.yml)) should be used to extract en-US strings from the code repository, clean up files, and expose them to all locales. In order to provide more autonomy, the workflow to extract strings should run on a regular schedule, but it should also be possible to execute it manually, like it happens for Firefox or Focus. Coordinate with a technical localization EPM to set this up.
 
-You can now enable the new project in Pontoon (see [instructions for adding new projects](https://github.com/mozilla-l10n/documentation/blob/main/src/tools/pontoon/adding_new_project.md#create-the-project)).
+You can now enable the new project in Pontoon (see [instructions for adding new projects](../../tools/pontoon/adding_new_project.md#create-the-project)).
 
 Going forward, remember to update the localization completion deadline under Pontoon resources. For existing iOS projects, the deadline falls one day before the *Release Candidate* date of the current [Beta version](https://whattrainisitnow.com/release/?version=beta). They follow the same four-week release cycle as other Firefox browsers, so these deadlines must be updated regularly. When setting up a new project, confirm what type of release cycle it will follow. To update, navigate to the [Pontoon admin](https://pontoon.mozilla.org/admin/) page, select your project, and update the *Target date*.
 
