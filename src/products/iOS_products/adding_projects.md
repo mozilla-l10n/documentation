@@ -12,9 +12,9 @@ Note that the existing iOS projects — Firefox for iOS and Focus for iOS — sh
 
 A new repository should be created within the [mozilla-l10n](https://github.com/mozilla-l10n/) GitHub organization, and should be named according to the new iOS project. It will contain locale folders for all latest localized files in .xliff format, as well as the project’s corresponding scripts and workflows (under a `.github` folder). Here are some examples in the [Firefox for iOS](https://github.com/mozilla-l10n/firefoxios-l10n) and [Focus for iOS](https://github.com/mozilla-l10n/focusios-l10n) repositories.
 
-The first step is to make sure we can extract and use files in an .xliff format. For this, iOS developers need to write localizable swift code in Xcode, following iOS development practices.
+The first step is to make sure we can extract and use strings in an XLIFF file. For this, iOS developers need to write localizable swift code in Xcode, following iOS development practices.
 
-A GitHub workflow (see examples for [Firefox](https://github.com/mozilla-l10n/firefoxios-l10n/blob/main/.github/workflows/import_strings.yml) and [Focus](https://github.com/mozilla-l10n/focusios-l10n/blob/main/.github/workflows/import_strings.yml)) should be used to extract strings from the en-US code repository, clean up files, and expose them to all locales. In order to provide more autonomy, the workflow to extract strings should run on a regular schedule, but it should also be possible to execute it manually, like it happens for Firefox or Focus. Coordinate with a technical localization EPM to set this up.
+A GitHub workflow (see examples for [Firefox](https://github.com/mozilla-l10n/firefoxios-l10n/blob/main/.github/workflows/import_strings.yml) and [Focus](https://github.com/mozilla-l10n/focusios-l10n/blob/main/.github/workflows/import_strings.yml)) should be used to extract en-US strings from the code repository, clean up files, and expose them to all locales. In order to provide more autonomy, the workflow to extract strings should run on a regular schedule, but it should also be possible to execute it manually, like it happens for Firefox or Focus. Coordinate with a technical localization EPM to set this up.
 
 You can now enable the new project in Pontoon (see [instructions for adding new projects](https://github.com/mozilla-l10n/documentation/blob/main/src/tools/pontoon/adding_new_project.md#create-the-project)).
 
@@ -22,4 +22,4 @@ Going forward, remember to update the localization completion deadline under Pon
 
 When a new project is added and announced, you typically reach out to localizers on existing communication channels, so they can opt in for their locale (see [Updating locales](updating_locales.md) for more info).
 
-Note that to remove existing projects, all you have to do is archive the repository under the `mozilla-l10n` organization. You will also have to remove the project from the Pontoon admin interface (example with [Firefox for iOS](https://pontoon.mozilla.org/admin/projects/firefox-for-ios/)).
+Note that to remove existing projects, all you have to do is archive the repository under the `mozilla-l10n` organization. You will also have to remove the project from the Pontoon admin interface (example for [Firefox for iOS](https://pontoon.mozilla.org/admin/projects/firefox-for-ios/)).

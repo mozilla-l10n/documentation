@@ -1,13 +1,13 @@
 # Reviewing strings for a new release of Mozilla iOS products
 
-Usually, a new release of our iOS products means an update to strings. Like for Android products, mobile developers will land strings in their respective code repositories throughout the [release cycle](https://whattrainisitnow.com/release/), and automation will export these strings to the localization repository, where they will need to be reviewed by a localization EPM before being exposed to localizers on Pontoon (see [Adding projects](adding_projects.md) for more details on the automation used).
+Usually, a new release of our iOS products means an update to strings. Like for Android products, mobile developers will land strings in their respective code repositories throughout the [release cycle](https://whattrainisitnow.com/), and automation will export these strings to the localization repository, where they will need to be reviewed by a localization EPM before being exposed to localizers on Pontoon (see [Adding projects](adding_projects.md) for more details on the automation used).
 
 It's also possible to manually trigger a string import (`import_strings.yml`) at any time. To do so, go to the GitHub `Actions` section of the relevant localization iOS repository and run the string import workflow.  Manual string imports are useful in cases when developers land new, time-sensitive strings (like for an upcoming release), when updates or fixes in the code need to be pulled in before the next scheduled import, or in cases where you’d like to use a different criterion (described below).
 
 Here are more details on how the automation works ([example](https://github.com/mozilla-l10n/firefoxios-l10n/tree/main/en-US) with Firefox for iOS):
 
 1. Strings are extracted and saved in an `en-US` XLIFF file.
-2. The updated `en-US` XLIFF is used as a template. Existing translations are copied over if all these elements match:
+2. The updated `en-US` XLIFF is used as a template. For each locale, existing translations are copied over if all these elements match:
    * `id` attribute of `trans-unit`.
    * `original` attribute of `file`.
    * `source` text.
@@ -74,7 +74,7 @@ First open the [code repository page](https://github.com/mozilla-mobile/firefox-
 
 If there are no PRs associated with the string, instead click on the search results appearing to the right of the "Filter by" selector. Choose the file ending with `/Strings.swift`, to open up (in this case) [this file](https://github.com/mozilla-mobile/firefox-ios/blob/4bba2a088f0e5795dca89c10b3194dd97f3c2621/Client/Frontend/Strings.swift#L250). Then use the `Blame` [link](https://github.com/mozilla-mobile/firefox-ios/blame/4bba2a088f0e5795dca89c10b3194dd97f3c2621/Client/Frontend/Strings.swift#L250) on the top left. Then on the left, you will see the GitHub PR that introduced the string and its author.
 
-If the search doesn't return the expected string (which is common), you can manually locate it in the `/Strings.swift` file ([example](https://github.com/mozilla-mobile/firefox-ios/blob/main/firefox-ios/Shared/Strings.swift) with Firefox for iOS), and click “Blame” on the top left.
+If the search doesn't return the expected string (which is common), you can manually locate it in the `/Strings.swift` file ([example](https://github.com/mozilla-mobile/firefox-ios/blob/main/firefox-ios/Shared/Strings.swift) with Firefox for iOS), and click `Blame` on the top left.
 
 You can then CC directly the author of the string in the new strings PR that arrived in the `mozilla-l10n` repository, and ask for a fix there.
 
