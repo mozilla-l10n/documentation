@@ -24,7 +24,7 @@ This is not ideal when the change in the source text is trivial, or the string m
 
 Once new strings have landed from the source repository, or you have manually triggered an import, the PR is reviewed by a localization staff — most often by the EPM in charge of mobile projects.
 
-Note that there is a linter in place that checks reference strings for common errors. When opening a pull request that touches the `en-US` folder, a GitHub workflow is used to check errors such as misused quotes or ellipsis, and hard-coded brand names. It's possible to add exceptions in the corresponding JSON file (for example [here](https://github.com/mozilla-l10n/firefoxios-l10n/blob/main/.github/scripts/linter_config.json) for Firefox). The linter is also running in the [code repository](https://github.com/mozilla-mobile/firefox-ios/blob/main/.github/workflows/firefox-ios-l10n-linter.yml), for both Firefox and Focus, with their own [exceptions](https://github.com/mozilla-mobile/firefox-ios/tree/main/.github/l10n).
+Note that there is a linter in place that checks reference strings for common errors. When opening a pull request that touches the `en-US` folder, a GitHub workflow is used to identify errors such as misused quotes or ellipsis, and hard-coded brand names. It's possible to add exceptions in the corresponding JSON file (for example [here](https://github.com/mozilla-l10n/firefoxios-l10n/blob/main/.github/scripts/linter_config.json) for Firefox). The linter is also running in the [code repository](https://github.com/mozilla-mobile/firefox-ios/blob/main/.github/workflows/firefox-ios-l10n-linter.yml), for both Firefox and Focus, with their own [exceptions](https://github.com/mozilla-mobile/firefox-ios/tree/main/.github/l10n).
 
 Let’s go over some of the steps needed over time in order to review correctly strings for a new release.
 
@@ -32,9 +32,9 @@ Let’s go over some of the steps needed over time in order to review correctly 
 
 Let's consider Firefox for iOS as an example. As a matter of fact, the iOS release cycles follow closely the Android and Firefox desktop calendar, which can be found [here](https://whattrainisitnow.com). During the release cycle, automation will create pull requests as explained in the section above, in order to land strings for the upcoming release.
 
-In general, you should try to check out the strings landing, and try to localize them in your head: how would you translate them? Would you be able to do it without the app? Is the localization comment clear enough? Let’s consider a past PR, [here](https://github.com/mozilla-l10n/firefoxios-l10n/pull/192).
+In general, you should try to review the strings landing, and try to localize them in your head: how would you translate them? Would you be able to do it without the app? Is the localization comment clear enough? Let’s consider a past PR, [here](https://github.com/mozilla-l10n/firefoxios-l10n/pull/192).
 
-The first thing you’ll want to do is to check the changes to the [source string folder](https://github.com/mozilla-l10n/firefoxios-l10n/pull/192/files#diff-6f29eb799be1b575316c0187d69a38fce3c63e27e5a22eb180b338ee177e9cae) (called `templates`).
+The first thing you’ll want to do is to examine the changes to the [source string folder](https://github.com/mozilla-l10n/firefoxios-l10n/pull/192/files#diff-6f29eb799be1b575316c0187d69a38fce3c63e27e5a22eb180b338ee177e9cae) (called `templates`).
 
 ### Acceptable changes
 
@@ -46,7 +46,7 @@ Changes to comments (`<note>`) are irrelevant in terms of string updates, so the
 
 ### Potentially problematic changes
 
-Then you start scrolling down, checking if the new strings are clear: the first one you find is `CreditCard.DisplayCard.ExpiresLabel.v115`.
+Then you start scrolling down, confirming if the new strings are clear: the first one you find is `CreditCard.DisplayCard.ExpiresLabel.v115`.
 
 Things to look out for:
 
