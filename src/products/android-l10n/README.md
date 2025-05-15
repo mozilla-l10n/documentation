@@ -3,5 +3,5 @@
 Some documentation specific for common tasks regarding android-l10n and l10n:
 * [Adding projects](adding_projects.md).
 * [Updating locales](updating_locales.md).
-* [Reviewing strings](review_android_strings.md).
+* [Reviewing strings](reviewing_strings.md).
 * [Removing projects](removing_projects.md).

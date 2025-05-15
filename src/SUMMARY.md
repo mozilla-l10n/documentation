@@ -7,7 +7,7 @@
 * [Android-l10n](products/android-l10n/README.md)
     * [Adding projects](products/android-l10n/adding_projects.md).
     * [Updating locales](products/android-l10n/updating_locales.md).
-    * [Reviewing new strings](products/android-l10n/review_android_strings.md).
+    * [Reviewing new strings](products/android-l10n/reviewing_strings.md).
     * [Removing projects](products/android-l10n/removing_projects.md).
 * [Firefox Desktop](products/firefox_desktop/README.md)
     * [Add to Pontoon](products/firefox_desktop/adding_pontoon.md).
@@ -26,8 +26,9 @@
     * [Best practices for developers](localization/dev_best_practices.md).
     * [Globalization best practices for product managers](localization/globalization_best_practices.md).
 * [iOS Products](products/iOS_products/README.md)
+    * [Adding projects](products/iOS_products/adding_projects.md).
     * [Updating locales](products/iOS_products/updating_locales.md)
-    * [Reviewing new strings](products/iOS_products/review_iOSstrings.md).
+    * [Reviewing new strings](products/iOS_products/reviewing_strings.md).
 * [Other Projects](products/other/README.md)
 
 ## Tools
