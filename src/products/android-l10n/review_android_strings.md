@@ -52,7 +52,7 @@ If `tools:ignore="UnusedResources"`is added to an existing string, check that th
 
 ### GitHub
 
-Once the patch lands in `mozilla-central`, a GitHub workflow is used to extract these source strings from [`gecko-dev`](https://github.com/mozilla/gecko-dev), and open pull requests in the [android-l10n](https://github.com/mozilla-l10n/android-l10n) repository (a group reviewer, called `l10n-mobile`, is automatically flagged for review). These pull requests are tagged as `l10n-bot`.
+Once the patch lands in `mozilla-central`, a GitHub workflow is used to extract these source strings from [`mozilla-firefox/firefox`](https://github.com/mozilla-firefox/firefox), and open pull requests in the [android-l10n](https://github.com/mozilla-l10n/android-l10n) repository (a group reviewer, called `l10n-mobile`, is automatically flagged for review). These pull requests are tagged as `l10n-bot`.
 
 Note that, although you previously reviewed the strings in Phabricator, it’s still a good idea to take a final look at the content. A linter also runs via [GitHub workflow](https://github.com/mozilla-l10n/android-l10n/blob/main/.github/workflows/reference_linter.yaml) to flag common errors. If the new string contains exceptions like `tools:ignore="BrandUsage"`, automation will update the [linter configuration](https://github.com/mozilla-l10n/android-l10n/blob/main/.github/scripts/linter_config.json) accordingly. If automation fails to import exceptions from the XML files, you can manually add an exception to the linter configuration, including the string ID displayed in the error log.
 
