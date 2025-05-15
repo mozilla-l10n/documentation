@@ -28,7 +28,7 @@
 * [iOS Products](products/iOS_products/README.md)
     * [Adding projects](products/iOS_products/adding_projects.md).
     * [Updating locales](products/iOS_products/updating_locales.md)
-    * [Reviewing new strings](products/iOS_products/review_iOSstrings.md).
+    * [Reviewing new strings](products/iOS_products/reviewing_strings.md).
 * [Other Projects](products/other/README.md)
 
 ## Tools
