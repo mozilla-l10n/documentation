@@ -165,4 +165,7 @@ There’s no easy way to see this information in Pontoon. If all the strings are
 
 Pontoon doesn’t allow to see all translations for a specific string, but you can use [Transvision](https://transvision.mozfr.org/) for it:
 * Search for the string (by ID or text), making sure that `Firefox` is selected as repository.
+* If you‘re searching for an ID, select `Entities` (or `Strings & Entities`) from the `Search in` dropdown.
 * In the results, click on the green `all locales` tag close a string to see all available translations. Results are also available via API (linked at the bottom of the page).
+
+If the column for the target locale shows `Warning: Missing string` in red font, it means that there is no translation available yet for the target locale you requested.
