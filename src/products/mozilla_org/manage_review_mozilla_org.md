@@ -11,7 +11,6 @@ Mozilla.org uses the [Fluent](https://projectfluent.org/) localization system. T
 The localization infrastructure relies on multiple configuration files. Changes to these files must be done in the [Bedrock l10n](https://github.com/mozilla/bedrock/tree/main/l10n) folder, as updates will be automatically pushed to the [www-l10n repository](https://github.com/mozilla-l10n/www-l10n), overwriting any local change.
 * [configs/pontoon.toml](https://github.com/mozilla/bedrock/blob/main/l10n/configs/pontoon.toml): Specifies locales with localization enabled in Pontoon, identifies the files or sets of files available for translation, and designates files limited to specific locales.
 * [configs/vendor.toml](https://github.com/mozilla/bedrock/blob/main/l10n/configs/vendor.toml): Lists the locales currently supported by an external Language Service Provider (LSP) and enabled on the Smartling platform.
-* [configs/smartling-config.json](https://github.com/mozilla-l10n/www-l10n/blob/master/configs/smartling-config.json): This file is used by Smartling for defining the localizable paths and locales. For more details, check out this [documentation](https://help.smartling.com/hc/en-us/articles/1260801649930-Customize-The-Repo-Connector-Configuration).
 * [special-templates.toml](https://github.com/mozilla/bedrock/blob/main/l10n/configs/special-templates.toml): Lists files excluded from both Pontoon and Smartling, and reserved for Mozilla staff.
 
 Within the [Bedrock l10n](https://github.com/mozilla/bedrock/tree/main/l10n) folder, you will also see the following files:
