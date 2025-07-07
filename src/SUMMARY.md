@@ -9,6 +9,7 @@
     * [Updating locales](products/android-l10n/updating_locales.md).
     * [Reviewing new strings](products/android-l10n/reviewing_strings.md).
     * [Removing projects](products/android-l10n/removing_projects.md).
+    * [L10N FAQs](products/android-l10n/mobile_l10n_faqs.md).
 * [Firefox Desktop](products/firefox_desktop/README.md)
     * [Add to Pontoon](products/firefox_desktop/adding_pontoon.md).
     * [Nightly builds](products/firefox_desktop/adding_nightly.md).
