@@ -90,7 +90,7 @@ Localized files are available [here](https://github.com/mozilla-l10n/firefoxios-
 
 #### Focus for iOS
 
-Localized [files](https://github.com/mozilla-l10n/focusios-l10n). Each locale will have its own folder with one XLIFF file for the entire app.
+Localized files are available [here](https://github.com/mozilla-l10n/focusios-l10n). Each locale will have its own folder with one XLIFF file for the entire app.
 
 ### Should I remove obsolete or unused strings?
 
