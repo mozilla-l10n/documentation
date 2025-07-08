@@ -2,7 +2,7 @@
 
 This document includes a series of frequently asked questions about Firefox mobile localization across platforms. While it is primarily intended for developers, it also provides valuable context for product managers and engineering program managers.
 
-If you don't see your question addressed here, check also the main [Firefox L10n FAQ](../firefox_desktop/firefox_l10n_faqs.md) or look into our Developer best practices [documentation](https://mozilla-l10n.github.io/documentation/localization/dev_best_practices.html). You’re also welcome to file an [issue](https://github.com/mozilla-l10n/documentation/issues) so we can add your question to this FAQ.
+If you don't see your question addressed here, check also the main [Firefox L10n FAQ](../firefox_desktop/firefox_l10n_faqs.md) or look into our Developer best practices [documentation](../../localization/dev_best_practices.md). You’re also welcome to file an [issue](https://github.com/mozilla-l10n/documentation/issues) so we can add your question to this FAQ.
 
 ## General
 
@@ -72,7 +72,7 @@ Make sure to check the [release schedule](https://whattrainisitnow.com/) to see 
 
 ### Where can I find guidelines for developers?
 
-This information can be found [here]((https://mozilla-l10n.github.io/documentation/localization/dev_best_practices.html)).
+This information can be found [here](../../localization/dev_best_practices.md).
 
 ### Where can I find the localized strings?
 
@@ -122,7 +122,7 @@ One reason to use hardcoded brand names is when you always want the text to ment
 
 ### Plural support
 
-We do not handle [proper plural support](https://mozilla-l10n.github.io/documentation/localization/dev_best_practices.html#use-proper-plural-forms) for mobile yet. For this reason, you should try to use plural neuter expressions, where there isn’t a noun associated to the number: for example, instead of `%S files were copied`, use `Copied files: %S`.
+We do not handle [proper plural support](../../localization/dev_best_practices.md#use-proper-plural-forms) for mobile yet. For this reason, you should try to use plural neuter expressions, where there isn’t a noun associated to the number: for example, instead of `%S files were copied`, use `Copied files: %S`.
 
 If in doubt reach out to the current localization mobile ePM or on the Slack #l10n channel.
 
@@ -132,11 +132,12 @@ Localizers typically see one string at a time, without access to the full source
 
 Notes targeting developers can be unclear or overly technical — rather than giving context which would be most helpful for translation. To support accurate and meaningful translations, it’s essential to include clear, concise, and context-rich comments specifically written for localizers.
 
-These comments are generally referred to as *localization notes*. Please read more about this in our [best practices guide](https://mozilla-l10n.github.io/documentation/localization/dev_best_practices.html#add-localization-notes%20).
+These comments are generally referred to as *localization notes*. Please read more about this in our [best practices guide](../../localization/dev_best_practices.md#add-localization-notes).
 
 ## Translation completion and community
 
 ### Is my feature going to be localized in language X before launch?
+
 More information [here](../firefox_desktop/firefox_l10n_faqs.md#is-my-feature-going-to-be-localized-in-language-x-before-launch).
 
 ### I see pending suggestions in Pontoon, how can I get them approved?
