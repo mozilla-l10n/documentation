@@ -86,7 +86,7 @@ We also have some locale codes different for some folders: Hebrew is found under
 
 #### Firefox for iOS
 
-Localized [files](https://github.com/mozilla-l10n/firefoxios-l10n). Each locale will have its own folder with one XLIFF file for the entire app.
+Localized files are available [here](https://github.com/mozilla-l10n/firefoxios-l10n). Each locale will have its own folder with one XLIFF file for the entire app.
 
 #### Focus for iOS
 
