@@ -78,7 +78,7 @@ We also have locales that have different codes between Pontoon and the repositor
 
 #### Firefox for Android (comprised of Fenix and Android-Components) and Focus for Android
 
-All localized files for Fenix, Android-Components and Focus live in the `mozilla-l10/android-l10n` repository, under [this folder](https://github.com/mozilla-l10n/android-l10n/tree/main/mozilla-mobile). As an example, [this](https://github.com/mozilla-l10n/android-l10n/tree/main/mozilla-mobile/focus-android/app/src/main/res) is where the French `strings.xml` translations for Focus would be found (under [values-fr](https://github.com/mozilla-l10n/android-l10n/tree/main/mozilla-mobile/focus-android/app/src/main/res/values-fr)).
+All localized files for Fenix, Android-Components and Focus live in the `mozilla-l10/android-l10n` repository, under [this folder](https://github.com/mozilla-l10n/android-l10n/tree/main/mozilla-mobile). As an example, the French `strings.xml` translations for Focus would be found under [values-fr](https://github.com/mozilla-l10n/android-l10n/tree/main/mozilla-mobile/focus-android/app/src/main/res/values-fr).
 
 The locale folder will be displayed as \`values-{locale code}\`, and you will have an extra "r" for locales with hyphens (for example es-AR in [values-es-rAR](https://github.com/mozilla-l10n/android-l10n/tree/main/mozilla-mobile/fenix/app/src/main/res/values-es-rAR)).
 
