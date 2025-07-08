@@ -74,7 +74,7 @@ Make sure to check the [release schedule](https://whattrainisitnow.com/) to see 
 
 Note that while Firefox for Android and Focus for Android both live under the same `android-l10n` repository, Firefox for iOS and Focus for iOS live under two separate repositories (see below for more details).
 
-We also have locales that have different codes between Pontoon and the repository for Android. For example:
+We also have locales that have different codes between Pontoon and the repository for Android.
 
 #### Firefox for Android (comprised of Fenix and Android-Components) and Focus for Android
 
