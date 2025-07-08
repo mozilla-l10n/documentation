@@ -52,7 +52,7 @@ One more thing to consider is the timing of the uplift. The last week of the Bet
 2. Once that's merged, they run a GitHub action ([Firefox](https://github.com/mozilla-mobile/firefox-ios/actions/workflows/firefox-ios-import-strings.yml), [Focus](https://github.com/mozilla-mobile/focus-ios/actions/workflows/firefox-ios-import-strings.yml)) to import strings toward that specific release branch (see screenshot).
 3. Then once merged, the translations for that string should be part of that beta/release.
 
-![][image1]
+![iOS uplifting](../../assets/images/iOS/uplifting.png)
 
 #### Firefox for Android / Android-Components / Focus for Android
 
