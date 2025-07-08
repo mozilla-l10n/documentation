@@ -82,7 +82,7 @@ All localized files for Fenix, Android-Components and Focus live in the `mozilla
 
 The locale folder will be displayed as \`values-{locale code}\`, and you will have an extra "r" for locales with hyphens (for example es-AR in [values-es-rAR](https://github.com/mozilla-l10n/android-l10n/tree/main/mozilla-mobile/fenix/app/src/main/res/values-es-rAR)).
 
-We also have some locale codes different for some folders: Hebrew is found under [values-iw](https://github.com/mozilla-l10n/android-l10n/tree/main/mozilla-mobile/fenix/app/src/main/res/values-iw) and Indonesian falls under [values-id](https://github.com/mozilla-l10n/android-l10n/tree/main/mozilla-mobile/fenix/app/src/main/res/values-in).
+We also have some locale codes different for some folders: Hebrew is found under [values-iw](https://github.com/mozilla-l10n/android-l10n/tree/main/mozilla-mobile/fenix/app/src/main/res/values-iw) and Indonesian falls under [values-in](https://github.com/mozilla-l10n/android-l10n/tree/main/mozilla-mobile/fenix/app/src/main/res/values-in).
 
 #### Firefox for iOS
 
