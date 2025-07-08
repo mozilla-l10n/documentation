@@ -103,7 +103,7 @@ Note that for both products, you must mark a string as "unused" rather than dele
 
 ### When should “Mozilla” or “Firefox” brand be hardcoded?
 
-We don’t usually hardcode brand names, but this can happen in some edge cases.If in doubt, reach out to the current localization mobile ePM or on the Slack #l10n channel.
+We don’t usually hardcode brand names, but this can happen in some edge cases. If in doubt, reach out to the current localization mobile ePM or on the Slack #l10n channel.
 
 Hardcoding brand names in strings can cause problems in case the brand name changes. Instead, developers should use placeholders and replace them at run-time with the expected brand name. This makes it easier to update them in one place and keeps string files cleaner and more flexible for translation workflows. Among other things, it allows forks and repackaged versions of Firefox to use their own branding without editing hundreds of strings, and losing existing translations.
 
