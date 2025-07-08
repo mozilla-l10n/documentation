@@ -8,7 +8,7 @@ If you don't see your question addressed here, check also the main [Firefox L10n
 
 ### Who can I contact if I have more questions?
 
-A Program Manager (Localization ePM) is assigned to any Mozilla project that is localized through community. You can find this information in [Pontoon](https://pontoon.mozilla.org/projects/firefox/) for any project in the header section, and more information about the localization team is available in the Confluence page dedicated to [Localization](https://mozilla-hub.atlassian.net/wiki/spaces/FDPDT/pages/11045331/Localization+l10n+and+Translation) (available to Mozilla staff only).
+A Program Manager (Localization ePM) is assigned to any Mozilla project that is localized through community. You can find this information in [Pontoon](https://pontoon.mozilla.org/projects/) under any project in the header section, and more information about the localization team is available in the Confluence page dedicated to [Localization](https://mozilla-hub.atlassian.net/wiki/spaces/FDPDT/pages/11045331/Localization+l10n+and+Translation) (available to Mozilla staff only).
 
 ### Should I enable my feature only for English, or ship it in English for everyone?
 
