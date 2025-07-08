@@ -10,7 +10,9 @@ If you don't see your question addressed here, check also the main [Firefox L10n
 
 A Program Manager (Localization ePM) is assigned to any Mozilla project that is localized through community. You can find this information in [Pontoon](https://pontoon.mozilla.org/projects/firefox/) for any project in the header section, and more information about the localization team is available in the Confluence page dedicated to [Localization](https://mozilla-hub.atlassian.net/wiki/spaces/FDPDT/pages/11045331/Localization+l10n+and+Translation) (available to Mozilla staff only).
 
-### [Should I enable my feature only for English, or ship it in English for everyone?](../firefox_desktop/firefox_l10n_faqs.md#should-i-enable-my-feature-only-for-english-or-ship-it-in-english-for-everyone)
+### Should I enable my feature only for English, or ship it in English for everyone?
+
+More information about this can be found [here](../firefox_desktop/firefox_l10n_faqs.md#should-i-enable-my-feature-only-for-english-or-ship-it-in-english-for-everyone).
 
 ## Builds and distribution
 
@@ -68,7 +70,9 @@ Make sure to check the [release schedule](https://whattrainisitnow.com/) to see 
 
 ## Development
 
-### [Where can I find guidelines for developers?](https://mozilla-l10n.github.io/documentation/localization/dev_best_practices.html)
+### Where can I find guidelines for developers?
+
+This information can be found [here]((https://mozilla-l10n.github.io/documentation/localization/dev_best_practices.html)).
 
 ### Where can I find the localized strings?
 
@@ -132,8 +136,9 @@ These comments are generally referred to as *localization notes*. Please read mo
 
 ## Translation completion and community
 
-### [Is my feature going to be localized in language X before launch?](../firefox_desktop/firefox_l10n_faqs.md#is-my-feature-going-to-be-localized-in-language-x-before-launch)
+### Is my feature going to be localized in language X before launch?
+More information [here](../firefox_desktop/firefox_l10n_faqs.md#is-my-feature-going-to-be-localized-in-language-x-before-launch).
 
 ### I see pending suggestions in Pontoon, how can I get them approved?
 
-Reach out to the current localization mobile ePM or on the Slack #l10n channel.
+Please read here for [more information](../firefox_desktop/firefox_l10n_faqs.md). You may also reach out to the current localization mobile ePM or on the Slack #l10n channel.

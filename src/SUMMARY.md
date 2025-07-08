@@ -30,7 +30,7 @@
     * [Updating locales](products/iOS_products/updating_locales.md).
     * [Reviewing new strings](products/iOS_products/reviewing_strings.md).
 * [Other Projects](products/other/README.md)
-* [Mobile]
+* [Mobile](products/mobile/README.md)
     * [Mobile L10N FAQs](products/mobile/mobile_l10n_faqs.md).
 
 ## Tools
