@@ -9,7 +9,6 @@
     * [Updating locales](products/android-l10n/updating_locales.md).
     * [Reviewing new strings](products/android-l10n/reviewing_strings.md).
     * [Removing projects](products/android-l10n/removing_projects.md).
-    * [L10N FAQs](products/android-l10n/mobile_l10n_faqs.md).
 * [Firefox Desktop](products/firefox_desktop/README.md)
     * [Add to Pontoon](products/firefox_desktop/adding_pontoon.md).
     * [Nightly builds](products/firefox_desktop/adding_nightly.md).
@@ -28,9 +27,11 @@
     * [Globalization best practices for product managers](localization/globalization_best_practices.md).
 * [iOS Products](products/iOS_products/README.md)
     * [Adding projects](products/iOS_products/adding_projects.md).
-    * [Updating locales](products/iOS_products/updating_locales.md)
+    * [Updating locales](products/iOS_products/updating_locales.md).
     * [Reviewing new strings](products/iOS_products/reviewing_strings.md).
 * [Other Projects](products/other/README.md)
+* [Mobile]
+    * [Mobile L10N FAQs](products/mobile/mobile_l10n_faqs.md).
 
 ## Tools
 
