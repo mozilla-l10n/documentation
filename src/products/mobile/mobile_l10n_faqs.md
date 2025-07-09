@@ -117,7 +117,7 @@ One reason to use hardcoded brand names is when you always want the text to ment
 
 ### When do I have to use a different ID when updating existing strings?
 
-[This document](https://mozilla-l10n.github.io/documentation/localization/making_string_changes.html#general-guidelines) explains in details why and when it is necessary to use new string IDs when updating existing strings. As a general guideline:
+[This document](../../localization/making_string_changes.md#general-guidelines) explains in details why and when it is necessary to use new string IDs when updating existing strings. As a general guideline:
 
 * If you are changing a string such that its **meaning has changed**, you must update the string ID. That will force retranslation in Pontoon across all locales.
 * If your changes are relevant only for English — for example, to correct a typographical error or to make capitalization consistent — then there is generally no need to update the string ID.
