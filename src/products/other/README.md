@@ -33,22 +33,13 @@ For this project, there are several elements of automation running (linter, [str
 
 ### Automation: Strings export
 
-Strings are stored in the original repository either directly in the code or in [YAML format](https://github.com/mozilla-mobile/mozilla-vpn-client/blob/main/translations/strings.yaml).
+Strings are stored in the original repository either directly in the code or in [YAML format](https://github.com/mozilla-mobile/mozilla-vpn-client/blob/main/src/translations/strings.yaml).
 
 [Automation](https://github.com/mozilla-l10n/mozilla-vpn-client-l10n/blob/main/.github/workflows/update.yaml) exports strings from the `main` branch and all `releases` branches into a single XLIFF file, and creates a pull request every workday at 7 AM UTC updating all XLIFF files in the repository. The PM in charge is automatically set as reviewer via [CODEOWNER](https://github.com/mozilla-l10n/mozilla-vpn-client-l10n/blob/main/.github/CODEOWNERS).
 
 ### Automation: Linting
 
-There is automation performing [basic linting](https://github.com/mozilla-l10n/mozilla-vpn-client-l10n/blob/main/.github/workflows/update.yaml) on the localized XLIFF files. Automation runs once a day and checks for:
-* Missing placeables (variable references like `%1`).
-* Use of `...` instead of `…`.
-* Pilcrow characters `¶`.
-
-The system supports [exceptions](https://github.com/mozilla-l10n/mozilla-vpn-client-l10n/blob/main/.github/scripts/check_exceptions.json), and the linter status is visible in the repository’s [README](https://github.com/mozilla-l10n/mozilla-vpn-client-l10n/blob/main/README.md)
-
-![Linter status](https://github.com/mozilla-l10n/mozilla-vpn-client-l10n/workflows/L10n%20Linter/badge.svg)
-
-There is also a [linter](https://github.com/mozilla-mobile/mozilla-vpn-client/blob/main/.github/l10n/check_l10n_issues.py) running in the code repository, checking for common mistakes in strings:
+There is a [linter](https://github.com/mozilla-mobile/mozilla-vpn-client/blob/main/.github/l10n/check_l10n_issues.py) running in the code repository, checking for common mistakes in strings:
 * Use of straight quotes `'` or `"` instead of `'` or `“”`.
 * Use of `...` instead of `…`.
 * Lack of comments when the string has placeables.
