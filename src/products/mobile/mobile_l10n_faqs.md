@@ -5,36 +5,6 @@ This document includes a series of frequently asked questions about Firefox mobi
 If you don't see your question addressed here, check also the main [Firefox L10n FAQ](../firefox_desktop/firefox_l10n_faqs.md) or look into our Developer best practices [documentation](../../localization/dev_best_practices.md). You’re also welcome to file an [issue](https://github.com/mozilla-l10n/documentation/issues) so we can add your question to this FAQ.
 
 <!-- toc -->
-* [Firefox Mobile L10N FAQs](#firefox-mobile-l10n-faqs)
-  * [General](#general)
-    * [Who can I contact if I have more questions?](#who-can-i-contact-if-i-have-more-questions)
-    * [Should I enable my feature only for English, or ship it in English for everyone?](#should-i-enable-my-feature-only-for-english-or-ship-it-in-english-for-everyone)
-  * [Builds and distribution](#builds-and-distribution)
-    * [How can users get localized builds?](#how-can-users-get-localized-builds)
-  * [Schedule and release cycle](#schedule-and-release-cycle)
-    * [I landed strings in my mobile source repository, when are they going to be localized?](#i-landed-strings-in-my-mobile-source-repository-when-are-they-going-to-be-localized)
-      * [Android](#android)
-      * [iOS](#ios)
-    * [Can I uplift a patch to Beta or Release?](#can-i-uplift-a-patch-to-beta-or-release)
-      * [Firefox for iOS / Focus for iOS](#firefox-for-ios--focus-for-ios)
-      * [Firefox for Android / Android-Components / Focus for Android](#firefox-for-android--android-components--focus-for-android)
-    * [I need to add new strings for version X: when is the deadline?](#i-need-to-add-new-strings-for-version-x-when-is-the-deadline)
-  * [Development](#development)
-    * [Where can I find guidelines for developers?](#where-can-i-find-guidelines-for-developers)
-    * [Where can I find the localized strings?](#where-can-i-find-the-localized-strings)
-      * [Firefox for Android (comprised of Fenix and Android-Components) and Focus for Android](#firefox-for-android-comprised-of-fenix-and-android-components-and-focus-for-android)
-      * [Firefox for iOS](#firefox-for-ios)
-      * [Focus for iOS](#focus-for-ios)
-    * [Should I remove obsolete or unused strings?](#should-i-remove-obsolete-or-unused-strings)
-    * [When should “Mozilla” or “Firefox” brand be hardcoded?](#when-should-mozilla-or-firefox-brand-be-hardcoded)
-    * [When do I have to use a different ID when updating existing strings?](#when-do-i-have-to-use-a-different-id-when-updating-existing-strings)
-    * [Plural support](#plural-support)
-    * [Use localization notes and avoid using comments as development notes](#use-localization-notes-and-avoid-using-comments-as-development-notes)
-  * [Translation completion and community](#translation-completion-and-community)
-    * [Is my feature going to be localized in language X before launch?](#is-my-feature-going-to-be-localized-in-language-x-before-launch)
-    * [I see pending suggestions in Pontoon, how can I get them approved?](#i-see-pending-suggestions-in-pontoon-how-can-i-get-them-approved)
-
-<!-- tocstop -->
 
 ## General
 
