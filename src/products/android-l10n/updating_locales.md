@@ -44,6 +44,6 @@ Note that:
 
 Once the patch has landed, the locale has to be added — or removed — in Pontoon as well. The steps to follow can be found in the existing [Pontoon documentation](https://github.com/mozilla-l10n/documentation/blob/main/src/tools/pontoon/adding_new_locale.md).
 
-One thing to note is that, once you merge the pull request adding or removing locales in the localization repository, automation will send that updated list over to the `mozilla-central` Android [code repository](https://hg.mozilla.org/mozilla-central/file/tip/mobile/android/).
+One thing to note is that, once you merge the pull request adding or removing locales in the localization repository, automation will send that updated list over to the `mozilla-firefox` Android [code repository](https://github.com/mozilla-firefox/firefox/tree/main/mobile/android).
 
-You can check the status of l10n imports by using this filtered [search](https://hg.mozilla.org/mozilla-central/log?rev=Import+translations+from+android-l10n).
+You can check the status of l10n imports by using this filtered [search](https://github.com/search?q=repo%3Amozilla-firefox%2Ffirefox+Import%2Btranslations%2Bfrom%2Bandroid-l10n&type=commits&s=committer-date&o=desc).

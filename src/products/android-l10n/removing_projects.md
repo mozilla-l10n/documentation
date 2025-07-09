@@ -4,7 +4,7 @@ Follow the steps below to safely remove a project from [android-l10n](https://gi
 
 ## Remove import automation
 
-TaskCluster is used to import translations to [`autoland`](https://hg.mozilla.org/integration/autoland/). Sync with release engineering to make sure that the automation to import strings for this project has been removed.
+TaskCluster is used to import translations to the [`autoland`](https://github.com/mozilla-firefox/firefox/tree/autoland) branch in `mozilla-firefox`. Sync with release engineering to make sure that the automation to import strings for this project has been removed.
 
 ## Disable the project in Pontoon
 
