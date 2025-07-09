@@ -4,9 +4,6 @@
 
 Access Django’s admin interface at `https://pontoon.mozilla.org/a/` (note that this is not the usual admin interface), then click `Locales`. In the next page search for the locale you want to add (safer to search for the locale code).
 
-Before moving forward:
-* If the locale is going to work on Firefox, it requires an [official Mercurial repository](https://hg.mozilla.org/l10n-central/).
-
 ## Add the new locale
 
 If the locale you need is not available, click the **ADD LOCALE+** button in the top right corner. For this example, let’s consider that the task is to add Amharic (am).

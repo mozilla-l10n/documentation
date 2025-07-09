@@ -47,10 +47,6 @@
 
 ## Misc
 
-* [Mercurial](tools/mercurial/README.md)
-    * [Set up the environment](tools/mercurial/setting_mercurial_environment.md).
-    * [Create a patch](tools/mercurial/creating_mercurial_patch.md).
-    * [Useful Mercurial commands](tools/mercurial/useful_mercurial_commands.md).
 * [Other docs](misc/README.md)
     * [New l10n repository](misc/creating_new_repository.md).
     * [Documentation styleguide](misc/documentation_styleguide.md).

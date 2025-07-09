@@ -44,7 +44,7 @@ neweventbtn.accesskey = A
 neweventbtn.tooltip = Add a new event
 ```
 
-If you’re adding new strings, check that you’re not duplicating an existing ID. Depending on the parser logic, one of these two translations will be ignored. For some products, e.g. Firefox in `mozilla-central`, this check might be performed by automation.
+If you’re adding new strings, check that you’re not duplicating an existing ID. Depending on the parser logic, one of these two translations will be ignored. For some products, e.g. Firefox in `mozilla-firefox`, this check might be performed by automation.
 
 ### Add localization notes
 
@@ -137,7 +137,7 @@ this container is a toolbar. This avoids double-speaking. -->
 
 Try not to land temporary strings. If you already know that your strings are temporary, they shouldn’t be exposed to the localization process. This would waste everybody’s time and create unnecessary frustration: localizers have to translate strings that are destined to change, developers will need to [use new IDs](making_string_changes.md) later to update them.
 
-In case of Fluent and Firefox, it’s possible to save these strings in a file that is not exposed to localization ([example](https://hg.mozilla.org/mozilla-central/rev/7b4db2f1bf8f)). This has two benefits:
+In case of Fluent and Firefox, it’s possible to save these strings in a file that is not exposed to localization ([example](https://github.com/mozilla-firefox/firefox/commit/4bf85ebf94146ed7eef747fa53fce84c74344eb3#diff-6694825153bca0370bd623d0e9d9aef75764113296f05c493927d5fd422cd4af)). This has two benefits:
 * It won’t be necessary to change the code to make it localizable, e.g. to remove hard-coded strings.
 * When the content is ready, the file can simply be moved and exposed to the localization toolchain.
 

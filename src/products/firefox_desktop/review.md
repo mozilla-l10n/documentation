@@ -4,14 +4,14 @@
 
 ## Review landed strings
 
-All versions of Firefox desktop ship by localizing a single repository containing the reference English strings, called [firefox-l10n-source](https://github.com/mozilla-l10n/firefox-l10n-source). It is generated from strings landing in the Firefox source code repository [gecko-dev](https://github.com/mozilla/gecko-dev) (a mirror of the Mercurial repository `mozilla-central` which will eventually be phased out). Automation in `firefox-l10n-source` extracts strings from each of the version specific branches in `gecko-dev` (e.g. master for Nightly, beta for Beta, release for Release, etc.).
+All versions of Firefox desktop ship by localizing a single repository containing the reference English strings, called [firefox-l10n-source](https://github.com/mozilla-l10n/firefox-l10n-source). It is generated from strings landing in the Firefox source code repository [mozilla-firefox](https://github.com/mozilla-firefox/firefox). Automation in `firefox-l10n-source` extracts strings from each of the version specific branches in `mozilla-firefox` (e.g. main for Nightly, beta for Beta, release for Release, etc.).
 
 There are two branches in `firefox-l10n-source`: `main` which contains all strings currently exposed for localization, and `update` which acts as a string quarantine, used as a buffer to avoid exposing poor strings to the larger audience of localizers. Strings are regularly merged from `update` into `main` after a review by the Localization Team; newly added and removed strings in `main` are synced with our localization tool Pontoon.
 
 Localized strings for all channels can be found in [firefox-l10n](https://github.com/mozilla-l10n/firefox-l10n), with a single subfolder for each locale.
 
 The review process consists of three parts:
-* Review strings landing in `mozilla-central`.
+* Review strings landing in repository (using legacy `mozilla-central`).
 * Review strings extracted into the `update` branch of `firefox-l10n-source`. The [automation](https://github.com/mozilla-l10n/firefox-l10n-source/blob/main/.github/workflows/update.yml) runs twice a day in the repository with any changes added to a pull request against the `main` repository.
 * Review and merge strings in the pull request to `main`, and start the localization process.
 
@@ -21,11 +21,11 @@ Things to look out for during the review process:
 * Duplicated strings.
 * [Localization issues](https://mozilla-l10n.github.io/documentation/localization/dev_best_practices.html), like misused plural forms, unclear comments, etc.
 
-### Review strings landing in mozilla-central
+### Review strings landing in repository (using legacy mozilla-central)
 
-You can get the list of changesets touching localized strings in the last 2 days from [mozilla-central](https://hg.mozilla.org/mozilla-central/log?rev=keyword("locales/en-US")+and+pushdate("-2")). Adjust the `pushdate` part if you want to see more or less days.
+The most effective way to get the list of changes touching localized strings within the last 2 days is from the legacy mercurial repository [mozilla-central](https://hg.mozilla.org/mozilla-central/log?rev=keyword("locales/en-US")+and+pushdate("-2")). You can adjust the `pushdate` part if you want to see more or less days.
 
-Note: this review includes changes landing in `mozilla-central`, but those changes may not have landed yet in `gecko-dev`, and consequently in `firefox-l10n-source`. Once changes have completed the landing process, those strings will also be available to review in the next step - [Review strings in update branch of firefox-l10n-source](#review-strings-in-update-branch-of-firefox-l10n-source).
+Note: this review includes changes landing in `mozilla-central`, but those changes may not have landed yet in `main` of `mozilla-firefox`, and consequently in `firefox-l10n-source`. Once changes have completed the landing process, those strings will also be available to review in the next step - [Review strings in update branch of firefox-l10n-source](#review-strings-in-update-branch-of-firefox-l10n-source).
 
 There are some unrelated changesets, like en-US dictionary updates, but the majority of landings are relevant and need to be checked for localization issues. One exception to this are strings that are purposely not meant to be exposed to localizers, typically called "preview" strings. While these strings are often saved to files within the `browser/locales-preview` directory, this includes any localization file not saved in a `locales/en-US` path.
 
@@ -90,10 +90,10 @@ keys            426
 
 Check the results for duplicated strings and errors. For example, if a new error shows up for a missing variable, it’s likely that a string changed without a new ID and introduced new variables.
 
-You could also run `compare-locales` against the `gecko-dev` (git) or `mozilla-unified` (hg) repository. However, the output is going to contain a lot of noise, since it includes all strings that are obsolete for `mozilla-central`, but are still needed for other branches. If you’re interested in only seeing missing strings, i.e. strings that need to be added to the l10n repository, you can `grep` the results by piping the output to `egrep '^\s*\+'`.
+You could also run `compare-locales` against the `main` branch of `mozilla-firefox`. However, the output is going to contain a lot of noise, since it includes all strings that are obsolete for `mozilla-firefox`, but are still needed for other branches. If you’re interested in only seeing missing strings, i.e. strings that need to be added to the l10n repository, you can `grep` the results by piping the output to `egrep '^\s*\+'`.
 
 ```
-$ compare-locales ~/mozilla-unified/browser/locales/l10n.toml ~/l10n it | egrep '^\s*\+'
+$ compare-locales ~/firefox/browser/locales/l10n.toml ~/l10n it | egrep '^\s*\+'
 ```
 
 ### Merge reviewed strings to main branch of firefox-l10n-source

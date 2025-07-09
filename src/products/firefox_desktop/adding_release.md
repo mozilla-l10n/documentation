@@ -46,12 +46,12 @@ This is an [example of a bug](https://bugzilla.mozilla.org/show_bug.cgi?id=18077
 
 ## Add locale to build configuration
 
-First of all make sure that your environment is [correctly set up](../../tools/mercurial/setting_mercurial_environment.md), update your local mozilla-unified clone and make sure it’s on the `central` bookmark:
+First of all make sure that your environment is [correctly set up](https://firefox-source-docs.mozilla.org/setup/index.html#getting-set-up-to-work-on-the-firefox-codebase), update your local `mozilla-firefox` clone and make sure it’s on the `main` bookmark:
 
 ```BASH
-$ cd ~/mozilla/mercurial/mozilla-unified
-$ hg pull -u
-$ hg up central
+$ cd ~/firefox
+$ git checkout main
+$ git pull
 ```
 
 This is an [example of a recent bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1716987) used to track the build changes.
@@ -67,10 +67,18 @@ And add the new locale to the list. With Visual Studio Code, you can open the *C
 After you’ve finished editing the file, check the status of the repository, and the diff. Let’s consider for example the task of adding Urdu (ur).
 
 ```BASH
-$ hg status
-M browser/locales/shipped-locales
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
 
-$ hg diff
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   browser/locales/shipped-locales
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+$ git diff
 --- a/browser/locales/shipped-locales
 +++ b/browser/locales/shipped-locales
 @@ -83,14 +84,13 @@ son
@@ -85,7 +93,13 @@ $ hg diff
  zh-CN
 ```
 
-`M` in `hg status` indicates that the file has been modified, `+` in `hg diff` that the line has been added. Follow the instructions available in [this document](../../tools/mercurial/creating_mercurial_patch.md) to create a patch, submit it for review, and land it.
+`+` in `git diff` indicates that the line has been added. Add all the changes using the command below:
+
+```BASH
+$ git add .
+```
+
+Then, follow the instructions available in [this document](https://firefox-source-docs.mozilla.org/contributing/contribution_quickref.html#to-write-a-patch) to create a patch, submit it for review, and land it.
 
 You also need to set the `relnote-firefox` flag to `?` in the bug, the suggested comment is `Suggested for release notes: "Locale added: LANGUAGE_NAME (LOCALE_CODE)"`.
 

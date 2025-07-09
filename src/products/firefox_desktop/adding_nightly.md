@@ -23,12 +23,12 @@ Before enabling the build, it’s a good idea to perform some basic checks:
 
 ## Add new locale to build configuration
 
-First of all make sure that your environment is [correctly set up](../../tools/mercurial/setting_mercurial_environment.md), update your local mozilla-unified clone and make sure it’s on the `central` bookmark:
+First of all make sure that your environment is [correctly set up](https://firefox-source-docs.mozilla.org/setup/index.html#getting-set-up-to-work-on-the-firefox-codebase), update your local `mozilla-firefox` clone and make sure it’s on the `main` branch:
 
 ```BASH
-$ cd ~/mozilla/mercurial/mozilla-unified
-$ hg pull -u
-$ hg up central
+$ cd ~/firefox
+$ git checkout main
+$ git pull
 ```
 
 File a bug using [this template](https://mzl.la/3QcddVk), replacing the locale name and code placeholders, and update the link in the GitHub tracking issue.
@@ -41,7 +41,13 @@ $ code browser/locales/all-locales
 
 And add the new locale to the list. With Visual Studio Code, you can open the *Command Palette* and select *Sort Line Ascending* to make sure that the list is in **alphabetical order**.
 
-The second file to modify is `browser/locales/l10n.toml`. This is the beginning of the file:
+The second file to modify is `browser/locales/l10n.toml`.
+
+```BASH
+$ code browser/locales/l10n.toml
+```
+
+This is the beginning of the file:
 
 ```
 # This Source Code Form is subject to the terms of the Mozilla Public
@@ -64,11 +70,19 @@ Identify the `locales` section, and add the new locale code between double quote
 After you’ve finished editing the files, check the status of the repository, and the diff.
 
 ```BASH
-$ hg status
-M browser/locales/all-locales
-M browser/locales/l10n.toml
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
 
-$ hg diff
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   browser/locales/all-locales
+	modified:   browser/locales/l10n.toml
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+$ git diff
 diff --git a/browser/locales/all-locales b/browser/locales/all-locales
 --- a/browser/locales/all-locales
 +++ b/browser/locales/all-locales
@@ -94,7 +108,13 @@ diff --git a/browser/locales/all-locales b/browser/locales/all-locales
       "lv",
 ```
 
-`M` in `hg status` indicates that the file has been modified, `+` in `hg diff` that the line has been added. Follow the instructions available in [this document](../../tools/mercurial/creating_mercurial_patch.md) to create a patch, submit it for review, and land it.
+`+` in `git diff` that the line has been added. Add all the changes using the command below:
+
+```BASH
+$ git add .
+```
+
+Then, follow the instructions available in [this document](https://firefox-source-docs.mozilla.org/contributing/contribution_quickref.html#to-write-a-patch) to create a patch, submit it for review, and land it.
 
 ## Verify product-details configuration
 
