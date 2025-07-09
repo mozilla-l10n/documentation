@@ -31,7 +31,7 @@
     * [Reviewing new strings](products/iOS_products/reviewing_strings.md).
 * [Other Projects](products/other/README.md)
 * [Mobile](products/mobile/README.md)
-    * [Mobile L10N FAQs](products/mobile/mobile_l10n_faqs.md).
+    * [L10N FAQs](products/mobile/mobile_l10n_faqs.md).
 
 ## Tools
 
