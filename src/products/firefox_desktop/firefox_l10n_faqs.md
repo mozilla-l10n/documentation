@@ -40,9 +40,9 @@ These approaches allow to ship one package and support multiple languages, but t
 
 ## Schedule and release cycle
 
-### I landed strings in mozilla-central, when are they going to be localized?
+### I landed strings in mozilla-firefox, when are they going to be localized?
 
-New string changes are extracted twice a day from `gecko-dev` (the git mirror of mozilla-central) into a repository called `firefox-l10n-source`, a unified repository that includes strings for all shipping versions of Firefox (nightly, beta, release). This repository is used as a buffer to avoid exposing potential issues to all locales working on Firefox.
+New string changes are extracted twice a day from `mozilla-firefox` (the main [Firefox repository](https://github.com/mozilla-firefox/firefox)) into a repository called `firefox-l10n-source`, a unified repository that includes strings for all shipping versions of Firefox (nightly, beta, release). This repository is used as a buffer to avoid exposing potential issues to all locales working on Firefox.
 
 Typically once or twice a week, the quarantined content (in the `update` branch) is pushed to the `main` branch which acts as the official repository, used by [Pontoon](https://pontoon.mozilla.org/projects/firefox/) as source reference. At this point, strings can be localized by the community.
 
@@ -52,15 +52,15 @@ While Nightly is always open for new strings, Beta and Release are string frozen
 
 Uplifts need to be evaluated case by case, but in general they should be avoided in the context of a [4-week release cycle](./build_system.md). Possible alternatives are uplifting ad-hoc patches without string changes, or exposing the feature/change only to English users.
 
-If the uplift request is approved, translations for uplifted strings should also be uplifted if there was enough time for localization. For translations to appear in the build, the `revision` value for all locales in [`l10n-changesets.json`](https://searchfox.org/mozilla-central/source/browser/locales/l10n-changesets.json) must have a commit hash containing the appropriate translations from [`firefox-l10n`](https://github.com/mozilla-l10n/firefox-l10n). Typically, the content of `l10n-changesets.json` from `mozilla-beta` is used since it has gone through the build system at least once (even if it isn’t the latest). There are two options to ensure these changes are uplifted: an ad-hoc patch including the updates to the `l10n-changesets.json` file ([example](https://hg.mozilla.org/releases/mozilla-esr128/rev/4298182958af)) or asking Release Management to land a follow-up change for the l10n changesets ([example](https://hg.mozilla.org/releases/mozilla-esr128/rev/213534997a7c)).
+If the uplift request is approved, translations for uplifted strings should also be uplifted if there was enough time for localization. For translations to appear in the build, the `revision` value for all locales in [`l10n-changesets.json`](https://searchfox.org/mozilla-central/source/browser/locales/l10n-changesets.json) must have a commit hash containing the appropriate translations from [`firefox-l10n`](https://github.com/mozilla-l10n/firefox-l10n). Typically, the content of `l10n-changesets.json` from the `beta` branch of `mozilla-firefox` is used since it has gone through the build system at least once (even if it isn’t the latest). There are two options to ensure these changes are uplifted: an ad-hoc patch including the updates to the `l10n-changesets.json` file ([example](https://github.com/mozilla-firefox/firefox/commit/eef8173f115a4bac5dd8fccf2143c03a4f1367b5)) or asking Release Management to land a follow-up change for the l10n changesets ([example](https://github.com/mozilla-firefox/firefox/commit/38c822d111f25c3acca0a2c1356927c8d0d96067)).
 
 One more thing to consider is the timing of the uplift. The last week of the Beta cycle is frozen (after Release Candidate [is built](https://whattrainisitnow.com/release/?version=beta)), meaning that we can’t take any updates to localization and ship it in that version. Anything uplifted close to the deadline, or after, will ship untranslated. For more details about the Beta timeline for l10n, see the [Build system document](build_system.md#timeline-and-deadlines).
 
 ### I need to add new strings for version X: when is the deadline?
 
-If version X is in Nightly, i.e. currently developed in mozilla-central, there is time to land until merge day, when the code moves from mozilla-central to mozilla-beta. Technically, the string freeze date is on the Friday before merge day, to account for possible back-outs, l10n reviews needed, etc.
+If version X is in Nightly, i.e. currently developed in the `main` branch of `mozilla-firefox`, there is time to land until merge day, when the code moves from `main` branch to `beta` branch. Technically, the string freeze date is on the Friday before merge day, to account for possible back-outs, l10n reviews needed, etc.
 
-The sooner you land content in mozilla-central, the higher will be the chances that the content will be localized in several languages before reaching release.
+The sooner you land content in `mozilla-firefox`, the higher the chances will be that the content will be localized in several languages before reaching release.
 
 A webapp is [available here](https://whattrainisitnow.com/release/?version=release) with all the deadlines, including string freeze start, for current and future versions of Firefox (use the `«` and `»` near the title to change version).
 
@@ -72,9 +72,9 @@ A document including plenty of best practices is [available here](../../localiza
 
 ### How can I get my strings localized?
 
-Strings need to be added to localization files in known locations within the mozilla-central tree. For all the technical details about these paths and the supported formats, see [this document](https://firefox-source-docs.mozilla.org/build/buildsystem/locales.html#exposing-strings).
+Strings need to be added to localization files in known locations within the `mozilla-firefox` tree. For all the technical details about these paths and the supported formats, see [this document](https://firefox-source-docs.mozilla.org/build/buildsystem/locales.html#exposing-strings).
 
-Once strings land in mozilla-central, they will be exposed for localization in Pontoon typically within a week or sooner.
+Once strings land in `mozilla-firefox`, they will be exposed for localization in Pontoon typically within a week or sooner.
 
 ### Where can I find the localized strings?
 
@@ -84,7 +84,7 @@ All shipping versions of Firefox are built from a single GitHub repository calle
 
 If your content is not stable, or you want to iterate quickly over it before exposing it for localization, it’s possible to land a string file outside of the known paths, and access it from the code.
 
-For Fluent, you can follow examples like [this patch](https://hg.mozilla.org/mozilla-central/rev/e3bc9f1bde6e), where the FTL file is stored outside of the localizable paths, and loaded as “preview”.
+For Fluent, you can follow examples like [this patch](https://github.com/mozilla-firefox/firefox/commit/4bf85ebf94146ed7eef747fa53fce84c74344eb3#diff-32d3ba0f07abad86ce0e64cd5ef4d6b4b9e6c7d8cb5ec3e7d40f9fc26e846513), where the FTL file is stored outside of the localizable paths, and loaded as “preview”.
 
 If you follow this approach, make sure to have a bug on file — or an explicit task in your roadmap — to expose this file to localization with sufficient lead time for translation before the targeted release.
 

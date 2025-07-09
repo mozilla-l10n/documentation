@@ -59,17 +59,6 @@ Sorry to hear that you’re having problems with Pontoon. Please do the followin
 
 If the first three steps don’t solve your problem and you have to file a bug, rest assured that the l10n-drivers will respond promptly.
 
-## Having problems with Mercurial (hg)
-
-Sorry to hear that you’re having problems with hg. Please do the following to allow us to troubleshoot your problem(s):
-
-* Search [Bugzilla](https://bugzilla.mozilla.org) to see if a bug has already been filed for your problem(s).
-* Check the [l10n mailing list](http://groups.google.com/group/mozilla.dev.l10n) to see if anyone else has had the same problem.
-* If you can’t find a discussion thread about your problem, begin a discussion topic in those newsgroups asking for help. Include as much detail as possible.
-* If no one in the discussion group can offer a solution and there are no bugs currently filed, file a new bug providing as many details about the  problem as possible.
-
-If the first three steps don’t solve your problem and you have to file a bug, rest assured that the l10n-drivers will respond promptly.
-
 ## Update your team wiki page
 
 Subject: [locale code]Please update [locale name] wiki page

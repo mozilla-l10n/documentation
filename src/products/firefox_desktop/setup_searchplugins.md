@@ -83,4 +83,4 @@ The *Name* to use in your localization is `ویکیپیڈیا (ur)`. Copying and
 
 ## Set up protocol handlers
 
-Starting with Firefox 98, the configuration for protocol handlers is [centralized in mozilla-central](https://searchfox.org/mozilla-central/source/uriloader/exthandler/HandlerList.sys.mjs). For most new locales, the default configuration should be acceptable.
+Starting with Firefox 98, the configuration for protocol handlers is [centralized in mozilla-firefox](https://searchfox.org/mozilla-central/source/uriloader/exthandler/HandlerList.sys.mjs). For most new locales, the default configuration should be acceptable.

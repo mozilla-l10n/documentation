@@ -7,7 +7,7 @@ At the core of each migration there is a Python file, called a **migration recip
 * Remove obsolete strings.
 * Include a migration recipe.
 
-Once one such patch lands in [gecko-dev](https://github.com/mozilla/gecko-dev), string changes will be pushed to the `update` branch of [firefox-l10n-source](https://github.com/mozilla-l10n/firefox-l10n-source). At this point, this new content is not visible yet in [Pontoon](https://pontoon.mozilla.org/).
+Once one such patch lands in [mozilla-firefox](https://github.com/mozilla-firefox/firefox), string changes will be pushed to the `update` branch of [firefox-l10n-source](https://github.com/mozilla-l10n/firefox-l10n-source). At this point, this new content is not visible yet in [Pontoon](https://pontoon.mozilla.org/).
 
 The goal of a migration is to port existing translations to a new format or file without forcing the community localizers to retranslate them. For this to happen, migrations need to be performed before the new strings are pushed to the `main` branch of the `firefox-l10n-source` repository and become available in Pontoon.
 

@@ -35,7 +35,7 @@ When updating IDs, make sure to also update references to the old ID in both exi
 
 This is very specific to how localization works at Mozilla, and mostly depends on two key elements:
 * String IDs (and not their values) are used to identify strings throughout the entire localization toolchain.
-* Translations stored in Version Control Systems – Mercurial or GitHub depending on the project – are treated as the **source of truth**.
+* Translations stored in Version Control Systems (i.e. GitHub) are treated as the **source of truth**.
 
 Changing the message ID will invalidate existing translations, the new message will be reported as missing (new) in all tools, and localizers will have to retranslate it. This is the only reliable method to ensure that localizers update existing localizations, and run-time stops using obsolete translations.
 
@@ -88,7 +88,7 @@ In this scenario, the only way to ensure that obsolete translations are ignored 
 ### Firefox
 
 Things become a lot more complicated for Firefox:
-* The `en-US` locale is stored in the code repository (e.g. `mozilla-central`). That locale is used by the build system to build the US English version of Firefox, but it’s not used as source by the localization toolchain. In fact, in order to ship all versions of Firefox (Nightly, Beta, Developer Edition, Release, ESR) from a single l10n repository, we rely on a special unified [repository](https://https://github.com/mozilla-l10n/firefox-l10n-source) in GitHub called `firefox-l10n-source`, which includes all strings for all shipping versions of Firefox.
+* The `en-US` locale is stored in the code repository (e.g. `mozilla-firefoxl`). That locale is used by the build system to build the US English version of Firefox, but it’s not used as source by the localization toolchain. In fact, in order to ship all versions of Firefox (Nightly, Beta, Developer Edition, Release, ESR) from a single l10n repository, we rely on a special unified [repository](https://github.com/mozilla-l10n/firefox-l10n-source) in GitHub called `firefox-l10n-source`, which includes all strings for all shipping versions of Firefox.
 * Localizations are stored in a separate repository (`firefox-l10n`) from source strings.
 
 This is the scenario before the string change. Once again, although it already looks very busy, it’s a simplified high level view of the actual system.
@@ -99,7 +99,7 @@ And this is what happens if a string is changed without new ID:
 
 ![Firefox: change without new ID](../assets/images/localization/string_changes_firefox_change.png)
 
-* The string is changed in `mozilla-central`, and the en-US Nightly build will start using it. This change is reflected in `firefox-l10n-source`, but doesn’t impact other builds (e.g. beta), because that’s not used by the build system.
+* The string is changed in `mozilla-firefox`, and the en-US Nightly build will start using it. This change is reflected in `firefox-l10n-source`, but doesn’t impact other builds (e.g. beta), because that’s not used by the build system.
 * As for the generic product, Pontoon reads the updated change, but doesn’t notify localizers or invalidate existing translations.
 
 In this scenario, simply removing existing translations from VCS isn’t possible, because we still need them to ship in older builds.
