@@ -6,7 +6,7 @@ These are the instructions to update locales on iOS mobile products, currently l
 
 First, you will have to confirm that the locale is available within the iOS system settings. iOS currently supports two tiers of locales, and a locale must be part of one of these two lists in order to ship on Mozilla products for iOS. Unlike Mozilla products for Android, there’s no locale switcher included in the app, so it’s possible to ship only locales that are supported by iOS.
 
-To check if a locale is supported on iOS, look directly on a device under Language Settings in the latest available iOS version. Tier 1 locales are listed under `iPhone Languages`, while Tier 2 locales appear under `Language Variants`. If a locale isn’t shown in either list, it’s currently not supported by iOS.
+To check if a locale is supported on iOS, look directly on a device under Language Settings in the latest available iOS version. Tier 1 locales are listed under `iPhone Languages`, while Tier 2 locales appear under `Other Languages`. If a locale isn’t shown in either list, it’s currently not supported by iOS.
 
 ## Updating locales in Pontoon
 
