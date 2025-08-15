@@ -2,6 +2,35 @@
 
 <!-- toc -->
 
+## Mozilla accounts
+
+* Repository: [GitHub](https://github.com/mozilla/fxa)
+* L10n Repository: [GitHub](https://github.com/mozilla/fxa-content-server-l10n)
+* L10n format: Fluent, gettext
+* Bug reports: [GitHub](https://github.com/mozilla/fxa/issues)
+* Dev server: [link](https://accounts.stage.mozaws.net)
+* Prod server: [link](https://accounts.firefox.com/signin)
+
+Localization PM is automatically set as reviewer via [CODEOWNER](https://github.com/mozilla/fxa/blob/main/.github/CODEOWNERS) for pull requests affecting Fluent files.
+
+Additional [automation](https://github.com/mozilla/fxa/blob/main/.github/workflows/l10n-gettext-extract.yml) flags PMs for gettext files.
+
+### Enabling a new locale for localization
+
+To enable a new locale for localization, two steps must be taken.
+
+Step 1: The locale needs to be enabled in Pontoon via the admin interface. This will create the respective locale folder in the L10n repository.
+
+Step 2: For gettext files, you will need to add a `LC_MESSAGES` folder and the `client.po` and `server.po` files manually into the generated locale folder in the L10n repository (these files may be initially empty).
+
+### Automation: Strings export
+
+Strings from the `fxa` repository are stored in multiple `.ftl` files across multiple folders (in the case of Fluent) and stored within `.mustache` and JavaScript files (in the case of `gettext`). [Automation](https://github.com/mozilla/fxa-content-server-l10n/blob/main/.github/workflows/l10n_extract.yaml) extracts and merges content into project files.
+
+### Enabling a locale for production
+
+Mozilla accounts has a required completion level of 70% for being enabled in production. Past tickets for updating locales are tracked in [JIRA](https://mozilla-hub.atlassian.net/browse/FXA-4981). To enable a locale in production, a PR can be made to the `fxa` repository adding the locale to the [supported-languages.json](https://github.com/mozilla/fxa/blob/main/libs/shared/l10n/src/lib/supported-languages.json) file.
+
 ## Mozilla Monitor
 
 * Repository: [GitHub](https://github.com/mozilla/blurts-server/)
