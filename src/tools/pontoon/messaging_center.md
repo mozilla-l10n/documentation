@@ -33,20 +33,20 @@ All projects are included by default and are listed under the “Chosen” colum
 
 ### Filter by submitted translations
 
-Filters users by the number of translations they have submitted, or when they submitted a translation. Note that a submitted translation does not mean it has necessarily been approved.\
-\
+Filters users by the number of translations they have submitted, or when they submitted a translation. Note that a submitted translation does not mean it has necessarily been approved.
+
 You can set a minimum threshold, maximum threshold, start of date range, and/or end of date range for submitted translations. Fields can be left empty (e.g. setting the minimum threshold to 5 and leaving maximum blank will set the filter to those with 5 or more translations).
 
 ### Filter by performed reviews
 
-Filter users based on the number of reviews they have conducted, or when they conducted a review.\
-\
+Filter users based on the number of reviews they have conducted, or when they conducted a review.
+
 You can set a minimum threshold, maximum threshold, start of date range, and/or end of date range for reviews conducted. Fields can be left empty (e.g. setting the minimum threshold to 5 and leaving maximum blank will set the filter to those with 5 or more reviews).
 
 ### Filter by last login
 
-Filter contributors based on their last login activity.\
-\
+Filter contributors based on their last login activity.
+
 You can set the start of date range and/or end of date range. Fields can be left empty (e.g. setting just the `From` field will search for users who have logged in on the specified day or later.)
 
 ## Reviewing and sending messages
