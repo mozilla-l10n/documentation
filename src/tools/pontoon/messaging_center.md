@@ -33,7 +33,7 @@ All projects are included by default and are listed under the “Chosen” colum
 
 ### Filter by submitted translations
 
-Filters users by the number of translations they have submitted, or when they submitted a translation. Note that a submitted translation does not mean it has necessarily been approved.
+Filters users by the number of translations they have submitted, or when they submitted a translation. Note that submitted translations are counted even if they have not been approved.
 
 You can set a minimum threshold, maximum threshold, start of date range, and/or end of date range for submitted translations. Fields can be left empty (e.g. setting the minimum threshold to 5 and leaving maximum blank will set the filter to those with 5 or more translations).
 
