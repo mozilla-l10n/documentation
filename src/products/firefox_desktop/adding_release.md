@@ -49,19 +49,20 @@ This is an [example of a bug](https://bugzilla.mozilla.org/show_bug.cgi?id=18077
 Some of the locale-specific settings are defined inline in Firefox code, and should be reviewed if they need customization for your locale:
 
 * [intl/locale/rust/locale_service_glue/src/lib.rs](https://searchfox.org/firefox-main/source/intl/locale/rust/locale_service_glue/src/lib.rs)
-  * `locale_service_ellipsis` — The unicode ellipsis char "…" (default), or "...", depending on the locale.
-  * `locale_service_always_append_accesskeys` — If true (false by default), accesskeys should always be appended for the locale.
-  * `locale_service_insert_separator_before_accesskeys` — If false (true by default), accesskeys should not be separated from the label.
-  * `locale_service_show_character_encoding_menu` — If true (false by default),
-    the "Text Encoding" menu is shown in the main Firefox button on Windows.
+  * `locale_service_ellipsis` — Define if the unicode ellipsis char "…" (default), or "..." should be used.
+  * `locale_service_always_append_accesskeys` — Define if accesskeys should always be appended for the locale (false by default).
+  * `locale_service_insert_separator_before_accesskeys` — Define if accesskeys should be separated from the string (true by default).
+  * `locale_service_show_character_encoding_menu` — Define if 
+    the "Text Encoding" menu is shown in the main Firefox button on Windows (false by default).
     Regardless of the value of this setting,
     the "Text Encoding" menu will always be accessible via the "Browser Tools" menu.
-  * `locale_service_default_font_language_group` — The initial setting of the language drop-down menu
+  * `locale_service_default_font_language_group` — Defines the initial setting of the language drop-down menu
     in the Fonts and Colors > Advanced preference panel.
 
     Takes one of the values of the menuitems in the
     ["selectLangs" menulist](https://searchfox.org/firefox-main/source/browser/components/preferences/dialogs/fonts.xhtml).
-  * `locale_service_default_accept_languages` — A comma-separated list of valid BCP 47 language tags.
+  * `locale_service_default_accept_languages` — Defines default accept language header for a locale.
+    A comma-separated list of valid BCP 47 language tags.
     The default value is either `$lang, en-US, en` or
     `$lang-$region, $lang, en-US, en` if the current locale includes a region subtag.
 
