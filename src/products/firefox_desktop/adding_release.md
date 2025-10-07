@@ -66,7 +66,7 @@ Some of the locale-specific settings are defined inline in Firefox code, and sho
     Next, include language tags for other languages that you expect most users of your locale to be able to speak,
     so that their browsing experience degrades gracefully if content is not available in their primary language.
 
-    By default, "en-US, en" is appended to the end of the list, providing locales of last resort.
+    By default, `en-US, en` is appended to the end of the list, providing locales of last resort.
     If you know that users of your locale would prefer a different variety of English,
     or if they are not likely to understand English at all,
     you may opt to include a different English language tag,
