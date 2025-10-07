@@ -52,10 +52,6 @@ Some of the locale-specific settings are defined inline in Firefox code, and sho
   * `locale_service_ellipsis` — Define if the unicode ellipsis char "…" (default), or "..." should be used.
   * `locale_service_always_append_accesskeys` — Define if accesskeys should always be appended for the locale (false by default).
   * `locale_service_insert_separator_before_accesskeys` — Define if accesskeys should be separated from the string (true by default).
-  * `locale_service_show_character_encoding_menu` — Define if
-    the "Text Encoding" menu is shown in the main Firefox button on Windows (false by default).
-    Regardless of the value of this setting,
-    the "Text Encoding" menu will always be accessible via the "Browser Tools" menu.
   * `locale_service_default_font_language_group` — Defines the initial setting of the language drop-down menu
     in the Fonts and Colors > Advanced preference panel.
 
