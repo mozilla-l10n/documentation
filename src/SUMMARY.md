@@ -29,6 +29,7 @@
     * [Adding projects](products/iOS_products/adding_projects.md).
     * [Updating locales](products/iOS_products/updating_locales.md).
     * [Reviewing new strings](products/iOS_products/reviewing_strings.md).
+    * [Providing localized screenshots](screenshots.md).
 * [Other Projects](products/other/README.md)
 * [Mobile](products/mobile/README.md)
     * [L10N FAQs](products/mobile/mobile_l10n_faqs.md).
