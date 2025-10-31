@@ -46,8 +46,8 @@ The last step here is to make sure that the current sync process has completed:
 
 ### Test the migrations locally
 
-A series of tools and helpers to run migrations is available in [this repository](https://github.com/flodolo/fluent-migrations):
-* Clone the repository locally and follow the instructions available in the [README](https://github.com/flodolo/fluent-migrations/blob/master/README.md) to set the configuration file.
+A series of tools and helpers to run migrations is available in [this repository](https://github.com/mozilla-l10n/fluent-migrations):
+* Clone the repository locally and follow the instructions available in the [README](https://github.com/mozilla-l10n/fluent-migrations/blob/master/README.md) to set the configuration file.
 * Add the new migration recipes in the `recipes` folder. The script will look for any Python file starting with `bug_` in that folder, so it’s possible to run multiple migrations in one pass. More information about the folder’s structure is available in the repository’s README.
 
 At this point, while each migration has been tested as part of the review before landing, it’s always good to run the migration against one locale, e.g. `it`:
@@ -75,7 +75,7 @@ The duration of this step depends on the number of migrations and the speed of t
 While migrations run, it’s important to look out for errors in the console, even if the standard output is quite noisy:
 * Python errors with a stack trace are unlikely at this stage of the development, since it means that the code encountered a scenario that it’s unable to manage. If something is broken in the `fluent.migrate` package, or there are issues with Python dependencies, the migration should stop at the very beginning.
 
-When the script completes, by default a new branch named `update-migration` will be created in the `firefox-l10n` repository unless run with the `current-branch` argument. Note: the name of the branch created can be adjusted in your local [config.dist](https://github.com/flodolo/fluent-migrations/blob/main/config/config.dist#L12) file.
+When the script completes, by default a new branch named `update-migration` will be created in the `firefox-l10n` repository unless run with the `current-branch` argument. Note: the name of the branch created can be adjusted in your local [config.dist](https://github.com/mozilla-l10n/fluent-migrations/blob/main/config/config.dist#L12) file.
 
 ### Create and merge pull request against main in firefox-l10n
 
