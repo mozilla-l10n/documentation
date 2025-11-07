@@ -8,7 +8,7 @@ The process to create a short-term project is very similar to that of a regular 
 
 First you want to test that everything works using Pontoon staging server.
 
-Access Pontoon’s [admin console](https://mozilla-pontoon-staging.herokuapp.com/admin/) on the **stage server** and click **ADD NEW PROJECT**.
+Access Pontoon’s [admin console](https://pontoon.allizom.org/admin/) on the **stage server** and click **ADD NEW PROJECT**.
 * Name: name of the project (it will be displayed in Pontoon’s project selector).
 * Slug: used in URLs, will be generated automatically based on the repository’s name.
 * Locales:
