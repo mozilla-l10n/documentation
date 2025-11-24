@@ -124,7 +124,11 @@ One reason to use hardcoded brand names is when you always want the text to ment
 
 ### Plural support
 
-We do not handle [proper plural support](../../localization/dev_best_practices.md#use-proper-plural-forms) for mobile yet. For this reason, you should try to use plural neuter expressions, where there isn’t a noun associated to the number: for example, instead of `%S files were copied`, use `Copied files: %S`.
+On Android, we support [quantity strings](https://developer.android.com/guide/topics/resources/string-resource#Plurals), i.e. `<plurals>`.
+
+On iOS, we do not handle [proper plural support](../../localization/dev_best_practices.md#use-proper-plural-forms) yet.
+For this reason, you should try to use plural neuter expressions, where there isn’t a noun associated to the number:
+for example, instead of `%S files were copied`, use `Copied files: %S`.
 
 If in doubt reach out to the current localization mobile ePM or on the Slack #l10n channel.
 
