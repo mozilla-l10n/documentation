@@ -46,7 +46,7 @@ This is an [example of a bug](https://bugzilla.mozilla.org/show_bug.cgi?id=18077
 
 ## Verify locale-specific settings
 
-Some of the locale-specific settings are defined inline in Firefox code, and should be reviewed if they need customization for your locale:
+Some of the locale-specific settings are defined inline in Firefox code, and should be reviewed if they need customization for the new locale:
 
 * [intl/locale/rust/locale_service_glue/src/lib.rs](https://searchfox.org/firefox-main/source/intl/locale/rust/locale_service_glue/src/lib.rs)
   * `locale_service_ellipsis` — Define if the unicode ellipsis char "…" (default), or "..." should be used.
