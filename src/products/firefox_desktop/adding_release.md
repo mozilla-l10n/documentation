@@ -57,12 +57,14 @@ Some of the locale-specific settings are defined inline in Firefox code, and sho
 
     Takes one of the values of the menuitems in the
     ["selectLangs" menulist](https://searchfox.org/firefox-main/source/browser/components/preferences/dialogs/fonts.xhtml).
-  * `locale_service_default_accept_languages` — Defines default accept language header for a locale.
+  * `locale_service_default_accept_languages` — Defines default Accept-Language header for a locale.
     A comma-separated list of valid BCP 47 language tags.
     The default value is either `$lang, en-US, en` or
     `$lang-$region, $lang, en-US, en` if the current locale includes a region subtag.
 
     If customizing this, begin with the language tag of your locale.
+    If applicable, include the language tag with the region first, then without region,
+    to go from more local to less local (e.g. `it-IT, it`).
     Next, include language tags for other languages that you expect most users of your locale to be able to speak,
     so that their browsing experience degrades gracefully if content is not available in their primary language.
 
@@ -74,7 +76,7 @@ Some of the locale-specific settings are defined inline in Firefox code, and sho
 
 * [devtools/shared/plural-form.js](https://searchfox.org/firefox-main/source/devtools/shared/plural-form.js)
   * `PluralForm.getPluralRule()` — Selects the number of plural categories and the function for selecting between them.
-    The default is to use the same plural rules as English, which has "one" and "other" categories.
+    The default is to use the same plural rule as English, which has "one" and "other" categories.
     This is only used for a small number of devtools messages that have a custom format;
     Fluent plurals in general rely on Unicode Common Locale Data Repository data.
 
