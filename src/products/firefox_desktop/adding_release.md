@@ -44,6 +44,42 @@ The language name associated to the locale code is displayed in a few places in 
 
 This is an [example of a bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1807794) created to add this information. Don’t forget to update the GitHub tracking issue for the locale with a link to this bug.
 
+## Verify locale-specific settings
+
+Some of the locale-specific settings are defined inline in Firefox code, and should be reviewed if they need customization for the new locale:
+
+* [intl/locale/rust/locale_service_glue/src/lib.rs](https://searchfox.org/firefox-main/source/intl/locale/rust/locale_service_glue/src/lib.rs)
+  * `locale_service_ellipsis` — Define if the unicode ellipsis char "…" (default), or "..." should be used.
+  * `locale_service_always_append_accesskeys` — Define if accesskeys should always be appended for the locale (false by default).
+  * `locale_service_insert_separator_before_accesskeys` — Define if accesskeys should be separated from the string (true by default).
+  * `locale_service_default_font_language_group` — Defines the initial setting of the language drop-down menu
+    in the Fonts and Colors > Advanced preference panel.
+
+    Takes one of the values of the menuitems in the
+    ["selectLangs" menulist](https://searchfox.org/firefox-main/source/browser/components/preferences/dialogs/fonts.xhtml).
+  * `locale_service_default_accept_languages` — Defines default Accept-Language header for a locale.
+    A comma-separated list of valid BCP 47 language tags.
+    The default value is either `$lang, en-US, en` or
+    `$lang-$region, $lang, en-US, en` if the current locale includes a region subtag.
+
+    If customizing this, begin with the language tag of your locale.
+    If applicable, include the language tag with the region first, then without region,
+    to go from more local to less local (e.g. `it-IT, it`).
+    Next, include language tags for other languages that you expect most users of your locale to be able to speak,
+    so that their browsing experience degrades gracefully if content is not available in their primary language.
+
+    By default, `en-US, en` is appended to the end of the list, providing locales of last resort.
+    If you know that users of your locale would prefer a different variety of English,
+    or if they are not likely to understand English at all,
+    you may opt to include a different English language tag,
+    or to exclude English altogether.
+
+* [devtools/shared/plural-form.js](https://searchfox.org/firefox-main/source/devtools/shared/plural-form.js)
+  * `PluralForm.getPluralRule()` — Selects the number of plural categories and the function for selecting between them.
+    The default is to use the same plural rule as English, which has "one" and "other" categories.
+    This is only used for a small number of devtools messages that have a custom format;
+    Fluent plurals in general rely on Unicode Common Locale Data Repository data.
+
 ## Add locale to build configuration
 
 First of all make sure that your environment is [correctly set up](https://firefox-source-docs.mozilla.org/setup/index.html#getting-set-up-to-work-on-the-firefox-codebase), update your local `mozilla-firefox` clone and make sure it’s on the `main` bookmark:
