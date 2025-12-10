@@ -1,6 +1,6 @@
 # Reviewing strings for a new release of Mozilla iOS products
 
-Usually, a new release of our iOS products means an update to strings. Like for Android products, mobile developers will land strings in their respective code repositories throughout the [release cycle](https://whattrainisitnow.com/), and automation will export these strings to the localization repository, where they will need to be reviewed by a localization EPM before being exposed to localizers on Pontoon (see [Adding projects](adding_projects.md) for more details on the automation used).
+Usually, a new release of our iOS products means an update to strings. Like for Android products, mobile developers will land strings in their respective code repositories throughout the release cycle, and automation will export these strings to the localization repository, where they will need to be reviewed by a localization EPM before being exposed to localizers on Pontoon (see [Adding projects](adding_projects.md) for more details on the automation used).
 
 It's also possible to manually trigger a string import (`import_strings.yml`) at any time. To do so, go to the GitHub `Actions` section of the relevant localization iOS repository and run the string import workflow.  Manual string imports are useful in cases when developers land new, time-sensitive strings (like for an upcoming release), when updates or fixes in the code need to be pulled in before the next scheduled import, or in cases where you’d like to use a different criterion (described below).
 
@@ -30,7 +30,7 @@ Let’s go over some of the steps needed over time in order to review correctly 
 
 ## Reviewing the PR
 
-Let's consider Firefox for iOS as an example. As a matter of fact, the iOS release cycles follow closely the Android and Firefox desktop calendar, which can be found [here](https://whattrainisitnow.com). During the release cycle, automation will create pull requests as explained in the section above, in order to land strings for the upcoming release.
+A new version of Firefox for iOS is released every week. You can find detailed dates in the [release schedule](https://whattrainisitnow.com/release/?version=nightly#ios-target) (make sure to select the *iOS* tab above the list of milestones). Automation will create pull requests as explained in the section above, in order to land strings for the upcoming release.
 
 In general, you should try to review the strings landing, and try to localize them in your head: how would you translate them? Would you be able to do it without the app? Is the localization comment clear enough? Let’s consider a past PR, [here](https://github.com/mozilla-l10n/firefoxios-l10n/pull/192).
 
