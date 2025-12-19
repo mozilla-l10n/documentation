@@ -17,7 +17,7 @@ jobs:
       MDBOOKTOC_VERSION: 0.15.2
     steps:
       - name: Clone repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Install mdbook and mdbook-toc
         run: |
           mkdir installed-bins
