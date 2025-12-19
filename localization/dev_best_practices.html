@@ -1,0 +1,550 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Best practices for developers - Localization at Mozilla - Internal Documentation</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-2459343d.css">
+        <link rel="stylesheet" href="../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-b1854779.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc-09a6deb2.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Localization at Mozilla - Internal Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/mozilla-l10n/documentation/" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/mozilla-l10n/documentation/edit/main/src/localization/dev_best_practices.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <span class=fa-svg id="git-edit-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="localization-best-practices-for-developers"><a class="header" href="#localization-best-practices-for-developers">Localization best practices for developers</a></h1>
+<ul>
+<li><a href="#note-on-localizers">Note on localizers</a></li>
+<li><a href="#localization-files">Localization files</a>
+<ul>
+<li><a href="#string-identifiers-ids">String identifiers (IDs)</a></li>
+<li><a href="#add-localization-notes">Add localization notes</a>
+<ul>
+<li><a href="#fluent-files">Fluent files</a></li>
+<li><a href="#properties-files">Properties files</a></li>
+<li><a href="#dtd-files">DTD files</a></li>
+<li><a href="#json-webextension">JSON (webextension)</a></li>
+<li><a href="#xml-android">XML (Android)</a></li>
+<li><a href="#xliff-ios-qt">XLIFF (iOS, qt)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#land-good-quality-strings">Land good quality strings</a></li>
+<li><a href="#make-strings-properly-localizable">Make strings properly localizable</a>
+<ul>
+<li><a href="#create-flexible-content">Create flexible content</a>
+<ul>
+<li><a href="#date-time-and-unit-formatting">Date, time and unit formatting</a></li>
+<li><a href="#splitting-and-composing-sentences">Splitting and composing sentences</a></li>
+<li><a href="#word-order">Word order</a></li>
+<li><a href="#case-and-inflections">Case and inflections</a></li>
+</ul>
+</li>
+<li><a href="#use-proper-plural-forms">Use proper plural forms</a></li>
+<li><a href="#use-ordered-variables-in-string-with-multiple-variables">Use ordered variables in string with multiple variables</a></li>
+<li><a href="#avoid-concatenations-use-placeholders-instead">Avoid concatenations, use placeholders instead</a></li>
+<li><a href="#dont-reuse-strings-in-different-contexts">Don’t reuse strings in different contexts</a></li>
+<li><a href="#avoid-unnecessary-complexity-in-strings">Avoid unnecessary complexity in strings</a></li>
+<li><a href="#dont-hardcode-characters">Don’t hardcode characters</a></li>
+<li><a href="#remove-unused-strings">Remove unused strings</a></li>
+</ul>
+</li>
+<li><a href="#create-localizable-ui">Create localizable UI</a>
+<ul>
+<li><a href="#css-issues">CSS issues</a></li>
+<li><a href="#design-for-at-least-30">Design for at least +30%</a></li>
+<li><a href="#design-to-avoid-breaking-words">Design to avoid breaking words</a></li>
+</ul>
+</li>
+<li><a href="#test-localizability">Test localizability</a></li>
+</ul>
+<p>This document provides best practices for developers to create localizable code, and describes how to avoid some common localizability mistakes. Some additional guidelines specific for Fluent in Firefox are also available in <a href="https://firefox-source-docs.mozilla.org/l10n/fluent/review.html">this page</a>, and there is a <a href="../products/firefox_desktop/firefox_l10n_faqs.html">collection of FAQs specific for Firefox localization</a>.</p>
+<p>Specific channels dedicated to localization are available on Matrix, in case you have more questions:</p>
+<ul>
+<li><a href="https://chat.mozilla.org/#/room/#l10n-community:mozilla.org">#l10n-community</a> is used by localizers, and it’s a good place to ask for questions about specific languages.</li>
+<li><a href="https://chat.mozilla.org/#/room/#l10n-dev:mozilla.org">#l10n-dev</a> can be used for more technical questions.</li>
+<li><a href="https://chat.mozilla.org/#/room/#i18n:mozilla.org">#i18n</a> is the channel of the Internationalization (i18n) team.</li>
+</ul>
+<h2 id="note-on-localizers"><a class="header" href="#note-on-localizers">Note on localizers</a></h2>
+<p>Mozilla localizers are volunteers with very diverse technical skills and backgrounds: some of them rely exclusively on translation tools and have a linguistic education, others prefer to work directly with text editors and don’t have problems interacting with version control systems (VCS) or reading code.</p>
+<p>It’s important to consider this when adding strings, and especially localization comments for strings that contain references or technical details.</p>
+<h2 id="localization-files"><a class="header" href="#localization-files">Localization files</a></h2>
+<h3 id="string-identifiers-ids"><a class="header" href="#string-identifiers-ids">String identifiers (IDs)</a></h3>
+<p>In most localization formats, a translation unit consists of a unique identifier (ID, often <em>string ID</em> or <em>message ID</em>) associated to a segment of text. The ID chosen for your string, regardless of the file format, should always be descriptive of the message and its role in the interface (button label, title, etc.). Using specific IDs also will discourage other developers from <a href="#dont-reuse-strings-in-different-contexts">reusing strings</a> in different contexts.</p>
+<p>In most case, when <strong>updating an existing string</strong> already exposed for localization, a new string ID is necessary (for more details, see <a href="making_string_changes.html">this document</a>):</p>
+<ul>
+<li>If you are changing a string such that its <strong>meaning has changed</strong>, you must update the string ID.</li>
+<li>In case of Fluent, you need to update the string ID also when <strong>the morphology of the message changes</strong>, i.e. attributes are added or removed.</li>
+<li>If your changes are relevant only for English — for example, to correct a typographical error or to make capitalization consistent — then there is generally no need to update the string ID.</li>
+</ul>
+<p>There is a gray area between needing a new ID or not. In some cases, it will be necessary to look at all the existing translations to determine if a new ID would be beneficial. You should always reach out to the l10n team in case of doubt.</p>
+<p>If a new ID is needed, adding a progressive number to the existing ID should always be used as a last resort. For example, suppose this string needs to be changed from <code>Event</code> to <code>Add New Event</code>:</p>
+<pre><code>new-event-header = Event
+</code></pre>
+<p><code>add-new-event-header</code> is definitely a better choice for the new string than <code>new-event-header1</code>.</p>
+<p>If a string is tied to an accesskey or a tooltip, use string IDs that highlight this relation:</p>
+<pre><code>neweventbtn.label = Add event
+neweventbtn.accesskey = A
+neweventbtn.tooltip = Add a new event
+</code></pre>
+<p>If you’re adding new strings, check that you’re not duplicating an existing ID. Depending on the parser logic, one of these two translations will be ignored. For some products, e.g. Firefox in <code>mozilla-firefox</code>, this check might be performed by automation.</p>
+<h3 id="add-localization-notes"><a class="header" href="#add-localization-notes">Add localization notes</a></h3>
+<p>Localizers often have visibility over one string at a time, without the context of source code. For this reason, it is important to add comments to the localizable files themselves. These comments are generally referred to as <em>localization notes</em>.</p>
+<p>Don’t forget to add a localization note when:</p>
+<ul>
+<li>Part of the string is not supposed to be localized (for example, the name of an HTML attribute in a warning).</li>
+<li>String includes variables: always explain what will be the value of these variables at run-time.</li>
+<li>English could be ambiguous. For example: <code>bookmark</code> can be a noun or a verb. Using meaningful IDs can also help in these cases.</li>
+<li>Strings are used in a specific context. For example accessibility (a11y) strings: in this case space is less important than clarity, since these strings are not displayed in the UI but used by tools like screen readers.</li>
+<li>The string contains an adjective, but the noun it refers to is not part of the string. Most languages need to decline adjectives based on number and gender.</li>
+<li>The UI that the string is used for is not testable yet. In this case, a comment supplying links to screenshots or public Figma specifications can reduce ambiguity and unblock the localization of the strings. Once the UI is testable, these links can be removed from the comments.</li>
+</ul>
+<p>There is an established format for localization comments: it’s important to follow the format as closely as possible, since there are a number of automated tools that parse these comments for easier access and use by localizers.</p>
+<h4 id="fluent-files"><a class="header" href="#fluent-files">Fluent files</a></h4>
+<p>Fluent <a href="https://projectfluent.org/fluent/guide/comments.html">supports several types of comments</a> (file, section, individual message).</p>
+<pre><code>### File comment
+
+## Section comment
+
+# Standalone comment
+
+# Message comment
+my-message = Example
+</code></pre>
+<p>Strings with variables should have a comment documenting the type of each variable:</p>
+<pre><code># This string is used on a new line below the add-on name
+# Variables:
+#   $name (String) - Add-on author name
+cfr-doorhanger-extension-author = by { $name }
+</code></pre>
+<h4 id="properties-files"><a class="header" href="#properties-files">Properties files</a></h4>
+<pre><code># LOCALIZATION NOTE(privacy-text): %S will be replaced at run-time by an
+# active link. the string “privacy-link” will be used as text for this link.
+privacy-text = By proceeding you agree to the %S.
+privacy-link = Privacy Terms
+</code></pre>
+<p>File-wide comments should use the same format, they should be at the top of the file (after the license header) and just drop the <em>(entity name/key)</em> reference.</p>
+<h4 id="dtd-files"><a class="header" href="#dtd-files">DTD files</a></h4>
+<pre><code>&lt;!-- LOCALIZATION NOTE: The accessibleLabel is a spoken label that should not
+include the word "toolbar" or such, because screen readers already know that
+this container is a toolbar. This avoids double-speaking. --&gt;
+&lt;!ENTITY navbar.accessibleLabel "Navigation"&gt;
+</code></pre>
+<h4 id="json-webextension"><a class="header" href="#json-webextension">JSON (webextension)</a></h4>
+<pre><code>"disableDataCollection": {
+    "message": "Disable data collection",
+    "description": "The label on the toggle that DISABLES sending interaction data to Mozilla."
+}
+</code></pre>
+<h4 id="xml-android"><a class="header" href="#xml-android">XML (Android)</a></h4>
+<pre><code>&lt;!-- The same as 'shortcut_erase_short_label' but more descriptive. The launcher shows this
+      instead of the short title when it has enough space. Android recommends a maximum length
+      of 25 characters.
+      %1$s will be replaced by the app name (e.g. Firefox Focus) --&gt;
+&lt;string name="shortcut_erase_and_open_long_label"&gt;Erase and open %1$s&lt;/string&gt;
+</code></pre>
+<h4 id="xliff-ios-qt"><a class="header" href="#xliff-ios-qt">XLIFF (iOS, qt)</a></h4>
+<pre><code>&lt;trans-unit id="vpn.controller.active"&gt;
+  &lt;source&gt;Secure and private&lt;/source&gt;
+  &lt;note&gt;This refers to the user’s internet connection.&lt;/note&gt;
+&lt;/trans-unit&gt;
+</code></pre>
+<h2 id="land-good-quality-strings"><a class="header" href="#land-good-quality-strings">Land good quality strings</a></h2>
+<p>Try not to land temporary strings. If you already know that your strings are temporary, they shouldn’t be exposed to the localization process. This would waste everybody’s time and create unnecessary frustration: localizers have to translate strings that are destined to change, developers will need to <a href="making_string_changes.html">use new IDs</a> later to update them.</p>
+<p>In case of Fluent and Firefox, it’s possible to save these strings in a file that is not exposed to localization (<a href="https://github.com/mozilla-firefox/firefox/commit/4bf85ebf94146ed7eef747fa53fce84c74344eb3#diff-6694825153bca0370bd623d0e9d9aef75764113296f05c493927d5fd422cd4af">example</a>). This has two benefits:</p>
+<ul>
+<li>It won’t be necessary to change the code to make it localizable, e.g. to remove hard-coded strings.</li>
+<li>When the content is ready, the file can simply be moved and exposed to the localization toolchain.</li>
+</ul>
+<p>If you’re reviewing a patch, check also strings (and comments) for grammar errors, capitalization or inconsistencies. Each product should have its own set of copy rules. For example, in Firefox typographical quotes (<code>’“”</code>) should be used instead of straight ASCII quotes (<code>'"</code>), and there are automated tests enforcing that.</p>
+<p>If you have any doubts about the quality of strings, ask the Content Team to do a copy review of this text. Ideally, all strings landing in code should originate from approved UX wireframes, and copy review should be part of the initial stage of creating these wireframes.</p>
+<h2 id="make-strings-properly-localizable"><a class="header" href="#make-strings-properly-localizable">Make strings properly localizable</a></h2>
+<h3 id="create-flexible-content"><a class="header" href="#create-flexible-content">Create flexible content</a></h3>
+<p>You need to account for different grammar structures in different locales, and add switching mechanisms to present them appropriately. You shouldn’t make assumptions as to what those structures will be. Instead, let locales/localizers decide. When in doubt, ask the localizers.</p>
+<h4 id="date-time-and-unit-formatting"><a class="header" href="#date-time-and-unit-formatting">Date, time and unit formatting</a></h4>
+<p>For example, you shouldn’t hard code date formats into applications:</p>
+<pre><code>%A, %b %e
+// resulting in Wednesday, May 20
+</code></pre>
+<p>This is fine in English, but in Italian it results in “Mercoledì, Mag 20”, which sounds unnatural. Every time you use this kind of structure, you should have a localizable string behind it, and let localizers decide the best order for their language.</p>
+<p>Another example is localizing percentages or units. Some locales use a space between the number and the <code>%</code> symbol, some don’t, and some use a non-breaking space.</p>
+<p>Fluent <a href="https://projectfluent.org/fluent/guide/functions.html">provides built-in functions</a> (<code>DATETIME()</code> and <code>NUMBER()</code>) to deal flexibly with both date and number formatting.</p>
+<h4 id="splitting-and-composing-sentences"><a class="header" href="#splitting-and-composing-sentences">Splitting and composing sentences</a></h4>
+<p>Splitting sentences into several keys often inadvertently presumes a grammar, a sentence structure, and such composite strings are unnecessarily difficult to translate.</p>
+<p>For example, in English all the following begin with the same clause:</p>
+<ul>
+<li><code>The URL of this feed is invalid</code></li>
+<li><code>The URL of this feed cannot be reached</code></li>
+<li><code>The URL of this feed cannot be parsed</code></li>
+</ul>
+<p>It might be tempting to save time by presenting this as <code>The URL of this feed %S</code> and then replace the variable at run-time. However, linguistically these are different types of sentences and will be handled differently in other languages. This is usually not a case of translator choice but obligatory in the language. For example, in Gaelic these sentences must be translated as:</p>
+<ul>
+<li><code>Tha URL an inbhir seo mì-dhligheach</code></li>
+<li><code>Cha ruig sinn URL an inbhir seo</code></li>
+<li><code>Cha ghabh URL an inbhir seo a pharsadh</code></li>
+</ul>
+<p>Unless there are significant savings of translation volume involved, it is usually easier and quicker for translators to handle these as fixed strings rather than composed strings, especially considering the time needed for locating, checking and potentially fixing composed strings.</p>
+<h4 id="word-order"><a class="header" href="#word-order">Word order</a></h4>
+<p>If a string contains a variable, always add a placeholder to the string to allow the localizer to change the word order if necessary. For example, it might seem fine in English to present the string <code>[username] says:</code> to localizers simply as <code>says:</code> but this will cause issues in many other languages, as the agent of an action often will not come in front of the verb. For example in Irish/Gaelic the correct order is <code>be [username] at saying:</code>. If a placeholder is present, this can be correctly localized as <code>Tá %s ag rádh:</code>, but that’s impossible without it.</p>
+<p>Similarly, if the UI string is <code>Flash Version</code>, do not simply present the translator with <code>Version</code> for translation. Present the whole string or, if there is a significant need for a placeholder, use a placeholder. The word <em>Version</em> may have to go before or after <code>Flash</code> and one or both may need to be inflected.</p>
+<h4 id="case-and-inflections"><a class="header" href="#case-and-inflections">Case and inflections</a></h4>
+<p>Many languages have features like noun classes (i.e. nouns belonging to different categories and treated differently by the grammar), case and inflections (changes are made to a word to indicate differences in meaning or use) and so on. In modern English, such features are rare and are mainly restricted to plural <code>-s</code> and verb forms (e.g. <code>go &gt; went</code> is a form of inflection).</p>
+<p>Here are a few examples from other languages:</p>
+<ul>
+<li>Gender in German: nouns can be either masculine, feminine or neuter. The most obvious impact is that the definite article, which in English is always <code>the</code>, can either be <code>der, die</code> or <code>das</code>. To complicate matters, if the grammatical context changes, the article will change: <code>Der Text</code> (“the text”) changes to <code>Wollen Sie den Text speichern?</code> (“Do you want to save the text?”), because <em>text</em> is nominative (subject) in the first sentence, and accusative (direct object) in the second.</li>
+<li>Suffixes in Basque: where English tends to use expressions such as “to the” or “from the”, Basque adds an ending to a word to express the same concept. For example <code>From the menu</code> in Basque is <code>Menutik</code> (suffix <code>-tik</code>) and <code>To the printers</code> is <code>Inprimagailuei</code> (suffix <code>-ei</code>).</li>
+</ul>
+<p>Using placeholders for something like “the text” or “the file” works well in English but is likely to cause problems for localizers if the placeholders cannot be inflected.</p>
+<h3 id="use-proper-plural-forms"><a class="header" href="#use-proper-plural-forms">Use proper plural forms</a></h3>
+<p>Firefox supports proper plural forms in Fluent and Properties (not DTDs). As a native English speaker, you might find it natural to use two strings to solve plurals:</p>
+<pre><code>delete-cookie = Delete cookie
+delete-cookies = Delete cookies
+</code></pre>
+<p>But plural forms are a lot more complex in other languages, requiring up to six different forms (see <a href="https://unicode-org.github.io/cldr-staging/charts/latest/supplemental/language_plural_rules.html">CLDR page</a>).</p>
+<p>Using Fluent, this string would look like this:</p>
+<pre><code>delete-cookies = { $count -&gt;
+  [one] Delete cookie
+ *[other] Delete cookies
+}
+</code></pre>
+<p>This also allows localizers to expose the number of items, in case it’s necessary:</p>
+<pre><code>delete-cookies = { $count -&gt;
+  [one] Delete one cookie
+ *[other] Delete { $count } cookies
+}
+</code></pre>
+<p>Or to target a specific number (value) instead of a plural category. For example, the category <code>one</code> in French covers also <code>0</code>, unlike English and most western languages where <code>0</code> is covered by <code>other</code> (like <code>2</code>).</p>
+<pre><code>delete-cookies = { $count -&gt;
+  [1] Delete this cookie
+ *[other] Delete { $count } cookies
+}
+</code></pre>
+<p>In Properties (forms are separated with a semicolon, see <a href="https://searchfox.org/mozilla-central/rev/c8ea016b87997574e1ca9127a4c370032aa6ee79/intl/locale/PluralForm.jsm">code</a>):</p>
+<pre><code># LOCALIZATION NOTE (delete-cookies): Semi-colon list of plural forms.
+# See: http://developer.mozilla.org/en/docs/Localization_and_Plurals
+# #1 is the number of cookies to delete
+# example:
+delete-cookies = Delete #1 cookie;Delete #1 cookies
+</code></pre>
+<p><strong>Important:</strong> always include the localization note with this format if you use a plural form in Firefox. This comment is used by tools to identify strings with plural forms.</p>
+<p>For some formats, <strong>plural forms are not supported</strong>, for a limitation in either the format itself (DTD, JSON) or in our toolchain (XLIFF, XML). In these cases, you should try to use plural neuter forms: instead of <code>%S files were copied</code>, use <code>Copied files: %S</code>.</p>
+<h3 id="use-ordered-variables-in-string-with-multiple-variables"><a class="header" href="#use-ordered-variables-in-string-with-multiple-variables">Use ordered variables in string with multiple variables</a></h3>
+<p>Consider this string:</p>
+<pre><code>generalSiteIdentity = This website is owned by %S. This has been verified by %S.
+</code></pre>
+<p>First thing: always add a localization comment explaining what these variables mean, even if it seems obvious. Using multiple <code>%S</code> gives the impression that the order of variables is fixed, while it actually isn’t.</p>
+<pre><code># LOCALIZATION NOTE(generalSiteIdentity): %1$S is the owner of the current website,
+# %2$S is the name of the Certification Authority signing the certificate.
+generalSiteIdentity=This website is owned by %1$S. This has been verified by %2$S.
+</code></pre>
+<p>This problem doesn’t exist in Fluent, where <a href="https://projectfluent.org/fluent/guide/variables.html">variables are named</a>.</p>
+<pre><code># Variables:
+#   $owner (String) - Owner of the current website
+#   $ca (String) - Name of the Certification Authority signing the certificate
+general-site-identity = This website is owned by { $owner }. This has been verified by { $ca }.
+</code></pre>
+<h3 id="avoid-concatenations-use-placeholders-instead"><a class="header" href="#avoid-concatenations-use-placeholders-instead">Avoid concatenations, use placeholders instead</a></h3>
+<p>Consider these strings:</p>
+<pre><code>tos-text = By proceeding you agree to the
+tos-link = Terms of Service
+</code></pre>
+<p>Most developers would consider this a good solution and display the concatenation of <code>tos-text+tos-link</code>, with an active link on the second part. It has the benefit of hiding HTML tags, and not requiring the use of <code>innerHTML</code> to inject the result in the UI.</p>
+<p>Unfortunately, this won’t work, as you need at least a third string to place after the link. Without that some languages won’t be able to create a natural sounding sentence.</p>
+<p>A much more flexible solution would be:</p>
+<pre><code># LOCALIZATION NOTE (tos-text): %S will be replaced at run-time
+# by an active link. String with ID “tos-link” will be used as text
+# for this link.
+tos-text = By proceeding you agree to the %S
+tos-link = Terms of Service
+</code></pre>
+<p>And then replace <code>%S</code> at run-time with the second string. Note also the localization comment and make sure it is clear to the localizer which placeholder string will appear in place of the placeholder as this may affect translation and/or inflection. For example, <code>By proceeding you agree to the Terms of Service</code> will result in the Slovenian translation <code>Z nadaljevanjem sprejemate pogoje uporabe</code>. But in another grammatical context, <code>Terms of Service</code> may require a different inflection, for example <code>pogojev uporabe</code> or <code>pogoji uporabe</code>. So if the localizer is left unsure as to which string goes into which placeholder, this may lead to bad translations.</p>
+<p>In Fluent it can be even more straightforward, without need of replacements:</p>
+<pre><code># DOM implementation
+tos-text = By proceeding you agree to the &lt;a data-l10n-name="tos"&gt;Terms of Service&lt;/a&gt;
+# React implementation
+tos-text = By proceeding you agree to the &lt;a&gt;Terms of Service&lt;/a&gt;
+</code></pre>
+<h3 id="dont-reuse-strings-in-different-contexts"><a class="header" href="#dont-reuse-strings-in-different-contexts">Don’t reuse strings in different contexts</a></h3>
+<p>This is particularly important for mobile, where different context often means different font and available space for the string. For example, if you’re adding a new menu item in Settings on Android, don’t use the same string for the menu item and the following screen header.</p>
+<p>Another example: some locales use nouns for titles, and verbs for actions (for example button labels). Sometimes they coincide with English, but they rarely do in other languages. Take <code>Bookmark</code>: it can be both a noun and a verb in English. A developer could be tempted to reuse the same string “Bookmark” in the button to add a bookmark, and in the header for the next dialog. This won’t work in several languages.</p>
+<h3 id="avoid-unnecessary-complexity-in-strings"><a class="header" href="#avoid-unnecessary-complexity-in-strings">Avoid unnecessary complexity in strings</a></h3>
+<p>Consider this string:</p>
+<pre><code>privacy-link = &lt;p&gt;By proceeding you agree to the &lt;a href="https://www.mozilla.org/privacy" class="external"&gt;Privacy Terms&lt;/a&gt;.&lt;/p&gt;
+</code></pre>
+<p>In this case, you shouldn’t put the URL inside the localization string, unless you need it to be localizable. If you change the URL, you’re going to need a new string ID; the same goes for the anchor’s attributes, or the paragraph markup. Instead, you should use the following approach:</p>
+<p>In Fluent:</p>
+<pre><code># DOM implementation
+privacy-link = By proceeding you agree to the &lt;a data-l10n-name="privacy"&gt;Privacy Terms&lt;/a&gt;
+# React implementation
+privacy-link = By proceeding you agree to the &lt;a&gt;Privacy Terms&lt;/a&gt;
+</code></pre>
+<p>In properties:</p>
+<pre><code># LOCALIZATION NOTE(privacy-link): %s will be replaced at run-time
+# by an active link. String with ID “privacy-link-text” will be used as text
+# for this link.
+privacy-link = By proceeding you agree to the %S.
+privacy-link-text = Privacy Terms
+</code></pre>
+<p>And then replace <code>%S</code> at run-time with the mark-up and link text.</p>
+<h3 id="dont-hardcode-characters"><a class="header" href="#dont-hardcode-characters">Don’t hardcode characters</a></h3>
+<p>Typically hardcoding happens for white spaces, commas, or other separators (<code>:</code>, <code>|</code>). Sometimes this is even done implicitly, by relying on new lines converted to a single white space in HTML.</p>
+<p>If you need a trailing white space in a string, use the Unicode character <code>\u0020</code> in Properties, or <code>{ " " }</code> in Fluent. But this is usually a bad sign, because it means you’re concatenating it to another string.</p>
+<h3 id="remove-unused-strings"><a class="header" href="#remove-unused-strings">Remove unused strings</a></h3>
+<p>If you’re removing features, don’t leave around unused strings in the localization files.</p>
+<h2 id="create-localizable-ui"><a class="header" href="#create-localizable-ui">Create localizable UI</a></h2>
+<h3 id="css-issues"><a class="header" href="#css-issues">CSS issues</a></h3>
+<p>Some CSS text/font properties may cause problems with text legibility when applied to certain scripts. For example, avoid using Italic for <a href="https://en.wikipedia.org/wiki/CJK_characters">CJK locales</a> — Chinese (Simplified and Traditional), Japanese, and Korean.</p>
+<p>The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform"><code>text-transform</code></a> property is not reliable for some locales; for example, <code>text-transform: uppercase</code> won’t work with languages such as Irish/Gaelic or Turkish (<code>İi</code> vs <code>Iı</code>). <code>App Size</code> in English may be capitalized via <code>text-transform: uppercase</code> to <code>APP SIZE</code> but in Gaelic this would change <code>Meud na h-aplacaid</code> to <code>MEUD NA H-APLACAID</code>, which violates the locales orthographic rules, as it ought to be <code>MEUD NA hAPLACAID</code>. In some cases, it can even lead to a different meaning. Consider the following examples in Irish:</p>
+<ul>
+<li><code>Athair</code> = Father</li>
+<li><code>Nathair</code> = Snake</li>
+<li><code>Ár nAthair</code> = Our Father</li>
+<li><code>Ár Nathair</code> = Our Snake</li>
+<li><code>ÁR NATHAIR</code> = OUR SNAKE</li>
+<li><code>ÁR nATHAIR</code> = OUR FATHER</li>
+</ul>
+<p>In general, localizers should make the decision about capitalization. If you want to display <code>WARNING</code> uppercase, add a string directly with that capitalization, and explain it in the localization note. This is particularly important for web content, where the CSS implementation depends on the browser in use. Even within Firefox, the correct behavior depends on having the correct <code>lang</code> attribute associated to the text or document.</p>
+<h3 id="design-for-at-least-30"><a class="header" href="#design-for-at-least-30">Design for at least +30%</a></h3>
+<p>Bear in mind that English strings will likely be shorter than their international equivalents, so you need to leave some space in your UI to allow for this. Some examples:</p>
+<ul>
+<li><code>OK</code> in English becomes <code>Ceart ma-thà</code> in Gaelic.</li>
+<li><code>Save document?</code> in English becomes <code>A bheil thu airson an sgrìobhainn a shàbhaladh</code> in Gaelic.</li>
+</ul>
+<p>Another good example is <em>Yes/No</em>. There are two types of languages, those that have <em>Yes/No</em> as a single word, and those that don’t and work on mirroring the verb. For example, a <code>Do you want to open the page?</code> &gt; <code>Yes/No</code> dialog works in English, but in Celtic languages (and several others) the equivalent answer is <code>Want/Not want</code>.</p>
+<p>W3C has a good <a href="http://www.w3.org/International/articles/article-text-size">guide</a> on the length ratios a developer should be prepared for.</p>
+<h3 id="design-to-avoid-breaking-words"><a class="header" href="#design-to-avoid-breaking-words">Design to avoid breaking words</a></h3>
+<p>Not only do strings become longer (as above), individual words can be much longer than you expect in some languages. This could lead to strings overflowing, particularly if a design contains elements with small widths or uses a large font. For example: <code>Account recovery key</code> in English becomes <code>Kontowiederherstellungsschlüssel</code> in German.</p>
+<p>You should avoid using CSS styling like <code>word-break</code> to automatically add line-breaks to these words, as the output will result in text that appears incorrect and unnatural to a local audience as in the examples below. In the first example, <code>word-break</code> is applied to a title with a large font applied, causing a word to break at the very last letter. In the second example, you can see a layout that does not account for unexpectedly long words where <code>word-break</code> causes issues for German.</p>
+<p>Example 1
+<img src="../assets/images/localization/word_break_example_1.png" alt="word break example 1"></p>
+<p>Example 2
+<img src="../assets/images/localization/word_break_example_2.png" alt="word break example 2"></p>
+<h2 id="test-localizability"><a class="header" href="#test-localizability">Test localizability</a></h2>
+<p>As a developer, you should always test your patches not just for code errors, but also for localizability issues in case they involve string or UI changes. The best way to test localizability in Firefox is to use Fluent and then enable <a href="https://firefox-source-docs.mozilla.org/l10n/fluent/tutorial.html#pseudolocalization">pseudolocalization</a>. Other localization systems should have equivalent tools to help testing for localizability issues.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../localization/making_string_changes.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../localization/globalization_best_practices.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../localization/making_string_changes.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../localization/globalization_best_practices.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-c2a407aa.js"></script>
+
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>
