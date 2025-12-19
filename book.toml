@@ -1,5 +1,4 @@
 [book]
-multilingual = false
 src = "src"
 title = "Localization at Mozilla - Internal Documentation"
 
