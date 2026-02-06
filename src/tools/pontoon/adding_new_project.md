@@ -42,7 +42,9 @@ Localization for the <a href="https://testpilot.firefox.com/experiments/min-vid"
 
 Click **SAVE PROJECT** at the bottom of the page, then click **SYNC** to run a test sync. In the [Sync log](https://pontoon.mozilla.org/sync/log/) you should be able to see if it succeeded or failed. If all went well, the new project will appear in the [public list of Projects](https://pontoon.mozilla.org/projects/).
 
-**Important**: once you verify the project works as expected, enable it for the general audience by setting Visibility to Public.
+**IMPORTANT**
+* The repository must include at least one file for one of the locales. If necessary, you will need to manually create it (it can be empty).
+* Once you verify the project works as expected, enable it for the general audience by setting Visibility to Public.
 
 ### Tags
 
