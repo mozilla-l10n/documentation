@@ -163,9 +163,7 @@ There’s no easy way to see this information in Pontoon. If all the strings are
 
 ### How can I see all translations available for a specific string?
 
-Pontoon doesn’t allow to see all translations for a specific string, but you can use [Transvision](https://transvision.flod.org/) for it:
-* Search for the string (by ID or text), making sure that `Firefox` is selected as repository.
-* If you‘re searching for an ID, select `Entities` (or `Strings & Entities`) from the `Search in` dropdown.
-* In the results, click on the green `all locales` tag close a string to see all available translations. Results are also available via API (linked at the bottom of the page).
-
-If the column for the target locale shows `Warning: Missing string` in red font, it means that there is no translation available yet for the target locale you requested.
+You can use Pontoon’s [Translation Search](https://pontoon.mozilla.org/search/) for searching through all translations for a source string:
+* Search for a specific text, making sure that `Firefox` is selected as the project.
+* If you want to include strings identifiers in the search, check the `Search in String Identifiers` checkbox.
+* In the results, click on the `ALL LOCALES` button to see all available translations.
