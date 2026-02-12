@@ -164,6 +164,6 @@ There’s no easy way to see this information in Pontoon. If all the strings are
 ### How can I see all translations available for a specific string?
 
 You can use Pontoon’s [Translation Search](https://pontoon.mozilla.org/search/) for searching through all translations for a source string:
-* Search for the string (by text or include string identifiers), making sure that `Firefox` is selected as the project.
+* Search for a specific text, making sure that `Firefox` is selected as the project.
 * If you want to include strings identifiers in the search, check the `Search in String Identifiers` checkbox.
 * In the results, click on the `ALL LOCALES` button to see all available translations.
