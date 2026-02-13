@@ -25,7 +25,7 @@ Select whether you’d like to send your message to Managers, Translators, Contr
 
 ### Filter by locale
 
-Checking the `Filter by Locale` checkbox opens a selector. You can choose which locales you want to include such that they move from the “Available” column on the left to the “Chosen” column on the right. You can also use the “MOVE ALL” options to move all locales from one column to the other.
+Checking the `Filter by Locale` checkbox opens the locale selector. You can choose which locales to include by moving them from the `Available` column on the left to the `Chosen` column on the right. You can also use the `MOVE ALL` options to move all locales from one column to the other.
 
 ### Filter by project
 
