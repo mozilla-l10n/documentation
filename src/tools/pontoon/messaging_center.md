@@ -29,7 +29,7 @@ Checking the `Filter by Locale` checkbox opens the locale selector. You can choo
 
 ### Filter by project
 
-Checking the `Filter by Project` checkbox opens a selector. You can choose which projects you want to include such that they move from the “Available” column on the left to the “Chosen” column on the right. You can also use the “MOVE ALL” options to move all projects from one column to the other.
+Checking the `Filter by Project` checkbox opens the project selector. You can choose which projects to include by moving them from the `Available` column on the left to the `Chosen` column on the right. You can also use the `MOVE ALL` options to move all projects from one column to the other.
 
 ### Filter by submitted translations
 
