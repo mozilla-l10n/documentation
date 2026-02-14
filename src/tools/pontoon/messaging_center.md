@@ -25,11 +25,11 @@ Select whether you’d like to send your message to Managers, Translators, Contr
 
 ### Filter by locale
 
-All locales are included by default and are listed under the “Chosen” column to the right. You can choose to remove a subset of locales by clicking on them one by one, so they get moved to the “Available” column to the left. You can also use the “MOVE ALL” options to move all locales from one column to the other.
+Checking the `Filter by Locale` checkbox opens the locale selector. You can choose which locales to include by moving them from the `Available` column on the left to the `Chosen` column on the right. You can also use the `MOVE ALL` options to move all locales from one column to the other.
 
 ### Filter by project
 
-All projects are included by default and are listed under the “Chosen” column to the right. You can choose to remove a subset of projects by clicking on them one by one, so they get moved to the “Available” column to the left. You can also use the “MOVE ALL” options to move all projects from one column to the other.
+Checking the `Filter by Project` checkbox opens the project selector. You can choose which projects to include by moving them from the `Available` column on the left to the `Chosen` column on the right. You can also use the `MOVE ALL` options to move all projects from one column to the other.
 
 ### Filter by submitted translations
 
