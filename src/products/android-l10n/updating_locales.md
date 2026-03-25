@@ -47,3 +47,13 @@ Once the patch has landed, the locale has to be added — or removed — in Pont
 One thing to note is that, once you merge the pull request adding or removing locales in the localization repository, automation will send that updated list over to the `mozilla-firefox` Android [code repository](https://github.com/mozilla-firefox/firefox/tree/main/mobile/android).
 
 You can check the status of l10n imports by using this filtered [search](https://github.com/search?q=repo%3Amozilla-firefox%2Ffirefox+Import%2Btranslations%2Bfrom%2Bandroid-l10n&type=commits&s=committer-date&o=desc).
+
+## Language names
+
+English and native language names are used in the language switcher, but they’re not always available through CLDR.
+
+For Firefox for Android there are two separate maps defined in [LocaleUtils.kt](https://searchfox.org/firefox-main/source/mobile/android/fenix/app/src/main/java/org/mozilla/fenix/utils/LocaleUtils.kt):
+* `LOCALE_TO_DISPLAY_NATIVE_NAME_MAP`. When adding a new locale, it’s generally safer to add the native language name in this map, given that different versions of Android support different versions of CLDR.
+* `LOCALE_TO_DISPLAY_ENGLISH_NAME_MAP`. This is a map of language names in English. It’s not necessary to add a new locale in this map if the native and English names are identical.
+
+For Focus, there is a supplemental map defined in [LocaleDescriptor.kt](https://searchfox.org/firefox-main/source/mobile/android/focus-android/app/src/main/java/org/mozilla/focus/locale/screen/LocaleDescriptor.kt) (`fillLanguageCodeAndNameMap`). Unlike Firefox for Android, Focus falls back to Android’s built-in `locale.getDisplayName()` for locales not in this map. A new locale only needs to be added here if Android/ICU doesn’t know it — in practice, smaller languages that are not available in CLDR.
