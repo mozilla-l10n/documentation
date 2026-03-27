@@ -50,13 +50,13 @@ It’s possible to add a *CODEOWNERS* file to automatically ping the owner of th
 path/to/files/to/monitor @nickname_of_owner
 ```
 
-For example, this is the content of the [CODEOWNERS](https://github.com/mozilla-l10n/focus-android-l10n/blob/master/CODEOWNERS) file for Focus for Android:
+For example, this is the content of the [CODEOWNERS](https://github.com/mozilla-l10n/android-l10n/blob/main/.github/CODEOWNERS) file for the android-l10n repository:
 
 ```
-locales/templates/*.pot @delphine
+* @mozilla-l10n/l10n-mobile
 ```
 
-Pull requests to update strings always modify `locales/templates/app.pot`, while `delphine` is the nickname of the PM in charge of this product. Any pull request trying to modify files matching that path will automatically send a review request to the code owner.
+In this case, pull requests changing any file (`*`) will flag the `l10n-mobile` team for review. In general, avoid using individuals and prefer teams, as that allows for better coverage and rotation. It's worth noting that the person or team in the CODEOWNERS file needs to be added to the repository with `write` permissions.
 
 ## Add topics to the repository (optional)
 
