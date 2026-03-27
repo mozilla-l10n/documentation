@@ -1,6 +1,6 @@
 # Reviewing strings for Android products
 
-Usually, a new release of Mozilla’s Android products requires updates to strings. Android developers land strings in the [`mobile/android`](https://github.com/mozilla-firefox/firefox/tree/main/mobile/android) directory in `mozilla-firefox` throughout the release cycle, as part of patches that often include additional code changes to other files. Members of the Localization team are designated as blocking reviewers in Phabricator for patches that include string changes, using a group called [android-l10n-reviewers](https://phabricator.services.mozilla.com/tag/android-l10n-reviewers/). While you (the mobile localization EPM) are primarily responsible for reviewing, the group setup allows other members to step in and assist as needed.
+Usually, a new release of Mozilla’s Android products requires updates to strings. Android developers land strings in the [`mobile/android`](https://github.com/mozilla-firefox/firefox/tree/main/mobile/android) directory in `mozilla-firefox` throughout the release cycle, as part of patches that often include additional code changes to other files. Members of the Localization team are designated as blocking reviewers in Phabricator for patches that include string changes, using a group called [android-l10n-reviewers](https://phabricator.services.mozilla.com/tag/android-l10n-reviewers/). While the mobile localization EPM is primarily responsible for reviewing, the group setup allows other members to step in and assist as needed.
 
 This is enforced through a [Herald](https://phabricator.services.mozilla.com/H478) rule:
 
@@ -11,7 +11,7 @@ This is enforced through a [Herald](https://phabricator.services.mozilla.com/H47
   * `focus-android/**/values/strings.xml`
 * The group reviewer is removable (i.e. it won’t be added back automatically if removed).
 
-You will be notified when the group reviewer is tagged (check with the Localization team to ensure you are part of the review group).
+Members of the group will be notified when the group reviewer is tagged.
 
 Let’s go over some of the steps needed over time in order to review strings correctly.
 
@@ -25,7 +25,9 @@ Let’s use Firefox for Android (code name `fenix` in the [mobile/android](https
 
 #### Acceptable changes
 
-The first string change only adds attributes — `moz:RemovedIn="133" tools:ignore="UnusedResources"` — to an existing string, and these are not visible to localizers. `moz:RemovedIn` is used to indicate which version of Firefox stopped using the string, so that it can be safely removed from the codebase once that version has shipped to the release channel. `tools:ignore` is used by automation to exclude the string from automated checks. More details are available in the [Android documentation](https://firefox-source-docs.mozilla.org/mobile/android/fenix/Working-with-Strings.html).
+The first string change only adds attributes — `moz:RemovedIn="133" tools:ignore="UnusedResources"` — to an existing string, and these are not visible to localizers:
+* `moz:RemovedIn` was used up to Firefox 150 (March 2026) to indicate which version of Firefox stopped using the string. This process has been superseded by the implementation of a cross-channel logic in the android-l10n repository, which automatically imports strings from all supported branches. When a code patch makes strings unused, they should be removed directly from the source files, leaving localized files unchanged (Pontoon will remove them).
+* `tools:ignore` is used by automation to exclude the string from automated checks. More details are available in the [Android documentation](https://firefox-source-docs.mozilla.org/mobile/android/fenix/Working-with-Strings.html).
 
 Changes to comments for existing strings are acceptable but should be reviewed for accuracy.
 
@@ -46,9 +48,9 @@ A [linter](https://searchfox.org/mozilla-central/rev/b63f8c50a3398aff80d2a5f185a
 
 As mentioned before, you will notice `tools:ignore` attributes associated to some strings, e.g. `tools:ignore="UnusedResources"`. This attribute is used for strings that have been pre-landed in the codebase, but are not actually used in the code yet. Once a string is ready for use, developers will remove the `UnusedResources` value from the attribute, for example see line 1026 in the `strings.xml` file in [this Phabricator diff](https://phabricator.services.mozilla.com/D240991).
 
-If `tools:ignore="UnusedResources"`is added to an existing string, check that the `moz:RemovedIn=”(version number)”` attribute is also added, to ensure that the string is removed as soon as possible. See for example line 1024 in the [same diff](https://phabricator.services.mozilla.com/D240991), with the string removed in Firefox 138. That means that the string can be removed from the codebase when Firefox 141 starts the cycle in `mozilla-firefox`, and Firefox 139 is in release.
-
 `tools:ignore="BrandUsage"` is required when a brand name needs to be hardcoded in a string, which is typically the case for surveys or experiments due to technical constraints. It’s worth noting that, in most cases, brand names should be replaced with a placeholder, and a localization comment should explicitly call out the placeholder and specify what it will be replaced with at runtime (for example: `%1$s is replaced by the brand name (e.g. Firefox)`).
+
+Note that engineers can decide to temporarily hard-code strings in English, for example if the content is being finalized or if the feature is only available in English. Android products can load arbitrary XML files from the `values` folder, while the localization infrastructure is set up to only look at `values/strings.xml` (via `l10n.toml` configuration files). Typically, developers will use a file called `static_strings.xml` for this purpose.
 
 ### GitHub
 
