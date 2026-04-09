@@ -182,7 +182,7 @@ This section covers some common tasks in Pontoon.
 
 ### Add tags
 
-The Mozilla.org project consists of many files, so [Pontoon Tags](https://mozilla-l10n.github.io/documentation/tools/pontoon/adding_new_project.html#tags) can be used to help localizers prioritize specific content. Given the lack of clarity from the marketing team, this is rarely used nowadays.
+The Mozilla.org project consists of many files, so [Pontoon Tags](https://pontoon.mozilla.org/docs/admin/adding-new-project/#tags) can be used to help localizers prioritize specific content. Given the lack of clarity from the marketing team, this is rarely used nowadays.
 
 Tags can also be used to group files, for example to track completion of pages associated with a specific initiative (e.g. VPN market expansion).
 

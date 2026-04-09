@@ -10,3 +10,16 @@ renderer = ["html"]
 git-repository-url = "https://github.com/mozilla-l10n/documentation/"
 edit-url-template = "https://github.com/mozilla-l10n/documentation/edit/main/{path}"
 no-section-label = true
+
+[output.html.redirect]
+"/tools/pontoon/index.html" = "https://pontoon.mozilla.org/docs/admin/"
+"/tools/pontoon/adding_new_project.html" = "https://pontoon.mozilla.org/docs/admin/adding-new-project/"
+"/tools/pontoon/adding_new_short_term_project.html" = "https://pontoon.mozilla.org/docs/admin/adding-new-db-project/"
+"/tools/pontoon/adding_new_locale.html" = "https://pontoon.mozilla.org/docs/admin/adding-new-locale/"
+"/tools/pontoon/managing_pretranslation.html" = "https://pontoon.mozilla.org/docs/admin/managing-pretranslation/"
+"/tools/pontoon/messaging_center.html" = "https://pontoon.mozilla.org/docs/admin/messaging-center/"
+"/tools/pontoon/renaming_a_file.html" = "https://pontoon.mozilla.org/docs/admin/renaming-file/"
+"/tools/pontoon/renaming_a_project.html" = "https://pontoon.mozilla.org/docs/admin/renaming-project/"
+"/tools/pontoon/deactivating_users.html" = "https://pontoon.mozilla.org/docs/admin/managing-users/"
+"/tools/pontoon/removing_users.html" = "https://pontoon.mozilla.org/docs/admin/managing-users/"
+"/tools/pontoon/adding_new_terminology.html" = "https://pontoon.mozilla.org/docs/admin/adding-terminology/"

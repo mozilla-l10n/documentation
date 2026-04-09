@@ -5,7 +5,7 @@ This repository includes several documents describing how to perform internal ta
 Topics covered:
 * How to [review strings](products/firefox_desktop/review.md) for Firefox desktop.
 * Manage [other projects](products/other/) (Firefox Monitor, VPN Client).
-* Perform common and advanced tasks on [Pontoon](tools/pontoon/) like adding new locale, and creating a new project.
+* Perform common and advanced tasks on [Pontoon](https://pontoon.mozilla.org/docs/admin/) like adding new locale, and creating a new project.
 * Other [miscellaneous documents](misc/) related to localization tasks.
 
 ## How to read these documents

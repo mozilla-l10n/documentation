@@ -34,20 +34,6 @@
 * [Mobile](products/mobile/README.md)
     * [L10N FAQs](products/mobile/mobile_l10n_faqs.md).
 
-## Tools
-
-* [Pontoon](tools/pontoon/README.md)
-    * [New project](tools/pontoon/adding_new_project.md).
-    * [Renaming a project](tools/pontoon/renaming_a_project.md).
-    * [New short-term project](tools/pontoon/adding_new_short_term_project.md).
-    * [New locale](tools/pontoon/adding_new_locale.md).
-    * [Pretranslation](tools/pontoon/managing_pretranslation.md).
-    * [Messaging Center](tools/pontoon/messaging_center.md).
-    * [Renaming a localization file](tools/pontoon/renaming_a_file.md).
-    * [Deactivating users](tools/pontoon/deactivating_users.md).
-    * [Removing users](tools/pontoon/removing_users.md).
-    * [New terminology](tools/pontoon/adding_new_terminology.md).
-
 ## Misc
 
 * [Other docs](misc/README.md)
