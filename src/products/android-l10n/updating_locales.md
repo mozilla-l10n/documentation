@@ -42,7 +42,7 @@ Note that:
 
 ## Updating locales in Pontoon
 
-Once the patch has landed, the locale has to be added — or removed — in Pontoon as well. The steps to follow can be found in the existing [Pontoon documentation](https://github.com/mozilla-l10n/documentation/blob/main/src/tools/pontoon/adding_new_locale.md).
+Once the patch has landed, the locale has to be added — or removed — in Pontoon as well. The steps to follow can be found in the existing [Pontoon documentation](https://pontoon.mozilla.org/docs/admin/adding-new-locale/).
 
 One thing to note is that, once you merge the pull request adding or removing locales in the localization repository, automation will send that updated list over to the `mozilla-firefox` Android [code repository](https://github.com/mozilla-firefox/firefox/tree/main/mobile/android).
 

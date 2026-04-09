@@ -10,7 +10,7 @@ To check if a locale is supported on iOS, look directly on a device under Langua
 
 ## Updating locales in Pontoon
 
-Once you’ve determined if the locale can be added, you must go to Pontoon to update the list of current locales. If the locale is not [available](https://pontoon.mozilla.org/teams/) in Pontoon yet, [consult this document](../../tools/pontoon/adding_new_locale.md) for instructions on how to add it.
+Once you’ve determined if the locale can be added, you must go to Pontoon to update the list of current locales. If the locale is not [available](https://pontoon.mozilla.org/teams/) in Pontoon yet, [consult this document](https://pontoon.mozilla.org/docs/admin/adding-new-locale/) for instructions on how to add it.
 
 In Pontoon, you can add and remove locales from the admin project page: [here](https://pontoon.mozilla.org/admin/projects/firefox-for-ios/) for Firefox for iOS, and [here](https://pontoon.mozilla.org/admin/projects/focus-for-ios/) for Focus for iOS. The project will be available after the next [Pontoon sync](https://pontoon.mozilla.org/sync/).
 
