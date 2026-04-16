@@ -60,7 +60,7 @@ One more thing to consider is the timing of the uplift. The last week of the Bet
 
 #### Firefox for Android / Android-Components / Focus for Android
 
-[Automation](https://searchfox.org/mozilla-central/rev/16abc60460bd25e02750da8842a1e914bc738afb/.cron.yml#411-418) runs every day and copies translations from [`android-l10n`](https://github.com/mozilla-l10n/android-l10n/) to [autoland](https://hg.mozilla.org/integration/autoland/). There are two other tasks: [one](https://searchfox.org/mozilla-central/rev/16abc60460bd25e02750da8842a1e914bc738afb/.cron.yml#420-427) copies translations every day from main to beta, while [another](#TBD) copies translations from beta to release every Sunday.
+[Automation](https://github.com/mozilla-firefox/firefox/blob/34ac48a163f4a44757d91e99f608d890120956be/.cron.yml#L456-L463) runs every day and copies translations from [`android-l10n`](https://github.com/mozilla-l10n/android-l10n/) to [autoland](https://github.com/mozilla-firefox/firefox/tree/autoland). There are two other tasks: [one](https://github.com/mozilla-firefox/firefox/blob/34ac48a163f4a44757d91e99f608d890120956be/.cron.yml#L465-L472) copies translations every day from main to beta, while [another](https://github.com/mozilla-firefox/firefox/blob/34ac48a163f4a44757d91e99f608d890120956be/.cron.yml#L474-L481) copies translations from beta to release every Sunday.
 
 ### I need to add new strings for version X: when is the deadline?
 
