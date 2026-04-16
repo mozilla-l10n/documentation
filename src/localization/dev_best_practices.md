@@ -249,7 +249,7 @@ delete-cookies = Delete #1 cookie;Delete #1 cookies
 
 **Important:** always include the localization note with this format if you use a plural form in Firefox. This comment is used by tools to identify strings with plural forms.
 
-For some formats, **plural forms are not supported**, for a limitation in either the format itself (DTD, JSON) or in our toolchain (XLIFF, XML). In these cases, you should try to use plural neuter forms: instead of `%S files were copied`, use `Copied files: %S`.
+For some formats, **plural forms are not supported**, for a limitation in either the format itself (DTD, JSON) or in our toolchain (XLIFF for iOS). In these cases, you should try to use plural neuter forms: instead of `%S files were copied`, use `Copied files: %S`.
 
 ### Use ordered variables in string with multiple variables
 
