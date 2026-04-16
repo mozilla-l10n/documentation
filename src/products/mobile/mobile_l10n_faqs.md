@@ -60,9 +60,7 @@ One more thing to consider is the timing of the uplift. The last week of the Bet
 
 #### Firefox for Android / Android-Components / Focus for Android
 
-[Automation](https://searchfox.org/mozilla-central/rev/16abc60460bd25e02750da8842a1e914bc738afb/.cron.yml#411-418) runs every day and copies translations from [`android-l10n`](https://github.com/mozilla-l10n/android-l10n/) to [autoland](https://hg.mozilla.org/integration/autoland/). Another [job](https://searchfox.org/mozilla-central/rev/16abc60460bd25e02750da8842a1e914bc738afb/.cron.yml#420-427) copies translations from main to beta, also every day.
-
-In order to uplift a patch with string changes to release, developers will also need to manually uplift all the relevant translation files to the `release` branch (there is no automation).
+[Automation](https://github.com/mozilla-firefox/firefox/blob/34ac48a163f4a44757d91e99f608d890120956be/.cron.yml#L456-L463) runs every day and copies translations from [`android-l10n`](https://github.com/mozilla-l10n/android-l10n/) to [autoland](https://github.com/mozilla-firefox/firefox/tree/autoland). There are two other tasks: [one](https://github.com/mozilla-firefox/firefox/blob/34ac48a163f4a44757d91e99f608d890120956be/.cron.yml#L465-L472) copies translations every day from main to beta, while [another](https://github.com/mozilla-firefox/firefox/blob/34ac48a163f4a44757d91e99f608d890120956be/.cron.yml#L474-L481) copies translations from beta to release every Sunday.
 
 ### I need to add new strings for version X: when is the deadline?
 
@@ -102,10 +100,8 @@ Localized files are available [here](https://github.com/mozilla-l10n/focusios-l1
 
 Yes. Removing obsolete or unused strings keeps source code clean and easier to maintain, while also improving the localization process. When deprecated strings remain in the project, localizers may spend valuable time translating or reviewing content that’s no longer in use — leading to wasted effort. By cleaning up unused strings, you ensure translators can focus on what truly matters: relevant, user-facing content. The links below will explain how to ensure you are correctly removing strings:
 
-* [Documentation](https://firefox-source-docs.mozilla.org/mobile/android/focus-android/Removing-strings.html#removing-strings) for Android
-* [Documentation](https://github.com/mozilla-mobile/firefox-ios/wiki/How-to-add-and-modify-Strings#how-to-remove-a-string) for iOS
-
-Note that for both products, you must mark a string as "unused" rather than deleting it directly. This ensures the string stays available for versions where it’s still in use. The links above explain this process in further detail.
+* For Android, the string should be removed from the source XML file, leaving localized files unchanged (they will be updated by Pontoon).
+* [Documentation](https://github.com/mozilla-mobile/firefox-ios/wiki/How-to-add-and-modify-Strings#how-to-remove-a-string) for iOS.
 
 ### When should “Mozilla” or “Firefox” brand be hardcoded?
 
