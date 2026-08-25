@@ -43,7 +43,7 @@ This forces retranslation, requiring localizers to update translations to includ
 the changes introduced in the source string.
 
 All instances where that message identifier is used must be updated in the
-source code as well, including localization comments.  This is the only reliable method to
+source code as well, including localization comments. This is the only reliable method to
 ensure that localizers update existing localizations, and to run-time stop using
 obsolete translations.
 
