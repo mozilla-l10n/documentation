@@ -44,7 +44,7 @@ the changes introduced in the source string.
 
 All instances where that message identifier is used must be updated in the
 source code as well, including localization comments. This is the only reliable method to
-ensure that localizers update existing localizations, and to run-time stop using
+ensure that localizers update existing localizations, and run-time stops using
 obsolete translations.
 
 ### Generic localized product
