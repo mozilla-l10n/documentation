@@ -37,7 +37,15 @@ This is very specific to how localization works at Mozilla, and mostly depends o
 * String IDs (and not their values) are used to identify strings throughout the entire localization toolchain.
 * Translations stored in Version Control Systems (i.e. GitHub) are treated as the **source of truth**.
 
-Changing the message ID will invalidate existing translations, the new message will be reported as missing (new) in all tools, and localizers will have to retranslate it. This is the only reliable method to ensure that localizers update existing localizations, and run-time stops using obsolete translations.
+Changing the message ID will result in the updated string being treated as a
+brand new string and reported as missing translations in all tools.
+This forces retranslation, requiring localizers to update translations to include
+the changes introduced in the source string.
+
+All instances where that message identifier is used must be updated in the
+source code as well, including localization comments. This is the only reliable method to
+ensure that localizers update existing localizations, and to run-time stop using
+obsolete translations.
 
 ### Generic localized product
 
