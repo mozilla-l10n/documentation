@@ -16,7 +16,7 @@ TaskCluster is used to import translations and TOML files to the [`autoland`](ht
 
 ![Android automation](../../assets/images/android/android_automation.png)
 
-On the `android-l10n` repository side, you will need to set up [automation](https://github.com/mozilla-l10n/android-l10n/tree/main/.github/workflows) to import strings and TOML files from the code repository. This automation will be responsible for creating all needed files in the repository. You may need to sync up with a technical localization EPM to set this up.
+On the `android-l10n` repository side, you will need to set up [automation](https://github.com/mozilla-l10n/android-l10n/tree/main/.github/workflows) to import strings and TOML files from the code repository. This automation will be responsible for creating all needed files in the repository. You may need to sync up with a [localization TPM]([url](https://mozilla-hub.atlassian.net/wiki/spaces/FDPDT/pages/183861372/Localization+Intake+Process#Project-Ownership)) to set this up.
 
 Once automation is in place, it will automatically extract new English strings and configurations from the code repository. It should also be possible to invoke automation [manually](https://github.com/mozilla-l10n/android-l10n/actions).
 
@@ -24,4 +24,4 @@ Once automation is in place, it will automatically extract new English strings a
 
 Once all of this is done and merged, you can now enable the new project in Pontoon (see [instructions for adding new projects](https://pontoon.mozilla.org/docs/admin/adding-new-project/)).
 
-Going forward, remember to update the localization completion deadline under Pontoon resources. For existing Android projects, the deadline falls one day before the *Release Candidate* date of the current [Beta version](https://whattrainisitnow.com/release/?version=beta). They follow the same four-week release cycle as other Firefox browsers, so these deadlines must be updated regularly. When setting up a new project, confirm what type of release cycle it will follow. To update, navigate to the [Pontoon admin](https://pontoon.mozilla.org/admin/) page, select your project, and update the *Target date*.
+Going forward, you will need to update the localization deadline for the project under Pontoon resources. For existing Android projects, the deadline falls two days before the *Release Candidate* date of the current [Beta version](https://whattrainisitnow.com/release/?version=beta). They follow the same two-week release cycle as other Firefox browsers, so these deadlines must be updated regularly. When setting up a new project, confirm what type of release cycle it will follow. To update, navigate to the [Pontoon admin](https://pontoon.mozilla.org/admin/) page, select your project, and update the *Target date*.
