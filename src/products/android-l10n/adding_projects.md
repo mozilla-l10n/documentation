@@ -1,6 +1,6 @@
 # Adding a new project to android-l10n
 
-Follow the steps below to add new projects to [android-l10n](https://github.com/mozilla-l10n/android-l10n). You will have to coordinate with Android developers, release engineers, and a technical Localization EPM throughout the process.
+Follow the steps below to add new projects to [android-l10n](https://github.com/mozilla-l10n/android-l10n). You will have to coordinate with Android developers, release engineers, and a localization TPM throughout the process.
 
 ## Setting up the project in source and l10n repositories
 
