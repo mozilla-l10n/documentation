@@ -10,7 +10,7 @@ If you don't see your question addressed here, check also the main [Firefox L10n
 
 ### Who can I contact if I have more questions?
 
-A Program Manager (Localization ePM) is assigned to any Mozilla project that is localized through community. You can find this information in [Pontoon](https://pontoon.mozilla.org/projects/) under any project in the header section, and more information about the localization team is available in the Confluence page dedicated to [Localization](https://mozilla-hub.atlassian.net/wiki/spaces/FDPDT/pages/11045331/Localization+l10n+and+Translation) (available to Mozilla staff only).
+A Program Manager (Localization TPM) is assigned to any Mozilla project that is localized through community. You can find this information in [Pontoon](https://pontoon.mozilla.org/projects/) under any project in the header section, and more information about the localization team is available in the Confluence page dedicated to [Localization](https://mozilla-hub.atlassian.net/wiki/spaces/FDPDT/pages/11045331/Localization+l10n+and+Translation) (available to Mozilla staff only).
 
 ### Should I enable my feature only for English, or ship it in English for everyone?
 
@@ -30,7 +30,7 @@ Unlike [Firefox desktop](../firefox_desktop/firefox_l10n_faqs.md#how-can-users-g
 
 It takes roughly 48h between when strings land in the source repository, are reviewed by a member of the [android-l10n-reviewers](https://phabricator.services.mozilla.com/tag/android-l10n-reviewers/) group via Phabricator, then extracted to the localization repository.
 
-Once the strings have landed in the localization repository, the mobile localization ePM then needs to review the strings one more time, and merge the pull request so strings will be exposed on Pontoon. This usually adds an extra 24h.
+Once the strings have landed in the localization repository, the mobile localization TPM then needs to review the strings one more time, and merge the pull request so strings will be exposed on Pontoon. This usually adds an extra 24h.
 
 Once the strings are exposed on [Pontoon](https://pontoon.mozilla.org/), localizers can begin working on them right away. It will then take at least another 24h for strings to get back into the source repository, and be included in the next build.
 
@@ -38,7 +38,7 @@ However, since our contributors are volunteers, it's important to keep in mind t
 
 #### iOS
 
-There is [automation](https://github.com/mozilla-l10n/firefoxios-l10n/blob/main/.github/workflows/import_strings.yml) running every Tuesday to import strings that landed in the source repository into the localization repository (it’s also possible to invoke it manually). The localization ePM then reviews the strings, which can take roughly 48 to 72h depending if there are any issues to fix (it might require some back and forth with developers). Once the pull request is merged in the localization repository, strings will be exposed on [Pontoon](https://pontoon.mozilla.org/) and localizers can start working immediately. Automation will import localizations back to the source repository every Monday ([automation](https://github.com/mozilla-mobile/firefox-ios/blob/main/.github/workflows/firefox-ios-import-strings.yml) for Firefox for iOS, [automation](https://github.com/mozilla-mobile/firefox-ios/blob/main/.github/workflows/focus-ios-import-strings.yml) for Focus for iOS). It’s also possible to invoke automation manually.
+There is [automation](https://github.com/mozilla-l10n/firefoxios-l10n/blob/main/.github/workflows/import_strings.yml) running every Tuesday to import strings that landed in the source repository into the localization repository (it’s also possible to invoke it manually). The localization TPM then reviews the strings, which can take roughly 48 to 72h depending if there are any issues to fix (it might require some back and forth with developers). Once the pull request is merged in the localization repository, strings will be exposed on [Pontoon](https://pontoon.mozilla.org/) and localizers can start working immediately. Automation will import localizations back to the source repository every Monday ([automation](https://github.com/mozilla-mobile/firefox-ios/blob/main/.github/workflows/firefox-ios-import-strings.yml) for Firefox for iOS, [automation](https://github.com/mozilla-mobile/firefox-ios/blob/main/.github/workflows/focus-ios-import-strings.yml) for Focus for iOS). It’s also possible to invoke automation manually.
 
 Again, since our contributors are volunteers, it's important to keep in mind that while many locales are active and responsive we can’t always expect full localization coverage for every release.
 
@@ -46,9 +46,9 @@ Again, since our contributors are volunteers, it's important to keep in mind tha
 
 While Nightly is always open for new strings, Beta and Release are string frozen, meaning that patches with new strings are normally not allowed to land.
 
-Uplifts need to be evaluated case by case, but in general they should be avoided in the context of a [4-week release cycle](../firefox_desktop/build_system.md). Possible alternatives are uplifting ad-hoc patches without string changes, or exposing the feature/change only to English users.
+Uplifts need to be evaluated case by case, but in general they should be avoided in the context of a [2-week release cycle](../firefox_desktop/build_system.md). Possible alternatives are uplifting ad-hoc patches without string changes, or exposing the feature/change only to English users.
 
-One more thing to consider is the timing of the uplift. The last week of the Beta cycle is frozen (after Release Candidate [is built](https://whattrainisitnow.com/release/?version=beta)), meaning that we can’t take any updates to localization and ship it in that version. Anything uplifted close to the deadline, or after, will ship untranslated. Always flag the Localization ePM for feedback in the case the patch introduces strings. In the case the uplift is accepted, you can follow the steps below and depending on the product.
+One more thing to consider is the timing of the uplift. The last week of the Beta cycle is frozen (after Release Candidate [is built](https://whattrainisitnow.com/release/?version=beta)), meaning that we can’t take any updates to localization and ship it in that version. Anything uplifted close to the deadline, or after, will ship untranslated. Always flag the Localization TPMs ([iOS](https://github.com/orgs/mozilla-mobile/teams/firefox-ios-l10n) / [Android](https://phabricator.services.mozilla.com/project/view/224/)) for feedback in the case the patch introduces strings. In the case the uplift is accepted, you can follow the steps below and depending on the product.
 
 #### Firefox for iOS / Focus for iOS
 
@@ -105,7 +105,7 @@ Yes. Removing obsolete or unused strings keeps source code clean and easier to m
 
 ### When should “Mozilla” or “Firefox” brand be hardcoded?
 
-We don’t usually hardcode brand names, but this can happen in some edge cases. If in doubt, reach out to the current localization mobile ePM or on the Slack #l10n channel.
+We don’t usually hardcode brand names, but this can happen in some edge cases. If in doubt, reach out to the current [localization TPM for mobile](https://mozilla-hub.atlassian.net/wiki/spaces/FDPDT/pages/183861372/Localization+Intake+Process#Project-Ownership) or on the Slack #l10n channel.
 
 Hardcoding brand names in strings can cause problems in case the brand name changes. Instead, developers should use placeholders and replace them at run-time with the expected brand name. This makes it easier to update them in one place and keeps string files cleaner and more flexible for translation workflows. Among other things, it allows forks and repackaged versions of Firefox to use their own branding without editing hundreds of strings, and losing existing translations.
 
@@ -126,7 +126,7 @@ On iOS, we do not handle [proper plural support](../../localization/dev_best_pra
 For this reason, you should try to use plural neuter expressions, where there isn’t a noun associated to the number:
 for example, instead of `%S files were copied`, use `Copied files: %S`.
 
-If in doubt reach out to the current localization mobile ePM or on the Slack #l10n channel.
+If in doubt reach out to the current [localization TPM for mobile](https://mozilla-hub.atlassian.net/wiki/spaces/FDPDT/pages/183861372/Localization+Intake+Process#Project-Ownership) or on the Slack #l10n channel.
 
 ### Use localization notes and avoid using comments as development notes
 
@@ -144,4 +144,4 @@ More information [here](../firefox_desktop/firefox_l10n_faqs.md#is-my-feature-go
 
 ### I see pending suggestions in Pontoon, how can I get them approved?
 
-Please read here for [more information](../firefox_desktop/firefox_l10n_faqs.md). You may also reach out to the current localization mobile ePM or on the Slack #l10n channel.
+Please read here for [more information](../firefox_desktop/firefox_l10n_faqs.md). You may also reach out to the current [localization mobile TPM](https://mozilla-hub.atlassian.net/wiki/spaces/FDPDT/pages/183861372/Localization+Intake+Process#Project-Ownership) or on the Slack #l10n channel.

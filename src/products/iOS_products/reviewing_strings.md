@@ -1,6 +1,6 @@
 # Reviewing strings for a new release of Mozilla iOS products
 
-Usually, a new release of our iOS products means an update to strings. Like for Android products, mobile developers will land strings in their respective code repositories throughout the release cycle, and automation will export these strings to the localization repository, where they will need to be reviewed by a localization EPM before being exposed to localizers on Pontoon (see [Adding projects](adding_projects.md) for more details on the automation used).
+Usually, a new release of our iOS products means an update to strings. Like for Android products, mobile developers will land strings in their respective code repositories throughout the release cycle, and automation will export these strings to the localization repository, where they will need to be reviewed by a localization TPM before being exposed to localizers on Pontoon (see [Adding projects](adding_projects.md) for more details on the automation used).
 
 It's also possible to manually trigger a string import (`import_strings.yml`) at any time. To do so, go to the GitHub `Actions` section of the relevant localization iOS repository and run the string import workflow.  Manual string imports are useful in cases when developers land new, time-sensitive strings (like for an upcoming release), when updates or fixes in the code need to be pulled in before the next scheduled import, or in cases where you’d like to use a different criterion (described below).
 
@@ -22,7 +22,7 @@ This is not ideal when the change in the source text is trivial, or the string m
 * `nofile` will copy translations if the ID and source text match, ignoring the file. This is useful to minimize the impact of code refactoring.
 * `matchid` will ignore both file and source text, copying translations if the ID matches. This is useful for source changes that don’t require invalidating existing translations.
 
-Once new strings have landed from the source repository, or you have manually triggered an import, the PR is reviewed by a localization staff — most often by the EPM in charge of mobile projects.
+Once new strings have landed from the source repository, or you have manually triggered an import, the PR is reviewed by the localization team — most often by the [T in charge of mobile projects](https://mozilla-hub.atlassian.net/wiki/spaces/FDPDT/pages/183861372/Localization+Intake+Process#Project-Ownership).
 
 Note that there is a linter in place that checks reference strings for common errors. When opening a pull request that touches the `en-US` folder, a GitHub workflow is used to identify errors such as misused quotes or ellipsis, and hard-coded brand names. It's possible to add exceptions in the corresponding JSON file (for example [here](https://github.com/mozilla-l10n/firefoxios-l10n/blob/main/.github/scripts/linter_config.json) for Firefox). The linter is also running in the [code repository](https://github.com/mozilla-mobile/firefox-ios/blob/main/.github/workflows/firefox-ios-l10n-linter.yml), for both Firefox and Focus, with their own [exceptions](https://github.com/mozilla-mobile/firefox-ios/tree/main/.github/l10n).
 
