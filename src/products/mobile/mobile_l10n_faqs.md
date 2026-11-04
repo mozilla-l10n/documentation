@@ -30,7 +30,7 @@ Unlike [Firefox desktop](../firefox_desktop/firefox_l10n_faqs.md#how-can-users-g
 
 It takes roughly 48h between when strings land in the source repository, are reviewed by a member of the [android-l10n-reviewers](https://phabricator.services.mozilla.com/tag/android-l10n-reviewers/) group via Phabricator, then extracted to the localization repository.
 
-Once the strings have landed in the localization repository, the mobile localization TOM then needs to review the strings one more time, and merge the pull request so strings will be exposed on Pontoon. This usually adds an extra 24h.
+Once the strings have landed in the localization repository, the mobile localization TPM then needs to review the strings one more time, and merge the pull request so strings will be exposed on Pontoon. This usually adds an extra 24h.
 
 Once the strings are exposed on [Pontoon](https://pontoon.mozilla.org/), localizers can begin working on them right away. It will then take at least another 24h for strings to get back into the source repository, and be included in the next build.
 
