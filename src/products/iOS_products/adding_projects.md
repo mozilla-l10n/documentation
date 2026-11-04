@@ -1,6 +1,6 @@
 # Adding a new project for iOS
 
-We will go over the steps to set up a new iOS project, using current iOS projects as examples. You will have to coordinate with iOS developers and a technical localization EPM throughout the process.
+We will go over the steps to set up a new iOS project, using current iOS projects as examples. You will have to coordinate with iOS developers and a localization TPM throughout the process.
 
 ## Setting up the project in source and l10n repositories
 
@@ -14,11 +14,11 @@ A new repository should be created within the [mozilla-l10n](https://github.com/
 
 The first step is to make sure we can extract and use strings in an XLIFF file. For this, iOS developers need to write localizable swift code in Xcode, following iOS development practices.
 
-A GitHub workflow (see examples for [Firefox](https://github.com/mozilla-l10n/firefoxios-l10n/blob/main/.github/workflows/import_strings.yml) and [Focus](https://github.com/mozilla-l10n/focusios-l10n/blob/main/.github/workflows/import_strings.yml)) should be used to extract en-US strings from the code repository, clean up files, and expose them to all locales. In order to provide more autonomy, the workflow to extract strings should run on a regular schedule, but it should also be possible to execute it manually, like it happens for Firefox or Focus. Coordinate with a technical localization EPM to set this up.
+A GitHub workflow (see examples for [Firefox](https://github.com/mozilla-l10n/firefoxios-l10n/blob/main/.github/workflows/import_strings.yml) and [Focus](https://github.com/mozilla-l10n/focusios-l10n/blob/main/.github/workflows/import_strings.yml)) should be used to extract en-US strings from the code repository, clean up files, and expose them to all locales. In order to provide more autonomy, the workflow to extract strings should run on a regular schedule, but it should also be possible to execute it manually, like it happens for Firefox or Focus. Coordinate with the [localization TPM for mobile](https://mozilla-hub.atlassian.net/wiki/spaces/FDPDT/pages/183861372/Localization+Intake+Process#Project-Ownership) to set this up.
 
 You can now enable the new project in Pontoon (see [instructions for adding new projects](https://pontoon.mozilla.org/docs/admin/adding-new-project/)).
 
-Going forward, remember to update the localization completion deadline under Pontoon resources. For existing iOS projects, the deadline falls one day before the *Release Candidate* date of the current [Beta version](https://whattrainisitnow.com/release/?version=beta). They follow the same four-week release cycle as other Firefox browsers, so these deadlines must be updated regularly. When setting up a new project, confirm what type of release cycle it will follow. To update, navigate to the [Pontoon admin](https://pontoon.mozilla.org/admin/) page, select your project, and update the *Target date*.
+Going forward, remember to update the localization completion deadline under Pontoon resources. For existing iOS projects, the deadline falls one day before the *Release Candidate* date of the current [Beta version](https://whattrainisitnow.com/release/?version=beta). They follow the same two-week release cycle as other Firefox browsers, so these deadlines must be updated regularly. When setting up a new project, confirm what type of release cycle it will follow. To update, navigate to the [Pontoon admin](https://pontoon.mozilla.org/admin/) page, select your project, and update the *Target date*.
 
 When a new project is added and announced, you typically reach out to localizers on existing communication channels, so they can opt in for their locale (see [Updating locales](updating_locales.md) for more info).
 
