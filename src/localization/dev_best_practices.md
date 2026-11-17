@@ -208,7 +208,7 @@ delete-cookie = Delete cookie
 delete-cookies = Delete cookies
 ```
 
-But plural forms are a lot more complex in other languages, requiring up to six different forms (see [CLDR page](https://unicode-org.github.io/cldr-staging/charts/latest/supplemental/language_plural_rules.html)).
+But plural forms are a lot more complex in other languages, requiring up to six different forms (see [CLDR page](https://www.unicode.org/cldr/charts/48/supplemental/language_plural_rules.html)).
 
 Using Fluent, this string would look like this:
 
